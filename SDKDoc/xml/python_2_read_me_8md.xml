@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="python_2_read_me_8md" kind="file" language="Markdown">
+    <compoundname>ReadMe.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">@page<sp/>page_sample_py<sp/>Python</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;!--</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">#</highlight></codeline>
+<codeline><highlight class="normal">#-------------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">--&gt;</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>document<sp/>describes<sp/>how<sp/>to<sp/>build<sp/>the<sp/>Python<sp/>bindings<sp/>for<sp/>ADLX,<sp/>and<sp/>the<sp/>ADLX<sp/>Python<sp/>samples,<sp/>as<sp/>well<sp/>as<sp/>the<sp/>environment<sp/>in<sp/>which<sp/>they<sp/>can<sp/>be<sp/>executed.<sp/>The<sp/>ADLX<sp/>Python<sp/>samples<sp/>demonstrate<sp/>how<sp/>to<sp/>program<sp/>with<sp/>ADLX<sp/>in<sp/>a<sp/>Python<sp/>application.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;h2&gt;Supported<sp/>Operating<sp/>Systems&lt;/h2&gt;</highlight></codeline>
+<codeline><highlight class="normal">Windows®<sp/>10<sp/>(32-<sp/>and<sp/>64-bit<sp/>versions)<sp/>and<sp/>up.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;h2&gt;Building<sp/>the<sp/>ADLXCSharpBind&lt;/h2&gt;</highlight></codeline>
+<codeline><highlight class="normal">These<sp/>are<sp/>the<sp/>instructions<sp/>for<sp/>building<sp/>the<sp/>ADLX<sp/>Python<sp/>bindings<sp/>for<sp/>the<sp/>ADLX<sp/>Python<sp/>samples.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;h2&gt;Build<sp/>Tool&lt;/h2&gt;</highlight></codeline>
+<codeline><highlight class="normal">Visual<sp/>Studio<sp/>2019<sp/>with<sp/>C<sp/>and<sp/>C++<sp/>components<sp/>for<sp/>desktop.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;h2&gt;Prerequisites&lt;/h2&gt;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>&lt;b&gt;ADLX<sp/>SDK&lt;/b&gt;<sp/>is<sp/>installed.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>&lt;b&gt;Python<sp/>3.9&lt;/b&gt;<sp/>is<sp/>installed.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>&lt;b&gt;pybind11&lt;/b&gt;<sp/>is<sp/>installed.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>path<sp/>to<sp/>the<sp/>Python<sp/>3.9<sp/>installation<sp/>is<sp/>set<sp/>to<sp/>the<sp/>&lt;b&gt;PYHOME&lt;/b&gt;<sp/>system<sp/>environment<sp/>variable.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;b&gt;Note:&lt;/b&gt;<sp/>The<sp/>ADLX<sp/>library<sp/>is<sp/>installed<sp/>along<sp/>with<sp/>the<sp/>AMD<sp/>display<sp/>driver.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;h2&gt;Build<sp/>Instructions&lt;/h2&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;ol&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;li&gt;<sp/>Run<sp/>Visual<sp/>Studio<sp/>2019.<sp/>&lt;/li&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;li&gt;<sp/>Open<sp/>`~ADLX\drivers\ADLX\Samples\python\ADLXPybind\ADLXPybind.sln`.&lt;/li&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;li&gt;<sp/>Rebuild<sp/>the<sp/>project.&lt;/li&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/ol&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;h2&gt;Building<sp/>the<sp/>ADLX<sp/>Python<sp/>samples&lt;/h2&gt;</highlight></codeline>
+<codeline><highlight class="normal">These<sp/>are<sp/>the<sp/>instructions<sp/>for<sp/>building<sp/>the<sp/>&lt;b&gt;DisplayInfo&lt;/b&gt;<sp/>ADLX<sp/>Python<sp/>sample.<sp/></highlight></codeline>
+<codeline><highlight class="normal">Similar<sp/>instructions<sp/>must<sp/>be<sp/>followed<sp/>for<sp/>building<sp/>the<sp/>other<sp/>ADLX<sp/>Python<sp/>samples.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;h2&gt;Build<sp/>Tool&lt;/h2&gt;</highlight></codeline>
+<codeline><highlight class="normal">Visual<sp/>Studio<sp/>Code</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;h2&gt;Prerequisites&lt;/h2&gt;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>&lt;b&gt;ADLX<sp/>SDK&lt;/b&gt;<sp/>is<sp/>installed.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>&lt;b&gt;ADLXCSharpBind&lt;/b&gt;<sp/>is<sp/>built.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;b&gt;Note:&lt;/b&gt;<sp/>The<sp/>ADLX<sp/>library<sp/>is<sp/>installed<sp/>along<sp/>with<sp/>the<sp/>AMD<sp/>display<sp/>driver.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;h2&gt;Build<sp/>Instructions&lt;/h2&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;ol&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;li&gt;<sp/>Run<sp/>Visual<sp/>Studio<sp/>Code.<sp/>&lt;/li&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;li&gt;<sp/>Open<sp/>`~ADLX\drivers\ADLX\Samples\python\DisplayInfo`.<sp/>&lt;/li&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;li&gt;<sp/>Rebuild<sp/>the<sp/>project.&lt;/li&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/ol&gt;</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/Samples/python/ReadMe.md"/>
+  </compounddef>
+</doxygen>

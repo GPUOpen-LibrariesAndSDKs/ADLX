@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_listener" kind="page">
+    <compoundname>DOX_IADLXGPUTuningChangedListener</compoundname>
+    <title>IADLXGPUTuningChangedListener</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_listener__on_g_p_u_tuning_changed">OnGPUTuningChanged</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXGPUTuningChangedListener</bold> interface is implemented in the application to receive an event from ADLX when the GPU tuning changes.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para>An instance of the implemented <bold>IADLXGPUTuningChangedListener</bold> interface must be passed to <ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_handling__add_g_p_u_tuning_event_listener" kindref="compound">AddGPUTuningEventListener</ref> to register for notifications when GPU tuning changes.<linebreak/>
+ For more information about subscribing for notifications, refer to <ref refid="page_guide_event" kindref="compound">Subscribing to Event Notifications using ADLX</ref>.<linebreak/>
+</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_listener__on_g_p_u_tuning_changed" kindref="compound">OnGPUTuningChanged</ref>   </para>
+</entry><entry thead="no"><para><bold>OnGPUTuningChanged</bold> is called by ADLX when GPU tuning changes.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IGPUTuning.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp__sync_g_p_u_tuning" kindref="compound">SyncGPUTuning C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c__sync_g_p_u_tuning" kindref="compound">SyncGPUTuning C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_listener__on_g_p_u_tuning_changed" kindref="compound">OnGPUTuningChanged</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXGPUTuningPage.h"/>
+  </compounddef>
+</doxygen>

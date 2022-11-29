@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="page_sample_c" kind="page">
+    <compoundname>page_sample_c</compoundname>
+    <title>C</title>
+    <innerpage refid="c_samples_filedesc">File Descriptions</innerpage>
+    <innerpage refid="c_samples_more">Samples</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This document describes how to build the ADLX C samples and the environment in which they can be executed. The ADLX C samples are organized per domain, and they demonstrate the entire ADLX functionality.</para>
+<para><heading level="2">Supported Operating Systems</heading>
+</para>
+<para>Windows® 10 (32- and 64-bit versions) and up.</para>
+<para><heading level="2">Build Tool</heading>
+</para>
+<para>Visual Studio 2019 with C and C++ components for desktop.</para>
+<para><heading level="2">Prerequisites</heading>
+</para>
+<para><itemizedlist>
+<listitem><para><bold>ADLX SDK</bold> is installed.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Note:</bold> The ADLX library is installed along with the AMD display driver.</para>
+<para><heading level="2">Build Instructions</heading>
+</para>
+<para><orderedlist>
+<listitem>
+<para>Run Visual Studio 2019. </para>
+</listitem>
+<listitem>
+<para>Click <bold>File &gt; Open &gt; CMake</bold>. </para>
+</listitem>
+<listitem>
+<para>Select the <computeroutput>~Samples\C</computeroutput> folder from the Address bar in the pop-up dialog box. </para>
+</listitem>
+<listitem>
+<para>Select <computeroutput>CMakeLists.txt</computeroutput> in <computeroutput>~ADLX\Samples\C</computeroutput> and click <bold>Open</bold>. </para>
+</listitem>
+<listitem>
+<para>Select <bold>vs2019_Release_x64</bold> in the Configuration drop-down. </para>
+</listitem>
+<listitem>
+<para>Click <bold>Switch between available views &gt; CMake Targets view</bold> in the Solution Explorer. </para>
+</listitem>
+<listitem>
+<para>Click <bold>Samples Project</bold> and expand the list of samples. Right-click on the required sample and click <bold>Set As Startup Item</bold>. For example, <computeroutput>DisplayInfo.exe</computeroutput>. </para>
+</listitem>
+<listitem>
+<para>Right-click on the same sample and click <bold>Build</bold>. </para>
+</listitem>
+<listitem>
+<para>Run the sample. </para>
+</listitem>
+</orderedlist>
+</para>
+<para><itemizedlist>
+<listitem><para><ref refid="c_samples_filedesc" kindref="compound">File Descriptions</ref></para>
+</listitem><listitem><para><ref refid="c_samples_more" kindref="compound">Samples</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/Samples/C/ReadMe.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_list" kind="page">
+    <compoundname>DOX_IADLXList</compoundname>
+    <title>IADLXList</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_list__add__back">Add_Back</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_list__at">At</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_list__begin">Begin</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_list__clear">Clear</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_list__empty">Empty</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_list__end">End</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_list__remove__back">Remove_Back</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_list__size">Size</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXList</bold> is an interface of a collection of ADLX interfaces that can be accessed by location.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLXList</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLXListPtr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_interface" kindref="compound">IADLXInterface</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_desktop_list" kindref="compound">IADLXDesktopList</ref> <ref refid="_d_o_x__i_a_d_l_x_display_list" kindref="compound">IADLXDisplayList</ref> <ref refid="_d_o_x__i_a_d_l_x_display_resolution_list" kindref="compound">IADLXDisplayResolutionList</ref> <ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning_state_list" kindref="compound">IADLXManualFanTuningStateList</ref> <ref refid="_d_o_x__i_a_d_l_x_manual_tuning_state_list" kindref="compound">IADLXManualTuningStateList</ref> <ref refid="_d_o_x__i_a_d_l_x_memory_timing_description_list" kindref="compound">IADLXMemoryTimingDescriptionList</ref> <ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_list" kindref="compound">IADLXGPUMetricsList</ref> <ref refid="_d_o_x__i_a_d_l_x_system_metrics_list" kindref="compound">IADLXSystemMetricsList</ref> <ref refid="_d_o_x__i_a_d_l_x_f_p_s_list" kindref="compound">IADLXFPSList</ref> <ref refid="_d_o_x__i_a_d_l_x_all_metrics_list" kindref="compound">IADLXAllMetricsList</ref> <ref refid="_d_o_x__i_a_d_l_x_g_p_u_list" kindref="compound">IADLXGPUList</ref></para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="9" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_list__add__back" kindref="compound">Add_Back</ref>   </para>
+</entry><entry thead="no"><para>Adds an interface to the end of a list.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_list__at" kindref="compound">At</ref>   </para>
+</entry><entry thead="no"><para>Returns the reference counted interface from the requested location.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_list__begin" kindref="compound">Begin</ref>   </para>
+</entry><entry thead="no"><para>Returns the location of the first interface from a list.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_list__clear" kindref="compound">Clear</ref>   </para>
+</entry><entry thead="no"><para>Removes all the interfaces from a list.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_list__empty" kindref="compound">Empty</ref>   </para>
+</entry><entry thead="no"><para>Checks if the list is empty.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_list__end" kindref="compound">End</ref>   </para>
+</entry><entry thead="no"><para>Returns the location succeeding the last interface from a list.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_list__remove__back" kindref="compound">Remove_Back</ref>   </para>
+</entry><entry thead="no"><para>Removes an interface from the end of a list.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_list__size" kindref="compound">Size</ref>   </para>
+</entry><entry thead="no"><para>Returns the number of interfaces in a list.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;ADLXDefines.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_list__add__back" kindref="compound">Add_Back</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_list__at" kindref="compound">At</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_list__begin" kindref="compound">Begin</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_list__clear" kindref="compound">Clear</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_list__empty" kindref="compound">Empty</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_list__end" kindref="compound">End</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_list__remove__back" kindref="compound">Remove_Back</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_list__size" kindref="compound">Size</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXMiscellaneousPage.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_desktop" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXDesktop</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_desktop_1a7bed1e01348127a9f88c8a57410ae767" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDesktop::Orientation</definition>
+        <argsstring>(ADLX_ORIENTATION *orientation)=0</argsstring>
+        <name>Orientation</name>
+        <param>
+          <type><ref refid="group__enumerations_1gae896c86f4fc55efe4e866450e33465b1" kindref="member">ADLX_ORIENTATION</ref> *</type>
+          <declname>orientation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" line="50" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_desktop_1a27d9707fb71070145a4038c9d77d7a97" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDesktop::Size</definition>
+        <argsstring>(adlx_int *width, adlx_int *height)=0</argsstring>
+        <name>Size</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" line="77" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_desktop_1a184386501391fe38bc3a13344211be0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDesktop::TopLeft</definition>
+        <argsstring>(ADLX_Point *locationTopLeft)=0</argsstring>
+        <name>TopLeft</name>
+        <param>
+          <type><ref refid="struct_a_d_l_x___point" kindref="compound">ADLX_Point</ref> *</type>
+          <declname>locationTopLeft</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" line="102" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_desktop_1a2f4455cb6f5f7c36245d0115609e7478" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDesktop::Type</definition>
+        <argsstring>(ADLX_DESKTOP_TYPE *desktopType)=0</argsstring>
+        <name>Type</name>
+        <param>
+          <type><ref refid="group__enumerations_1ga83322f63ada9c973559376760f141b89" kindref="member">ADLX_DESKTOP_TYPE</ref> *</type>
+          <declname>desktopType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" line="127" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_desktop_1acd4eb4b55c7aba90b632182baaa39491" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDesktop::GetNumberOfDisplays</definition>
+        <argsstring>(adlx_uint *numDisplays)=0</argsstring>
+        <name>GetNumberOfDisplays</name>
+        <param>
+          <type>adlx_uint *</type>
+          <declname>numDisplays</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" line="156" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_desktop_1af16541b4bd1c79e45f6e292167d06437" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDesktop::GetDisplays</definition>
+        <argsstring>(IADLXDisplayList **ppDisplays)=0</argsstring>
+        <name>GetDisplays</name>
+        <param>
+          <type>IADLXDisplayList **</type>
+          <declname>ppDisplays</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" line="184" column="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" line="22" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="23" bodyend="185"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXDesktop</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_desktop_1af16541b4bd1c79e45f6e292167d06437" prot="public" virt="pure-virtual"><scope>adlx::IADLXDesktop</scope><name>GetDisplays</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_desktop_1acd4eb4b55c7aba90b632182baaa39491" prot="public" virt="pure-virtual"><scope>adlx::IADLXDesktop</scope><name>GetNumberOfDisplays</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_desktop_1a7bed1e01348127a9f88c8a57410ae767" prot="public" virt="pure-virtual"><scope>adlx::IADLXDesktop</scope><name>Orientation</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXDesktop</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXDesktop</scope><name>Release</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_desktop_1a27d9707fb71070145a4038c9d77d7a97" prot="public" virt="pure-virtual"><scope>adlx::IADLXDesktop</scope><name>Size</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_desktop_1a184386501391fe38bc3a13344211be0b" prot="public" virt="pure-virtual"><scope>adlx::IADLXDesktop</scope><name>TopLeft</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_desktop_1a2f4455cb6f5f7c36245d0115609e7478" prot="public" virt="pure-virtual"><scope>adlx::IADLXDesktop</scope><name>Type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

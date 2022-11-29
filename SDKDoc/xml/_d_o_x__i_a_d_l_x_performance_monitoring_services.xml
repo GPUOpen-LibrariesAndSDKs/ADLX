@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_performance_monitoring_services" kind="page">
+    <compoundname>DOX_IADLXPerformanceMonitoringServices</compoundname>
+    <title>IADLXPerformanceMonitoringServices</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__clear_performance_metrics_history">ClearPerformanceMetricsHistory</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_all_metrics_history">GetAllMetricsHistory</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_current_all_metrics">GetCurrentAllMetrics</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_current_f_p_s">GetCurrentFPS</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_current_g_p_u_metrics">GetCurrentGPUMetrics</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_current_performance_metrics_history_size">GetCurrentPerformanceMetricsHistorySize</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_current_system_metrics">GetCurrentSystemMetrics</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_f_p_s_history">GetFPSHistory</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_g_p_u_metrics_history">GetGPUMetricsHistory</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_max_performance_metrics_history_size">GetMaxPerformanceMetricsHistorySize</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_max_performance_metrics_history_size_range">GetMaxPerformanceMetricsHistorySizeRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_sampling_interval">GetSamplingInterval</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_sampling_interval_range">GetSamplingIntervalRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_supported_g_p_u_metrics">GetSupportedGPUMetrics</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_supported_system_metrics">GetSupportedSystemMetrics</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_system_metrics_history">GetSystemMetricsHistory</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__set_max_performance_metrics_history_size">SetMaxPerformanceMetricsHistorySize</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__set_sampling_interval">SetSamplingInterval</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__start_performance_metrics_tracking">StartPerformanceMetricsTracking</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__stop_performance_metrics_tracking">StopPerformanceMetricsTracking</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXPerformanceMonitoringServices</bold> interface provides methods to configure the performance monitoring functionality and to obtain the performance data.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLXPerformanceMonitoringServices</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLXPerformanceMonitoringServicesPtr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_interface" kindref="compound">IADLXInterface</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para>The <bold>IADLXPerformanceMonitoringServices</bold> interface provides:<itemizedlist>
+<listitem><para>The configuration for the performance metric sampling.</para>
+</listitem><listitem><para>The methods to start and stop the performance metric sampling.</para>
+</listitem><listitem><para>Access to the data from the performance metric buffer.</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="21" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__clear_performance_metrics_history" kindref="compound">ClearPerformanceMetricsHistory</ref>   </para>
+</entry><entry thead="no"><para>Clears the buffer for performance monitoring.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_all_metrics_history" kindref="compound">GetAllMetricsHistory</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted list of all the metrics in a time interval.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_current_all_metrics" kindref="compound">GetCurrentAllMetrics</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted <ref refid="_d_o_x__i_a_d_l_x_all_metrics" kindref="compound">IADLXAllMetrics</ref> interface for the current metric set.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_current_f_p_s" kindref="compound">GetCurrentFPS</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted <ref refid="_d_o_x__i_a_d_l_x_f_p_s" kindref="compound">IADLXFPS</ref> interface for the current FPS metric.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_current_g_p_u_metrics" kindref="compound">GetCurrentGPUMetrics</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted <ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics" kindref="compound">IADLXGPUMetrics</ref> interface for the current metric set of a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_current_performance_metrics_history_size" kindref="compound">GetCurrentPerformanceMetricsHistorySize</ref>   </para>
+</entry><entry thead="no"><para>Gets the duration of the metrics history from the performance monitoring buffer.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_current_system_metrics" kindref="compound">GetCurrentSystemMetrics</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted <ref refid="_d_o_x__i_a_d_l_x_system_metrics" kindref="compound">IADLXSystemMetrics</ref> interface for the current metric set.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_f_p_s_history" kindref="compound">GetFPSHistory</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted list of FPS metrics in a time interval.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_g_p_u_metrics_history" kindref="compound">GetGPUMetricsHistory</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted list of GPU metrics in a time interval of a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_max_performance_metrics_history_size" kindref="compound">GetMaxPerformanceMetricsHistorySize</ref>   </para>
+</entry><entry thead="no"><para>Gets the duration of the performance monitoring buffer.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_max_performance_metrics_history_size_range" kindref="compound">GetMaxPerformanceMetricsHistorySizeRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the maximum size, minimum size, and step size for the performance monitoring buffer.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_sampling_interval" kindref="compound">GetSamplingInterval</ref>   </para>
+</entry><entry thead="no"><para>Gets the sampling interval for performance monitoring.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_sampling_interval_range" kindref="compound">GetSamplingIntervalRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the maximum sampling interval, minimum sampling interval, and step sampling interval for the performance monitoring.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_supported_g_p_u_metrics" kindref="compound">GetSupportedGPUMetrics</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted interface for discovering what performance metrics are supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_supported_system_metrics" kindref="compound">GetSupportedSystemMetrics</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted interface for discovering what performance metrics are supported on the system.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_system_metrics_history" kindref="compound">GetSystemMetricsHistory</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted list of system metrics in a time interval.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__set_max_performance_metrics_history_size" kindref="compound">SetMaxPerformanceMetricsHistorySize</ref>   </para>
+</entry><entry thead="no"><para>Sets the duration of the performance monitoring buffer.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__set_sampling_interval" kindref="compound">SetSamplingInterval</ref>   </para>
+</entry><entry thead="no"><para>Sets the sampling interval for the performance monitoring.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__start_performance_metrics_tracking" kindref="compound">StartPerformanceMetricsTracking</ref>   </para>
+</entry><entry thead="no"><para>Increases the count for the performance metrics tracking.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__stop_performance_metrics_tracking" kindref="compound">StopPerformanceMetricsTracking</ref>   </para>
+</entry><entry thead="no"><para>Decreases the count for the performance metrics tracking.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IPerformanceMonitoring.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp__perf_system_metrics" kindref="compound">PerfSystemMetrics C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c__perf_system_metrics" kindref="compound">PerfSystemMetrics C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__clear_performance_metrics_history" kindref="compound">ClearPerformanceMetricsHistory</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_all_metrics_history" kindref="compound">GetAllMetricsHistory</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_current_all_metrics" kindref="compound">GetCurrentAllMetrics</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_current_f_p_s" kindref="compound">GetCurrentFPS</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_current_g_p_u_metrics" kindref="compound">GetCurrentGPUMetrics</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_current_performance_metrics_history_size" kindref="compound">GetCurrentPerformanceMetricsHistorySize</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_current_system_metrics" kindref="compound">GetCurrentSystemMetrics</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_f_p_s_history" kindref="compound">GetFPSHistory</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_g_p_u_metrics_history" kindref="compound">GetGPUMetricsHistory</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_max_performance_metrics_history_size" kindref="compound">GetMaxPerformanceMetricsHistorySize</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_max_performance_metrics_history_size_range" kindref="compound">GetMaxPerformanceMetricsHistorySizeRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_sampling_interval" kindref="compound">GetSamplingInterval</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_sampling_interval_range" kindref="compound">GetSamplingIntervalRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_supported_g_p_u_metrics" kindref="compound">GetSupportedGPUMetrics</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_supported_system_metrics" kindref="compound">GetSupportedSystemMetrics</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__get_system_metrics_history" kindref="compound">GetSystemMetricsHistory</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__set_max_performance_metrics_history_size" kindref="compound">SetMaxPerformanceMetricsHistorySize</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__set_sampling_interval" kindref="compound">SetSamplingInterval</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__start_performance_metrics_tracking" kindref="compound">StartPerformanceMetricsTracking</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services__stop_performance_metrics_tracking" kindref="compound">StopPerformanceMetricsTracking</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXPerformancePage.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="cs_sample_adlxcsharpbind" kind="page">
+    <compoundname>cs_sample_adlxcsharpbind</compoundname>
+    <title>ADLXCSharpBind</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><htmlonly>&lt;!--
+# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+#
+#-------------------------------------------------------------------------------------------------
+--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+    &lt;p&gt; Demonstrates how to wrap ADLX with SWIG when programming with ADLX.&lt;/p&gt;
+    &lt;h2&gt;Sample Path&lt;/h2&gt;
+    &lt;p&gt;/Samples/csharp/ADLXCSharpBind&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</htmlonly> <heading level="2">Code </heading>
+</para>
+<para>C++ <programlisting filename="./csharp/ADLXCSharpBind/ADLXCSharpBind/ADLXCSharpBind.i"><codeline><highlight class="normal">//<sp/></highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">//</highlight></codeline>
+<codeline><highlight class="normal">//-------------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">%module(directors=&quot;1&quot;)<sp/>ADLX</highlight></codeline>
+<codeline><highlight class="normal">%{</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;Windows.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;../../../../SDK/Include/ADLXDefines.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;../../../../SDK/Include/ICollections.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;../../../../SDK/Include/IDisplays.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;../../../../SDK/Include/ISystem.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;../../../../SDK/Include/ILog.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;../../../../SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>int64_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_int64;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>int32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_int32;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>int16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_int16;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>int8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_int8;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>uint64_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_uint64;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_uint32;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_uint16;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_uint8;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>size_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_size;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>void*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_handle;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>double<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_double;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>float<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_float;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>void<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_void;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>long<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_long;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>adlx_int32<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_int;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>unsigned<sp/>long<sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_ulong;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>adlx_uint32<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_uint;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>bool<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_bool;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>wchar_t<sp/>WCHAR;<sp/><sp/><sp/><sp/>//<sp/>wc,<sp/><sp/><sp/>16-bit<sp/>UNICODE<sp/>character</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>WCHAR<sp/>TCHAR;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Microsoft</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_CORE_LINK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__declspec(dllexport)</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_STD_CALL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__stdcall</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_CDECL_CALL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__cdecl</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_FAST_CALL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__fastcall</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_INLINE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__inline</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_FORCEINLINE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__forceinline</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_NO_VTABLE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__declspec(novtable)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//IID&apos;s</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_DECLARE_IID(X)<sp/>static<sp/>ADLX_INLINE<sp/>const<sp/>wchar_t*<sp/>IID()<sp/><sp/>{<sp/>return<sp/>X;<sp/>}</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_IS_IID(X,<sp/>Y)<sp/>(!wcscmp<sp/>(X,<sp/>Y))</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_DECLARE_ITEM_IID(X)<sp/>static<sp/>ADLX_INLINE<sp/>const<sp/>wchar_t*<sp/>ITEM_IID()<sp/><sp/>{<sp/>return<sp/>X;<sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">using<sp/>namespace<sp/>adlx;</highlight></codeline>
+<codeline><highlight class="normal">%}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>int64_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_int64;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>int32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_int32;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>int16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_int16;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>int8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_int8;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>uint64_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_uint64;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_uint32;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_uint16;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_uint8;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>size_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_size;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>void*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_handle;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>double<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_double;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>float<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_float;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>void<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_void;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>long<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_long;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>adlx_int32<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_int;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>unsigned<sp/>long<sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_ulong;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>adlx_uint32<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_uint;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/><sp/><sp/><sp/><sp/>bool<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_bool;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>wchar_t<sp/>WCHAR;<sp/><sp/><sp/><sp/>//<sp/>wc,<sp/><sp/><sp/>16-bit<sp/>UNICODE<sp/>character</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>WCHAR<sp/>TCHAR;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Microsoft</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_CORE_LINK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__declspec(dllexport)</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_STD_CALL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__stdcall</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_CDECL_CALL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__cdecl</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_FAST_CALL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__fastcall</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_INLINE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__inline</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_FORCEINLINE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__forceinline</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_NO_VTABLE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__declspec(novtable)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//IID&apos;s</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_DECLARE_IID(X)<sp/>static<sp/>ADLX_INLINE<sp/>const<sp/>wchar_t*<sp/>IID()<sp/><sp/>{<sp/>return<sp/>X;<sp/>}</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_IS_IID(X,<sp/>Y)<sp/>(!wcscmp<sp/>(X,<sp/>Y))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#define<sp/>ADLX_DECLARE_ITEM_IID(X)<sp/>static<sp/>ADLX_INLINE<sp/>const<sp/>wchar_t*<sp/>ITEM_IID()<sp/><sp/>{<sp/>return<sp/>X;<sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*<sp/>Callback<sp/>to<sp/>turn<sp/>on<sp/>director<sp/>wrapping<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">%feature(&quot;director&quot;)<sp/>IADLXDisplayListChangedListener;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">%include<sp/>stdint.i</highlight></codeline>
+<codeline><highlight class="normal">%include<sp/>carrays.i</highlight></codeline>
+<codeline><highlight class="normal">%include<sp/>windows.i</highlight></codeline>
+<codeline><highlight class="normal">%include<sp/>typemaps.i</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">%include<sp/>&quot;../../../../SDK/Include/ADLXDefines.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">%include<sp/>&quot;../../../../SDK/Include/ICollections.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">%include<sp/>&quot;../../../../SDK/Include/IDisplays.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">%include<sp/>&quot;../../../../SDK/Include/ISystem.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">%include<sp/>&quot;../../../../SDK/Include/ILog.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">%include<sp/>&quot;../../../../SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">using<sp/>namespace<sp/>adlx;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>T*<sp/>pointer</highlight></codeline>
+<codeline><highlight class="normal">%include<sp/>cpointer.i</highlight></codeline>
+<codeline><highlight class="normal">%pointer_functions(adlx_int,<sp/>intP);</highlight></codeline>
+<codeline><highlight class="normal">%pointer_functions(double,<sp/>doubleP);</highlight></codeline>
+<codeline><highlight class="normal">%pointer_functions(adlx_uint,<sp/>uintP);</highlight></codeline>
+<codeline><highlight class="normal">%pointer_functions(ADLX_DISPLAY_TYPE,<sp/>displayTypeP);</highlight></codeline>
+<codeline><highlight class="normal">%pointer_functions(ADLX_DISPLAY_CONNECTOR_TYPE,<sp/>disConnectTypeP);</highlight></codeline>
+<codeline><highlight class="normal">%pointer_functions(ADLX_DISPLAY_SCAN_TYPE,<sp/>disScanTypeP);</highlight></codeline>
+<codeline><highlight class="normal">%pointer_functions(adlx_size,<sp/>adlx_sizeP);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>T**<sp/>ppointer</highlight></codeline>
+<codeline><highlight class="normal">%define<sp/>%ppointer_functions(TYPE,NAME)</highlight></codeline>
+<codeline><highlight class="normal">%{</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>TYPE<sp/>*new_##NAME()<sp/>{<sp/>%}</highlight></codeline>
+<codeline><highlight class="normal">%{<sp/><sp/>return<sp/>new<sp/>TYPE();<sp/>%}</highlight></codeline>
+<codeline><highlight class="normal">%{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">static<sp/>TYPE<sp/>*copy_##NAME(TYPE<sp/>value)<sp/>{<sp/>%}</highlight></codeline>
+<codeline><highlight class="normal">%{<sp/><sp/>return<sp/>new<sp/>TYPE(value);<sp/>%}</highlight></codeline>
+<codeline><highlight class="normal">%{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>delete_##NAME(TYPE<sp/>*obj)<sp/>{<sp/>%}</highlight></codeline>
+<codeline><highlight class="normal">%{<sp/><sp/>if<sp/>(*obj)<sp/>delete<sp/>*obj;<sp/>%}</highlight></codeline>
+<codeline><highlight class="normal">%{}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>NAME<sp/>##_assign(TYPE<sp/>*obj,<sp/>TYPE<sp/>value)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*obj<sp/>=<sp/>value;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">static<sp/>TYPE<sp/>NAME<sp/>##_value(TYPE<sp/>*obj)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>return<sp/>*obj;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">%}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">TYPE<sp/>*new_##NAME();</highlight></codeline>
+<codeline><highlight class="normal">TYPE<sp/>*copy_##NAME(TYPE<sp/>value);</highlight></codeline>
+<codeline><highlight class="normal">void<sp/><sp/>delete_##NAME(TYPE<sp/>*obj);</highlight></codeline>
+<codeline><highlight class="normal">void<sp/><sp/>NAME##_assign(TYPE<sp/>*obj,<sp/>TYPE<sp/>value);</highlight></codeline>
+<codeline><highlight class="normal">TYPE<sp/><sp/>NAME##_value(TYPE<sp/>*obj);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">%enddef</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">%define<sp/>%pointer_cast(TYPE1,TYPE2,NAME)</highlight></codeline>
+<codeline><highlight class="normal">%inline<sp/>%{</highlight></codeline>
+<codeline><highlight class="normal">TYPE2<sp/>NAME(TYPE1<sp/>x)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>return<sp/>(TYPE2)<sp/>x;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">%}</highlight></codeline>
+<codeline><highlight class="normal">%enddef</highlight></codeline>
+<codeline><highlight class="normal">%ppointer_functions(IADLXDisplayServices*,<sp/>displaySerP_Ptr);</highlight></codeline>
+<codeline><highlight class="normal">%ppointer_functions(IADLXDisplayList*,<sp/>displayListP_Ptr);</highlight></codeline>
+<codeline><highlight class="normal">%ppointer_functions(IADLXDisplay*,<sp/>displayP_Ptr);</highlight></codeline>
+<codeline><highlight class="normal">%ppointer_functions(IADLXDisplayChangedHandling*,<sp/>displayChangeHandlP_Ptr);</highlight></codeline>
+<codeline><highlight class="normal">%ppointer_functions(char*,<sp/>charP_Ptr);</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXSamplesPage/ADLXSamplePage.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_i2_c" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXI2C</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_i2_c_1a9afe94ce423e6a2bfbfddec492dbe2d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXI2C::Version</definition>
+        <argsstring>(adlx_int *major, adlx_int *minor)=0</argsstring>
+        <name>Version</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>major</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>minor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/II2C.h" line="49" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_i2_c_1aac349e67808ac3fe53e46ac6d852eb57" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXI2C::IsSupported</definition>
+        <argsstring>(ADLX_I2C_LINE line, adlx_int address, adlx_bool *isSupported)=0</argsstring>
+        <name>IsSupported</name>
+        <param>
+          <type><ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref></type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isSupported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/II2C.h" line="76" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_i2_c_1a1a242d4485e8318af7438f1b903f83b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXI2C::Read</definition>
+        <argsstring>(ADLX_I2C_LINE line, adlx_int speed, adlx_int address, adlx_int offset, adlx_int dataSize, adlx_byte *data)=0</argsstring>
+        <name>Read</name>
+        <param>
+          <type><ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref></type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>dataSize</declname>
+        </param>
+        <param>
+          <type>adlx_byte *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/II2C.h" line="108" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_i2_c_1a2ce5f2c753ffbc935197f6b74e2530c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXI2C::RepeatedStartRead</definition>
+        <argsstring>(ADLX_I2C_LINE line, adlx_int speed, adlx_int address, adlx_int offset, adlx_int dataSize, adlx_byte *data)=0</argsstring>
+        <name>RepeatedStartRead</name>
+        <param>
+          <type><ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref></type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>dataSize</declname>
+        </param>
+        <param>
+          <type>adlx_byte *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/II2C.h" line="140" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_i2_c_1af7d6c48a8564609efd39e550979d0f08" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXI2C::Write</definition>
+        <argsstring>(ADLX_I2C_LINE line, adlx_int speed, adlx_int address, adlx_int offset, adlx_int dataSize, adlx_byte *data)=0</argsstring>
+        <name>Write</name>
+        <param>
+          <type><ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref></type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>dataSize</declname>
+        </param>
+        <param>
+          <type>adlx_byte *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/II2C.h" line="172" column="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/II2C.h" line="20" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/II2C.h" bodystart="21" bodyend="174"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXI2C</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_i2_c_1aac349e67808ac3fe53e46ac6d852eb57" prot="public" virt="pure-virtual"><scope>adlx::IADLXI2C</scope><name>IsSupported</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXI2C</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_i2_c_1a1a242d4485e8318af7438f1b903f83b0" prot="public" virt="pure-virtual"><scope>adlx::IADLXI2C</scope><name>Read</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXI2C</scope><name>Release</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_i2_c_1a2ce5f2c753ffbc935197f6b74e2530c6" prot="public" virt="pure-virtual"><scope>adlx::IADLXI2C</scope><name>RepeatedStartRead</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_i2_c_1a9afe94ce423e6a2bfbfddec492dbe2d6" prot="public" virt="pure-virtual"><scope>adlx::IADLXI2C</scope><name>Version</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_i2_c_1af7d6c48a8564609efd39e550979d0f08" prot="public" virt="pure-virtual"><scope>adlx::IADLXI2C</scope><name>Write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

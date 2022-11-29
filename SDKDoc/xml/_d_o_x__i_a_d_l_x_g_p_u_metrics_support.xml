@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_g_p_u_metrics_support" kind="page">
+    <compoundname>DOX_IADLXGPUMetricsSupport</compoundname>
+    <title>IADLXGPUMetricsSupport</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_clock_speed_range">GetGPUClockSpeedRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_fan_speed_range">GetGPUFanSpeedRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_hotspot_temperature_range">GetGPUHotspotTemperatureRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_power_range">GetGPUPowerRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_temperature_range">GetGPUTemperatureRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_total_board_power_range">GetGPUTotalBoardPowerRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_usage_range">GetGPUUsageRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_v_r_a_m_clock_speed_range">GetGPUVRAMClockSpeedRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_v_r_a_m_range">GetGPUVRAMRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_voltage_range">GetGPUVoltageRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_clock_speed">IsSupportedGPUClockSpeed</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_fan_speed">IsSupportedGPUFanSpeed</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_hotspot_temperature">IsSupportedGPUHotspotTemperature</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_power">IsSupportedGPUPower</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_temperature">IsSupportedGPUTemperature</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_total_board_power">IsSupportedGPUTotalBoardPower</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_usage">IsSupportedGPUUsage</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_v_r_a_m">IsSupportedGPUVRAM</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_v_r_a_m_clock_speed">IsSupportedGPUVRAMClockSpeed</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_voltage">IsSupportedGPUVoltage</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXGPUMetricsSupport</bold> interface provides methods to discover what performance metrics are supported on a GPU.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLXGPUMetricsSupport</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLXGPUMetricsSupportPtr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_interface" kindref="compound">IADLXInterface</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="21" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_clock_speed_range" kindref="compound">GetGPUClockSpeedRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the minimum and maximum GPU clock speed on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_fan_speed_range" kindref="compound">GetGPUFanSpeedRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the minimum and maximum GPU fan speed on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_hotspot_temperature_range" kindref="compound">GetGPUHotspotTemperatureRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the minimum and maximum GPU hotspot temperature on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_power_range" kindref="compound">GetGPUPowerRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the minimum and maximum GPU power consumption on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_temperature_range" kindref="compound">GetGPUTemperatureRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the minimum and maximum GPU temperature on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_total_board_power_range" kindref="compound">GetGPUTotalBoardPowerRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the minimum and maximum GPU total board power consumption on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_usage_range" kindref="compound">GetGPUUsageRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the minimum and maximum GPU usage on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_v_r_a_m_clock_speed_range" kindref="compound">GetGPUVRAMClockSpeedRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the minimum and maximum VRAM clock speed on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_v_r_a_m_range" kindref="compound">GetGPUVRAMRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the minimum and maximum GPU memory on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_voltage_range" kindref="compound">GetGPUVoltageRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the minimum and maximum GPU voltage on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_clock_speed" kindref="compound">IsSupportedGPUClockSpeed</ref>   </para>
+</entry><entry thead="no"><para>Checks if the GPU clock speed metric reporting is supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_fan_speed" kindref="compound">IsSupportedGPUFanSpeed</ref>   </para>
+</entry><entry thead="no"><para>Checks if the GPU fan speed metric reporting is supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_hotspot_temperature" kindref="compound">IsSupportedGPUHotspotTemperature</ref>   </para>
+</entry><entry thead="no"><para>Checks if the GPU hotspot temperature metric reporting is supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_power" kindref="compound">IsSupportedGPUPower</ref>   </para>
+</entry><entry thead="no"><para>Checks if the GPU power metric reporting is supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_temperature" kindref="compound">IsSupportedGPUTemperature</ref>   </para>
+</entry><entry thead="no"><para>Checks if the GPU temperature metric reporting is supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_total_board_power" kindref="compound">IsSupportedGPUTotalBoardPower</ref>   </para>
+</entry><entry thead="no"><para>Checks if the GPU total board power metric reporting is supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_usage" kindref="compound">IsSupportedGPUUsage</ref>   </para>
+</entry><entry thead="no"><para>Checks if the GPU usage metric reporting is supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_v_r_a_m" kindref="compound">IsSupportedGPUVRAM</ref>   </para>
+</entry><entry thead="no"><para>Checks if the GPU VRAM usage metric reporting is supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_v_r_a_m_clock_speed" kindref="compound">IsSupportedGPUVRAMClockSpeed</ref>   </para>
+</entry><entry thead="no"><para>Checks if the GPU memory clock speed metric reporting is supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_voltage" kindref="compound">IsSupportedGPUVoltage</ref>   </para>
+</entry><entry thead="no"><para>Checks if the GPU voltage metric reporting is supported on a GPU.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IPerformanceMonitoring.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp__perf_g_p_u_metrics" kindref="compound">PerfGPUMetrics C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c__perf_g_p_u_metrics" kindref="compound">PerfGPUMetrics C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_clock_speed_range" kindref="compound">GetGPUClockSpeedRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_fan_speed_range" kindref="compound">GetGPUFanSpeedRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_hotspot_temperature_range" kindref="compound">GetGPUHotspotTemperatureRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_power_range" kindref="compound">GetGPUPowerRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_temperature_range" kindref="compound">GetGPUTemperatureRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_total_board_power_range" kindref="compound">GetGPUTotalBoardPowerRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_usage_range" kindref="compound">GetGPUUsageRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_v_r_a_m_clock_speed_range" kindref="compound">GetGPUVRAMClockSpeedRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_v_r_a_m_range" kindref="compound">GetGPUVRAMRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__get_g_p_u_voltage_range" kindref="compound">GetGPUVoltageRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_clock_speed" kindref="compound">IsSupportedGPUClockSpeed</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_fan_speed" kindref="compound">IsSupportedGPUFanSpeed</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_hotspot_temperature" kindref="compound">IsSupportedGPUHotspotTemperature</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_power" kindref="compound">IsSupportedGPUPower</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_temperature" kindref="compound">IsSupportedGPUTemperature</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_temperature" kindref="compound">IsSupportedGPUTemperature</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_total_board_power" kindref="compound">IsSupportedGPUTotalBoardPower</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_usage" kindref="compound">IsSupportedGPUUsage</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_v_r_a_m" kindref="compound">IsSupportedGPUVRAM</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_v_r_a_m_clock_speed" kindref="compound">IsSupportedGPUVRAMClockSpeed</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_voltage" kindref="compound">IsSupportedGPUVoltage</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXPerformancePage.h"/>
+  </compounddef>
+</doxygen>

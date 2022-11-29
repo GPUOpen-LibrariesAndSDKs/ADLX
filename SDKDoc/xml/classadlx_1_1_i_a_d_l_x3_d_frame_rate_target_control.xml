@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x3_d_frame_rate_target_control" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLX3DFrameRateTargetControl</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_frame_rate_target_control_1ab83f91fd1385d98e748d2bec5469f683" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DFrameRateTargetControl::IsSupported</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupported</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="1169" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_frame_rate_target_control_1a3bcad7aac206fdf4f1950d7e5534850a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DFrameRateTargetControl::IsEnabled</definition>
+        <argsstring>(adlx_bool *isEnabled)=0</argsstring>
+        <name>IsEnabled</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isEnabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="1197" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_frame_rate_target_control_1ac1061a03d64490effb1d91b2af1c8d17" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DFrameRateTargetControl::GetFPSRange</definition>
+        <argsstring>(ADLX_IntRange *range)=0</argsstring>
+        <name>GetFPSRange</name>
+        <param>
+          <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="1228" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_frame_rate_target_control_1a8893a27a723a62f7b3aca530ba68e567" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DFrameRateTargetControl::GetFPS</definition>
+        <argsstring>(adlx_int *currentFPS)=0</argsstring>
+        <name>GetFPS</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>currentFPS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="1256" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_frame_rate_target_control_1a13cffdc4835b542db893010bdee3d66f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DFrameRateTargetControl::SetEnabled</definition>
+        <argsstring>(adlx_bool enable)=0</argsstring>
+        <name>SetEnabled</name>
+        <param>
+          <type>adlx_bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="1284" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_frame_rate_target_control_1a783bfc872adf179ea1d17d36af676a47" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DFrameRateTargetControl::SetFPS</definition>
+        <argsstring>(adlx_int maxFPS)=0</argsstring>
+        <name>SetFPS</name>
+        <param>
+          <type>adlx_int</type>
+          <declname>maxFPS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="1312" column="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="1138" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="1139" bodyend="1314"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DFrameRateTargetControl</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x3_d_frame_rate_target_control_1a8893a27a723a62f7b3aca530ba68e567" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DFrameRateTargetControl</scope><name>GetFPS</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x3_d_frame_rate_target_control_1ac1061a03d64490effb1d91b2af1c8d17" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DFrameRateTargetControl</scope><name>GetFPSRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x3_d_frame_rate_target_control_1a3bcad7aac206fdf4f1950d7e5534850a" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DFrameRateTargetControl</scope><name>IsEnabled</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x3_d_frame_rate_target_control_1ab83f91fd1385d98e748d2bec5469f683" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DFrameRateTargetControl</scope><name>IsSupported</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DFrameRateTargetControl</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DFrameRateTargetControl</scope><name>Release</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x3_d_frame_rate_target_control_1a13cffdc4835b542db893010bdee3d66f" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DFrameRateTargetControl</scope><name>SetEnabled</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x3_d_frame_rate_target_control_1a783bfc872adf179ea1d17d36af676a47" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DFrameRateTargetControl</scope><name>SetFPS</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_display_settings_changed_event" kind="page">
+    <compoundname>DOX_IADLXDisplaySettingsChangedEvent</compoundname>
+    <title>IADLXDisplaySettingsChangedEvent</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__get_display">GetDisplay</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_color_depth_changed">IsColorDepthChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_color_brightness_changed">IsCustomColorBrightnessChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_color_contrast_changed">IsCustomColorContrastChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_color_hue_changed">IsCustomColorHueChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_color_saturation_changed">IsCustomColorSaturationChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_color_temperature_changed">IsCustomColorTemperatureChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_resolution_changed">IsCustomResolutionChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_free_sync_changed">IsFreeSyncChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_g_p_u_scaling_changed">IsGPUScalingChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_h_d_c_p_changed">IsHDCPChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_integer_scaling_changed">IsIntegerScalingChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_pixel_format_changed">IsPixelFormatChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_scaling_mode_changed">IsScalingModeChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_v_s_r_changed">IsVSRChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_vari_bright_changed">IsVariBrightChanged</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXDisplaySettingsChangedEvent</bold> interface provides methods to check for changes to the display settings.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLXDisplaySettingsChangedEvent</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLXDisplaySettingsChangedEventPtr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_changed_event" kindref="compound">IADLXChangedEvent</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para><bold>Note:</bold> <ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__get_display" kindref="compound">GetDisplay</ref> returns the reference counted display used by all the methods in this interface to check if there are any changes.</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="17" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__get_display" kindref="compound">GetDisplay</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted display interface on which settings are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_color_depth_changed" kindref="compound">IsColorDepthChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the color format settings of the display are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_color_brightness_changed" kindref="compound">IsCustomColorBrightnessChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the brightness settings of the display are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_color_contrast_changed" kindref="compound">IsCustomColorContrastChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the color contrast settings of the display are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_color_hue_changed" kindref="compound">IsCustomColorHueChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the hue settings of the display are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_color_saturation_changed" kindref="compound">IsCustomColorSaturationChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the saturation settings of the display are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_color_temperature_changed" kindref="compound">IsCustomColorTemperatureChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the color temperature settings of the display are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_resolution_changed" kindref="compound">IsCustomResolutionChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the resolution settings of the display are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_free_sync_changed" kindref="compound">IsFreeSyncChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the AMD FreeSync™ settings of the display are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_g_p_u_scaling_changed" kindref="compound">IsGPUScalingChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the GPU scaling settings of the display are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_h_d_c_p_changed" kindref="compound">IsHDCPChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the HDCP settings of the display are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_integer_scaling_changed" kindref="compound">IsIntegerScalingChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the Integer Display Scaling settings of the display are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_pixel_format_changed" kindref="compound">IsPixelFormatChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the pixel format settings of the display are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_scaling_mode_changed" kindref="compound">IsScalingModeChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the scaling mode settings of the display are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_v_s_r_changed" kindref="compound">IsVSRChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the AMD Virtual Super Resolution settings of the display are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_vari_bright_changed" kindref="compound">IsVariBrightChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the Vari-Bright settings of the display are changed.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include&quot;IDisplays.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp__sync_display_receive" kindref="compound">SyncDisplayReceive C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c__sync_display_receive" kindref="compound">SyncDisplayReceive C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__get_display" kindref="compound">GetDisplay</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_color_depth_changed" kindref="compound">IsColorDepthChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_color_brightness_changed" kindref="compound">IsCustomColorBrightnessChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_color_contrast_changed" kindref="compound">IsCustomColorContrastChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_color_hue_changed" kindref="compound">IsCustomColorHueChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_color_saturation_changed" kindref="compound">IsCustomColorSaturationChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_color_temperature_changed" kindref="compound">IsCustomColorTemperatureChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_custom_resolution_changed" kindref="compound">IsCustomResolutionChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_free_sync_changed" kindref="compound">IsFreeSyncChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_g_p_u_scaling_changed" kindref="compound">IsGPUScalingChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_h_d_c_p_changed" kindref="compound">IsHDCPChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_integer_scaling_changed" kindref="compound">IsIntegerScalingChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_pixel_format_changed" kindref="compound">IsPixelFormatChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_scaling_mode_changed" kindref="compound">IsScalingModeChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_v_s_r_changed" kindref="compound">IsVSRChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event__is_vari_bright_changed" kindref="compound">IsVariBrightChanged</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXDisplayPage.h"/>
+  </compounddef>
+</doxygen>

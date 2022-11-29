@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3DA037BE-98B0-4F79-8BD7-7A0A13B4FE44}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DisplayEvents</RootNamespace>
+    <AssemblyName>DisplayEvents</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADLXDepends\ADLX.cs" />
+    <Compile Include="ADLXDepends\ADLXHelper.cs" />
+    <Compile Include="ADLXDepends\ADLXPINVOKE.cs" />
+    <Compile Include="ADLXDepends\ADLX_3DLUT_COLORSPACE.cs" />
+    <Compile Include="ADLXDepends\ADLX_3DLUT_TRANSFER_FUNCTION.cs" />
+    <Compile Include="ADLXDepends\ADLX_ANISOTROPIC_FILTERING_LEVEL.cs" />
+    <Compile Include="ADLXDepends\ADLX_ANTI_ALIASING_LEVEL.cs" />
+    <Compile Include="ADLXDepends\ADLX_ANTI_ALIASING_METHOD.cs" />
+    <Compile Include="ADLXDepends\ADLX_ANTI_ALIASING_MODE.cs" />
+    <Compile Include="ADLXDepends\ADLX_ASIC_FAMILY_TYPE.cs" />
+    <Compile Include="ADLXDepends\ADLX_COLOR_DEPTH.cs" />
+    <Compile Include="ADLXDepends\ADLX_DESKTOP_TYPE.cs" />
+    <Compile Include="ADLXDepends\ADLX_DISPLAY_CONNECTOR_TYPE.cs" />
+    <Compile Include="ADLXDepends\ADLX_DISPLAY_SCAN_TYPE.cs" />
+    <Compile Include="ADLXDepends\ADLX_DISPLAY_TIMING_LIMITATION.cs" />
+    <Compile Include="ADLXDepends\ADLX_DISPLAY_TIMING_POLARITY.cs" />
+    <Compile Include="ADLXDepends\ADLX_DISPLAY_TYPE.cs" />
+    <Compile Include="ADLXDepends\ADLX_GAMMA_TYPE.cs" />
+    <Compile Include="ADLXDepends\ADLX_GAMUT_SPACE.cs" />
+    <Compile Include="ADLXDepends\ADLX_GPU_TYPE.cs" />
+    <Compile Include="ADLXDepends\ADLX_HG_TYPE.cs" />
+    <Compile Include="ADLXDepends\ADLX_I2C_LINE.cs" />
+    <Compile Include="ADLXDepends\ADLX_LOG_DESTINATION.cs" />
+    <Compile Include="ADLXDepends\ADLX_LOG_SEVERITY.cs" />
+    <Compile Include="ADLXDepends\ADLX_MEMORYTIMING_DESCRIPTION.cs" />
+    <Compile Include="ADLXDepends\ADLX_ORIENTATION.cs" />
+    <Compile Include="ADLXDepends\ADLX_PIXEL_FORMAT.cs" />
+    <Compile Include="ADLXDepends\ADLX_RESULT.cs" />
+    <Compile Include="ADLXDepends\ADLX_SCALE_MODE.cs" />
+    <Compile Include="ADLXDepends\ADLX_SYNC_ORIGIN.cs" />
+    <Compile Include="ADLXDepends\ADLX_TESSELLATION_LEVEL.cs" />
+    <Compile Include="ADLXDepends\ADLX_TESSELLATION_MODE.cs" />
+    <Compile Include="ADLXDepends\ADLX_TIMING_STANDARD.cs" />
+    <Compile Include="ADLXDepends\ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs" />
+    <Compile Include="ADLXDepends\ADLX_WHITE_POINT.cs" />
+    <Compile Include="ADLXDepends\IADLMapping.cs" />
+    <Compile Include="ADLXDepends\IADLXDisplay.cs" />
+    <Compile Include="ADLXDepends\IADLXDisplay3DLUTChangedEvent.cs" />
+    <Compile Include="ADLXDepends\IADLXDisplay3DLUTChangedListener.cs" />
+    <Compile Include="ADLXDepends\IADLXDisplayChangedHandling.cs" />
+    <Compile Include="ADLXDepends\IADLXDisplayGammaChangedEvent.cs" />
+    <Compile Include="ADLXDepends\IADLXDisplayGammaChangedListener.cs" />
+    <Compile Include="ADLXDepends\IADLXDisplayGamutChangedEvent.cs" />
+    <Compile Include="ADLXDepends\IADLXDisplayGamutChangedListener.cs" />
+    <Compile Include="ADLXDepends\IADLXDisplayList.cs" />
+    <Compile Include="ADLXDepends\IADLXDisplayListChangedListener.cs" />
+    <Compile Include="ADLXDepends\IADLXDisplayServices.cs" />
+    <Compile Include="ADLXDepends\IADLXDisplaySettingsChangedEvent.cs" />
+    <Compile Include="ADLXDepends\IADLXDisplaySettingsChangedListener.cs" />
+    <Compile Include="ADLXDepends\IADLXGPU.cs" />
+    <Compile Include="ADLXDepends\IADLXGPUList.cs" />
+    <Compile Include="ADLXDepends\IADLXGPUsChangedHandling.cs" />
+    <Compile Include="ADLXDepends\IADLXGPUsEventListener.cs" />
+    <Compile Include="ADLXDepends\IADLXInterface.cs" />
+    <Compile Include="ADLXDepends\IADLXList.cs" />
+    <Compile Include="ADLXDepends\IADLXLog.cs" />
+    <Compile Include="ADLXDepends\IADLXSystem.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_ADLX_ADL_Main_Memory_Free.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_ADLX_ASIC_FAMILY_TYPE.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_ADLX_DISPLAY_CONNECTOR_TYPE.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_ADLX_DISPLAY_SCAN_TYPE.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_ADLX_DISPLAY_TYPE.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_ADLX_GPU_TYPE.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_ADLX_HG_TYPE.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_adlx__IADLXDesktop.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_bool.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_double.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_int.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_long.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLX3DSettingsServices.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDesktop.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDesktopServices.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplay.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplay3DLUT.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplayChangedHandling.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplayColorDepth.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplayCustomColor.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplayCustomResolution.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplayFreeSync.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplayGamma.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplayGamut.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplayGPUScaling.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplayHDCP.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplayIntegerScaling.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplayList.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplayPixelFormat.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplayScalingMode.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplayServices.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplayVariBright.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXDisplayVSR.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXGPU.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXGPUList.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXGPUsChangedHandling.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXGPUTuningServices.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXI2C.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXInterface.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXPerformanceMonitoringServices.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_char.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_void.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_size_t.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_unsigned_int.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_void.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_wchar_t.cs" />
+    <Compile Include="mainDisplayEvents.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

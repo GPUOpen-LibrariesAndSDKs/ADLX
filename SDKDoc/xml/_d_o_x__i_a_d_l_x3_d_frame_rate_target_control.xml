@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control" kind="page">
+    <compoundname>DOX_IADLX3DFrameRateTargetControl</compoundname>
+    <title>IADLX3DFrameRateTargetControl</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__get_f_p_s">GetFPS</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__get_f_p_s_range">GetFPSRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__is_enabled">IsEnabled</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__is_supported">IsSupported</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__set_enabled">SetEnabled</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__set_f_p_s">SetFPS</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLX3DFrameRateTargetControl</bold> interface configures AMD Frame Rate Target Control of a GPU.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLX3DFrameRateTargetControl</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLX3DFrameRateTargetControlPtr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_interface" kindref="compound">IADLXInterface</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para>AMD Frame Rate Target Control sets a user-defined target maximum frame rate in full-screen applications to reduce GPU power consumption.<linebreak/>
+ Gaming quality is maintained while GPU power consumption, noise, and heat levels are reduced when running games at higher FPS than the display refresh rate.</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="7" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__get_f_p_s" kindref="compound">GetFPS</ref>   </para>
+</entry><entry thead="no"><para>Gets the current FPS of AMD Frame Rate Target Control on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__get_f_p_s_range" kindref="compound">GetFPSRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the maximum FPS, minimum FPS, and step FPS of AMD Frame Rate Target Control on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__is_enabled" kindref="compound">IsEnabled</ref>   </para>
+</entry><entry thead="no"><para>Checks if AMD Frame Rate Target Control is enabled on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__is_supported" kindref="compound">IsSupported</ref>   </para>
+</entry><entry thead="no"><para>Checks if AMD Frame Rate Target Control is supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__set_enabled" kindref="compound">SetEnabled</ref>   </para>
+</entry><entry thead="no"><para>Sets AMD Frame Rate Target Control to enabled or disabled on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__set_f_p_s" kindref="compound">SetFPS</ref>   </para>
+</entry><entry thead="no"><para>Sets the maximum FPS of AMD Frame Rate Target Control on a GPU.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;I3DSettings.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp__f_r_t_c" kindref="compound">FRTC C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="cpp__f_r_t_c" kindref="compound">FRTC C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__get_f_p_s" kindref="compound">GetFPS</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__get_f_p_s_range" kindref="compound">GetFPSRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__is_enabled" kindref="compound">IsEnabled</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__is_supported" kindref="compound">IsSupported</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__set_enabled" kindref="compound">SetEnabled</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_frame_rate_target_control__set_f_p_s" kindref="compound">SetFPS</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLX3DSettingsPage.h"/>
+  </compounddef>
+</doxygen>

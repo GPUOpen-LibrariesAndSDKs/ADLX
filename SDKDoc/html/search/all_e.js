@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['on3dsettingschanged_769',['On3DSettingsChanged',['../_d_o_x__i_a_d_l_x3_d_settings_changed_listener__on3_d_settings_changed.html',1,'DOX_IADLX3DSettingsChangedListener']]],
+  ['ondesktoplistchanged_770',['OnDesktopListChanged',['../_d_o_x__i_a_d_l_x_desktop_list_changed_listener__on_desktop_list_changed.html',1,'DOX_IADLXDesktopListChangedListener']]],
+  ['ondisplay3dlutchanged_771',['OnDisplay3DLUTChanged',['../_d_o_x__i_a_d_l_x_display3_d_l_u_t_changed_listener__on_display3_d_l_u_t_changed.html',1,'DOX_IADLXDisplay3DLUTChangedListener']]],
+  ['ondisplaygammachanged_772',['OnDisplayGammaChanged',['../_d_o_x__i_a_d_l_x_display_gamma_changed_listener__on_display_gamma_changed.html',1,'DOX_IADLXDisplayGammaChangedListener']]],
+  ['ondisplaygamutchanged_773',['OnDisplayGamutChanged',['../_d_o_x__i_a_d_l_x_display_gamut_changed_listener__on_display_gamut_changed.html',1,'DOX_IADLXDisplayGamutChangedListener']]],
+  ['ondisplaylistchanged_774',['OnDisplayListChanged',['../_d_o_x__i_a_d_l_x_display_list_changed_listener__on_display_list_changed.html',1,'DOX_IADLXDisplayListChangedListener']]],
+  ['ondisplaysettingschanged_775',['OnDisplaySettingsChanged',['../_d_o_x__i_a_d_l_x_display_settings_changed_listener__on_display_settings_changed.html',1,'DOX_IADLXDisplaySettingsChangedListener']]],
+  ['ongpuautotuningcomplete_776',['OnGPUAutoTuningComplete',['../_d_o_x__i_a_d_l_x_g_p_u_auto_tuning_complete_listener__on_g_p_u_auto_tuning_complete.html',1,'DOX_IADLXGPUAutoTuningCompleteListener']]],
+  ['ongpulistchanged_777',['OnGPUListChanged',['../_d_o_x__i_a_d_l_x_g_p_us_event_listener__on_g_p_u_list_changed.html',1,'DOX_IADLXGPUsEventListener']]],
+  ['ongputuningchanged_778',['OnGPUTuningChanged',['../_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_listener__on_g_p_u_tuning_changed.html',1,'DOX_IADLXGPUTuningChangedListener']]],
+  ['orientation_779',['Orientation',['../_d_o_x__i_a_d_l_x_desktop__orientation.html',1,'DOX_IADLXDesktop']]],
+  ['orientation_5flandscape_780',['ORIENTATION_LANDSCAPE',['../_a_d_l_x_defines_8h.html#gae896c86f4fc55efe4e866450e33465b1aeffaa8f11bafc4c40b434f3b941eb1bf',1,'ADLXDefines.h']]],
+  ['orientation_5flandscape_5fflipped_781',['ORIENTATION_LANDSCAPE_FLIPPED',['../_a_d_l_x_defines_8h.html#gae896c86f4fc55efe4e866450e33465b1a29f5d104339a45621bab90f391ed3c84',1,'ADLXDefines.h']]],
+  ['orientation_5fportrait_782',['ORIENTATION_PORTRAIT',['../_a_d_l_x_defines_8h.html#gae896c86f4fc55efe4e866450e33465b1acd00a965397a558275015a84f2f22dd5',1,'ADLXDefines.h']]],
+  ['orientation_5fportrait_5fflipped_783',['ORIENTATION_PORTRAIT_FLIPPED',['../_a_d_l_x_defines_8h.html#gae896c86f4fc55efe4e866450e33465b1a0c4dc7635db48ef031605d4411ab4513',1,'ADLXDefines.h']]],
+  ['other_784',['OTHER',['../_a_d_l_x_defines_8h.html#ga260f926e27eef013ca1eacd0ff7b3ba7adbf1dee1b8cd7ea3c82661943c7b74f4',1,'ADLXDefines.h']]]
+];

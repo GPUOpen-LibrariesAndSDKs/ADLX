@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_display_list" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXDisplayList</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXList</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_list_1a838d215c49a8655f8566db3921afd781" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayList::At</definition>
+        <argsstring>(const adlx_uint location, IADLXDisplay **ppItem)=0</argsstring>
+        <name>At</name>
+        <param>
+          <type>const adlx_uint</type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type>IADLXDisplay **</type>
+          <declname>ppItem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="484" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_list_1a9122831e3714b7b546b18da226c25a72" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayList::Add_Back</definition>
+        <argsstring>(IADLXDisplay *pItem)=0</argsstring>
+        <name>Add_Back</name>
+        <param>
+          <type>IADLXDisplay *</type>
+          <declname>pItem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="511" column="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="441" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="442" bodyend="512"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayList</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_list_1a9122831e3714b7b546b18da226c25a72" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayList</scope><name>Add_Back</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_list_1a6884bd0edc4d5263c0c4e84710d735bb" prot="public" virt="pure-virtual" ambiguityscope="adlx::IADLXList::"><scope>adlx::IADLXDisplayList</scope><name>Add_Back</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_list_1a838d215c49a8655f8566db3921afd781" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayList</scope><name>At</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_list_1a19e8eeb1bb42e85c012fad5fdb8b3e4e" prot="public" virt="pure-virtual" ambiguityscope="adlx::IADLXList::"><scope>adlx::IADLXDisplayList</scope><name>At</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_list_1a641436ad69e85afdfafbc7b9cd2548e0" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayList</scope><name>Begin</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_list_1aeed0784a767d0b2653b4f715f3cc782c" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayList</scope><name>Clear</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_list_1abd5cb1cad992ce4798a8bc9f54452ca1" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayList</scope><name>Empty</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_list_1abda86ebb6101536836c28430eca3a822" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayList</scope><name>End</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayList</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayList</scope><name>Release</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_list_1a3e68b911c12d17e073a5e17ee1cba188" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayList</scope><name>Remove_Back</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_list_1acad51980369442d460bcef7ba20e651f" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayList</scope><name>Size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

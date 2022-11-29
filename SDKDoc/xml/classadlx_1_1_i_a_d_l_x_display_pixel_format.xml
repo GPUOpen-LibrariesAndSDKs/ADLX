@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_display_pixel_format" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXDisplayPixelFormat</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_pixel_format_1a04175be56832ebf60630bd2660e2725d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayPixelFormat::IsSupported</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupported</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="931" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_pixel_format_1a69f0646b20af5c4d4aac8228dfa990e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayPixelFormat::GetValue</definition>
+        <argsstring>(ADLX_PIXEL_FORMAT *pixelFormat)=0</argsstring>
+        <name>GetValue</name>
+        <param>
+          <type><ref refid="group__enumerations_1gaa0e9deb1567713f1044419070f2949ab" kindref="member">ADLX_PIXEL_FORMAT</ref> *</type>
+          <declname>pixelFormat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="958" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_pixel_format_1a27c41c7546ebd754161c460e44c8a1ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayPixelFormat::SetValue</definition>
+        <argsstring>(ADLX_PIXEL_FORMAT pixelFormat)=0</argsstring>
+        <name>SetValue</name>
+        <param>
+          <type><ref refid="group__enumerations_1gaa0e9deb1567713f1044419070f2949ab" kindref="member">ADLX_PIXEL_FORMAT</ref></type>
+          <declname>pixelFormat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="985" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_pixel_format_1a9ca4fab8150cb66aab897efaa333fd81" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayPixelFormat::IsSupportedPixelFormat</definition>
+        <argsstring>(ADLX_PIXEL_FORMAT pixelFormat, adlx_bool *supportd)=0</argsstring>
+        <name>IsSupportedPixelFormat</name>
+        <param>
+          <type><ref refid="group__enumerations_1gaa0e9deb1567713f1044419070f2949ab" kindref="member">ADLX_PIXEL_FORMAT</ref></type>
+          <declname>pixelFormat</declname>
+        </param>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supportd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1008" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_pixel_format_1a8b517693dee03ffc549bc936a0546f24" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayPixelFormat::IsSupportedRGB444Full</definition>
+        <argsstring>(adlx_bool *supportd)=0</argsstring>
+        <name>IsSupportedRGB444Full</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supportd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1030" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_pixel_format_1a71f9a4f99fbbd6ec343d89845d87d6b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayPixelFormat::IsSupportedYCbCr444</definition>
+        <argsstring>(adlx_bool *supportd)=0</argsstring>
+        <name>IsSupportedYCbCr444</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supportd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1052" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_pixel_format_1aa6da51db6fe88da05004070a2d14f94c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayPixelFormat::IsSupportedYCbCr422</definition>
+        <argsstring>(adlx_bool *supportd)=0</argsstring>
+        <name>IsSupportedYCbCr422</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supportd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1074" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_pixel_format_1a0740e6db3a6b65cfd545f0e28d900abe" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayPixelFormat::IsSupportedRGB444Limited</definition>
+        <argsstring>(adlx_bool *supportd)=0</argsstring>
+        <name>IsSupportedRGB444Limited</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supportd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1096" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_pixel_format_1a012ecde83fefc8d8be4367131bd0a044" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayPixelFormat::IsSupportedYCbCr420</definition>
+        <argsstring>(adlx_bool *supportd)=0</argsstring>
+        <name>IsSupportedYCbCr420</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supportd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1118" column="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="901" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="902" bodyend="1119"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayPixelFormat</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_pixel_format_1a69f0646b20af5c4d4aac8228dfa990e7" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayPixelFormat</scope><name>GetValue</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_pixel_format_1a04175be56832ebf60630bd2660e2725d" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayPixelFormat</scope><name>IsSupported</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_pixel_format_1a9ca4fab8150cb66aab897efaa333fd81" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayPixelFormat</scope><name>IsSupportedPixelFormat</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_pixel_format_1a8b517693dee03ffc549bc936a0546f24" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayPixelFormat</scope><name>IsSupportedRGB444Full</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_pixel_format_1a0740e6db3a6b65cfd545f0e28d900abe" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayPixelFormat</scope><name>IsSupportedRGB444Limited</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_pixel_format_1a012ecde83fefc8d8be4367131bd0a044" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayPixelFormat</scope><name>IsSupportedYCbCr420</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_pixel_format_1aa6da51db6fe88da05004070a2d14f94c" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayPixelFormat</scope><name>IsSupportedYCbCr422</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_pixel_format_1a71f9a4f99fbbd6ec343d89845d87d6b4" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayPixelFormat</scope><name>IsSupportedYCbCr444</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayPixelFormat</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayPixelFormat</scope><name>Release</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_pixel_format_1a27c41c7546ebd754161c460e44c8a1ff" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayPixelFormat</scope><name>SetValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

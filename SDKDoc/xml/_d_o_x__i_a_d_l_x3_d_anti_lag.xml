@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x3_d_anti_lag" kind="page">
+    <compoundname>DOX_IADLX3DAntiLag</compoundname>
+    <title>IADLX3DAntiLag</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x3_d_anti_lag__is_enabled">IsEnabled</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x3_d_anti_lag__is_supported">IsSupported</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x3_d_anti_lag__set_enabled">SetEnabled</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLX3DAntiLag</bold> interface configures the AMD Radeon™ Anti-Lag settings of a GPU.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLX3DAntiLag</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLX3DAntiLagPtr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_interface" kindref="compound">IADLXInterface</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para>AMD Radeon Anti-Lag helps reduce input lag in GPU-limited cases by controlling the pace of the CPU work to ensure it doesn&apos;t get too far ahead of the GPU. <linebreak/>
+ <bold>Note:</bold> <ref refid="_d_o_x__i_a_d_l_x3_d_chill" kindref="compound">AMD Radeon Chill</ref>, <ref refid="_d_o_x__i_a_d_l_x3_d_boost" kindref="compound">AMD Radeon Boost</ref>, and AMD Radeon Anti-Lag features cannot be enabled simultaneously. <linebreak/>
+ For example, If AMD Radeon Anti-Lag is enabled, AMD Radeon Boost and AMD Radeon Chill are automatically disabled. However, configurations of the disabled features are preserved. If AMD Radeon Chill is re-enabled, the Max FPS for AMD Radeon Chill along with other configuration settings are restored.</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag__is_enabled" kindref="compound">IsEnabled</ref>   </para>
+</entry><entry thead="no"><para>Checks if AMD Radeon™ Anti-Lag is enabled on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag__is_supported" kindref="compound">IsSupported</ref>   </para>
+</entry><entry thead="no"><para>Checks if AMD Radeon™ Anti-Lag is supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag__set_enabled" kindref="compound">SetEnabled</ref>   </para>
+</entry><entry thead="no"><para>Sets AMD Radeon™ Anti-Lag to enabled or disabled state on a GPU.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;I3DSettings.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp__anti_lag" kindref="compound">AntiLag C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c__anti_lag" kindref="compound">AntiLag C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag__is_enabled" kindref="compound">IsEnabled</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag__is_supported" kindref="compound">IsSupported</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag__set_enabled" kindref="compound">SetEnabled</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLX3DSettingsPage.h"/>
+  </compounddef>
+</doxygen>

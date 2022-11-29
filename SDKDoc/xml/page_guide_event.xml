@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="page_guide_event" kind="page">
+    <compoundname>page_guide_event</compoundname>
+    <title>Subscribing to Event Notifications using ADLX</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>ADLX has an event notification mechanism specific to each ADLX domain, but the event notification in all the domains use the same approach.</para>
+<para>The application implements a listener interface as defined in the ADLX SDK. An instance of the listener interface is passed to ADLX to register for notification when the respective settings are changed.</para>
+<para>When a change occurs, ADLX calls the method in this listener instance and passes the new settings as parameters.</para>
+<para>When events notifications are no longer required by the application, the application unregisters the listener instance from ADLX, and the instance of the listener interface can be destroyed by the application.</para>
+<para>Example: The Desktop domain provides notifications when there is a change to the desktop list.</para>
+<para>Use the ADLX event notification management functionality when programming a new application, or when programming an existing application that uses ADL. The mechanism remains the same for all the programming languages, but there are language-specific differences in implementation.</para>
+<para>You can program an application to get notified about changes such as when desktops are:<itemizedlist>
+<listitem><para>Created</para>
+</listitem><listitem><para>Removed</para>
+</listitem><listitem><para>Changed - Size settings</para>
+</listitem><listitem><para>Changed - Location settings</para>
+</listitem></itemizedlist>
+</para>
+<para>To program an application to receive desktop list change notification,<orderedlist>
+<listitem><para>Implement, and then create an instance of the implemented <ref refid="_d_o_x__i_a_d_l_x_desktop_list_changed_listener" kindref="compound">IADLXDesktopListChangedListener</ref> interface.</para>
+<para><bold>Note:</bold> The ADLX Desktop List Changed Listener instance is passed to ADLX and must exist for the entire duration of the application’s desktop list changed event registration.</para>
+</listitem><listitem><para>Call <ref refid="_d_o_x__i_a_d_l_x_system__get_desktops_services" kindref="compound">IADLXSystem::GetDesktopServices</ref> in the ADLX System interface.</para>
+<para><bold>Result:</bold> Gets the <ref refid="_d_o_x__i_a_d_l_x_desktop_services" kindref="compound">IADLXDesktopServices</ref> interface.</para>
+</listitem><listitem><para>Call <ref refid="_d_o_x__i_a_d_l_x_desktop_services__get_desktop_changed_handling" kindref="compound">IADLXDesktopServices::GetDesktopChangedHandling</ref> in the ADLX Desktop Services interface.</para>
+<para><bold>Result:</bold> Gets the <ref refid="_d_o_x__i_a_d_l_x_desktop_changed_handling" kindref="compound">IADLXDesktopChangedHandling</ref> interface.</para>
+</listitem><listitem><para>Pass the ADLX Desktop List Changed Listener instance as the parameter into <ref refid="_d_o_x__i_a_d_l_x_desktop_changed_handling__add_desktop_list_event_listener" kindref="compound">IADLXDesktopChangedHandling::AddDesktopListEventListener</ref>.</para>
+<para><bold>Note:</bold> When a change to the desktop occurs, the <ref refid="_d_o_x__i_a_d_l_x_desktop_list_changed_listener__on_desktop_list_changed" kindref="compound">OnDesktopListChanged</ref> is called into the ADLX Desktop List Changed Listener instance, with the new desktop list as the <ref refid="_d_o_x__i_a_d_l_x_desktop_list" kindref="compound">IADLXDesktopList</ref> parameter.</para>
+</listitem></orderedlist>
+</para>
+<para>To unsubscribe the Desktop List Changed notification:<orderedlist>
+<listitem><para>Unregister the ADLX Desktop List Changed Listener instance from ADLX using <ref refid="_d_o_x__i_a_d_l_x_desktop_changed_handling__remove_desktop_list_event_listener" kindref="compound">RemoveDesktopListEventListener</ref>.</para>
+</listitem><listitem><para>Discard the desktop list changed listener instance after the registration is removed.</para>
+<para><bold>Note:</bold> Other ADLX domains that support event subscription use the same mechanism for event notifications.</para>
+</listitem></orderedlist>
+</para>
+<para>For more information, for C++ see <ref refid="cpp_samples_files_sync" kindref="compound">Receiving Events Notifications C++ samples</ref>.</para>
+<para>For C see <ref refid="c_samples_files_sync" kindref="compound">Receiving Events Notifications C samples</ref>.</para>
+<para>For C# see <ref refid="cs_sample_display_events" kindref="compound">DisplayEvents C# samples</ref>.</para>
+<para>For Java see <ref refid="java_sample_display_events" kindref="compound">DisplayEvents Java samples</ref>.</para>
+<para>For Python see <ref refid="py_sample_display_events" kindref="compound">DisplayEvents Python samples</ref>. </para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXProgrammingGuide/event.md"/>
+  </compounddef>
+</doxygen>

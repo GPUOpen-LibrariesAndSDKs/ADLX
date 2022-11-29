@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="funpage" kind="page">
+    <compoundname>funpage</compoundname>
+    <title>ADLX Functions</title>
+    <innerpage refid="page__a_d_l_x_initialize_with_caller_adl__fn">ADLXInitializeWithCallerAdl_Fn</innerpage>
+    <innerpage refid="page__a_d_l_x_initialize__fn">ADLXInitialize_Fn</innerpage>
+    <innerpage refid="page__a_d_l_x_query_full_version__fn">ADLXQueryFullVersion_Fn</innerpage>
+    <innerpage refid="page__a_d_l_x_query_version__fn">ADLXQueryVersion_Fn</innerpage>
+    <innerpage refid="page__a_d_l_x_terminate__fn">ADLXTerminate_Fn</innerpage>
+    <innerpage refid="adlx_atomic_dec">adlx_atomic_dec</innerpage>
+    <innerpage refid="adlx_atomic_inc">adlx_atomic_inc</innerpage>
+    <innerpage refid="adlx_free_library">adlx_free_library</innerpage>
+    <innerpage refid="adlx_get_proc_address">adlx_get_proc_address</innerpage>
+    <innerpage refid="adlx_load_library">adlx_load_library</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This section contains the function pointers required to initialize ADLX, as outlined in the <ref refid="page_guide_init_pointer" kindref="compound">Initializing ADLX with function pointers</ref> section.</para>
+<para><itemizedlist>
+<listitem><para>To use ADLX functions in a C++ application, refer to the implementation of the ADLXHelper class in <computeroutput>~SDK\ADLXHelper\Windows\Cpp</computeroutput>.</para>
+</listitem><listitem><para>For a C application, refer to the implementation of the ADLX Helper functions in <computeroutput>~SDK\ADLXHelper\Windows\C</computeroutput>.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Note</bold>: ADLX can either be initialized with the ADLX Helpers or with function pointers. AMD recommends using <ref refid="page_guide_init_help" kindref="compound">ADLX Helpers</ref> when initializing ADLX.</para>
+<para><heading level="2">Functions </heading>
+</para>
+<para><table rows="11" cols="2"><row>
+<entry thead="yes"><para>Functions   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="page__a_d_l_x_initialize_with_caller_adl__fn" kindref="compound">ADLXInitializeWithCallerAdl_Fn</ref>   </para>
+</entry><entry thead="no"><para>A pointer to the function to initialize ADLX with an ADL context.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="page__a_d_l_x_initialize__fn" kindref="compound">ADLXInitialize_Fn</ref>   </para>
+</entry><entry thead="no"><para>A pointer to the function to initialize ADLX with default parameters or a pointer to the function to initialize ADLX with a legacy driver.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="page__a_d_l_x_query_full_version__fn" kindref="compound">ADLXQueryFullVersion_Fn</ref>   </para>
+</entry><entry thead="no"><para>A pointer to the function to query the full version of ADLX.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="page__a_d_l_x_query_version__fn" kindref="compound">ADLXQueryVersion_Fn</ref>   </para>
+</entry><entry thead="no"><para>A pointer to the function to query the version of ADLX.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="page__a_d_l_x_terminate__fn" kindref="compound">ADLXTerminate_Fn</ref>   </para>
+</entry><entry thead="no"><para>A pointer to the function to terminate ADLX.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="adlx_atomic_dec" kindref="compound">adlx_atomic_dec</ref>   </para>
+</entry><entry thead="no"><para>An atomic decrement of a variable in multithreading environments.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="adlx_atomic_inc" kindref="compound">adlx_atomic_inc</ref>   </para>
+</entry><entry thead="no"><para>An atomic increment of a variable in multithreading environments.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="adlx_free_library" kindref="compound">adlx_free_library</ref>   </para>
+</entry><entry thead="no"><para>Frees a loaded module.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="adlx_get_proc_address" kindref="compound">adlx_get_proc_address</ref>   </para>
+</entry><entry thead="no"><para>Retrieves the address of a function from a module.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="adlx_load_library" kindref="compound">adlx_load_library</ref>   </para>
+</entry><entry thead="no"><para>Loads a module into the address space of the calling process.   </para>
+</entry></row>
+</table>
+<heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;ADLX.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+<table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;ADLXDefines.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><itemizedlist>
+<listitem><para><ref refid="page__a_d_l_x_initialize_with_caller_adl__fn" kindref="compound">ADLXInitializeWithCallerAdl_Fn</ref></para>
+</listitem><listitem><para><ref refid="page__a_d_l_x_initialize__fn" kindref="compound">ADLXInitialize_Fn</ref></para>
+</listitem><listitem><para><ref refid="page__a_d_l_x_query_full_version__fn" kindref="compound">ADLXQueryFullVersion_Fn</ref></para>
+</listitem><listitem><para><ref refid="page__a_d_l_x_query_version__fn" kindref="compound">ADLXQueryVersion_Fn</ref></para>
+</listitem><listitem><para><ref refid="page__a_d_l_x_terminate__fn" kindref="compound">ADLXTerminate_Fn</ref></para>
+</listitem><listitem><para><ref refid="adlx_atomic_dec" kindref="compound">adlx_atomic_dec</ref></para>
+</listitem><listitem><para><ref refid="adlx_atomic_inc" kindref="compound">adlx_atomic_inc</ref></para>
+</listitem><listitem><para><ref refid="adlx_free_library" kindref="compound">adlx_free_library</ref></para>
+</listitem><listitem><para><ref refid="adlx_get_proc_address" kindref="compound">adlx_get_proc_address</ref></para>
+</listitem><listitem><para><ref refid="adlx_load_library" kindref="compound">adlx_load_library</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXDox.h"/>
+  </compounddef>
+</doxygen>

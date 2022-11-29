@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="page_guide_bindcsharp" kind="page">
+    <compoundname>page_guide_bindcsharp</compoundname>
+    <title>Building C# bindings for ADLX</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This section outlines the steps to build a C# binding wrapper for ADLX, a prerequisite to programming with ADLX in a C# application.</para>
+<para><heading level="2">Prerequisite(s)</heading>
+</para>
+<para><itemizedlist>
+<listitem><para><bold>ADLX SDK</bold> is installed.</para>
+</listitem><listitem><para><bold>Visual Studio 2019</bold> is installed.</para>
+</listitem><listitem><para><bold>swigwin 4.0.2</bold> is installed, and the path to the swigwin 4.0.2 installation is added to the <bold>Path</bold> user environment variable.</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="2">To build ADLX bindings in C#</heading>
+</para>
+<para><orderedlist>
+<listitem><para>Create and name a folder for the C# ADLX binding wrapper, for example <computeroutput>ADLXCSharpBind</computeroutput>.</para>
+</listitem><listitem><para>Create a new file in the <computeroutput>ADLXCSharpBind</computeroutput> folder and title it <computeroutput>ADLXCSharpBind.i</computeroutput>.</para>
+</listitem><listitem><para>Edit <computeroutput>ADLXCSharpBind.i</computeroutput> and add the SDK header files for the interfaces you wish to wrap by using the SWIG input format. To create bindings for event notifications, turn on the <computeroutput>director</computeroutput> wrapping callback for respective listener interfaces.<linebreak/>
+For example,</para>
+<para><preformatted>
+    feature(&quot;director&quot;) IADLXDisplayListChangedListener;
+     </preformatted> <bold>Note:</bold> Refer to the C# samples <ref refid="cs_sample_adlxcsharpbind" kindref="compound">ADLXCSharpBind.i</ref> file for an example of a C# binding.</para>
+</listitem><listitem><para>Create a C++ Dynamic Link Library project named <computeroutput>ADLXCSharpBind</computeroutput> and configure the project as follows:<itemizedlist>
+<listitem><para><table rows="2" cols="3"><row>
+<entry thead="yes"><para>Key   </para>
+</entry><entry thead="yes"><para>Value   </para>
+</entry><entry thead="yes"><para>Observations    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>C/C++ &gt; Precompiled Header   </para>
+</entry><entry thead="no"><para>Not Using Precompiled Headers   </para>
+</entry><entry thead="no"><para>Do not use precompiled headers   </para>
+</entry></row>
+</table>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Add the <computeroutput>ADLXCSharpBind.i</computeroutput> file to the project.</para>
+</listitem><listitem><para>Right-click the <computeroutput>ADLXCSharpBind.i</computeroutput> file, and select Properties from the menu. In the Properties dialog select <bold>Configuration Properties</bold> &gt; <bold>General</bold> &gt; <bold>Item Type</bold> &gt; <bold>Custom Build Tool</bold>.<linebreak/>
+ Set the configuration as follows:<itemizedlist>
+<listitem><para><table rows="3" cols="3"><row>
+<entry thead="yes"><para>Key   </para>
+</entry><entry thead="yes"><para>Value   </para>
+</entry><entry thead="yes"><para>Observations    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Command Line   </para>
+</entry><entry thead="no"><para>if not exist $(SolutionDir)out mkdir $(SolutionDir)out swig.exe -c++ -csharp -dllimport ADLXCSharpBind -outdir ../out/ ADLXCSharpBind.i   </para>
+</entry><entry thead="no"><para>Invoke SWIG.exe to build <computeroutput>ADLXCSharpBind.i</computeroutput> file    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Outputs   </para>
+</entry><entry thead="no"><para>%(Filename)_wrap.cxx   </para>
+</entry><entry thead="no"><para>Set output file name format   </para>
+</entry></row>
+</table>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Build the project.</para>
+<para><bold>Result:</bold> The following files are added to the <computeroutput>ADLXCSharpBind</computeroutput> project output folder:<itemizedlist>
+<listitem><para><computeroutput>ADLXCSharpBind_wrap.h</computeroutput> file.</para>
+</listitem><listitem><para><computeroutput>ADLXCSharpBind_wrap.cxx</computeroutput> file.</para>
+</listitem><listitem><para>All *.cs files that correspond to the additional interfaces in the <computeroutput>ADLXCSharpBind.i</computeroutput> file.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Add the following files to the project:<itemizedlist>
+<listitem><para><computeroutput>ADLXCSharpBind_wrap.h</computeroutput></para>
+</listitem><listitem><para><computeroutput>ADLXCSharpBind_wrap.cxx</computeroutput></para>
+</listitem><listitem><para><computeroutput>SDK/Platform/Windows/WinAPIs.cpp</computeroutput></para>
+</listitem><listitem><para><computeroutput>SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h</computeroutput></para>
+</listitem><listitem><para><computeroutput>SDK/ADLXHelper/Windows/Cpp/ADLXHelper.cpp</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Rebuild the project.</para>
+<para><bold>Result:</bold> The <computeroutput>ADLXCSharpBind.dll</computeroutput> is built in the <computeroutput>&quot;$(SolutionDir)$(Platform)$/(Configuration)/&quot;</computeroutput> folder. </para>
+</listitem></orderedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXProgrammingGuide/ADLXCSharpBind.md"/>
+  </compounddef>
+</doxygen>

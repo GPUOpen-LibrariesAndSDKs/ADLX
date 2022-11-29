@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_display_services" kind="page">
+    <compoundname>DOX_IADLXDisplayServices</compoundname>
+    <title>IADLXDisplayServices</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get3_d_l_u_t">Get3DLUT</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get_color_depth">GetColorDepth</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get_custom_color">GetCustomColor</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get_custom_resolution">GetCustomResolution</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get_display_changed_handling">GetDisplayChangedHandling</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get_displays">GetDisplays</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get_free_sync">GetFreeSync</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get_g_p_u_scaling">GetGPUScaling</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get_gamma">GetGamma</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get_gamut">GetGamut</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get_h_d_c_p">GetHDCP</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get_integer_scaling">GetIntegerScaling</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get_number_of_displays">GetNumberOfDisplays</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get_pixel_format">GetPixelFormat</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get_scaling_mode">GetScalingMode</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get_vari_bright">GetVariBright</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services__get_virtual_super_resolution">GetVirtualSuperResolution</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXDisplayServices</bold> is the main interface of the Display domain and provides control to the display-specific functionality.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLXDisplayServices</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLXDisplayServicesPtr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_interface" kindref="compound">IADLXInterface</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para>The <bold>IADLXDisplayServices</bold> interface provides:<itemizedlist>
+<listitem><para>The list of displays connected to the AMD GPUs.</para>
+</listitem><listitem><para>The interface for registering and unregistering for notifications when the displays are changed.</para>
+</listitem><listitem><para>Access to gamut, gamma, 3D LUT, and display settings functionality for a given display.</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="18" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get3_d_l_u_t" kindref="compound">Get3DLUT</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted 3D LUT interface for a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_color_depth" kindref="compound">GetColorDepth</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted color depth interface for a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_custom_color" kindref="compound">GetCustomColor</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted custom color interface for a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_custom_resolution" kindref="compound">GetCustomResolution</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted custom resolution interface for a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_display_changed_handling" kindref="compound">GetDisplayChangedHandling</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted interface that allows registering and unregistering for notifications when display change.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_displays" kindref="compound">GetDisplays</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted list of displays connected to the AMD GPUs.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_free_sync" kindref="compound">GetFreeSync</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted AMD FreeSync™ Technology interface.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_g_p_u_scaling" kindref="compound">GetGPUScaling</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted GPU scaling interface for a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_gamma" kindref="compound">GetGamma</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted gamma interface for a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_gamut" kindref="compound">GetGamut</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted gamut interface for a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_h_d_c_p" kindref="compound">GetHDCP</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted HDCP interface for a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_integer_scaling" kindref="compound">GetIntegerScaling</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted integer scaling interface for a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_number_of_displays" kindref="compound">GetNumberOfDisplays</ref>   </para>
+</entry><entry thead="no"><para>Gets the number of displays connected to the AMD GPUs.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_pixel_format" kindref="compound">GetPixelFormat</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted pixel format interface for a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_scaling_mode" kindref="compound">GetScalingMode</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted scaling mode interface for a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_vari_bright" kindref="compound">GetVariBright</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted Vari-Bright interface for a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_virtual_super_resolution" kindref="compound">GetVirtualSuperResolution</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted virtual super resolution interface for a display.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IDisplays.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp_sample_displayinfo" kindref="compound">DisplayInfo C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c_sample_displayinfo" kindref="compound">DisplayInfo C sample</ref>. <linebreak/>
+ For a C# application, refer to the <ref refid="cs_sample_displayinfo" kindref="compound">DisplayInfo C# sample</ref>. <linebreak/>
+ For a Java application, refer to the <ref refid="java_sample_displayinfo" kindref="compound">DisplayInfo Java sample</ref>. <linebreak/>
+ For a Python application, refer to the <ref refid="py_sample_displayinfo" kindref="compound">DisplayInfo Python sample</ref>. <linebreak/>
+</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get3_d_l_u_t" kindref="compound">Get3DLUT</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_color_depth" kindref="compound">GetColorDepth</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_custom_color" kindref="compound">GetCustomColor</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_custom_resolution" kindref="compound">GetCustomResolution</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_display_changed_handling" kindref="compound">GetDisplayChangedHandling</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_displays" kindref="compound">GetDisplays</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_free_sync" kindref="compound">GetFreeSync</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_g_p_u_scaling" kindref="compound">GetGPUScaling</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_gamma" kindref="compound">GetGamma</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_gamut" kindref="compound">GetGamut</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_h_d_c_p" kindref="compound">GetHDCP</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_integer_scaling" kindref="compound">GetIntegerScaling</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_number_of_displays" kindref="compound">GetNumberOfDisplays</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_pixel_format" kindref="compound">GetPixelFormat</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_scaling_mode" kindref="compound">GetScalingMode</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_vari_bright" kindref="compound">GetVariBright</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services__get_virtual_super_resolution" kindref="compound">GetVirtualSuperResolution</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXDisplayPage.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_system_metrics_support" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXSystemMetricsSupport</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_system_metrics_support_1afc7812436c8a4b4878b70b253664aa7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystemMetricsSupport::IsSupportedCPUUsage</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedCPUUsage</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="598" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_system_metrics_support_1a84114c8e5d3f7b01120ec9910c33baee" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystemMetricsSupport::IsSupportedSystemRAM</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedSystemRAM</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="621" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_system_metrics_support_1ae5b0407eeafcc630c6a531395b4d660c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystemMetricsSupport::IsSupportedSmartShift</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedSmartShift</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="644" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_system_metrics_support_1a71f103cc1c190eb988217e0a89a5273c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystemMetricsSupport::GetCPUUsageRange</definition>
+        <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
+        <name>GetCPUUsageRange</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="671" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_system_metrics_support_1a278cf5f6100845b9c3f418ac7695deb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystemMetricsSupport::GetSystemRAMRange</definition>
+        <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
+        <name>GetSystemRAMRange</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="698" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_system_metrics_support_1a8771c28debe11995c80652c01d14e2a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystemMetricsSupport::GetSmartShiftRange</definition>
+        <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
+        <name>GetSmartShiftRange</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="725" column="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="571" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="572" bodyend="726"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXSystemMetricsSupport</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_system_metrics_support_1a71f103cc1c190eb988217e0a89a5273c" prot="public" virt="pure-virtual"><scope>adlx::IADLXSystemMetricsSupport</scope><name>GetCPUUsageRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_system_metrics_support_1a8771c28debe11995c80652c01d14e2a5" prot="public" virt="pure-virtual"><scope>adlx::IADLXSystemMetricsSupport</scope><name>GetSmartShiftRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_system_metrics_support_1a278cf5f6100845b9c3f418ac7695deb0" prot="public" virt="pure-virtual"><scope>adlx::IADLXSystemMetricsSupport</scope><name>GetSystemRAMRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_system_metrics_support_1afc7812436c8a4b4878b70b253664aa7a" prot="public" virt="pure-virtual"><scope>adlx::IADLXSystemMetricsSupport</scope><name>IsSupportedCPUUsage</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_system_metrics_support_1ae5b0407eeafcc630c6a531395b4d660c" prot="public" virt="pure-virtual"><scope>adlx::IADLXSystemMetricsSupport</scope><name>IsSupportedSmartShift</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_system_metrics_support_1a84114c8e5d3f7b01120ec9910c33baee" prot="public" virt="pure-virtual"><scope>adlx::IADLXSystemMetricsSupport</scope><name>IsSupportedSystemRAM</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXSystemMetricsSupport</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXSystemMetricsSupport</scope><name>Release</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

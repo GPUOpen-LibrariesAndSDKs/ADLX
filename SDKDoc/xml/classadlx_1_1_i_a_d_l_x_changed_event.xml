@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_changed_event" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXChangedEvent</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_event" prot="public" virt="non-virtual">adlx::IADLX3DSettingsChangedEvent</derivedcompoundref>
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display3_d_l_u_t_changed_event" prot="public" virt="non-virtual">adlx::IADLXDisplay3DLUTChangedEvent</derivedcompoundref>
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display_gamma_changed_event" prot="public" virt="non-virtual">adlx::IADLXDisplayGammaChangedEvent</derivedcompoundref>
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display_gamut_changed_event" prot="public" virt="non-virtual">adlx::IADLXDisplayGamutChangedEvent</derivedcompoundref>
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event" prot="public" virt="non-virtual">adlx::IADLXDisplaySettingsChangedEvent</derivedcompoundref>
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event" prot="public" virt="non-virtual">adlx::IADLXGPUTuningChangedEvent</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_changed_event_1aabba9d15598621fe88ce7ed8712b2380" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga7a1e20106faef482c0664c546e04ba00" kindref="member">ADLX_SYNC_ORIGIN</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_SYNC_ORIGIN ADLX_STD_CALL adlx::IADLXChangedEvent::GetOrigin</definition>
+        <argsstring>()=0</argsstring>
+        <name>GetOrigin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IChangedEvent.h" line="44" column="50"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IChangedEvent.h" line="16" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IChangedEvent.h" bodystart="17" bodyend="45"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXChangedEvent</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_changed_event_1aabba9d15598621fe88ce7ed8712b2380" prot="public" virt="pure-virtual"><scope>adlx::IADLXChangedEvent</scope><name>GetOrigin</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXChangedEvent</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXChangedEvent</scope><name>Release</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

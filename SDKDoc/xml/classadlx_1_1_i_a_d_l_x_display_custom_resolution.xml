@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_display_custom_resolution" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXDisplayCustomResolution</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_custom_resolution_1a24823b986ff12615495ca9c8c5463413" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayCustomResolution::IsSupported</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupported</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2024" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_custom_resolution_1a3e5544d5cf685bf6304f64ae8bd75365" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayCustomResolution::GetResolutionList</definition>
+        <argsstring>(IADLXDisplayResolutionList **ppResolutionList)=0</argsstring>
+        <name>GetResolutionList</name>
+        <param>
+          <type>IADLXDisplayResolutionList **</type>
+          <declname>ppResolutionList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2059" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_custom_resolution_1acae6440dbec68e3fde965c3d990c6534" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayCustomResolution::GetCurrentAppliedResolution</definition>
+        <argsstring>(IADLXDisplayResolution **ppResolution)=0</argsstring>
+        <name>GetCurrentAppliedResolution</name>
+        <param>
+          <type>IADLXDisplayResolution **</type>
+          <declname>ppResolution</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2094" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_custom_resolution_1a5162d3ec2eb5319622bbf4a095c9572b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayCustomResolution::CreateNewResolution</definition>
+        <argsstring>(IADLXDisplayResolution *pResolution)=0</argsstring>
+        <name>CreateNewResolution</name>
+        <param>
+          <type>IADLXDisplayResolution *</type>
+          <declname>pResolution</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2122" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_custom_resolution_1a2b8857e332f69cbd1b13fbec300212b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayCustomResolution::DeleteResolution</definition>
+        <argsstring>(IADLXDisplayResolution *pResolution)=0</argsstring>
+        <name>DeleteResolution</name>
+        <param>
+          <type>IADLXDisplayResolution *</type>
+          <declname>pResolution</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2150" column="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1993" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="1994" bodyend="2151"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayCustomResolution</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_custom_resolution_1a5162d3ec2eb5319622bbf4a095c9572b" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayCustomResolution</scope><name>CreateNewResolution</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_custom_resolution_1a2b8857e332f69cbd1b13fbec300212b0" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayCustomResolution</scope><name>DeleteResolution</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_custom_resolution_1acae6440dbec68e3fde965c3d990c6534" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayCustomResolution</scope><name>GetCurrentAppliedResolution</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_custom_resolution_1a3e5544d5cf685bf6304f64ae8bd75365" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayCustomResolution</scope><name>GetResolutionList</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_custom_resolution_1a24823b986ff12615495ca9c8c5463413" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayCustomResolution</scope><name>IsSupported</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayCustomResolution</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayCustomResolution</scope><name>Release</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

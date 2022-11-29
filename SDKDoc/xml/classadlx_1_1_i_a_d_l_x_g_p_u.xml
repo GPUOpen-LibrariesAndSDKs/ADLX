@@ -1,0 +1,315 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_u" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXGPU</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1ac4bef1ca2caee26ad34122d7502d9fd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::VendorId</definition>
+        <argsstring>(const char **vendorId)=0</argsstring>
+        <name>VendorId</name>
+        <param>
+          <type>const char **</type>
+          <declname>vendorId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="58" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1a3801904ce0dee2eace83abf63f70efc0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::ASICFamilyType</definition>
+        <argsstring>(ADLX_ASIC_FAMILY_TYPE *asicFamilyType) const =0</argsstring>
+        <name>ASICFamilyType</name>
+        <param>
+          <type><ref refid="group__enumerations_1gaf4fd628e799e6a74201290ff40418d77" kindref="member">ADLX_ASIC_FAMILY_TYPE</ref> *</type>
+          <declname>asicFamilyType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="83" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1ae63e408766af9cee9a7a2e1b748425fb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::Type</definition>
+        <argsstring>(ADLX_GPU_TYPE *gpuType) const =0</argsstring>
+        <name>Type</name>
+        <param>
+          <type><ref refid="group__enumerations_1ga6fb3c9944d5c8aa79f7dbd0f675fac34" kindref="member">ADLX_GPU_TYPE</ref> *</type>
+          <declname>gpuType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="114" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1a9817f819c5a4e25f0097df7734de0585" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::IsExternal</definition>
+        <argsstring>(adlx_bool *isExternal) const =0</argsstring>
+        <name>IsExternal</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isExternal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="139" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1a63df1332197c58e668585da3145107ef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::Name</definition>
+        <argsstring>(const char **name) const =0</argsstring>
+        <name>Name</name>
+        <param>
+          <type>const char **</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="170" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1adbbe7f919879b2b4ca53f64e227246f5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::DriverPath</definition>
+        <argsstring>(const char **driverPath) const =0</argsstring>
+        <name>DriverPath</name>
+        <param>
+          <type>const char **</type>
+          <declname>driverPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="201" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1a62dfb6a3f1eff16277261d92a70b0d81" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::PNPString</definition>
+        <argsstring>(const char **pnpString) const =0</argsstring>
+        <name>PNPString</name>
+        <param>
+          <type>const char **</type>
+          <declname>pnpString</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="232" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1a60ede722477f0a2ea553fa4a261d9eb6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::HasDesktops</definition>
+        <argsstring>(adlx_bool *hasDesktops) const =0</argsstring>
+        <name>HasDesktops</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>hasDesktops</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="257" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1a2e0410d014165d42f8a71ac0c96d7ba9" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::TotalVRAM</definition>
+        <argsstring>(adlx_uint *vramMB)=0</argsstring>
+        <name>TotalVRAM</name>
+        <param>
+          <type>adlx_uint *</type>
+          <declname>vramMB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="282" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1a8486173442b2256fff71564801cd02b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::VRAMType</definition>
+        <argsstring>(const char **type)=0</argsstring>
+        <name>VRAMType</name>
+        <param>
+          <type>const char **</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="309" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1ae2c7576757aaac182464100b567a61f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::BIOSInfo</definition>
+        <argsstring>(const char **partNumber, const char **version, const char **date)=0</argsstring>
+        <name>BIOSInfo</name>
+        <param>
+          <type>const char **</type>
+          <declname>partNumber</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>version</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>date</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="338" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1af1e452d5154a9edfa29f8308ebc33f1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::DeviceId</definition>
+        <argsstring>(const char **deviceId)=0</argsstring>
+        <name>DeviceId</name>
+        <param>
+          <type>const char **</type>
+          <declname>deviceId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="370" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1abd8156db8e5d3933937652a6a6c1584b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::RevisionId</definition>
+        <argsstring>(const char **revisionId)=0</argsstring>
+        <name>RevisionId</name>
+        <param>
+          <type>const char **</type>
+          <declname>revisionId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="397" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1aef1282a8bf62296b393262f725cb9151" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::SubSystemId</definition>
+        <argsstring>(const char **subSystemId)=0</argsstring>
+        <name>SubSystemId</name>
+        <param>
+          <type>const char **</type>
+          <declname>subSystemId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="424" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1a26060958e876aaf1112a2f440f89b695" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::SubSystemVendorId</definition>
+        <argsstring>(const char **subSystemVendorId)=0</argsstring>
+        <name>SubSystemVendorId</name>
+        <param>
+          <type>const char **</type>
+          <declname>subSystemVendorId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="456" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1ad461934abd42de353a8566f5deed1e12" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::UniqueId</definition>
+        <argsstring>(adlx_int *uniqueId)=0</argsstring>
+        <name>UniqueId</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>uniqueId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="479" column="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="21" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" bodystart="22" bodyend="480"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_1a3801904ce0dee2eace83abf63f70efc0" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>ASICFamilyType</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_1ae2c7576757aaac182464100b567a61f7" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>BIOSInfo</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_1af1e452d5154a9edfa29f8308ebc33f1d" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>DeviceId</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_1adbbe7f919879b2b4ca53f64e227246f5" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>DriverPath</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_1a60ede722477f0a2ea553fa4a261d9eb6" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>HasDesktops</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_1a9817f819c5a4e25f0097df7734de0585" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>IsExternal</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_1a63df1332197c58e668585da3145107ef" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>Name</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_1a62dfb6a3f1eff16277261d92a70b0d81" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>PNPString</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>Release</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_1abd8156db8e5d3933937652a6a6c1584b" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>RevisionId</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_1aef1282a8bf62296b393262f725cb9151" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>SubSystemId</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_1a26060958e876aaf1112a2f440f89b695" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>SubSystemVendorId</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_1a2e0410d014165d42f8a71ac0c96d7ba9" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>TotalVRAM</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_1ae63e408766af9cee9a7a2e1b748425fb" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>Type</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_1ad461934abd42de353a8566f5deed1e12" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>UniqueId</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_1ac4bef1ca2caee26ad34122d7502d9fd0" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>VendorId</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_1a8486173442b2256fff71564801cd02b0" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPU</scope><name>VRAMType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

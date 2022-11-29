@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXGPUAutoTuning</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1a8a94af9bbd70fb75d6ad5b9a409a8545" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::IsSupportedUndervoltGPU</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedUndervoltGPU</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" line="201" column="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1ad0d815d0224aeb57fa08cb1c4cfa3b8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::IsSupportedOverclockGPU</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedOverclockGPU</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" line="229" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1a205bbd94146b3c1be475e9e4fa90a4ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::IsSupportedOverclockVRAM</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedOverclockVRAM</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" line="257" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1a3846f375607484f1b548fb6908a72970" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::IsCurrentUndervoltGPU</definition>
+        <argsstring>(adlx_bool *isUndervoltGPU)=0</argsstring>
+        <name>IsCurrentUndervoltGPU</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isUndervoltGPU</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" line="285" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1a4eb434e17948e246f6850624f2a49f11" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::IsCurrentOverclockGPU</definition>
+        <argsstring>(adlx_bool *isOverclockGPU)=0</argsstring>
+        <name>IsCurrentOverclockGPU</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isOverclockGPU</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" line="313" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1a14cb6a127ccbd4b699ea15c4e54d72a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::IsCurrentOverclockVRAM</definition>
+        <argsstring>(adlx_bool *isOverclockVRAM)=0</argsstring>
+        <name>IsCurrentOverclockVRAM</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isOverclockVRAM</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" line="341" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1af332a11361f2d96980e05fd685b1eef4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::StartUndervoltGPU</definition>
+        <argsstring>(IADLXGPUAutoTuningCompleteListener *pCompleteListener)=0</argsstring>
+        <name>StartUndervoltGPU</name>
+        <param>
+          <type>IADLXGPUAutoTuningCompleteListener *</type>
+          <declname>pCompleteListener</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" line="373" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1a02ae385936f817bcb582baf770d053b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::StartOverclockGPU</definition>
+        <argsstring>(IADLXGPUAutoTuningCompleteListener *pCompleteListener)=0</argsstring>
+        <name>StartOverclockGPU</name>
+        <param>
+          <type>IADLXGPUAutoTuningCompleteListener *</type>
+          <declname>pCompleteListener</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" line="405" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1a1691d1f59113c743b4d18e30a1bf78d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::StartOverclockVRAM</definition>
+        <argsstring>(IADLXGPUAutoTuningCompleteListener *pCompleteListener)=0</argsstring>
+        <name>StartOverclockVRAM</name>
+        <param>
+          <type>IADLXGPUAutoTuningCompleteListener *</type>
+          <declname>pCompleteListener</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" line="437" column="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" line="171" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" bodystart="172" bodyend="438"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUAutoTuning</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1a4eb434e17948e246f6850624f2a49f11" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUAutoTuning</scope><name>IsCurrentOverclockGPU</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1a14cb6a127ccbd4b699ea15c4e54d72a1" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUAutoTuning</scope><name>IsCurrentOverclockVRAM</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1a3846f375607484f1b548fb6908a72970" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUAutoTuning</scope><name>IsCurrentUndervoltGPU</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1ad0d815d0224aeb57fa08cb1c4cfa3b8b" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUAutoTuning</scope><name>IsSupportedOverclockGPU</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1a205bbd94146b3c1be475e9e4fa90a4ff" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUAutoTuning</scope><name>IsSupportedOverclockVRAM</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1a8a94af9bbd70fb75d6ad5b9a409a8545" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUAutoTuning</scope><name>IsSupportedUndervoltGPU</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUAutoTuning</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUAutoTuning</scope><name>Release</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1a02ae385936f817bcb582baf770d053b8" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUAutoTuning</scope><name>StartOverclockGPU</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1a1691d1f59113c743b4d18e30a1bf78d9" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUAutoTuning</scope><name>StartOverclockVRAM</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1af332a11361f2d96980e05fd685b1eef4" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUAutoTuning</scope><name>StartUndervoltGPU</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

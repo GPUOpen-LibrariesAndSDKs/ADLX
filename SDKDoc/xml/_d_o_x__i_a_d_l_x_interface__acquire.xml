@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_interface__acquire" kind="page">
+    <compoundname>DOX_IADLXInterface_Acquire</compoundname>
+    <title>Acquire</title>
+    <briefdescription>
+<para>Increments the reference count for an ADLX interface. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Increments the reference count for an ADLX interface.</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ adlx_long    Acquire ()
+ </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para>N/A</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>Returns the new reference count.</para>
+<para><heading level="2">Remarks </heading>
+</para>
+<para><bold>Acquire</bold> must be used when a copy of the interface pointer is needed.<linebreak/>
+</para>
+<para><heading level="2">Additional Info </heading>
+</para>
+<para>In C++, when using ADLX interfaces as smart pointers, there is no need to call the <bold>Acquire</bold> because smart pointers call it in their internal implementation.</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;ADLXDefines.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLXDefines.h"/>
+  </compounddef>
+</doxygen>

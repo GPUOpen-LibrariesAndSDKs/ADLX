@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_system" kind="page">
+    <compoundname>DOX_IADLXSystem</compoundname>
+    <title>IADLXSystem</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system__enable_log">EnableLog</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system__get3_d_settings_services">Get3DSettingsServices</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system__get_desktops_services">GetDesktopsServices</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system__get_displays_services">GetDisplaysServices</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system__get_g_p_u_tuning_services">GetGPUTuningServices</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system__get_g_p_us">GetGPUs</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system__get_g_p_us_changed_handling">GetGPUsChangedHandling</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system__get_i2_c">GetI2C</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system__get_performance_monitoring_services">GetPerformanceMonitoringServices</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system__hybrid_graphics_type">HybridGraphicsType</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system__query_interface">QueryInterface</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system__total_system_r_a_m">TotalSystemRAM</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXSystem</bold> is the main interface to ADLX and provides platform-specific functionality.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para>Examples of functionality in <bold>IADLXSystem</bold> interface include:<itemizedlist>
+<listitem><para>Obtains the list of GPUs in the system.</para>
+</listitem><listitem><para>Obtains the interface that allows registering and unregistering for notifications when the GPU list changes.</para>
+</listitem><listitem><para>Obtains generic information about the system, such as if this is a Hybrid Graphics system.</para>
+</listitem><listitem><para>Provides access to main interfaces of the other domains, such as the Display domain.</para>
+</listitem><listitem><para>Enables logging in ADLX.</para>
+</listitem><listitem><para>Obtains extension interfaces to IADLXSystem.</para>
+</listitem></itemizedlist>
+</para>
+<para>The <bold>IADLXSystem</bold> interface is managed by ADLX and it exists from the ADLX initialization until termination. Lifetime management is not required from the application. Example, maintaining a reference counting or deleting the interface pointer. In C++ there is no smart pointer definition for <bold>IADLXSystem</bold> interface. <linebreak/>
+</para>
+<para>The <bold>IADLXSystem</bold> interface is obtained during ADLX initialization. For more information about obtaining the <bold>IADLXSystem</bold> interface, refer to <ref refid="page_guide_use__a_d_l_x" kindref="compound">To access the ADLX System interface</ref>.<linebreak/>
+</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="13" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system__enable_log" kindref="compound">EnableLog</ref>   </para>
+</entry><entry thead="no"><para>Enables logging in ADLX.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system__get3_d_settings_services" kindref="compound">Get3DSettingsServices</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted main interface to the <ref refid="_d_o_x__i_a_d_l_x3_d_settings_services" kindref="compound">3D Graphics</ref> domain.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system__get_desktops_services" kindref="compound">GetDesktopsServices</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted main interface to the <ref refid="_d_o_x__i_a_d_l_x_desktop_services" kindref="compound">Desktop</ref> domain.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system__get_displays_services" kindref="compound">GetDisplaysServices</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted main interface to the <ref refid="_d_o_x__i_a_d_l_x_display_services" kindref="compound">Display</ref> domain.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system__get_g_p_u_tuning_services" kindref="compound">GetGPUTuningServices</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted main interface to the <ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_services" kindref="compound">GPU Tuning</ref> domain.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system__get_g_p_us" kindref="compound">GetGPUs</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted list of AMD GPUs.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system__get_g_p_us_changed_handling" kindref="compound">GetGPUsChangedHandling</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted interface to allow registering and unregistering for notifications when the GPU list changes.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system__get_i2_c" kindref="compound">GetI2C</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted <ref refid="_d_o_x__i_a_d_l_x_i2_c" kindref="compound">I2C</ref> interface of a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system__get_performance_monitoring_services" kindref="compound">GetPerformanceMonitoringServices</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted main interface to the <ref refid="_d_o_x__i_a_d_l_x_performance_monitoring_services" kindref="compound">Performance Monitoring</ref> domain.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system__hybrid_graphics_type" kindref="compound">HybridGraphicsType</ref>   </para>
+</entry><entry thead="no"><para>Gets the hybrid graphics type of the system.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system__query_interface" kindref="compound">QueryInterface</ref>   </para>
+</entry><entry thead="no"><para>Gets reference counted extension interfaces to <ref refid="_d_o_x__i_a_d_l_x_system" kindref="compound">IADLXSystem</ref>.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system__total_system_r_a_m" kindref="compound">TotalSystemRAM</ref>   </para>
+</entry><entry thead="no"><para>Gets the size of the total RAM on this system.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include&quot;ISystem.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp_sample_gpus" kindref="compound">GPUs C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c_sample_gpus" kindref="compound">GPUs C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_system__enable_log" kindref="compound">EnableLog</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system__get3_d_settings_services" kindref="compound">Get3DSettingsServices</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system__get_desktops_services" kindref="compound">GetDesktopsServices</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system__get_displays_services" kindref="compound">GetDisplaysServices</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system__get_g_p_u_tuning_services" kindref="compound">GetGPUTuningServices</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system__get_g_p_us" kindref="compound">GetGPUs</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system__get_g_p_us_changed_handling" kindref="compound">GetGPUsChangedHandling</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system__get_i2_c" kindref="compound">GetI2C</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system__get_performance_monitoring_services" kindref="compound">GetPerformanceMonitoringServices</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system__hybrid_graphics_type" kindref="compound">HybridGraphicsType</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system__query_interface" kindref="compound">QueryInterface</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system__total_system_r_a_m" kindref="compound">TotalSystemRAM</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXSystemPage.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_changed_event__get_origin" kind="page">
+    <compoundname>DOX_IADLXChangedEvent_GetOrigin</compoundname>
+    <title>GetOrigin</title>
+    <briefdescription>
+<para>Gets the origin of an event. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Gets the origin of an event.</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ <ref refid="group__enumerations_1ga7a1e20106faef482c0664c546e04ba00" kindref="member">ADLX_SYNC_ORIGIN</ref>    GetOrigin ()
+ </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para>N/A</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If the event is triggered by a change in settings using ADLX in this application, <bold>SYNC_ORIGIN_INTERNAL</bold> is returned. <linebreak/>
+ If the event is triggered by a change in settings using ADLX in another application, <bold>SYNC_ORIGIN_EXTERNAL</bold> is returned. <linebreak/>
+ If the event has an unknown trigger, <bold>SYNC_ORIGIN_UNKNOWN</bold> is returned. <linebreak/>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IADLXChangedEvent.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IChangedEvent.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="init_a_d_l_xwith_help_8md" kind="file" language="Markdown">
+    <compoundname>initADLXwithHelp.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">@page<sp/>page_guide_init_help<sp/>Initializing<sp/>ADLX<sp/>with<sp/>the<sp/>ADLX<sp/>Helpers</highlight></codeline>
+<codeline><highlight class="normal">&lt;!--</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">#</highlight></codeline>
+<codeline><highlight class="normal">#-------------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">--&gt;</highlight></codeline>
+<codeline><highlight class="normal">It<sp/>is<sp/>recommended<sp/>to<sp/>load<sp/>and<sp/>initialize<sp/>ADLX<sp/>with<sp/>ADLX<sp/>Helper<sp/>code.<sp/></highlight></codeline>
+<codeline><highlight class="normal">The<sp/>ADLX<sp/>Helper<sp/>code<sp/>has<sp/>native<sp/>support<sp/>for<sp/>C<sp/>and<sp/>C++.<sp/>When<sp/>programming<sp/>in<sp/>C#,<sp/>Java,<sp/>or<sp/>Python,<sp/>use<sp/>the<sp/>ADLX<sp/>Helper<sp/>code<sp/>from<sp/>the<sp/>binding<sp/>wrapper<sp/>in<sp/>the<sp/>selected<sp/>language<sp/>to<sp/>access<sp/>ADLX.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;h2&gt;To<sp/>use<sp/>ADLX<sp/>in<sp/>a<sp/>C++<sp/>application&lt;/h2&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>access<sp/>ADLX<sp/>functionality<sp/>from<sp/>a<sp/>C++<sp/>based<sp/>application,</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Start<sp/>a<sp/>new<sp/>C++<sp/>application.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>In<sp/>the<sp/>application,<sp/>include<sp/>the<sp/>following<sp/>files:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>`a.<sp/>/SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>`b.<sp/>/SDK/ADLXHelper/Windows/Cpp/ADLXHelper.cpp`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">3.<sp/>Create<sp/>an<sp/>instance<sp/>of<sp/>the<sp/>@ref<sp/>page_ADLXCppHelp<sp/>&quot;ADLXHelper&quot;<sp/>class.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Call<sp/>the<sp/>@ref<sp/>page_cppHelpInitialize<sp/>method<sp/>in<sp/>the<sp/>Helper<sp/>object.</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>Call<sp/>the<sp/>@ref<sp/>page_cppHelpGetSystemServices<sp/>method<sp/>in<sp/>the<sp/>Helper<sp/>object.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Result:**<sp/>Access<sp/>to<sp/>the<sp/>@ref<sp/>DOX_IADLXSystem<sp/>interface<sp/>is<sp/>provided.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Note:**<sp/>You<sp/>can<sp/>access<sp/>the<sp/>required<sp/>ADLX<sp/>functionality<sp/>from<sp/>the<sp/>@ref<sp/>DOX_IADLXSystem<sp/>interface.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">6.<sp/>Call<sp/>@ref<sp/>page_cppHelpTerminate<sp/>in<sp/>the<sp/>Helper<sp/>object.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Result:**<sp/>Resources<sp/>utilized<sp/>by<sp/>ADLX<sp/>are<sp/>released,<sp/>and<sp/>the<sp/>ADLX<sp/>library<sp/>is<sp/>unloaded.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>information,<sp/>see<sp/>@ref<sp/>page_sample_cpp<sp/>&quot;C++<sp/>samples&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;h2&gt;To<sp/>use<sp/>ADLX<sp/>in<sp/>a<sp/>C<sp/>application&lt;/h2&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>access<sp/>ADLX<sp/>functionality<sp/>from<sp/>a<sp/>C<sp/>based<sp/>application,</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Start<sp/>a<sp/>new<sp/>C<sp/>application.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>In<sp/>the<sp/>application,<sp/>include<sp/>the<sp/>following<sp/>files:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>`a.<sp/>/SDK/ADLXHelper/Windows/C/ADLXHelper.h`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>`b.<sp/>/SDK/ADLXHelper/Windows/C/ADLXHelper.c`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">3.<sp/>Call<sp/>the<sp/>@ref<sp/>page_cHelpADLXHelper_Initialize<sp/>function<sp/>that<sp/>is<sp/>declared<sp/>in<sp/>the<sp/>`ADLXHelper.h`<sp/>file.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Call<sp/>the<sp/>@ref<sp/>page_cHelpADLXHelper_GetSystemServices<sp/>function.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Result:**<sp/>Access<sp/>to<sp/>the<sp/>@ref<sp/>DOX_IADLXSystem<sp/>interface<sp/>is<sp/>provided.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Note:**<sp/>You<sp/>can<sp/>access<sp/>the<sp/>required<sp/>ADLX<sp/>functionality<sp/>from<sp/>the<sp/>@ref<sp/>DOX_IADLXSystem<sp/>interface.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">5.<sp/>Call<sp/>@ref<sp/>page_cHelpADLXHelper_Terminate<sp/>in<sp/>the<sp/>helper<sp/>object<sp/>to<sp/>release<sp/>the<sp/>resources<sp/>utilized<sp/>by<sp/>ADLX.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Result:**<sp/>The<sp/>ADLX<sp/>library<sp/>is<sp/>unloaded.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>information,<sp/>see<sp/>@ref<sp/>page_sample_c<sp/>&quot;C<sp/>samples&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;h2&gt;To<sp/>initialize<sp/>ADLX<sp/>in<sp/>a<sp/>C#<sp/>application&lt;/h2&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Follow<sp/>these<sp/>steps<sp/>to<sp/>initialize<sp/>ADLX<sp/>in<sp/>a<sp/>C#<sp/>application.</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Start<sp/>a<sp/>new<sp/>C#<sp/>application.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Import<sp/>all<sp/>the<sp/>*.cs<sp/>files<sp/>from<sp/>the<sp/>ADLX<sp/>binding<sp/>wrapper<sp/>for<sp/>C#.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Create<sp/>an<sp/>instance<sp/>of<sp/>the<sp/>@ref<sp/>page_ADLXCppHelp<sp/>&quot;ADLXHelper&quot;<sp/>class.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Call<sp/>the<sp/>@ref<sp/>page_cppHelpInitialize<sp/>method<sp/>in<sp/>the<sp/>Helper<sp/>object.</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>Call<sp/>the<sp/>@ref<sp/>page_cppHelpGetSystemServices<sp/>method<sp/>in<sp/>the<sp/>Helper<sp/>object.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Result:**<sp/>The<sp/>@ref<sp/>DOX_IADLXSystem<sp/>interface<sp/>is<sp/>accessible.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Note:**<sp/>The<sp/>@ref<sp/>DOX_IADLXSystem<sp/>interface<sp/>provides<sp/>access<sp/>to<sp/>ADLX<sp/>functionality.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">6.<sp/>Call<sp/>@ref<sp/>page_cppHelpTerminate<sp/>in<sp/>the<sp/>Helper<sp/>object.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Result:**<sp/>Resources<sp/>utilized<sp/>by<sp/>ADLX<sp/>are<sp/>released,<sp/>and<sp/>the<sp/>ADLX<sp/>library<sp/>is<sp/>unloaded.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>information,<sp/>see<sp/>@ref<sp/>page_sample_cs<sp/>&quot;C#<sp/>samples&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;h2&gt;To<sp/>initialize<sp/>ADLX<sp/>in<sp/>a<sp/>Java<sp/>application&lt;/h2&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Follow<sp/>these<sp/>steps<sp/>to<sp/>initialize<sp/>ADLX<sp/>in<sp/>a<sp/>Java<sp/>application.</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Start<sp/>a<sp/>new<sp/>Java<sp/>application.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Import<sp/>all<sp/>the<sp/>Java<sp/>files<sp/>from<sp/>the<sp/>ADLX<sp/>binding<sp/>wrapper<sp/>for<sp/>Java.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Create<sp/>an<sp/>instance<sp/>of<sp/>the<sp/>@ref<sp/>page_ADLXCppHelp<sp/>&quot;ADLXHelper&quot;<sp/>class.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Call<sp/>the<sp/>@ref<sp/>page_cppHelpInitialize<sp/>method<sp/>in<sp/>the<sp/>Helper<sp/>object.</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>Call<sp/>the<sp/>@ref<sp/>page_cppHelpGetSystemServices<sp/>method<sp/>in<sp/>the<sp/>Helper<sp/>object.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Result:**<sp/>The<sp/>@ref<sp/>DOX_IADLXSystem<sp/>interface<sp/>is<sp/>accessible.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Note:**<sp/>The<sp/>@ref<sp/>DOX_IADLXSystem<sp/>interface<sp/>provides<sp/>access<sp/>to<sp/>ADLX<sp/>functionality.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">6.<sp/>Call<sp/>@ref<sp/>page_cppHelpTerminate<sp/>in<sp/>the<sp/>Helper<sp/>object.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Result:**<sp/>Resources<sp/>utilized<sp/>by<sp/>ADLX<sp/>are<sp/>released,<sp/>and<sp/>the<sp/>ADLX<sp/>library<sp/>is<sp/>unloaded.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>information,<sp/>see<sp/>@ref<sp/>page_sample_java<sp/>&quot;Java<sp/>samples&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;h2&gt;To<sp/>initialize<sp/>ADLX<sp/>in<sp/>a<sp/>Python<sp/>application&lt;/h2&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Follow<sp/>these<sp/>steps<sp/>to<sp/>initialize<sp/>ADLX<sp/>in<sp/>a<sp/>Python<sp/>application.<sp/></highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Start<sp/>a<sp/>new<sp/>Python<sp/>application.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Import<sp/>the<sp/>`ADLXPybind.pyd`<sp/>package<sp/>from<sp/>the<sp/>ADLX<sp/>binding<sp/>wrapper<sp/>for<sp/>Python.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Create<sp/>an<sp/>instance<sp/>of<sp/>the<sp/>@ref<sp/>page_ADLXCppHelp<sp/>&quot;ADLXHelper&quot;<sp/>class.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Call<sp/>the<sp/>@ref<sp/>page_cppHelpInitialize<sp/>method<sp/>in<sp/>the<sp/>Helper<sp/>object.</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>Call<sp/>the<sp/>@ref<sp/>page_cppHelpGetSystemServices<sp/>method<sp/>in<sp/>the<sp/>Helper<sp/>object.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Result:**<sp/>The<sp/>@ref<sp/>DOX_IADLXSystem<sp/>interface<sp/>is<sp/>accessible.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Note:**<sp/>The<sp/>@ref<sp/>DOX_IADLXSystem<sp/>interface<sp/>provides<sp/>access<sp/>to<sp/>ADLX<sp/>functionality.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">6.<sp/><sp/>Call<sp/>@ref<sp/>page_cppHelpTerminate<sp/>in<sp/>the<sp/>Helper<sp/>object.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Result:**<sp/>Resources<sp/>utilized<sp/>by<sp/>ADLX<sp/>are<sp/>released,<sp/>and<sp/>the<sp/>ADLX<sp/>library<sp/>is<sp/>unloaded.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>information,<sp/>see<sp/>@ref<sp/>page_sample_py<sp/>&quot;Python<sp/>samples&quot;.</highlight></codeline>
+    </programlisting>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXProgrammingGuide/initADLXwithHelp.md"/>
+  </compounddef>
+</doxygen>
