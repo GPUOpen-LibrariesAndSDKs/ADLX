@@ -4,10 +4,10 @@
     <compoundname>DOX_IADLXDisplayPixelFormat_IsSupportedYCbCr420</compoundname>
     <title>IsSupportedYCbCr420</title>
     <briefdescription>
-<para>Checks if the given pixel format/YCbCr 4:2:0 is supported on a display. </para>
+<para>Checks if the YCbCr 4:2:0 pixel format is supported on a display. </para>
     </briefdescription>
     <detaileddescription>
-<para>Checks if the given pixel format/YCbCr 4:2:0 is supported on a display.</para>
+<para>Checks if the YCbCr 4:2:0 pixel format is supported on a display.</para>
 <para><heading level="2">Syntax </heading>
 </para>
 <para><preformatted>
@@ -22,7 +22,7 @@
 </entry><entry thead="no" class="paramdir"><para>[out]</para>
 </entry><entry thead="no" class="paramname"><para>supported</para>
 </entry><entry thead="no" class="paramtype"><para>adlx_bool*</para>
-</entry><entry thead="no"><para>The pointer to a variable where the support state of the pixel format/YCbCr 4:2:0 is returned. The variable is <bold>true</bold> if the pixel format/YCbCr 4:2:0 is supported. The variable is <bold>false</bold> if pixel format/YCbCr 4:2:0 is not supported. </para>
+</entry><entry thead="no"><para>The pointer to a variable where the support state of the YCbCr 4:2:0 pixel format is returned. The variable is <bold>true</bold> if the YCbCr 4:2:0 pixel format is supported. The variable is <bold>false</bold> if the YCbCr 4:2:0 pixel format is not supported. </para>
 </entry></row>
 </table>
 </para>
@@ -31,8 +31,8 @@
 </para>
 <para><heading level="2">Return Value </heading>
 </para>
-<para>If the support state of the pixel format/YCbCr 4:2:0 is successfully returned, <bold>ADLX_OK</bold> is returned. <linebreak/>
- If the support state of the pixel format/YCbCr 4:2:0 is not successfully returned, an error code is returned. <linebreak/>
+<para>If the support state of the YCbCr 4:2:0 pixel format is successfully returned, <bold>ADLX_OK</bold> is returned. <linebreak/>
+ If the support state of the YCbCr 4:2:0 pixel format is not successfully returned, an error code is returned. <linebreak/>
  Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.</para>
 <para><heading level="2">Requirements </heading>
 </para>

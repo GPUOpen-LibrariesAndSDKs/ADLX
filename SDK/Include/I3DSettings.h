@@ -2109,8 +2109,10 @@ namespace adlx
         * @addinfo
         * @ENG_START_DOX
         * Radeon Super Resolution is an upscaling feature for faster game frame rates. <br>
-        * __Note:__ On some AMD GPUs, Radeon Super Resolution is mutually exclusive with @ref DOX_IADLX3DChill "AMD Radeon Chill",  @ref DOX_IADLX3DBoost "AMD Radeon Boost", @ref DOX_IADLX3DImageSharpening "AMD Radeon Image Sharpening", @ref DOX_IADLXDisplayIntegerScaling "Integer Display Scaling", and @ref DOX_IADLXDisplayScalingMode_GetMode "Center Scaling". If either of the mutually exclusive features is enabled, Radeon Super Resolution is automatically disabled.<br>
-        * Radeon Super Resolution requires @ref DOX_IADLXDisplayGPUScaling "GPU scaling". By enabling Radeon Super Resolution, GPU scaling is automatically enabled. By disabling GPU scaling when Radeon Super Resolution is enabled, Radeon Super Resolution is automatically disabled.
+        *
+        * __Note:__ @ref DOX_IADLXDisplayGPUScaling "GPU scaling" is a requirement for Radeon Super Resolution. When Radeon Super Resolution is enabled, GPU scaling is automatically enabled. If GPU scaling is disabled while Radeon Super Resolution is enabled, Radeon Super Resolution is automatically disabled.
+        *
+        * On some AMD GPUs, Radeon Super Resolution is mutually exclusive with @ref DOX_IADLX3DChill "AMD Radeon Chill", @ref DOX_IADLX3DBoost "AMD Radeon Boost", @ref DOX_IADLX3DImageSharpening "AMD Radeon Image Sharpening", @ref DOX_IADLXDisplayIntegerScaling "Integer Display Scaling", and @ref DOX_IADLXDisplayScalingMode_GetMode "Center Scaling". When Radeon Super Resolution is enabled, the mutually exclusive features are automatically disabled.<br>
         * @ENG_END_DOX
         *
         *@requirements
@@ -2139,8 +2141,10 @@ namespace adlx
         * @addinfo
         * @ENG_START_DOX
         * Radeon Super Resolution is an upscaling feature for faster game frame rates. <br>
-        * __Note:__ On some AMD GPUs, Radeon Super Resolution is mutually exclusive with @ref DOX_IADLX3DChill "AMD Radeon Chill", @ref DOX_IADLX3DBoost "AMD Radeon Boost", @ref DOX_IADLX3DImageSharpening "AMD Radeon Image Sharpening", @ref DOX_IADLXDisplayIntegerScaling "Integer Display Scaling", and @ref DOX_IADLXDisplayScalingMode_GetMode "Center Scaling". If Radeon Super Resolution is enabled, all the mutually exclusive features are automatically disabled. However, the configurations of the disabled feature is preserved.<br>
-        * Radeon Super Resolution requires @ref DOX_IADLXDisplayGPUScaling "GPU scaling". By enabling Radeon Super Resolution, GPU scaling is automatically enabled.
+        *
+        * __Note:__ @ref DOX_IADLXDisplayGPUScaling "GPU scaling" is a requirement for Radeon Super Resolution. When Radeon Super Resolution is enabled, GPU scaling is automatically enabled. If GPU scaling is disabled while Radeon Super Resolution is enabled, Radeon Super Resolution is automatically disabled.
+        *
+        * On some AMD GPUs, Radeon Super Resolution is mutually exclusive with @ref DOX_IADLX3DChill "AMD Radeon Chill", @ref DOX_IADLX3DBoost "AMD Radeon Boost", @ref DOX_IADLX3DImageSharpening "AMD Radeon Image Sharpening", @ref DOX_IADLXDisplayIntegerScaling "Integer Display Scaling", and @ref DOX_IADLXDisplayScalingMode_GetMode "Center Scaling". When Radeon Super Resolution is enabled, the mutually exclusive features are automatically disabled.<br>
 
         * @ENG_END_DOX
         *

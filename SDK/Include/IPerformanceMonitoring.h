@@ -856,8 +856,10 @@ namespace adlx
         virtual ADLX_RESULT ADLX_STD_CALL GPUVRAMClockSpeed (adlx_int* data) = 0;
         /**
         *@page DOX_IADLXGPUMetrics_GPUTemperature GPUTemperature
-        *@ENG_START_DOX @brief Gets the GPU temperature of a GPU metric sample. @ENG_END_DOX
-        *
+        *@ENG_START_DOX @brief Gets the GPU temperature of a GPU metric sample.
+        *@details GPUTemperature reports the average temperature measured at the edge of the die of the GPU. This is sometimes referred to as ‘Edge Temperature’. 
+		*@ENG_END_DOX
+		*
         *@syntax
         *@codeStart
         * @ref ADLX_RESULT    GPUTemperature (adlx_double* data)
@@ -871,7 +873,9 @@ namespace adlx
         * If the GPU temperature is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *
+        *@addinfo
+		*  @ENG_START_DOX Related method: @ref DOX_IADLXGPUMetrics_GPUHotspotTemperature @ENG_END_DOX
+		*
         *@requirements
         *@DetailsTable{#include "IPerformanceMonitoring.h", @ADLX_First_Ver}
         *
@@ -879,8 +883,11 @@ namespace adlx
         virtual ADLX_RESULT ADLX_STD_CALL GPUTemperature (adlx_double* data) = 0;
         /**
         *@page DOX_IADLXGPUMetrics_GPUHotspotTemperature GPUHotspotTemperature
-        *@ENG_START_DOX @brief Gets the GPU hotspot temperature of a GPU metric sample. @ENG_END_DOX
-        *
+        *@ENG_START_DOX
+        *@brief Gets the GPU hotspot temperature of a GPU metric sample.
+		*@details GPUHotspotTemperature reports the highest temperature measured on the die of the GPU from a collection of junction temperature sensors on the die. This is sometimes referred to as ‘Junction Temperature’.
+		*@ENG_END_DOX
+		*
         *@syntax
         *@codeStart
         * @ref ADLX_RESULT    GPUHotspotTemperature (adlx_double* data)
@@ -894,7 +901,9 @@ namespace adlx
         * If the GPU hotspot temperature is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *
+        *@addinfo
+		*  @ENG_START_DOX Related method: @ref DOX_IADLXGPUMetrics_GPUTemperature @ENG_END_DOX
+		*
         *@requirements
         *@DetailsTable{#include "IPerformanceMonitoring.h", @ADLX_First_Ver}
         *

@@ -8,6 +8,7 @@
     </briefdescription>
     <detaileddescription>
 <para>Gets the GPU temperature of a GPU metric sample.</para>
+<para>GPUTemperature reports the average temperature measured at the edge of the die of the GPU. This is sometimes referred to as ‘Edge Temperature’.</para>
 <para><heading level="2">Syntax </heading>
 </para>
 <para><preformatted>
@@ -34,6 +35,9 @@
 <para>If the GPU temperature is successfully returned, <bold>ADLX_OK</bold> is returned. <linebreak/>
  If the GPU temperature is not successfully returned, an error code is returned. <linebreak/>
  Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.</para>
+<para><heading level="2">Additional Info </heading>
+</para>
+<para>Related method: <ref refid="_d_o_x__i_a_d_l_x_g_p_u_metrics__g_p_u_hotspot_temperature" kindref="compound">GPUHotspotTemperature</ref></para>
 <para><heading level="2">Requirements </heading>
 </para>
 <para><table rows="2" cols="2"><row>

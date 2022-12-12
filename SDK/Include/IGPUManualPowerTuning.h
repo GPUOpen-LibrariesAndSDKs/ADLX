@@ -104,7 +104,8 @@ namespace adlx
         *@page DOX_IADLXManualPowerTuning_IsSupportedTDCLimit IsSupportedTDCLimit
         *@ENG_START_DOX
         *@brief Checks if Thermal Design Current (TDC) limit is supported on a GPU.
-        *@ENG_END_DOX
+        *@details Thermal Design Current (TDC) functionality is not currently implemented in a production application. Usecase validation for these methods should be performed by application developers.
+		*@ENG_END_DOX
         *
         *@syntax
         *@codeStart
@@ -136,7 +137,8 @@ namespace adlx
         *@page DOX_IADLXManualPowerTuning_GetTDCLimitRange GetTDCLimitRange
         *@ENG_START_DOX
         *@brief Gets the manual power tuning minimum Thermal Design Current (TDC) range, maximum TDC range, and step TDC range on a GPU.
-        *@ENG_END_DOX
+        *@details Thermal Design Current (TDC) functionality is not currently implemented in a production application. Usecase validation for these methods should be performed by application developers.
+		*@ENG_END_DOX
         *
         *@syntax
         *@codeStart
@@ -163,8 +165,9 @@ namespace adlx
         *@page DOX_IADLXManualPowerTuning_GetTDCLimit GetTDCLimit
         *@ENG_START_DOX
         *@brief Gets the current Thermal Design Current (TDC) limit of a GPU.
-        *@ENG_END_DOX
-        *
+        *@details Thermal Design Current (TDC) functionality is not currently implemented in a production application. Usecase validation for these methods should be performed by application developers.
+		*@ENG_END_DOX
+		*
         *@syntax
         *@codeStart
         * @ref ADLX_RESULT    GetTDCLimit (adlx_int* curVal)
@@ -195,7 +198,8 @@ namespace adlx
         *@page DOX_IADLXManualPowerTuning_SetTDCLimit SetTDCLimit
         *@ENG_START_DOX
         *@brief Sets the Thermal Design Current (TDC) limit of a GPU.
-        *@ENG_END_DOX
+        *@details Thermal Design Current (TDC) functionality is not currently implemented in a production application. Usecase validation for these methods should be performed by application developers.
+		*@ENG_END_DOX
         *
         *@syntax
         *@codeStart

@@ -1008,7 +1008,7 @@ namespace adlx
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedPixelFormat (ADLX_PIXEL_FORMAT pixelFormat, adlx_bool* supportd) = 0;
         /**
         *@page DOX_IADLXDisplayPixelFormat_IsSupportedRGB444Full IsSupportedRGB444Full
-        *@ENG_START_DOX @brief Checks if the given pixel format/RGB 4:4:4 PC Standard (Full RGB) is supported on a display. @ENG_END_DOX
+        *@ENG_START_DOX @brief Checks if the RGB 4:4:4 PC Standard (Full RGB) pixel format is supported on a display. @ENG_END_DOX
         *
         *@syntax
         *@codeStart
@@ -1016,11 +1016,11 @@ namespace adlx
         *@codeEnd
         *
         *@params
-        * @paramrow{1.,[out],supported,adlx_bool*,@ENG_START_DOX The pointer to a variable where the support state of the pixel format/RGB 4:4:4 PC Standard (Full RGB) is returned. The variable is __true__ if the pixel format/RGB 4:4:4 PC Standard (Full RGB) is supported. The variable is __false__ if pixel format/RGB 4:4:4 PC Standard (Full RGB) is not supported. @ENG_END_DOX}
+        * @paramrow{1.,[out],supported,adlx_bool*,@ENG_START_DOX The pointer to a variable where the support state of the RGB 4:4:4 PC Standard (Full RGB) pixel format is returned. The variable is __true__ if the RGB 4:4:4 PC Standard (Full RGB) pixel format is supported. The variable is __false__ if the RGB 4:4:4 PC Standard (Full RGB) pixel format is not supported. @ENG_END_DOX}
         *
         *@retvalues
-		*@ENG_START_DOX  If the support state of the pixel format/RGB 4:4:4 PC Standard (Full RGB) is successfully returned, __ADLX_OK__ is returned. <br>
-        * If the support state of the pixel format/RGB 4:4:4 PC Standard (Full RGB) is not successfully returned, an error code is returned. <br>
+		*@ENG_START_DOX  If the support state of the RGB 4:4:4 PC Standard (Full RGB) pixel format is successfully returned, __ADLX_OK__ is returned. <br>
+        * If the support state of the RGB 4:4:4 PC Standard (Full RGB) pixel format is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *@requirements
@@ -1030,7 +1030,7 @@ namespace adlx
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedRGB444Full (adlx_bool* supportd) = 0;
         /**
         *@page DOX_IADLXDisplayPixelFormat_IsSupportedYCbCr444 IsSupportedYCbCr444
-        *@ENG_START_DOX @brief Checks if the given pixel format/YCbCr 4:4:4 is supported on a display. @ENG_END_DOX
+        *@ENG_START_DOX @brief Checks if the YCbCr 4:4:4 pixel format is supported on a display. @ENG_END_DOX
         *
         *@syntax
         *@codeStart
@@ -1038,11 +1038,11 @@ namespace adlx
         *@codeEnd
         *
         *@params
-        * @paramrow{1.,[out],supported,adlx_bool*,@ENG_START_DOX The pointer to a variable where the support state of the pixel format/YCbCr 4:4:4 is returned. The variable is __true__ if the pixel format/YCbCr 4:4:4 is supported. The variable is __false__ if pixel format/YCbCr 4:4:4 is not supported. @ENG_END_DOX}
+        * @paramrow{1.,[out],supported,adlx_bool*,@ENG_START_DOX The pointer to a variable where the support state of the YCbCr 4:4:4 pixel format is returned. The variable is __true__ if the YCbCr 4:4:4 pixel format is supported. The variable is __false__ if the YCbCr 4:4:4 pixel format is not supported. @ENG_END_DOX}
         *
         *@retvalues
-		*@ENG_START_DOX  If the support state of the pixel format/YCbCr 4:4:4 is successfully returned, __ADLX_OK__ is returned. <br>
-        * If the support state of the pixel format/YCbCr 4:4:4 is not successfully returned, an error code is returned. <br>
+		*@ENG_START_DOX  If the support state of the YCbCr 4:4:4 pixel format is successfully returned, __ADLX_OK__ is returned. <br>
+        * If the support state of the YCbCr 4:4:4 pixel format is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *@requirements
@@ -1052,7 +1052,7 @@ namespace adlx
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedYCbCr444 (adlx_bool* supportd) = 0;
         /**
         *@page DOX_IADLXDisplayPixelFormat_IsSupportedYCbCr422 IsSupportedYCbCr422
-        *@ENG_START_DOX @brief Checks if the given pixel format/YCbCr 4:2:2 is supported on a display. @ENG_END_DOX
+        *@ENG_START_DOX @brief Checks if the YCbCr 4:2:2 pixel format is supported on a display. @ENG_END_DOX
         *
         *@syntax
         *@codeStart
@@ -1060,11 +1060,11 @@ namespace adlx
         *@codeEnd
         *
         *@params
-        * @paramrow{1.,[out],supported,adlx_bool*,@ENG_START_DOX The pointer to a variable where the support state of the pixel format/YCbCr 4:2:2 is returned. The variable is __true__ if the pixel format/YCbCr 4:2:2 is supported. The variable is __false__ if pixel format/YCbCr 4:2:2 is not supported. @ENG_END_DOX}
+        * @paramrow{1.,[out],supported,adlx_bool*,@ENG_START_DOX The pointer to a variable where the support state of the YCbCr 4:2:2 pixel format is returned. The variable is __true__ if the YCbCr 4:2:2 pixel format is supported. The variable is __false__ if the YCbCr 4:2:2 pixel format is not supported. @ENG_END_DOX}
         *
         *@retvalues
-		*@ENG_START_DOX  If the support state of the pixel format/YCbCr 4:2:2 is successfully returned, __ADLX_OK__ is returned. <br>
-        * If the support state of the pixel format/YCbCr 4:2:2 is not successfully returned, an error code is returned. <br>
+		*@ENG_START_DOX  If the support state of the YCbCr 4:2:2 pixel format is successfully returned, __ADLX_OK__ is returned. <br>
+        * If the support state of the YCbCr 4:2:2 pixel format is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *@requirements
@@ -1074,7 +1074,7 @@ namespace adlx
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedYCbCr422 (adlx_bool* supportd) = 0;
         /**
         *@page DOX_IADLXDisplayPixelFormat_IsSupportedRGB444Limited IsSupportedRGB444Limited
-        *@ENG_START_DOX @brief Checks if the given pixel format/RGB 4:4:4 Studio (Limited RGB) is supported on a display. @ENG_END_DOX
+        *@ENG_START_DOX @brief Checks if the RGB 4:4:4 Studio (Limited RGB) pixel format is supported on a display. @ENG_END_DOX
         *
         *@syntax
         *@codeStart
@@ -1082,11 +1082,11 @@ namespace adlx
         *@codeEnd
         *
         *@params
-        * @paramrow{1.,[out],supported,adlx_bool*,@ENG_START_DOX The pointer to a variable where the support state of the pixel format/RGB 4:4:4 Studio (Limited RGB) is returned. The variable is __true__ if the pixel format/RGB 4:4:4 Studio (Limited RGB) is supported. The variable is __false__ if pixel format/RGB 4:4:4 Studio (Limited RGB) is not supported. @ENG_END_DOX}
+        * @paramrow{1.,[out],supported,adlx_bool*,@ENG_START_DOX The pointer to a variable where the support state of the RGB 4:4:4 Studio (Limited RGB) pixel format is returned. The variable is __true__ if the RGB 4:4:4 Studio (Limited RGB) pixel format is supported. The variable is __false__ if the RGB 4:4:4 Studio (Limited RGB) pixel format is not supported. @ENG_END_DOX}
         *
         *@retvalues
-		*@ENG_START_DOX  If the support state of the pixel format/RGB 4:4:4 Studio (Limited RGB) is successfully returned, __ADLX_OK__ is returned. <br>
-        * If the support state of the pixel format/RGB 4:4:4 Studio (Limited RGB) is not successfully returned, an error code is returned. <br>
+		*@ENG_START_DOX  If the support state of the RGB 4:4:4 Studio (Limited RGB) pixel format is successfully returned, __ADLX_OK__ is returned. <br>
+        * If the support state of the RGB 4:4:4 Studio (Limited RGB) pixel format is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *@requirements
@@ -1096,7 +1096,7 @@ namespace adlx
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedRGB444Limited (adlx_bool* supportd) = 0;
         /**
         *@page DOX_IADLXDisplayPixelFormat_IsSupportedYCbCr420 IsSupportedYCbCr420
-        *@ENG_START_DOX @brief Checks if the given pixel format/YCbCr 4:2:0 is supported on a display. @ENG_END_DOX
+        *@ENG_START_DOX @brief Checks if the YCbCr 4:2:0 pixel format is supported on a display. @ENG_END_DOX
         *
         *@syntax
         *@codeStart
@@ -1104,11 +1104,11 @@ namespace adlx
         *@codeEnd
         *
         *@params
-        * @paramrow{1.,[out],supported,adlx_bool*,@ENG_START_DOX The pointer to a variable where the support state of the pixel format/YCbCr 4:2:0 is returned. The variable is __true__ if the pixel format/YCbCr 4:2:0 is supported. The variable is __false__ if pixel format/YCbCr 4:2:0 is not supported. @ENG_END_DOX}
+        * @paramrow{1.,[out],supported,adlx_bool*,@ENG_START_DOX The pointer to a variable where the support state of the YCbCr 4:2:0 pixel format is returned. The variable is __true__ if the YCbCr 4:2:0 pixel format is supported. The variable is __false__ if the YCbCr 4:2:0 pixel format is not supported. @ENG_END_DOX}
         *
         *@retvalues
-		*@ENG_START_DOX  If the support state of the pixel format/YCbCr 4:2:0 is successfully returned, __ADLX_OK__ is returned. <br>
-        * If the support state of the pixel format/YCbCr 4:2:0 is not successfully returned, an error code is returned. <br>
+		*@ENG_START_DOX  If the support state of the YCbCr 4:2:0 pixel format is successfully returned, __ADLX_OK__ is returned. <br>
+        * If the support state of the YCbCr 4:2:0 pixel format is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *@requirements

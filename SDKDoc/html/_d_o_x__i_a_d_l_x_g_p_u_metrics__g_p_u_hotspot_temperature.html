@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('_d_o_x__i_a_d_l_x_g_p_u_metrics__g_p_u
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Gets the GPU hotspot temperature of a GPU metric sample.</p>
+<p>GPUHotspotTemperature reports the highest temperature measured on the die of the GPU from a collection of junction temperature sensors on the die. This is sometimes referred to as ‘Junction Temperature’.</p>
 <h2>Syntax </h2>
 <pre class="fragment">
  <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>    GPUHotspotTemperature (adlx_double* data)
@@ -121,6 +122,8 @@ $(document).ready(function(){initNavTree('_d_o_x__i_a_d_l_x_g_p_u_metrics__g_p_u
 <p>If the GPU hotspot temperature is successfully returned, <b>ADLX_OK</b> is returned. <br  />
  If the GPU hotspot temperature is not successfully returned, an error code is returned. <br  />
  Refer to <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> for success codes and error codes.</p>
+<h2>Additional Info </h2>
+<p>Related method: <a class="el" href="_d_o_x__i_a_d_l_x_g_p_u_metrics__g_p_u_temperature.html">GPUTemperature</a></p>
 <h2>Requirements </h2>
 <table class="doxtable">
 <tr style="height=40px">
