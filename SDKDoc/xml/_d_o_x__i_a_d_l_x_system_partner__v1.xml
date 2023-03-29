@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_system_partner__v1" kind="page">
+    <compoundname>DOX_IADLXSystemPartner_V1</compoundname>
+    <title>IADLXSystemPartner_V1</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system_partner__v1__disregard_g_p_u_active_request">DisregardGPUActiveRequest</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system_partner__v1__get_g_p_u_tuning_services">GetGPUTuningServices</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system_partner__v1__request_g_p_u_active">RequestGPUActive</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXSystemPartner_V1</bold> is an extension interface to <ref refid="_d_o_x__i_a_d_l_x_system" kindref="compound">IADLXSystem</ref> that provides GPU tuning on mobile platforms.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLXSystemPartner_V1</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLXSystemPartner_V1Ptr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_interface" kindref="compound">IADLXInterface</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para>The <bold>IADLXSystemPartner_V1</bold> interface is obtained from the ADLX System Interface with <ref refid="_d_o_x__i_a_d_l_x_system__query_interface" kindref="compound">QueryInterface</ref>.</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system_partner__v1__disregard_g_p_u_active_request" kindref="compound">DisregardGPUActiveRequest</ref>   </para>
+</entry><entry thead="no"><para>Removes the request for a GPU to stay into active state (D0 state).    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system_partner__v1__get_g_p_u_tuning_services" kindref="compound">GetGPUTuningServices</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted main interface to the <ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_services" kindref="compound">GPU Tuning</ref> domain for mobile platforms.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system_partner__v1__request_g_p_u_active" kindref="compound">RequestGPUActive</ref>   </para>
+</entry><entry thead="no"><para>Requests that a GPU gets into active state (D0 state).   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include&quot;Partner/OEM_ISystem.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp__partner_tuning_services" kindref="compound">PartnerTuningServices C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c__partner_tuning_services" kindref="compound">PartnerTuningServices C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_system_partner__v1__disregard_g_p_u_active_request" kindref="compound">DisregardGPUActiveRequest</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system_partner__v1__get_g_p_u_tuning_services" kindref="compound">GetGPUTuningServices</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system_partner__v1__request_g_p_u_active" kindref="compound">RequestGPUActive</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXSystemPartnerV1Page.h"/>
+  </compounddef>
+</doxygen>

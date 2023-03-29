@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"_d_o_x__i_a_d_l_x_manual_fan_tuning__set_target_fan_speed.html":[1,2,4,8,18],
+"_d_o_x__i_a_d_l_x_manual_fan_tuning__set_zero_r_p_m_state.html":[1,2,4,8,19],
+"_d_o_x__i_a_d_l_x_manual_fan_tuning_state.html":[1,2,4,9],
 "_d_o_x__i_a_d_l_x_manual_fan_tuning_state__get_fan_speed.html":[1,2,4,9,0],
 "_d_o_x__i_a_d_l_x_manual_fan_tuning_state__get_temperature.html":[1,2,4,9,1],
 "_d_o_x__i_a_d_l_x_manual_fan_tuning_state__set_fan_speed.html":[1,2,4,9,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX3 =
 "cpp_sample__generic.html":[0,1,0,1,9],
 "cpp_sample__i2_c.html":[0,1,0,1,5],
 "cpp_sample__invalid_object.html":[0,1,0,1,9,0],
-"cpp_sample__performance_monitoring.html":[0,1,0,1,6],
-"cpp_sample__share_memory.html":[0,1,0,1,8,1],
-"cpp_sample__work_with_a_d_l.html":[0,1,0,1,9,2],
-"cpp_sample_desktopevent.html":[0,1,0,1,7,1]
+"cpp_sample__performance_monitoring.html":[0,1,0,1,6]
 };

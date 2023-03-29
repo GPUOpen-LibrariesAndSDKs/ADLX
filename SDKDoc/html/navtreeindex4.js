@@ -1,5 +1,8 @@
 var NAVTREEINDEX4 =
 {
+"cpp_sample__share_memory.html":[0,1,0,1,8,1],
+"cpp_sample__work_with_a_d_l.html":[0,1,0,1,9,2],
+"cpp_sample_desktopevent.html":[0,1,0,1,7,1],
 "cpp_sample_display3_d_l_u_t.html":[0,1,0,1,2,0],
 "cpp_sample_display_events.html":[0,1,0,1,2,4],
 "cpp_sample_display_gamma.html":[0,1,0,1,2,6],
@@ -55,8 +58,8 @@ var NAVTREEINDEX4 =
 "group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced":[1,3,2,12],
 "group___a_d_l_x_macro.html#gad4b30c181751a349fccd865550dbc709":[1,3,2,8],
 "group___a_d_l_x_macro.html#gadbbcd4df68e453ba39a3ad9df7403c1d":[1,3,2,14],
-"group___a_d_l_x_macro.html#gae6717665e58771830fb95333b9af6b35":[1,3,2,2],
 "group___a_d_l_x_macro.html#gae6717665e58771830fb95333b9af6b35":[1,3,2,3],
+"group___a_d_l_x_macro.html#gae6717665e58771830fb95333b9af6b35":[1,3,2,2],
 "group__enumerations.html":[1,3,0],
 "group__enumerations.html#ga0ec0640b97efee73b589bf0b1c07a8fe":[1,3,0,25],
 "group__enumerations.html#ga169a825952eda7e83b949176a9a81028":[1,3,0,30],

@@ -238,6 +238,13 @@ void ShowGPUMetricsRange(IADLXPerformanceMonitoringServices* perfMonitoringServi
             printf("The GPU total board power range between %dW and %dW\n", minValue, maxValue);
         else if (res == ADLX_NOT_SUPPORTED)
             printf("GPU total board power range not supported\n");
+
+        // Get GPU intake temperature range
+        res = gpuMetricsSupport->pVtbl->GetGPUIntakeTemperatureRange (gpuMetricsSupport, &minValue, &maxValue);
+        if (ADLX_SUCCEEDED (res))
+            printf ("The GPU intake temperature range between %dW and %dW\n", minValue, maxValue);
+        else if (res == ADLX_NOT_SUPPORTED)
+            printf ("GPU intake temperature range not supported\n");
     }
     if (gpuMetricsSupport != NULL)
     {
@@ -388,6 +395,25 @@ void ShowGPUTotalBoardPower(IADLXGPUMetricsSupport *gpuMetricsSupport, IADLXGPUM
     }
 }
 
+// Display GPU temperature(in °C)
+void ShowGPUIntakeTemperature (IADLXGPUMetricsSupport* gpuMetricsSupport, IADLXGPUMetrics* gpuMetrics)
+{
+    adlx_bool supported = false;
+    // Display the GPU temperature support status
+    ADLX_RESULT res = gpuMetricsSupport->pVtbl->IsSupportedGPUIntakeTemperature (gpuMetricsSupport, &supported);
+    if (ADLX_SUCCEEDED (res))
+    {
+        printf ("GPU intake temperature support status: %d\n", supported);
+        if (supported)
+        {
+            adlx_double temperature = 0;
+            res = gpuMetrics->pVtbl->GPUIntakeTemperature (gpuMetrics, &temperature);
+            if (ADLX_SUCCEEDED (res))
+                printf ("The GPU intake temperature is: %f%cC\n", temperature, g_degree);
+        }
+    }
+}
+
 // Display GPU fan speed (in RPM)
 void ShowGPUFanSpeed(IADLXGPUMetricsSupport *gpuMetricsSupport, IADLXGPUMetrics *gpuMetrics)
 {
@@ -476,6 +502,7 @@ void ShowCurrentGPUMetrics(IADLXPerformanceMonitoringServices *perfMonitoringSer
             ShowGPUVRAM(gpuMetricsSupport, gpuMetrics);
             ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);
             ShowGPUTotalBoardPower(gpuMetricsSupport, gpuMetrics);
+            ShowGPUIntakeTemperature (gpuMetricsSupport, gpuMetrics);
         }
         Sleep(1000);
 
@@ -549,6 +576,7 @@ void ShowHistoricalGPUMetrics(IADLXPerformanceMonitoringServices *perfMonitoring
                 ShowGPUVRAM(gpuMetricsSupport, gpuMetrics);
                 ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);
                 ShowGPUTotalBoardPower(gpuMetricsSupport, gpuMetrics);
+                ShowGPUIntakeTemperature (gpuMetricsSupport, gpuMetrics);
             }
             printf("\n");
             if (gpuMetrics != NULL)

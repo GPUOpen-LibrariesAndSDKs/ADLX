@@ -270,6 +270,13 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;The<sp/>GPU<sp/>total<sp/>board<sp/>power<sp/>range<sp/>between<sp/>%dW<sp/>and<sp/>%dW\n&quot;</highlight><highlight class="normal">,<sp/>minValue,<sp/>maxValue);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(res<sp/>==<sp/><ref refid="_a_d_l_x_defines_8h_1ga9306b05f15578edbf79b649dd612b8c0a351c7e8c74ef3cfbee06213c43884589" kindref="member">ADLX_NOT_SUPPORTED</ref>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;GPU<sp/>total<sp/>board<sp/>power<sp/>range<sp/>not<sp/>supported\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>GPU<sp/>intake<sp/>temperature<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuMetricsSupport-&gt;pVtbl-&gt;GetGPUIntakeTemperatureRange<sp/>(gpuMetricsSupport,<sp/>&amp;minValue,<sp/>&amp;maxValue);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;The<sp/>GPU<sp/>intake<sp/>temperature<sp/>range<sp/>between<sp/>%dW<sp/>and<sp/>%dW\n&quot;</highlight><highlight class="normal">,<sp/>minValue,<sp/>maxValue);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(res<sp/>==<sp/><ref refid="_a_d_l_x_defines_8h_1ga9306b05f15578edbf79b649dd612b8c0a351c7e8c74ef3cfbee06213c43884589" kindref="member">ADLX_NOT_SUPPORTED</ref>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;GPU<sp/>intake<sp/>temperature<sp/>range<sp/>not<sp/>supported\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpuMetricsSupport<sp/>!=<sp/>NULL)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -420,6 +427,25 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Display<sp/>GPU<sp/>temperature(in<sp/>°C)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowGPUIntakeTemperature<sp/>(IADLXGPUMetricsSupport*<sp/>gpuMetricsSupport,<sp/>IADLXGPUMetrics*<sp/>gpuMetrics)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool<sp/>supported<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Display<sp/>the<sp/>GPU<sp/>temperature<sp/>support<sp/>status</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>gpuMetricsSupport-&gt;pVtbl-&gt;IsSupportedGPUIntakeTemperature<sp/>(gpuMetricsSupport,<sp/>&amp;supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;GPU<sp/>intake<sp/>temperature<sp/>support<sp/>status:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(supported)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_double<sp/>temperature<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuMetrics-&gt;pVtbl-&gt;GPUIntakeTemperature<sp/>(gpuMetrics,<sp/>&amp;temperature);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;The<sp/>GPU<sp/>intake<sp/>temperature<sp/>is:<sp/>%f%cC\n&quot;</highlight><highlight class="normal">,<sp/>temperature,<sp/>g_degree);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Display<sp/>GPU<sp/>fan<sp/>speed<sp/>(in<sp/>RPM)</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowGPUFanSpeed(IADLXGPUMetricsSupport<sp/>*gpuMetricsSupport,<sp/>IADLXGPUMetrics<sp/>*gpuMetrics)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
@@ -508,6 +534,7 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShowGPUVRAM(gpuMetricsSupport,<sp/>gpuMetrics);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShowGPUVoltage(gpuMetricsSupport,<sp/>gpuMetrics);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShowGPUTotalBoardPower(gpuMetricsSupport,<sp/>gpuMetrics);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShowGPUIntakeTemperature<sp/>(gpuMetricsSupport,<sp/>gpuMetrics);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sleep(1000);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -581,6 +608,7 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShowGPUVRAM(gpuMetricsSupport,<sp/>gpuMetrics);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShowGPUVoltage(gpuMetricsSupport,<sp/>gpuMetrics);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShowGPUTotalBoardPower(gpuMetricsSupport,<sp/>gpuMetrics);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShowGPUIntakeTemperature<sp/>(gpuMetricsSupport,<sp/>gpuMetrics);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpuMetrics<sp/>!=<sp/>NULL)</highlight></codeline>

@@ -36,8 +36,8 @@ var NAVTREEINDEX =
 "_a_d_l_x_defines_8h.html#ga0ec0640b97efee73b589bf0b1c07a8fea52e5d81a538ca03d28c5d3d0dd33662c",
 "_d_o_x__i_a_d_l_x3_d_settings_changed_event__is_enhanced_sync_changed.html",
 "_d_o_x__i_a_d_l_x_display_pixel_format__is_supported.html",
-"_d_o_x__i_a_d_l_x_manual_fan_tuning_state__get_fan_speed.html",
-"cpp_sample_display3_d_l_u_t.html"
+"_d_o_x__i_a_d_l_x_manual_fan_tuning__set_target_fan_speed.html",
+"cpp_sample__share_memory.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

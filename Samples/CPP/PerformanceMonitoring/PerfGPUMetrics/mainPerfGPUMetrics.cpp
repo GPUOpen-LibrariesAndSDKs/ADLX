@@ -231,6 +231,13 @@ void ShowGPUMetricsRange(IADLXPerformanceMonitoringServicesPtr perfMonitoringSer
             std::cout << "The GPU total board power range between " << minValue << "W and " << maxValue << "W" << std::endl;
         else if (res == ADLX_NOT_SUPPORTED)
             std::cout << "Don't support GPU total board power range" << std::endl;
+
+        // Get GPU intake temperature range
+        res = gpuMetricsSupport->GetGPUIntakeTemperatureRange (&minValue, &maxValue);
+        if (ADLX_SUCCEEDED (res))
+            std::cout << "The GPU intake temperature range between " << minValue << g_degree << "C and " << maxValue << g_degree << "C" << std::endl;
+        else if (res == ADLX_NOT_SUPPORTED)
+            std::cout << "Don't support GPU intake temperature range" << std::endl;
     }
 }
 
@@ -378,6 +385,26 @@ void ShowGPUTotalBoardPower(IADLXGPUMetricsSupportPtr gpuMetricsSupport, IADLXGP
     }
 }
 
+// Display GPU intake temperature(in °C)
+void ShowGPUIntakeTemperature (IADLXGPUMetricsSupportPtr gpuMetricsSupport, IADLXGPUMetricsPtr gpuMetrics)
+{
+    adlx_bool supported = false;
+
+    // Display the GPU temperature support status
+    ADLX_RESULT res = gpuMetricsSupport->IsSupportedGPUIntakeTemperature (&supported);
+    if (ADLX_SUCCEEDED (res))
+    {
+        std::cout << "GPU intake temperature support status: " << supported << std::endl;
+        if (supported)
+        {
+            adlx_double temperature = 0;
+            res = gpuMetrics->GPUIntakeTemperature (&temperature);
+            if (ADLX_SUCCEEDED (res))
+                std::cout << "The GPU intake temperature is: " << temperature << g_degree << "C" << std::endl;
+        }
+    }
+}
+
 // Display GPU fan speed (in RPM)
 void ShowGPUFanSpeed(IADLXGPUMetricsSupportPtr gpuMetricsSupport, IADLXGPUMetricsPtr gpuMetrics)
 {
@@ -467,6 +494,7 @@ void ShowCurrentGPUMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitoringS
             ShowGPUVRAM(gpuMetricsSupport, gpuMetrics);
             ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);
             ShowGPUTotalBoardPower(gpuMetricsSupport, gpuMetrics);
+            ShowGPUIntakeTemperature (gpuMetricsSupport, gpuMetrics);
             std::cout << std::noboolalpha;
         }
         Sleep(1000);
@@ -528,6 +556,7 @@ void ShowHistoricalGPUMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitori
                 ShowGPUVRAM(gpuMetricsSupport, gpuMetrics);
                 ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);
                 ShowGPUTotalBoardPower(gpuMetricsSupport, gpuMetrics);
+                ShowGPUIntakeTemperature (gpuMetricsSupport, gpuMetrics);
                 std::cout << std::noboolalpha;
             }
             std::cout << std::endl;

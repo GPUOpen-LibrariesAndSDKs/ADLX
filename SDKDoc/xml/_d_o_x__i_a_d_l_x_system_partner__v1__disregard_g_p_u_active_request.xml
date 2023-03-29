@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_system_partner__v1__disregard_g_p_u_active_request" kind="page">
+    <compoundname>DOX_IADLXSystemPartner_V1_DisregardGPUActiveRequest</compoundname>
+    <title>DisregardGPUActiveRequest</title>
+    <briefdescription>
+<para>Removes the request for a GPU to stay into active state (D0 state). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Removes the request for a GPU to stay into active state (D0 state).</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+  <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>    DisregardGPUActiveRequest (<ref refid="_d_o_x__i_a_d_l_x_g_p_u" kindref="compound">IADLXGPU</ref>* pGPU, adlx_uint handle)
+  </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para><variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>1.</para>
+</entry><entry thead="no" class="paramdir"><para>[in] </para>
+</entry><entry thead="no" class="paramname"><para>pGPU</para>
+</entry><entry thead="no" class="paramtype"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u" kindref="compound">IADLXGPU</ref>* </para>
+</entry><entry thead="no"><para>The pointer to the GPU interface. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+<variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>2.</para>
+</entry><entry thead="no" class="paramdir"><para>[out]</para>
+</entry><entry thead="no" class="paramname"><para>handle</para>
+</entry><entry thead="no" class="paramtype"><para>adlx_uint*</para>
+</entry><entry thead="no"><para>The D3D device handle to be released. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If the request that the GPU gets into the active state is successfully removed, <bold>ADLX_OK</bold> is returned.<linebreak/>
+ If the request that the GPU gets into the active state is not successfully removed, an error code is returned.<linebreak/>
+ Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.<linebreak/>
+</para>
+<para><heading level="2">Remarks </heading>
+</para>
+<para><bold>DisregardGPUActiveRequest</bold> should be called when the application no longer needs to make any method in the GPU Tuning domain, to allow the GPU to go into the inactive state (D3 state) and save power.</para>
+<para><heading level="2">Additional Info </heading>
+</para>
+<para>AMD discrete GPUs minimize power consumption while in the inactive state and in many cases consume no power at all.</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include&quot;Partner/OEM_ISystem.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/Partner/OEM_ISystem.h"/>
+  </compounddef>
+</doxygen>

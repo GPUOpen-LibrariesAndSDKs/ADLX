@@ -1,40 +1,36 @@
 ﻿{
   "configurations": [
     {
-      "name": "vs2019_Debug_win32",
-      "generator": "Visual Studio 16 2019",
+      "name": "Debug_win32",
+      "generator": "Ninja",
       "configurationType": "Debug",
       "inheritEnvironments": [ "msvc_x86" ],
       "buildRoot": "${projectDir}\\build",
-      "description": "This is the configuration to generate 32bit vs2019 debug, it only works when using VS2019",
       "intelliSenseMode": "windows-msvc-x86"
     },
     {
-      "name": "vs2019_Release_win32",
-      "generator": "Visual Studio 16 2019",
+      "name": "Release_win32",
+      "generator": "Ninja",
       "configurationType": "Release",
       "inheritEnvironments": [ "msvc_x86" ],
       "buildRoot": "${projectDir}\\build",
-      "description": "This is the configuration to generate 32bit vs2019 release, it only works when using VS2019",
       "intelliSenseMode": "windows-msvc-x86"
     },
     {
-      "name": "vs2019_Debug_x64",
-      "generator": "Visual Studio 16 2019 Win64",
+      "name": "Debug_x64",
+      "generator": "Ninja",
       "configurationType": "Debug",
       "buildRoot": "${projectDir}\\build",
       "inheritEnvironments": [ "msvc_x64_x64" ],
-      "intelliSenseMode": "windows-msvc-x64",
-      "description": "This is the configuration to generate 64bit vs2019 debug, it only works when using VS2019"
+      "intelliSenseMode": "windows-msvc-x64"
     },
     {
-      "name": "vs2019_Release_x64",
-      "generator": "Visual Studio 16 2019 Win64",
+      "name": "Release_x64",
+      "generator": "Ninja",
       "configurationType": "Release",
       "buildRoot": "${projectDir}\\build",
       "inheritEnvironments": [ "msvc_x64_x64" ],
-      "intelliSenseMode": "windows-msvc-x64",
-      "description": "This is the configuration to generate 64bit vs2019 release, it only works when using VS2019"
+      "intelliSenseMode": "windows-msvc-x64"
     }
   ]
 }
