@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -127,6 +127,7 @@ $(document).ready(function(){initNavTree('c__sync3_d_receive.html',''); initResi
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/ADLXHelper/Windows/C/ADLXHelper.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/Include/I3DSettings.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;SDK/Include/I3DSettings1.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;conio.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Block event to verify call back</span></div>
@@ -142,6 +143,14 @@ $(document).ready(function(){initNavTree('c__sync3_d_receive.html',''); initResi
 <div class="line">    <span class="comment">// Get the GPU interface</span></div>
 <div class="line">    IADLXGPU* gpu = NULL;</div>
 <div class="line">    p3DSettingsChangedEvent-&gt;pVtbl-&gt;GetGPU(p3DSettingsChangedEvent, &amp;gpu);</div>
+<div class="line">    </div>
+<div class="line">    IADLX3DSettingsChangedEvent1* p3DSettingsChangedEvent1 = NULL;</div>
+<div class="line">    p3DSettingsChangedEvent-&gt;pVtbl-&gt;QueryInterface(p3DSettingsChangedEvent, IID_IADLX3DSettingsChangedEvent1(), &amp;p3DSettingsChangedEvent1);</div>
+<div class="line">    <span class="keywordflow">if</span> (p3DSettingsChangedEvent1 == NULL)</div>
+<div class="line">    {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;3DSettingsChangedEvent1 not supported\n&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">    </div>
 <div class="line">    <span class="comment">//RadeonSuperResolution is a global feature (the GPU interface is NULL); skip printing its name</span></div>
 <div class="line">    <span class="keywordflow">if</span> (!p3DSettingsChangedEvent-&gt;pVtbl-&gt;IsRadeonSuperResolutionChanged(p3DSettingsChangedEvent))</div>
 <div class="line">    {</div>
@@ -199,6 +208,11 @@ $(document).ready(function(){initNavTree('c__sync3_d_receive.html',''); initResi
 <div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p3DSettingsChangedEvent-&gt;pVtbl-&gt;IsResetShaderCache(p3DSettingsChangedEvent))</div>
 <div class="line">        {</div>
 <div class="line">            printf(<span class="stringliteral">&quot;\tResetShaderCache\n&quot;</span>);</div>
+<div class="line">        }</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p3DSettingsChangedEvent1-&gt;pVtbl-&gt;IsRTBoostChanged(p3DSettingsChangedEvent1))</div>
+<div class="line">        {</div>
+<div class="line">            printf(<span class="stringliteral">&quot;\tRTBoost is changed\n&quot;</span>);</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"> </div>

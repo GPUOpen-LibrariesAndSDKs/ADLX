@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -262,18 +262,21 @@ $(document).ready(function(){initNavTree('c__anisotropic_filtering.html',''); in
 <div class="line"><span class="keywordtype">void</span> ShowSupport(IADLX3DAnisotropicFiltering* anisotropicFiltering)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
-<div class="line">    anisotropicFiltering-&gt;pVtbl-&gt;IsSupported(anisotropicFiltering, &amp;supported);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIsSupported: %d\n&quot;</span>, supported);</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = anisotropicFiltering-&gt;pVtbl-&gt;IsSupported(anisotropicFiltering, &amp;supported);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsSupported: %d\n&quot;</span>, supported);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> GetState(IADLX3DAnisotropicFiltering* anisotropicFiltering)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool enabled = <span class="keyword">false</span>;</div>
-<div class="line">    anisotropicFiltering-&gt;pVtbl-&gt;IsEnabled(anisotropicFiltering, &amp;enabled);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIsEnabled: %d\n&quot;</span>, enabled);</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = anisotropicFiltering-&gt;pVtbl-&gt;IsEnabled(anisotropicFiltering, &amp;enabled);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsEnabled: %d\n&quot;</span>, enabled);</div>
 <div class="line">    <a class="code" href="group__enumerations.html#gac99ad138a55f9242874a960af8e64579">ADLX_ANISOTROPIC_FILTERING_LEVEL</a> level;</div>
-<div class="line">    anisotropicFiltering-&gt;pVtbl-&gt;GetLevel(anisotropicFiltering, &amp;level);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tLevel: %s\n&quot;</span>, getlevelStr(level));</div>
+<div class="line">    res = anisotropicFiltering-&gt;pVtbl-&gt;GetLevel(anisotropicFiltering, &amp;level);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tLevel: %s\n&quot;</span>, getlevelStr(level));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetState(IADLX3DAnisotropicFiltering* anisotropicFiltering, <span class="keywordtype">int</span> index)</div>
@@ -285,10 +288,13 @@ $(document).ready(function(){initNavTree('c__anisotropic_filtering.html',''); in
 <div class="line">    <span class="keywordflow">if</span> (index == 0 &amp;&amp; <a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
 <div class="line">    {</div>
 <div class="line">        <a class="code" href="group__enumerations.html#gac99ad138a55f9242874a960af8e64579">ADLX_ANISOTROPIC_FILTERING_LEVEL</a> level;</div>
-<div class="line">        anisotropicFiltering-&gt;pVtbl-&gt;GetLevel(anisotropicFiltering, &amp;level);</div>
-<div class="line">        level = (level == AF_LEVEL_X2) ? AF_LEVEL_X4 : AF_LEVEL_X2;</div>
-<div class="line">        anisotropicFiltering-&gt;pVtbl-&gt;SetLevel(anisotropicFiltering, level);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;\tSet level: %s  ,return code is: %d (0 means success)\n&quot;</span>, getlevelStr(level), res);</div>
+<div class="line">        res = anisotropicFiltering-&gt;pVtbl-&gt;GetLevel(anisotropicFiltering, &amp;level);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
+<div class="line">        {</div>
+<div class="line">            level = (level == AF_LEVEL_X2) ? AF_LEVEL_X4 : AF_LEVEL_X2;</div>
+<div class="line">            res = anisotropicFiltering-&gt;pVtbl-&gt;SetLevel(anisotropicFiltering, level);</div>
+<div class="line">            printf(<span class="stringliteral">&quot;\tSet level: %s  ,return code is: %d (0 means success)\n&quot;</span>, getlevelStr(level), res);</div>
+<div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>

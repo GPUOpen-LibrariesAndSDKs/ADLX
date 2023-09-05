@@ -1,4 +1,4 @@
-@page page_sample_cpp C++
+@page page_sample_cpp C++ Samples
 <!--
 # Copyright (c) 2022 Advanced Micro Devices, Inc. All rights reserved.
 #

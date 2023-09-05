@@ -144,9 +144,12 @@ void DisplayUniqueName(IADLXDisplayPtr display, char* uniqueName)
     if (nullptr != display && nullptr != uniqueName)
     {
         const char* gpuName = nullptr;
-        display->Name(&gpuName);
+        ADLX_RESULT res = display->Name(&gpuName);
+        if (ADLX_SUCCEEDED(res))
+            sprintf_s(uniqueName, 128, "name:%s", gpuName);
         adlx_size id;
-        display->UniqueId(&id);
-        sprintf_s(uniqueName, 128, "name:%s, id:%zu", gpuName, id);
+        res = display->UniqueId(&id);
+        if (ADLX_SUCCEEDED(res))
+            sprintf_s(uniqueName, 128, "id:%zu", id);
     }
 }

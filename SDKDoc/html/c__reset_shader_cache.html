@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -239,8 +239,8 @@ $(document).ready(function(){initNavTree('c__reset_shader_cache.html',''); initR
 <div class="line"><span class="keywordtype">void</span> ShowSupport(IADLX3DResetShaderCache* resetShaderCache)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
-<div class="line">    resetShaderCache-&gt;pVtbl-&gt;IsSupported(resetShaderCache, &amp;supported);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIsSupported: %d\n&quot;</span>, supported);</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = resetShaderCache-&gt;pVtbl-&gt;IsSupported(resetShaderCache, &amp;supported);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tIsSupported: %d, return code is: %d(0 means success)\n&quot;</span>, supported, res);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> ResetShaderCache(IADLX3DResetShaderCache* resetShaderCache)</div>

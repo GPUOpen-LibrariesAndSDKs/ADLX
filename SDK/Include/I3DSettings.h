@@ -45,8 +45,7 @@ namespace adlx
         * Radeon Anti-Lag helps reduce input lag in GPU-limited cases by controlling the pace of the CPU work to ensure it doesn't get too far ahead of the GPU.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DAntiLag_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -71,11 +70,10 @@ namespace adlx
         * @addinfo
         * @ENG_START_DOX
         * Radeon Anti-Lag helps reduce input lag in GPU-limited cases by controlling the pace of the CPU work to ensure it doesn't get too far ahead of the GPU. <br>
-        * __Note:__ @ref DOX_IADLX3DChill "AMD Radeon Chill", @ref DOX_IADLX3DBoost "AMD Radeon Boost", and AMD Radeon Anti-Lag features cannot be enabled simultaneously. If AMD Radeon Boost or AMD Radeon Chill is enabled, AMD Radeon Anti-Lag is automatically disabled.
+        * __Note:__ @ref DOX_IADLX3DChill "AMD Radeon Chill", and AMD Radeon Anti-Lag features cannot be enabled simultaneously. If AMD Radeon Chill is enabled, AMD Radeon Anti-Lag is automatically disabled.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DAntiLag_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsEnabled (adlx_bool* enabled) = 0;
@@ -100,11 +98,10 @@ namespace adlx
         * @addinfo
         * @ENG_START_DOX
         * Radeon Anti-Lag helps reduce input lag in GPU-limited cases by controlling the pace of the CPU work to ensure it doesn't get too far ahead of the GPU. <br>
-        * __Note:__ @ref DOX_IADLX3DChill "AMD Radeon Chill", @ref DOX_IADLX3DBoost "AMD Radeon Boost", and AMD Radeon Anti-Lag features cannot be enabled simultaneously. If AMD Radeon Anti-Lag is enabled, AMD Radeon Boost and AMD Radeon Chill are automatically disabled. However, the configuration of the disabled feature is preserved.
+        * __Note:__ @ref DOX_IADLX3DChill "AMD Radeon Chill", and AMD Radeon Anti-Lag features cannot be enabled simultaneously. If AMD Radeon Anti-Lag is enabled, AMD Radeon Chill is automatically disabled. However, the configuration of the disabled feature is preserved.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DAntiLag_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetEnabled (adlx_bool enable) = 0;
@@ -134,6 +131,99 @@ typedef struct IADLX3DAntiLagVtbl
 struct IADLX3DAntiLag { const IADLX3DAntiLagVtbl *pVtbl; };
 #endif //__cplusplus
 #pragma endregion IADLX3DAntiLag
+
+//3DAntiLag1 setting interface
+#pragma region IADLX3DAntiLag1
+#if defined (__cplusplus)
+namespace adlx
+{
+    class ADLX_NO_VTABLE IADLX3DAntiLag1 : public IADLX3DAntiLag
+    {
+    public:
+        ADLX_DECLARE_IID(L"IADLX3DAntiLag1")
+
+            /**
+            *@page DOX_IADLX3DAntiLag1_GetLevel GetLevel
+            *@ENG_START_DOX @brief Gets the AMD Radeon™ Anti-Lag level on a GPU. @ENG_END_DOX
+            *
+            *@syntax
+            *@codeStart
+            * @ref ADLX_RESULT    GetLevel(@ref ADLX_ANTILAG_STATE* level)
+            *@codeEnd
+            *
+            *@params
+            * @paramrow{1.,[out],level,@ref ADLX_ANTILAG_STATE,@ENG_START_DOX The pointer to a variable where the Radeon Anti-Lag level is returned. @ENG_END_DOX}
+            *
+            *@retvalues
+            *@ENG_START_DOX  If the Radeon Anti-Lag level is successfully returned, __ADLX_OK__ is returned.<br>
+            * If the Radeon Anti-Lag level is not successfully returned, an error code is returned.<br>
+            * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
+            *
+            * @addinfo
+            * @ENG_START_DOX
+            * Radeon Anti-Lag helps reduce input lag in GPU-limited cases by controlling the pace of the CPU work to ensure it doesn't get too far ahead of the GPU. 
+            * @ENG_END_DOX
+            *
+            *@copydoc IADLX3DAntiLag1_REQ_TABLE
+            *
+            */
+            virtual ADLX_RESULT         ADLX_STD_CALL GetLevel(ADLX_ANTILAG_STATE* level) = 0;
+
+            /**
+            *@page DOX_IADLX3DAntiLag1_SetLevel SetLevel
+            *@ENG_START_DOX @brief Sets the AMD Radeon™ Anti-Lag level on a GPU. @ENG_END_DOX
+            *
+            *@syntax
+            *@codeStart
+            * @ref ADLX_RESULT    SetLevel (@ref ADLX_ANTILAG_STATE level)
+            *@codeEnd
+            *
+            *@params
+            * @paramrow{1.,[in],level,@ref ADLX_ANTILAG_STATE,@ENG_START_DOX The new Radeon Anti-Lag level. @ENG_END_DOX}
+            *
+            *@retvalues
+            *@ENG_START_DOX  If the Radeon Anti-Lag level is successfully set, __ADLX_OK__ is returned.<br>
+            * If the Radeon Anti-Lag level is not successfully set, an error code is returned.<br>
+            * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
+            *
+            * @addinfo
+            * @ENG_START_DOX
+            * Radeon Anti-Lag helps reduce input lag in GPU-limited cases by controlling the pace of the CPU work to ensure it doesn't get too far ahead of the GPU. <br>
+            * Radeon Anti-Lag Next enables an advanced algorithm in supported DX11 and DX12 games for a more responsive experience.
+            * @ENG_END_DOX
+            *
+            *@copydoc IADLX3DAntiLag1_REQ_TABLE
+            *
+            */
+            virtual ADLX_RESULT         ADLX_STD_CALL SetLevel(ADLX_ANTILAG_STATE level) = 0;
+    };  //IADLX3DAntiLag1
+     //----------------------------------------------------------------------------------------------
+    typedef IADLXInterfacePtr_T<IADLX3DAntiLag1> IADLX3DAntiLag1Ptr;
+} //namespace adlx
+#else //__cplusplus
+ADLX_DECLARE_IID(IADLX3DAntiLag1, L"IADLX3DAntiLag1")
+
+typedef struct IADLX3DAntiLag1 IADLX3DAntiLag1;
+
+typedef struct IADLX3DAntiLag1Vtbl
+{
+    //IADLXInterface
+    adlx_long(ADLX_STD_CALL* Acquire)(IADLX3DAntiLag1* pThis);
+    adlx_long(ADLX_STD_CALL* Release)(IADLX3DAntiLag1* pThis);
+    ADLX_RESULT(ADLX_STD_CALL* QueryInterface)(IADLX3DAntiLag1* pThis, const wchar_t* interfaceId, void** ppInterface);
+
+    //IADLX3DAntiLag
+    ADLX_RESULT(ADLX_STD_CALL* IsSupported)(IADLX3DAntiLag1* pThis, adlx_bool* supported);
+    ADLX_RESULT(ADLX_STD_CALL* IsEnabled)(IADLX3DAntiLag1* pThis, adlx_bool* enabled);
+    ADLX_RESULT(ADLX_STD_CALL* SetEnabled)(IADLX3DAntiLag1* pThis, adlx_bool enable);
+    ADLX_RESULT(ADLX_STD_CALL* GetLevel)(IADLX3DAntiLag1* pThis, ADLX_ANTILAG_STATE* level);
+    ADLX_RESULT(ADLX_STD_CALL* SetLevel)(IADLX3DAntiLag1* pThis, ADLX_ANTILAG_STATE level);
+}IADLX3DAntiLag1Vtbl;
+
+struct IADLX3DAntiLag1 { const IADLX3DAntiLag1Vtbl* pVtbl; };
+#endif //__cplusplus
+#pragma endregion IADLX3DAntiLag1
+
 
 //3DChill setting interface
 #pragma region IADLX3DChill
@@ -167,8 +257,7 @@ namespace adlx
         * AMD Radeon Chill conserves GPU power and reduces heat by adjusting the FPS based on the intensity of in-game movement.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DChill_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -197,8 +286,7 @@ namespace adlx
         * On some AMD GPUs, AMD Radeon Chill and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If Radeon Super Resolution is enabled, AMD Radeon Chill is automatically disabled.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DChill_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsEnabled (adlx_bool* isEnabled) = 0;
@@ -232,8 +320,7 @@ namespace adlx
 		* The minimum FPS determines the target frame rate when in-game interaction is minimal.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DChill_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetFPSRange (ADLX_IntRange* range) = 0;
@@ -262,8 +349,7 @@ namespace adlx
 		* The minimum FPS determines the target frame rate when in-game interaction is minimal.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DChill_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetMinFPS (adlx_int* currentMinFPS) = 0;
@@ -292,8 +378,7 @@ namespace adlx
 		*The maximum FPS determines the target frame rate during periods of intense action.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DChill_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetMaxFPS (adlx_int* currentMaxFPS) = 0;
@@ -323,8 +408,7 @@ namespace adlx
 
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DChill_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetEnabled (adlx_bool enable) = 0;
@@ -353,8 +437,7 @@ namespace adlx
 		* The minimum FPS determines the target frame rate when in-game interaction is minimal.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DChill_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetMinFPS (adlx_int minFPS) = 0;
@@ -383,8 +466,7 @@ namespace adlx
 		* The maximum FPS determines the target frame rate during periods of intense action.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DChill_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetMaxFPS (adlx_int maxFPS) = 0;
@@ -448,12 +530,11 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality.<br>
+        *@ENG_START_DOX AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality.<br>
         * Only works in supported games.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DBoost_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -476,13 +557,12 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality. Only works in supported games.<br>
-        * __Note:__ @ref DOX_IADLX3DChill "AMD Radeon Chill", AMD Radeon Boost, and @ref DOX_IADLX3DAntiLag "AMD Radeon Anti-Lag" features cannot be enabled simultaneously. If AMD Radeon Chill or AMD Radeon Anti-Lag is enabled, AMD Radeon Boost is automatically disabled.<br>
+        *@ENG_START_DOX AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality. Only works in supported games.<br>
+        * __Note:__ @ref DOX_IADLX3DChill "AMD Radeon Chill", AMD Radeon Boost features cannot be enabled simultaneously. If AMD Radeon Chill is enabled, AMD Radeon Boost is automatically disabled.<br>
         * On some AMD GPUs, AMD Radeon Boost and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If Radeon Super Resolution is enabled, AMD Radeon Boost is automatically disabled.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DBoost_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsEnabled (adlx_bool* isEnabled) = 0;
@@ -508,12 +588,11 @@ namespace adlx
         *@ENG_START_DOX @details The maximum resolution, minimum resolution, and step resolution of AMD Radeon Boost are read only. @ENG_END_DOX
         *
         * @addinfo
-        * AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality.<br>
+        *@ENG_START_DOX AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality.<br>
         * Only works in supported games.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DBoost_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetResolutionRange (ADLX_IntRange* range) = 0;
@@ -536,12 +615,11 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality.<br>
+        *@ENG_START_DOX AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality.<br>
         * Only works in supported games.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DBoost_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetResolution (adlx_int* currentMinRes) = 0;
@@ -564,13 +642,12 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality. Only works in supported games. <br>
-        * __Note:__ @ref DOX_IADLX3DChill "AMD Radeon Chill", AMD Radeon Boost, and @ref DOX_IADLX3DAntiLag "AMD Radeon Anti-Lag" features cannot be enabled simultaneously. If AMD Radeon Boost is enabled, AMD Radeon Anti-Lag and AMD Radeon Chill are automatically disabled. However, the configuration of the disabled feature is preserved.<br>
+        *@ENG_START_DOX AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality. Only works in supported games. <br>
+        * __Note:__ @ref DOX_IADLX3DChill "AMD Radeon Chill", AMD Radeon Boost features cannot be enabled simultaneously. If AMD Radeon Boost is enabled, AMD Radeon Chill are automatically disabled. However, the configuration of the disabled feature is preserved.<br>
         * On some AMD GPUs, AMD Radeon Boost and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If AMD Radeon Boost is enabled, Radeon Super Resolution is automatically disabled.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DBoost_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetEnabled (adlx_bool enable) = 0;
@@ -593,11 +670,10 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality. Only works in supported games. <br>
+        *@ENG_START_DOX AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality. Only works in supported games. <br>
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DBoost_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetResolution (adlx_int minRes) = 0;
@@ -660,11 +736,10 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * AMD Radeon Image Sharpening restores clarity softened by other effects to in-game visuals, and select productivity and media applications.
+        *@ENG_START_DOX AMD Radeon Image Sharpening restores clarity softened by other effects to in-game visuals, and select productivity and media applications.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DImageSharpening_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -687,12 +762,11 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * AMD Radeon Image Sharpening restores clarity softened by other effects to in-game visuals, and select productivity and media applications.<br>
+        *@ENG_START_DOX AMD Radeon Image Sharpening restores clarity softened by other effects to in-game visuals, and select productivity and media applications.<br>
         * __Note:__ On some AMD GPUs, AMD Radeon Image Sharpening and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If Radeon Super Resolution is enabled, AMD Radeon Image Sharpening is automatically disabled.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DImageSharpening_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsEnabled (adlx_bool* isEnabled) = 0;
@@ -718,11 +792,10 @@ namespace adlx
         *@ENG_START_DOX @details The maximum sharpness, minimum sharpness, and step sharpness of AMD Radeon Image Sharpening are read only. @ENG_END_DOX
         *
         * @addinfo
-        * AMD Radeon Image Sharpening restores clarity softened by other effects to in-game visuals, and select productivity and media applications.
+        *@ENG_START_DOX AMD Radeon Image Sharpening restores clarity softened by other effects to in-game visuals, and select productivity and media applications.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DImageSharpening_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetSharpnessRange (ADLX_IntRange* range) = 0;
@@ -745,11 +818,10 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * AMD Radeon Image Sharpening restores clarity softened by other effects to in-game visuals, and select productivity and media applications.
+        *@ENG_START_DOX AMD Radeon Image Sharpening restores clarity softened by other effects to in-game visuals, and select productivity and media applications.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DImageSharpening_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetSharpness (adlx_int* currentSharpness) = 0;
@@ -772,12 +844,11 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * AMD Radeon Image Sharpening restores clarity softened by other effects to in-game visuals, and select productivity and media applications.<br>
+        *@ENG_START_DOX AMD Radeon Image Sharpening restores clarity softened by other effects to in-game visuals, and select productivity and media applications.<br>
         * __Note:__ On some AMD GPUs, AMD Radeon Image Sharpening and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If Radeon Image Sharpening is enabled, AMD Radeon Super Resolution is automatically disabled.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DImageSharpening_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetEnabled (adlx_bool enable) = 0;
@@ -800,11 +871,10 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * AMD Radeon Image Sharpening restores clarity softened by other effects to in-game visuals, and select productivity and media applications.
+        *@ENG_START_DOX AMD Radeon Image Sharpening restores clarity softened by other effects to in-game visuals, and select productivity and media applications.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DImageSharpening_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetSharpness (adlx_int sharpness) = 0;
@@ -871,8 +941,7 @@ namespace adlx
         * Does not limit the frame rate at the display’s refresh rate.<br/>
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DEnhancedSync_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -900,11 +969,10 @@ namespace adlx
         * Does not limit the frame rate at the display’s refresh rate.<br/>
         * __Note__: AMD Radeon Enhanced Sync configuration is dependent on the state of VSync.<br/>
         * If VSync is enabled, AMD Radeon Enhanced Sync is automatically disabled.<br/>
-        * If Vsync is disabled, AMD Radeon Enhanced Sync is automatically enabled.
+        * If VSync is disabled, AMD Radeon Enhanced Sync is automatically enabled.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DEnhancedSync_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsEnabled (adlx_bool* isEnabled) = 0;
@@ -935,8 +1003,7 @@ namespace adlx
         * If AMD Radeon Enhanced Sync is disabled, VSync is automatically enabled.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DEnhancedSync_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetEnabled (adlx_bool enable) = 0;
@@ -1000,8 +1067,7 @@ namespace adlx
         * Limits the frame rate at the display’s refresh rate.<br>
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DWaitForVerticalRefresh_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -1032,8 +1098,7 @@ namespace adlx
         * If AMD Radeon Enhanced Sync is disabled, VSync is automatically enabled.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DWaitForVerticalRefresh_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsEnabled (adlx_bool* isEnabled) = 0;
@@ -1064,8 +1129,7 @@ namespace adlx
         * If AMD Radeon Enhanced Sync is disabled, VSync is automatically enabled.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DWaitForVerticalRefresh_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetMode (ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE* currentMode) = 0;
@@ -1096,8 +1160,7 @@ namespace adlx
         * If VSync is disabled, AMD Radeon Enhanced Sync is automatically enabled.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DWaitForVerticalRefresh_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetMode (ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE mode) = 0;
@@ -1158,12 +1221,11 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * AMD Frame Rate Target Control sets a user-defined target maximum frame rate in full-screen applications to reduce GPU power consumption.<br>
+        *@ENG_START_DOX AMD Frame Rate Target Control sets a user-defined target maximum frame rate in full-screen applications to reduce GPU power consumption.<br>
         * Gaming quality is maintained while GPU power consumption, noise, and heat levels are reduced when running games at higher FPS than the display refresh rate.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DFrameRateTargetControl_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -1186,12 +1248,11 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * AMD Frame Rate Target Control sets a user-defined target maximum frame rate in full-screen applications to reduce GPU power consumption.<br>
+        *@ENG_START_DOX AMD Frame Rate Target Control sets a user-defined target maximum frame rate in full-screen applications to reduce GPU power consumption.<br>
         * Gaming quality is maintained while GPU power consumption, noise, and heat levels are reduced when running games at higher FPS than the display refresh rate.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DFrameRateTargetControl_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsEnabled (adlx_bool* isEnabled) = 0;
@@ -1217,12 +1278,11 @@ namespace adlx
         *@ENG_START_DOX @details The maximum FPS, minimum FPS, and step FPS of AMD Frame Rate Target Control are read only. @ENG_END_DOX
         *
         * @addinfo
-        * AMD Frame Rate Target Control sets a user-defined target maximum frame rate in full-screen applications to reduce GPU power consumption.<br>
+        *@ENG_START_DOX AMD Frame Rate Target Control sets a user-defined target maximum frame rate in full-screen applications to reduce GPU power consumption.<br>
         * Gaming quality is maintained while GPU power consumption, noise, and heat levels are reduced when running games at higher FPS than the display refresh rate.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DFrameRateTargetControl_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetFPSRange (ADLX_IntRange* range) = 0;
@@ -1245,12 +1305,11 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * AMD Frame Rate Target Control sets a user-defined target maximum frame rate in full-screen applications to reduce GPU power consumption.<br>
+        *@ENG_START_DOX AMD Frame Rate Target Control sets a user-defined target maximum frame rate in full-screen applications to reduce GPU power consumption.<br>
         * Gaming quality is maintained while GPU power consumption, noise, and heat levels are reduced when running games at higher FPS than the display refresh rate.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DFrameRateTargetControl_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetFPS (adlx_int* currentFPS) = 0;
@@ -1273,12 +1332,11 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * AMD Frame Rate Target Control sets a user-defined target maximum frame rate in full-screen applications to reduce GPU power consumption.<br>
+        *@ENG_START_DOX AMD Frame Rate Target Control sets a user-defined target maximum frame rate in full-screen applications to reduce GPU power consumption.<br>
         * Gaming quality is maintained while GPU power consumption, noise, and heat levels are reduced when running games at higher FPS than the display refresh rate.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DFrameRateTargetControl_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetEnabled (adlx_bool enable) = 0;
@@ -1301,12 +1359,11 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * AMD Frame Rate Target Control sets a user-defined target maximum frame rate in full-screen applications to reduce GPU power consumption.<br>
+        *@ENG_START_DOX AMD Frame Rate Target Control sets a user-defined target maximum frame rate in full-screen applications to reduce GPU power consumption.<br>
         * Gaming quality is maintained while GPU power consumption, noise, and heat levels are reduced when running games at higher FPS than the display refresh rate.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DFrameRateTargetControl_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetFPS (adlx_int maxFPS) = 0;
@@ -1368,11 +1425,10 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Anti-aliasing improves image quality by smoothing jagged edges at the cost of some performance.
+        *@ENG_START_DOX Anti-aliasing improves image quality by smoothing jagged edges at the cost of some performance.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DAntiAliasing_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -1395,11 +1451,10 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Anti-aliasing improves image quality by smoothing jagged edges at the cost of some performance.
+        *@ENG_START_DOX Anti-aliasing improves image quality by smoothing jagged edges at the cost of some performance.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DAntiAliasing_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetMode (ADLX_ANTI_ALIASING_MODE* currentMode) = 0;
@@ -1422,11 +1477,10 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Anti-aliasing improves image quality by smoothing jagged edges at the cost of some performance.
+        *@ENG_START_DOX Anti-aliasing improves image quality by smoothing jagged edges at the cost of some performance.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DAntiAliasing_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetLevel (ADLX_ANTI_ALIASING_LEVEL* currentLevel) = 0;
@@ -1449,11 +1503,10 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Anti-aliasing improves image quality by smoothing jagged edges at the cost of some performance.
+        *@ENG_START_DOX Anti-aliasing improves image quality by smoothing jagged edges at the cost of some performance.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DAntiAliasing_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetMethod (ADLX_ANTI_ALIASING_METHOD* currentMethod) = 0;
@@ -1476,14 +1529,13 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Anti-aliasing improves image quality by smoothing jagged edges at the cost of some performance.
+        *@ENG_START_DOX Anti-aliasing improves image quality by smoothing jagged edges at the cost of some performance.
         *
         * __Note__: Set the mode to __AA_MODE_ENHANCE_APP_SETTINGS__ or __AA_MODE_OVERRIDE_APP_SETTINGS__ to concurrently enable other anti-aliasing methods, such as morphological anti-aliasing.<br/>
         * For more information, refer to @ref DOX_IADLX3DMorphologicalAntiAliasing "IADLX3DMorphologicalAntiAliasing".
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DAntiAliasing_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetMode (ADLX_ANTI_ALIASING_MODE mode) = 0;
@@ -1506,11 +1558,10 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Anti-aliasing improves image quality by smoothing jagged edges at the cost of some performance.
+        *@ENG_START_DOX Anti-aliasing improves image quality by smoothing jagged edges at the cost of some performance.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DAntiAliasing_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetLevel (ADLX_ANTI_ALIASING_LEVEL level) = 0;
@@ -1533,11 +1584,10 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Anti-aliasing improves image quality by smoothing jagged edges at the cost of some performance.
+        *@ENG_START_DOX Anti-aliasing improves image quality by smoothing jagged edges at the cost of some performance.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DAntiAliasing_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetMethod (ADLX_ANTI_ALIASING_METHOD method) = 0;
@@ -1600,15 +1650,14 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Morphological anti-aliasing is an edge-smoothing technique with minimal performance overhead.<br/>
+        *@ENG_START_DOX Morphological anti-aliasing is an edge-smoothing technique with minimal performance overhead.<br/>
         * The applications must run exclusively in full-screen mode.<br/>
         * Not applicable to DirectX® 12 and Vulkan® applications.
         *
         * __Note__: When morphological anti-aliasing is enabled, the anti-aliasing mode must either be __AA_MODE_ENHANCE_APP_SETTINGS__ or __AA_MODE_OVERRIDE_APP_SETTINGS__, as returned by @ref DOX_IADLX3DAntiAliasing_GetMode.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DMorphologicalAntiAliasing_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -1631,15 +1680,14 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Morphological anti-aliasing is an edge-smoothing technique with minimal performance overhead.<br/>
+        *@ENG_START_DOX Morphological anti-aliasing is an edge-smoothing technique with minimal performance overhead.<br/>
         * The applications must run exclusively in full-screen mode.<br/>
         * Not applicable to DirectX® 12 and Vulkan® applications.
         *
         * __Note__: When morphological anti-aliasing is enabled, the anti-aliasing mode must either be __AA_MODE_ENHANCE_APP_SETTINGS__ or __AA_MODE_OVERRIDE_APP_SETTINGS__, as returned by @ref DOX_IADLX3DAntiAliasing_GetMode.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DMorphologicalAntiAliasing_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsEnabled (adlx_bool* isEnabled) = 0;
@@ -1662,15 +1710,14 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Morphological anti-aliasing is an edge-smoothing technique with minimal performance overhead.<br/>
+        *@ENG_START_DOX Morphological anti-aliasing is an edge-smoothing technique with minimal performance overhead.<br/>
         * The applications must run exclusively in full-screen mode.<br/>
         * Not applicable to DirectX® 12 and Vulkan® applications.
         *
         * __Note__: When morphological anti-aliasing is enabled, the anti-aliasing mode must either be __AA_MODE_ENHANCE_APP_SETTINGS__ or __AA_MODE_OVERRIDE_APP_SETTINGS__, as returned by @ref DOX_IADLX3DAntiAliasing_GetMode.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DMorphologicalAntiAliasing_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetEnabled (adlx_bool enable) = 0;
@@ -1728,12 +1775,11 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Anisotropic filtering improves texture quality in most 3D applications on surfaces that appear far away or at odd angles – such as roads or trees – at the cost of some frame rate performance.<br/>
+        *@ENG_START_DOX Anisotropic filtering improves texture quality in most 3D applications on surfaces that appear far away or at odd angles – such as roads or trees – at the cost of some frame rate performance.<br/>
         * Only affects DirectX® 9 applications.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DAnisotropicFiltering_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -1756,12 +1802,11 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Anisotropic filtering improves texture quality in most 3D applications on surfaces that appear far away or at odd angles – such as roads or trees – at the cost of some frame rate performance.<br/>
+        *@ENG_START_DOX Anisotropic filtering improves texture quality in most 3D applications on surfaces that appear far away or at odd angles – such as roads or trees – at the cost of some frame rate performance.<br/>
         * Only affects DirectX® 9 applications.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DAnisotropicFiltering_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsEnabled (adlx_bool* isEnabled) = 0;
@@ -1784,12 +1829,11 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Anisotropic filtering improves texture quality in most 3D applications on surfaces that appear far away or at odd angles – such as roads or trees – at the cost of some frame rate performance.<br/>
+        *@ENG_START_DOX Anisotropic filtering improves texture quality in most 3D applications on surfaces that appear far away or at odd angles – such as roads or trees – at the cost of some frame rate performance.<br/>
         * Only affects DirectX® 9 applications.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DAnisotropicFiltering_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetLevel (ADLX_ANISOTROPIC_FILTERING_LEVEL* currentLevel) = 0;
@@ -1812,12 +1856,11 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Anisotropic filtering improves texture quality in most 3D applications on surfaces that appear far away or at odd angles – such as roads or trees – at the cost of some frame rate performance.<br/>
+        *@ENG_START_DOX Anisotropic filtering improves texture quality in most 3D applications on surfaces that appear far away or at odd angles – such as roads or trees – at the cost of some frame rate performance.<br/>
         * Only affects DirectX® 9 applications.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DAnisotropicFiltering_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetEnabled (adlx_bool enable) = 0;
@@ -1840,12 +1883,11 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Anisotropic filtering improves texture quality in most 3D applications on surfaces that appear far away or at odd angles – such as roads or trees – at the cost of some frame rate performance.<br/>
+        *@ENG_START_DOX Anisotropic filtering improves texture quality in most 3D applications on surfaces that appear far away or at odd angles – such as roads or trees – at the cost of some frame rate performance.<br/>
         * Only affects DirectX® 9 applications.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DAnisotropicFiltering_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetLevel (ADLX_ANISOTROPIC_FILTERING_LEVEL level) = 0;
@@ -1906,11 +1948,10 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Tessellation adjusts the number of polygons used to render objects with enhanced detail, at the cost of some frame rate performance.
+        *@ENG_START_DOX Tessellation adjusts the number of polygons used to render objects with enhanced detail, at the cost of some frame rate performance.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DTessellation_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -1933,11 +1974,10 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Tessellation adjusts the number of polygons used to render objects with enhanced detail, at the cost of some frame rate performance.
+        *@ENG_START_DOX Tessellation adjusts the number of polygons used to render objects with enhanced detail, at the cost of some frame rate performance.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DTessellation_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetMode (ADLX_TESSELLATION_MODE* currentMode) = 0;
@@ -1960,11 +2000,10 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Tessellation adjusts the number of polygons used to render objects with enhanced detail, at the cost of some frame rate performance.
+        *@ENG_START_DOX Tessellation adjusts the number of polygons used to render objects with enhanced detail, at the cost of some frame rate performance.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DTessellation_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetLevel (ADLX_TESSELLATION_LEVEL* currentLevel) = 0;
@@ -1987,11 +2026,10 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Tessellation adjusts the number of polygons used to render objects with enhanced detail, at the cost of some frame rate performance.
+        *@ENG_START_DOX Tessellation adjusts the number of polygons used to render objects with enhanced detail, at the cost of some frame rate performance.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DTessellation_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetMode (ADLX_TESSELLATION_MODE mode) = 0;
@@ -2014,11 +2052,10 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        * Tessellation adjusts the number of polygons used to render objects with enhanced detail, at the cost of some frame rate performance.
+        *@ENG_START_DOX Tessellation adjusts the number of polygons used to render objects with enhanced detail, at the cost of some frame rate performance.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DTessellation_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetLevel (ADLX_TESSELLATION_LEVEL level) = 0;
@@ -2083,8 +2120,7 @@ namespace adlx
         * Radeon Super Resolution is an upscaling feature for faster game frame rates.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DRadeonSuperResolution_REQ_TABLE
         *
         */
         virtual ADLX_RESULT     ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -2115,8 +2151,7 @@ namespace adlx
         * On some AMD GPUs, Radeon Super Resolution is mutually exclusive with @ref DOX_IADLX3DChill "AMD Radeon Chill", @ref DOX_IADLX3DBoost "AMD Radeon Boost", @ref DOX_IADLX3DImageSharpening "AMD Radeon Image Sharpening", @ref DOX_IADLXDisplayIntegerScaling "Integer Display Scaling", and @ref DOX_IADLXDisplayScalingMode_GetMode "Center Scaling". When Radeon Super Resolution is enabled, the mutually exclusive features are automatically disabled.<br>
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DRadeonSuperResolution_REQ_TABLE
         *
         */
         virtual ADLX_RESULT     ADLX_STD_CALL IsEnabled (adlx_bool* enabled) = 0;
@@ -2148,8 +2183,7 @@ namespace adlx
 
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DRadeonSuperResolution_REQ_TABLE
         *
         */
         virtual ADLX_RESULT     ADLX_STD_CALL SetEnabled (adlx_bool enable) = 0;
@@ -2179,8 +2213,7 @@ namespace adlx
         * Radeon Super Resolution is an upscaling feature for faster game frame rates.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DRadeonSuperResolution_REQ_TABLE
         *
         */
         virtual ADLX_RESULT     ADLX_STD_CALL GetSharpnessRange (ADLX_IntRange* range) = 0;
@@ -2207,8 +2240,7 @@ namespace adlx
         * Radeon Super Resolution is an upscaling feature for faster game frame rates.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DRadeonSuperResolution_REQ_TABLE
         *
         */
         virtual ADLX_RESULT     ADLX_STD_CALL GetSharpness (adlx_int* currentSharpness) = 0;
@@ -2235,8 +2267,7 @@ namespace adlx
         * Radeon Super Resolution is an upscaling feature for faster game frame rates.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DRadeonSuperResolution_REQ_TABLE
         *
         */
         virtual ADLX_RESULT     ADLX_STD_CALL SetSharpness (adlx_int sharpness) = 0;
@@ -2302,8 +2333,7 @@ namespace adlx
 		* The shader cache stores frequently used in-game shaders to reduce loading time and CPU usage. Resetting the shader cache clears contents of the disk-based shader cache.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DResetShaderCache_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -2330,8 +2360,7 @@ namespace adlx
 		* The shader cache stores frequently used in-game shaders to reduce loading time and CPU usage. Resetting the shader cache clears the contents of the disk-based shader cache.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DResetShaderCache_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL ResetShaderCache () = 0;
@@ -2399,8 +2428,7 @@ namespace adlx
         @ENG_END_DOX
         *
         *
-        *@requirements
-        *@DetailsTable{#include "3DSetting.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedEvent_REQ_TABLE
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetGPU (IADLXGPU** ppGPU) = 0;
@@ -2427,8 +2455,7 @@ namespace adlx
         * __Note:__ To obtain the GPU, use @ref DOX_IADLX3DSettingsChangedEvent_GetGPU.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedEvent_REQ_TABLE
         *
         */
         virtual adlx_bool   ADLX_STD_CALL IsAntiLagChanged () = 0;
@@ -2454,8 +2481,7 @@ namespace adlx
         * __Note:__ To obtain the GPU, use @ref DOX_IADLX3DSettingsChangedEvent_GetGPU.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedEvent_REQ_TABLE
         *
         */
         virtual adlx_bool   ADLX_STD_CALL IsChillChanged () = 0;
@@ -2482,8 +2508,7 @@ namespace adlx
         * __Note:__ To obtain the GPU, use @ref DOX_IADLX3DSettingsChangedEvent_GetGPU.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedEvent_REQ_TABLE
         *
         */
         virtual adlx_bool   ADLX_STD_CALL IsBoostChanged () = 0;
@@ -2509,8 +2534,7 @@ namespace adlx
         * __Note:__ To obtain the GPU, use @ref DOX_IADLX3DSettingsChangedEvent_GetGPU.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedEvent_REQ_TABLE
         *
         */
         virtual adlx_bool   ADLX_STD_CALL IsImageSharpeningChanged () = 0;
@@ -2536,8 +2560,7 @@ namespace adlx
         * __Note:__ To obtain the GPU, use @ref DOX_IADLX3DSettingsChangedEvent_GetGPU.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedEvent_REQ_TABLE
         *
         */
         virtual adlx_bool   ADLX_STD_CALL IsEnhancedSyncChanged () = 0;
@@ -2564,8 +2587,7 @@ namespace adlx
         * @ENG_END_DOX
         *
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedEvent_REQ_TABLE
         *
         */
         virtual adlx_bool   ADLX_STD_CALL IsWaitForVerticalRefreshChanged () = 0;
@@ -2592,8 +2614,7 @@ namespace adlx
         * __Note:__ To obtain the GPU, use @ref DOX_IADLX3DSettingsChangedEvent_GetGPU.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedEvent_REQ_TABLE
         *
         */
         virtual adlx_bool   ADLX_STD_CALL IsFrameRateTargetControlChanged () = 0;
@@ -2619,8 +2640,7 @@ namespace adlx
         * __Note:__ To obtain the GPU, use @ref DOX_IADLX3DSettingsChangedEvent_GetGPU.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedEvent_REQ_TABLE
         *
         */
         virtual adlx_bool   ADLX_STD_CALL IsAntiAliasingChanged () = 0;
@@ -2646,8 +2666,7 @@ namespace adlx
         * __Note:__ To obtain the GPU, use @ref DOX_IADLX3DSettingsChangedEvent_GetGPU.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedEvent_REQ_TABLE
         *
         */
         virtual adlx_bool   ADLX_STD_CALL IsMorphologicalAntiAliasingChanged () = 0;
@@ -2674,8 +2693,7 @@ namespace adlx
         * __Note:__ To obtain the GPU, use @ref DOX_IADLX3DSettingsChangedEvent_GetGPU.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedEvent_REQ_TABLE
         *
         */
         virtual adlx_bool   ADLX_STD_CALL IsAnisotropicFilteringChanged () = 0;
@@ -2702,8 +2720,7 @@ namespace adlx
         * __Note:__ To obtain the GPU, use @ref DOX_IADLX3DSettingsChangedEvent_GetGPU.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedEvent_REQ_TABLE
         *
         */
         virtual adlx_bool   ADLX_STD_CALL IsTessellationModeChanged () = 0;
@@ -2730,8 +2747,7 @@ namespace adlx
         * __Note:__ Radeon Super Resolution settings are global for all the supported GPUs. For this event notification, @ref DOX_IADLX3DSettingsChangedEvent_GetGPU returns __nullpr__.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedEvent_REQ_TABLE
         *
         */
         virtual adlx_bool ADLX_STD_CALL IsRadeonSuperResolutionChanged () = 0;
@@ -2758,8 +2774,7 @@ namespace adlx
         * __Note:__ To obtain the GPU, use @ref DOX_IADLX3DSettingsChangedEvent_GetGPU.
         * @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedEvent_REQ_TABLE
         *
         */
         virtual adlx_bool   ADLX_STD_CALL IsResetShaderCache () = 0;
@@ -2834,8 +2849,7 @@ namespace adlx
         * The method should return quickly to not block the execution path in ADLX. If the method requires a long processing of the event notification, the application must hold onto a reference to the 3D Graphics settings change event with @ref DOX_IADLXInterface_Acquire and make it available on an asynchronous thread and return immediately. When the asynchronous thread is done processing it must discard the 3D Graphics settings change event with @ref DOX_IADLXInterface_Release. @ENG_END_DOX
         *
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedListener_REQ_TABLE
         *
         */
         virtual adlx_bool ADLX_STD_CALL On3DSettingsChanged (IADLX3DSettingsChangedEvent* p3DSettingsChangedEvent) = 0;
@@ -2888,8 +2902,7 @@ namespace adlx
         * The event listener instance must exist until the application unregisters the event listener with @ref DOX_IADLX3DSettingsChangedHandling_Remove3DSettingsEventListener.<br> @ENG_END_DOX
         *
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedHandling_REQ_TABLE
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL Add3DSettingsEventListener (IADLX3DSettingsChangedListener* p3DSettingsChangedListener) = 0;
@@ -2917,8 +2930,7 @@ namespace adlx
         * The application can discard the event listener instance. @ENG_END_DOX
         *
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsChangedHandling_REQ_TABLE
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL Remove3DSettingsEventListener (IADLX3DSettingsChangedListener* p3DSettingsChangedListener) = 0;
@@ -2984,8 +2996,7 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsServices_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetAntiLag (IADLXGPU* pGPU, IADLX3DAntiLag** pp3DAntiLag) = 0;
@@ -3014,8 +3025,7 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsServices_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetChill (IADLXGPU* pGPU, IADLX3DChill** pp3DChill) = 0;
@@ -3044,8 +3054,7 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsServices_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetBoost (IADLXGPU* pGPU, IADLX3DBoost** pp3DBoost) = 0;
@@ -3074,15 +3083,14 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsServices_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetImageSharpening (IADLXGPU* pGPU, IADLX3DImageSharpening** pp3DImageSharpening) = 0;
 
         /**
         *@page DOX_IADLX3DSettingsServices_GetEnhancedSync GetEnhancedSync
-        *@ENG_START_DOX @brief Gets the reference-counted AMD AMD Radeon™ Enhanced Sync interface of a GPU. @ENG_END_DOX
+        *@ENG_START_DOX @brief Gets the reference-counted AMD Radeon™ Enhanced Sync interface of a GPU. @ENG_END_DOX
         *
         *@syntax
         *@codeStart
@@ -3104,8 +3112,7 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsServices_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetEnhancedSync (IADLXGPU* pGPU, IADLX3DEnhancedSync** pp3DEnhancedSync) = 0;
@@ -3134,8 +3141,7 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsServices_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetWaitForVerticalRefresh (IADLXGPU* pGPU, IADLX3DWaitForVerticalRefresh** pp3DWaitForVerticalRefresh) = 0;
@@ -3164,8 +3170,7 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsServices_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetFrameRateTargetControl (IADLXGPU* pGPU, IADLX3DFrameRateTargetControl** pp3DFrameRateTargetControl) = 0;
@@ -3194,8 +3199,7 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsServices_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetAntiAliasing (IADLXGPU* pGPU, IADLX3DAntiAliasing** pp3DAntiAliasing) = 0;
@@ -3224,8 +3228,7 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsServices_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetMorphologicalAntiAliasing (IADLXGPU* pGPU, IADLX3DMorphologicalAntiAliasing** pp3DMorphologicalAntiAliasing) = 0;
@@ -3254,8 +3257,7 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsServices_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetAnisotropicFiltering (IADLXGPU* pGPU, IADLX3DAnisotropicFiltering** pp3DAnisotropicFiltering) = 0;
@@ -3284,8 +3286,7 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsServices_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetTessellation (IADLXGPU* pGPU, IADLX3DTessellation** pp3DTessellation) = 0;
@@ -3313,8 +3314,7 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsServices_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetRadeonSuperResolution (IADLX3DRadeonSuperResolution** pp3DRadeonSuperResolution) = 0;
@@ -3343,8 +3343,7 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsServices_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetResetShaderCache (IADLXGPU* pGPU, IADLX3DResetShaderCache** pp3DResetShaderCache) = 0;
@@ -3372,8 +3371,7 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@requirements
-        *@DetailsTable{#include "I3DSettings.h", @ADLX_First_Ver}
+        *@copydoc IADLX3DSettingsServices_REQ_TABLE
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL Get3DSettingsChangedHandling (IADLX3DSettingsChangedHandling** pp3DSettingsChangedHandling) = 0;

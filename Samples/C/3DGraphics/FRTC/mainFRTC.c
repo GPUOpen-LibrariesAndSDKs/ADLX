@@ -112,20 +112,21 @@ int main()
 void ShowFRTCSupport(IADLX3DFrameRateTargetControl* frtc)
 {
     adlx_bool supported = false;
-    frtc->pVtbl->IsSupported(frtc, &supported);
-    printf("\tIsSupported: %d\n", supported);
+    ADLX_RESULT res = frtc->pVtbl->IsSupported(frtc, &supported);
+    printf("\tIsSupported: %d, return code is: %d(0 means success)\n", supported, res);
 }
 
 void GetFRTCState(IADLX3DFrameRateTargetControl* frtc)
 {
     adlx_bool enabled = false;
-    frtc->pVtbl->IsEnabled(frtc, &enabled);
-    printf("\tIsEnabled: %d\n", enabled);
+    ADLX_RESULT res = frtc->pVtbl->IsEnabled(frtc, &enabled);
+    printf("\tIsEnabled: %d, return code is: %d(0 means success)\n", enabled, res);
     adlx_int fps;
     ADLX_IntRange range = { 0 };
-    frtc->pVtbl->GetFPS(frtc, &fps);
-    frtc->pVtbl->GetFPSRange(frtc, &range);
-    printf("\tCurrent FPS: %d\n\tFPS limit [ %d , %d ], step: %d\n", fps, range.minValue, range.maxValue, range.step);
+    res = frtc->pVtbl->GetFPS(frtc, &fps);
+    printf("\tCurrent FPS: %d, return code is: %d(0 means success)\n", fps, res);
+    res = frtc->pVtbl->GetFPSRange(frtc, &range);
+    printf("\tFPS limit [ %d , %d ], step: %d, return code is: %d(0 means success)\n", range.minValue, range.maxValue, range.step, res);
 }
 
 void SetFRTCState(IADLX3DFrameRateTargetControl* frtc, int index)

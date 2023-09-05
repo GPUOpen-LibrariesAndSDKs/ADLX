@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -104,14 +104,23 @@ $(document).ready(function(){initNavTree('page_guide__compatibility.html',''); i
 <div class="title">Compatibility </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The ADLX is designed to deliver forwards and backwards compatibility between applications that uses ADLX, and the AMD driver installed on the system where these applications run. An application that uses ADLX will run as expected when installed on a system with a newer version of AMD driver. If the application is installed on a system with an older AMD driver version, it will run with reduced functionality and support for some interfaces.</p>
-<p>ADLX interfaces are locked and do not change; new functionalities are provided in new interfaces. All the ADLX code written in applications will continue to compile after changing to any future version of the ADLX SDK. The ADLX SDK Documentation demonstrates how to code a third-party application to handle interfaces that are not supported.</p>
+<div class="textblock"><p>ADLX features forward and backward compatibility for ADLX dependent applications, including compatibility for system installed AMD drivers. An application using ADLX will run as expected when installed on a system with a newer AMD driver version. If the application is installed on a system with an older AMD driver version, the application will run with reduced functionality and support for some interfaces.</p>
+<p>When new functionalities are introduced, they are provided in new interfaces. ADLX interfaces are locked and do not change; all in-application ADLX code will continue to compile throughout future versions of the ADLX SDK.<br  />
+</p>
+<p><b>Note</b>: ADLX SDK documentation demonstrates how to code a third-party application for unsupported interfaces.</p>
 <h2>ADLX GPU Support</h2>
 <ul>
-<li>ADLX does not support non-AMD GPUs.</li>
-<li>ADLX does not support some legacy AMD GPUs, as the default ADLX initialization considers legacy driver versions as unsupported.</li>
-<li>A recommended method to initialize ADLX with legacy GPU and driver version is to program the application to use the legacy AMD GPU and driver. However, we cannot guarantee that this method is applicable to all legacy AMD GPUs and driver versions. For more information, see <a class="el" href="page_cpp_help_initialize.html">Initialize</a> / <a class="el" href="page_cpp_help_initialize_with_incompatible_driver.html">InitializeWithIncompatibleDriver</a> helper for C++ and <a class="el" href="page_c_help_a_d_l_x_helper__initialize.html">ADLXHelper_Initialize</a> / <a class="el" href="page_c_help_a_d_l_x_helper__initialize_with_incompatible_driver.html">ADLXHelper_InitializeWithIncompatibleDriver</a> helper for C. For information about initialization function, see <a class="el" href="page__a_d_l_x_initialize__fn.html">ADLXInitialize_Fn</a> function.</li>
-<li>When using ADLX along with ADL on legacy GPUs and drivers, ADLX follows the existing configuration that ADL uses in that application. For example, if the application using ADL is configured to consider the legacy GPU and driver, ADLX also considers the legacy GPU and driver. </li>
+<li>Non-AMD GPUs are not supported.</li>
+<li>Some legacy AMD GPUs may not be supported.</li>
+<li>The default ADLX initialization considers backwards compatibility for legacy driver versions an unsupported feature, as the application will run with reduced functionality and support for some interfaces.</li>
+<li><p class="startli">A recommended method to initialize ADLX using a legacy GPU and/or driver versions is to program the application to specifically use the legacy AMD GPU and driver.<br  />
+ <b>Note</b>: This method may not be applicable to all legacy AMD GPUs and driver versions.<br  />
+</p>
+<p class="startli">For more information, see <a class="el" href="page_cpp_help_initialize.html">Initialize</a> / <a class="el" href="page_cpp_help_initialize_with_incompatible_driver.html">InitializeWithIncompatibleDriver</a> helper for C++ and <a class="el" href="page_c_help_a_d_l_x_helper__initialize.html">ADLXHelper_Initialize</a> / <a class="el" href="page_c_help_a_d_l_x_helper__initialize_with_incompatible_driver.html">ADLXHelper_InitializeWithIncompatibleDriver</a> helper for C.<br  />
+</p>
+<p class="startli">For information about initialization function, see the <a class="el" href="page__a_d_l_x_initialize__fn.html">ADLXInitialize_Fn</a> function.</p>
+</li>
+<li>When using ADLX along with ADL on legacy GPUs and drivers, ADLX will replicate the existing ADL configuration for that application. As an example, if the ADL application was configured to utilize the legacy GPU and driver, ADLX will also utilize the legacy GPU and driver. </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

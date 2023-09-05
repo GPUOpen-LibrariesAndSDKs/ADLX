@@ -1,4 +1,4 @@
-@page page_sample_java Java
+@page page_sample_java Java Samples
 
 <!--
 # Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.

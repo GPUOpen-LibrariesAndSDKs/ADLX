@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['java_1796',['Java',['../page_sample_java.html',1,'samplePage']]]
+  ['java_20samples_1827',['Java Samples',['../page_sample_java.html',1,'domain_samplePage']]]
 ];

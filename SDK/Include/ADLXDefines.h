@@ -886,6 +886,21 @@ typedef enum
 } ADLX_3DLUT_COLORSPACE;
 #pragma endregion ADLX_3DLUT_COLORSPACE
 
+#pragma region ADLX_ANTILAG_STATE
+/**
+ * @enum ADLX_ANTILAG_STATE
+ * @ingroup enumerations
+ * @ENG_START_DOX
+ * @brief Indicates the state of Anti Lag.
+ * @ENG_END_DOX
+ */
+typedef enum
+{
+    ANTILAG = 0,                        /**< @ENG_START_DOX The Antilag level is AntiLag. @ENG_END_DOX */
+    ANTILAGNEXT,                        /**< @ENG_START_DOX The Antilag level is AntiLag Next. @ENG_END_DOX */
+} ADLX_ANTILAG_STATE;
+#pragma endregion ADLX_ANTILAG_STATE
+
 #pragma endregion ADLX data types
 
 //-------------------------------------------------------------------------------------------------
@@ -1210,6 +1225,7 @@ namespace adlx
     }; //IADLXInterfacePtr_T
 
     typedef IADLXInterfacePtr_T<IADLXInterface> IADLXInterfacePtr;
+
 }   // namespace adlx
 #endif //__cplusplus
 #pragma endregion IADLXInterfacePtr

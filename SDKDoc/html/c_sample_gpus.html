@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(document).ready(function(){initNavTree('c_sample_gpus.html',''); initResizable
 <body>
     <p> Demonstrates how to enumerate GPUs, get GPU information, receive notifications when GPUs are enabled and disabled, and maintain GPU change event when programming with ADLX.</p>
     <h2>Sample Path</h2>
-    <p>/Samples/CPP/Generic/GPUs</p>
+    <p>/Samples/C/Generic/GPUs</p>
 </body>
 </html> <h2>Code </h2>
 <div class="codeHeader"><span class="language">C</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
@@ -215,43 +215,43 @@ $(document).ready(function(){initNavTree('c_sample_gpus.html',''); initResizable
 <div class="line">        <span class="comment">// Show GPU info</span></div>
 <div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span>* vendorId = NULL;</div>
 <div class="line">        <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> ret = gpu-&gt;pVtbl-&gt;VendorId(gpu, &amp;vendorId);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;VendorId: %s\n&quot;</span>, vendorId);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;VendorId: %s, return code is: %d(0 means success)\n&quot;</span>, vendorId, ret);</div>
 <div class="line"> </div>
 <div class="line">        <a class="code" href="group__enumerations.html#gaf4fd628e799e6a74201290ff40418d77">ADLX_ASIC_FAMILY_TYPE</a> asicFamilyType = ASIC_UNDEFINED;</div>
 <div class="line">        ret = gpu-&gt;pVtbl-&gt;ASICFamilyType(gpu, &amp;asicFamilyType);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;ASICFamilyType: %d\n&quot;</span>, asicFamilyType);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;ASICFamilyType: %d, return code is: %d(0 means success)\n&quot;</span>, asicFamilyType, ret);</div>
 <div class="line"> </div>
 <div class="line">        <a class="code" href="group__enumerations.html#ga6fb3c9944d5c8aa79f7dbd0f675fac34">ADLX_GPU_TYPE</a> gpuType = GPUTYPE_UNDEFINED;</div>
 <div class="line">        ret = gpu-&gt;pVtbl-&gt;Type(gpu, &amp;gpuType);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;Type: %d\n&quot;</span>, gpuType);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Type: %d, return code is: %d(0 means success)\n&quot;</span>, gpuType, ret);</div>
 <div class="line"> </div>
 <div class="line">        adlx_bool isExternal = <span class="keyword">false</span>;</div>
 <div class="line">        ret = gpu-&gt;pVtbl-&gt;IsExternal(gpu, &amp;isExternal);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;IsExternal: %d\n&quot;</span>, isExternal);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;IsExternal: %d, return code is: %d(0 means success)\n&quot;</span>, isExternal, ret);</div>
 <div class="line"> </div>
 <div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span>* gpuName = NULL;</div>
 <div class="line">        ret = gpu-&gt;pVtbl-&gt;Name(gpu, &amp;gpuName);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;Name: %s\n&quot;</span>, gpuName);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Name: %s, return code is: %d(0 means success)\n&quot;</span>, gpuName, ret);</div>
 <div class="line"> </div>
 <div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span>* driverPath = NULL;</div>
 <div class="line">        ret = gpu-&gt;pVtbl-&gt;DriverPath(gpu, &amp;driverPath);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;DriverPath: %s\n&quot;</span>, driverPath);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;DriverPath: %s, return code is: %d(0 means success)\n&quot;</span>, driverPath, ret);</div>
 <div class="line"> </div>
 <div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span>* pnpString = NULL;</div>
 <div class="line">        ret = gpu-&gt;pVtbl-&gt;PNPString(gpu, &amp;pnpString);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;PNPString: %s\n&quot;</span>, pnpString);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;PNPString: %s, return code is: %d(0 means success)\n&quot;</span>, pnpString, ret);</div>
 <div class="line"> </div>
 <div class="line">        adlx_bool hasDesktops = <span class="keyword">false</span>;</div>
 <div class="line">        ret = gpu-&gt;pVtbl-&gt;HasDesktops(gpu, &amp;hasDesktops);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;HasDesktops: %d\n&quot;</span>, hasDesktops);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;HasDesktops: %d, return code is: %d(0 means success)\n&quot;</span>, hasDesktops, ret);</div>
 <div class="line"> </div>
 <div class="line">        adlx_uint totalVRAM = 0;</div>
 <div class="line">        ret = gpu-&gt;pVtbl-&gt;TotalVRAM(gpu, &amp;totalVRAM);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;TotalVRAM: %d MB\n&quot;</span>, totalVRAM);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;TotalVRAM: %d MB, return code is: %d(0 means success)\n&quot;</span>, totalVRAM, ret);</div>
 <div class="line"> </div>
 <div class="line">        adlx_int id;</div>
 <div class="line">        ret = gpu-&gt;pVtbl-&gt;UniqueId(gpu, &amp;<span class="keywordtype">id</span>);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;UniqueId: %d\n&quot;</span>, <span class="keywordtype">id</span>);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;UniqueId: %d, return code is: %d(0 means success)\n&quot;</span>, <span class="keywordtype">id</span>, ret);</div>
 <div class="line"> </div>
 <div class="line">        gpu-&gt;pVtbl-&gt;Release(gpu);</div>
 <div class="line">        gpu = NULL;</div>

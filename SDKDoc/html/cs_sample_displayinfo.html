@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -143,87 +143,99 @@ $(document).ready(function(){initNavTree('cs_sample_displayinfo.html',''); initR
 <div class="line">                <span class="comment">// Get system services</span></div>
 <div class="line">                IADLXSystem sys = help.GetSystemServices();</div>
 <div class="line"> </div>
-<div class="line">                <span class="comment">// Get display services</span></div>
-<div class="line">                SWIGTYPE_p_p_adlx__IADLXDisplayServices s = ADLX.new_displaySerP_Ptr();</div>
-<div class="line">                res = sys.GetDisplaysServices(s);</div>
-<div class="line">                IADLXDisplayServices displayService = ADLX.displaySerP_Ptr_value(s);</div>
-<div class="line"> </div>
-<div class="line">                <span class="comment">// Get display list</span></div>
-<div class="line">                SWIGTYPE_p_p_adlx__IADLXDisplayList ppDisplayList = ADLX.new_displayListP_Ptr();</div>
-<div class="line">                displayService.GetDisplays(ppDisplayList);</div>
-<div class="line">                IADLXDisplayList displayList = ADLX.displayListP_Ptr_value(ppDisplayList);</div>
-<div class="line"> </div>
-<div class="line">                <span class="comment">// Iterate through the display list</span></div>
-<div class="line">                uint it = displayList.Begin();</div>
-<div class="line">                <span class="keywordflow">for</span> (; it != displayList.Size(); it++)</div>
+<div class="line">                <span class="keywordflow">if</span> (sys != <span class="keyword">null</span>)</div>
 <div class="line">                {</div>
-<div class="line">                    SWIGTYPE_p_p_adlx__IADLXDisplay ppDisplay = ADLX.new_displayP_Ptr();</div>
-<div class="line">                    displayList.At(it, ppDisplay);</div>
-<div class="line">                    IADLXDisplay display = ADLX.displayP_Ptr_value(ppDisplay);</div>
+<div class="line">                    <span class="comment">// Get display services</span></div>
+<div class="line">                    SWIGTYPE_p_p_adlx__IADLXDisplayServices s = ADLX.new_displaySerP_Ptr();</div>
+<div class="line">                    res = sys.GetDisplaysServices(s);</div>
+<div class="line">                    IADLXDisplayServices displayService = ADLX.displaySerP_Ptr_value(s);</div>
 <div class="line"> </div>
-<div class="line">                    SWIGTYPE_p_p_char ppName = ADLX.new_charP_Ptr();</div>
-<div class="line">                    display.Name(ppName);</div>
-<div class="line">                    String name = ADLX.charP_Ptr_value(ppName);</div>
+<div class="line">                    <span class="keywordflow">if</span> (res == <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>.ADLX_OK)</div>
+<div class="line">                    {</div>
+<div class="line">                        <span class="comment">// Get display list</span></div>
+<div class="line">                        SWIGTYPE_p_p_adlx__IADLXDisplayList ppDisplayList = ADLX.new_displayListP_Ptr();</div>
+<div class="line">                        res = displayService.GetDisplays(ppDisplayList);</div>
+<div class="line">                        IADLXDisplayList displayList = ADLX.displayListP_Ptr_value(ppDisplayList);</div>
 <div class="line"> </div>
-<div class="line">                    SWIGTYPE_p_ADLX_DISPLAY_TYPE pDisType = ADLX.new_displayTypeP();</div>
-<div class="line">                    display.DisplayType(pDisType);</div>
-<div class="line">                    <a class="code" href="group__enumerations.html#gae7e516225131af0ff164e9384d8d0a44">ADLX_DISPLAY_TYPE</a> disType = ADLX.displayTypeP_value(pDisType);</div>
+<div class="line">                        <span class="keywordflow">if</span> (res == <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>.ADLX_OK)</div>
+<div class="line">                        {</div>
+<div class="line">                            <span class="comment">// Iterate through the display list</span></div>
+<div class="line">                            uint it = displayList.Begin();</div>
+<div class="line">                            <span class="keywordflow">for</span> (; it != displayList.Size(); it++)</div>
+<div class="line">                            {</div>
+<div class="line">                                SWIGTYPE_p_p_adlx__IADLXDisplay ppDisplay = ADLX.new_displayP_Ptr();</div>
+<div class="line">                                res = displayList.At(it, ppDisplay);</div>
+<div class="line">                                IADLXDisplay display = ADLX.displayP_Ptr_value(ppDisplay);</div>
 <div class="line"> </div>
-<div class="line">                    SWIGTYPE_p_unsigned_int pMID = ADLX.new_uintP();</div>
-<div class="line">                    display.ManufacturerID(pMID);</div>
-<div class="line">                    <span class="keywordtype">long</span> mid = ADLX.uintP_value(pMID);</div>
+<div class="line">                                <span class="keywordflow">if</span> (res == <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>.ADLX_OK)</div>
+<div class="line">                                {</div>
+<div class="line">                                    SWIGTYPE_p_p_char ppName = ADLX.new_charP_Ptr();</div>
+<div class="line">                                    display.Name(ppName);</div>
+<div class="line">                                    String name = ADLX.charP_Ptr_value(ppName);</div>
 <div class="line"> </div>
-<div class="line">                    SWIGTYPE_p_ADLX_DISPLAY_CONNECTOR_TYPE pConnect = ADLX.new_disConnectTypeP();</div>
-<div class="line">                    display.ConnectorType(pConnect);</div>
-<div class="line">                    <a class="code" href="group__enumerations.html#ga84edd2809be33537c99fb2ab8d04aa5d">ADLX_DISPLAY_CONNECTOR_TYPE</a> connect = ADLX.disConnectTypeP_value(pConnect);</div>
+<div class="line">                                    SWIGTYPE_p_ADLX_DISPLAY_TYPE pDisType = ADLX.new_displayTypeP();</div>
+<div class="line">                                    display.DisplayType(pDisType);</div>
+<div class="line">                                    <a class="code" href="group__enumerations.html#gae7e516225131af0ff164e9384d8d0a44">ADLX_DISPLAY_TYPE</a> disType = ADLX.displayTypeP_value(pDisType);</div>
 <div class="line"> </div>
-<div class="line">                    SWIGTYPE_p_p_char ppEDIE = ADLX.new_charP_Ptr();</div>
-<div class="line">                    display.EDID(ppEDIE);</div>
-<div class="line">                    String edid = ADLX.charP_Ptr_value(ppEDIE);</div>
+<div class="line">                                    SWIGTYPE_p_unsigned_int pMID = ADLX.new_uintP();</div>
+<div class="line">                                    display.ManufacturerID(pMID);</div>
+<div class="line">                                    <span class="keywordtype">long</span> mid = ADLX.uintP_value(pMID);</div>
 <div class="line"> </div>
-<div class="line">                    SWIGTYPE_p_int pH = ADLX.new_intP();</div>
-<div class="line">                    SWIGTYPE_p_int pV = ADLX.new_intP();</div>
-<div class="line">                    display.NativeResolution(pH, pV);</div>
-<div class="line">                    <span class="keywordtype">int</span> h = ADLX.intP_value(pH);</div>
-<div class="line">                    <span class="keywordtype">int</span> v = ADLX.intP_value(pV);</div>
+<div class="line">                                    SWIGTYPE_p_ADLX_DISPLAY_CONNECTOR_TYPE pConnect = ADLX.new_disConnectTypeP();</div>
+<div class="line">                                    display.ConnectorType(pConnect);</div>
+<div class="line">                                    <a class="code" href="group__enumerations.html#ga84edd2809be33537c99fb2ab8d04aa5d">ADLX_DISPLAY_CONNECTOR_TYPE</a> connect = ADLX.disConnectTypeP_value(pConnect);</div>
 <div class="line"> </div>
-<div class="line">                    SWIGTYPE_p_double pRefRate = ADLX.new_doubleP();</div>
-<div class="line">                    display.RefreshRate(pRefRate);</div>
-<div class="line">                    <span class="keywordtype">double</span> refRate = ADLX.doubleP_value(pRefRate);</div>
+<div class="line">                                    SWIGTYPE_p_p_char ppEDIE = ADLX.new_charP_Ptr();</div>
+<div class="line">                                    display.EDID(ppEDIE);</div>
+<div class="line">                                    String edid = ADLX.charP_Ptr_value(ppEDIE);</div>
 <div class="line"> </div>
-<div class="line">                    SWIGTYPE_p_unsigned_int pPixClock = ADLX.new_uintP();</div>
-<div class="line">                    display.PixelClock(pPixClock);</div>
-<div class="line">                    <span class="keywordtype">long</span> pixClock = ADLX.uintP_value(pPixClock);</div>
+<div class="line">                                    SWIGTYPE_p_int pH = ADLX.new_intP();</div>
+<div class="line">                                    SWIGTYPE_p_int pV = ADLX.new_intP();</div>
+<div class="line">                                    display.NativeResolution(pH, pV);</div>
+<div class="line">                                    <span class="keywordtype">int</span> h = ADLX.intP_value(pH);</div>
+<div class="line">                                    <span class="keywordtype">int</span> v = ADLX.intP_value(pV);</div>
 <div class="line"> </div>
-<div class="line">                    SWIGTYPE_p_ADLX_DISPLAY_SCAN_TYPE pScanType = ADLX.new_disScanTypeP();</div>
-<div class="line">                    display.ScanType(pScanType);</div>
-<div class="line">                    <a class="code" href="group__enumerations.html#gae2d0250dc861156a468001600a2ee648">ADLX_DISPLAY_SCAN_TYPE</a> scanType = ADLX.disScanTypeP_value(pScanType);</div>
+<div class="line">                                    SWIGTYPE_p_double pRefRate = ADLX.new_doubleP();</div>
+<div class="line">                                    display.RefreshRate(pRefRate);</div>
+<div class="line">                                    <span class="keywordtype">double</span> refRate = ADLX.doubleP_value(pRefRate);</div>
 <div class="line"> </div>
-<div class="line">                    SWIGTYPE_p_size_t pID = ADLX.new_adlx_sizeP();</div>
-<div class="line">                    display.UniqueId(pID);</div>
-<div class="line">                    uint <span class="keywordtype">id</span> = ADLX.adlx_sizeP_value(pID);</div>
+<div class="line">                                    SWIGTYPE_p_unsigned_int pPixClock = ADLX.new_uintP();</div>
+<div class="line">                                    display.PixelClock(pPixClock);</div>
+<div class="line">                                    <span class="keywordtype">long</span> pixClock = ADLX.uintP_value(pPixClock);</div>
 <div class="line"> </div>
-<div class="line">                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\nThe display [{0}]:&quot;</span>, it));</div>
-<div class="line">                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tName: {0}&quot;</span>, name));</div>
-<div class="line">                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tType: {0}&quot;</span>, disType));</div>
-<div class="line">                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tConnector type: {0}&quot;</span>, connect));</div>
-<div class="line">                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tManufacturer id: {0}&quot;</span>, mid));</div>
-<div class="line">                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tEDID: {0}&quot;</span>, edid));</div>
-<div class="line">                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tResolution:  h: {0}  v: {1}&quot;</span>, h, v));</div>
-<div class="line">                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tRefresh rate: {0}&quot;</span>, refRate));</div>
-<div class="line">                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tPixel clock: {0}&quot;</span>, pixClock));</div>
-<div class="line">                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tScan type: {0}&quot;</span>, scanType));</div>
-<div class="line">                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tUnique id: {0}&quot;</span>, <span class="keywordtype">id</span>));</div>
+<div class="line">                                    SWIGTYPE_p_ADLX_DISPLAY_SCAN_TYPE pScanType = ADLX.new_disScanTypeP();</div>
+<div class="line">                                    display.ScanType(pScanType);</div>
+<div class="line">                                    <a class="code" href="group__enumerations.html#gae2d0250dc861156a468001600a2ee648">ADLX_DISPLAY_SCAN_TYPE</a> scanType = ADLX.disScanTypeP_value(pScanType);</div>
 <div class="line"> </div>
-<div class="line">                    <span class="comment">// Release display interface</span></div>
-<div class="line">                    display.Release();</div>
+<div class="line">                                    SWIGTYPE_p_size_t pID = ADLX.new_adlx_sizeP();</div>
+<div class="line">                                    display.UniqueId(pID);</div>
+<div class="line">                                    uint <span class="keywordtype">id</span> = ADLX.adlx_sizeP_value(pID);</div>
+<div class="line"> </div>
+<div class="line">                                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\nThe display [{0}]:&quot;</span>, it));</div>
+<div class="line">                                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tName: {0}&quot;</span>, name));</div>
+<div class="line">                                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tType: {0}&quot;</span>, disType));</div>
+<div class="line">                                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tConnector type: {0}&quot;</span>, connect));</div>
+<div class="line">                                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tManufacturer id: {0}&quot;</span>, mid));</div>
+<div class="line">                                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tEDID: {0}&quot;</span>, edid));</div>
+<div class="line">                                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tResolution:  h: {0}  v: {1}&quot;</span>, h, v));</div>
+<div class="line">                                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tRefresh rate: {0}&quot;</span>, refRate));</div>
+<div class="line">                                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tPixel clock: {0}&quot;</span>, pixClock));</div>
+<div class="line">                                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tScan type: {0}&quot;</span>, scanType));</div>
+<div class="line">                                    Console.WriteLine(String.Format(<span class="stringliteral">&quot;\tUnique id: {0}&quot;</span>, <span class="keywordtype">id</span>));</div>
+<div class="line"> </div>
+<div class="line">                                    <span class="comment">// Release display interface</span></div>
+<div class="line">                                    display.Release();</div>
+<div class="line">                                }</div>
+<div class="line">                            }</div>
+<div class="line"> </div>
+<div class="line">                            <span class="comment">// Release display list interface</span></div>
+<div class="line">                            displayList.Release();</div>
+<div class="line">                        }</div>
+<div class="line"> </div>
+<div class="line">                        <span class="comment">// Release display services interface</span></div>
+<div class="line">                        displayService.Release();</div>
+<div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="line"> </div>
-<div class="line">                <span class="comment">// Release display list interface</span></div>
-<div class="line">                displayList.Release();</div>
-<div class="line"> </div>
-<div class="line">                <span class="comment">// Release display services interface</span></div>
-<div class="line">                displayService.Release();</div>
 <div class="line">            }</div>
 <div class="line">            <span class="keywordflow">else</span></div>
 <div class="line">            {</div>

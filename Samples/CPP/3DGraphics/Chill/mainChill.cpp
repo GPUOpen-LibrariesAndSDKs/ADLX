@@ -97,22 +97,28 @@ int main()
 void ShowChillSupport(const IADLX3DChillPtr& d3dChill)
 {
     adlx_bool supported = false;
-    d3dChill->IsSupported(&supported);
-    std::cout << "\tIsSupported: " << supported << std::endl;
+    ADLX_RESULT res = d3dChill->IsSupported(&supported);
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tIsSupported: " << supported << std::endl;
 }
 
 void GetChillState(const IADLX3DChillPtr& d3dChill)
 {
     adlx_bool enabled = false;
-    d3dChill->IsEnabled(&enabled);
-    std::cout << "\tIsEnabled: " << enabled << std::endl;
+    ADLX_RESULT res = d3dChill->IsEnabled(&enabled);
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tIsEnabled: " << enabled << std::endl;
     adlx_int minFPS, maxFPS;
     ADLX_IntRange fpsRange;
-    d3dChill->GetMinFPS(&minFPS);
-    d3dChill->GetMaxFPS(&maxFPS);
-    d3dChill->GetFPSRange(&fpsRange);
-    std::cout << "\tCurrentFPS [ " << minFPS << " ," << maxFPS << " ]\n"
-              << "\tFPSSet limit [ " << fpsRange.minValue << " ," << fpsRange.maxValue << " ], step: " << fpsRange.step << std::endl;
+    res = d3dChill->GetMinFPS(&minFPS);
+    if (ADLX_SUCCEEDED (res))
+        std::cout << "\tCurrent MinFPS: " << minFPS << std::endl;
+    res = d3dChill->GetMaxFPS(&maxFPS);
+    if (ADLX_SUCCEEDED (res))
+        std::cout << "\tCurrent MaxFPS: " << maxFPS << std::endl;
+    res = d3dChill->GetFPSRange(&fpsRange);
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tFPSSet limit [ " << fpsRange.minValue << " ," << fpsRange.maxValue << " ], step: " << fpsRange.step << std::endl;
 }
 
 void SetChillState(const IADLX3DChillPtr& d3dChill, int index)
@@ -127,7 +133,7 @@ void SetChillState(const IADLX3DChillPtr& d3dChill, int index)
         d3dChill->GetMinFPS(&minFPS);
         d3dChill->GetMaxFPS(&maxFPS);
         d3dChill->GetFPSRange(&fpsRange);
-        std::cout << "\tEnter two space delimited integers:[minFPS, maxFPS]" << std::endl;
+        std::cout << "\t\tEnter two space delimited integers:[minFPS, maxFPS]" << std::endl;
 
         int userKey = 0;
         std::vector<adlx_int> coeffs;

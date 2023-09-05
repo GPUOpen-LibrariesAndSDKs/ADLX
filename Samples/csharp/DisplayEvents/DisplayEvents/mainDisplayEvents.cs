@@ -25,35 +25,44 @@ namespace DisplayEvents
                 // Get system services
                 IADLXSystem sys = help.GetSystemServices();
 
-                // Get display services
-                SWIGTYPE_p_p_adlx__IADLXDisplayServices s = ADLX.new_displaySerP_Ptr();
-                res = sys.GetDisplaysServices(s);
-                IADLXDisplayServices displayService = ADLX.displaySerP_Ptr_value(s);
-
-                // Get displaychangedhandling
-                SWIGTYPE_p_p_adlx__IADLXDisplayChangedHandling ppDisChangeHand = ADLX.new_displayChangeHandlP_Ptr();
-                displayService.GetDisplayChangedHandling(ppDisChangeHand);
-                IADLXDisplayChangedHandling hand = ADLX.displayChangeHandlP_Ptr_value(ppDisChangeHand);
-
-                // Callback for displayListChanged
-                DisplayListCallBack call = new DisplayListCallBack();
-                hand.AddDisplayListEventListener(call);
-                Console.WriteLine(String.Format("\n\n Plug or unplug a display within 20 seconds."));
-                try
+                if (sys != null)
                 {
-                    Thread.Sleep(20000);
-                }
-                catch (Exception e)
-                {
-                    // Exception
-                }
-                hand.RemoveDisplayListEventListener(call);
+                    // Get display services
+                    SWIGTYPE_p_p_adlx__IADLXDisplayServices s = ADLX.new_displaySerP_Ptr();
+                    res = sys.GetDisplaysServices(s);
+                    IADLXDisplayServices displayService = ADLX.displaySerP_Ptr_value(s);
 
-                // Release display change handling interface
-                hand.Release();
+                    if (res == ADLX_RESULT.ADLX_OK)
+                    {
+                        // Get displaychangedhandling
+                        SWIGTYPE_p_p_adlx__IADLXDisplayChangedHandling ppDisChangeHand = ADLX.new_displayChangeHandlP_Ptr();
+                        res = displayService.GetDisplayChangedHandling(ppDisChangeHand);
+                        IADLXDisplayChangedHandling hand = ADLX.displayChangeHandlP_Ptr_value(ppDisChangeHand);
 
-                // Release display services interface
-                displayService.Release();
+                        if (res == ADLX_RESULT.ADLX_OK)
+                        {
+                            // Callback for displayListChanged
+                            DisplayListCallBack call = new DisplayListCallBack();
+                            hand.AddDisplayListEventListener(call);
+                            Console.WriteLine(String.Format("\n\n Plug or unplug a display within 20 seconds."));
+                            try
+                            {
+                                Thread.Sleep(20000);
+                            }
+                            catch (Exception e)
+                            {
+                                // Exception
+                            }
+                            hand.RemoveDisplayListEventListener(call);
+
+                            // Release display change handling interface
+                            hand.Release();
+                        }
+
+                        // Release display services interface
+                        displayService.Release();
+                    }
+                }
             }
             else
             {

@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -144,35 +144,44 @@ $(document).ready(function(){initNavTree('cs_sample_display_events.html',''); in
 <div class="line">                <span class="comment">// Get system services</span></div>
 <div class="line">                IADLXSystem sys = help.GetSystemServices();</div>
 <div class="line"> </div>
-<div class="line">                <span class="comment">// Get display services</span></div>
-<div class="line">                SWIGTYPE_p_p_adlx__IADLXDisplayServices s = ADLX.new_displaySerP_Ptr();</div>
-<div class="line">                res = sys.GetDisplaysServices(s);</div>
-<div class="line">                IADLXDisplayServices displayService = ADLX.displaySerP_Ptr_value(s);</div>
-<div class="line"> </div>
-<div class="line">                <span class="comment">// Get displaychangedhandling</span></div>
-<div class="line">                SWIGTYPE_p_p_adlx__IADLXDisplayChangedHandling ppDisChangeHand = ADLX.new_displayChangeHandlP_Ptr();</div>
-<div class="line">                displayService.GetDisplayChangedHandling(ppDisChangeHand);</div>
-<div class="line">                IADLXDisplayChangedHandling hand = ADLX.displayChangeHandlP_Ptr_value(ppDisChangeHand);</div>
-<div class="line"> </div>
-<div class="line">                <span class="comment">// Callback for displayListChanged</span></div>
-<div class="line">                DisplayListCallBack call = <span class="keyword">new</span> DisplayListCallBack();</div>
-<div class="line">                hand.AddDisplayListEventListener(call);</div>
-<div class="line">                Console.WriteLine(String.Format(<span class="stringliteral">&quot;\n\n Plug or unplug a display within 20 seconds.&quot;</span>));</div>
-<div class="line">                <span class="keywordflow">try</span></div>
+<div class="line">                <span class="keywordflow">if</span> (sys != <span class="keyword">null</span>)</div>
 <div class="line">                {</div>
-<div class="line">                    Thread.Sleep(20000);</div>
-<div class="line">                }</div>
-<div class="line">                <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line">                {</div>
-<div class="line">                    <span class="comment">// Exception</span></div>
-<div class="line">                }</div>
-<div class="line">                hand.RemoveDisplayListEventListener(call);</div>
+<div class="line">                    <span class="comment">// Get display services</span></div>
+<div class="line">                    SWIGTYPE_p_p_adlx__IADLXDisplayServices s = ADLX.new_displaySerP_Ptr();</div>
+<div class="line">                    res = sys.GetDisplaysServices(s);</div>
+<div class="line">                    IADLXDisplayServices displayService = ADLX.displaySerP_Ptr_value(s);</div>
 <div class="line"> </div>
-<div class="line">                <span class="comment">// Release display change handling interface</span></div>
-<div class="line">                hand.Release();</div>
+<div class="line">                    <span class="keywordflow">if</span> (res == <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>.ADLX_OK)</div>
+<div class="line">                    {</div>
+<div class="line">                        <span class="comment">// Get displaychangedhandling</span></div>
+<div class="line">                        SWIGTYPE_p_p_adlx__IADLXDisplayChangedHandling ppDisChangeHand = ADLX.new_displayChangeHandlP_Ptr();</div>
+<div class="line">                        res = displayService.GetDisplayChangedHandling(ppDisChangeHand);</div>
+<div class="line">                        IADLXDisplayChangedHandling hand = ADLX.displayChangeHandlP_Ptr_value(ppDisChangeHand);</div>
 <div class="line"> </div>
-<div class="line">                <span class="comment">// Release display services interface</span></div>
-<div class="line">                displayService.Release();</div>
+<div class="line">                        <span class="keywordflow">if</span> (res == <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>.ADLX_OK)</div>
+<div class="line">                        {</div>
+<div class="line">                            <span class="comment">// Callback for displayListChanged</span></div>
+<div class="line">                            DisplayListCallBack call = <span class="keyword">new</span> DisplayListCallBack();</div>
+<div class="line">                            hand.AddDisplayListEventListener(call);</div>
+<div class="line">                            Console.WriteLine(String.Format(<span class="stringliteral">&quot;\n\n Plug or unplug a display within 20 seconds.&quot;</span>));</div>
+<div class="line">                            <span class="keywordflow">try</span></div>
+<div class="line">                            {</div>
+<div class="line">                                Thread.Sleep(20000);</div>
+<div class="line">                            }</div>
+<div class="line">                            <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line">                            {</div>
+<div class="line">                                <span class="comment">// Exception</span></div>
+<div class="line">                            }</div>
+<div class="line">                            hand.RemoveDisplayListEventListener(call);</div>
+<div class="line"> </div>
+<div class="line">                            <span class="comment">// Release display change handling interface</span></div>
+<div class="line">                            hand.Release();</div>
+<div class="line">                        }</div>
+<div class="line"> </div>
+<div class="line">                        <span class="comment">// Release display services interface</span></div>
+<div class="line">                        displayService.Release();</div>
+<div class="line">                    }</div>
+<div class="line">                }</div>
 <div class="line">            }</div>
 <div class="line">            <span class="keywordflow">else</span></div>
 <div class="line">            {</div>

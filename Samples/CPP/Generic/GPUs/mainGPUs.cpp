@@ -107,11 +107,11 @@ void ShowGPUInfo(const IADLXGPUPtr& gpu)
     // Display GPU info
     const char* vendorId = nullptr;
     ADLX_RESULT ret = gpu->VendorId(&vendorId);
-    std::cout << "VendorId: " << vendorId << std::endl;
+    std::cout << "VendorId: " << vendorId << "return code is: "<< ret << "(0 means success)" << std::endl;
 
     ADLX_ASIC_FAMILY_TYPE asicFamilyType = ASIC_UNDEFINED;
     ret = gpu->ASICFamilyType(&asicFamilyType);
-    std::cout << "ASICFamilyType: " << asicFamilyType << std::endl;
+    std::cout << "ASICFamilyType: " << asicFamilyType << "return code is: "<< ret << "(0 means success)" << std::endl;
 
     ADLX_GPU_TYPE gpuType = GPUTYPE_UNDEFINED;
     ret = gpu->Type(&gpuType);
@@ -119,31 +119,31 @@ void ShowGPUInfo(const IADLXGPUPtr& gpu)
 
     adlx_bool isExternal = false;
     ret = gpu->IsExternal(&isExternal);
-    std::cout << "IsExternal: " << isExternal << std::endl;
+    std::cout << "IsExternal: " << isExternal << ", return code is: "<< ret << "(0 means success)" << std::endl;
 
     const char* gpuName = nullptr;
     ret = gpu->Name(&gpuName);
-    std::cout << "Name: " << gpuName << std::endl;
+    std::cout << "Name: " << gpuName << ", return code is: "<< ret << "(0 means success)" << std::endl;
 
     const char* driverPath = nullptr;
     ret = gpu->DriverPath(&driverPath);
-    std::cout << "DriverPath: " << driverPath << std::endl;
+    std::cout << "DriverPath: " << driverPath << ", return code is: "<< ret << "(0 means success)" << std::endl;
 
     const char* pnpString = nullptr;
     ret = gpu->PNPString(&pnpString);
-    std::cout << "PNPString: " << pnpString << std::endl;
+    std::cout << "PNPString: " << pnpString << ", return code is: "<< ret << "(0 means success)" << std::endl;
 
     adlx_bool hasDesktops = false;
     ret = gpu->HasDesktops(&hasDesktops);
-    std::cout << "HasDesktops: " << hasDesktops << std::endl;
+    std::cout << "HasDesktops: " << hasDesktops << ", return code is: "<< ret << "(0 means success)" << std::endl;
 
     adlx_uint totalVRAM;
     ret = gpu->TotalVRAM(&totalVRAM);
-    std::cout << "TotalVRAM: " << totalVRAM << " MB" << std::endl;
+    std::cout << "TotalVRAM: " << totalVRAM << " MB" << ", return code is: "<< ret << "(0 means success)" << std::endl;
 
     adlx_int id;
     ret = gpu->UniqueId(&id);
-    std::cout << "UniqueId: " << id << std::endl;
+    std::cout << "UniqueId: " << id << ", return code is: "<< ret << "(0 means success)" << std::endl;
 }
 
 void ShowHybridGraphicType()

@@ -129,21 +129,25 @@ static const std::map<ADLX_ANTI_ALIASING_LEVEL, const char*> antiAliasingLevel =
 void ShowAntiAliasingSupport(const IADLX3DAntiAliasingPtr& antiAliasing)
 {
     adlx_bool supported = false;
-    antiAliasing->IsSupported(&supported);
-    std::cout << "\tIsSupported: " << supported << std::endl;
+    ADLX_RESULT res = antiAliasing->IsSupported(&supported);
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tIsSupported: " << supported << std::endl;
 }
 
 void GetAntiAliasingState(const IADLX3DAntiAliasingPtr& antiAliasing)
 {
     ADLX_ANTI_ALIASING_MODE mode;
-    antiAliasing->GetMode(&mode);
+    ADLX_RESULT res = antiAliasing->GetMode(&mode);
+    if (ADLX_SUCCEEDED (res))
+        std::cout << "\tMode: " << antiAliasingMode.find (mode)->second << std::endl;
     ADLX_ANTI_ALIASING_METHOD method;
-    antiAliasing->GetMethod(&method);
+    res = antiAliasing->GetMethod(&method);
+    if (ADLX_SUCCEEDED (res))
+        std::cout << "\tMethod: " << antiAliasingMethod.find (method)->second << std::endl;
     ADLX_ANTI_ALIASING_LEVEL level;
-    antiAliasing->GetLevel(&level);
-    std::cout << "\tMode: " << antiAliasingMode.find(mode)->second << std::endl
-              << "\tMethod: " << antiAliasingMethod.find(method)->second << std::endl
-              << "\tLevel: " << antiAliasingLevel.find(level)->second << std::endl;
+    res = antiAliasing->GetLevel(&level);
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tLevel: " << antiAliasingLevel.find(level)->second << std::endl;
 }
 
 void SetAntiAliasingMode(const IADLX3DAntiAliasingPtr& antiAliasing, int index)
@@ -158,19 +162,25 @@ void SetAntiAliasingMode(const IADLX3DAntiAliasingPtr& antiAliasing, int index)
 void SetAntiAliasingMethod(const IADLX3DAntiAliasingPtr& antiAliasing)
 {
     ADLX_ANTI_ALIASING_METHOD method = AA_METHOD_MULTISAMPLING;
-    antiAliasing->GetMethod(&method);
-    method = (ADLX_ANTI_ALIASING_METHOD)((method + 1) % 3);
-    ADLX_RESULT res = antiAliasing->SetMethod(method);
-    std::cout << "\tSet method: " << antiAliasingMethod.find(method)->second << ", res is " << res << std::endl;
+    ADLX_RESULT res = antiAliasing->GetMethod(&method);
+    if (ADLX_SUCCEEDED (res))
+    {
+        method = (ADLX_ANTI_ALIASING_METHOD)((method + 1) % 3);
+        res = antiAliasing->SetMethod(method);
+        std::cout << "\tSet method: " << antiAliasingMethod.find(method)->second << ", res is " << res << std::endl;
+    }
 }
 
 void SetAntiAliasingLevel(const IADLX3DAntiAliasingPtr& antiAliasing)
 {
     ADLX_ANTI_ALIASING_LEVEL level;
-    antiAliasing->GetLevel(&level);
-    level = (level == AA_LEVEL_2X) ? AA_LEVEL_4X : AA_LEVEL_2X;
-    ADLX_RESULT res = antiAliasing->SetLevel(level);
-    std::cout << "\tSet level: " << antiAliasingLevel.find(level)->second << ", res is " << res << std::endl;
+    ADLX_RESULT res = antiAliasing->GetLevel(&level);
+    if (ADLX_SUCCEEDED (res))
+    {
+        level = (level == AA_LEVEL_2X) ? AA_LEVEL_4X : AA_LEVEL_2X;
+        res = antiAliasing->SetLevel(level);
+        std::cout << "\tSet level: " << antiAliasingLevel.find(level)->second << ", res is " << res << std::endl;
+    }
 }
 
 int WaitAndExit(const char* msg, const int retCode)

@@ -203,33 +203,41 @@ void ShowGetAndSetFan (IADLXManualFanTuningPtr manualFanTuning)
         << ", " << fanSpeedRange.maxValue << ")" << std::endl;
     std::cout << "\tFan temperature range is: (" << fanTemperatureRange.minValue
         << ", " << fanTemperatureRange.maxValue << ")" << std::endl;
+    std::cout << "\tReturn code is: "<< res << "(0 means success)" << std::endl;
 
     // Display current fan tuning states
     IADLXManualFanTuningStateListPtr states;
     IADLXManualFanTuningStatePtr oneState;
     res = manualFanTuning->GetFanTuningStates (&states);
-    for (adlx_uint crt = states->Begin (); crt != states->End (); ++crt)
+    if (ADLX_SUCCEEDED (res))
     {
-        res = states->At (crt, &oneState);
-        adlx_int speed = 0, temperature = 0;
-        oneState->GetFanSpeed (&speed);
-        oneState->GetTemperature (&temperature);
-        std::cout << "\tThe current " << crt << " state: speed is " << speed << " temperature is " << temperature << std::endl;
+        for (adlx_uint crt = states->Begin (); crt != states->End (); ++crt)
+        {
+            res = states->At (crt, &oneState);
+            adlx_int speed = 0, temperature = 0;
+            oneState->GetFanSpeed (&speed);
+            oneState->GetTemperature (&temperature);
+            std::cout << "\tThe current " << crt << " state: speed is " << speed << " temperature is " << temperature << std::endl;
+        }
     }
+    
 
     // Set empty fan tuning states
     res = manualFanTuning->GetEmptyFanTuningStates (&states);
-    for (adlx_uint crt = states->Begin (); crt != states->End (); ++crt)
+    if (ADLX_SUCCEEDED (res))
     {
-        res = states->At (crt, &oneState);
-        adlx_int speed = 0, temperature = 0;
-        int fanSpeedStep = (fanSpeedRange.maxValue - fanSpeedRange.minValue) / states->Size ();
-        int fanTemperatureStep = (fanTemperatureRange.maxValue - fanTemperatureRange.minValue) / states->Size ();
-        oneState->SetFanSpeed (fanSpeedRange.minValue + fanSpeedStep * crt);
-        oneState->GetFanSpeed (&speed);
-        oneState->SetTemperature (fanTemperatureRange.minValue + fanTemperatureStep * crt);
-        oneState->GetTemperature (&temperature);
-        std::cout << "\tSet empty " << crt << " state: speed is " << speed << " temperature is " << temperature << std::endl;
+        for (adlx_uint crt = states->Begin (); crt != states->End (); ++crt)
+        {
+            res = states->At (crt, &oneState);
+            adlx_int speed = 0, temperature = 0;
+            int fanSpeedStep = (fanSpeedRange.maxValue - fanSpeedRange.minValue) / states->Size ();
+            int fanTemperatureStep = (fanTemperatureRange.maxValue - fanTemperatureRange.minValue) / states->Size ();
+            oneState->SetFanSpeed (fanSpeedRange.minValue + fanSpeedStep * crt);
+            oneState->GetFanSpeed (&speed);
+            oneState->SetTemperature (fanTemperatureRange.minValue + fanTemperatureStep * crt);
+            oneState->GetTemperature (&temperature);
+            std::cout << "\tSet empty " << crt << " state: speed is " << speed << " temperature is " << temperature << std::endl;
+        }
     }
 
     // Set empty fan tuning states to current fan tuning states
@@ -241,14 +249,17 @@ void ShowGetAndSetFan (IADLXManualFanTuningPtr manualFanTuning)
         manualFanTuning->SetFanTuningStates (states);
     }
     res = manualFanTuning->GetFanTuningStates (&states);
-    std::cout << "\tAfter setting:" << std::endl;
-    for (adlx_uint crt = states->Begin (); crt != states->End (); ++crt)
+    if (ADLX_SUCCEEDED (res))
     {
-        res = states->At (crt, &oneState);
-        adlx_int speed = 0, temperature = 0;
-        oneState->GetFanSpeed (&speed);
-        oneState->GetTemperature (&temperature);
-        std::cout << "\tThe current " << crt << " state: speed is " << speed << " temperature is " << temperature << std::endl;
+        std::cout << "\tAfter setting:" << std::endl;
+        for (adlx_uint crt = states->Begin (); crt != states->End (); ++crt)
+        {
+            res = states->At (crt, &oneState);
+            adlx_int speed = 0, temperature = 0;
+            oneState->GetFanSpeed (&speed);
+            oneState->GetTemperature (&temperature);
+            std::cout << "\tThe current " << crt << " state: speed is " << speed << " temperature is " << temperature << std::endl;
+        }
     }
 }
 
@@ -262,14 +273,14 @@ void ShowGetAndSetZeroRPM (IADLXManualFanTuningPtr manualFanTuning)
         return;
 
     adlx_bool isZeroRPMStateSet = false;
-    manualFanTuning->SetZeroRPMState (true);
-    std::cout << "\tSet ZeroRPM state" << std::endl;
-    manualFanTuning->GetZeroRPMState (&isZeroRPMStateSet);
-    std::cout << "\tIs ZeroRPM state set: " << isZeroRPMStateSet << std::endl;
-    manualFanTuning->SetZeroRPMState (false);
-    std::cout << "\tReset ZeroRPM state" << std::endl;
-    manualFanTuning->GetZeroRPMState (&isZeroRPMStateSet);
-    std::cout << "\tIs ZeroRPM state set: " << isZeroRPMStateSet << std::endl;
+    res = manualFanTuning->SetZeroRPMState (true);
+    std::cout << "\tSet ZeroRPM state" << ", return code is: "<< res << "(0 means success)" << std::endl;
+    res = manualFanTuning->GetZeroRPMState (&isZeroRPMStateSet);
+    std::cout << "\tIs ZeroRPM state set: " << isZeroRPMStateSet << ", return code is: "<< res << "(0 means success)" << std::endl;
+    res = manualFanTuning->SetZeroRPMState (false);
+    std::cout << "\tReset ZeroRPM state" << ", return code is: "<< res << "(0 means success)" << std::endl;
+    res = manualFanTuning->GetZeroRPMState (&isZeroRPMStateSet);
+    std::cout << "\tIs ZeroRPM state set: " << isZeroRPMStateSet << ", return code is: "<< res << "(0 means success)" << std::endl;
 }
 
 // Display and set MinAcoustic settings
@@ -282,16 +293,16 @@ void ShowGetAndSetMinAcoustic (IADLXManualFanTuningPtr manualFanTuning)
         return;
 
     ADLX_IntRange tuningRange;
-    manualFanTuning->GetMinAcousticLimitRange (&tuningRange);
+    res = manualFanTuning->GetMinAcousticLimitRange (&tuningRange);
     std::cout << "\tDisplay MinAcoustic limit range: (" << tuningRange.minValue
-        << ", " << tuningRange.maxValue << ")" << std::endl;
+        << ", " << tuningRange.maxValue << ")" << ", return code is: "<< res << "(0 means success)" << std::endl;
 
     adlx_int minAcousticLimit;
-    manualFanTuning->GetMinAcousticLimit (&minAcousticLimit);
-    std::cout << "\tDisplay current min acoustic limit: " << minAcousticLimit << std::endl;
-    manualFanTuning->SetMinAcousticLimit (tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
-    manualFanTuning->GetMinAcousticLimit (&minAcousticLimit);
-    std::cout << "\tSet current min acoustic limit to: " << minAcousticLimit << std::endl;
+    res = manualFanTuning->GetMinAcousticLimit (&minAcousticLimit);
+    std::cout << "\tDisplay current min acoustic limit: " << minAcousticLimit << ", return code is: "<< res << "(0 means success)" << std::endl;
+    res = manualFanTuning->SetMinAcousticLimit (tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
+    res = manualFanTuning->GetMinAcousticLimit (&minAcousticLimit);
+    std::cout << "\tSet current min acoustic limit to: " << minAcousticLimit << ", return code is: "<< res << "(0 means success)" << std::endl;
 }
 
 // Display and set MinFanSpeed settings
@@ -305,17 +316,17 @@ void ShowGetAndSetMinFanSpeed (IADLXManualFanTuningPtr manualFanTuning)
         return;
 
     ADLX_IntRange tuningRange;
-    manualFanTuning->GetMinFanSpeedRange (&tuningRange);
+    res = manualFanTuning->GetMinFanSpeedRange (&tuningRange);
     std::cout << "\tDisplay MinFanSpeed range: (" << tuningRange.minValue
-        << ", " << tuningRange.maxValue << ")" << std::endl;
+        << ", " << tuningRange.maxValue << ")" << ", return code is: "<< res << "(0 means success)" << std::endl;
 
     adlx_int minFanSpeed = 0;
-    manualFanTuning->GetMinFanSpeed (&minFanSpeed);
-    std::cout << "\tDisplay current MinFanSpeed: " << minFanSpeed << std::endl;
+    res = manualFanTuning->GetMinFanSpeed (&minFanSpeed);
+    std::cout << "\tDisplay current MinFanSpeed: " << minFanSpeed << ", return code is: "<< res << "(0 means success)" << std::endl;
 
-    manualFanTuning->SetMinAcousticLimit (tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
-    manualFanTuning->GetMinFanSpeed (&minFanSpeed);
-    std::cout << "\tSet current MinFanSpeed to: " << minFanSpeed << std::endl;
+    res = manualFanTuning->SetMinAcousticLimit (tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
+    res = manualFanTuning->GetMinFanSpeed (&minFanSpeed);
+    std::cout << "\tSet current MinFanSpeed to: " << minFanSpeed << ", return code is: "<< res << "(0 means success)" << std::endl;
 }
 
 // Display and set TargetFanSpeed settings
@@ -329,15 +340,15 @@ void ShowGetAndSetTargetFanSpeed (IADLXManualFanTuningPtr manualFanTuning)
         return;
 
     ADLX_IntRange tuningRange;
-    manualFanTuning->GetTargetFanSpeedRange (&tuningRange);
+    res = manualFanTuning->GetTargetFanSpeedRange (&tuningRange);
     std::cout << "\tDisplay TargetFanSpeed range: (" << tuningRange.minValue
-        << ", " << tuningRange.maxValue << ")" << std::endl;
+        << ", " << tuningRange.maxValue << ")" << ", return code is: "<< res << "(0 means success)" << std::endl;
 
     adlx_int targetFanSpeed = 0;
-    manualFanTuning->GetTargetFanSpeed (&targetFanSpeed);
-    std::cout << "\tDisplay current TargetFanSpeed: " << targetFanSpeed << std::endl;
+    res = manualFanTuning->GetTargetFanSpeed (&targetFanSpeed);
+    std::cout << "\tDisplay current TargetFanSpeed: " << targetFanSpeed << ", return code is: "<< res << "(0 means success)" << std::endl;
 
-    manualFanTuning->SetTargetFanSpeed (tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
-    manualFanTuning->GetTargetFanSpeed (&targetFanSpeed);
-    std::cout << "\tSet current TargetFanSpeed to: " << targetFanSpeed << std::endl;
+    res = manualFanTuning->SetTargetFanSpeed (tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
+    res = manualFanTuning->GetTargetFanSpeed (&targetFanSpeed);
+    std::cout << "\tSet current TargetFanSpeed to: " << targetFanSpeed << ", return code is: "<< res << "(0 means success)" << std::endl;
 }

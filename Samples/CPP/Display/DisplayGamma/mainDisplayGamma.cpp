@@ -45,6 +45,9 @@ void MenuControl(const IADLXDisplayServicesPtr& displayService, const IADLXDispl
 // Wait for exit with error message
 int WaitAndExit(const char* msg, const int retCode);
 
+// Create regamma ramp
+ADLX_GammaRamp CreateReGammaRamp(const float fGamma);
+
 int main()
 {
     // Define return code
@@ -132,15 +135,20 @@ void ShowDisplayGammaSupport(const IADLXDisplayServicesPtr& displayService, cons
     {
         std::cout << "  === Re-Gamma supported status ===" << std::endl;
         res = displayGamma->IsSupportedReGammaSRGB(&support);
-        std::cout << "\tIsSupportedReGammaSRGB: " << support << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedReGammaSRGB: " << support << std::endl;
         res = displayGamma->IsSupportedReGammaBT709(&support);
-        std::cout << "\tIsSupportedReGammaBT709: " << support << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedReGammaBT709: " << support << std::endl;
         res = displayGamma->IsSupportedReGammaPQ(&support);
-        std::cout << "\tIsSupportedReGammaPQ: " << support << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedReGammaPQ: " << support << std::endl;
         res = displayGamma->IsSupportedReGammaPQ2084Interim(&support);
-        std::cout << "\tIsSupportedReGammaPQ2084Interim: " << support << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedReGammaPQ2084Interim: " << support << std::endl;
         res = displayGamma->IsSupportedReGamma36(&support);
-        std::cout << "\tIsSupportedReGamma36:" << support << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedReGamma36:" << support << std::endl;
     }
 }
 
@@ -159,19 +167,25 @@ void GetCurrentGammaState(const IADLXDisplayServicesPtr& displayService, const I
         ADLX_RegammaCoeff coeff;
 
         res = displayGamma->IsCurrentReGammaSRGB(&applied);
-        std::cout << "\tIsCurrentReGammaSRGB " << applied << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentReGammaSRGB " << applied << std::endl;
         res = displayGamma->IsCurrentReGammaBT709(&applied);
-        std::cout << "\tIsCurrentReGammaBT709 " << applied << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentReGammaBT709 " << applied << std::endl;
         res = displayGamma->IsCurrentReGammaPQ(&applied);
-        std::cout << "\tIsCurrentReGammaPQ " << applied << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentReGammaPQ " << applied << std::endl;
         res = displayGamma->IsCurrentReGammaPQ2084Interim(&applied);
-        std::cout << "\tIsCurrentReGammaPQ2084Interim " << applied << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentReGammaPQ2084Interim " << applied << std::endl;
         res = displayGamma->IsCurrentReGamma36(&applied);
-        std::cout << "\tIsCurrentReGamma36 " << applied << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentReGamma36 " << applied << std::endl;
 
         adlx_bool curCoeff;
         res = displayGamma->IsCurrentRegammaCoefficient(&curCoeff);
-        std::cout << "\tIsCurrentRegammaCoefficient " << curCoeff << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentRegammaCoefficient " << curCoeff << std::endl;
 
         adlx_bool reGammaRamp = false;
         adlx_bool deGammaRamp = false;
@@ -279,12 +293,9 @@ void SetGamma(const IADLXDisplayServicesPtr& displayService, const IADLXDisplayP
         // Use ramp from memory
         case 3:
         {
-            ADLX_GammaRamp gammaRamp;
-            for (unsigned int i = 0; i < 256 * 3; i++)
-            {
-                gammaRamp.gamma[i] = 255;
-            }
-            res = displayGamma->SetReGammaRamp(gammaRamp);
+            const float reGammaF = 2.4f;
+            ADLX_GammaRamp  ramp = CreateReGammaRamp(reGammaF);
+            res = displayGamma->SetReGammaRamp(ramp);
         }
         break;
 
@@ -367,4 +378,30 @@ int WaitAndExit(const char* msg, const int retCode)
 
     system("pause");
     return retCode;
+}
+
+ADLX_GammaRamp CreateReGammaRamp(const float fGamma)
+{
+    ADLX_GammaRamp ramp;
+    double g_fGammaRemapRGB[3] = { 1,1,0.5 };
+    for (int j = 0; j < 3; j++)
+    {
+        for (int i = 0; i < 256; i++)
+        {
+
+            float nAdj = i / 255.0f;
+            if (nAdj < 0.0031308f)
+            {
+                nAdj = nAdj * 12.92f;
+            }
+            else
+            {
+                nAdj = (1 + 0.055f) * powf(nAdj, 1 / fGamma) - 0.055f;
+                if (nAdj < 0.0f)
+                    nAdj = 0.0f;
+            }
+            ramp.gamma[i + j * 256] = (unsigned short)(1 * g_fGammaRemapRGB[j] * (int)(nAdj * 0xFFFF));
+        }
+    }
+    return ramp;
 }

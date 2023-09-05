@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -263,21 +263,25 @@ $(document).ready(function(){initNavTree('cpp__anti_aliasing.html',''); initResi
 <div class="line"><span class="keywordtype">void</span> ShowAntiAliasingSupport(<span class="keyword">const</span> IADLX3DAntiAliasingPtr&amp; antiAliasing)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
-<div class="line">    antiAliasing-&gt;IsSupported(&amp;supported);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupported: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = antiAliasing-&gt;IsSupported(&amp;supported);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupported: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> GetAntiAliasingState(<span class="keyword">const</span> IADLX3DAntiAliasingPtr&amp; antiAliasing)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga4d154a77789a08d19a8d0a8ba809b64a">ADLX_ANTI_ALIASING_MODE</a> mode;</div>
-<div class="line">    antiAliasing-&gt;GetMode(&amp;mode);</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = antiAliasing-&gt;GetMode(&amp;mode);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tMode: &quot;</span> &lt;&lt; antiAliasingMode.find (mode)-&gt;second &lt;&lt; std::endl;</div>
 <div class="line">    <a class="code" href="group__enumerations.html#gad99bac74ba876c14fa2d42c094641b44">ADLX_ANTI_ALIASING_METHOD</a> method;</div>
-<div class="line">    antiAliasing-&gt;GetMethod(&amp;method);</div>
+<div class="line">    res = antiAliasing-&gt;GetMethod(&amp;method);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tMethod: &quot;</span> &lt;&lt; antiAliasingMethod.find (method)-&gt;second &lt;&lt; std::endl;</div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga8c2e57a18318ffeb5e36de7717ff953e">ADLX_ANTI_ALIASING_LEVEL</a> level;</div>
-<div class="line">    antiAliasing-&gt;GetLevel(&amp;level);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tMode: &quot;</span> &lt;&lt; antiAliasingMode.find(mode)-&gt;second &lt;&lt; std::endl</div>
-<div class="line">              &lt;&lt; <span class="stringliteral">&quot;\tMethod: &quot;</span> &lt;&lt; antiAliasingMethod.find(method)-&gt;second &lt;&lt; std::endl</div>
-<div class="line">              &lt;&lt; <span class="stringliteral">&quot;\tLevel: &quot;</span> &lt;&lt; antiAliasingLevel.find(level)-&gt;second &lt;&lt; std::endl;</div>
+<div class="line">    res = antiAliasing-&gt;GetLevel(&amp;level);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tLevel: &quot;</span> &lt;&lt; antiAliasingLevel.find(level)-&gt;second &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetAntiAliasingMode(<span class="keyword">const</span> IADLX3DAntiAliasingPtr&amp; antiAliasing, <span class="keywordtype">int</span> index)</div>
@@ -292,19 +296,25 @@ $(document).ready(function(){initNavTree('cpp__anti_aliasing.html',''); initResi
 <div class="line"><span class="keywordtype">void</span> SetAntiAliasingMethod(<span class="keyword">const</span> IADLX3DAntiAliasingPtr&amp; antiAliasing)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="group__enumerations.html#gad99bac74ba876c14fa2d42c094641b44">ADLX_ANTI_ALIASING_METHOD</a> method = AA_METHOD_MULTISAMPLING;</div>
-<div class="line">    antiAliasing-&gt;GetMethod(&amp;method);</div>
-<div class="line">    method = (<a class="code" href="group__enumerations.html#gad99bac74ba876c14fa2d42c094641b44">ADLX_ANTI_ALIASING_METHOD</a>)((method + 1) % 3);</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = antiAliasing-&gt;SetMethod(method);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet method: &quot;</span> &lt;&lt; antiAliasingMethod.find(method)-&gt;second &lt;&lt; <span class="stringliteral">&quot;, res is &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = antiAliasing-&gt;GetMethod(&amp;method);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
+<div class="line">    {</div>
+<div class="line">        method = (<a class="code" href="group__enumerations.html#gad99bac74ba876c14fa2d42c094641b44">ADLX_ANTI_ALIASING_METHOD</a>)((method + 1) % 3);</div>
+<div class="line">        res = antiAliasing-&gt;SetMethod(method);</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet method: &quot;</span> &lt;&lt; antiAliasingMethod.find(method)-&gt;second &lt;&lt; <span class="stringliteral">&quot;, res is &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetAntiAliasingLevel(<span class="keyword">const</span> IADLX3DAntiAliasingPtr&amp; antiAliasing)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga8c2e57a18318ffeb5e36de7717ff953e">ADLX_ANTI_ALIASING_LEVEL</a> level;</div>
-<div class="line">    antiAliasing-&gt;GetLevel(&amp;level);</div>
-<div class="line">    level = (level == AA_LEVEL_2X) ? AA_LEVEL_4X : AA_LEVEL_2X;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = antiAliasing-&gt;SetLevel(level);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet level: &quot;</span> &lt;&lt; antiAliasingLevel.find(level)-&gt;second &lt;&lt; <span class="stringliteral">&quot;, res is &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = antiAliasing-&gt;GetLevel(&amp;level);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
+<div class="line">    {</div>
+<div class="line">        level = (level == AA_LEVEL_2X) ? AA_LEVEL_4X : AA_LEVEL_2X;</div>
+<div class="line">        res = antiAliasing-&gt;SetLevel(level);</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet level: &quot;</span> &lt;&lt; antiAliasingLevel.find(level)-&gt;second &lt;&lt; <span class="stringliteral">&quot;, res is &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> WaitAndExit(<span class="keyword">const</span> <span class="keywordtype">char</span>* msg, <span class="keyword">const</span> <span class="keywordtype">int</span> retCode)</div>

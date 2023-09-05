@@ -38,8 +38,8 @@ void UseLocalFile()
     printf("Enabled log result: %d (0 means success)\n", res);
 }
 
-// Output window of the application debugger, only output log information is captured in output
-void UseWindowDebugger()
+// Configure ADLX log to send errors, warnings and debug information messages to the DebugView
+void UseDebugView()
 {
     // Get system services
     IADLXSystem* sys = ADLXHelper_GetSystemServices();
@@ -73,7 +73,7 @@ void MainMenu()
 {
     printf("\tChoose from the following options:\n");
     printf("\t->Press 1 to enable log with local file, file [./ADLX.log] will be created.\n");
-    printf("\t->Press 2 to enable log with window debugger\n");
+    printf("\t->Press 2 to enable log with DebugView\n");
     printf("\t->Press 3 to enable log with app handle\n");
 }
 
@@ -89,9 +89,9 @@ void MenuControl(AppHandlLog** appHandlLog)
         UseLocalFile();
         break;
 
-    // Window debugger
+    // DebugView
     case '2':
-        UseWindowDebugger();
+        UseDebugView();
         break;
 
     // App handle

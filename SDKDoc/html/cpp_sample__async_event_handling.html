@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -213,7 +213,7 @@ $(document).ready(function(){initNavTree('cpp_sample__async_event_handling.html'
 <div class="line">            IADLXDisplayGamutChangedListener* gamutChangeCallBack = <span class="keyword">new</span> DisplayGamutCallBack;</div>
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Add the callbacks to the ADLX event handler</span></div>
-<div class="line">            displayChangeHandler-&gt;AddDisplayGamutEventListener(gamutChangeCallBack);</div>
+<div class="line">            <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> addListenerRes = displayChangeHandler-&gt;AddDisplayGamutEventListener(gamutChangeCallBack);</div>
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Set gamut for the first display</span></div>
 <div class="line">            IADLXDisplayListPtr displays;</div>
@@ -230,11 +230,16 @@ $(document).ready(function(){initNavTree('cpp_sample__async_event_handling.html'
 <div class="line">                std::cout &lt;&lt; <span class="stringliteral">&quot;This will trigger gamut change and send gamut change in thread: &quot;</span> &lt;&lt; GetCurrentThreadId() &lt;&lt; std::endl;</div>
 <div class="line">            }</div>
 <div class="line"> </div>
-<div class="line">            <span class="comment">// Wait for gamut change</span></div>
-<div class="line">            WaitForSingleObject(gamutChangedEvent, INFINITE);</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (addListenerRes))</div>
+<div class="line">            {</div>
+<div class="line">                <span class="comment">// Wait for gamut change</span></div>
+<div class="line">                WaitForSingleObject(gamutChangedEvent, INFINITE);</div>
 <div class="line"> </div>
-<div class="line">            <span class="comment">// Remove and destroy callbacks</span></div>
-<div class="line">            displayChangeHandler-&gt;RemoveDisplayGamutEventListener(gamutChangeCallBack);</div>
+<div class="line">                <span class="comment">// Remove and destroy callbacks</span></div>
+<div class="line">                res = displayChangeHandler-&gt;RemoveDisplayGamutEventListener(gamutChangeCallBack);</div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a> (res))</div>
+<div class="line">                    std::cout &lt;&lt; <span class="stringliteral">&quot;Remove display gamut event listener failed&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">            }</div>
 <div class="line"> </div>
 <div class="line">            <span class="keyword">delete</span> gamutChangeCallBack;</div>
 <div class="line">            gamutChangeCallBack = <span class="keyword">nullptr</span>;</div>

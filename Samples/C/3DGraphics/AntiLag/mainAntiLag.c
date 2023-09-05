@@ -10,19 +10,26 @@
 #include "SDK/Include/I3DSettings.h"
 
 // Display Anti-Lag support
-void ShowAntiLagSupport(IADLX3DAntiLag* d3dAntiLag);
+void ShowAntiLagSupport(IADLX3DAntiLag* d3dAntiLag, IADLX3DAntiLag1* d3dAntiLag1);
 
 // Display current Anti-Lag state
-void GetAntiLagState(IADLX3DAntiLag* d3dAntiLag);
+void GetAntiLagState(IADLX3DAntiLag* d3dAntiLag, IADLX3DAntiLag1* d3dAntiLag1);
 
 // Set Anti-Lag state
-void SetAntiLagState(IADLX3DAntiLag* d3dAntiLag, int index);
+void SetAntiLagState(IADLX3DAntiLag* d3dAntiLag, IADLX3DAntiLag1* d3dAntiLag1, int index);
+
+// Display current Anti-Lag Level
+void GetAntiLagLevel(IADLX3DAntiLag1* d3dAntiLag1);
+
+// Set Anti-Lag Level
+void SetAntiLagLevel(IADLX3DAntiLag1* d3dAntiLag1, ADLX_ANTILAG_STATE level);
+
 
 // Menu
-void MainMenu();
+void MainMenu(int alnSupport);
 
 // Menu control
-void MenuControl(IADLX3DAntiLag* d3dAntiLag);
+void MenuControl(IADLX3DAntiLag* d3dAntiLag, IADLX3DAntiLag1* d3dAntiLag1);
 
 int main()
 {
@@ -53,11 +60,15 @@ int main()
 
             // Get AntiLag interface
             IADLX3DAntiLag* d3dAntiLag = NULL;
+            IADLX3DAntiLag1* d3dAntiLag1 = NULL;
             res = d3dSettingSrv->pVtbl->GetAntiLag(d3dSettingSrv, gpu, &d3dAntiLag);
             if (ADLX_SUCCEEDED(res))
             {
-                MainMenu();
-                MenuControl(d3dAntiLag);
+                // Get AntiLag1 interface                
+                ADLX_RESULT resALN = d3dAntiLag->pVtbl->QueryInterface(d3dAntiLag, IID_IADLX3DAntiLag1, (void**)(&d3dAntiLag1));
+
+                MainMenu(d3dAntiLag1 != NULL ? 1 : 0);
+                MenuControl(d3dAntiLag, d3dAntiLag1);
             }
 
             // Release the d3dAntiLag interface
@@ -66,7 +77,11 @@ int main()
                 d3dAntiLag->pVtbl->Release(d3dAntiLag);
                 d3dAntiLag = NULL;
             }
-
+            if (d3dAntiLag1 != NULL)
+            {
+                d3dAntiLag1->pVtbl->Release(d3dAntiLag1);
+                d3dAntiLag1 = NULL;
+            }
             // Release the GPU interface
             if (gpu != NULL)
             {
@@ -109,27 +124,51 @@ int main()
     return 0;
 }
 
-void ShowAntiLagSupport(IADLX3DAntiLag* d3dAntiLag)
+void ShowAntiLagSupport(IADLX3DAntiLag* d3dAntiLag, IADLX3DAntiLag1* d3dAntiLag1)
 {
     adlx_bool supported = false;
-    d3dAntiLag->pVtbl->IsSupported(d3dAntiLag, &supported);
+    if (d3dAntiLag1 != NULL)
+        d3dAntiLag1->pVtbl->IsSupported(d3dAntiLag1, &supported);
+    else
+        d3dAntiLag->pVtbl->IsSupported(d3dAntiLag, &supported);
     printf("\tIsSupported: %d\n", supported);
 }
 
-void GetAntiLagState(IADLX3DAntiLag* d3dAntiLag)
+void GetAntiLagState(IADLX3DAntiLag* d3dAntiLag, IADLX3DAntiLag1* d3dAntiLag1)
 {
     adlx_bool enabled = false;
-    d3dAntiLag->pVtbl->IsEnabled(d3dAntiLag, &enabled);
+    if (d3dAntiLag1 != NULL)
+        d3dAntiLag1->pVtbl->IsEnabled(d3dAntiLag1, &enabled);
+    else
+        d3dAntiLag->pVtbl->IsEnabled(d3dAntiLag, &enabled);
     printf("\tIsEnabled: %d\n", enabled);
 }
 
-void SetAntiLagState(IADLX3DAntiLag* d3dAntiLag, int index)
+void SetAntiLagState(IADLX3DAntiLag* d3dAntiLag, IADLX3DAntiLag1* d3dAntiLag1, int index)
 {
-    ADLX_RESULT res = d3dAntiLag->pVtbl->SetEnabled(d3dAntiLag, index == 0);
-    printf("\tReturn code is: %d (0 means success)\n", res);
+    ADLX_RESULT res;
+    if (d3dAntiLag1 != NULL)
+        res = d3dAntiLag1->pVtbl->SetEnabled(d3dAntiLag1, index == 0);
+    else
+        res = d3dAntiLag->pVtbl->SetEnabled(d3dAntiLag, index == 0);
+    printf("\tReturn code is: %d (0 means Success)\n", res);
 }
 
-void MainMenu()
+void GetAntiLagLevel(IADLX3DAntiLag1* d3dAntiLag1)
+{
+    ADLX_ANTILAG_STATE level = ANTILAG;
+    ADLX_RESULT res = d3dAntiLag1->pVtbl->GetLevel(d3dAntiLag1, &level);
+    if (ADLX_SUCCEEDED(res))
+        printf("\tLevel: %s\n", (level == ANTILAG ? "Anti-Lag" : "Anti-Lag Next"));
+}
+
+void SetAntiLagLevel(IADLX3DAntiLag1* d3dAntiLag1, ADLX_ANTILAG_STATE level)
+{
+    ADLX_RESULT res = d3dAntiLag1->pVtbl->SetLevel(d3dAntiLag1, level == ANTILAGNEXT);
+    printf("\tReturn code is: %d (0 means Success)\n", res);
+}
+
+void MainMenu(int alnSupport)
 {
     printf("\tChoose from the following options:\n");
 
@@ -137,38 +176,51 @@ void MainMenu()
     printf("\t->Press 2 to display current Anti-Lag state\n");
     printf("\t->Press 3 to enable Anti-Lag\n");
     printf("\t->Press 4 to disable Anti-Lag\n");
-
+    if (alnSupport == 1)
+    {
+        printf("\t->Press 5 to Get Anti-Lag Level\n");
+        printf("\t->Press 6 to Set Anti-Lag level to Anti-Lag\n");
+        printf("\t->Press 7 to Set Anti-Lag level to Anti-Lag Next\n");
+    }
     printf("\t->Press Q/q to quit the application\n");
     printf("\t->Press M/m to display menu options\n");
 }
 
-void MenuControl(IADLX3DAntiLag* d3dAntiLag)
+void MenuControl(IADLX3DAntiLag* d3dAntiLag, IADLX3DAntiLag1* d3dAntiLag1)
 {
-    int num = 0;
+    int num = 0;    
     while ((num = getchar()) != 'q' && num != 'Q')
     {
         switch (num)
         {
             // Display Anti-Lag support
         case '1':
-            ShowAntiLagSupport(d3dAntiLag);
+            ShowAntiLagSupport(d3dAntiLag, d3dAntiLag1);
             break;
 
             // Display current Anti-Lag state
         case '2':
-            GetAntiLagState(d3dAntiLag);
+            GetAntiLagState(d3dAntiLag, d3dAntiLag1);
             break;
 
             // Set Anti-Lag state
         case '3':
         case '4':
-            SetAntiLagState(d3dAntiLag, num - '3');
+            SetAntiLagState(d3dAntiLag, d3dAntiLag1, num - '3');
             break;
-
+        case '5':                        
+            GetAntiLagLevel(d3dAntiLag1);
+            break;
+        case '6':
+            SetAntiLagLevel(d3dAntiLag1, ANTILAG);
+            break;
+        case '7':
+            SetAntiLagLevel(d3dAntiLag1, ANTILAGNEXT);
+            break;
         // Display menu options
         case 'm':
         case 'M':
-            MainMenu();
+            MainMenu(d3dAntiLag1 != NULL ? 1 : 0);
             break;
         default:
             break;

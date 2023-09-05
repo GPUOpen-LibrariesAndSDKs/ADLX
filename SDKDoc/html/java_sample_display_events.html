@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -131,56 +131,62 @@ $(document).ready(function(){initNavTree('java_sample_display_events.html',''); 
 <div class="line">        <span class="keywordflow">try</span> {</div>
 <div class="line">            System.loadLibrary(<span class="stringliteral">&quot;ADLXJavaBind&quot;</span>);</div>
 <div class="line">        } <span class="keywordflow">catch</span> (UnsatisfiedLinkError e) {</div>
-<div class="line">          System.err.println(<span class="stringliteral">&quot;Native code library failed to load. See the chapter on Dynamic Linking Problems in the SWIG Java documentation for help.\n&quot;</span> + e);</div>
-<div class="line">          System.exit(1);</div>
+<div class="line">            System.err.println(<span class="stringliteral">&quot;Native code library failed to load. See the chapter on Dynamic Linking Problems in the SWIG Java documentation for help.\n&quot;</span> + e);</div>
+<div class="line">            System.exit(1);</div>
 <div class="line">        }</div>
-<div class="line">      }</div>
+<div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Get displaylistchanged</span></div>
 <div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> main(String[] args) {</div>
 <div class="line"> </div>
-<div class="line">      <span class="comment">// Initialize ADLX with ADLXHelper</span></div>
-<div class="line">      ADLXHelper help = <span class="keyword">new</span> ADLXHelper();</div>
-<div class="line">      <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = help.Initialize();</div>
+<div class="line">        <span class="comment">// Initialize ADLX with ADLXHelper</span></div>
+<div class="line">        ADLXHelper help = <span class="keyword">new</span> ADLXHelper();</div>
+<div class="line">        <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = help.Initialize();</div>
 <div class="line"> </div>
-<div class="line">      <span class="keywordflow">if</span> (res == <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>.ADLX_OK) {</div>
-<div class="line">        </div>
-<div class="line">        <span class="comment">// Get system services</span></div>
-<div class="line">        IADLXSystem sys = help.GetSystemServices();</div>
+<div class="line">        <span class="keywordflow">if</span> (res == <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>.ADLX_OK) {</div>
 <div class="line"> </div>
-<div class="line">        <span class="comment">// Get display services</span></div>
-<div class="line">        SWIGTYPE_p_p_adlx__IADLXDisplayServices s = ADLX.new_displaySerP_Ptr();</div>
-<div class="line">        res = sys.GetDisplaysServices(s);</div>
-<div class="line">        IADLXDisplayServices displayService = ADLX.displaySerP_Ptr_value(s);</div>
+<div class="line">            <span class="comment">// Get system services</span></div>
+<div class="line">            IADLXSystem sys = help.GetSystemServices();</div>
 <div class="line"> </div>
-<div class="line">        <span class="comment">// Get display changed handling</span></div>
-<div class="line">        SWIGTYPE_p_p_adlx__IADLXDisplayChangedHandling ppDisChangeHand = ADLX.new_displayChangeHandlP_Ptr();</div>
-<div class="line">        displayService.GetDisplayChangedHandling(ppDisChangeHand);</div>
-<div class="line">        IADLXDisplayChangedHandling hand = ADLX.displayChangeHandlP_Ptr_value(ppDisChangeHand);</div>
-<div class="line">        </div>
-<div class="line">        <span class="comment">// Call back for dislaylistchanged</span></div>
-<div class="line">        DisplayListCallBack call = <span class="keyword">new</span> DisplayListCallBack();</div>
-<div class="line">        hand.AddDisplayListEventListener(call);</div>
-<div class="line">        System.out.println(<span class="stringliteral">&quot;\n\n Plug or unplug a display within 20 seconds.\n&quot;</span>);</div>
-<div class="line">        <span class="keywordflow">try</span> {</div>
-<div class="line">          Thread.currentThread().sleep(20000);</div>
-<div class="line">        } <span class="keywordflow">catch</span> (Exception e) {</div>
-<div class="line">          <span class="comment">// Exception handling</span></div>
+<div class="line">            <span class="keywordflow">if</span> (sys != <span class="keyword">null</span>) {</div>
+<div class="line">                <span class="comment">// Get display services</span></div>
+<div class="line">                SWIGTYPE_p_p_adlx__IADLXDisplayServices s = ADLX.new_displaySerP_Ptr();</div>
+<div class="line">                res = sys.GetDisplaysServices(s);</div>
+<div class="line">                IADLXDisplayServices displayService = ADLX.displaySerP_Ptr_value(s);</div>
+<div class="line"> </div>
+<div class="line">                <span class="keywordflow">if</span> (res == <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>.ADLX_OK) {</div>
+<div class="line">                    <span class="comment">// Get display changed handling</span></div>
+<div class="line">                    SWIGTYPE_p_p_adlx__IADLXDisplayChangedHandling ppDisChangeHand = ADLX.new_displayChangeHandlP_Ptr();</div>
+<div class="line">                    res = displayService.GetDisplayChangedHandling(ppDisChangeHand);</div>
+<div class="line">                    IADLXDisplayChangedHandling hand = ADLX.displayChangeHandlP_Ptr_value(ppDisChangeHand);</div>
+<div class="line"> </div>
+<div class="line">                    <span class="keywordflow">if</span> (res == <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>.ADLX_OK) {</div>
+<div class="line">                        <span class="comment">// Call back for dislaylistchanged</span></div>
+<div class="line">                        DisplayListCallBack call = <span class="keyword">new</span> DisplayListCallBack();</div>
+<div class="line">                        hand.AddDisplayListEventListener(call);</div>
+<div class="line">                        System.out.println(<span class="stringliteral">&quot;\n\n Plug or unplug a display within 20 seconds.\n&quot;</span>);</div>
+<div class="line">                        <span class="keywordflow">try</span> {</div>
+<div class="line">                            Thread.currentThread().sleep(20000);</div>
+<div class="line">                        } <span class="keywordflow">catch</span> (Exception e) {</div>
+<div class="line">                            <span class="comment">// Exception handling</span></div>
+<div class="line">                        }</div>
+<div class="line">                        hand.RemoveDisplayListEventListener(call);</div>
+<div class="line"> </div>
+<div class="line">                        <span class="comment">// Release display changed handling interface</span></div>
+<div class="line">                        hand.Release();</div>
+<div class="line">                    }</div>
+<div class="line"> </div>
+<div class="line">                    <span class="comment">// Release display services interface</span></div>
+<div class="line">                    displayService.Release();</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            System.out.printf(<span class="stringliteral">&quot;ADLX helper initialize result: %s\n&quot;</span>, res.toString());</div>
 <div class="line">        }</div>
-<div class="line">        hand.RemoveDisplayListEventListener(call);</div>
 <div class="line"> </div>
-<div class="line">        <span class="comment">// Release display changed handling interface</span></div>
-<div class="line">        hand.Release();</div>
-<div class="line"> </div>
-<div class="line">        <span class="comment">// Release display services interface</span></div>
-<div class="line">        displayService.Release();</div>
-<div class="line">      } <span class="keywordflow">else</span> {</div>
-<div class="line">        System.out.printf(<span class="stringliteral">&quot;ADLX helper initialize result: %s\n&quot;</span>, res.toString());</div>
-<div class="line">      }</div>
-<div class="line"> </div>
-<div class="line">      <span class="comment">// ADLX Terminate</span></div>
-<div class="line">      res = help.Terminate();</div>
-<div class="line">      System.out.printf(<span class="stringliteral">&quot;ADLX Terminate: %s\n&quot;</span>, res.toString());</div>
+<div class="line">        <span class="comment">// ADLX Terminate</span></div>
+<div class="line">        res = help.Terminate();</div>
+<div class="line">        System.out.printf(<span class="stringliteral">&quot;ADLX Terminate: %s\n&quot;</span>, res.toString());</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:278</div></div>

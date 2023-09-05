@@ -141,21 +141,22 @@ static const char* getDescStr(ADLX_MEMORYTIMING_DESCRIPTION desc)
 
 void ShowSupport(IADLXInterface* vramTuningIfc)
 {
-    adlx_bool supported;
+    adlx_bool supported = false;
     IADLXManualVRAMTuning2* vramTuning2 = NULL;
     vramTuningIfc->pVtbl->QueryInterface(vramTuningIfc, IID_IADLXManualVRAMTuning2(), &vramTuning2);
     IADLXManualVRAMTuning1* vramTuning1 = NULL;
     vramTuningIfc->pVtbl->QueryInterface(vramTuningIfc, IID_IADLXManualVRAMTuning1(), &vramTuning1);
+    ADLX_RESULT res = ADLX_FAIL;
     if (vramTuning2)
     {
-        vramTuning2->pVtbl->IsSupportedMemoryTiming(vramTuning2, &supported);
+        res = vramTuning2->pVtbl->IsSupportedMemoryTiming(vramTuning2, &supported);
     }
     else if (vramTuning1)
     {
-        vramTuning1->pVtbl->IsSupportedMemoryTiming(vramTuning1, &supported);
+        res = vramTuning1->pVtbl->IsSupportedMemoryTiming(vramTuning1, &supported);
     }
 
-    printf("\tIsSupported: %d\n", supported);
+    printf("\tIsSupported: %d, return code is: %d(0 means success)\n", supported, res);
 
     // Release the ManualVRAMTuning2 interface
     if (vramTuning2 != NULL)
@@ -187,10 +188,10 @@ void GetState(IADLXInterface* vramTuningIfc)
 
         adlx_int freq;
         ADLX_IntRange rang;
-        vramTuning2->pVtbl->GetMaxVRAMFrequency(vramTuning2, &freq);
-        vramTuning2->pVtbl->GetMaxVRAMFrequencyRange(vramTuning2, &rang);
-
-        printf("\tMaxVRAMFrequency is: %d\n\tMaxVRAMFrequencyRange: [ %d, %d ], step: %d\n", freq, rang.minValue, rang.maxValue, rang.step);
+        ADLX_RESULT res = vramTuning2->pVtbl->GetMaxVRAMFrequency(vramTuning2, &freq);
+        printf("\tMaxVRAMFrequency is: %d, return code is: %d(0 means success)\n", freq, res);
+        res = vramTuning2->pVtbl->GetMaxVRAMFrequencyRange(vramTuning2, &rang);
+        printf("\tMaxVRAMFrequencyRange: [ %d, %d ], step: %d, return code is: %d(0 means success)\n", rang.minValue, rang.maxValue, rang.step, res);
     }
     else if (vramTuning1)
     {
@@ -210,13 +211,23 @@ void GetState(IADLXInterface* vramTuningIfc)
             state->pVtbl->GetFrequency(state, &frequency);
             state->pVtbl->GetVoltage(state, &voltage);
             printf("\t\tfrequency: %d, voltage: %d \n", frequency, voltage);
+            if (state != NULL)
+            {
+                state->pVtbl->Release(state);
+                state = NULL;
+            }
+        }
+        if (states != NULL)
+        {
+            states->pVtbl->Release(states);
+            states = NULL;
         }
 
         ADLX_IntRange frequencyRange;
         ADLX_IntRange voltageRange;
-        vramTuning1->pVtbl->GetVRAMTuningRanges(vramTuning1, &frequencyRange, &voltageRange);
-        printf("\tFrequency Range: [ %d, %d ], step: %d\n", frequencyRange.minValue, frequencyRange.maxValue, frequencyRange.step);
-        printf("\tVoltage Range: [ %d, %d ], step: %d\n", voltageRange.minValue, voltageRange.maxValue, voltageRange.step);
+        ADLX_RESULT res = vramTuning1->pVtbl->GetVRAMTuningRanges(vramTuning1, &frequencyRange, &voltageRange);
+        printf("\tFrequency Range: [ %d, %d ], step: %d, return code is: %d(0 means success)\n", frequencyRange.minValue, frequencyRange.maxValue, frequencyRange.step, res);
+        printf("\tVoltage Range: [ %d, %d ], step: %d, return code is: %d(0 means success)\n", voltageRange.minValue, voltageRange.maxValue, voltageRange.step, res);
     }
 
     if (descList)
@@ -272,50 +283,70 @@ void SetTimingLevel(IADLXInterface* vramTuningIfc)
     ADLX_MEMORYTIMING_DESCRIPTION desc, currentDesc;
     IADLXMemoryTimingDescriptionList* descList = NULL;
     IADLXMemoryTimingDescription* item = NULL;
+    adlx_bool supported = false;
     if (vramTuning2)
     {
-        res = vramTuning2->pVtbl->GetSupportedMemoryTimingDescriptionList(vramTuning2, &descList);
-        if (descList)
+        //If MemoryTiming is supported, then only will set the MemoryTiming
+        res = vramTuning2->pVtbl->IsSupportedMemoryTiming(vramTuning2, &supported);
+        if (supported)
         {
-            vramTuning2->pVtbl->GetMemoryTimingDescription (vramTuning2, &currentDesc);
-            for (adlx_uint s = 0; s != descList->pVtbl->End (descList); s++)
+            res = vramTuning2->pVtbl->GetSupportedMemoryTimingDescriptionList(vramTuning2, &descList);
+            if (descList)
             {
-                descList->pVtbl->At_MemoryTimingDescriptionList (descList, s, &item);
-                item->pVtbl->GetDescription (item, &desc);
-                if (desc != currentDesc)
+                vramTuning2->pVtbl->GetMemoryTimingDescription(vramTuning2, &currentDesc);
+                for (adlx_uint s = 0; s != descList->pVtbl->End(descList); s++)
                 {
-                    res = vramTuning2->pVtbl->SetMemoryTimingDescription (vramTuning2, desc);
-                    printf("\tSet Memory Timing description to %s: return code is: %d (0 means success)\n", getDescStr(desc), res);
-                    break;
+                    descList->pVtbl->At_MemoryTimingDescriptionList(descList, s, &item);
+                    item->pVtbl->GetDescription(item, &desc);
+                    if (desc != currentDesc)
+                    {
+                        res = vramTuning2->pVtbl->SetMemoryTimingDescription(vramTuning2, desc);
+                        printf("\tSet Memory Timing description to %s: return code is: %d (0 means success)\n", getDescStr(desc), res);
+                        break;
+                    }
                 }
+            }
+            else
+            {
+                printf("\tFailed to get the Supported Memory Timing Description List.\n");
             }
         }
         else
         {
-            printf("\tFailed to get the Supported Memory Timing Description List.\n");
+
+            printf("\tMemory Timing level not supported, so cannot set Memory Timing Description List\n");
         }
     }
     else if (vramTuning1)
     {
-        res = vramTuning1->pVtbl->GetSupportedMemoryTimingDescriptionList(vramTuning1, &descList);
-        if (descList)
+        //If MemoryTiming is supported, then only will set the MemoryTiming
+        res = vramTuning1->pVtbl->IsSupportedMemoryTiming(vramTuning1, &supported);
+        if (supported)
         {
-            vramTuning1->pVtbl->GetMemoryTimingDescription (vramTuning1, &currentDesc);
-            for (adlx_uint s = 0; s != descList->pVtbl->End (descList); s++)
+            res = vramTuning1->pVtbl->GetSupportedMemoryTimingDescriptionList(vramTuning1, &descList);
+            if (descList)
             {
-                descList->pVtbl->At_MemoryTimingDescriptionList (descList, s, &item);
-                item->pVtbl->GetDescription (item, &desc);
-                if (desc != currentDesc)
+                vramTuning1->pVtbl->GetMemoryTimingDescription(vramTuning1, &currentDesc);
+                for (adlx_uint s = 0; s != descList->pVtbl->End(descList); s++)
                 {
-                    res = vramTuning1->pVtbl->SetMemoryTimingDescription (vramTuning1, desc);
-                    printf("\tSet Memory Timing description to %s: return code is: %d (0 means success)\n", getDescStr(desc), res);
-                    break;
+                    descList->pVtbl->At_MemoryTimingDescriptionList(descList, s, &item);
+                    item->pVtbl->GetDescription(item, &desc);
+                    if (desc != currentDesc)
+                    {
+                        res = vramTuning1->pVtbl->SetMemoryTimingDescription(vramTuning1, desc);
+                        printf("\tSet Memory Timing description to %s: return code is: %d (0 means success)\n", getDescStr(desc), res);
+                        break;
+                    }
                 }
+            }
+            else
+            {
+                printf("\tFailed to get the Supported Memory Timing Description List.\n");
             }
         }
         else
         {
-            printf("\tFailed to get the Supported Memory Timing Description List.\n");
+            printf("\tMemory Timing level not supported, so cannot set Memory Timing Description List\n");
         }
     }
 
@@ -355,46 +386,65 @@ void SetState(IADLXInterface* vramTuningIfc)
     vramTuningIfc->pVtbl->QueryInterface(vramTuningIfc, IID_IADLXManualVRAMTuning2(), &vramTuning2);
     IADLXManualVRAMTuning1* vramTuning1 = NULL;
     vramTuningIfc->pVtbl->QueryInterface(vramTuningIfc, IID_IADLXManualVRAMTuning1(), &vramTuning1);
+    adlx_bool supported = false;
     if (vramTuning2)
     {
-        adlx_int freq;
-        ADLX_IntRange rang;
-        vramTuning2->pVtbl->GetMaxVRAMFrequency(vramTuning2, &freq);
-        vramTuning2->pVtbl->GetMaxVRAMFrequencyRange(vramTuning2, &rang);
-        if (freq != rang.minValue)
+        //If MemoryTiming is supported, then only will set the state
+        res = vramTuning2->pVtbl->IsSupportedMemoryTiming(vramTuning2, &supported);
+        if (supported)
         {
-            res = vramTuning2->pVtbl->SetMaxVRAMFrequency(vramTuning2, rang.minValue);
-            printf("\tSet minimum frequency: return code is: %d (0 means success)\n", res);
+            adlx_int freq;
+            ADLX_IntRange rang;
+            vramTuning2->pVtbl->GetMaxVRAMFrequency(vramTuning2, &freq);
+            vramTuning2->pVtbl->GetMaxVRAMFrequencyRange(vramTuning2, &rang);
+            if (freq != rang.minValue)
+            {
+                res = vramTuning2->pVtbl->SetMaxVRAMFrequency(vramTuning2, rang.minValue);
+                printf("\tSet minimum frequency: return code is: %d (0 means success)\n", res);
+            }
+            else
+            {
+                res = vramTuning2->pVtbl->SetMaxVRAMFrequency(vramTuning2, rang.minValue + rang.step * 2);
+                printf("\tSet maximum frequency: return code is: %d (0 means success)\n", res);
+            }
         }
         else
         {
-            res = vramTuning2->pVtbl->SetMaxVRAMFrequency(vramTuning2, rang.minValue + rang.step * 2);
-            printf("\tSet maximum frequency: return code is: %d (0 means success)\n", res);
+            printf("\tTuning not supported, cannot set the state\n");
         }
     }
     else if (vramTuning1)
     {
-        ADLX_IntRange frequencyRange;
-        ADLX_IntRange voltageRange;
-        vramTuning1->pVtbl->GetVRAMTuningRanges(vramTuning1, &frequencyRange, &voltageRange);
-        IADLXManualTuningStateList* states = NULL;
-        vramTuning1->pVtbl->GetVRAMTuningStates(vramTuning1, &states);
-        adlx_uint s = states->pVtbl->Begin(states);
-        for (; s != states->pVtbl->End(states); s++)
+        //If MemoryTiming is supported, then only will set the state
+        res = vramTuning1->pVtbl->IsSupportedMemoryTiming(vramTuning1, &supported);
+        if (supported)
         {
-            IADLXManualTuningState* state = NULL;
-            adlx_int frequency;
-            adlx_int voltage;
-            states->pVtbl->At_ManualTuningStateList(states, s, &state);
-            state->pVtbl->GetFrequency(state, &frequency);
-            state->pVtbl->GetVoltage(state, &voltage);
-            // Only change the first
-            res = state->pVtbl->SetFrequency(state, frequency != frequencyRange.minValue ? frequencyRange.minValue : frequencyRange.maxValue);
-            res = state->pVtbl->SetVoltage(state, voltage != voltageRange.minValue ? voltageRange.minValue : voltageRange.maxValue);
-            break;
+            ADLX_IntRange frequencyRange;
+            ADLX_IntRange voltageRange;
+            vramTuning1->pVtbl->GetVRAMTuningRanges(vramTuning1, &frequencyRange, &voltageRange);
+            IADLXManualTuningStateList* states = NULL;
+            vramTuning1->pVtbl->GetVRAMTuningStates(vramTuning1, &states);
+            adlx_uint s = states->pVtbl->Begin(states);
+            for (; s != states->pVtbl->End(states); s++)
+            {
+                IADLXManualTuningState* state = NULL;
+                adlx_int frequency;
+                adlx_int voltage;
+                states->pVtbl->At_ManualTuningStateList(states, s, &state);
+                state->pVtbl->GetFrequency(state, &frequency);
+                state->pVtbl->GetVoltage(state, &voltage);
+                // Only change the first
+                res = state->pVtbl->SetFrequency(state, frequency != frequencyRange.minValue ? frequencyRange.minValue : frequencyRange.maxValue);
+                res = state->pVtbl->SetVoltage(state, voltage != voltageRange.minValue ? voltageRange.minValue : voltageRange.maxValue);
+                break;
+            }
+            res = vramTuning1->pVtbl->SetVRAMTuningStates(vramTuning1, states);
+            printf("\tChange VRAM tuning states: return code is: %d (0 means success)\n", res);
         }
-        res = vramTuning1->pVtbl->SetVRAMTuningStates(vramTuning1, states);
-        printf("\tChange VRAM tuning states: return code is: %d (0 means success)\n", res);
+        else
+        {
+            printf("\tTuning not supported, cannot set the state\n");
+        }
     }
 
     // Release the ManualVRAMTuning2 interface

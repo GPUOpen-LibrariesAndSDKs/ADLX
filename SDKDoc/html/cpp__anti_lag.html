@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -123,6 +123,10 @@ $(document).ready(function(){initNavTree('cpp__anti_lag.html',''); initResizable
 		<tr><td>2</td><td> Display current Radeon Anti-Lag state</td></tr>
 		<tr><td>3</td><td> Enable Radeon Anti-Lag</td></tr>
 		<tr><td>4</td><td> Disable Radeon Anti-Lag</td></tr>
+		<tr><td>5</td><td> Enable Radeon Anti-Lag</td></tr>
+		<tr><td>6</td><td> Get Radeon Anti-Lag Level</td></tr>
+		<tr><td>7</td><td> Set Radeon Anti-Lag Level to Anti-Lag</td></tr>
+		<tr><td>8</td><td> Set Radeon Anti-Lag Level to Anti-Lag Next</td></tr>
 		<tr><td>M/m</td><td> Display the main menu</td></tr>
 		<tr><td>Q/q</td><td> Quit the application</td></tr>
         </tbody>
@@ -151,19 +155,25 @@ $(document).ready(function(){initNavTree('cpp__anti_lag.html',''); initResizable
 <div class="line"><span class="keyword">static</span> ADLXHelper g_ADLXHelp;</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Display Anti-Lag support</span></div>
-<div class="line"><span class="keywordtype">void</span> ShowAntiLagSupport(<span class="keyword">const</span> IADLX3DAntiLagPtr&amp; d3dAntiLag);</div>
+<div class="line"><span class="keywordtype">void</span> ShowAntiLagSupport(<span class="keyword">const</span> IADLX3DAntiLagPtr&amp; d3dAntiLag, <span class="keyword">const</span> IADLX3DAntiLag1Ptr&amp; d3dAntiLag1);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Display current Anti-Lag state</span></div>
-<div class="line"><span class="keywordtype">void</span> GetAntiLagState(<span class="keyword">const</span> IADLX3DAntiLagPtr&amp; d3dAntiLag);</div>
+<div class="line"><span class="keywordtype">void</span> GetAntiLagState(<span class="keyword">const</span> IADLX3DAntiLagPtr&amp; d3dAntiLag, <span class="keyword">const</span> IADLX3DAntiLag1Ptr&amp; d3dAntiLag1);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Set Anti-Lag state</span></div>
-<div class="line"><span class="keywordtype">void</span> SetAntiLagState(<span class="keyword">const</span> IADLX3DAntiLagPtr&amp; d3dAntiLag, <span class="keywordtype">int</span> index);</div>
+<div class="line"><span class="keywordtype">void</span> SetAntiLagState(<span class="keyword">const</span> IADLX3DAntiLagPtr&amp; d3dAntiLag, <span class="keyword">const</span> IADLX3DAntiLag1Ptr&amp; d3dAntiLag1, <span class="keywordtype">int</span> index);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Display current Anti-Lag state</span></div>
+<div class="line"><span class="keywordtype">void</span> GetAntiLagLevel(<span class="keyword">const</span> IADLX3DAntiLag1Ptr&amp; d3dAntiLag1);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Set Anti-Lag state</span></div>
+<div class="line"><span class="keywordtype">void</span> SetAntiLagLevel(<span class="keyword">const</span> IADLX3DAntiLag1Ptr&amp; d3dAntiLag1, <a class="code" href="group__enumerations.html#ga67d22cfa2969510afada5140a157df62">ADLX_ANTILAG_STATE</a> level);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Menu</span></div>
-<div class="line"><span class="keywordtype">void</span> MainMenu();</div>
+<div class="line"><span class="keywordtype">void</span> MainMenu(<span class="keywordtype">bool</span> alnSupported);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Menu control</span></div>
-<div class="line"><span class="keywordtype">void</span> MenuControl(<span class="keyword">const</span> IADLX3DAntiLagPtr&amp; d3dAntiLag);</div>
+<div class="line"><span class="keywordtype">void</span> MenuControl(<span class="keyword">const</span> IADLX3DAntiLagPtr&amp; d3dAntiLag, <span class="keyword">const</span> IADLX3DAntiLag1Ptr&amp; d3dAntiLag1);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Wait for exit with error message</span></div>
 <div class="line"><span class="keywordtype">int</span> WaitAndExit(<span class="keyword">const</span> <span class="keywordtype">char</span>* msg, <span class="keyword">const</span> <span class="keywordtype">int</span> retCode);</div>
@@ -172,7 +182,8 @@ $(document).ready(function(){initNavTree('cpp__anti_lag.html',''); initResizable
 <div class="line">{</div>
 <div class="line">    <span class="comment">// Define return code</span></div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = ADLX_FAIL;</div>
-<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> resALN = ADLX_FAIL;</div>
 <div class="line">    <span class="comment">// Initialize ADLX</span></div>
 <div class="line">    res = g_ADLXHelp.Initialize();</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
@@ -194,11 +205,15 @@ $(document).ready(function(){initNavTree('cpp__anti_lag.html',''); initResizable
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Get AntiLag interface</span></div>
 <div class="line">            IADLX3DAntiLagPtr d3dAntiLag;</div>
+<div class="line">            </div>
 <div class="line">            res = d3dSettingSrv-&gt;GetAntiLag(gpuInfo, &amp;d3dAntiLag);</div>
+<div class="line">            IADLX3DAntiLag1Ptr d3dAntiLag1(d3dAntiLag);</div>
 <div class="line">            <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
 <div class="line">            {</div>
-<div class="line">                MainMenu();</div>
-<div class="line">                MenuControl(d3dAntiLag);</div>
+<div class="line">                <span class="comment">//resALN = d3dAntiLag-&gt;QueryInterface(IADLX3DAntiLag1::IID(), reinterpret_cast&lt;void**&gt;(&amp;d3dAntiLag1));               </span></div>
+<div class="line">             </div>
+<div class="line">                MainMenu(d3dAntiLag1 != NULL);</div>
+<div class="line">                MenuControl(d3dAntiLag, d3dAntiLag1);</div>
 <div class="line">            }</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span></div>
@@ -224,23 +239,47 @@ $(document).ready(function(){initNavTree('cpp__anti_lag.html',''); initResizable
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> ShowAntiLagSupport(<span class="keyword">const</span> IADLX3DAntiLagPtr&amp; d3dAntiLag)</div>
+<div class="line"><span class="keywordtype">void</span> ShowAntiLagSupport(<span class="keyword">const</span> IADLX3DAntiLagPtr&amp; d3dAntiLag, <span class="keyword">const</span> IADLX3DAntiLag1Ptr&amp; d3dAntiLag1)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
-<div class="line">    d3dAntiLag-&gt;IsSupported(&amp;supported);</div>
+<div class="line">    <span class="keywordflow">if</span> (d3dAntiLag1 != NULL)</div>
+<div class="line">        d3dAntiLag1-&gt;IsSupported(&amp;supported);</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">        d3dAntiLag-&gt;IsSupported(&amp;supported);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupported: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> GetAntiLagState(<span class="keyword">const</span> IADLX3DAntiLagPtr&amp; d3dAntiLag)</div>
+<div class="line"><span class="keywordtype">void</span> GetAntiLagState(<span class="keyword">const</span> IADLX3DAntiLagPtr&amp; d3dAntiLag, <span class="keyword">const</span> IADLX3DAntiLag1Ptr&amp; d3dAntiLag1)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool enabled = <span class="keyword">false</span>;</div>
-<div class="line">    d3dAntiLag-&gt;IsEnabled(&amp;enabled);</div>
+<div class="line">    <span class="keywordflow">if</span> (d3dAntiLag1 != NULL)</div>
+<div class="line">        d3dAntiLag1-&gt;IsEnabled(&amp;enabled);</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">        d3dAntiLag-&gt;IsEnabled(&amp;enabled);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsEnabled: &quot;</span> &lt;&lt; enabled &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> SetAntiLagState(<span class="keyword">const</span> IADLX3DAntiLagPtr&amp; d3dAntiLag, <span class="keywordtype">int</span> index)</div>
+<div class="line"><span class="keywordtype">void</span> SetAntiLagState(<span class="keyword">const</span> IADLX3DAntiLagPtr&amp; d3dAntiLag, <span class="keyword">const</span> IADLX3DAntiLag1Ptr&amp; d3dAntiLag1, <span class="keywordtype">int</span> index)</div>
 <div class="line">{</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dAntiLag-&gt;SetEnabled(index == 0);</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res;</div>
+<div class="line">    <span class="keywordflow">if</span> (d3dAntiLag1 != NULL)</div>
+<div class="line">        res = d3dAntiLag1-&gt;SetEnabled(index == 0);</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">        res = d3dAntiLag-&gt;SetEnabled(index == 0);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tReturn code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> GetAntiLagLevel(<span class="keyword">const</span> IADLX3DAntiLag1Ptr&amp; d3dAntiLag1)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga67d22cfa2969510afada5140a157df62">ADLX_ANTILAG_STATE</a> level ;</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dAntiLag1-&gt;GetLevel(&amp;level);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tLevel: &quot;</span> &lt;&lt; (level == ADLX_ANTILAG_STATE::ANTILAG ? <span class="stringliteral">&quot;Anti-Lag&quot;</span> : <span class="stringliteral">&quot;Anti-Lag Next&quot;</span>) &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> SetAntiLagLevel(<span class="keyword">const</span> IADLX3DAntiLag1Ptr&amp; d3dAntiLag1, <a class="code" href="group__enumerations.html#ga67d22cfa2969510afada5140a157df62">ADLX_ANTILAG_STATE</a> level)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dAntiLag1-&gt;SetLevel(level);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tReturn code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -254,20 +293,25 @@ $(document).ready(function(){initNavTree('cpp__anti_lag.html',''); initResizable
 <div class="line">    <span class="keywordflow">return</span> retCode;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> MainMenu()</div>
+<div class="line"><span class="keywordtype">void</span> MainMenu(<span class="keywordtype">bool</span> alnSupported)</div>
 <div class="line">{</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tChoose from the following options:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 1 to display Anti-Lag support&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 2 to display current Anti-Lag state&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 2 to display current Anti-Lag state&quot;</span> &lt;&lt; std::endl;    </div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 3 to enable Anti-Lag&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 4 to disable Anti-Lag&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (alnSupported)</div>
+<div class="line">    {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 5 to Get Level&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 6 to Set Level to Anti-Lag&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 7 to Set Level to Anti-Lag Next&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press Q/q to quit the application&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press M/m to display menu options&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> MenuControl(<span class="keyword">const</span> IADLX3DAntiLagPtr&amp; d3dAntiLag)</div>
+<div class="line"><span class="keywordtype">void</span> MenuControl(<span class="keyword">const</span> IADLX3DAntiLagPtr&amp; d3dAntiLag, <span class="keyword">const</span> IADLX3DAntiLag1Ptr&amp; d3dAntiLag1 )</div>
 <div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> num = 0;</div>
 <div class="line">    <span class="keywordflow">while</span> ((num = getchar()) != <span class="charliteral">&#39;q&#39;</span> &amp;&amp; num != <span class="charliteral">&#39;Q&#39;</span>)</div>
@@ -276,32 +320,44 @@ $(document).ready(function(){initNavTree('cpp__anti_lag.html',''); initResizable
 <div class="line">        {</div>
 <div class="line">            <span class="comment">// Display Anti-Lag support</span></div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;1&#39;</span>:</div>
-<div class="line">            ShowAntiLagSupport(d3dAntiLag);</div>
+<div class="line">            ShowAntiLagSupport(d3dAntiLag, d3dAntiLag1);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Display current Anti-Lag state</span></div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;2&#39;</span>:</div>
-<div class="line">            GetAntiLagState(d3dAntiLag);</div>
+<div class="line">            GetAntiLagState(d3dAntiLag, d3dAntiLag1);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Set Anti-Lag state</span></div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>:</div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;4&#39;</span>:</div>
-<div class="line">            SetAntiLagState(d3dAntiLag, num - <span class="charliteral">&#39;3&#39;</span>);</div>
+<div class="line">            SetAntiLagState(d3dAntiLag, d3dAntiLag1, num - <span class="charliteral">&#39;3&#39;</span>);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;5&#39;</span>:</div>
+<div class="line">            GetAntiLagLevel(d3dAntiLag1);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;6&#39;</span>:</div>
+<div class="line">            SetAntiLagLevel(d3dAntiLag1, ADLX_ANTILAG_STATE::ANTILAG);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;7&#39;</span>:</div>
+<div class="line">            SetAntiLagLevel(d3dAntiLag1, ADLX_ANTILAG_STATE::ANTILAGNEXT);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="comment">// Display menu options</span></div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;m&#39;</span>:</div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;M&#39;</span>:</div>
-<div class="line">            MainMenu();</div>
+<div class="line">            MainMenu(d3dAntiLag1 != NULL ? <span class="keyword">true</span> : <span class="keyword">false</span>);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">default</span>:</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga67d22cfa2969510afada5140a157df62a86bd1f9314544ffffd7a1a374a807e9f"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga67d22cfa2969510afada5140a157df62a86bd1f9314544ffffd7a1a374a807e9f">ANTILAGNEXT</a></div><div class="ttdeci">@ ANTILAGNEXT</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:900</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga67d22cfa2969510afada5140a157df62ad52630a26f9490c28cc16b38e0205ce9"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga67d22cfa2969510afada5140a157df62ad52630a26f9490c28cc16b38e0205ce9">ANTILAG</a></div><div class="ttdeci">@ ANTILAG</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:899</div></div>
 <div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:282</div></div>
 <div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:305</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga67d22cfa2969510afada5140a157df62"><div class="ttname"><a href="group__enumerations.html#ga67d22cfa2969510afada5140a157df62">ADLX_ANTILAG_STATE</a></div><div class="ttdeci">ADLX_ANTILAG_STATE</div><div class="ttdoc">Indicates the state of Anti Lag.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:898</div></div>
 <div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:278</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->

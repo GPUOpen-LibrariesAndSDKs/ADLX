@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -354,65 +354,65 @@ $(document).ready(function(){initNavTree('c__g_p_u_preset_tuning.html',''); init
 <div class="line"><span class="keywordtype">void</span> ShowIsSupported(IADLXGPUPresetTuning* gpuPresetTuning)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedPowerSaver(gpuPresetTuning, &amp;supported);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIs Power Save supported by the GPU: %d\n&quot;</span>, supported);</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedPowerSaver(gpuPresetTuning, &amp;supported);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tIs Power Save supported by the GPU: %d, return code is: %d(0 means success)\n&quot;</span>, supported, res);</div>
 <div class="line">    supported = <span class="keyword">false</span>;</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedQuiet(gpuPresetTuning, &amp;supported);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIs Quiet supported by the GPU: %d\n&quot;</span>, supported);</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedQuiet(gpuPresetTuning, &amp;supported);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tIs Quiet supported by the GPU: %d, return code is: %d(0 means success)\n&quot;</span>, supported, res);</div>
 <div class="line">    supported = <span class="keyword">false</span>;</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedBalanced(gpuPresetTuning, &amp;supported);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIs Balanced supported by the GPU: %d\n&quot;</span>, supported);</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedBalanced(gpuPresetTuning, &amp;supported);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tIs Balanced supported by the GPU: %d, return code is: %d(0 means success)\n&quot;</span>, supported, res);</div>
 <div class="line">    supported = <span class="keyword">false</span>;</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedTurbo(gpuPresetTuning, &amp;supported);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIs Turbo supported by the GPU: %d\n&quot;</span>, supported);</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedTurbo(gpuPresetTuning, &amp;supported);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tIs Turbo supported by the GPU: %d, return code is: %d(0 means success)\n&quot;</span>, supported, res);</div>
 <div class="line">    supported = <span class="keyword">false</span>;</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedRage(gpuPresetTuning, &amp;supported);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIs Rage supported by the GPU: %d\n&quot;</span>, supported);</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedRage(gpuPresetTuning, &amp;supported);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tIs Rage supported by the GPU: %d, return code is: %d(0 means success)\n&quot;</span>, supported, res);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Display current GPU tuning states</span></div>
 <div class="line"><span class="keywordtype">void</span> GetCurrentStates(IADLXGPUPresetTuning* gpuPresetTuning)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool applied = <span class="keyword">false</span>;</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentPowerSaver(gpuPresetTuning, &amp;applied);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIs Power Saver applied: %d\n&quot;</span>, applied);</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentPowerSaver(gpuPresetTuning, &amp;applied);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tIs Power Saver applied: %d, return code is: %d(0 means success)\n&quot;</span>, applied, res);</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentQuiet(gpuPresetTuning, &amp;applied);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIs Quiet applied: %d\n&quot;</span>, applied);</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentQuiet(gpuPresetTuning, &amp;applied);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tIs Quiet applied: %d, return code is: %d(0 means success)\n&quot;</span>, applied, res);</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentBalanced(gpuPresetTuning, &amp;applied);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIs Balanced applied: %d\n&quot;</span>, applied);</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentBalanced(gpuPresetTuning, &amp;applied);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tIs Balanced applied: %d, return code is: %d(0 means success)\n&quot;</span>, applied, res);</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentTurbo(gpuPresetTuning, &amp;applied);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIs Turbo applied: %d\n&quot;</span>, applied);</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentTurbo(gpuPresetTuning, &amp;applied);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tIs Turbo applied: %d, return code is: %d(0 means success)\n&quot;</span>, applied, res);</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentRage(gpuPresetTuning, &amp;applied);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIs Rage applied: %d\n&quot;</span>, applied);</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentRage(gpuPresetTuning, &amp;applied);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tIs Rage applied: %d, return code is: %d(0 means success)\n&quot;</span>, applied, res);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Set GPU states</span></div>
 <div class="line"><span class="keywordtype">void</span> SetGPUStates(IADLXGPUPresetTuning* gpuPresetTuning)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool applied = <span class="keyword">false</span>;</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;SetPowerSaver(gpuPresetTuning);</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentPowerSaver(gpuPresetTuning, &amp;applied);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tSet Power Saver preset tuning %s\n&quot;</span>, (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>));</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = gpuPresetTuning-&gt;pVtbl-&gt;SetPowerSaver(gpuPresetTuning);</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentPowerSaver(gpuPresetTuning, &amp;applied);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tSet Power Saver preset tuning %s, return code is: %d(0 means success)\n&quot;</span>, (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>), res);</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;SetQuiet(gpuPresetTuning);</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentQuiet(gpuPresetTuning, &amp;applied);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tSet Quiet preset tuning %s\n&quot;</span>, (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>));</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;SetQuiet(gpuPresetTuning);</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentQuiet(gpuPresetTuning, &amp;applied);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tSet Quiet preset tuning %s, return code is: %d(0 means success)\n&quot;</span>, (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>), res);</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;SetBalanced(gpuPresetTuning);</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentBalanced(gpuPresetTuning, &amp;applied);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tSet Balanced preset tuning %s\n&quot;</span>, (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>));</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;SetBalanced(gpuPresetTuning);</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentBalanced(gpuPresetTuning, &amp;applied);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tSet Balanced preset tuning %s, return code is: %d(0 means success)\n&quot;</span>, (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>), res);</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;SetTurbo(gpuPresetTuning);</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentTurbo(gpuPresetTuning, &amp;applied);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tSet Turbo preset tuning %s\n&quot;</span>, (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>));</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;SetTurbo(gpuPresetTuning);</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentTurbo(gpuPresetTuning, &amp;applied);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tSet Turbo preset tuning %s, return code is: %d(0 means success)\n&quot;</span>, (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>), res);</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;SetRage(gpuPresetTuning);</div>
-<div class="line">    gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentRage(gpuPresetTuning, &amp;applied);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tSet Rage preset tuning %s\n&quot;</span>, (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>));</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;SetRage(gpuPresetTuning);</div>
+<div class="line">    res = gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentRage(gpuPresetTuning, &amp;applied);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tSet Rage preset tuning %s, return code is: %d(0 means success)\n&quot;</span>, (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>), res);</div>
 <div class="line">}</div>
 <div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:282</div></div>
 <div class="ttc" id="agroup___a_d_l_x_macro_html_ga6ea0e7f02e40768a1e47cb60e0e6f482"><div class="ttname"><a href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a></div><div class="ttdeci">#define ADLX_FAILED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:316</div></div>

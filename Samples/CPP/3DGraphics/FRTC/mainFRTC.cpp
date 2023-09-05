@@ -101,21 +101,22 @@ int main()
 void ShowFRTCSupport(const IADLX3DFrameRateTargetControlPtr& frtc)
 {
     adlx_bool supported = false;
-    frtc->IsSupported(&supported);
-    std::cout << "\tIsSupported: " << supported << std::endl;
+    ADLX_RESULT res = frtc->IsSupported(&supported);
+    std::cout << "\tIsSupported: " << supported << ", return code is: " << res << "(0 means success)" << std::endl;
 }
 
 void GetFRTCState(const IADLX3DFrameRateTargetControlPtr& frtc)
 {
     adlx_bool enabled = false;
-    frtc->IsEnabled(&enabled);
-    std::cout << "\tIsEnabled: " << enabled << std::endl;
+    ADLX_RESULT res = frtc->IsEnabled(&enabled);
+    std::cout << "\tIsEnabled: " << enabled << ", return code is: " << res << "(0 means success)" << std::endl;
     adlx_int fps;
     ADLX_IntRange range  = {0};
-    frtc->GetFPS(&fps);
-    frtc->GetFPSRange(&range);
-    std::cout << "\tCurrent FPS:" << fps << std::endl
-              << "\tFPS limit [ " << range.minValue << " ," << range.maxValue << " ], step: " << range.step << std::endl;
+    res = frtc->GetFPS(&fps);
+    std::cout << "\tCurrent FPS:" << fps << ", return code is: " << res << "(0 means success)" << std::endl;
+    res = frtc->GetFPSRange(&range);
+    std::cout << "\tFPS limit [ " << range.minValue << " ," << range.maxValue << " ], step: " << range.step 
+              << ", return code is: " << res << "(0 means success)" << std::endl;
 }
 
 void SetFRTCState(const IADLX3DFrameRateTargetControlPtr& frtc, int index)

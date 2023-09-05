@@ -214,36 +214,37 @@ int WaitAndExit(const char* msg, const int retCode)
 void ShowGetPowerLimitRange(IADLXManualPowerTuningPtr manualPowerTuning)
 {
     ADLX_IntRange powerRange;
-    manualPowerTuning->GetPowerLimitRange(&powerRange);
+    ADLX_RESULT res = manualPowerTuning->GetPowerLimitRange(&powerRange);
     std::cout << "\tPower limit range: (" << powerRange.minValue
-              << ", " << powerRange.maxValue << ")" << std::endl;
+              << ", " << powerRange.maxValue << ")" << ", return code is: "<< res << "(0 means success)" << std::endl;
 }
 
 // Display current power limit
 void ShowGetPowerLimit(IADLXManualPowerTuningPtr manualPowerTuning)
 {
     adlx_int powerLimit;
-    manualPowerTuning->GetPowerLimit(&powerLimit);
-    std::cout << "\tCurrent power limit: " << powerLimit << std::endl;
+    ADLX_RESULT res = manualPowerTuning->GetPowerLimit(&powerLimit);
+    std::cout << "\tCurrent power limit: " << powerLimit << ", return code is: "<< res << "(0 means success)" << std::endl;
 }
 
 // Set power limit
 void ShowSetPowerLimit(IADLXManualPowerTuningPtr manualPowerTuning)
 {
     ADLX_IntRange powerRange;
-    manualPowerTuning->GetPowerLimitRange(&powerRange);
-    manualPowerTuning->SetPowerLimit(powerRange.step + powerRange.minValue + (powerRange.maxValue - powerRange.minValue) / 2);
+    ADLX_RESULT res = manualPowerTuning->GetPowerLimitRange(&powerRange);
+    res = manualPowerTuning->SetPowerLimit(powerRange.step + powerRange.minValue + (powerRange.maxValue - powerRange.minValue) / 2);
+    std::cout << "\tSet power limit " << (ADLX_SUCCEEDED (res) ? "succeeded" : "failed") << std::endl;
     adlx_int powerLimit;
-    manualPowerTuning->GetPowerLimit(&powerLimit);
-    std::cout << "\tSet current power limit to: " << powerLimit << std::endl;
+    res = manualPowerTuning->GetPowerLimit(&powerLimit);
+    std::cout << "\tSet current power limit to: " << powerLimit << ", return code is: "<< res << "(0 means success)" << std::endl;
 }
 
 // Show TDCLimit is supported.
 void ShowTDCLimitSupported(IADLXManualPowerTuningPtr manualPowerTuning)
 {
     adlx_bool supportedTDC;
-    manualPowerTuning->IsSupportedTDCLimit(&supportedTDC);
-    std::cout << "\tTDC limit is supported: " << supportedTDC << std::endl;
+    ADLX_RESULT res = manualPowerTuning->IsSupportedTDCLimit(&supportedTDC);
+    std::cout << "\tTDC limit is supported: " << supportedTDC << ", return code is: "<< res << "(0 means success)" << std::endl;
 }
 
 // Show how to get tdc limit range.

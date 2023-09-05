@@ -112,15 +112,15 @@ int main()
 void ShowSupport(IADLX3DMorphologicalAntiAliasing* mAntiAliasing)
 {
     adlx_bool supported = false;
-    mAntiAliasing->pVtbl->IsSupported(mAntiAliasing, &supported);
-    printf("\tIsSupported: %d\n", supported);
+    ADLX_RESULT res = mAntiAliasing->pVtbl->IsSupported(mAntiAliasing, &supported);
+    printf("\tIsSupported: %d, return code is: %d(0 means success)\n", supported, res);
 }
 
 void GetState(IADLX3DMorphologicalAntiAliasing* mAntiAliasing)
 {
     adlx_bool enabled = false;
-    mAntiAliasing->pVtbl->IsEnabled(mAntiAliasing, &enabled);
-    printf("\tIsEnabled: %d\n", enabled);
+    ADLX_RESULT res = mAntiAliasing->pVtbl->IsEnabled(mAntiAliasing, &enabled);
+    printf("\tIsEnabled: %d, return code is: %d(0 means success)\n", enabled, res);
 }
 
 void SetState(IADLX3DMorphologicalAntiAliasing* mAntiAliasing, int index)

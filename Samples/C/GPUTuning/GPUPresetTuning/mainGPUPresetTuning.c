@@ -224,63 +224,63 @@ int WaitAndExit(const char* msg, const int retCode,
 void ShowIsSupported(IADLXGPUPresetTuning* gpuPresetTuning)
 {
     adlx_bool supported = false;
-    gpuPresetTuning->pVtbl->IsSupportedPowerSaver(gpuPresetTuning, &supported);
-    printf("\tIs Power Save supported by the GPU: %d\n", supported);
+    ADLX_RESULT res = gpuPresetTuning->pVtbl->IsSupportedPowerSaver(gpuPresetTuning, &supported);
+    printf("\tIs Power Save supported by the GPU: %d, return code is: %d(0 means success)\n", supported, res);
     supported = false;
-    gpuPresetTuning->pVtbl->IsSupportedQuiet(gpuPresetTuning, &supported);
-    printf("\tIs Quiet supported by the GPU: %d\n", supported);
+    res = gpuPresetTuning->pVtbl->IsSupportedQuiet(gpuPresetTuning, &supported);
+    printf("\tIs Quiet supported by the GPU: %d, return code is: %d(0 means success)\n", supported, res);
     supported = false;
-    gpuPresetTuning->pVtbl->IsSupportedBalanced(gpuPresetTuning, &supported);
-    printf("\tIs Balanced supported by the GPU: %d\n", supported);
+    res = gpuPresetTuning->pVtbl->IsSupportedBalanced(gpuPresetTuning, &supported);
+    printf("\tIs Balanced supported by the GPU: %d, return code is: %d(0 means success)\n", supported, res);
     supported = false;
-    gpuPresetTuning->pVtbl->IsSupportedTurbo(gpuPresetTuning, &supported);
-    printf("\tIs Turbo supported by the GPU: %d\n", supported);
+    res = gpuPresetTuning->pVtbl->IsSupportedTurbo(gpuPresetTuning, &supported);
+    printf("\tIs Turbo supported by the GPU: %d, return code is: %d(0 means success)\n", supported, res);
     supported = false;
-    gpuPresetTuning->pVtbl->IsSupportedRage(gpuPresetTuning, &supported);
-    printf("\tIs Rage supported by the GPU: %d\n", supported);
+    res = gpuPresetTuning->pVtbl->IsSupportedRage(gpuPresetTuning, &supported);
+    printf("\tIs Rage supported by the GPU: %d, return code is: %d(0 means success)\n", supported, res);
 }
 
 // Display current GPU tuning states
 void GetCurrentStates(IADLXGPUPresetTuning* gpuPresetTuning)
 {
     adlx_bool applied = false;
-    gpuPresetTuning->pVtbl->IsCurrentPowerSaver(gpuPresetTuning, &applied);
-    printf("\tIs Power Saver applied: %d\n", applied);
+    ADLX_RESULT res = gpuPresetTuning->pVtbl->IsCurrentPowerSaver(gpuPresetTuning, &applied);
+    printf("\tIs Power Saver applied: %d, return code is: %d(0 means success)\n", applied, res);
     applied = false;
-    gpuPresetTuning->pVtbl->IsCurrentQuiet(gpuPresetTuning, &applied);
-    printf("\tIs Quiet applied: %d\n", applied);
+    res = gpuPresetTuning->pVtbl->IsCurrentQuiet(gpuPresetTuning, &applied);
+    printf("\tIs Quiet applied: %d, return code is: %d(0 means success)\n", applied, res);
     applied = false;
-    gpuPresetTuning->pVtbl->IsCurrentBalanced(gpuPresetTuning, &applied);
-    printf("\tIs Balanced applied: %d\n", applied);
+    res = gpuPresetTuning->pVtbl->IsCurrentBalanced(gpuPresetTuning, &applied);
+    printf("\tIs Balanced applied: %d, return code is: %d(0 means success)\n", applied, res);
     applied = false;
-    gpuPresetTuning->pVtbl->IsCurrentTurbo(gpuPresetTuning, &applied);
-    printf("\tIs Turbo applied: %d\n", applied);
+    res = gpuPresetTuning->pVtbl->IsCurrentTurbo(gpuPresetTuning, &applied);
+    printf("\tIs Turbo applied: %d, return code is: %d(0 means success)\n", applied, res);
     applied = false;
-    gpuPresetTuning->pVtbl->IsCurrentRage(gpuPresetTuning, &applied);
-    printf("\tIs Rage applied: %d\n", applied);
+    res = gpuPresetTuning->pVtbl->IsCurrentRage(gpuPresetTuning, &applied);
+    printf("\tIs Rage applied: %d, return code is: %d(0 means success)\n", applied, res);
 }
 
 // Set GPU states
 void SetGPUStates(IADLXGPUPresetTuning* gpuPresetTuning)
 {
     adlx_bool applied = false;
-    gpuPresetTuning->pVtbl->SetPowerSaver(gpuPresetTuning);
-    gpuPresetTuning->pVtbl->IsCurrentPowerSaver(gpuPresetTuning, &applied);
-    printf("\tSet Power Saver preset tuning %s\n", (applied ? "Successful" : "failed"));
+    ADLX_RESULT res = gpuPresetTuning->pVtbl->SetPowerSaver(gpuPresetTuning);
+    res = gpuPresetTuning->pVtbl->IsCurrentPowerSaver(gpuPresetTuning, &applied);
+    printf("\tSet Power Saver preset tuning %s, return code is: %d(0 means success)\n", (applied ? "Successful" : "failed"), res);
     applied = false;
-    gpuPresetTuning->pVtbl->SetQuiet(gpuPresetTuning);
-    gpuPresetTuning->pVtbl->IsCurrentQuiet(gpuPresetTuning, &applied);
-    printf("\tSet Quiet preset tuning %s\n", (applied ? "Successful" : "failed"));
+    res = gpuPresetTuning->pVtbl->SetQuiet(gpuPresetTuning);
+    res = gpuPresetTuning->pVtbl->IsCurrentQuiet(gpuPresetTuning, &applied);
+    printf("\tSet Quiet preset tuning %s, return code is: %d(0 means success)\n", (applied ? "Successful" : "failed"), res);
     applied = false;
-    gpuPresetTuning->pVtbl->SetBalanced(gpuPresetTuning);
-    gpuPresetTuning->pVtbl->IsCurrentBalanced(gpuPresetTuning, &applied);
-    printf("\tSet Balanced preset tuning %s\n", (applied ? "Successful" : "failed"));
+    res = gpuPresetTuning->pVtbl->SetBalanced(gpuPresetTuning);
+    res = gpuPresetTuning->pVtbl->IsCurrentBalanced(gpuPresetTuning, &applied);
+    printf("\tSet Balanced preset tuning %s, return code is: %d(0 means success)\n", (applied ? "Successful" : "failed"), res);
     applied = false;
-    gpuPresetTuning->pVtbl->SetTurbo(gpuPresetTuning);
-    gpuPresetTuning->pVtbl->IsCurrentTurbo(gpuPresetTuning, &applied);
-    printf("\tSet Turbo preset tuning %s\n", (applied ? "Successful" : "failed"));
+    res = gpuPresetTuning->pVtbl->SetTurbo(gpuPresetTuning);
+    res = gpuPresetTuning->pVtbl->IsCurrentTurbo(gpuPresetTuning, &applied);
+    printf("\tSet Turbo preset tuning %s, return code is: %d(0 means success)\n", (applied ? "Successful" : "failed"), res);
     applied = false;
-    gpuPresetTuning->pVtbl->SetRage(gpuPresetTuning);
-    gpuPresetTuning->pVtbl->IsCurrentRage(gpuPresetTuning, &applied);
-    printf("\tSet Rage preset tuning %s\n", (applied ? "Successful" : "failed"));
+    res = gpuPresetTuning->pVtbl->SetRage(gpuPresetTuning);
+    res = gpuPresetTuning->pVtbl->IsCurrentRage(gpuPresetTuning, &applied);
+    printf("\tSet Rage preset tuning %s, return code is: %d(0 means success)\n", (applied ? "Successful" : "failed"), res);
 }
