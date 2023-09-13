@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_a_d_l_x_display_page_8h" kind="file" language="C++">
+    <compoundname>ADLXDisplayPage.h</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//IADLXDisplay</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayList</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayListChangedListener</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayGamutChangedEvent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayGamutChangedListener</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="205"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayGammaChangedEvent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="248"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayGammaChangedListener</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="284"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplay3DLUTChangedEvent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="323"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplay3DLUTChangedListener</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="358"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplaySettingsChangedEvent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="420"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplaySettingsChangedListener</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="421"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="455"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayChangedHandling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="456"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="507"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayServices</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="508"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="572"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayFreeSync</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="573"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="604"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayVSR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="605"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="637"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayGPUScaling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="638"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="670"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayScalingMode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="671"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="703"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayIntegerScaling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="704"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="735"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayColorDepth</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="736"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="782"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayPixelFormat</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="783"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="827"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayCustomColor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="828"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="894"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayHDCP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="895"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="927"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayResolution</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="928"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="958"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayResolutionList</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="959"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="992"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayCustomResolution</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="993"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="1030"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayVariBright</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1031"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="1085"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplayGamut</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1086"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="1173"><highlight class="comment"></highlight><highlight class="comment">//DOX_IADLXDisplayGamma</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1174"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="1266"><highlight class="comment"></highlight><highlight class="comment">//IADLXDisplay3DLUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1267"><highlight class="normal"></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight></codeline>
+    </programlisting>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXDisplayPage.h"/>
+  </compounddef>
+</doxygen>

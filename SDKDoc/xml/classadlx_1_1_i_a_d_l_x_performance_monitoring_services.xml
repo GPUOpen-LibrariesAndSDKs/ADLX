@@ -1,0 +1,411 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXPerformanceMonitoringServices</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1ad4d3b37d0d9707824f75993ab028097a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetSamplingIntervalRange</definition>
+        <argsstring>(ADLX_IntRange *range)=0</argsstring>
+        <name>GetSamplingIntervalRange</name>
+        <param>
+          <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1979" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1ab07f0201a7a0d9951dbc660d035673ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::SetSamplingInterval</definition>
+        <argsstring>(adlx_int askedIntervalMs)=0</argsstring>
+        <name>SetSamplingInterval</name>
+        <param>
+          <type>adlx_int</type>
+          <declname>askedIntervalMs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2006" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1ae631692187e33c7ec66cfe0bd77d48a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetSamplingInterval</definition>
+        <argsstring>(adlx_int *intervalMs)=0</argsstring>
+        <name>GetSamplingInterval</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>intervalMs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2033" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a3f21806e2cb3a85060a02b59efa3e755" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetMaxPerformanceMetricsHistorySizeRange</definition>
+        <argsstring>(ADLX_IntRange *range)=0</argsstring>
+        <name>GetMaxPerformanceMetricsHistorySizeRange</name>
+        <param>
+          <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2059" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a9ac1c989c2aec4e18a1cb988e5cf437d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::SetMaxPerformanceMetricsHistorySize</definition>
+        <argsstring>(adlx_int sizeSec)=0</argsstring>
+        <name>SetMaxPerformanceMetricsHistorySize</name>
+        <param>
+          <type>adlx_int</type>
+          <declname>sizeSec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2086" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1ab76c6c10b1257b4bc97185b32d281fda" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetMaxPerformanceMetricsHistorySize</definition>
+        <argsstring>(adlx_int *sizeSec)=0</argsstring>
+        <name>GetMaxPerformanceMetricsHistorySize</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>sizeSec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2113" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1ab8fcfcde3e50be76c60deb86758e8caa" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::ClearPerformanceMetricsHistory</definition>
+        <argsstring>()=0</argsstring>
+        <name>ClearPerformanceMetricsHistory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2136" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1aed03298687eefa100e910d286ec66e16" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetCurrentPerformanceMetricsHistorySize</definition>
+        <argsstring>(adlx_int *sizeSec)=0</argsstring>
+        <name>GetCurrentPerformanceMetricsHistorySize</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>sizeSec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2162" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a4a38e9809a9939b16f50acd51257f789" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::StartPerformanceMetricsTracking</definition>
+        <argsstring>()=0</argsstring>
+        <name>StartPerformanceMetricsTracking</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2190" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1ae039040297c42d1e52a8df99e5aa44c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::StopPerformanceMetricsTracking</definition>
+        <argsstring>()=0</argsstring>
+        <name>StopPerformanceMetricsTracking</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2218" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a2f69bc89c169528736cf257c76d372e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetAllMetricsHistory</definition>
+        <argsstring>(adlx_int startMs, adlx_int stopMs, IADLXAllMetricsList **ppMetricsList)=0</argsstring>
+        <name>GetAllMetricsHistory</name>
+        <param>
+          <type>adlx_int</type>
+          <declname>startMs</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>stopMs</declname>
+        </param>
+        <param>
+          <type>IADLXAllMetricsList **</type>
+          <declname>ppMetricsList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2254" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a4e9e26f14772665ed4b1e3bd216b28d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetGPUMetricsHistory</definition>
+        <argsstring>(IADLXGPU *pGPU, adlx_int startMs, adlx_int stopMs, IADLXGPUMetricsList **ppMetricsList)=0</argsstring>
+        <name>GetGPUMetricsHistory</name>
+        <param>
+          <type>IADLXGPU *</type>
+          <declname>pGPU</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>startMs</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>stopMs</declname>
+        </param>
+        <param>
+          <type>IADLXGPUMetricsList **</type>
+          <declname>ppMetricsList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2298" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a94c8e26c82d5f1573f837ea104933765" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetSystemMetricsHistory</definition>
+        <argsstring>(adlx_int startMs, adlx_int stopMs, IADLXSystemMetricsList **ppMetricsList)=0</argsstring>
+        <name>GetSystemMetricsHistory</name>
+        <param>
+          <type>adlx_int</type>
+          <declname>startMs</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>stopMs</declname>
+        </param>
+        <param>
+          <type>IADLXSystemMetricsList **</type>
+          <declname>ppMetricsList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2341" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1af4a3d26f23dd4f6303b871dceea639bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetFPSHistory</definition>
+        <argsstring>(adlx_int startMs, adlx_int stopMs, IADLXFPSList **ppMetricsList)=0</argsstring>
+        <name>GetFPSHistory</name>
+        <param>
+          <type>adlx_int</type>
+          <declname>startMs</declname>
+        </param>
+        <param>
+          <type>adlx_int</type>
+          <declname>stopMs</declname>
+        </param>
+        <param>
+          <type>IADLXFPSList **</type>
+          <declname>ppMetricsList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2386" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a865e9e4fa1bd3905256ba7697902d65e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetCurrentAllMetrics</definition>
+        <argsstring>(IADLXAllMetrics **ppMetrics)=0</argsstring>
+        <name>GetCurrentAllMetrics</name>
+        <param>
+          <type>IADLXAllMetrics **</type>
+          <declname>ppMetrics</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2415" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a67731360e6110b0d3462377b61bc24da" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetCurrentGPUMetrics</definition>
+        <argsstring>(IADLXGPU *pGPU, IADLXGPUMetrics **ppMetrics)=0</argsstring>
+        <name>GetCurrentGPUMetrics</name>
+        <param>
+          <type>IADLXGPU *</type>
+          <declname>pGPU</declname>
+        </param>
+        <param>
+          <type>IADLXGPUMetrics **</type>
+          <declname>ppMetrics</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2445" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a516b67e56cc635c75a03880f80d58d96" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetCurrentSystemMetrics</definition>
+        <argsstring>(IADLXSystemMetrics **ppMetrics)=0</argsstring>
+        <name>GetCurrentSystemMetrics</name>
+        <param>
+          <type>IADLXSystemMetrics **</type>
+          <declname>ppMetrics</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2474" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a8f88186ba63a90adb31dc35745fc77b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetCurrentFPS</definition>
+        <argsstring>(IADLXFPS **ppMetrics)=0</argsstring>
+        <name>GetCurrentFPS</name>
+        <param>
+          <type>IADLXFPS **</type>
+          <declname>ppMetrics</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2506" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a6902aaa390cb930dda33d49d38a9fa62" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetSupportedGPUMetrics</definition>
+        <argsstring>(IADLXGPU *pGPU, IADLXGPUMetricsSupport **ppMetricsSupported)=0</argsstring>
+        <name>GetSupportedGPUMetrics</name>
+        <param>
+          <type>IADLXGPU *</type>
+          <declname>pGPU</declname>
+        </param>
+        <param>
+          <type>IADLXGPUMetricsSupport **</type>
+          <declname>ppMetricsSupported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2536" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1ab6bb064c6724327690a9db4288fc3514" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetSupportedSystemMetrics</definition>
+        <argsstring>(IADLXSystemMetricsSupport **ppMetricsSupported)=0</argsstring>
+        <name>GetSupportedSystemMetrics</name>
+        <param>
+          <type>IADLXSystemMetricsSupport **</type>
+          <declname>ppMetricsSupported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2565" column="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1950" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1951" bodyend="2567"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1ab8fcfcde3e50be76c60deb86758e8caa" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>ClearPerformanceMetricsHistory</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a2f69bc89c169528736cf257c76d372e3" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>GetAllMetricsHistory</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a865e9e4fa1bd3905256ba7697902d65e" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>GetCurrentAllMetrics</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a8f88186ba63a90adb31dc35745fc77b4" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>GetCurrentFPS</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a67731360e6110b0d3462377b61bc24da" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>GetCurrentGPUMetrics</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1aed03298687eefa100e910d286ec66e16" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>GetCurrentPerformanceMetricsHistorySize</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a516b67e56cc635c75a03880f80d58d96" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>GetCurrentSystemMetrics</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1af4a3d26f23dd4f6303b871dceea639bc" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>GetFPSHistory</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a4e9e26f14772665ed4b1e3bd216b28d7" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>GetGPUMetricsHistory</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1ab76c6c10b1257b4bc97185b32d281fda" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>GetMaxPerformanceMetricsHistorySize</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a3f21806e2cb3a85060a02b59efa3e755" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>GetMaxPerformanceMetricsHistorySizeRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1ae631692187e33c7ec66cfe0bd77d48a2" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>GetSamplingInterval</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1ad4d3b37d0d9707824f75993ab028097a" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>GetSamplingIntervalRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a6902aaa390cb930dda33d49d38a9fa62" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>GetSupportedGPUMetrics</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1ab6bb064c6724327690a9db4288fc3514" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>GetSupportedSystemMetrics</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a94c8e26c82d5f1573f837ea104933765" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>GetSystemMetricsHistory</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>Release</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a9ac1c989c2aec4e18a1cb988e5cf437d" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>SetMaxPerformanceMetricsHistorySize</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1ab07f0201a7a0d9951dbc660d035673ca" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>SetSamplingInterval</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1a4a38e9809a9939b16f50acd51257f789" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>StartPerformanceMetricsTracking</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1ae039040297c42d1e52a8df99e5aa44c2" prot="public" virt="pure-virtual"><scope>adlx::IADLXPerformanceMonitoringServices</scope><name>StopPerformanceMetricsTracking</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

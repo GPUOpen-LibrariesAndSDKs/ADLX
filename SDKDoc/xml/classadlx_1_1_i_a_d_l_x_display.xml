@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_display" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXDisplay</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_1a79e422d2b7f1b75f2999d6e8819d5a1e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::ManufacturerID</definition>
+        <argsstring>(adlx_uint *manufacturerID) const =0</argsstring>
+        <name>ManufacturerID</name>
+        <param>
+          <type>adlx_uint *</type>
+          <declname>manufacturerID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="74" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_1ae6fb550088676a11fa6637307b331fdc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::DisplayType</definition>
+        <argsstring>(ADLX_DISPLAY_TYPE *displayType) const =0</argsstring>
+        <name>DisplayType</name>
+        <param>
+          <type><ref refid="group__enumerations_1gae7e516225131af0ff164e9384d8d0a44" kindref="member">ADLX_DISPLAY_TYPE</ref> *</type>
+          <declname>displayType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="107" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_1a6ba8ad3dcae469275ad02d304e63ad1d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::ConnectorType</definition>
+        <argsstring>(ADLX_DISPLAY_CONNECTOR_TYPE *connectType) const =0</argsstring>
+        <name>ConnectorType</name>
+        <param>
+          <type><ref refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5d" kindref="member">ADLX_DISPLAY_CONNECTOR_TYPE</ref> *</type>
+          <declname>connectType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="139" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_1a446b5aa6f1b2f4d8eac5b09e16425b0d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::Name</definition>
+        <argsstring>(const char **displayName) const =0</argsstring>
+        <name>Name</name>
+        <param>
+          <type>const char **</type>
+          <declname>displayName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="176" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_1a39981bca631ba25719a9fd6f8d5cbb5a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::EDID</definition>
+        <argsstring>(const char **edid) const =0</argsstring>
+        <name>EDID</name>
+        <param>
+          <type>const char **</type>
+          <declname>edid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="213" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_1aa3a6a5cdeba6ad5d1086bf3fe13c020a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::NativeResolution</definition>
+        <argsstring>(adlx_int *maxHResolution, adlx_int *maxVResolution) const =0</argsstring>
+        <name>NativeResolution</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxHResolution</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxVResolution</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="246" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_1ad539352e3603aa21446fa26c94e622b9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::RefreshRate</definition>
+        <argsstring>(adlx_double *refreshRate) const =0</argsstring>
+        <name>RefreshRate</name>
+        <param>
+          <type>adlx_double *</type>
+          <declname>refreshRate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="278" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_1ae7713ba19fc74425acc9c959a21004d2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::PixelClock</definition>
+        <argsstring>(adlx_uint *pixelClock) const =0</argsstring>
+        <name>PixelClock</name>
+        <param>
+          <type>adlx_uint *</type>
+          <declname>pixelClock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="310" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_1adc61bc79d8353595ca8e3809ddf5b0c4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::ScanType</definition>
+        <argsstring>(ADLX_DISPLAY_SCAN_TYPE *scanType) const =0</argsstring>
+        <name>ScanType</name>
+        <param>
+          <type><ref refid="group__enumerations_1gae2d0250dc861156a468001600a2ee648" kindref="member">ADLX_DISPLAY_SCAN_TYPE</ref> *</type>
+          <declname>scanType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="342" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_1a1f9247b5843726c4b233e195b816d557" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::GetGPU</definition>
+        <argsstring>(IADLXGPU **ppGPU)=0</argsstring>
+        <name>GetGPU</name>
+        <param>
+          <type>IADLXGPU **</type>
+          <declname>ppGPU</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="373" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_1aabc11164215dfc644472ee7dc27c1a69" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::UniqueId</definition>
+        <argsstring>(adlx_size *uniqueId)=0</argsstring>
+        <name>UniqueId</name>
+        <param>
+          <type>adlx_size *</type>
+          <declname>uniqueId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="397" column="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="37" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="38" bodyend="398"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplay</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_1a6ba8ad3dcae469275ad02d304e63ad1d" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplay</scope><name>ConnectorType</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_1ae6fb550088676a11fa6637307b331fdc" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplay</scope><name>DisplayType</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_1a39981bca631ba25719a9fd6f8d5cbb5a" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplay</scope><name>EDID</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_1a1f9247b5843726c4b233e195b816d557" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplay</scope><name>GetGPU</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_1a79e422d2b7f1b75f2999d6e8819d5a1e" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplay</scope><name>ManufacturerID</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_1a446b5aa6f1b2f4d8eac5b09e16425b0d" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplay</scope><name>Name</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_1aa3a6a5cdeba6ad5d1086bf3fe13c020a" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplay</scope><name>NativeResolution</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_1ae7713ba19fc74425acc9c959a21004d2" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplay</scope><name>PixelClock</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplay</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_1ad539352e3603aa21446fa26c94e622b9" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplay</scope><name>RefreshRate</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplay</scope><name>Release</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_1adc61bc79d8353595ca8e3809ddf5b0c4" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplay</scope><name>ScanType</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_1aabc11164215dfc644472ee7dc27c1a69" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplay</scope><name>UniqueId</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

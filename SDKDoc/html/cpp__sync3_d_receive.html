@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -127,7 +127,6 @@ $(document).ready(function(){initNavTree('cpp__sync3_d_receive.html',''); initRe
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/Include/I3DSettings.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;SDK/Include/I3DSettings1.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;conio.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -219,13 +218,6 @@ $(document).ready(function(){initNavTree('cpp__sync3_d_receive.html',''); initRe
 <div class="line">        <span class="comment">// Get 3DSettings service</span></div>
 <div class="line">        IADLX3DSettingsServicesPtr d3dSettingSrv;</div>
 <div class="line">        g_ADLXHelp.GetSystemServices()-&gt;Get3DSettingsServices(&amp;d3dSettingSrv);</div>
-<div class="line">        IADLX3DSettingsServices1Ptr d3dSettingSrv1 (d3dSettingSrv);</div>
-<div class="line"> </div>
-<div class="line">        IADLX3DSettingsChangedEvent1Ptr p3DSettingsChangedEvent1(p3DSettingsChangedEvent);</div>
-<div class="line">        <span class="keywordflow">if</span> (p3DSettingsChangedEvent1 == <span class="keyword">nullptr</span>)</div>
-<div class="line">        {</div>
-<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;3DSettingsChangedEvent1 not supported&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">        }</div>
 <div class="line"> </div>
 <div class="line">        <span class="comment">// Get the GPU interface</span></div>
 <div class="line">        IADLXGPUPtr gpu;</div>
@@ -368,16 +360,6 @@ $(document).ready(function(){initNavTree('cpp__sync3_d_receive.html',''); initRe
 <div class="line">            {</div>
 <div class="line">                std::cout &lt;&lt; <span class="stringliteral">&quot;\tResetShaderCache&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">            }</div>
-<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p3DSettingsChangedEvent1-&gt;IsRTBoostChanged())</div>
-<div class="line">            {</div>
-<div class="line">            <span class="comment">// Get Boost interface</span></div>
-<div class="line">            IADLX3DRTBoostPtr d3drtBoost;</div>
-<div class="line">            d3dSettingSrv1-&gt;GetRTBoost(gpu, &amp;d3drtBoost);</div>
-<div class="line">            adlx_bool enabled;</div>
-<div class="line">            d3drtBoost-&gt;IsEnabled(&amp;enabled);</div>
-<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tRTBoost changed\n\tIsEnabled: &quot;</span> &lt;&lt; enabled &lt;&lt; std::endl;</div>
-<div class="line">            }</div>
-<div class="line"> </div>
 <div class="line">        }</div>
 <div class="line"> </div>
 <div class="line">        <span class="keywordflow">if</span> (origin == SYNC_ORIGIN_UNKNOWN)</div>

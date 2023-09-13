@@ -104,18 +104,18 @@ static const std::map<ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE, const char*> vsyncMod
 void ShowvsyncSupport(const IADLX3DWaitForVerticalRefreshPtr& vsync)
 {
     adlx_bool supported = false;
-    ADLX_RESULT res = vsync->IsSupported(&supported);
-    std::cout << "\tIsSupported: " << supported << ", return code is: " << res << "(0 means success)" << std::endl;
+    vsync->IsSupported(&supported);
+    std::cout << "\tIsSupported: " << supported << std::endl;
 }
 
 void GetvsyncState(const IADLX3DWaitForVerticalRefreshPtr& vsync)
 {
     adlx_bool enabled = false;
-    ADLX_RESULT res = vsync->IsEnabled(&enabled);
-    std::cout << "\tIsEnabled: " << enabled << ", return code is: " << res << "(0 means success)" << std::endl;
+    vsync->IsEnabled(&enabled);
+    std::cout << "\tIsEnabled: " << enabled << std::endl;
     ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE mode = WFVR_ALWAYS_OFF;
-    res = vsync->GetMode(&mode);
-    std::cout << "\tMode: " << vsyncMode.find(mode)->second << ", return code is: " << res << "(0 means success)" << std::endl;
+    vsync->GetMode(&mode);
+    std::cout << "\tMode: " << vsyncMode.find(mode)->second << std::endl;
 }
 
 void SetvsyncMode(const IADLX3DWaitForVerticalRefreshPtr& vsync, int index)

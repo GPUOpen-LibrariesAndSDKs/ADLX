@@ -94,8 +94,8 @@ int main()
 void ShowSupport(const IADLX3DResetShaderCachePtr& resetShaderCache)
 {
     adlx_bool supported = false;
-    ADLX_RESULT res = resetShaderCache->IsSupported(&supported);
-    std::cout << "\tIsSupported: " << supported << ", return code is: " << res << "(0 means success)" << std::endl;
+    resetShaderCache->IsSupported(&supported);
+    std::cout << "\tIsSupported: " << supported << std::endl;
 }
 
 void ResetShaderCache(const IADLX3DResetShaderCachePtr& resetShaderCache)

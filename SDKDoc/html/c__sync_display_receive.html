@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -127,7 +127,6 @@ $(document).ready(function(){initNavTree('c__sync_display_receive.html',''); ini
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/ADLXHelper/Windows/C/ADLXHelper.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/Include/IDisplays.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;SDK/Include/IDisplays1.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/Include/IDisplaySettings.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;conio.h&quot;</span></div>
 <div class="line"> </div>
@@ -143,14 +142,7 @@ $(document).ready(function(){initNavTree('c__sync_display_receive.html',''); ini
 <div class="line"><span class="comment">// Call back to handle changed events</span></div>
 <div class="line">adlx_bool ADLX_STD_CALL OnDisplaySettingsChanged(IADLXDisplaySettingsChangedListener* pThis, IADLXDisplaySettingsChangedEvent* pDisplaySettingsChangedEvent)</div>
 <div class="line">{</div>
-<div class="line">    IADLXDisplaySettingsChangedEvent1* pDisplaySettingChangedEvent1 = NULL;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = pDisplaySettingsChangedEvent-&gt;pVtbl-&gt;QueryInterface(pDisplaySettingsChangedEvent, IID_IADLXDisplaySettingsChangedEvent1(), &amp;pDisplaySettingChangedEvent1);</div>
-<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res) || NULL == pDisplaySettingChangedEvent1)</div>
-<div class="line">    {</div>
-<div class="line">        printf(<span class="stringliteral">&quot;IID_IADLXDisplaySettingsChangedEvent1 not supported&quot;</span>);</div>
-<div class="line">    }</div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga7a1e20106faef482c0664c546e04ba00">ADLX_SYNC_ORIGIN</a> origin = pDisplaySettingsChangedEvent-&gt;pVtbl-&gt;GetOrigin(pDisplaySettingsChangedEvent);</div>
-<div class="line"> </div>
 <div class="line">    <span class="keywordflow">if</span> (origin == SYNC_ORIGIN_EXTERNAL)</div>
 <div class="line">    {</div>
 <div class="line">        IADLXDisplay *display = NULL;</div>
@@ -217,10 +209,7 @@ $(document).ready(function(){initNavTree('c__sync_display_receive.html',''); ini
 <div class="line">        {</div>
 <div class="line">            printf(<span class="stringliteral">&quot;Display %s get sync event, VSR is changed\n&quot;</span>, displayName);</div>
 <div class="line">        }</div>
-<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pDisplaySettingChangedEvent1-&gt;pVtbl-&gt;IsBlueLightReductionChanged(pDisplaySettingChangedEvent1))</div>
-<div class="line">        {</div>
-<div class="line">            printf(<span class="stringliteral">&quot;Display %s get sync event, Blue Light Reduction is changed\n&quot;</span>, displayName);</div>
-<div class="line">        }</div>
+<div class="line"> </div>
 <div class="line">        <span class="comment">// Release the Display interface</span></div>
 <div class="line">        <span class="keywordflow">if</span> (display != NULL)</div>
 <div class="line">        {</div>

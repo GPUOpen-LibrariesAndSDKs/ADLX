@@ -24,17 +24,13 @@ void ShowDisplay3DLUTSupport (IADLXDisplayServices* displayService, IADLXDisplay
         printf ("  === 3D LUT supported status ===\n");
         adlx_bool supported;
         ADLX_RESULT res = display3DLUT->pVtbl->IsSupportedSCE (display3DLUT, &supported);
-        if (ADLX_SUCCEEDED(res))
-            printf ("\tIs SCE supported on this display: %d\n", supported);
+        printf ("\tIs SCE supported on this display: %d\n", supported);
         res = display3DLUT->pVtbl->IsSupportedSCEVividGaming (display3DLUT, &supported);
-        if (ADLX_SUCCEEDED(res))
-            printf ("\tIs SCE Vivid Gaming preset supported on this display: %d\n", supported);
+        printf ("\tIs SCE Vivid Gaming preset supported on this display: %d\n", supported);
         res = display3DLUT->pVtbl->IsSupportedSCEDynamicContrast(display3DLUT, &supported);
-        if (ADLX_SUCCEEDED(res))
-            printf ("\tIs SCE Dynamic Contrast supported on this display: %d\n", supported);
+        printf ("\tIs SCE Dynamic Contrast supported on this display: %d\n", supported);
         res = display3DLUT->pVtbl->IsSupportedUser3DLUT (display3DLUT, &supported);
-        if (ADLX_SUCCEEDED(res))
-            printf ("\tIs 3DLUT supported on this display: %d\n", supported);
+        printf ("\tIs 3DLUT supported on this display: %d\n", supported);
     }
 
     // Release the display3DLUT interface
@@ -56,14 +52,11 @@ void Get3DLUTState (IADLXDisplayServices* displayService, IADLXDisplay* display)
         printf ("  === Get 3D LUT ===\n");
         adlx_bool applied = false;
         res = display3DLUT->pVtbl->IsCurrentSCEDisabled (display3DLUT, &applied);
-        if (ADLX_SUCCEEDED(res))
-            printf ("\tIs SCE used on this display: %d\n", applied);
+        printf ("\tIs SCE used on this display: %d\n", applied);
         res = display3DLUT->pVtbl->IsCurrentSCEVividGaming (display3DLUT, &applied);
-        if (ADLX_SUCCEEDED(res))
-            printf ("\tIs SCE Vivid Gaming preset used on this display: %d\n", applied);
+        printf ("\tIs SCE Vivid Gaming preset used on this display: %d\n", applied);
         res = display3DLUT->pVtbl->IsCurrentSCEDynamicContrast(display3DLUT, &applied);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIs SCE Vivid Dynamic Contrast preset used on this display: %d\n", applied);
+        printf("\tIs SCE Vivid Dynamic Contrast preset used on this display: %d\n", applied);
         if (applied)
         {
             ADLX_IntRange range;

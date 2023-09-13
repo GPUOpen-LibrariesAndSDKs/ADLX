@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -141,34 +141,29 @@ $(document).ready(function(){initNavTree('py_sample_display_events.html',''); in
 <div class="line">    adlxHelper = ADLX.ADLXHelper()</div>
 <div class="line">    ret = adlxHelper.Initialize()</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">if</span> ret == ADLX.ADLX_RESULT.ADLX_OK:</div>
+<div class="line">    if(ret == ADLX.ADLX_RESULT.ADLX_OK):</div>
 <div class="line">        <span class="comment"># Get systemServices</span></div>
 <div class="line">        system = adlxHelper.GetSystemServices()</div>
 <div class="line"> </div>
-<div class="line">        <span class="keywordflow">if</span> system <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line">            <span class="comment"># Get displayServices</span></div>
-<div class="line">            displayService = system.GetDisplaysServices()</div>
+<div class="line">        <span class="comment"># Get displayServices</span></div>
+<div class="line">        displayService = system.GetDisplaysServices()</div>
 <div class="line"> </div>
-<div class="line">            <span class="keywordflow">if</span> displayService <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line">                <span class="comment"># Get display change handler</span></div>
-<div class="line">                displayChangeHandler = displayService.GetDisplayChangedHandling()</div>
+<div class="line">        <span class="comment"># Get display change handler</span></div>
+<div class="line">        displayChangeHandler = displayService.GetDisplayChangedHandling()</div>
+<div class="line">        <span class="comment"># Python call back</span></div>
+<div class="line">        callback = ADLX.DisplayListCallBack()</div>
+<div class="line">        callback.call = callBackDisplayList</div>
+<div class="line">        <span class="comment"># Add call back</span></div>
+<div class="line">        displayChangeHandler.AddDisplayListEventListener(callback)</div>
+<div class="line">        print(<span class="stringliteral">&quot;Plug or unplug a display within 20 seconds.&quot;</span>)</div>
+<div class="line">        time.sleep(20)</div>
+<div class="line">        <span class="comment"># Remove call back</span></div>
+<div class="line">        displayChangeHandler.RemoveDisplayListEventListener(callback)</div>
+<div class="line">        <span class="comment"># Release changeHandler interface</span></div>
+<div class="line">        del displayChangeHandler</div>
 <div class="line"> </div>
-<div class="line">                <span class="keywordflow">if</span> displayChangeHandler <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line">                    <span class="comment"># Python call back</span></div>
-<div class="line">                    callback = ADLX.DisplayListCallBack()</div>
-<div class="line">                    callback.call = callBackDisplayList</div>
-<div class="line">                    <span class="comment"># Add call back</span></div>
-<div class="line">                    displayChangeHandler.AddDisplayListEventListener(callback)</div>
-<div class="line">                    print(<span class="stringliteral">&quot;Plug or unplug a display within 20 seconds.&quot;</span>)</div>
-<div class="line">                    time.sleep(20)</div>
-<div class="line">                    <span class="comment"># Remove call back</span></div>
-<div class="line">                    displayChangeHandler.RemoveDisplayListEventListener(callback)</div>
-<div class="line"> </div>
-<div class="line">                    <span class="comment"># Release changeHandler interface</span></div>
-<div class="line">                    del displayChangeHandler</div>
-<div class="line"> </div>
-<div class="line">                <span class="comment"># Release displayService interface</span></div>
-<div class="line">                del displayService</div>
+<div class="line">        <span class="comment"># Release displayService interface</span></div>
+<div class="line">        del displayService</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment"># Terminate ADLX</span></div>
 <div class="line">    ret = adlxHelper.Terminate()</div>

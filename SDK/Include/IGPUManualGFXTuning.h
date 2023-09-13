@@ -49,7 +49,8 @@ namespace adlx
         * The GPU clock speed and the GPU voltage can be adjusted within their ranges.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualGraphicsTuning1_REQ_TABLE
+		*@requirements
+        *@DetailsTable{#include "IGPUManualGFXTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetGPUTuningRanges (ADLX_IntRange* frequencyRange, ADLX_IntRange* voltageRange) = 0;
@@ -79,7 +80,8 @@ namespace adlx
 		*
 		* Some GPUs allow multiple GPU tuning states. Each GPU tuning state is represented by the GPU clock speed and the GPU voltage. @ENG_END_DOX
         *
-        *@copydoc IADLXManualGraphicsTuning1_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualGFXTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetGPUTuningStates (IADLXManualTuningStateList** ppGFXStates) = 0;
@@ -111,7 +113,8 @@ namespace adlx
 		*
 		* Some GPUs allow multiple GPU tuning states. Each GPU tuning state is represented by the GPU clock speed and the GPU voltage. @ENG_END_DOX
         *
-        *@copydoc IADLXManualGraphicsTuning1_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualGFXTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetEmptyGPUTuningStates (IADLXManualTuningStateList** ppGFXStates) = 0;
@@ -142,7 +145,8 @@ namespace adlx
         *@detaileddesc
         *@ENG_START_DOX @details If the __*pGFXStates__ is valid then the method sets the __errorIndex__ to -1. @ENG_END_DOX
         *
-        *@copydoc IADLXManualGraphicsTuning1_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualGFXTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsValidGPUTuningStates (IADLXManualTuningStateList* pGFXStates, adlx_int* errorIndex) = 0;
@@ -169,7 +173,8 @@ namespace adlx
         * Some GPUs allow multiple GPU tuning states. Each GPU tuning state is represented by the GPU clock speed and the GPU voltage.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualGraphicsTuning1_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualGFXTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetGPUTuningStates (IADLXManualTuningStateList* pGFXStates) = 0;
@@ -233,7 +238,8 @@ namespace adlx
         * Some GPUs support minimum GPU clock speed adjustment within a range.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualGraphicsTuning2_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualGFXTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetGPUMinFrequencyRange (ADLX_IntRange* tuningRange) = 0;
@@ -260,7 +266,8 @@ namespace adlx
         * Some GPUs support minimum GPU clock speed adjustment within a range.
         * @ENG_END_DOX
 		*
-        *@copydoc IADLXManualGraphicsTuning2_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualGFXTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetGPUMinFrequency (adlx_int* minFreq) = 0;
@@ -287,7 +294,8 @@ namespace adlx
         * Some GPUs support minimum GPU clock speed adjustment within a range.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualGraphicsTuning2_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualGFXTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetGPUMinFrequency (adlx_int minFreq) = 0;
@@ -314,7 +322,8 @@ namespace adlx
         * Some GPUs support maximum GPU clock speed adjustment within a range.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualGraphicsTuning2_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualGFXTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetGPUMaxFrequencyRange (ADLX_IntRange* tuningRange) = 0;
@@ -341,7 +350,8 @@ namespace adlx
         * Some GPUs support maximum GPU clock speed adjustment within a range.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualGraphicsTuning2_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualGFXTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetGPUMaxFrequency (adlx_int* maxFreq) = 0;
@@ -368,7 +378,8 @@ namespace adlx
         * Some GPUs support maximum GPU clock speed adjustment within a range.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualGraphicsTuning2_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualGFXTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetGPUMaxFrequency (adlx_int maxFreq) = 0;
@@ -395,7 +406,8 @@ namespace adlx
         * Some GPUs support GPU voltage adjustment within a range.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualGraphicsTuning2_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualGFXTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetGPUVoltageRange (ADLX_IntRange* tuningRange) = 0;
@@ -422,7 +434,8 @@ namespace adlx
         * Some GPUs support GPU voltage adjustment within a range.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualGraphicsTuning2_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualGFXTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetGPUVoltage (adlx_int* volt) = 0;
@@ -449,7 +462,8 @@ namespace adlx
         * Some GPUs support GPU voltage adjustment within a range.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualGraphicsTuning2_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualGFXTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetGPUVoltage (adlx_int volt) = 0;

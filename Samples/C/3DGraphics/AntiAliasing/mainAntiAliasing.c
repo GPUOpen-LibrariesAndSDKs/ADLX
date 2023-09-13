@@ -171,25 +171,19 @@ static char* getLevelStr(ADLX_ANTI_ALIASING_LEVEL level)
 void ShowAntiAliasingSupport(IADLX3DAntiAliasing* antiAliasing)
 {
     adlx_bool supported = false;
-    ADLX_RESULT res = antiAliasing->pVtbl->IsSupported(antiAliasing, &supported);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tIsSupported: %d\n", supported);
+    antiAliasing->pVtbl->IsSupported(antiAliasing, &supported);
+    printf("\tIsSupported: %d\n", supported);
 }
 
 void GetAntiAliasingState(IADLX3DAntiAliasing* antiAliasing)
 {
     ADLX_ANTI_ALIASING_MODE mode;
-    ADLX_RESULT res = antiAliasing->pVtbl->GetMode(antiAliasing, &mode);
-    if (ADLX_SUCCEEDED (res))
-        printf("\tMode: %s\n", getModeStr(mode));
+    antiAliasing->pVtbl->GetMode(antiAliasing, &mode);
     ADLX_ANTI_ALIASING_METHOD method;
-    res = antiAliasing->pVtbl->GetMethod(antiAliasing, &method);
-    if (ADLX_SUCCEEDED (res))
-        printf("\tMethod: %s\n", getMethodStr(method));
+    antiAliasing->pVtbl->GetMethod(antiAliasing, &method);
     ADLX_ANTI_ALIASING_LEVEL level;
-    res = antiAliasing->pVtbl->GetLevel(antiAliasing, &level);
-    if (ADLX_SUCCEEDED (res))
-        printf("\tLevel: %s\n", getLevelStr(level));
+    antiAliasing->pVtbl->GetLevel(antiAliasing, &level);
+    printf("\tMode: %s\n\tMethod: %s\n\tLevel: %s\n", getModeStr(mode), getMethodStr(method), getLevelStr(level));
 }
 
 void SetAntiAliasingMode(IADLX3DAntiAliasing* antiAliasing, int index)
@@ -204,25 +198,19 @@ void SetAntiAliasingMode(IADLX3DAntiAliasing* antiAliasing, int index)
 void SetAntiAliasingMethod(IADLX3DAntiAliasing* antiAliasing)
 {
     ADLX_ANTI_ALIASING_METHOD method = AA_METHOD_MULTISAMPLING;
-    ADLX_RESULT res = antiAliasing->pVtbl->GetMethod(antiAliasing, &method);
-    if (ADLX_SUCCEEDED (res))
-    {
-        method = (ADLX_ANTI_ALIASING_METHOD)((method + 1) % 3);
-        res = antiAliasing->pVtbl->SetMethod(antiAliasing, method);
-        printf("\tSet method: %s, res is: %d\n", getMethodStr(method), res);
-    }
+    antiAliasing->pVtbl->GetMethod(antiAliasing, &method);
+    method = (ADLX_ANTI_ALIASING_METHOD)((method + 1) % 3);
+    ADLX_RESULT res = antiAliasing->pVtbl->SetMethod(antiAliasing, method);
+    printf("\tSet method: %s, res is: %d\n", getMethodStr(method), res);
 }
 
 void SetAntiAliasingLevel(IADLX3DAntiAliasing* antiAliasing)
 {
     ADLX_ANTI_ALIASING_LEVEL level;
-    ADLX_RESULT res = antiAliasing->pVtbl->GetLevel(antiAliasing, &level);
-    if (ADLX_SUCCEEDED (res))
-    {
-        level = (level == AA_LEVEL_2X) ? AA_LEVEL_4X : AA_LEVEL_2X;
-        res = antiAliasing->pVtbl->SetLevel(antiAliasing, level);
-        printf("\tSet level: %s, res is: %d\n", getLevelStr(level), res);
-    }
+    antiAliasing->pVtbl->GetLevel(antiAliasing, &level);
+    level = (level == AA_LEVEL_2X) ? AA_LEVEL_4X : AA_LEVEL_2X;
+    ADLX_RESULT res = antiAliasing->pVtbl->SetLevel(antiAliasing, level);
+    printf("\tSet level: %s, res is: %d\n", getLevelStr(level), res);
 }
 
 void MainMenu()

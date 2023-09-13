@@ -95,9 +95,8 @@ int main()
                 displayGamutCallBack->OnDisplayGamutChanged = &OnDisplayGamutChanged;
 
                 // ADD callback to the handl
-                ADLX_RESULT addListenerRes = ADLX_FAIL;
                 {
-                    addListenerRes = displayChangeHandl->pVtbl->AddDisplayGamutEventListener(displayChangeHandl, (IADLXDisplayGamutChangedListener*)&displayGamutCallBack);
+                    displayChangeHandl->pVtbl->AddDisplayGamutEventListener(displayChangeHandl, (IADLXDisplayGamutChangedListener*)&displayGamutCallBack);
                 }
 
                 // Set gamut for the first display
@@ -129,17 +128,12 @@ int main()
                     displays = NULL;
                 }
 
-                if (ADLX_SUCCEEDED (addListenerRes))
-                {
-                    // Wait for gamut change
-                    WaitForSingleObject(gamutChangedEvent, INFINITE);
-                    CloseHandle(thread);
+                // Wait for gamut change
+                WaitForSingleObject(gamutChangedEvent, INFINITE);
+                CloseHandle(thread);
 
-                    // Remove and destroy callback
-                    res = displayChangeHandl->pVtbl->RemoveDisplayGamutEventListener(displayChangeHandl, (IADLXDisplayGamutChangedListener*)&displayGamutCallBack);
-                    if (ADLX_FAILED (res))
-                        printf("Remove display gamut event listener failed\n");
-                }
+                // Remove and destroy callback
+                displayChangeHandl->pVtbl->RemoveDisplayGamutEventListener(displayChangeHandl, (IADLXDisplayGamutChangedListener*)&displayGamutCallBack);
 
                 if (NULL != displayGamutCallBack)
                 {

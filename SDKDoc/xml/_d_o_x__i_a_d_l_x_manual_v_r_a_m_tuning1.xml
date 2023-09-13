@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1" kind="page">
+    <compoundname>DOX_IADLXManualVRAMTuning1</compoundname>
+    <title>IADLXManualVRAMTuning1</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__get_empty_v_r_a_m_tuning_states">GetEmptyVRAMTuningStates</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__get_memory_timing_description">GetMemoryTimingDescription</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__get_supported_memory_timing_description_list">GetSupportedMemoryTimingDescriptionList</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__get_v_r_a_m_tuning_ranges">GetVRAMTuningRanges</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__get_v_r_a_m_tuning_states">GetVRAMTuningStates</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__is_supported_memory_timing">IsSupportedMemoryTiming</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__is_valid_v_r_a_m_tuning_states">IsValidVRAMTuningStates</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__set_memory_timing_description">SetMemoryTimingDescription</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__set_v_r_a_m_tuning_states">SetVRAMTuningStates</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXManualVRAMTuning1</bold> interface provides methods to configure the GPU manual VRAM tuning for pre-RDNA ASIC family.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLXManualVRAMTuning1</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLXManualVRAMTuning1Ptr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_interface" kindref="compound">IADLXInterface</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>NA</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="10" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__get_empty_v_r_a_m_tuning_states" kindref="compound">GetEmptyVRAMTuningStates</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted list of empty VRAM tuning states on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__get_memory_timing_description" kindref="compound">GetMemoryTimingDescription</ref>   </para>
+</entry><entry thead="no"><para>Gets the current memory timing description on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__get_supported_memory_timing_description_list" kindref="compound">GetSupportedMemoryTimingDescriptionList</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted list of the supported memory timing description on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__get_v_r_a_m_tuning_ranges" kindref="compound">GetVRAMTuningRanges</ref>   </para>
+</entry><entry thead="no"><para>Gets the VRAM frequency range and the VRAM voltage range on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__get_v_r_a_m_tuning_states" kindref="compound">GetVRAMTuningStates</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted list of current VRAM tuning states on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__is_supported_memory_timing" kindref="compound">IsSupportedMemoryTiming</ref>   </para>
+</entry><entry thead="no"><para>Checks if the memory timing is supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__is_valid_v_r_a_m_tuning_states" kindref="compound">IsValidVRAMTuningStates</ref>   </para>
+</entry><entry thead="no"><para>Checks the validity of listed VRAM tuning states on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__set_memory_timing_description" kindref="compound">SetMemoryTimingDescription</ref>   </para>
+</entry><entry thead="no"><para>Sets the memory timing description on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__set_v_r_a_m_tuning_states" kindref="compound">SetVRAMTuningStates</ref>   </para>
+</entry><entry thead="no"><para>Sets listed VRAM states to the tuning state on a GPU.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IGPUManualVRAMTuning.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp__manual_v_r_a_m_tuning" kindref="compound">ManualVRAMTuning C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c__manual_v_r_a_m_tuning" kindref="compound">ManualVRAMTuning C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__get_empty_v_r_a_m_tuning_states" kindref="compound">GetEmptyVRAMTuningStates</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__get_memory_timing_description" kindref="compound">GetMemoryTimingDescription</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__get_supported_memory_timing_description_list" kindref="compound">GetSupportedMemoryTimingDescriptionList</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__get_v_r_a_m_tuning_ranges" kindref="compound">GetVRAMTuningRanges</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__get_v_r_a_m_tuning_states" kindref="compound">GetVRAMTuningStates</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__is_supported_memory_timing" kindref="compound">IsSupportedMemoryTiming</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__is_valid_v_r_a_m_tuning_states" kindref="compound">IsValidVRAMTuningStates</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__set_memory_timing_description" kindref="compound">SetMemoryTimingDescription</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__set_v_r_a_m_tuning_states" kindref="compound">SetVRAMTuningStates</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXGPUTuningPage.h"/>
+  </compounddef>
+</doxygen>

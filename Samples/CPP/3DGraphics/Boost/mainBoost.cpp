@@ -97,25 +97,21 @@ int main()
 void ShowBoostSupport(const IADLX3DBoostPtr& d3dBoost)
 {
     adlx_bool supported = false;
-    ADLX_RESULT res = d3dBoost->IsSupported(&supported);
-    if (ADLX_SUCCEEDED(res))
-        std::cout << "\tIsSupported: " << supported << std::endl;
+    d3dBoost->IsSupported(&supported);
+    std::cout << "\tIsSupported: " << supported << std::endl;
 }
 
 void GetBoostState(const IADLX3DBoostPtr& d3dBoost)
 {
     adlx_bool enabled = false;
-    ADLX_RESULT res = d3dBoost->IsEnabled(&enabled);
-    if (ADLX_SUCCEEDED(res))
-        std::cout << "\tIsEnabled: " << enabled << std::endl;
+    d3dBoost->IsEnabled(&enabled);
+    std::cout << "\tIsEnabled: " << enabled << std::endl;
     adlx_int resolution;
     ADLX_IntRange resolutionRange;
-    res = d3dBoost->GetResolution(&resolution);
-    if (ADLX_SUCCEEDED (res))
-        std::cout << "\tCurrent Resolution:" << resolution << std::endl;
-    res = d3dBoost->GetResolutionRange(&resolutionRange);
-    if (ADLX_SUCCEEDED (res))
-        std::cout << "\tResolution limit [ " << resolutionRange.minValue << " ," << resolutionRange.maxValue << " ], step: " << resolutionRange.step << std::endl;
+    d3dBoost->GetResolution(&resolution);
+    d3dBoost->GetResolutionRange(&resolutionRange);
+    std::cout << "\tCurrent Resolution:" << resolution << std::endl
+              << "\tResolution limit [ " << resolutionRange.minValue << " ," << resolutionRange.maxValue << " ], step: " << resolutionRange.step << std::endl;
 }
 
 void SetBoostState(const IADLX3DBoostPtr& d3dBoost, int index)
@@ -127,20 +123,17 @@ void SetBoostState(const IADLX3DBoostPtr& d3dBoost, int index)
     {
         adlx_int resolution;
         ADLX_IntRange resolutionRange;
-        ADLX_RESULT res1 = d3dBoost->GetResolution(&resolution);
-        ADLX_RESULT res2 = d3dBoost->GetResolutionRange(&resolutionRange);
-        if (ADLX_SUCCEEDED (res1) && ADLX_SUCCEEDED (res2))
+        d3dBoost->GetResolution(&resolution);
+        d3dBoost->GetResolutionRange(&resolutionRange);
+        if (resolution != resolutionRange.minValue)
         {
-            if (resolution != resolutionRange.minValue)
-            {
-                res = d3dBoost->SetResolution(resolutionRange.minValue);
-                std::cout << "\tSet minimum resolution limit: return code is: " << res << "(0 means success)" << std::endl;
-            }
-            else
-            {
-                res = d3dBoost->SetResolution(resolutionRange.maxValue);
-                std::cout << "\tSet maximum resolution limit: return code is: " << res << "(0 means success)" << std::endl;
-            }
+            res = d3dBoost->SetResolution(resolutionRange.minValue);
+            std::cout << "\tSet minimum resolution limit: return code is: " << res << "(0 means success)" << std::endl;
+        }
+        else
+        {
+            res = d3dBoost->SetResolution(resolutionRange.maxValue);
+            std::cout << "\tSet maximum resolution limit: return code is: " << res << "(0 means success)" << std::endl;
         }
     }
 }

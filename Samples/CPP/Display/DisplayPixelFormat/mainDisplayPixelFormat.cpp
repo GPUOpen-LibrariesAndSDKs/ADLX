@@ -111,7 +111,7 @@ void ShowDisplayPixelFormatSupport(const IADLXDisplayServicesPtr& displayService
         std::cout << "  === Get pixel format supported ===" << std::endl;
         adlx_bool supported = false;
         res = displayPixelFormat->IsSupported(&supported);
-        std::cout << "\tPixel format is supported on the display: " << supported << " , return code: " << res << " (0 means success)\n" << std::endl;
+        std::cout << "\tIf pixel format is supported on the display: " << supported << std::endl;
     }
 }
 
@@ -182,20 +182,15 @@ void GetSupportStateForEachPixelFormat(const IADLXDisplayServicesPtr& displaySer
         adlx_bool support = false;
 
         res = displayPixelFormat->IsSupportedRGB444Full(&support);
-        if (ADLX_SUCCEEDED(res))
-            std::cout << "\tIs support RGB 4:4:4 PC Standard (Full RGB): " << support << std::endl;
+        std::cout << "\tIs support RGB 4:4:4 PC Standard (Full RGB): " << support << std::endl;
         res = displayPixelFormat->IsSupportedYCbCr444(&support);
-        if (ADLX_SUCCEEDED(res))
-            std::cout << "\tIs support YCbCr 4:4:4: " << support << std::endl;
+        std::cout << "\tIs support YCbCr 4:4:4: " << support << std::endl;
         res = displayPixelFormat->IsSupportedYCbCr422(&support);
-        if (ADLX_SUCCEEDED(res))
-            std::cout << "\tIs support YCbCr 4:2:2: " << support << std::endl;
+        std::cout << "\tIs support YCbCr 4:2:2: " << support << std::endl;
         res = displayPixelFormat->IsSupportedRGB444Limited(&support);
-        if (ADLX_SUCCEEDED(res))
-            std::cout << "\tIs support RGB 4:4:4 Studio (Limited RGB): " << support << std::endl;
+        std::cout << "\tIs support RGB 4:4:4 Studio (Limited RGB): " << support << std::endl;
         res = displayPixelFormat->IsSupportedYCbCr420(&support);
-        if (ADLX_SUCCEEDED(res))
-            std::cout << "\tIs support YCbCr 4:2:0: " << support << std::endl;
+        std::cout << "\tIs support YCbCr 4:2:0: " << support << std::endl;
 
         const std::unordered_map<ADLX_PIXEL_FORMAT, std::string> PixelFormatMap{
             {RGB_444_FULL, "RGB 4:4:4 PC Standard (Full RGB)"},
@@ -206,8 +201,7 @@ void GetSupportStateForEachPixelFormat(const IADLXDisplayServicesPtr& displaySer
         };
         for_each(PixelFormatMap.begin(), PixelFormatMap.end(), [&](auto pixelFormat) {
             res = displayPixelFormat->IsSupportedPixelFormat(pixelFormat.first, &support);
-            if (ADLX_SUCCEEDED(res))
-                std::cout << "\tIs support " << pixelFormat.second << ": " << support << std::endl;
+            std::cout << "\tIs support " << pixelFormat.second << ": " << support << std::endl;
         });
     }
 }

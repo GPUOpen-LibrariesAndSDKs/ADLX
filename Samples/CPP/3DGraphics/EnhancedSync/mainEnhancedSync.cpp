@@ -96,15 +96,15 @@ int main()
 void ShowEnhancedSyncSupport(const IADLX3DEnhancedSyncPtr& d3dEnhancedSync)
 {
     adlx_bool supported = false;
-    ADLX_RESULT res = d3dEnhancedSync->IsSupported(&supported);
-    std::cout << "\tIsSupported: " << supported << ", return code is: " << res << "(0 means success)" << std::endl;
+    d3dEnhancedSync->IsSupported(&supported);
+    std::cout << "\tIsSupported: " << supported << std::endl;
 }
 
 void GetEnhancedSyncState(const IADLX3DEnhancedSyncPtr& d3dEnhancedSync)
 {
     adlx_bool enabled = false;
-    ADLX_RESULT res = d3dEnhancedSync->IsEnabled(&enabled);
-    std::cout << "\tIsEnabled: " << enabled << ", return code is: " << res << "(0 means success)" << std::endl;
+    d3dEnhancedSync->IsEnabled(&enabled);
+    std::cout << "\tIsEnabled: " << enabled << std::endl;
 }
 
 void SetEnhancedSyncState(const IADLX3DEnhancedSyncPtr& d3dEnhancedSync, int index)

@@ -42,7 +42,8 @@ namespace adlx
         *
         *
         *
-        *@copydoc IADLXI2C_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "II2C.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL Version (adlx_int* major, adlx_int* minor) = 0;
@@ -68,7 +69,8 @@ namespace adlx
         *
         *
         *
-        *@copydoc IADLXI2C_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "II2C.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupported (ADLX_I2C_LINE line, adlx_int address, adlx_bool* isSupported) = 0;
@@ -99,7 +101,8 @@ namespace adlx
         *@ENG_START_DOX @details The application is responsible to allocate a buffer sufficiently large to hold the requested OEM device data. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXI2C_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "II2C.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL Read (ADLX_I2C_LINE line, adlx_int speed, adlx_int address, adlx_int offset, adlx_int dataSize, adlx_byte* data) = 0;
@@ -130,7 +133,8 @@ namespace adlx
         *@ENG_START_DOX @details The application is responsible to allocate a buffer sufficiently large to hold the requested OEM device data. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXI2C_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "II2C.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL RepeatedStartRead (ADLX_I2C_LINE line, adlx_int speed, adlx_int address, adlx_int offset, adlx_int dataSize, adlx_byte* data) = 0;
@@ -161,7 +165,8 @@ namespace adlx
         *@ENG_START_DOX @details The application is responsible to allocate a buffer sufficiently large to hold the requested OEM device data. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXI2C_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "II2C.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL Write (ADLX_I2C_LINE line, adlx_int speed, adlx_int address, adlx_int offset, adlx_int dataSize, adlx_byte* data) = 0;

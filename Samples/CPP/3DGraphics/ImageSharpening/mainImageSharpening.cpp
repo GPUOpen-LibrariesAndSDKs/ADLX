@@ -101,23 +101,21 @@ int main()
 void ShowImageSharpenSupport(const IADLX3DImageSharpeningPtr& d3dImageSharpen)
 {
     adlx_bool supported = false;
-    ADLX_RESULT res = d3dImageSharpen->IsSupported(&supported);
-    std::cout << "\tIsSupported: " << supported << ", return code is: "<< res << "(0 means success)" << std::endl;
+    d3dImageSharpen->IsSupported(&supported);
+    std::cout << "\tIsSupported: " << supported << std::endl;
 }
 
 void GetImageSharpenState(const IADLX3DImageSharpeningPtr& d3dImageSharpen)
 {
     adlx_bool enabled = false;
-    ADLX_RESULT res = d3dImageSharpen->IsEnabled(&enabled);
-    std::cout << "\tIsEnabled: " << enabled << ", return code is: "<< res << "(0 means success)" << std::endl;
+    d3dImageSharpen->IsEnabled(&enabled);
+    std::cout << "\tIsEnabled: " << enabled << std::endl;
     adlx_int sharpness;
     ADLX_IntRange sharpnessRange  = {0};
-    res = d3dImageSharpen->GetSharpness(&sharpness);
-    std::cout << "\tCurrent Sharpness:" << sharpness
-              << ", return code is: "<< res << "(0 means success)" << std::endl;
-    res = d3dImageSharpen->GetSharpnessRange(&sharpnessRange);
-    std::cout << "\tSharpness limit [ " << sharpnessRange.minValue << " ," << sharpnessRange.maxValue << " ], step: " << sharpnessRange.step 
-              << ", return code is: "<< res << "(0 means success)" << std::endl;
+    d3dImageSharpen->GetSharpness(&sharpness);
+    d3dImageSharpen->GetSharpnessRange(&sharpnessRange);
+    std::cout << "\tCurrent Sharpness:" << sharpness << std::endl
+              << "\tSharpness limit [ " << sharpnessRange.minValue << " ," << sharpnessRange.maxValue << " ], step: " << sharpnessRange.step << std::endl;
 }
 
 void SetImageSharpenState(const IADLX3DImageSharpeningPtr& d3dImageSharpen, int index)

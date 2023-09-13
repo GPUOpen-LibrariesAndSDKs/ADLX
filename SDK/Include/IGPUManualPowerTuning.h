@@ -38,7 +38,8 @@ namespace adlx
         * If the power limit range is not successfully returned, an error code is returned.<br>
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
-        *@copydoc IADLXManualPowerTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualPowerTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetPowerLimitRange (ADLX_IntRange* tuningRange) = 0;
@@ -65,7 +66,8 @@ namespace adlx
         * A higher power limit increases performance headroom.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualPowerTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualPowerTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetPowerLimit (adlx_int* curVal) = 0;
@@ -92,7 +94,8 @@ namespace adlx
         * A higher power limit increases performance headroom.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualPowerTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualPowerTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetPowerLimit (adlx_int curVal) = 0;
@@ -102,7 +105,7 @@ namespace adlx
         *@ENG_START_DOX
         *@brief Checks if Thermal Design Current (TDC) limit is supported on a GPU.
         *@details Thermal Design Current (TDC) functionality is not currently implemented in a production application. Usecase validation for these methods should be performed by application developers.
-        *@ENG_END_DOX
+		*@ENG_END_DOX
         *
         *@syntax
         *@codeStart
@@ -124,7 +127,8 @@ namespace adlx
         * A higher TDC limit increases performance headroom.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualPowerTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualPowerTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupportedTDCLimit(adlx_bool* supported) = 0;
@@ -134,7 +138,7 @@ namespace adlx
         *@ENG_START_DOX
         *@brief Gets the manual power tuning minimum Thermal Design Current (TDC) range, maximum TDC range, and step TDC range on a GPU.
         *@details Thermal Design Current (TDC) functionality is not currently implemented in a production application. Usecase validation for these methods should be performed by application developers.
-        *@ENG_END_DOX
+		*@ENG_END_DOX
         *
         *@syntax
         *@codeStart
@@ -151,7 +155,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br>
         *@ENG_END_DOX
         *
-        *@copydoc IADLXManualPowerTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualPowerTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetTDCLimitRange(ADLX_IntRange* tuningRange) = 0;
@@ -161,7 +166,7 @@ namespace adlx
         *@ENG_START_DOX
         *@brief Gets the current Thermal Design Current (TDC) limit of a GPU.
         *@details Thermal Design Current (TDC) functionality is not currently implemented in a production application. Usecase validation for these methods should be performed by application developers.
-        *@ENG_END_DOX
+		*@ENG_END_DOX
 		*
         *@syntax
         *@codeStart
@@ -183,7 +188,8 @@ namespace adlx
         * A higher TDC limit increases performance headroom.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualPowerTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualPowerTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetTDCLimit(adlx_int* curVal) = 0;
@@ -193,7 +199,7 @@ namespace adlx
         *@ENG_START_DOX
         *@brief Sets the Thermal Design Current (TDC) limit of a GPU.
         *@details Thermal Design Current (TDC) functionality is not currently implemented in a production application. Usecase validation for these methods should be performed by application developers.
-        *@ENG_END_DOX
+		*@ENG_END_DOX
         *
         *@syntax
         *@codeStart
@@ -215,7 +221,8 @@ namespace adlx
         * A higher TDC limit increases performance headroom.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualPowerTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualPowerTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetTDCLimit(adlx_int curVal) = 0;

@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -154,40 +154,29 @@ $(document).ready(function(){initNavTree('c_sample_display_gamut.html',''); init
 <div class="line">        adlx_bool supported = <span class="keyword">false</span>;</div>
 <div class="line">        printf(<span class="stringliteral">&quot;  === Gamut space supported status ===\n&quot;</span>);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsSupportedCCIR709ColorSpace(displayGamut, &amp;supported);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsSupportedGamut_CCIR_709: %d\n&quot;</span>, supported);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsSupportedGamut_CCIR_709: %d\n&quot;</span>, supported);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsSupportedCCIR601ColorSpace(displayGamut, &amp;supported);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsSupportedGamut_CCIR_601: %d\n&quot;</span>, supported);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsSupportedGamut_CCIR_601: %d\n&quot;</span>, supported);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsSupportedAdobeRgbColorSpace(displayGamut, &amp;supported);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsSupportedGamut_Adobe_RGB: %d\n&quot;</span>, supported);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsSupportedGamut_Adobe_RGB: %d\n&quot;</span>, supported);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsSupportedCIERgbColorSpace(displayGamut, &amp;supported);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsSupportedGamut_CIE_RGB: %d\n&quot;</span>, supported);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsSupportedGamut_CIE_RGB: %d\n&quot;</span>, supported);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsSupportedCCIR2020ColorSpace(displayGamut, &amp;supported);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsSupportedCCIR2020ColorSpace: %d\n&quot;</span>, supported);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsSupportedCCIR2020ColorSpace: %d\n&quot;</span>, supported);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsSupportedCustomColorSpace(displayGamut, &amp;supported);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsSupportedGamut_Custom: %d\n&quot;</span>, supported);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsSupportedGamut_Custom: %d\n&quot;</span>, supported);</div>
 <div class="line"> </div>
 <div class="line">        printf(<span class="stringliteral">&quot;  === White point supported status ===\n&quot;</span>);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsSupported5000kWhitePoint(displayGamut, &amp;supported);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsSupportedWhitePoint_5000k: %d\n&quot;</span>, supported);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsSupportedWhitePoint_5000k: %d\n&quot;</span>, supported);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsSupported6500kWhitePoint(displayGamut, &amp;supported);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsSupportedWhitePoint_6500k: %d\n&quot;</span>, supported);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsSupportedWhitePoint_6500k: %d\n&quot;</span>, supported);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsSupported7500kWhitePoint(displayGamut, &amp;supported);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsSupportedWhitePoint_7500k: %d\n&quot;</span>, supported);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsSupportedWhitePoint_7500k: %d\n&quot;</span>, supported);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsSupported9300kWhitePoint(displayGamut, &amp;supported);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsSupportedWhitePoint_9300k: %d\n&quot;</span>, supported);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsSupportedWhitePoint_9300k: %d\n&quot;</span>, supported);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsSupportedCustomWhitePoint(displayGamut, &amp;supported);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsSupportedWhitePoint_Custom: %d\n&quot;</span>, supported);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsSupportedWhitePoint_Custom: %d\n&quot;</span>, supported);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Release the displayGamut interface</span></div>
@@ -210,51 +199,38 @@ $(document).ready(function(){initNavTree('c_sample_display_gamut.html',''); init
 <div class="line">        <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = ADLX_FAIL;</div>
 <div class="line">        printf(<span class="stringliteral">&quot;  === Current white point status ===\n&quot;</span>);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsCurrent5000kWhitePoint(displayGamut, &amp;applied);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsCurrentWhitePoint_5000k: %d\n&quot;</span>, applied);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsCurrentWhitePoint_5000k: %d\n&quot;</span>, applied);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsCurrent6500kWhitePoint(displayGamut, &amp;applied);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsCurrentWhitePoint_6500k: %d\n&quot;</span>, applied);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsCurrentWhitePoint_6500k: %d\n&quot;</span>, applied);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsCurrent7500kWhitePoint(displayGamut, &amp;applied);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsCurrentWhitePoint_7500k: %d\n&quot;</span>, applied);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsCurrentWhitePoint_7500k: %d\n&quot;</span>, applied);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsCurrent9300kWhitePoint(displayGamut, &amp;applied);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsCurrentWhitePoint_9300k: %d\n&quot;</span>, applied);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsCurrentWhitePoint_9300k: %d\n&quot;</span>, applied);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsCurrentCustomWhitePoint(displayGamut, &amp;applied);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsCurrentWhitePoint_Custom: %d\n&quot;</span>, applied);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsCurrentWhitePoint_Custom: %d\n&quot;</span>, applied);</div>
 <div class="line">        <a class="code" href="group__structures_val.html#struct_a_d_l_x___point">ADLX_Point</a> point = {0};</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;GetWhitePoint(displayGamut, &amp;point);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tGetWhitePoint: ( %d,  %d)\n&quot;</span>, point.<a class="code" href="group__structures_val.html#aa22bab0bfe9e1a768530aa8cab94662e">x</a>, point.<a class="code" href="group__structures_val.html#a1b2e67a8ba86ac9f0393ee839658fe55">y</a>);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tGetWhitePoint: ( %d,  %d)\n&quot;</span>, point.<a class="code" href="group__structures_val.html#aa22bab0bfe9e1a768530aa8cab94662e">x</a>, point.<a class="code" href="group__structures_val.html#a1b2e67a8ba86ac9f0393ee839658fe55">y</a>);</div>
 <div class="line"> </div>
 <div class="line">        printf(<span class="stringliteral">&quot;  === Current gamut space status ===\n&quot;</span>);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsCurrentCCIR709ColorSpace(displayGamut, &amp;applied);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsCurrentGamut_CCIR_709: %d\n&quot;</span>, applied);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsCurrentGamut_CCIR_709: %d\n&quot;</span>, applied);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsCurrentCCIR601ColorSpace(displayGamut, &amp;applied);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsCurrentGamut_CCIR_601: %d\n&quot;</span>, applied);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsCurrentGamut_CCIR_601: %d\n&quot;</span>, applied);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsCurrentAdobeRgbColorSpace(displayGamut, &amp;applied);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsCurrentGamut_Adobe_RGB: %d\n&quot;</span>, applied);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsCurrentGamut_Adobe_RGB: %d\n&quot;</span>, applied);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsCurrentCIERgbColorSpace(displayGamut, &amp;applied);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsCurrentGamut_CIE_RGB: %d\n&quot;</span>, applied);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsCurrentGamut_CIE_RGB: %d\n&quot;</span>, applied);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsCurrentCCIR2020ColorSpace(displayGamut, &amp;applied);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsCurrentCCIR2020ColorSpace: %d\n&quot;</span>, applied);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsCurrentCCIR2020ColorSpace: %d\n&quot;</span>, applied);</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;IsCurrentCustomColorSpace(displayGamut, &amp;applied);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIsCurrentCustomColorSpace: %d\n&quot;</span>, applied);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsCurrentCustomColorSpace: %d\n&quot;</span>, applied);</div>
 <div class="line">        <a class="code" href="group__structures_val.html#struct_a_d_l_x___gamut_color_space">ADLX_GamutColorSpace</a> gamutCoordinates = {0};</div>
 <div class="line">        res = displayGamut-&gt;pVtbl-&gt;GetGamutColorSpace(displayGamut, &amp;gamutCoordinates);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tGetGamutColorSpace: R( %d, %d ), G( %d, %d ), B( %d, %d )\n&quot;</span>,</div>
-<div class="line">                    gamutCoordinates.<a class="code" href="group__structures_val.html#a1fbcbbc055e40b34aae2823822e9af8c">red</a>.<a class="code" href="group__structures_val.html#aa22bab0bfe9e1a768530aa8cab94662e">x</a>, gamutCoordinates.<a class="code" href="group__structures_val.html#a1fbcbbc055e40b34aae2823822e9af8c">red</a>.<a class="code" href="group__structures_val.html#a1b2e67a8ba86ac9f0393ee839658fe55">y</a>,</div>
-<div class="line">                    gamutCoordinates.<a class="code" href="group__structures_val.html#a84a443716c92b943096a38c0128cb197">green</a>.<a class="code" href="group__structures_val.html#aa22bab0bfe9e1a768530aa8cab94662e">x</a>, gamutCoordinates.<a class="code" href="group__structures_val.html#a84a443716c92b943096a38c0128cb197">green</a>.<a class="code" href="group__structures_val.html#a1b2e67a8ba86ac9f0393ee839658fe55">y</a>,</div>
-<div class="line">                    gamutCoordinates.<a class="code" href="group__structures_val.html#ad34c7449d0336a88ffd1cdbef31c2540">blue</a>.<a class="code" href="group__structures_val.html#aa22bab0bfe9e1a768530aa8cab94662e">x</a>, gamutCoordinates.<a class="code" href="group__structures_val.html#ad34c7449d0336a88ffd1cdbef31c2540">blue</a>.<a class="code" href="group__structures_val.html#a1b2e67a8ba86ac9f0393ee839658fe55">y</a>);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tGetGamutColorSpace: R( %d, %d ), G( %d, %d ), B( %d, %d )\n&quot;</span>,</div>
+<div class="line">               gamutCoordinates.<a class="code" href="group__structures_val.html#a1fbcbbc055e40b34aae2823822e9af8c">red</a>.<a class="code" href="group__structures_val.html#aa22bab0bfe9e1a768530aa8cab94662e">x</a>, gamutCoordinates.<a class="code" href="group__structures_val.html#a1fbcbbc055e40b34aae2823822e9af8c">red</a>.<a class="code" href="group__structures_val.html#a1b2e67a8ba86ac9f0393ee839658fe55">y</a>,</div>
+<div class="line">               gamutCoordinates.<a class="code" href="group__structures_val.html#a84a443716c92b943096a38c0128cb197">green</a>.<a class="code" href="group__structures_val.html#aa22bab0bfe9e1a768530aa8cab94662e">x</a>, gamutCoordinates.<a class="code" href="group__structures_val.html#a84a443716c92b943096a38c0128cb197">green</a>.<a class="code" href="group__structures_val.html#a1b2e67a8ba86ac9f0393ee839658fe55">y</a>,</div>
+<div class="line">               gamutCoordinates.<a class="code" href="group__structures_val.html#ad34c7449d0336a88ffd1cdbef31c2540">blue</a>.<a class="code" href="group__structures_val.html#aa22bab0bfe9e1a768530aa8cab94662e">x</a>, gamutCoordinates.<a class="code" href="group__structures_val.html#ad34c7449d0336a88ffd1cdbef31c2540">blue</a>.<a class="code" href="group__structures_val.html#a1b2e67a8ba86ac9f0393ee839658fe55">y</a>);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Release the displayGamut interface</span></div>
@@ -465,14 +441,14 @@ $(document).ready(function(){initNavTree('c_sample_display_gamut.html',''); init
 <div class="ttc" id="agroup__enumerations_html_ga46dff86075115b139c1c72f447e94e14"><div class="ttname"><a href="group__enumerations.html#ga46dff86075115b139c1c72f447e94e14">ADLX_GAMUT_SPACE</a></div><div class="ttdeci">ADLX_GAMUT_SPACE</div><div class="ttdoc">Indicates the predefined gamut space.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:498</div></div>
 <div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:278</div></div>
 <div class="ttc" id="agroup__enumerations_html_gafb56c4b91425c281009c447ccb1feeab"><div class="ttname"><a href="group__enumerations.html#gafb56c4b91425c281009c447ccb1feeab">ADLX_WHITE_POINT</a></div><div class="ttdeci">ADLX_WHITE_POINT</div><div class="ttdoc">Indicates the standardized white point setting.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:517</div></div>
-<div class="ttc" id="agroup__structures_val_html_a1b2e67a8ba86ac9f0393ee839658fe55"><div class="ttname"><a href="group__structures_val.html#a1b2e67a8ba86ac9f0393ee839658fe55">ADLX_Point::y</a></div><div class="ttdeci">adlx_int y</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:40</div></div>
-<div class="ttc" id="agroup__structures_val_html_a1fbcbbc055e40b34aae2823822e9af8c"><div class="ttname"><a href="group__structures_val.html#a1fbcbbc055e40b34aae2823822e9af8c">ADLX_GamutColorSpace::red</a></div><div class="ttdeci">ADLX_Point red</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:54</div></div>
-<div class="ttc" id="agroup__structures_val_html_a84a443716c92b943096a38c0128cb197"><div class="ttname"><a href="group__structures_val.html#a84a443716c92b943096a38c0128cb197">ADLX_GamutColorSpace::green</a></div><div class="ttdeci">ADLX_Point green</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:55</div></div>
-<div class="ttc" id="agroup__structures_val_html_aa22bab0bfe9e1a768530aa8cab94662e"><div class="ttname"><a href="group__structures_val.html#aa22bab0bfe9e1a768530aa8cab94662e">ADLX_Point::x</a></div><div class="ttdeci">adlx_int x</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:39</div></div>
-<div class="ttc" id="agroup__structures_val_html_ad34c7449d0336a88ffd1cdbef31c2540"><div class="ttname"><a href="group__structures_val.html#ad34c7449d0336a88ffd1cdbef31c2540">ADLX_GamutColorSpace::blue</a></div><div class="ttdeci">ADLX_Point blue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:56</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___gamut_color_space"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___gamut_color_space">ADLX_GamutColorSpace</a></div><div class="ttdoc">This structure contains information on driver-supported gamut coordinates.</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:53</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___point"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___point">ADLX_Point</a></div><div class="ttdoc">This structure contains information on driver point coordinates, and is used to store the driver-poin...</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:38</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___r_g_b"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___r_g_b">ADLX_RGB</a></div><div class="ttdoc">This structure contains RGB information.</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:22</div></div>
+<div class="ttc" id="agroup__structures_val_html_a1b2e67a8ba86ac9f0393ee839658fe55"><div class="ttname"><a href="group__structures_val.html#a1b2e67a8ba86ac9f0393ee839658fe55">ADLX_Point::y</a></div><div class="ttdeci">adlx_int y</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:41</div></div>
+<div class="ttc" id="agroup__structures_val_html_a1fbcbbc055e40b34aae2823822e9af8c"><div class="ttname"><a href="group__structures_val.html#a1fbcbbc055e40b34aae2823822e9af8c">ADLX_GamutColorSpace::red</a></div><div class="ttdeci">ADLX_Point red</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:55</div></div>
+<div class="ttc" id="agroup__structures_val_html_a84a443716c92b943096a38c0128cb197"><div class="ttname"><a href="group__structures_val.html#a84a443716c92b943096a38c0128cb197">ADLX_GamutColorSpace::green</a></div><div class="ttdeci">ADLX_Point green</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:56</div></div>
+<div class="ttc" id="agroup__structures_val_html_aa22bab0bfe9e1a768530aa8cab94662e"><div class="ttname"><a href="group__structures_val.html#aa22bab0bfe9e1a768530aa8cab94662e">ADLX_Point::x</a></div><div class="ttdeci">adlx_int x</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:40</div></div>
+<div class="ttc" id="agroup__structures_val_html_ad34c7449d0336a88ffd1cdbef31c2540"><div class="ttname"><a href="group__structures_val.html#ad34c7449d0336a88ffd1cdbef31c2540">ADLX_GamutColorSpace::blue</a></div><div class="ttdeci">ADLX_Point blue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:57</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___gamut_color_space"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___gamut_color_space">ADLX_GamutColorSpace</a></div><div class="ttdoc">Structure containing information about driver supported gamut coordinates.</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:54</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___point"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___point">ADLX_Point</a></div><div class="ttdoc">Structure containing information about driver point coordinates This structure is used to store the d...</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:39</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___r_g_b"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___r_g_b">ADLX_RGB</a></div><div class="ttdoc">Structure containing information about RGB information.</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:22</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

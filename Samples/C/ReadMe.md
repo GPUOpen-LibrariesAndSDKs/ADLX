@@ -1,4 +1,4 @@
-@page page_sample_c C Samples
+@page page_sample_c C
 <!--
 # Copyright (c) 2022 Advanced Micro Devices, Inc. All rights reserved.
 #

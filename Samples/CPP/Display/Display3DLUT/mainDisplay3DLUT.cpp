@@ -179,17 +179,13 @@ void ShowDisplay3DLUTSupport(const IADLXDisplayServicesPtr& displayService, cons
         std::cout << "  === 3D LUT supported status ===" << std::endl;
         adlx_bool supported;
         ADLX_RESULT res = display3DLUT->IsSupportedSCE(&supported);
-        if (ADLX_SUCCEEDED(res))
-            std::cout << "\tIsSupportedSCE: " << supported << std::endl;
+        std::cout << "\tIsSupportedSCE: " << supported << std::endl;
         res = display3DLUT->IsSupportedSCEVividGaming(&supported);
-        if (ADLX_SUCCEEDED(res))
-            std::cout << "\tIsSupportedSCE_VividGaming: " << supported << std::endl;
+        std::cout << "\tIsSupportedSCE_VividGaming: " << supported << std::endl;
         res = display3DLUT->IsSupportedSCEDynamicContrast(&supported);
-        if (ADLX_SUCCEEDED(res))
-            std::cout << "\tIsSupportedSCEDynamicContrast: " << supported << std::endl;
+        std::cout << "\tIsSupportedSCEDynamicContrast: " << supported << std::endl;
         res = display3DLUT->IsSupportedUser3DLUT(&supported);
-        if (ADLX_SUCCEEDED(res))
-            std::cout << "\tIsSupportedUser3DLUT: " << supported << std::endl;
+        std::cout << "\tIsSupportedUser3DLUT: " << supported << std::endl;
     }
 }
 
@@ -204,14 +200,11 @@ void Get3DLUTState(const IADLXDisplayServicesPtr& displayService, const IADLXDis
         std::cout << "  === Get 3D LUT ===" << std::endl;
         adlx_bool applied = false;
         res = display3DLUT->IsCurrentSCEDisabled(&applied);
-        if (ADLX_SUCCEEDED(res))
-            std::cout << "\tIsCurrentSCEDisabled: " << applied << std::endl;
+        std::cout << "\tIsCurrentSCEDisabled: " << applied << std::endl;
         res = display3DLUT->IsCurrentSCEVividGaming(&applied);
-        if (ADLX_SUCCEEDED(res))
-            std::cout << "\tIsCurrentSCEVividGaming: " << applied << std::endl;
+        std::cout << "\tIsCurrentSCEVividGaming: " << applied << std::endl;
         res = display3DLUT->IsCurrentSCEDynamicContrast(&applied);
-        if (ADLX_SUCCEEDED(res))
-            std::cout << "\tIsCurrentSCEDynamicContrast: " << applied << std::endl;
+        std::cout << "\tIsCurrentSCEDynamicContrast: " << applied << std::endl;
         if (applied)
         {
             ADLX_IntRange range;

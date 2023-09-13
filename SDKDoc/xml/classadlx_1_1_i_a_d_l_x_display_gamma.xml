@@ -1,0 +1,463 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_display_gamma" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXDisplayGamma</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1ab7fde183bcf5787f46df19b86462e314" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsCurrentReGammaRamp</definition>
+        <argsstring>(adlx_bool *isReGammaRamp)=0</argsstring>
+        <name>IsCurrentReGammaRamp</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isReGammaRamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="46" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1ab3521f4dedab4957ff14e7da6a305f4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsCurrentDeGammaRamp</definition>
+        <argsstring>(adlx_bool *isDeGammaRamp)=0</argsstring>
+        <name>IsCurrentDeGammaRamp</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isDeGammaRamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="69" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1abfa60ce8090fe93b21cccb50c979cf43" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsCurrentRegammaCoefficient</definition>
+        <argsstring>(adlx_bool *isRegammaCoeff)=0</argsstring>
+        <name>IsCurrentRegammaCoefficient</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isRegammaCoeff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="92" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1ab0db0757deb9d4c2ad0b807ad039b69d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::GetGammaRamp</definition>
+        <argsstring>(ADLX_GammaRamp *lut)=0</argsstring>
+        <name>GetGammaRamp</name>
+        <param>
+          <type><ref refid="struct_a_d_l_x___gamma_ramp" kindref="compound">ADLX_GammaRamp</ref> *</type>
+          <declname>lut</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="115" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1a9d94b2b376d588bb4b7e16706355c59c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::GetGammaCoefficient</definition>
+        <argsstring>(ADLX_RegammaCoeff *coeff)=0</argsstring>
+        <name>GetGammaCoefficient</name>
+        <param>
+          <type><ref refid="struct_a_d_l_x___regamma_coeff" kindref="compound">ADLX_RegammaCoeff</ref> *</type>
+          <declname>coeff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="141" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1ac530bb0c7283ad41e7ff96cdc82cc0da" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsSupportedReGammaSRGB</definition>
+        <argsstring>(adlx_bool *isSupportedRegammaSRGB)=0</argsstring>
+        <name>IsSupportedReGammaSRGB</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isSupportedRegammaSRGB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="164" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1ac7e2f76f29321d2f6ee4642b913ef84a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsSupportedReGammaBT709</definition>
+        <argsstring>(adlx_bool *isSupportedReGammaBT709)=0</argsstring>
+        <name>IsSupportedReGammaBT709</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isSupportedReGammaBT709</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="187" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1a272c458d2153782fded64341a4f4b90e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsSupportedReGammaPQ</definition>
+        <argsstring>(adlx_bool *isSupportedReGammaPQ)=0</argsstring>
+        <name>IsSupportedReGammaPQ</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isSupportedReGammaPQ</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="210" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1adb3a2946809309aa5811a2032c06cdb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsSupportedReGammaPQ2084Interim</definition>
+        <argsstring>(adlx_bool *isSupportedReGammaPQ2084Interim)=0</argsstring>
+        <name>IsSupportedReGammaPQ2084Interim</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isSupportedReGammaPQ2084Interim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="233" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1aba32019400d0783d3fb45882ca67e507" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsSupportedReGamma36</definition>
+        <argsstring>(adlx_bool *isSupportedReGamma36)=0</argsstring>
+        <name>IsSupportedReGamma36</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isSupportedReGamma36</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="256" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1ad6465627688d9fb9504faa6a6e2458cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsCurrentReGammaSRGB</definition>
+        <argsstring>(adlx_bool *isCurrentReGammaSRGB)=0</argsstring>
+        <name>IsCurrentReGammaSRGB</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isCurrentReGammaSRGB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="279" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1a1653a57ec2c97b60d83a195f2e7e48ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsCurrentReGammaBT709</definition>
+        <argsstring>(adlx_bool *isCurrentReGammaBT709)=0</argsstring>
+        <name>IsCurrentReGammaBT709</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isCurrentReGammaBT709</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="302" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1a7f68e8db8bde2d52ffad2339d0e0fe14" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsCurrentReGammaPQ</definition>
+        <argsstring>(adlx_bool *isCurrentReGammaPQ)=0</argsstring>
+        <name>IsCurrentReGammaPQ</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isCurrentReGammaPQ</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="325" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1a413431367cc4ec7d563ab33885ae0a35" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsCurrentReGammaPQ2084Interim</definition>
+        <argsstring>(adlx_bool *isCurrentReGammaPQ2084Interim)=0</argsstring>
+        <name>IsCurrentReGammaPQ2084Interim</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isCurrentReGammaPQ2084Interim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="348" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1ab6da5e0e6fda6381b279c299894e4155" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsCurrentReGamma36</definition>
+        <argsstring>(adlx_bool *isCurrentReGamma36)=0</argsstring>
+        <name>IsCurrentReGamma36</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isCurrentReGamma36</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="371" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1a7e7519fcc3ca00a940791fd3dc93f2c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetReGammaSRGB</definition>
+        <argsstring>()=0</argsstring>
+        <name>SetReGammaSRGB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="393" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1addda16d8add88202c07258173563aa57" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetReGammaBT709</definition>
+        <argsstring>()=0</argsstring>
+        <name>SetReGammaBT709</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="415" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1a2f18e8eef8071416ce5c03701c75c9d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetReGammaPQ</definition>
+        <argsstring>()=0</argsstring>
+        <name>SetReGammaPQ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="437" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1af4725c126f87395aea03c891e2471612" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetReGammaPQ2084Interim</definition>
+        <argsstring>()=0</argsstring>
+        <name>SetReGammaPQ2084Interim</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="460" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1a38526834e1b862eb4a55a2475592ce73" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetReGamma36</definition>
+        <argsstring>()=0</argsstring>
+        <name>SetReGamma36</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="482" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1a607e61844851d93d6e5a2b96f85011ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetReGammaCoefficient</definition>
+        <argsstring>(ADLX_RegammaCoeff coeff)=0</argsstring>
+        <name>SetReGammaCoefficient</name>
+        <param>
+          <type><ref refid="struct_a_d_l_x___regamma_coeff" kindref="compound">ADLX_RegammaCoeff</ref></type>
+          <declname>coeff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="516" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1a5f6fe1783419375c5eb06d15fec62f27" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetDeGammaRamp</definition>
+        <argsstring>(const char *path)=0</argsstring>
+        <name>SetDeGammaRamp</name>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="551" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1ab0ed4caf9c9b8f285cbdf9cd85616639" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetDeGammaRamp</definition>
+        <argsstring>(ADLX_GammaRamp gammaRamp)=0</argsstring>
+        <name>SetDeGammaRamp</name>
+        <param>
+          <type><ref refid="struct_a_d_l_x___gamma_ramp" kindref="compound">ADLX_GammaRamp</ref></type>
+          <declname>gammaRamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="574" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1ad7e8ced9ee4088df2878fc086faa48ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetReGammaRamp</definition>
+        <argsstring>(const char *path)=0</argsstring>
+        <name>SetReGammaRamp</name>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="609" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1aff3809c834c874391daee4a866f15fa5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetReGammaRamp</definition>
+        <argsstring>(ADLX_GammaRamp gammaRamp)=0</argsstring>
+        <name>SetReGammaRamp</name>
+        <param>
+          <type><ref refid="struct_a_d_l_x___gamma_ramp" kindref="compound">ADLX_GammaRamp</ref></type>
+          <declname>gammaRamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="632" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1a55f2485c47ccc82d38c488ce3d4051c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::ResetGammaRamp</definition>
+        <argsstring>()=0</argsstring>
+        <name>ResetGammaRamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="655" column="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="20" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" bodystart="21" bodyend="656"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1a9d94b2b376d588bb4b7e16706355c59c" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>GetGammaCoefficient</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1ab0db0757deb9d4c2ad0b807ad039b69d" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>GetGammaRamp</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1ab3521f4dedab4957ff14e7da6a305f4b" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>IsCurrentDeGammaRamp</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1ab6da5e0e6fda6381b279c299894e4155" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>IsCurrentReGamma36</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1a1653a57ec2c97b60d83a195f2e7e48ab" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>IsCurrentReGammaBT709</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1abfa60ce8090fe93b21cccb50c979cf43" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>IsCurrentRegammaCoefficient</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1a7f68e8db8bde2d52ffad2339d0e0fe14" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>IsCurrentReGammaPQ</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1a413431367cc4ec7d563ab33885ae0a35" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>IsCurrentReGammaPQ2084Interim</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1ab7fde183bcf5787f46df19b86462e314" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>IsCurrentReGammaRamp</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1ad6465627688d9fb9504faa6a6e2458cb" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>IsCurrentReGammaSRGB</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1aba32019400d0783d3fb45882ca67e507" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>IsSupportedReGamma36</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1ac7e2f76f29321d2f6ee4642b913ef84a" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>IsSupportedReGammaBT709</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1a272c458d2153782fded64341a4f4b90e" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>IsSupportedReGammaPQ</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1adb3a2946809309aa5811a2032c06cdb8" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>IsSupportedReGammaPQ2084Interim</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1ac530bb0c7283ad41e7ff96cdc82cc0da" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>IsSupportedReGammaSRGB</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>Release</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1a55f2485c47ccc82d38c488ce3d4051c3" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>ResetGammaRamp</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1a5f6fe1783419375c5eb06d15fec62f27" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>SetDeGammaRamp</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1ab0ed4caf9c9b8f285cbdf9cd85616639" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>SetDeGammaRamp</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1a38526834e1b862eb4a55a2475592ce73" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>SetReGamma36</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1addda16d8add88202c07258173563aa57" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>SetReGammaBT709</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1a607e61844851d93d6e5a2b96f85011ad" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>SetReGammaCoefficient</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1a2f18e8eef8071416ce5c03701c75c9d8" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>SetReGammaPQ</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1af4725c126f87395aea03c891e2471612" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>SetReGammaPQ2084Interim</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1ad7e8ced9ee4088df2878fc086faa48ae" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>SetReGammaRamp</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1aff3809c834c874391daee4a866f15fa5" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>SetReGammaRamp</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1a7e7519fcc3ca00a940791fd3dc93f2c6" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayGamma</scope><name>SetReGammaSRGB</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

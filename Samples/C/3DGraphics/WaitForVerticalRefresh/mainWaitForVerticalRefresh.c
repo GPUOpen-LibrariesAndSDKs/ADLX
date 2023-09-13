@@ -129,18 +129,18 @@ static char* getModeStr(ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE mode)
 void ShowvsyncSupport(IADLX3DWaitForVerticalRefresh* vsync)
 {
     adlx_bool supported = false;
-    ADLX_RESULT res = vsync->pVtbl->IsSupported(vsync, &supported);
-    printf("\tIsSupported: %d, return code is: %d(0 means success)\n", supported, res);
+    vsync->pVtbl->IsSupported(vsync, &supported);
+    printf("\tIsSupported: %d\n", supported);
 }
 
 void GetvsyncState(IADLX3DWaitForVerticalRefresh* vsync)
 {
     adlx_bool enabled = false;
-    ADLX_RESULT res = vsync->pVtbl->IsEnabled(vsync, &enabled);
-    printf("\tIsEnabled: %d, return code is: %d(0 means success)\n", enabled, res);
+    vsync->pVtbl->IsEnabled(vsync, &enabled);
+    printf("\tIsEnabled: %d\n", enabled);
     ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE mode = WFVR_ALWAYS_OFF;
-    res = vsync->pVtbl->GetMode(vsync, &mode);
-    printf("\tMode: %s, return code is: %d(0 means success)\n", getModeStr(mode), res);
+    vsync->pVtbl->GetMode(vsync, &mode);
+    printf("\tMode: %s\n", getModeStr(mode));
 }
 
 void SetvsyncMode(IADLX3DWaitForVerticalRefresh* vsync, int index)

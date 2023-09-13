@@ -1,6 +1,5 @@
 var page_sample_java =
 [
-    [ "ADLXJavaBind", "java_sample_adlxjavabind.html", null ],
-    [ "DisplayEvents", "java_sample_display_events.html", null ],
-    [ "DisplayInfo", "java_sample_displayinfo.html", null ]
+    [ "File Descriptions", "java_samples_filedesc.html", null ],
+    [ "Samples", "java_samples_more.html", "java_samples_more" ]
 ];

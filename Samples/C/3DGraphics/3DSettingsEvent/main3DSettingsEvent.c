@@ -80,7 +80,7 @@ int main()
             if (ADLX_SUCCEEDED(res))
             {
                 // Add call-back
-                ADLX_RESULT addListenerRes = changeHandle->pVtbl->Add3DSettingsEventListener(changeHandle, &call);
+                changeHandle->pVtbl->Add3DSettingsEventListener(changeHandle, &call);
 
                 // Change anti-lag state
                 IADLX3DAntiLag* antiLag = NULL;
@@ -92,13 +92,8 @@ int main()
                 antiLag->pVtbl->SetEnabled(antiLag, !enable);
                 WaitForSingleObject(blockEvent, 5000);
 
-                if (ADLX_SUCCEEDED (addListenerRes))
-                {
-                    // Remove call-back
-                    res = changeHandle->pVtbl->Remove3DSettingsEventListener(changeHandle, &call);
-                    if (ADLX_FAILED (res))
-                        printf("\nRemove 3DSettings event listener failed\n");
-                }
+                // Remove call-back
+                changeHandle->pVtbl->Remove3DSettingsEventListener(changeHandle, &call);
 
                 // Release the AntiLag interface
                 if (antiLag != NULL)
@@ -106,7 +101,6 @@ int main()
                     antiLag->pVtbl->Release(antiLag);
                     antiLag = NULL;
                 }
-                
             }
 
             // Release the changeHandle interface
@@ -167,10 +161,9 @@ void GPUUniqueName(IADLXGPU* gpu, char* uniqueName)
     if (NULL != gpu && NULL != uniqueName)
     {
         const char* gpuName = NULL;
-        ADLX_RESULT res1 = gpu->pVtbl->Name(gpu, &gpuName);
+        gpu->pVtbl->Name(gpu, &gpuName);
         adlx_int id;
-        ADLX_RESULT res2 = gpu->pVtbl->UniqueId(gpu, &id);
-        if (ADLX_SUCCEEDED(res1) && ADLX_SUCCEEDED(res2))
-            sprintf_s(uniqueName, 128, "name:%s, id:%d", gpuName, id);
+        gpu->pVtbl->UniqueId(gpu, &id);
+        sprintf_s(uniqueName, 128, "name:%s, id:%d", gpuName, id);
     }
 }

@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="c_sample__share_memory" kind="page">
+    <compoundname>c_sample_ShareMemory</compoundname>
+    <title>ShareMemory</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><heading level="2">Code </heading>
+</para>
+<para>C <programlisting filename="./C/ServiceCall/GPUService/ShareMemory.c"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GlobalDefs.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>HANDLE<sp/>g_SharedFile<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>PVOID<sp/><sp/>g_SharedBuffer<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Create<sp/>shared<sp/>memory</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">BOOL<sp/>ShmCreate<sp/>(WCHAR*<sp/>shmFileName,<sp/>ULONG<sp/>sharedFilesize)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SECURITY_DESCRIPTOR<sp/>sd;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SECURITY_ATTRIBUTES<sp/>sa;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>N.B:<sp/>After<sp/>setting<sp/>this<sp/>permission,<sp/>the<sp/>general<sp/>application<sp/>does<sp/>not<sp/>have<sp/>administrator<sp/>privileges</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>order<sp/>to<sp/>start<sp/>to<sp/>open<sp/>mapping<sp/>g_SharedFile<sp/>Otherwise<sp/>Access<sp/>Denny</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>InitializeSecurityDescriptor<sp/>(&amp;sd,<sp/>SECURITY_DESCRIPTOR_REVISION);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SetSecurityDescriptorDacl<sp/>(&amp;sd,<sp/>TRUE,<sp/>(PACL)NULL,<sp/>FALSE);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sa.nLength<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(SECURITY_ATTRIBUTES);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sa.bInheritHandle<sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sa.lpSecurityDescriptor<sp/>=<sp/>&amp;sd;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>HANDLE<sp/>g_SharedFile<sp/>=<sp/>CreateFileMappingW<sp/>(INVALID_HANDLE_VALUE,<sp/>&amp;sa,<sp/>PAGE_READWRITE,<sp/>0,<sp/>sharedFilesize,<sp/>shmFileName);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(g_SharedFile<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ShareMem::Create:<sp/>CreateFileMappingW,<sp/>error:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>GetLastError());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FALSE;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>LPVOID<sp/>g_SharedBuffer<sp/>=<sp/>MapViewOfFile<sp/>(g_SharedFile,<sp/>FILE_MAP_ALL_ACCESS,<sp/>0,<sp/>0,<sp/>sharedFilesize);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(g_SharedBuffer<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ShareMem::Create:<sp/>MapViewOfFile,<sp/>error:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>GetLastError<sp/>());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FALSE;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ShareMem::Create:<sp/>OK\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TRUE;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Destory<sp/>shared<sp/>memory</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">VOID<sp/>ShmDestory<sp/>()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(g_SharedBuffer)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>UnmapViewOfFile<sp/>(g_SharedBuffer);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_SharedBuffer<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(g_SharedFile)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CloseHandle<sp/>(g_SharedFile);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_SharedFile<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Write<sp/>data<sp/>to<sp/>shared<sp/>memory</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">BOOL<sp/>ShmWriteBuffer<sp/>(WCHAR*<sp/>shmFileName,<sp/>PVOID<sp/>buffer,<sp/>ULONG<sp/>size)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>HANDLE<sp/>shmFile<sp/>=<sp/>OpenFileMappingW<sp/>(FILE_MAP_ALL_ACCESS,<sp/>FALSE,<sp/>shmFileName);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(shmFile)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LPVOID<sp/>g_SharedBuffer<sp/>=<sp/>MapViewOfFile<sp/>(shmFile,<sp/>FILE_MAP_ALL_ACCESS,<sp/>0,<sp/>0,<sp/>size);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(g_SharedBuffer)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy_s<sp/>(g_SharedBuffer,<sp/>size,<sp/>buffer,<sp/>size);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TRUE;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FALSE;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Read<sp/>data<sp/>from<sp/>shared<sp/>memory</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">BOOL<sp/>ShmReadBuffer<sp/>(WCHAR*<sp/>shmFileName,<sp/>PVOID<sp/>buffer,<sp/>ULONG<sp/>size)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SECURITY_DESCRIPTOR<sp/>sd;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SECURITY_ATTRIBUTES<sp/>sa;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>InitializeSecurityDescriptor<sp/>(&amp;sd,<sp/>SECURITY_DESCRIPTOR_REVISION);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SetSecurityDescriptorDacl<sp/>(&amp;sd,<sp/>TRUE,<sp/>(PACL)NULL,<sp/>FALSE);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sa.nLength<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(SECURITY_ATTRIBUTES);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sa.bInheritHandle<sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sa.lpSecurityDescriptor<sp/>=<sp/>&amp;sd;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>BOOL<sp/>result<sp/>=<sp/>FALSE;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>HANDLE<sp/>g_SharedFile<sp/>=<sp/>OpenFileMappingW<sp/>(FILE_MAP_ALL_ACCESS,<sp/>FALSE,<sp/>shmFileName);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(g_SharedFile)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_SharedBuffer<sp/>=<sp/>MapViewOfFile<sp/>(g_SharedFile,<sp/>FILE_MAP_ALL_ACCESS,<sp/>0,<sp/>0,<sp/>size);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(g_SharedBuffer)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy_s<sp/>(buffer,<sp/>size,<sp/>g_SharedBuffer,<sp/>size);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXSamplesPage/ADLXSamplePage.h"/>
+  </compounddef>
+</doxygen>

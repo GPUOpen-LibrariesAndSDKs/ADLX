@@ -88,8 +88,8 @@ int main()
                 IADLX3DSettingsChangedListener* call = new CallBack3DSettingsChanged;
 
                 // Add call back
-                ADLX_RESULT addListenerRes = changeHandle->Add3DSettingsEventListener(call);
-                
+                changeHandle->Add3DSettingsEventListener(call);
+
                 // Change anti-lag state
                 IADLX3DAntiLagPtr antiLag;
                 d3dSettingSrv->GetAntiLag(gpuInfo, &antiLag);
@@ -100,13 +100,8 @@ int main()
                 antiLag->SetEnabled(!enable);
                 WaitForSingleObject(blockEvent, 5000);
 
-                if (ADLX_SUCCEEDED (addListenerRes))
-                {
-                    // Remove call back
-                    res = changeHandle->Remove3DSettingsEventListener(call);
-                    if (ADLX_FAILED (res))
-                        std::cout << "\nRemove 3DSettings event listener failed" << std::endl;
-                }
+                // Remove call back
+                changeHandle->Remove3DSettingsEventListener(call);
 
                 // Delete call back
                 delete call;
@@ -144,10 +139,9 @@ void GPUUniqueName(IADLXGPUPtr gpu, char* uniqueName)
     if (nullptr != gpu && nullptr != uniqueName)
     {
         const char* gpuName = nullptr;
-        ADLX_RESULT res1 = gpu->Name(&gpuName);
+        gpu->Name(&gpuName);
         adlx_int id;
-        ADLX_RESULT res2 = gpu->UniqueId(&id);
-        if (ADLX_SUCCEEDED(res1) && ADLX_SUCCEEDED(res2))
-            sprintf_s(uniqueName, 128, "name:%s, id:%d", gpuName, id);
+        gpu->UniqueId(&id);
+        sprintf_s(uniqueName, 128, "name:%s, id:%d", gpuName, id);
     }
 }

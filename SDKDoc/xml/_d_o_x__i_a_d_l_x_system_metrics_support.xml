@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_system_metrics_support" kind="page">
+    <compoundname>DOX_IADLXSystemMetricsSupport</compoundname>
+    <title>IADLXSystemMetricsSupport</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system_metrics_support__get_c_p_u_usage_range">GetCPUUsageRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system_metrics_support__get_smart_shift_range">GetSmartShiftRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system_metrics_support__get_system_r_a_m_range">GetSystemRAMRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system_metrics_support__is_supported_c_p_u_usage">IsSupportedCPUUsage</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system_metrics_support__is_supported_smart_shift">IsSupportedSmartShift</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system_metrics_support__is_supported_system_r_a_m">IsSupportedSystemRAM</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXSystemMetricsSupport</bold> interface provides methods to discover what performance metrics are supported on the system.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLXSystemMetricsSupport</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLXSystemMetricsSupportPtr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_interface" kindref="compound">IADLXInterface</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="7" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system_metrics_support__get_c_p_u_usage_range" kindref="compound">GetCPUUsageRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the minimum and maximum CPU usage of a system.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system_metrics_support__get_smart_shift_range" kindref="compound">GetSmartShiftRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the minimum and maximum SmartShift value of a system.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system_metrics_support__get_system_r_a_m_range" kindref="compound">GetSystemRAMRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the minimum and maximum system RAM of a system.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system_metrics_support__is_supported_c_p_u_usage" kindref="compound">IsSupportedCPUUsage</ref>   </para>
+</entry><entry thead="no"><para>Checks if the CPU usage metric reporting is supported by the system.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system_metrics_support__is_supported_smart_shift" kindref="compound">IsSupportedSmartShift</ref>   </para>
+</entry><entry thead="no"><para>Checks if the SmartShift metric reporting is supported by the system.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system_metrics_support__is_supported_system_r_a_m" kindref="compound">IsSupportedSystemRAM</ref>   </para>
+</entry><entry thead="no"><para>Checks if the RAM usage metric reporting is supported by the system.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IPerformanceMonitoring.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp__perf_system_metrics" kindref="compound">PerfSystemMetrics C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c__perf_system_metrics" kindref="compound">PerfSystemMetrics C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_system_metrics_support__get_c_p_u_usage_range" kindref="compound">GetCPUUsageRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system_metrics_support__get_smart_shift_range" kindref="compound">GetSmartShiftRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system_metrics_support__get_system_r_a_m_range" kindref="compound">GetSystemRAMRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system_metrics_support__is_supported_c_p_u_usage" kindref="compound">IsSupportedCPUUsage</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system_metrics_support__is_supported_smart_shift" kindref="compound">IsSupportedSmartShift</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system_metrics_support__is_supported_system_r_a_m" kindref="compound">IsSupportedSystemRAM</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXPerformancePage.h"/>
+  </compounddef>
+</doxygen>

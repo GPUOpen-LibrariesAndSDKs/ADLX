@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x3_d_boost__set_enabled" kind="page">
+    <compoundname>DOX_IADLX3DBoost_SetEnabled</compoundname>
+    <title>SetEnabled</title>
+    <briefdescription>
+<para>Sets AMD Radeon™ Boost to enabled or disabled on a GPU. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Sets AMD Radeon™ Boost to enabled or disabled on a GPU.</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>    SetEnabled (adlx_bool enable)
+ </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para><variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>1.</para>
+</entry><entry thead="no" class="paramdir"><para>[in]</para>
+</entry><entry thead="no" class="paramname"><para>enable</para>
+</entry><entry thead="no" class="paramtype"><para>adlx_bool</para>
+</entry><entry thead="no"><para>The new AMD Radeon Boost state. Set <bold>true</bold> to enable AMD Radeon Boost. Set <bold>false</bold> to disable AMD Radeon Boost. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If the state of AMD Radeon Boost is successfully set, <bold>ADLX_OK</bold> is returned.<linebreak/>
+ If the state of AMD Radeon Boost is not successfully set, an error code is returned.<linebreak/>
+ Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.<linebreak/>
+</para>
+<para><heading level="2">Additional Info </heading>
+</para>
+<para>AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality. Only works in supported games. <linebreak/>
+ <bold>Note:</bold> <ref refid="_d_o_x__i_a_d_l_x3_d_chill" kindref="compound">AMD Radeon Chill</ref>, AMD Radeon Boost, and <ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag" kindref="compound">AMD Radeon Anti-Lag</ref> features cannot be enabled simultaneously. If AMD Radeon Boost is enabled, AMD Radeon Anti-Lag and AMD Radeon Chill are automatically disabled. However, the configuration of the disabled feature is preserved.<linebreak/>
+ On some AMD GPUs, AMD Radeon Boost and <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref> cannot be enabled simultaneously. If AMD Radeon Boost is enabled, Radeon Super Resolution is automatically disabled.</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;I3DSettings.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h"/>
+  </compounddef>
+</doxygen>

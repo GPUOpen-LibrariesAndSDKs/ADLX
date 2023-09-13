@@ -48,12 +48,11 @@ namespace adlx
         * @details The vendor id is a predetermined value programmed into the GPU at the point of manufacturing and consists of four hexadecimal digits.
         * @ENG_END_DOX
         * @addinfo
-        * @ENG_START_DOX
         * The returned memory buffer is valid within the lifetime of the @ref DOX_IADLXGPU interface.<br>
         * If the application uses the vendor id beyond the lifetime of the @ref DOX_IADLXGPU interface, the application must make a copy of the vendor id.
-        * @ENG_END_DOX
         *
-        * @copydoc IADLXGPU_REQ_TABLE
+        * @requirements
+        * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL VendorId (const char** vendorId) = 0;
@@ -77,7 +76,8 @@ namespace adlx
          * Refer to @ref ADLX_RESULT for success codes and error codes.<br>
          * @ENG_END_DOX
          *
-         * @copydoc IADLXGPU_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL ASICFamilyType (ADLX_ASIC_FAMILY_TYPE* asicFamilyType) const = 0;
@@ -107,7 +107,8 @@ namespace adlx
          * @ENG_END_DOX
          *
          *
-         * @copydoc IADLXGPU_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL Type (ADLX_GPU_TYPE* gpuType) const = 0;
@@ -131,7 +132,8 @@ namespace adlx
          * Refer to @ref ADLX_RESULT for success codes and error codes.<br>
          * @ENG_END_DOX
          *
-         * @copydoc IADLXGPU_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL IsExternal (adlx_bool* isExternal) const = 0;
@@ -161,7 +163,8 @@ namespace adlx
          * If the application uses the name beyond the lifetime of the @ref DOX_IADLXGPU interface, the application must make a copy of the name.<br>
          * @ENG_END_DOX
          *
-         * @copydoc IADLXGPU_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL Name (const char** name) const = 0;
@@ -191,7 +194,8 @@ namespace adlx
          * If the application uses the driver path beyond the lifetime of the @ref DOX_IADLXGPU interface, the application must make a copy of the driver path.<br>
          * @ENG_END_DOX
          *
-         * @copydoc IADLXGPU_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL DriverPath (const char** driverPath) const = 0;
@@ -221,7 +225,8 @@ namespace adlx
          * If the application uses the PNP string beyond the lifetime of the @ref DOX_IADLXGPU interface, the application must make a copy of the PNP string.<br>
          * @ENG_END_DOX
          *
-         * @copydoc IADLXGPU_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL PNPString (const char** pnpString) const = 0;
@@ -245,7 +250,8 @@ namespace adlx
          * Refer to @ref ADLX_RESULT for success codes and error codes.<br>
          * @ENG_END_DOX
          *
-         * @copydoc IADLXGPU_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL HasDesktops (adlx_bool* hasDesktops) const = 0;
@@ -269,7 +275,8 @@ namespace adlx
         *@detaileddesc
         *@ENG_START_DOX @details The total VRAM size is in MB. @ENG_END_DOX
         *
-        *@copydoc IADLXGPU_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "ISystem.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL TotalVRAM (adlx_uint* vramMB) = 0;
@@ -292,12 +299,11 @@ namespace adlx
         * @ENG_END_DOX
         *
         * @addinfo
-        * @ENG_START_DOX
         * The returned memory buffer is valid within the lifetime of the @ref DOX_IADLXGPU interface.<br>
         * If the application uses the VRAM type beyond the lifetime of the @ref DOX_IADLXGPU interface, the application must make a copy of the VRAM type.
-        * @ENG_END_DOX
         *
-        * @copydoc IADLXGPU_REQ_TABLE
+        * @requirements
+        * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL VRAMType(const char** type) = 0;
@@ -322,12 +328,11 @@ namespace adlx
         * @ENG_END_DOX
         *
         * @addinfo
-        * @ENG_START_DOX
         * The returned memory buffers are valid within the lifetime of the @ref DOX_IADLXGPU interface.<br>
         * If the application uses the BIOS part number, BIOS version and BIOS date beyond the lifetime of the @ref DOX_IADLXGPU interface, the application must make a copy of the BIOS part number, BIOS version and BIOS date.
-        * @ENG_END_DOX
         *
-        * @copydoc IADLXGPU_REQ_TABLE
+        * @requirements
+        * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL BIOSInfo(const char** partNumber, const char** version, const char** date) = 0;
@@ -355,12 +360,11 @@ namespace adlx
         * @ENG_END_DOX
         * 
         * @addinfo
-        * @ENG_START_DOX
         * The returned memory buffer is valid within the lifetime of the @ref DOX_IADLXGPU interface.<br>
         * If the application uses the device id beyond the lifetime of the @ref DOX_IADLXGPU interface, the application must make a copy of the device id.
-        * @ENG_END_DOX
         *
-        * @copydoc IADLXGPU_REQ_TABLE
+        * @requirements
+        * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL DeviceId(const char** deviceId) = 0;
@@ -383,12 +387,11 @@ namespace adlx
         * @ENG_END_DOX
         *
         * @addinfo
-        * @ENG_START_DOX
         * The returned memory buffer is valid within the lifetime of the @ref DOX_IADLXGPU interface.<br>
         * If the application uses the revision id beyond the lifetime of the @ref DOX_IADLXGPU interface, the application must make a copy of the revision id.
-        * @ENG_END_DOX
         *
-        * @copydoc IADLXGPU_REQ_TABLE
+        * @requirements
+        * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL RevisionId(const char** revisionId) = 0;
@@ -411,12 +414,11 @@ namespace adlx
         * @ENG_END_DOX
         *
         * @addinfo
-        * @ENG_START_DOX
         * The returned memory buffer is valid within the lifetime of the @ref DOX_IADLXGPU interface.<br>
         * If the application uses the subsystem id beyond the lifetime of the @ref DOX_IADLXGPU interface, the application must make a copy of the subsystem id.
-        * @ENG_END_DOX
         *
-        * @copydoc IADLXGPU_REQ_TABLE
+        * @requirements
+        * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL SubSystemId(const char** subSystemId) = 0;
@@ -444,12 +446,11 @@ namespace adlx
         * @ENG_END_DOX
         * 
         * @addinfo
-        * @ENG_START_DOX
         * The returned memory buffer is valid within the lifetime of the @ref DOX_IADLXGPU interface.<br>
         * If the application uses the subsystem vendor id beyond the lifetime of the @ref DOX_IADLXGPU interface, the application must make a copy of the subsystem vendor id.
-        * @ENG_END_DOX
         *
-        * @copydoc IADLXGPU_REQ_TABLE
+        * @requirements
+        * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL SubSystemVendorId(const char** subSystemVendorId) = 0;
@@ -471,7 +472,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br>
         * @ENG_END_DOX
         *
-        * @copydoc IADLXGPU_REQ_TABLE
+        * @requirements
+        * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL UniqueId(adlx_int* uniqueId) = 0;
@@ -558,7 +560,8 @@ namespace adlx
         * In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation.
         * @ENG_END_DOX
         *
-        * @copydoc IADLXGPUList_REQ_TABLE
+        * @requirements
+        * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL At (const adlx_uint location, IADLXGPU** ppItem) = 0;
@@ -588,7 +591,8 @@ namespace adlx
          * @ENG_END_DOX
          *
          *
-         * @copydoc IADLXGPUList_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL Add_Back (IADLXGPU* pItem) = 0;
@@ -662,7 +666,8 @@ namespace adlx
         * The method should return quickly to not block the execution path in ADLX. If the method requires a long processing of the event notification, the application must hold onto a reference to the new GPU list with @ref DOX_IADLXInterface_Acquire and make it available on an asynchronous thread and return immediately. When the asynchronous thread is done processing it must discard the new GPU list with @ref DOX_IADLXInterface_Release. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXGPUsEventListener_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "ISystem.h", @ADLX_First_Ver}
         *
         */
         virtual adlx_bool ADLX_STD_CALL OnGPUListChanged (IADLXGPUList* pNewGPUs) = 0;
@@ -694,7 +699,8 @@ namespace adlx
         * The event listener instance must exist until the application unregisters the event listener with @ref DOX_IADLXGPUsChangedHandling_RemoveGPUsListEventListener.<br> @ENG_END_DOX
         *
         *
-        *@copydoc IADLXGPUsChangedHandling_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "ISystem.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL AddGPUsListEventListener(IADLXGPUsEventListener* pListener) = 0;
@@ -720,7 +726,8 @@ namespace adlx
         *@ENG_START_DOX  After the event listener is successfully unregistered, ADLX will no longer call @ref DOX_IADLXGPUsEventListener_OnGPUListChanged method of the listener when the GPU list changes. The application can discard the event listener instance. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXGPUsChangedHandling_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "ISystem.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL RemoveGPUsListEventListener(IADLXGPUsEventListener* pListener) = 0;
@@ -813,7 +820,8 @@ namespace adlx
          * @ENG_END_DOX
          *
          *
-         * @copydoc IADLXSystem_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL HybridGraphicsType (ADLX_HG_TYPE* hgType) = 0;
@@ -846,7 +854,8 @@ namespace adlx
          *@addinfo
 		 *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
 		 *
-         * @copydoc IADLXSystem_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL GetGPUs (IADLXGPUList** ppGPUs) = 0;
@@ -883,7 +892,8 @@ namespace adlx
          * In C++ when using a smart pointer for the returned interface there is no need to call @ref DOX_IADLXInterface_Release because the smart pointer calls it internally.
          * @ENG_END_DOX
          *
-         * @copydoc IADLXSystem_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL QueryInterface (const wchar_t* interfaceId, void** ppInterface) = 0;
@@ -915,7 +925,8 @@ namespace adlx
          *
 		 * @addinfo
 		 *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
-         * @copydoc IADLXSystem_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL GetDisplaysServices(IADLXDisplayServices** ppDispServices) = 0;
@@ -948,7 +959,8 @@ namespace adlx
 		 * @addinfo
 		 *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
          *
-         * @copydoc IADLXSystem_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL GetDesktopsServices(IADLXDesktopServices** ppDeskServices) = 0;
@@ -982,7 +994,8 @@ namespace adlx
 		 *@addinfo
 		 *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
 		 *
-         * @copydoc IADLXSystem_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL GetGPUsChangedHandling (IADLXGPUsChangedHandling** ppGPUsChangedHandling) = 0;
@@ -1023,7 +1036,8 @@ namespace adlx
 		* - To obtain error, warning, and debug tracing messages in the ADLX execution code, specify the __severity__ parameter as __LDEBUG__.
 		* @ENG_END_DOX
         *
-        * @copydoc IADLXSystem_REQ_TABLE
+        * @requirements
+        * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL EnableLog (ADLX_LOG_DESTINATION mode, ADLX_LOG_SEVERITY severity, IADLXLog* pLogger, const wchar_t* fileName) = 0;
@@ -1057,7 +1071,8 @@ namespace adlx
 		 *@addinfo
 		 *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
 		 *
-         * @copydoc IADLXSystem_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL Get3DSettingsServices (IADLX3DSettingsServices** pp3DSettingsServices) = 0;
@@ -1091,7 +1106,8 @@ namespace adlx
 		 *@addinfo
 		 *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
          *
-         * @copydoc IADLXSystem_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL GetGPUTuningServices (IADLXGPUTuningServices** ppGPUTuningServices) = 0;
@@ -1121,7 +1137,8 @@ namespace adlx
         * In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXSystem_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "ISystem.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetPerformanceMonitoringServices (IADLXPerformanceMonitoringServices** ppPerformanceMonitoringServices) = 0;
@@ -1143,7 +1160,8 @@ namespace adlx
         * If the interface is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXSystem_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "ISystem.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL TotalSystemRAM (adlx_uint* ramMB) = 0;
@@ -1173,7 +1191,8 @@ namespace adlx
          * @ENG_START_DOX
          * In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
          *
-         *@copydoc IADLXSystem_REQ_TABLE
+         *@requirements
+         *@DetailsTable{#include "ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL GetI2C (IADLXGPU* pGPU, IADLXI2C** ppI2C) = 0;
@@ -1265,7 +1284,8 @@ namespace adlx
          * In C++ when using a smart pointer for the returned interface there is no need to call @ref DOX_IADLXInterface_Release because the smart pointer calls it internally.
          * @ENG_END_DOX
          *
-         * @copydoc IADLMapping_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL GetADLXGPUFromBdf (adlx_int bus, adlx_int device, adlx_int function, IADLXGPU** ppGPU) = 0;
@@ -1301,7 +1321,8 @@ namespace adlx
          * In C++ when using a smart pointer for the returned interface there is no need to call @ref DOX_IADLXInterface_Release because the smart pointer calls it internally.
          * @ENG_END_DOX
          *
-         * @copydoc IADLMapping_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL GetADLXGPUFromAdlAdapterIndex (adlx_int adlAdapterIndex, IADLXGPU** ppGPU) = 0;
@@ -1333,7 +1354,8 @@ namespace adlx
          * @details __BdfFromADLXGPU__ is used when an ADL function must be called for a GPU obtained from ADLX, and the GPU's PCI bus, device, and function are required for that ADL function.
          * @ENG_END_DOX
          *
-         * @copydoc IADLMapping_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL BdfFromADLXGPU (IADLXGPU* pGPU, adlx_int* bus, adlx_int* device, adlx_int* function) = 0;
@@ -1363,7 +1385,8 @@ namespace adlx
          * @details __AdlAdapterIndexFromADLXGPU__ is used when an ADL function must be called for a GPU obtained from ADLX, and the ADL adapter index is required for that ADL function.
          * @ENG_END_DOX
          *
-         * @copydoc IADLMapping_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL AdlAdapterIndexFromADLXGPU (IADLXGPU* pGPU, adlx_int* adlAdapterIndex) = 0;
@@ -1404,7 +1427,8 @@ namespace adlx
          * @ENG_START_DOX
          * In C++ when using a smart pointer for the returned interface there is no need to call @ref DOX_IADLXInterface_Release because the smart pointer calls it internally.
          * @ENG_END_DOX
-         * @copydoc IADLMapping_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL GetADLXDisplayFromADLIds (adlx_int adapterIndex, adlx_int displayIndex, adlx_int bus, adlx_int device, adlx_int function, IADLXDisplay** ppDisplay) = 0;
@@ -1438,7 +1462,8 @@ namespace adlx
          * @details __ADLIdsFromADLXDisplay__ is used when an ADL function must be called for a display obtained from ADLX, or for the GPU where the display is connected.
          * @ENG_END_DOX
          *
-         * @copydoc IADLMapping_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL ADLIdsFromADLXDisplay (IADLXDisplay* pDisplay, adlx_int* adapterIndex, adlx_int* displayIndex, adlx_int* bus, adlx_int* device, adlx_int* function) = 0;
@@ -1481,7 +1506,8 @@ namespace adlx
          * In C++ when using a smart pointer for the returned interface there is no need to call @ref DOX_IADLXInterface_Release because the smart pointer calls it internally.
          * @ENG_END_DOX
          *
-         * @copydoc IADLMapping_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL GetADLXDesktopFromADLIds (adlx_int adapterIndex, adlx_int VidPnSourceId, adlx_int bus, adlx_int device, adlx_int function, IADLXDesktop** ppDesktop) = 0;
@@ -1515,7 +1541,8 @@ namespace adlx
          * @details __ADLIdsFromADLXDesktop__ is used when an ADL function must be called for a desktop obtained from ADLX, or for the GPU that drives the desktop.
          * @ENG_END_DOX
          *
-         * @copydoc IADLMapping_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT ADLX_STD_CALL ADLIdsFromADLXDesktop (IADLXDesktop* pDesktop, adlx_int* adapterIndex, adlx_int* VidPnSourceId, adlx_int* bus, adlx_int* device, adlx_int* function) = 0;

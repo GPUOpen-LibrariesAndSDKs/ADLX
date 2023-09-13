@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="init_a_d_l_xwith_pointer_8md" kind="file" language="Markdown">
+    <compoundname>initADLXwithPointer.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">@page<sp/>page_guide_init_pointer<sp/>Initializing<sp/>ADLX<sp/>with<sp/>function<sp/>pointers</highlight></codeline>
+<codeline><highlight class="normal">&lt;!--</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">#</highlight></codeline>
+<codeline><highlight class="normal">#-------------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">--&gt;</highlight></codeline>
+<codeline><highlight class="normal">Use<sp/>the<sp/>functions<sp/>provided<sp/>in<sp/>the<sp/>ADLX<sp/>SDK<sp/>to<sp/>load<sp/>ADLX<sp/>into<sp/>the<sp/>application.<sp/>Once<sp/>ADLX<sp/>is<sp/>loaded,<sp/>the<sp/>function<sp/>pointer<sp/>can<sp/>be<sp/>located<sp/>to<sp/>call<sp/>the<sp/>applicable<sp/>ADLX<sp/>Initialization<sp/>function<sp/>to<sp/>provide<sp/>access<sp/>to<sp/>the<sp/>ADLX<sp/>System<sp/>interface.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>access<sp/>the<sp/>ADLX<sp/>System<sp/>interface<sp/>using<sp/>function<sp/>pointers,</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Load<sp/>the<sp/>ADLX<sp/>library<sp/>using<sp/>@ref<sp/>adlx_load_library<sp/>as<sp/>provided<sp/>in<sp/>the<sp/>ADLX<sp/>SDK.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Find<sp/>the<sp/>applicable<sp/>ADLX<sp/>Initialization<sp/>function<sp/>pointer<sp/>using<sp/>@ref<sp/>adlx_get_proc_address.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Call<sp/>the<sp/>ADLX<sp/>Initialization<sp/>function.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Result:**<sp/>If<sp/>the<sp/>initialization<sp/>function<sp/>call<sp/>is<sp/>successful,<sp/>it<sp/>returns<sp/>the<sp/>pointer<sp/>providing<sp/>access<sp/>to<sp/>@ref<sp/>DOX_IADLXSystem<sp/>interface<sp/>and<sp/>ADLX<sp/>functionality.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">4.<sp/><sp/>Access<sp/>the<sp/>@ref<sp/>DOX_IADLXSystem<sp/>interface.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Result:**<sp/>Access<sp/>to<sp/>ADLX<sp/>functionality<sp/>is<sp/>provided.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Note:**<sp/>When<sp/>loading<sp/>ADLX<sp/>in<sp/>an<sp/>ADL<sp/>application,<sp/>the<sp/>@ref<sp/>DOX_IADLMapping<sp/>interface<sp/>is<sp/>accessible.<sp/>This<sp/>interface<sp/>provides<sp/>data<sp/>mapping<sp/>between<sp/>ADL<sp/>and<sp/>ADLX<sp/>for<sp/>a<sp/>specific<sp/>entity<sp/>(GPU,<sp/>Display<sp/>or<sp/>Desktop).</highlight></codeline>
+    </programlisting>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXProgrammingGuide/initADLXwithPointer.md"/>
+  </compounddef>
+</doxygen>

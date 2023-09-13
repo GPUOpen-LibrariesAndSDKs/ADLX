@@ -1,0 +1,459 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXGPUMetricsSupport</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1adf2f330babc700040074e7bb52ae4f2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUUsage</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedGPUUsage</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="46" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ac05ea67b0f56d2a7118267575106d251" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUClockSpeed</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedGPUClockSpeed</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="69" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1aaf544fc581b87130697fda0a34ba297e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUVRAMClockSpeed</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedGPUVRAMClockSpeed</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="92" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a497ed2e595c37a7809e6851542e6515d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUTemperature</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedGPUTemperature</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="115" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1aa2b0fbb728836287a074321cee494879" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUHotspotTemperature</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedGPUHotspotTemperature</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="138" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ae9e8ebb1c604407c412e4a5dd57ca05d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUPower</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedGPUPower</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="161" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1afca64d0c8051fe76662830cedc898a8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUTotalBoardPower</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedGPUTotalBoardPower</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="184" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1adfbad2091351ed6fcf2dc03c34f60717" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUFanSpeed</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedGPUFanSpeed</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="207" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a73382c43b17ae4a433e914f4b16a642f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUVRAM</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedGPUVRAM</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="230" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a1b64265b057f3aaa9d6202c1a3ccf0af" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUVoltage</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedGPUVoltage</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="253" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a6748607c41c2a2521dc17cc1c4b2d40f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUUsageRange</definition>
+        <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
+        <name>GetGPUUsageRange</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="280" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a690a62a3fbe930155747fc8279fd4c49" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUClockSpeedRange</definition>
+        <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
+        <name>GetGPUClockSpeedRange</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="307" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a29b00afe517cc52d3af75c03c6d1c9a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUVRAMClockSpeedRange</definition>
+        <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
+        <name>GetGPUVRAMClockSpeedRange</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="334" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a7202b4e549c54d12a6795dbae75d2839" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUTemperatureRange</definition>
+        <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
+        <name>GetGPUTemperatureRange</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="361" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a2ca2d6f58f6a0907b9f4f4be78046941" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUHotspotTemperatureRange</definition>
+        <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
+        <name>GetGPUHotspotTemperatureRange</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="388" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a935b8301afe861fcc19fbfefe27b4185" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUPowerRange</definition>
+        <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
+        <name>GetGPUPowerRange</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="415" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1aff31ad52400db271bf326c539e947343" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUFanSpeedRange</definition>
+        <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
+        <name>GetGPUFanSpeedRange</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="442" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ab73fefe7a960ff9d0f65d0db0ebf73fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUVRAMRange</definition>
+        <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
+        <name>GetGPUVRAMRange</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="469" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a50d60cd14d202de95902c02abb9eaa13" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUVoltageRange</definition>
+        <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
+        <name>GetGPUVoltageRange</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="496" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1abb4e76d75a0f9bba3690c373cb71bfea" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUTotalBoardPowerRange</definition>
+        <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
+        <name>GetGPUTotalBoardPowerRange</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="523" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ac492a2121c5469db09211b0dc828d35d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUIntakeTemperatureRange</definition>
+        <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
+        <name>GetGPUIntakeTemperatureRange</name>
+        <param>
+          <type>adlx_int *</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="550" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ac312c3f496fce8aa7518998777f88b69" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUIntakeTemperature</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedGPUIntakeTemperature</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="573" column="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="19" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="20" bodyend="574"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a690a62a3fbe930155747fc8279fd4c49" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>GetGPUClockSpeedRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1aff31ad52400db271bf326c539e947343" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>GetGPUFanSpeedRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a2ca2d6f58f6a0907b9f4f4be78046941" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>GetGPUHotspotTemperatureRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ac492a2121c5469db09211b0dc828d35d" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>GetGPUIntakeTemperatureRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a935b8301afe861fcc19fbfefe27b4185" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>GetGPUPowerRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a7202b4e549c54d12a6795dbae75d2839" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>GetGPUTemperatureRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1abb4e76d75a0f9bba3690c373cb71bfea" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>GetGPUTotalBoardPowerRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a6748607c41c2a2521dc17cc1c4b2d40f" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>GetGPUUsageRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a50d60cd14d202de95902c02abb9eaa13" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>GetGPUVoltageRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a29b00afe517cc52d3af75c03c6d1c9a0" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>GetGPUVRAMClockSpeedRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ab73fefe7a960ff9d0f65d0db0ebf73fd" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>GetGPUVRAMRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ac05ea67b0f56d2a7118267575106d251" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>IsSupportedGPUClockSpeed</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1adfbad2091351ed6fcf2dc03c34f60717" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>IsSupportedGPUFanSpeed</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1aa2b0fbb728836287a074321cee494879" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>IsSupportedGPUHotspotTemperature</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ac312c3f496fce8aa7518998777f88b69" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>IsSupportedGPUIntakeTemperature</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ae9e8ebb1c604407c412e4a5dd57ca05d" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>IsSupportedGPUPower</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a497ed2e595c37a7809e6851542e6515d" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>IsSupportedGPUTemperature</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1afca64d0c8051fe76662830cedc898a8c" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>IsSupportedGPUTotalBoardPower</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1adf2f330babc700040074e7bb52ae4f2f" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>IsSupportedGPUUsage</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a1b64265b057f3aaa9d6202c1a3ccf0af" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>IsSupportedGPUVoltage</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a73382c43b17ae4a433e914f4b16a642f" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>IsSupportedGPUVRAM</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1aaf544fc581b87130697fda0a34ba297e" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>IsSupportedGPUVRAMClockSpeed</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport</scope><name>Release</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -115,15 +115,15 @@ int main()
 void ShowEnhancedSyncSupport(IADLX3DEnhancedSync* d3dEnhancedSync)
 {
     adlx_bool supported = false;
-    ADLX_RESULT res = d3dEnhancedSync->pVtbl->IsSupported(d3dEnhancedSync, &supported);
-    printf("\tIsSupported: %d, return code is: %d(0 means success)\n", supported, res);
+    d3dEnhancedSync->pVtbl->IsSupported(d3dEnhancedSync, &supported);
+    printf("\tIsSupported: %d\n", supported);
 }
 
 void GetEnhancedSyncState(IADLX3DEnhancedSync* d3dEnhancedSync)
 {
     adlx_bool enabled = false;
-    ADLX_RESULT res = d3dEnhancedSync->pVtbl->IsEnabled(d3dEnhancedSync, &enabled);
-    printf("\tIsEnabled: %d, return code is: %d(0 means success)\n", enabled, res);
+    d3dEnhancedSync->pVtbl->IsEnabled(d3dEnhancedSync, &enabled);
+    printf("\tIsEnabled: %d\n", enabled);
 }
 
 void SetEnhancedSyncState(IADLX3DEnhancedSync* d3dEnhancedSync, int index)

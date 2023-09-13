@@ -48,62 +48,62 @@ int main()
     {
         IADLXGPUTuningServicesPtr gpuTuningService;
         res = g_ADLXHelp.GetSystemServices()->GetGPUTuningServices(&gpuTuningService);
-        if (ADLX_SUCCEEDED (res))
+        if (ADLX_FAILED (res))
         {
-            IADLXGPUListPtr gpus;
-            res = g_ADLXHelp.GetSystemServices()->GetGPUs(&gpus);
-            if (ADLX_SUCCEEDED (res))
-            {
-                IADLXGPUPtr oneGPU;
-                res = gpus->At(0, &oneGPU);
-                if (ADLX_SUCCEEDED (res) && oneGPU != nullptr)
-                {
-                    adlx_bool supported = false;
-                    res = gpuTuningService->IsSupportedPresetTuning(oneGPU, &supported);
-                    if (ADLX_SUCCEEDED (res) && supported)
-                    {
-                        IADLXInterfacePtr gpuPresetTuningIfc;
-                        res = gpuTuningService->GetPresetTuning(oneGPU, &gpuPresetTuningIfc);
-                        if (ADLX_SUCCEEDED (res) && gpuPresetTuningIfc != nullptr)
-                        {
-                            IADLXGPUPresetTuningPtr gpuPresetTuning(gpuPresetTuningIfc);
-                            if (gpuPresetTuning != nullptr)
-                            {
-                                // Display main menu options
-                                MainMenu();
+            // Destroy ADLX
+            res = g_ADLXHelp.Terminate ();
+            std::cout << "Destroy ADLX res: " << res << std::endl;
+            return WaitAndExit ("\tGet GPU tuning services failed", 0);
+        }
+        IADLXGPUListPtr gpus;
+        res = g_ADLXHelp.GetSystemServices()->GetGPUs(&gpus);
+        if (ADLX_FAILED (res))
+        {
+            // Destroy ADLX
+            res = g_ADLXHelp.Terminate ();
+            std::cout << "Destroy ADLX res: " << res << std::endl;
+            return WaitAndExit ("\tGet GPU list failed", 0);
+        }
+        IADLXGPUPtr oneGPU;
+        res = gpus->At(0, &oneGPU);
+        if (ADLX_FAILED (res) || oneGPU == nullptr)
+        {
+            // Destroy ADLX
+            res = g_ADLXHelp.Terminate ();
+            std::cout << "Destroy ADLX res: " << res << std::endl;
+            return WaitAndExit ("\tGet GPU failed", 0);
+        }
+        adlx_bool supported = false;
+        res = gpuTuningService->IsSupportedPresetTuning(oneGPU, &supported);
+        if (ADLX_FAILED (res) || supported == false)
+        {
+            // Destroy ADLX
+            res = g_ADLXHelp.Terminate ();
+            std::cout << "Destroy ADLX res: " << res << std::endl;
+            return WaitAndExit ("\tGPU preset tuning is not supported by this GPU", 0);
+        }
+        IADLXInterfacePtr gpuPresetTuningIfc;
+        res = gpuTuningService->GetPresetTuning(oneGPU, &gpuPresetTuningIfc);
+        if (ADLX_FAILED (res) || gpuPresetTuningIfc == nullptr)
+        {
+            // Destroy ADLX
+            res = g_ADLXHelp.Terminate ();
+            std::cout << "Destroy ADLX res: " << res << std::endl;
+            return WaitAndExit ("\tGet GPU preset tuning interface failed", 0);
+        }
+        IADLXGPUPresetTuningPtr gpuPresetTuning(gpuPresetTuningIfc);
+        if (gpuPresetTuning == nullptr)
+        {
+            // Destroy ADLX
+            res = g_ADLXHelp.Terminate ();
+            std::cout << "Destroy ADLX res: " << res << std::endl;
+            return WaitAndExit ("\tGet GPU preset tuning failed", 0);
+        }
+        // Display main menu options
+        MainMenu();
 
-                                // Get and execute the choice
-                                MenuControl(gpuPresetTuning);
-                            }
-                            else
-                            {
-                                std::cout << "\tGet GPU preset tuning failed" << std::endl;
-                            }
-                        }
-                        else
-                        {
-                            std::cout << "\tGet GPU preset tuning interface failed" << std::endl;
-                        }
-                    }
-                    else
-                    {
-                        std::cout << "\tGPU preset tuning is not supported by this GPU" << std::endl;
-                    }
-                }
-                else
-                {
-                    std::cout << "\tGet GPU failed" << std::endl;
-                }
-            }
-            else
-            {
-                std::cout << "\tGet GPU list failed" << std::endl;
-            }
-        }
-        else
-        {
-            std::cout << "\tGet GPU tuning services failed" << std::endl;
-        }
+        // Get and execute the choice
+        MenuControl(gpuPresetTuning);
     }
     else
         return WaitAndExit("\tg_ADLXHelp initialize failed", 0);
@@ -179,63 +179,63 @@ int WaitAndExit(const char* msg, const int retCode)
 void ShowIsSupported(IADLXGPUPresetTuningPtr gpuPresetTuning)
 {
     adlx_bool supported = false;
-    ADLX_RESULT res = gpuPresetTuning->IsSupportedPowerSaver(&supported);
-    std::cout << "\tIs Power Saver supported by the GPU: " << supported << ", return code is: " << res << "(0 means success)" << std::endl;
+    gpuPresetTuning->IsSupportedPowerSaver(&supported);
+    std::cout << "\tIs Power Saver supported by the GPU: " << supported << std::endl;
     supported = false;
-    res = gpuPresetTuning->IsSupportedQuiet(&supported);
-    std::cout << "\tIs Quiet supported by the GPU: " << supported << ", return code is: " << res << "(0 means success)" << std::endl;
+    gpuPresetTuning->IsSupportedQuiet(&supported);
+    std::cout << "\tIs Quiet supported by the GPU: " << supported << std::endl;
     supported = false;
-    res = gpuPresetTuning->IsSupportedBalanced(&supported);
-    std::cout << "\tIs Balanced supported by the GPU: " << supported << ", return code is: " << res << "(0 means success)" << std::endl;
+    gpuPresetTuning->IsSupportedBalanced(&supported);
+    std::cout << "\tIs Balanced supported by the GPU: " << supported << std::endl;
     supported = false;
-    res = gpuPresetTuning->IsSupportedTurbo(&supported);
-    std::cout << "\tIs Turbo supported by the GPU: " << supported << ", return code is: " << res << "(0 means success)" << std::endl;
+    gpuPresetTuning->IsSupportedTurbo(&supported);
+    std::cout << "\tIs Turbo supported by the GPU: " << supported << std::endl;
     supported = false;
-    res = gpuPresetTuning->IsSupportedRage(&supported);
-    std::cout << "\tIs Rage supported by the GPU: " << supported << ", return code is: " << res << "(0 means success)" << std::endl;
+    gpuPresetTuning->IsSupportedRage(&supported);
+    std::cout << "\tIs Rage supported by the GPU: " << supported << std::endl;
 }
 
 // Display current GPU tuning states
 void GetCurrentStates(IADLXGPUPresetTuningPtr gpuPresetTuning)
 {
     adlx_bool applied = false;
-    ADLX_RESULT res = gpuPresetTuning->IsCurrentPowerSaver(&applied);
-    std::cout << "\tIs Power Saver applied: " << applied << ", return code is: " << res << "(0 means success)" << std::endl;
+    gpuPresetTuning->IsCurrentPowerSaver(&applied);
+    std::cout << "\tIs Power Saver applied: " << applied << std::endl;
     applied = false;
-    res = gpuPresetTuning->IsCurrentQuiet(&applied);
-    std::cout << "\tIs Quiet applied: " << applied << ", return code is: " << res << "(0 means success)" << std::endl;
+    gpuPresetTuning->IsCurrentQuiet(&applied);
+    std::cout << "\tIs Quiet applied: " << applied << std::endl;
     applied = false;
-    res = gpuPresetTuning->IsCurrentBalanced(&applied);
-    std::cout << "\tIs Balanced applied: " << applied << ", return code is: " << res << "(0 means success)" << std::endl;
+    gpuPresetTuning->IsCurrentBalanced(&applied);
+    std::cout << "\tIs Balanced applied: " << applied << std::endl;
     applied = false;
-    res = gpuPresetTuning->IsCurrentTurbo(&applied);
-    std::cout << "\tIs Turbo applied: " << applied << ", return code is: " << res << "(0 means success)" << std::endl;
+    gpuPresetTuning->IsCurrentTurbo(&applied);
+    std::cout << "\tIs Turbo applied: " << applied << std::endl;
     applied = false;
-    res = gpuPresetTuning->IsCurrentRage(&applied);
-    std::cout << "\tIs Rage applied: " << applied << ", return code is: " << res << "(0 means success)" << std::endl;
+    gpuPresetTuning->IsCurrentRage(&applied);
+    std::cout << "\tIs Rage applied: " << applied << std::endl;
 }
 
 // Set GPU states
 void SetGPUStates(IADLXGPUPresetTuningPtr gpuPresetTuning)
 {
     adlx_bool applied = false;
-    ADLX_RESULT res = gpuPresetTuning->SetPowerSaver();
-    res = gpuPresetTuning->IsCurrentPowerSaver(&applied);
-    std::cout << "\tSet Power Saver preset tuning " << (applied ? "Successful" : "failed") << ", return code is: " << res << "(0 means success)" << std::endl;
+    gpuPresetTuning->SetPowerSaver();
+    gpuPresetTuning->IsCurrentPowerSaver(&applied);
+    std::cout << "\tSet Power Saver preset tuning " << (applied ? "Successful" : "failed") << std::endl;
     applied = false;
-    res = gpuPresetTuning->SetQuiet();
-    res = gpuPresetTuning->IsCurrentQuiet(&applied);
-    std::cout << "\tSet Quiet preset tuning " << (applied ? "Successful" : "failed") << ", return code is: " << res << "(0 means success)" << std::endl;
+    gpuPresetTuning->SetQuiet();
+    gpuPresetTuning->IsCurrentQuiet(&applied);
+    std::cout << "\tSet Quiet preset tuning " << (applied ? "Successful" : "failed") << std::endl;
     applied = false;
-    res = gpuPresetTuning->SetBalanced();
-    res = gpuPresetTuning->IsCurrentBalanced(&applied);
-    std::cout << "\tSet Balanced preset tuning " << (applied ? "Successful" : "failed") << ", return code is: " << res << "(0 means success)" << std::endl;
+    gpuPresetTuning->SetBalanced();
+    gpuPresetTuning->IsCurrentBalanced(&applied);
+    std::cout << "\tSet Balanced preset tuning " << (applied ? "Successful" : "failed") << std::endl;
     applied = false;
-    res = gpuPresetTuning->SetTurbo();
-    res = gpuPresetTuning->IsCurrentTurbo(&applied);
-    std::cout << "\tSet Turbo preset tuning " << (applied ? "Successful" : "failed") << ", return code is: " << res << "(0 means success)" << std::endl;
+    gpuPresetTuning->SetTurbo();
+    gpuPresetTuning->IsCurrentTurbo(&applied);
+    std::cout << "\tSet Turbo preset tuning " << (applied ? "Successful" : "failed") << std::endl;
     applied = false;
-    res = gpuPresetTuning->SetRage();
-    res = gpuPresetTuning->IsCurrentRage(&applied);
-    std::cout << "\tSet Rage preset tuning " << (applied ? "Successful" : "failed") << ", return code is: " << res << "(0 means success)" << std::endl;
+    gpuPresetTuning->SetRage();
+    gpuPresetTuning->IsCurrentRage(&applied);
+    std::cout << "\tSet Rage preset tuning " << (applied ? "Successful" : "failed") << std::endl;
 }

@@ -1,4 +1,4 @@
-@page page_sample_py Python Samples
+@page page_sample_py Python
 
 <!--
 # Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.

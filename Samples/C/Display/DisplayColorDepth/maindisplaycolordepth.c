@@ -129,52 +129,40 @@ void GetSupportStateForEachColorDepth (IADLXDisplayServices* pDisplayService, IA
 
         adlx_bool isSupported = false;
         res = pDisplayColorDepth->pVtbl->IsSupportedBPC_6 (pDisplayColorDepth, &isSupported);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIsSupportedBPC_6, result %d,  BPC_6 support: %d\n", res, isSupported);
+        printf("\tIsSupportedBPC_6, result %d,  BPC_6 support: %d\n", res, isSupported);
 
         res = pDisplayColorDepth->pVtbl->IsSupportedBPC_8 (pDisplayColorDepth, &isSupported);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIsSupportedBPC_8, result %d,  BPC_8 support: %d\n", res, isSupported);
+        printf("\tIsSupportedBPC_8, result %d,  BPC_8 support: %d\n", res, isSupported);
 
         res = pDisplayColorDepth->pVtbl->IsSupportedBPC_10 (pDisplayColorDepth, &isSupported);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIsSupportedBPC_10, result %d,  BPC_10 support: %d\n", res, isSupported);
+        printf("\tIsSupportedBPC_10, result %d,  BPC_10 support: %d\n", res, isSupported);
 
         res = pDisplayColorDepth->pVtbl->IsSupportedBPC_12 (pDisplayColorDepth, &isSupported);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIsSupportedBPC_12, result %d,  BPC_12 support: %d\n", res, isSupported);
+        printf("\tIsSupportedBPC_12, result %d,  BPC_12 support: %d\n", res, isSupported);
 
         res = pDisplayColorDepth->pVtbl->IsSupportedBPC_14 (pDisplayColorDepth, &isSupported);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIsSupportedBPC_14, result %d,  BPC_14 support: %d\n", res, isSupported);
+        printf("\tIsSupportedBPC_14, result %d,  BPC_14 support: %d\n", res, isSupported);
 
         res = pDisplayColorDepth->pVtbl->IsSupportedBPC_16 (pDisplayColorDepth, &isSupported);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIsSupportedBPC_16, result %d,  BPC_16 support: %d\n", res, isSupported);
+        printf("\tIsSupportedBPC_16, result %d,  BPC_16 support: %d\n", res, isSupported);
 
         res = pDisplayColorDepth->pVtbl->IsSupportedColorDepth (pDisplayColorDepth, BPC_6, &isSupported);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIsSupportedBPC_6, result %d,  BPC_6 support: %d\n", res, isSupported);
+        printf("\tIsSupportedBPC_6, result %d,  BPC_6 support: %d\n", res, isSupported);
 
         res = pDisplayColorDepth->pVtbl->IsSupportedColorDepth (pDisplayColorDepth, BPC_8, &isSupported);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIsSupportedBPC_8, result %d,  BPC_8 support: %d\n", res, isSupported);
+        printf("\tIsSupportedBPC_8, result %d,  BPC_8 support: %d\n", res, isSupported);
 
         res = pDisplayColorDepth->pVtbl->IsSupportedColorDepth (pDisplayColorDepth, BPC_10, &isSupported);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIsSupportedBPC_10, result %d,  BPC_10 support: %d\n", res, isSupported);
+        printf("\tIsSupportedBPC_10, result %d,  BPC_10 support: %d\n", res, isSupported);
 
         res = pDisplayColorDepth->pVtbl->IsSupportedColorDepth (pDisplayColorDepth, BPC_12, &isSupported);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIsSupportedBPC_12, result %d,  BPC_12 support: %d\n", res, isSupported);
+        printf("\tIsSupportedBPC_12, result %d,  BPC_12 support: %d\n", res, isSupported);
 
         res = pDisplayColorDepth->pVtbl->IsSupportedColorDepth (pDisplayColorDepth, BPC_14, &isSupported);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIsSupportedBPC_14, result %d,  BPC_14 support: %d\n", res, isSupported);
+        printf("\tIsSupportedBPC_14, result %d,  BPC_14 support: %d\n", res, isSupported);
 
         res = pDisplayColorDepth->pVtbl->IsSupportedColorDepth (pDisplayColorDepth, BPC_16, &isSupported);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIsSupportedBPC_16, result %d,  BPC_16 support: %d\n", res, isSupported);
+        printf("\tIsSupportedBPC_16, result %d,  BPC_16 support: %d\n", res, isSupported);
 
         //Release the DisplayColorDepth interface
         pDisplayColorDepth->pVtbl->Release(pDisplayColorDepth);

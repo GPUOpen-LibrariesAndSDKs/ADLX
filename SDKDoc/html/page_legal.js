@@ -1,5 +1,4 @@
 var page_legal =
 [
-    [ "Disclaimers", "page_legal__disclaimer.html", null ],
-    [ "Trademarks", "page_legal__trademark.html", null ]
+    [ "Legal Notices", "page_legal_notices.html", "page_legal_notices" ]
 ];

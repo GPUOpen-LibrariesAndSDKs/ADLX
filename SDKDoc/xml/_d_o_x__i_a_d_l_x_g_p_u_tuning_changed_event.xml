@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event" kind="page">
+    <compoundname>DOX_IADLXGPUTuningChangedEvent</compoundname>
+    <title>IADLXGPUTuningChangedEvent</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__get_g_p_u">GetGPU</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_automatic_tuning_changed">IsAutomaticTuningChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_manual_fan_tuning_changed">IsManualFanTuningChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_manual_g_p_u_c_l_k_tuning_changed">IsManualGPUCLKTuningChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_manual_power_tuning_changed">IsManualPowerTuningChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_manual_v_r_a_m_tuning_changed">IsManualVRAMTuningChanged</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_preset_tuning_changed">IsPresetTuningChanged</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXGPUTuningChangedEvent</bold> interface provides methods to check if the GPU tuning is changed.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLXGPUTuningChangedEvent</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLXGPUTuningChangedEventPtr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_changed_event" kindref="compound">IADLXChangedEvent</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para><bold>Note:</bold> <ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__get_g_p_u" kindref="compound">GetGPU</ref> returns the reference counted GPU used by all the methods in this interface to check if there are any changes in GPU tuning.</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="8" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__get_g_p_u" kindref="compound">GetGPU</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted GPU interface on which the GPU tuning is changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_automatic_tuning_changed" kindref="compound">IsAutomaticTuningChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the automatic tuning settings are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_manual_fan_tuning_changed" kindref="compound">IsManualFanTuningChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the manual fan tuning settings are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_manual_g_p_u_c_l_k_tuning_changed" kindref="compound">IsManualGPUCLKTuningChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the manual graphic clock tuning settings are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_manual_power_tuning_changed" kindref="compound">IsManualPowerTuningChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the manual power tuning settings are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_manual_v_r_a_m_tuning_changed" kindref="compound">IsManualVRAMTuningChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the manual VRAM tuning settings are changed.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_preset_tuning_changed" kindref="compound">IsPresetTuningChanged</ref>   </para>
+</entry><entry thead="no"><para>Checks if the preset tuning settings are changed.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IGPUTuning.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp__sync_g_p_u_tuning" kindref="compound">SyncGPUTuning C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c__sync_g_p_u_tuning" kindref="compound">SyncGPUTuning C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__get_g_p_u" kindref="compound">GetGPU</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_automatic_tuning_changed" kindref="compound">IsAutomaticTuningChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_manual_fan_tuning_changed" kindref="compound">IsManualFanTuningChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_manual_g_p_u_c_l_k_tuning_changed" kindref="compound">IsManualGPUCLKTuningChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_manual_power_tuning_changed" kindref="compound">IsManualPowerTuningChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_manual_v_r_a_m_tuning_changed" kindref="compound">IsManualVRAMTuningChanged</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event__is_preset_tuning_changed" kindref="compound">IsPresetTuningChanged</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXGPUTuningPage.h"/>
+  </compounddef>
+</doxygen>

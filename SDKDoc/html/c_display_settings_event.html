@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -367,13 +367,10 @@ $(document).ready(function(){initNavTree('c_display_settings_event.html',''); in
 <div class="line">    <span class="keywordflow">if</span> (NULL != display &amp;&amp; NULL != uniqueName)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span>* gpuName = NULL;</div>
-<div class="line">        <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = display-&gt;pVtbl-&gt;Name(display, &amp;gpuName);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            sprintf_s(uniqueName, 128, <span class="stringliteral">&quot;name:%s&quot;</span>, gpuName);</div>
+<div class="line">        display-&gt;pVtbl-&gt;Name(display, &amp;gpuName);</div>
 <div class="line">        adlx_size id;</div>
-<div class="line">        res = display-&gt;pVtbl-&gt;UniqueId(display, &amp;<span class="keywordtype">id</span>);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            sprintf_s(uniqueName, 128, <span class="stringliteral">&quot;id:%zu&quot;</span>, <span class="keywordtype">id</span>);</div>
+<div class="line">        display-&gt;pVtbl-&gt;UniqueId(display, &amp;<span class="keywordtype">id</span>);</div>
+<div class="line">        sprintf_s(uniqueName, 128, <span class="stringliteral">&quot;name:%s, id:%zu&quot;</span>, gpuName, <span class="keywordtype">id</span>);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:282</div></div>

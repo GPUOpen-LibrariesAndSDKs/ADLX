@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -178,62 +178,62 @@ $(document).ready(function(){initNavTree('cpp__g_p_u_preset_tuning.html',''); in
 <div class="line">    {</div>
 <div class="line">        IADLXGPUTuningServicesPtr gpuTuningService;</div>
 <div class="line">        res = g_ADLXHelp.GetSystemServices()-&gt;GetGPUTuningServices(&amp;gpuTuningService);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a> (res))</div>
 <div class="line">        {</div>
-<div class="line">            IADLXGPUListPtr gpus;</div>
-<div class="line">            res = g_ADLXHelp.GetSystemServices()-&gt;GetGPUs(&amp;gpus);</div>
-<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
-<div class="line">            {</div>
-<div class="line">                IADLXGPUPtr oneGPU;</div>
-<div class="line">                res = gpus-&gt;At(0, &amp;oneGPU);</div>
-<div class="line">                <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) &amp;&amp; oneGPU != <span class="keyword">nullptr</span>)</div>
-<div class="line">                {</div>
-<div class="line">                    adlx_bool supported = <span class="keyword">false</span>;</div>
-<div class="line">                    res = gpuTuningService-&gt;IsSupportedPresetTuning(oneGPU, &amp;supported);</div>
-<div class="line">                    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) &amp;&amp; supported)</div>
-<div class="line">                    {</div>
-<div class="line">                        IADLXInterfacePtr gpuPresetTuningIfc;</div>
-<div class="line">                        res = gpuTuningService-&gt;GetPresetTuning(oneGPU, &amp;gpuPresetTuningIfc);</div>
-<div class="line">                        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) &amp;&amp; gpuPresetTuningIfc != <span class="keyword">nullptr</span>)</div>
-<div class="line">                        {</div>
-<div class="line">                            IADLXGPUPresetTuningPtr gpuPresetTuning(gpuPresetTuningIfc);</div>
-<div class="line">                            <span class="keywordflow">if</span> (gpuPresetTuning != <span class="keyword">nullptr</span>)</div>
-<div class="line">                            {</div>
-<div class="line">                                <span class="comment">// Display main menu options</span></div>
-<div class="line">                                MainMenu();</div>
+<div class="line">            <span class="comment">// Destroy ADLX</span></div>
+<div class="line">            res = g_ADLXHelp.Terminate ();</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;Destroy ADLX res: &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
+<div class="line">            <span class="keywordflow">return</span> WaitAndExit (<span class="stringliteral">&quot;\tGet GPU tuning services failed&quot;</span>, 0);</div>
+<div class="line">        }</div>
+<div class="line">        IADLXGPUListPtr gpus;</div>
+<div class="line">        res = g_ADLXHelp.GetSystemServices()-&gt;GetGPUs(&amp;gpus);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a> (res))</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">// Destroy ADLX</span></div>
+<div class="line">            res = g_ADLXHelp.Terminate ();</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;Destroy ADLX res: &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
+<div class="line">            <span class="keywordflow">return</span> WaitAndExit (<span class="stringliteral">&quot;\tGet GPU list failed&quot;</span>, 0);</div>
+<div class="line">        }</div>
+<div class="line">        IADLXGPUPtr oneGPU;</div>
+<div class="line">        res = gpus-&gt;At(0, &amp;oneGPU);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a> (res) || oneGPU == <span class="keyword">nullptr</span>)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">// Destroy ADLX</span></div>
+<div class="line">            res = g_ADLXHelp.Terminate ();</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;Destroy ADLX res: &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
+<div class="line">            <span class="keywordflow">return</span> WaitAndExit (<span class="stringliteral">&quot;\tGet GPU failed&quot;</span>, 0);</div>
+<div class="line">        }</div>
+<div class="line">        adlx_bool supported = <span class="keyword">false</span>;</div>
+<div class="line">        res = gpuTuningService-&gt;IsSupportedPresetTuning(oneGPU, &amp;supported);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a> (res) || supported == <span class="keyword">false</span>)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">// Destroy ADLX</span></div>
+<div class="line">            res = g_ADLXHelp.Terminate ();</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;Destroy ADLX res: &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
+<div class="line">            <span class="keywordflow">return</span> WaitAndExit (<span class="stringliteral">&quot;\tGPU preset tuning is not supported by this GPU&quot;</span>, 0);</div>
+<div class="line">        }</div>
+<div class="line">        IADLXInterfacePtr gpuPresetTuningIfc;</div>
+<div class="line">        res = gpuTuningService-&gt;GetPresetTuning(oneGPU, &amp;gpuPresetTuningIfc);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a> (res) || gpuPresetTuningIfc == <span class="keyword">nullptr</span>)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">// Destroy ADLX</span></div>
+<div class="line">            res = g_ADLXHelp.Terminate ();</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;Destroy ADLX res: &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
+<div class="line">            <span class="keywordflow">return</span> WaitAndExit (<span class="stringliteral">&quot;\tGet GPU preset tuning interface failed&quot;</span>, 0);</div>
+<div class="line">        }</div>
+<div class="line">        IADLXGPUPresetTuningPtr gpuPresetTuning(gpuPresetTuningIfc);</div>
+<div class="line">        <span class="keywordflow">if</span> (gpuPresetTuning == <span class="keyword">nullptr</span>)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">// Destroy ADLX</span></div>
+<div class="line">            res = g_ADLXHelp.Terminate ();</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;Destroy ADLX res: &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
+<div class="line">            <span class="keywordflow">return</span> WaitAndExit (<span class="stringliteral">&quot;\tGet GPU preset tuning failed&quot;</span>, 0);</div>
+<div class="line">        }</div>
+<div class="line">        <span class="comment">// Display main menu options</span></div>
+<div class="line">        MainMenu();</div>
 <div class="line"> </div>
-<div class="line">                                <span class="comment">// Get and execute the choice</span></div>
-<div class="line">                                MenuControl(gpuPresetTuning);</div>
-<div class="line">                            }</div>
-<div class="line">                            <span class="keywordflow">else</span></div>
-<div class="line">                            {</div>
-<div class="line">                                std::cout &lt;&lt; <span class="stringliteral">&quot;\tGet GPU preset tuning failed&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">                            }</div>
-<div class="line">                        }</div>
-<div class="line">                        <span class="keywordflow">else</span></div>
-<div class="line">                        {</div>
-<div class="line">                            std::cout &lt;&lt; <span class="stringliteral">&quot;\tGet GPU preset tuning interface failed&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">                        }</div>
-<div class="line">                    }</div>
-<div class="line">                    <span class="keywordflow">else</span></div>
-<div class="line">                    {</div>
-<div class="line">                        std::cout &lt;&lt; <span class="stringliteral">&quot;\tGPU preset tuning is not supported by this GPU&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">                    }</div>
-<div class="line">                }</div>
-<div class="line">                <span class="keywordflow">else</span></div>
-<div class="line">                {</div>
-<div class="line">                    std::cout &lt;&lt; <span class="stringliteral">&quot;\tGet GPU failed&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">                }</div>
-<div class="line">            }</div>
-<div class="line">            <span class="keywordflow">else</span></div>
-<div class="line">            {</div>
-<div class="line">                std::cout &lt;&lt; <span class="stringliteral">&quot;\tGet GPU list failed&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">            }</div>
-<div class="line">        }</div>
-<div class="line">        <span class="keywordflow">else</span></div>
-<div class="line">        {</div>
-<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tGet GPU tuning services failed&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">        }</div>
+<div class="line">        <span class="comment">// Get and execute the choice</span></div>
+<div class="line">        MenuControl(gpuPresetTuning);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">        <span class="keywordflow">return</span> WaitAndExit(<span class="stringliteral">&quot;\tg_ADLXHelp initialize failed&quot;</span>, 0);</div>
@@ -309,67 +309,68 @@ $(document).ready(function(){initNavTree('cpp__g_p_u_preset_tuning.html',''); in
 <div class="line"><span class="keywordtype">void</span> ShowIsSupported(IADLXGPUPresetTuningPtr gpuPresetTuning)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = gpuPresetTuning-&gt;IsSupportedPowerSaver(&amp;supported);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Power Saver supported by the GPU: &quot;</span> &lt;&lt; supported &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    gpuPresetTuning-&gt;IsSupportedPowerSaver(&amp;supported);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Power Saver supported by the GPU: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
 <div class="line">    supported = <span class="keyword">false</span>;</div>
-<div class="line">    res = gpuPresetTuning-&gt;IsSupportedQuiet(&amp;supported);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Quiet supported by the GPU: &quot;</span> &lt;&lt; supported &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    gpuPresetTuning-&gt;IsSupportedQuiet(&amp;supported);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Quiet supported by the GPU: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
 <div class="line">    supported = <span class="keyword">false</span>;</div>
-<div class="line">    res = gpuPresetTuning-&gt;IsSupportedBalanced(&amp;supported);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Balanced supported by the GPU: &quot;</span> &lt;&lt; supported &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    gpuPresetTuning-&gt;IsSupportedBalanced(&amp;supported);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Balanced supported by the GPU: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
 <div class="line">    supported = <span class="keyword">false</span>;</div>
-<div class="line">    res = gpuPresetTuning-&gt;IsSupportedTurbo(&amp;supported);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Turbo supported by the GPU: &quot;</span> &lt;&lt; supported &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    gpuPresetTuning-&gt;IsSupportedTurbo(&amp;supported);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Turbo supported by the GPU: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
 <div class="line">    supported = <span class="keyword">false</span>;</div>
-<div class="line">    res = gpuPresetTuning-&gt;IsSupportedRage(&amp;supported);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Rage supported by the GPU: &quot;</span> &lt;&lt; supported &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    gpuPresetTuning-&gt;IsSupportedRage(&amp;supported);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Rage supported by the GPU: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Display current GPU tuning states</span></div>
 <div class="line"><span class="keywordtype">void</span> GetCurrentStates(IADLXGPUPresetTuningPtr gpuPresetTuning)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool applied = <span class="keyword">false</span>;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = gpuPresetTuning-&gt;IsCurrentPowerSaver(&amp;applied);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Power Saver applied: &quot;</span> &lt;&lt; applied &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    gpuPresetTuning-&gt;IsCurrentPowerSaver(&amp;applied);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Power Saver applied: &quot;</span> &lt;&lt; applied &lt;&lt; std::endl;</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
-<div class="line">    res = gpuPresetTuning-&gt;IsCurrentQuiet(&amp;applied);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Quiet applied: &quot;</span> &lt;&lt; applied &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    gpuPresetTuning-&gt;IsCurrentQuiet(&amp;applied);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Quiet applied: &quot;</span> &lt;&lt; applied &lt;&lt; std::endl;</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
-<div class="line">    res = gpuPresetTuning-&gt;IsCurrentBalanced(&amp;applied);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Balanced applied: &quot;</span> &lt;&lt; applied &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    gpuPresetTuning-&gt;IsCurrentBalanced(&amp;applied);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Balanced applied: &quot;</span> &lt;&lt; applied &lt;&lt; std::endl;</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
-<div class="line">    res = gpuPresetTuning-&gt;IsCurrentTurbo(&amp;applied);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Turbo applied: &quot;</span> &lt;&lt; applied &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    gpuPresetTuning-&gt;IsCurrentTurbo(&amp;applied);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Turbo applied: &quot;</span> &lt;&lt; applied &lt;&lt; std::endl;</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
-<div class="line">    res = gpuPresetTuning-&gt;IsCurrentRage(&amp;applied);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Rage applied: &quot;</span> &lt;&lt; applied &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    gpuPresetTuning-&gt;IsCurrentRage(&amp;applied);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs Rage applied: &quot;</span> &lt;&lt; applied &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Set GPU states</span></div>
 <div class="line"><span class="keywordtype">void</span> SetGPUStates(IADLXGPUPresetTuningPtr gpuPresetTuning)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool applied = <span class="keyword">false</span>;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = gpuPresetTuning-&gt;SetPowerSaver();</div>
-<div class="line">    res = gpuPresetTuning-&gt;IsCurrentPowerSaver(&amp;applied);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet Power Saver preset tuning &quot;</span> &lt;&lt; (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    gpuPresetTuning-&gt;SetPowerSaver();</div>
+<div class="line">    gpuPresetTuning-&gt;IsCurrentPowerSaver(&amp;applied);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet Power Saver preset tuning &quot;</span> &lt;&lt; (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
-<div class="line">    res = gpuPresetTuning-&gt;SetQuiet();</div>
-<div class="line">    res = gpuPresetTuning-&gt;IsCurrentQuiet(&amp;applied);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet Quiet preset tuning &quot;</span> &lt;&lt; (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    gpuPresetTuning-&gt;SetQuiet();</div>
+<div class="line">    gpuPresetTuning-&gt;IsCurrentQuiet(&amp;applied);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet Quiet preset tuning &quot;</span> &lt;&lt; (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
-<div class="line">    res = gpuPresetTuning-&gt;SetBalanced();</div>
-<div class="line">    res = gpuPresetTuning-&gt;IsCurrentBalanced(&amp;applied);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet Balanced preset tuning &quot;</span> &lt;&lt; (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    gpuPresetTuning-&gt;SetBalanced();</div>
+<div class="line">    gpuPresetTuning-&gt;IsCurrentBalanced(&amp;applied);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet Balanced preset tuning &quot;</span> &lt;&lt; (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
-<div class="line">    res = gpuPresetTuning-&gt;SetTurbo();</div>
-<div class="line">    res = gpuPresetTuning-&gt;IsCurrentTurbo(&amp;applied);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet Turbo preset tuning &quot;</span> &lt;&lt; (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    gpuPresetTuning-&gt;SetTurbo();</div>
+<div class="line">    gpuPresetTuning-&gt;IsCurrentTurbo(&amp;applied);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet Turbo preset tuning &quot;</span> &lt;&lt; (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
-<div class="line">    res = gpuPresetTuning-&gt;SetRage();</div>
-<div class="line">    res = gpuPresetTuning-&gt;IsCurrentRage(&amp;applied);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet Rage preset tuning &quot;</span> &lt;&lt; (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    gpuPresetTuning-&gt;SetRage();</div>
+<div class="line">    gpuPresetTuning-&gt;IsCurrentRage(&amp;applied);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet Rage preset tuning &quot;</span> &lt;&lt; (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:282</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_ga6ea0e7f02e40768a1e47cb60e0e6f482"><div class="ttname"><a href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a></div><div class="ttdeci">#define ADLX_FAILED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:316</div></div>
 <div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:305</div></div>
 <div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:278</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->

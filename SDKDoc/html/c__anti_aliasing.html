@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -305,25 +305,19 @@ $(document).ready(function(){initNavTree('c__anti_aliasing.html',''); initResiza
 <div class="line"><span class="keywordtype">void</span> ShowAntiAliasingSupport(IADLX3DAntiAliasing* antiAliasing)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = antiAliasing-&gt;pVtbl-&gt;IsSupported(antiAliasing, &amp;supported);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">        printf(<span class="stringliteral">&quot;\tIsSupported: %d\n&quot;</span>, supported);</div>
+<div class="line">    antiAliasing-&gt;pVtbl-&gt;IsSupported(antiAliasing, &amp;supported);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tIsSupported: %d\n&quot;</span>, supported);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> GetAntiAliasingState(IADLX3DAntiAliasing* antiAliasing)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga4d154a77789a08d19a8d0a8ba809b64a">ADLX_ANTI_ALIASING_MODE</a> mode;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = antiAliasing-&gt;pVtbl-&gt;GetMode(antiAliasing, &amp;mode);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
-<div class="line">        printf(<span class="stringliteral">&quot;\tMode: %s\n&quot;</span>, getModeStr(mode));</div>
+<div class="line">    antiAliasing-&gt;pVtbl-&gt;GetMode(antiAliasing, &amp;mode);</div>
 <div class="line">    <a class="code" href="group__enumerations.html#gad99bac74ba876c14fa2d42c094641b44">ADLX_ANTI_ALIASING_METHOD</a> method;</div>
-<div class="line">    res = antiAliasing-&gt;pVtbl-&gt;GetMethod(antiAliasing, &amp;method);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
-<div class="line">        printf(<span class="stringliteral">&quot;\tMethod: %s\n&quot;</span>, getMethodStr(method));</div>
+<div class="line">    antiAliasing-&gt;pVtbl-&gt;GetMethod(antiAliasing, &amp;method);</div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga8c2e57a18318ffeb5e36de7717ff953e">ADLX_ANTI_ALIASING_LEVEL</a> level;</div>
-<div class="line">    res = antiAliasing-&gt;pVtbl-&gt;GetLevel(antiAliasing, &amp;level);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
-<div class="line">        printf(<span class="stringliteral">&quot;\tLevel: %s\n&quot;</span>, getLevelStr(level));</div>
+<div class="line">    antiAliasing-&gt;pVtbl-&gt;GetLevel(antiAliasing, &amp;level);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tMode: %s\n\tMethod: %s\n\tLevel: %s\n&quot;</span>, getModeStr(mode), getMethodStr(method), getLevelStr(level));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetAntiAliasingMode(IADLX3DAntiAliasing* antiAliasing, <span class="keywordtype">int</span> index)</div>
@@ -338,25 +332,19 @@ $(document).ready(function(){initNavTree('c__anti_aliasing.html',''); initResiza
 <div class="line"><span class="keywordtype">void</span> SetAntiAliasingMethod(IADLX3DAntiAliasing* antiAliasing)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="group__enumerations.html#gad99bac74ba876c14fa2d42c094641b44">ADLX_ANTI_ALIASING_METHOD</a> method = AA_METHOD_MULTISAMPLING;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = antiAliasing-&gt;pVtbl-&gt;GetMethod(antiAliasing, &amp;method);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
-<div class="line">    {</div>
-<div class="line">        method = (<a class="code" href="group__enumerations.html#gad99bac74ba876c14fa2d42c094641b44">ADLX_ANTI_ALIASING_METHOD</a>)((method + 1) % 3);</div>
-<div class="line">        res = antiAliasing-&gt;pVtbl-&gt;SetMethod(antiAliasing, method);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;\tSet method: %s, res is: %d\n&quot;</span>, getMethodStr(method), res);</div>
-<div class="line">    }</div>
+<div class="line">    antiAliasing-&gt;pVtbl-&gt;GetMethod(antiAliasing, &amp;method);</div>
+<div class="line">    method = (<a class="code" href="group__enumerations.html#gad99bac74ba876c14fa2d42c094641b44">ADLX_ANTI_ALIASING_METHOD</a>)((method + 1) % 3);</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = antiAliasing-&gt;pVtbl-&gt;SetMethod(antiAliasing, method);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tSet method: %s, res is: %d\n&quot;</span>, getMethodStr(method), res);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetAntiAliasingLevel(IADLX3DAntiAliasing* antiAliasing)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga8c2e57a18318ffeb5e36de7717ff953e">ADLX_ANTI_ALIASING_LEVEL</a> level;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = antiAliasing-&gt;pVtbl-&gt;GetLevel(antiAliasing, &amp;level);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
-<div class="line">    {</div>
-<div class="line">        level = (level == AA_LEVEL_2X) ? AA_LEVEL_4X : AA_LEVEL_2X;</div>
-<div class="line">        res = antiAliasing-&gt;pVtbl-&gt;SetLevel(antiAliasing, level);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;\tSet level: %s, res is: %d\n&quot;</span>, getLevelStr(level), res);</div>
-<div class="line">    }</div>
+<div class="line">    antiAliasing-&gt;pVtbl-&gt;GetLevel(antiAliasing, &amp;level);</div>
+<div class="line">    level = (level == AA_LEVEL_2X) ? AA_LEVEL_4X : AA_LEVEL_2X;</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = antiAliasing-&gt;pVtbl-&gt;SetLevel(antiAliasing, level);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tSet level: %s, res is: %d\n&quot;</span>, getLevelStr(level), res);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> MainMenu()</div>

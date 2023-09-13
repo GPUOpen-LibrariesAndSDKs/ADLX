@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -205,8 +205,8 @@ $(document).ready(function(){initNavTree('cpp_3_d_settings_event.html',''); init
 <div class="line">                IADLX3DSettingsChangedListener* call = <span class="keyword">new</span> CallBack3DSettingsChanged;</div>
 <div class="line"> </div>
 <div class="line">                <span class="comment">// Add call back</span></div>
-<div class="line">                <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> addListenerRes = changeHandle-&gt;Add3DSettingsEventListener(call);</div>
-<div class="line">                </div>
+<div class="line">                changeHandle-&gt;Add3DSettingsEventListener(call);</div>
+<div class="line"> </div>
 <div class="line">                <span class="comment">// Change anti-lag state</span></div>
 <div class="line">                IADLX3DAntiLagPtr antiLag;</div>
 <div class="line">                d3dSettingSrv-&gt;GetAntiLag(gpuInfo, &amp;antiLag);</div>
@@ -217,13 +217,8 @@ $(document).ready(function(){initNavTree('cpp_3_d_settings_event.html',''); init
 <div class="line">                antiLag-&gt;SetEnabled(!enable);</div>
 <div class="line">                WaitForSingleObject(blockEvent, 5000);</div>
 <div class="line"> </div>
-<div class="line">                <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (addListenerRes))</div>
-<div class="line">                {</div>
-<div class="line">                    <span class="comment">// Remove call back</span></div>
-<div class="line">                    res = changeHandle-&gt;Remove3DSettingsEventListener(call);</div>
-<div class="line">                    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a> (res))</div>
-<div class="line">                        std::cout &lt;&lt; <span class="stringliteral">&quot;\nRemove 3DSettings event listener failed&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">                }</div>
+<div class="line">                <span class="comment">// Remove call back</span></div>
+<div class="line">                changeHandle-&gt;Remove3DSettingsEventListener(call);</div>
 <div class="line"> </div>
 <div class="line">                <span class="comment">// Delete call back</span></div>
 <div class="line">                <span class="keyword">delete</span> call;</div>
@@ -261,15 +256,13 @@ $(document).ready(function(){initNavTree('cpp_3_d_settings_event.html',''); init
 <div class="line">    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != gpu &amp;&amp; <span class="keyword">nullptr</span> != uniqueName)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span>* gpuName = <span class="keyword">nullptr</span>;</div>
-<div class="line">        <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res1 = gpu-&gt;Name(&amp;gpuName);</div>
+<div class="line">        gpu-&gt;Name(&amp;gpuName);</div>
 <div class="line">        adlx_int id;</div>
-<div class="line">        <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res2 = gpu-&gt;UniqueId(&amp;<span class="keywordtype">id</span>);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res1) &amp;&amp; <a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res2))</div>
-<div class="line">            sprintf_s(uniqueName, 128, <span class="stringliteral">&quot;name:%s, id:%d&quot;</span>, gpuName, <span class="keywordtype">id</span>);</div>
+<div class="line">        gpu-&gt;UniqueId(&amp;<span class="keywordtype">id</span>);</div>
+<div class="line">        sprintf_s(uniqueName, 128, <span class="stringliteral">&quot;name:%s, id:%d&quot;</span>, gpuName, <span class="keywordtype">id</span>);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_ga6ea0e7f02e40768a1e47cb60e0e6f482"><div class="ttname"><a href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a></div><div class="ttdeci">#define ADLX_FAILED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:316</div></div>
 <div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:305</div></div>
 <div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:278</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->

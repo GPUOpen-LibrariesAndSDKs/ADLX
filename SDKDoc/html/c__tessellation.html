@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -289,18 +289,17 @@ $(document).ready(function(){initNavTree('c__tessellation.html',''); initResizab
 <div class="line"><span class="keywordtype">void</span> ShowSupport(IADLX3DTessellation* tessellation)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = tessellation-&gt;pVtbl-&gt;IsSupported(tessellation, &amp;supported);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIsSupported: %d, return code is: %d(0 means success)\n&quot;</span>, supported, res);</div>
+<div class="line">    tessellation-&gt;pVtbl-&gt;IsSupported(tessellation, &amp;supported);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tIsSupported: %d\n&quot;</span>, supported);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> GetState(IADLX3DTessellation* tessellation)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga7899078325beddfbe0f4e63dca8ce8ca">ADLX_TESSELLATION_MODE</a> mode;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = tessellation-&gt;pVtbl-&gt;GetMode(tessellation, &amp;mode);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tMode: %s, return code is: %d(0 means success)\n&quot;</span>, getModeStr(mode), res);</div>
+<div class="line">    tessellation-&gt;pVtbl-&gt;GetMode(tessellation, &amp;mode);</div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga5967c593434c0cba5891c996d64cff5c">ADLX_TESSELLATION_LEVEL</a> level;</div>
-<div class="line">    res = tessellation-&gt;pVtbl-&gt;GetLevel(tessellation, &amp;level);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tLevel: %s, return code is: %d(0 means success)\n&quot;</span>, getLevelStr(level), res);</div>
+<div class="line">    tessellation-&gt;pVtbl-&gt;GetLevel(tessellation, &amp;level);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tMode: %s\n\tLevel: %s\n&quot;</span>, getModeStr(mode), getLevelStr(level));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetMode(IADLX3DTessellation* tessellation, <span class="keywordtype">int</span> index)</div>

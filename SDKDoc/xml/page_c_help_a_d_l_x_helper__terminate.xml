@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="page_c_help_a_d_l_x_helper__terminate" kind="page">
+    <compoundname>page_cHelpADLXHelper_Terminate</compoundname>
+    <title>ADLXHelper_Terminate</title>
+    <briefdescription>
+<para>Terminates ADLX and releases ADLX library. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Terminates ADLX and releases ADLX library.</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLXHelper_Terminate ()
+ </preformatted> <heading level="2">Parameters </heading>
+</para>
+<para>N/A</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If <bold>ADLXHelper_Terminate</bold> is successfully executed, <bold>ADLX_OK</bold> is returned.<linebreak/>
+ If <bold>ADLXHelper_Terminate</bold> is not successfully executed, an error code is returned.<linebreak/>
+ Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.</para>
+<para><heading level="2">Remarks </heading>
+</para>
+<para>Any interface obtained from ADLX that is not released becomes invalid.<linebreak/>
+ Any attempt of calling ADLX interface after termination could result in errors such as exceptions or crashes.<linebreak/>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;ADLXHelper/Windows/C/ADLXHelper.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/ADLXHelper/Windows/C/ADLXHelper.h"/>
+  </compounddef>
+</doxygen>

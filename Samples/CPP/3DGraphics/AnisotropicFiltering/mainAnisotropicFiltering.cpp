@@ -105,21 +105,18 @@ static const std::map<ADLX_ANISOTROPIC_FILTERING_LEVEL, const char*> levelMap =
 void ShowSupport(const IADLX3DAnisotropicFilteringPtr& anisotropicFiltering)
 {
     adlx_bool supported = false;
-    ADLX_RESULT res = anisotropicFiltering->IsSupported(&supported);
-    if (ADLX_SUCCEEDED(res))
-        std::cout << "\tIsSupported: " << supported << std::endl;
+    anisotropicFiltering->IsSupported(&supported);
+    std::cout << "\tIsSupported: " << supported << std::endl;
 }
 
 void GetState(const IADLX3DAnisotropicFilteringPtr& anisotropicFiltering)
 {
     adlx_bool enabled = false;
-    ADLX_RESULT res = anisotropicFiltering->IsEnabled(&enabled);
-    if (ADLX_SUCCEEDED(res))
-        std::cout << "\tIsEnabled: " << enabled << std::endl;
+    anisotropicFiltering->IsEnabled(&enabled);
+    std::cout << "\tIsEnabled: " << enabled << std::endl;
     ADLX_ANISOTROPIC_FILTERING_LEVEL level;
-    res = anisotropicFiltering->GetLevel(&level);
-    if (ADLX_SUCCEEDED(res))
-        std::cout << "\tLevel: " << levelMap.find(level)->second << std::endl;
+    anisotropicFiltering->GetLevel(&level);
+    std::cout << "\tLevel: " << levelMap.find(level)->second << std::endl;
 }
 
 void SetState(const IADLX3DAnisotropicFilteringPtr& anisotropicFiltering, int index)
@@ -131,13 +128,10 @@ void SetState(const IADLX3DAnisotropicFilteringPtr& anisotropicFiltering, int in
     if (index == 0 && ADLX_SUCCEEDED(res))
     {
         ADLX_ANISOTROPIC_FILTERING_LEVEL level;
-        res = anisotropicFiltering->GetLevel(&level);
-        if (ADLX_SUCCEEDED (res))
-        {
-            level = (level == AF_LEVEL_X2) ? AF_LEVEL_X4 : AF_LEVEL_X2;
-            res = anisotropicFiltering->SetLevel(level);
-            std::cout << "\tSet level: " << levelMap.find(level)->second << "Return code is: " << res << " (0 means success) " << std::endl;
-        }
+        anisotropicFiltering->GetLevel(&level);
+        level = (level == AF_LEVEL_X2) ? AF_LEVEL_X4 : AF_LEVEL_X2;
+        anisotropicFiltering->SetLevel(level);
+        std::cout << "\tSet level: " << levelMap.find(level)->second << "Return code is: " << res << " (0 means success) " << std::endl;
     }
 }
 

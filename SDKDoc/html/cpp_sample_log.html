@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('cpp_sample_log.html',''); initResizabl
         </thead>
         <tbody>
 		<tr><td>1</td><td> Enable log with local file, file [./ADLX.log] is created.</td></tr>
-		<tr><td>2</td><td> Enable log with DebugView.</td></tr>
+		<tr><td>2</td><td> Enable log with window debugger.</td></tr>
 		<tr><td>3</td><td> Enable log with application handle.</td></tr>
 		<tr><td>Q/q</td><td> Terminate the application.</td></tr>
         </tbody>
@@ -243,8 +243,8 @@ $(document).ready(function(){initNavTree('cpp_sample_log.html',''); initResizabl
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Enabled log res: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// Configure ADLX log to send errors, warnings and debug information messages to the DebugView.</span></div>
-<div class="line"><span class="keywordtype">void</span> UseDebugView()</div>
+<div class="line"><span class="comment">// Configure ADLX log to send errors, warnings and debug information messages to the application debugger.</span></div>
+<div class="line"><span class="keywordtype">void</span> UseWindowDebugger()</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// Log destination, severity</span></div>
 <div class="line">    <a class="code" href="group__enumerations.html#gae308b7ad24806dce3fe087e9a780be67">ADLX_LOG_DESTINATION</a> mode = DBGVIEW;</div>
@@ -272,7 +272,7 @@ $(document).ready(function(){initNavTree('cpp_sample_log.html',''); initResizabl
 <div class="line">{</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tChoose from the following options:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 1 to enable log with local file, file [./ADLX.log] will be created.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 2 to enable log with DebugView&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 2 to enable log with window debugger&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 3 to enable log with app handle&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -288,9 +288,9 @@ $(document).ready(function(){initNavTree('cpp_sample_log.html',''); initResizabl
 <div class="line">        UseLocalFile();</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// DebugView</span></div>
+<div class="line">    <span class="comment">// Window debugger</span></div>
 <div class="line">    <span class="keywordflow">case</span> <span class="charliteral">&#39;2&#39;</span>:</div>
-<div class="line">        UseDebugView();</div>
+<div class="line">        UseWindowDebugger();</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Application handle</span></div>

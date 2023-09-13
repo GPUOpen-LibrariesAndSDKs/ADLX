@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_all_metrics" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXAllMetrics</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_all_metrics_1a8abe269b4e7949829ba9efc1a317e3ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXAllMetrics::TimeStamp</definition>
+        <argsstring>(adlx_int64 *ms)=0</argsstring>
+        <name>TimeStamp</name>
+        <param>
+          <type>adlx_int64 *</type>
+          <declname>ms</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1722" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_all_metrics_1afd990c97ed8ed71d31128f57446cf053" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXAllMetrics::GetSystemMetrics</definition>
+        <argsstring>(IADLXSystemMetrics **ppSystemMetrics)=0</argsstring>
+        <name>GetSystemMetrics</name>
+        <param>
+          <type>IADLXSystemMetrics **</type>
+          <declname>ppSystemMetrics</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1750" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_all_metrics_1a2bedd2c3903904485eb93131686f91a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXAllMetrics::GetFPS</definition>
+        <argsstring>(IADLXFPS **ppFPS)=0</argsstring>
+        <name>GetFPS</name>
+        <param>
+          <type>IADLXFPS **</type>
+          <declname>ppFPS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1778" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_all_metrics_1ad7de8088fc63eb0a103a845ed7945f69" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXAllMetrics::GetGPUMetrics</definition>
+        <argsstring>(IADLXGPU *pGPU, IADLXGPUMetrics **ppGPUMetrics)=0</argsstring>
+        <name>GetGPUMetrics</name>
+        <param>
+          <type>IADLXGPU *</type>
+          <declname>pGPU</declname>
+        </param>
+        <param>
+          <type>IADLXGPUMetrics **</type>
+          <declname>ppGPUMetrics</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1807" column="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1694" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1695" bodyend="1808"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXAllMetrics</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_all_metrics_1a2bedd2c3903904485eb93131686f91a6" prot="public" virt="pure-virtual"><scope>adlx::IADLXAllMetrics</scope><name>GetFPS</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_all_metrics_1ad7de8088fc63eb0a103a845ed7945f69" prot="public" virt="pure-virtual"><scope>adlx::IADLXAllMetrics</scope><name>GetGPUMetrics</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_all_metrics_1afd990c97ed8ed71d31128f57446cf053" prot="public" virt="pure-virtual"><scope>adlx::IADLXAllMetrics</scope><name>GetSystemMetrics</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXAllMetrics</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXAllMetrics</scope><name>Release</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_all_metrics_1a8abe269b4e7949829ba9efc1a317e3ce" prot="public" virt="pure-virtual"><scope>adlx::IADLXAllMetrics</scope><name>TimeStamp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

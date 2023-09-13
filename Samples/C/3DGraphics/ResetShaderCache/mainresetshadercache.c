@@ -110,8 +110,8 @@ int main()
 void ShowSupport(IADLX3DResetShaderCache* resetShaderCache)
 {
     adlx_bool supported = false;
-    ADLX_RESULT res = resetShaderCache->pVtbl->IsSupported(resetShaderCache, &supported);
-    printf("\tIsSupported: %d, return code is: %d(0 means success)\n", supported, res);
+    resetShaderCache->pVtbl->IsSupported(resetShaderCache, &supported);
+    printf("\tIsSupported: %d\n", supported);
 }
 
 void ResetShaderCache(IADLX3DResetShaderCache* resetShaderCache)

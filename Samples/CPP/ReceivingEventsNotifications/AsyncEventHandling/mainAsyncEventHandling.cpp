@@ -96,7 +96,7 @@ int main()
             IADLXDisplayGamutChangedListener* gamutChangeCallBack = new DisplayGamutCallBack;
 
             // Add the callbacks to the ADLX event handler
-            ADLX_RESULT addListenerRes = displayChangeHandler->AddDisplayGamutEventListener(gamutChangeCallBack);
+            displayChangeHandler->AddDisplayGamutEventListener(gamutChangeCallBack);
 
             // Set gamut for the first display
             IADLXDisplayListPtr displays;
@@ -113,16 +113,11 @@ int main()
                 std::cout << "This will trigger gamut change and send gamut change in thread: " << GetCurrentThreadId() << std::endl;
             }
 
-            if (ADLX_SUCCEEDED (addListenerRes))
-            {
-                // Wait for gamut change
-                WaitForSingleObject(gamutChangedEvent, INFINITE);
+            // Wait for gamut change
+            WaitForSingleObject(gamutChangedEvent, INFINITE);
 
-                // Remove and destroy callbacks
-                res = displayChangeHandler->RemoveDisplayGamutEventListener(gamutChangeCallBack);
-                if (ADLX_FAILED (res))
-                    std::cout << "Remove display gamut event listener failed" << std::endl;
-            }
+            // Remove and destroy callbacks
+            displayChangeHandler->RemoveDisplayGamutEventListener(gamutChangeCallBack);
 
             delete gamutChangeCallBack;
             gamutChangeCallBack = nullptr;

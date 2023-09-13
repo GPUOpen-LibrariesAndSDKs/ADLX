@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -246,15 +246,15 @@ $(document).ready(function(){initNavTree('c__enhanced_sync.html',''); initResiza
 <div class="line"><span class="keywordtype">void</span> ShowEnhancedSyncSupport(IADLX3DEnhancedSync* d3dEnhancedSync)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dEnhancedSync-&gt;pVtbl-&gt;IsSupported(d3dEnhancedSync, &amp;supported);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIsSupported: %d, return code is: %d(0 means success)\n&quot;</span>, supported, res);</div>
+<div class="line">    d3dEnhancedSync-&gt;pVtbl-&gt;IsSupported(d3dEnhancedSync, &amp;supported);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tIsSupported: %d\n&quot;</span>, supported);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> GetEnhancedSyncState(IADLX3DEnhancedSync* d3dEnhancedSync)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool enabled = <span class="keyword">false</span>;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dEnhancedSync-&gt;pVtbl-&gt;IsEnabled(d3dEnhancedSync, &amp;enabled);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIsEnabled: %d, return code is: %d(0 means success)\n&quot;</span>, enabled, res);</div>
+<div class="line">    d3dEnhancedSync-&gt;pVtbl-&gt;IsEnabled(d3dEnhancedSync, &amp;enabled);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tIsEnabled: %d\n&quot;</span>, enabled);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetEnhancedSyncState(IADLX3DEnhancedSync* d3dEnhancedSync, <span class="keywordtype">int</span> index)</div>

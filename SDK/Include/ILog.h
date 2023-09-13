@@ -43,7 +43,8 @@ namespace adlx
 		 * The method should return quickly to not block the execution path in ADLX. If the method requires a long processing of the log trace, the application must copy the log message and process it asynchronously.
          * @ENG_END_DOX
          *
-         * @copydoc IADLXLog_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"ISystem.h", @ADLX_First_Ver}
          *
          * @seealso
          * @ref DOX_IADLXSystem_EnableLog

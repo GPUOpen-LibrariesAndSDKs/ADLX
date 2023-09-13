@@ -39,7 +39,8 @@ namespace adlx
         *@ENG_START_DOX  If the GPU undervolting is completed, __true__ is returned.<br>
         * If the GPU undervolting is not completed, __false__ is returned.<br> @ENG_END_DOX
         *
-        *@copydoc IADLXGPUAutoTuningCompleteEvent_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUAutoTuning.h", @ADLX_First_Ver}
         *
         */
         virtual adlx_bool   ADLX_STD_CALL IsUndervoltGPUCompleted () = 0;
@@ -60,7 +61,8 @@ namespace adlx
         *@ENG_START_DOX  If the GPU overclocking is completed, __true__ is returned.<br>
         * If the GPU overclocking is not completed, __false__ is returned.<br> @ENG_END_DOX
         *
-        *@copydoc IADLXGPUAutoTuningCompleteEvent_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUAutoTuning.h", @ADLX_First_Ver}
         *
         */
         virtual adlx_bool   ADLX_STD_CALL IsOverclockGPUCompleted () = 0;
@@ -81,7 +83,8 @@ namespace adlx
         *@ENG_START_DOX  If the VRAM undervolting is completed, __true__ is returned.<br>
         * If the VRAM undervolting is not completed, __false__ is returned.<br> @ENG_END_DOX
         *
-        *@copydoc IADLXGPUAutoTuningCompleteEvent_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUAutoTuning.h", @ADLX_First_Ver}
         *
         */
         virtual adlx_bool   ADLX_STD_CALL IsOverclockVRAMCompleted () = 0;
@@ -140,7 +143,8 @@ namespace adlx
         * The method should return quickly to not block the execution path in ADLX. If the method requires a long processing of the event notification, the application must hold onto a reference to the GPU tuning complete event with @ref DOX_IADLXInterface_Acquire and make it available on an asynchronous thread and return immediately. When the asynchronous thread is done processing it must discard the GPU tuning complete event with @ref DOX_IADLXInterface_Release. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXGPUAutoTuningCompleteListener_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUTuning.h", @ADLX_First_Ver}
         *
         */
         virtual adlx_bool ADLX_STD_CALL OnGPUAutoTuningComplete (IADLXGPUAutoTuningCompleteEvent* pGPUAutoTuningCompleteEvent) = 0;
@@ -190,7 +194,8 @@ namespace adlx
             * GPU undervolting reduces voltage and maintains clock speed to improve performance per watt.
             * @ENG_END_DOX
             *
-            *@copydoc IADLXGPUAutoTuning_REQ_TABLE
+            *@requirements
+            *@DetailsTable{#include "IGPUAutoTuning.h", @ADLX_First_Ver}
             *
             */
             virtual ADLX_RESULT         ADLX_STD_CALL IsSupportedUndervoltGPU (adlx_bool* supported) = 0;
@@ -217,7 +222,8 @@ namespace adlx
         * Automatic GPU overclocking uses an overclocking algorithm to improve GPU performance.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUAutoTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUAutoTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupportedOverclockGPU (adlx_bool* supported) = 0;
@@ -244,7 +250,8 @@ namespace adlx
         * Automatic VRAM overclocking uses an overclocking algorithm to improve video memory performance.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUAutoTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUAutoTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupportedOverclockVRAM (adlx_bool* supported) = 0;
@@ -271,7 +278,8 @@ namespace adlx
         * GPU undervolting reduces voltage and maintains clock speed to improve performance per watt.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUAutoTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUAutoTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsCurrentUndervoltGPU (adlx_bool* isUndervoltGPU) = 0;
@@ -298,7 +306,8 @@ namespace adlx
         * Automatic GPU overclocking uses an overclocking algorithm to improve GPU performance.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUAutoTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUAutoTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsCurrentOverclockGPU (adlx_bool* isOverclockGPU) = 0;
@@ -325,7 +334,8 @@ namespace adlx
         * Automatic VRAM overclocking uses an overclocking algorithm to improve video memory performance.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUAutoTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUAutoTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsCurrentOverclockVRAM (adlx_bool* isOverclockVRAM) = 0;
@@ -356,7 +366,8 @@ namespace adlx
         * GPU undervolting reduces voltage and maintains clock speed to improve performance per watt.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUAutoTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUAutoTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL StartUndervoltGPU (IADLXGPUAutoTuningCompleteListener* pCompleteListener) = 0;
@@ -387,7 +398,8 @@ namespace adlx
         * Automatic GPU overclocking uses an overclocking algorithm to improve GPU performance.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUAutoTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUAutoTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL StartOverclockGPU (IADLXGPUAutoTuningCompleteListener* pCompleteListener) = 0;
@@ -418,7 +430,8 @@ namespace adlx
         * Automatic VRAM overclocking uses an overclocking algorithm to improve video memory performance.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUAutoTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUAutoTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL StartOverclockVRAM (IADLXGPUAutoTuningCompleteListener* pCompleteListener) = 0;

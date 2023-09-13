@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -245,7 +245,7 @@ $(document).ready(function(){initNavTree('cpp_display__pixel_format.html',''); i
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;  === Get pixel format supported ===&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">        adlx_bool supported = <span class="keyword">false</span>;</div>
 <div class="line">        res = displayPixelFormat-&gt;IsSupported(&amp;supported);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tPixel format is supported on the display: &quot;</span> &lt;&lt; supported &lt;&lt; <span class="stringliteral">&quot; , return code: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot; (0 means success)\n&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIf pixel format is supported on the display: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -316,20 +316,15 @@ $(document).ready(function(){initNavTree('cpp_display__pixel_format.html',''); i
 <div class="line">        adlx_bool support = <span class="keyword">false</span>;</div>
 <div class="line"> </div>
 <div class="line">        res = displayPixelFormat-&gt;IsSupportedRGB444Full(&amp;support);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs support RGB 4:4:4 PC Standard (Full RGB): &quot;</span> &lt;&lt; support &lt;&lt; std::endl;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs support RGB 4:4:4 PC Standard (Full RGB): &quot;</span> &lt;&lt; support &lt;&lt; std::endl;</div>
 <div class="line">        res = displayPixelFormat-&gt;IsSupportedYCbCr444(&amp;support);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs support YCbCr 4:4:4: &quot;</span> &lt;&lt; support &lt;&lt; std::endl;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs support YCbCr 4:4:4: &quot;</span> &lt;&lt; support &lt;&lt; std::endl;</div>
 <div class="line">        res = displayPixelFormat-&gt;IsSupportedYCbCr422(&amp;support);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs support YCbCr 4:2:2: &quot;</span> &lt;&lt; support &lt;&lt; std::endl;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs support YCbCr 4:2:2: &quot;</span> &lt;&lt; support &lt;&lt; std::endl;</div>
 <div class="line">        res = displayPixelFormat-&gt;IsSupportedRGB444Limited(&amp;support);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs support RGB 4:4:4 Studio (Limited RGB): &quot;</span> &lt;&lt; support &lt;&lt; std::endl;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs support RGB 4:4:4 Studio (Limited RGB): &quot;</span> &lt;&lt; support &lt;&lt; std::endl;</div>
 <div class="line">        res = displayPixelFormat-&gt;IsSupportedYCbCr420(&amp;support);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs support YCbCr 4:2:0: &quot;</span> &lt;&lt; support &lt;&lt; std::endl;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs support YCbCr 4:2:0: &quot;</span> &lt;&lt; support &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">        <span class="keyword">const</span> std::unordered_map&lt;ADLX_PIXEL_FORMAT, std::string&gt; PixelFormatMap{</div>
 <div class="line">            {RGB_444_FULL, <span class="stringliteral">&quot;RGB 4:4:4 PC Standard (Full RGB)&quot;</span>},</div>
@@ -340,8 +335,7 @@ $(document).ready(function(){initNavTree('cpp_display__pixel_format.html',''); i
 <div class="line">        };</div>
 <div class="line">        for_each(PixelFormatMap.begin(), PixelFormatMap.end(), [&amp;](<span class="keyword">auto</span> pixelFormat) {</div>
 <div class="line">            res = displayPixelFormat-&gt;IsSupportedPixelFormat(pixelFormat.first, &amp;support);</div>
-<div class="line">            if (ADLX_SUCCEEDED(res))</div>
-<div class="line">                std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs support &quot;</span> &lt;&lt; pixelFormat.second &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; support &lt;&lt; std::endl;</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIs support &quot;</span> &lt;&lt; pixelFormat.second &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; support &lt;&lt; std::endl;</div>
 <div class="line">        });</div>
 <div class="line">    }</div>
 <div class="line">}</div>

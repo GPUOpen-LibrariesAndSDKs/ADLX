@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_manual_fan_tuning" kind="page">
+    <compoundname>DOX_IADLXManualFanTuning</compoundname>
+    <title>IADLXManualFanTuning</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_empty_fan_tuning_states">GetEmptyFanTuningStates</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_fan_tuning_ranges">GetFanTuningRanges</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_fan_tuning_states">GetFanTuningStates</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_min_acoustic_limit">GetMinAcousticLimit</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_min_acoustic_limit_range">GetMinAcousticLimitRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_min_fan_speed">GetMinFanSpeed</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_min_fan_speed_range">GetMinFanSpeedRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_target_fan_speed">GetTargetFanSpeed</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_target_fan_speed_range">GetTargetFanSpeedRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_zero_r_p_m_state">GetZeroRPMState</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__is_supported_min_acoustic_limit">IsSupportedMinAcousticLimit</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__is_supported_min_fan_speed">IsSupportedMinFanSpeed</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__is_supported_target_fan_speed">IsSupportedTargetFanSpeed</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__is_supported_zero_r_p_m">IsSupportedZeroRPM</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__is_valid_fan_tuning_states">IsValidFanTuningStates</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__set_fan_tuning_states">SetFanTuningStates</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__set_min_acoustic_limit">SetMinAcousticLimit</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__set_min_fan_speed">SetMinFanSpeed</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__set_target_fan_speed">SetTargetFanSpeed</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__set_zero_r_p_m_state">SetZeroRPMState</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXManualFanTuning</bold> interface provides methods to control manual fan tuning on a GPU.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLXManualFanTuning</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLXManualFanTuningPtr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_interface" kindref="compound">IADLXInterface</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="21" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_empty_fan_tuning_states" kindref="compound">GetEmptyFanTuningStates</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted list of empty GPU fan tuning states on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_fan_tuning_ranges" kindref="compound">GetFanTuningRanges</ref>   </para>
+</entry><entry thead="no"><para>Gets the fan speed range and the temperature range on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_fan_tuning_states" kindref="compound">GetFanTuningStates</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted list of current GPU fan tuning states on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_min_acoustic_limit" kindref="compound">GetMinAcousticLimit</ref>   </para>
+</entry><entry thead="no"><para>Gets the current minimum acoustic limit on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_min_acoustic_limit_range" kindref="compound">GetMinAcousticLimitRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the maximum value, minimum value, and step for the minimum acoustic limit on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_min_fan_speed" kindref="compound">GetMinFanSpeed</ref>   </para>
+</entry><entry thead="no"><para>Gets the current minimum fan speed on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_min_fan_speed_range" kindref="compound">GetMinFanSpeedRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the maximum value, minimum value, and step for the minimum fan speed on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_target_fan_speed" kindref="compound">GetTargetFanSpeed</ref>   </para>
+</entry><entry thead="no"><para>Gets the current target fan speed on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_target_fan_speed_range" kindref="compound">GetTargetFanSpeedRange</ref>   </para>
+</entry><entry thead="no"><para>Gets the maximum value, minimum value, and step for the target fan speed on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_zero_r_p_m_state" kindref="compound">GetZeroRPMState</ref>   </para>
+</entry><entry thead="no"><para>Checks if zero RPM is currently activated on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__is_supported_min_acoustic_limit" kindref="compound">IsSupportedMinAcousticLimit</ref>   </para>
+</entry><entry thead="no"><para>Checks if the minimum acoustic limit is supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__is_supported_min_fan_speed" kindref="compound">IsSupportedMinFanSpeed</ref>   </para>
+</entry><entry thead="no"><para>Checks if the minimum fan speed is supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__is_supported_target_fan_speed" kindref="compound">IsSupportedTargetFanSpeed</ref>   </para>
+</entry><entry thead="no"><para>Checks if the target fan speed is supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__is_supported_zero_r_p_m" kindref="compound">IsSupportedZeroRPM</ref>   </para>
+</entry><entry thead="no"><para>Checks if zero RPM is supported on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__is_valid_fan_tuning_states" kindref="compound">IsValidFanTuningStates</ref>   </para>
+</entry><entry thead="no"><para>Checks if each GPU fan tuning state in a list is valid on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__set_fan_tuning_states" kindref="compound">SetFanTuningStates</ref>   </para>
+</entry><entry thead="no"><para>Sets the fan tuning states on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__set_min_acoustic_limit" kindref="compound">SetMinAcousticLimit</ref>   </para>
+</entry><entry thead="no"><para>Sets the minimum acoustic limit on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__set_min_fan_speed" kindref="compound">SetMinFanSpeed</ref>   </para>
+</entry><entry thead="no"><para>Sets the minimum fan speed on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__set_target_fan_speed" kindref="compound">SetTargetFanSpeed</ref>   </para>
+</entry><entry thead="no"><para>Sets the target fan speed on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__set_zero_r_p_m_state" kindref="compound">SetZeroRPMState</ref>   </para>
+</entry><entry thead="no"><para>Enables or disables zero RPM on a GPU.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IGPUManualFanTuning.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp__manual_fan_tuning" kindref="compound">ManualFanTuning C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c__manual_fan_tuning" kindref="compound">ManualFanTuning C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_empty_fan_tuning_states" kindref="compound">GetEmptyFanTuningStates</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_fan_tuning_ranges" kindref="compound">GetFanTuningRanges</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_fan_tuning_states" kindref="compound">GetFanTuningStates</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_min_acoustic_limit" kindref="compound">GetMinAcousticLimit</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_min_acoustic_limit_range" kindref="compound">GetMinAcousticLimitRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_min_fan_speed" kindref="compound">GetMinFanSpeed</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_min_fan_speed_range" kindref="compound">GetMinFanSpeedRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_target_fan_speed" kindref="compound">GetTargetFanSpeed</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_target_fan_speed_range" kindref="compound">GetTargetFanSpeedRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__get_zero_r_p_m_state" kindref="compound">GetZeroRPMState</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__is_supported_min_acoustic_limit" kindref="compound">IsSupportedMinAcousticLimit</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__is_supported_min_fan_speed" kindref="compound">IsSupportedMinFanSpeed</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__is_supported_target_fan_speed" kindref="compound">IsSupportedTargetFanSpeed</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__is_supported_zero_r_p_m" kindref="compound">IsSupportedZeroRPM</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__is_valid_fan_tuning_states" kindref="compound">IsValidFanTuningStates</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__set_fan_tuning_states" kindref="compound">SetFanTuningStates</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__set_min_acoustic_limit" kindref="compound">SetMinAcousticLimit</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__set_min_fan_speed" kindref="compound">SetMinFanSpeed</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__set_target_fan_speed" kindref="compound">SetTargetFanSpeed</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__set_zero_r_p_m_state" kindref="compound">SetZeroRPMState</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXGPUTuningPage.h"/>
+  </compounddef>
+</doxygen>

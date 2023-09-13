@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_system__enable_log" kind="page">
+    <compoundname>DOX_IADLXSystem_EnableLog</compoundname>
+    <title>EnableLog</title>
+    <briefdescription>
+<para>Enables logging in ADLX. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Enables logging in ADLX.</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>    EnableLog (<ref refid="group__enumerations_1gae308b7ad24806dce3fe087e9a780be67" kindref="member">ADLX_LOG_DESTINATION</ref> mode, <ref refid="group__enumerations_1gaadfaa61953d62bced2b6c516f8bebccd" kindref="member">ADLX_LOG_SEVERITY</ref> severity, <ref refid="_d_o_x__i_a_d_l_x_log" kindref="compound">IADLXLog</ref>* pLogger, const wchar_t* fileName)
+ </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para><variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>1.</para>
+</entry><entry thead="no" class="paramdir"><para>[in] </para>
+</entry><entry thead="no" class="paramname"><para>mode</para>
+</entry><entry thead="no" class="paramtype"><para><ref refid="group__enumerations_1gae308b7ad24806dce3fe087e9a780be67" kindref="member">ADLX_LOG_DESTINATION</ref></para>
+</entry><entry thead="no"><para>The log destination. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+<variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>2.</para>
+</entry><entry thead="no" class="paramdir"><para>[in] </para>
+</entry><entry thead="no" class="paramname"><para>severity</para>
+</entry><entry thead="no" class="paramtype"><para><ref refid="group__enumerations_1gaadfaa61953d62bced2b6c516f8bebccd" kindref="member">ADLX_LOG_SEVERITY</ref></para>
+</entry><entry thead="no"><para>The logging severity. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+<variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>3.</para>
+</entry><entry thead="no" class="paramdir"><para>[in] </para>
+</entry><entry thead="no" class="paramname"><para>pLogger</para>
+</entry><entry thead="no" class="paramtype"><para><ref refid="_d_o_x__i_a_d_l_x_log" kindref="compound">IADLXLog</ref>*</para>
+</entry><entry thead="no"><para>The pointer to the log interface to receive log messages from ADLX. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+<variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>4.</para>
+</entry><entry thead="no" class="paramdir"><para>[in] </para>
+</entry><entry thead="no" class="paramname"><para>fileName</para>
+</entry><entry thead="no" class="paramtype"><para>const wchar_t*</para>
+</entry><entry thead="no"><para>The zero-terminated string that specifies the path of the log file. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If <bold>EnableLog</bold> is successfully executed, <bold>ADLX_OK</bold> is returned. <linebreak/>
+ If <bold>EnableLog</bold> is not successfully executed, an error code is returned. <linebreak/>
+ Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.</para>
+<para><heading level="2">Remarks </heading>
+</para>
+<para>By default, ADLX logging is disabled. Use <bold>EnableLog</bold> to configure log destination and severity.</para>
+<para><itemizedlist>
+<listitem><para>To configure the log destination into a file, specify the <bold>mode</bold> parameter as <bold>LOCALFILE</bold> and provide the file path in the <bold>filename</bold> parameter. The <bold>pLogger</bold> parameter must be <bold>nullptr</bold>. <linebreak/>
+</para>
+</listitem><listitem><para>To configure the log destination into the output window of the debugger, specify the <bold>mode</bold> parameter as <bold>DBGVIEW</bold>. The <bold>filename</bold> and <bold>pLogger</bold> parameters must be <bold>nullptr</bold>.<linebreak/>
+</para>
+</listitem><listitem><para>To configure the log destination to be sent as a string into the application, specify the <bold>mode</bold> parameter as <bold>APPLICATION</bold>. Implement the <ref refid="_d_o_x__i_a_d_l_x_log" kindref="compound">IADLXLog</ref> interface in the application and pass a pointer to an instance of that interface into the <bold>pLogger</bold> parameter. The log instance must exist until ADLX is terminated. The <bold>filename</bold> parameter must be <bold>nullptr</bold>.<linebreak/>
+</para>
+</listitem><listitem><para>To obtain the error messages in the ADLX execution code, specify the <bold>severity</bold> parameter as <bold>LERROR</bold>.<linebreak/>
+</para>
+</listitem><listitem><para>To obtain the error and warning messages in the ADLX execution code, specify the <bold>severity</bold> parameter as <bold>LWARNING</bold>.<linebreak/>
+</para>
+</listitem><listitem><para>To obtain error, warning, and debug tracing messages in the ADLX execution code, specify the <bold>severity</bold> parameter as <bold>LDEBUG</bold>.</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include&quot;ISystem.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h"/>
+  </compounddef>
+</doxygen>

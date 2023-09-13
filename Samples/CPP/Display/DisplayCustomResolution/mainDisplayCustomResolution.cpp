@@ -115,7 +115,7 @@ void ShowCustomResolutionSupport(IADLXDisplayCustomResolutionPtr pCustomResoluti
     std::cout << "  === custom resolution supported ===" << std::endl;
     adlx_bool supported = false;
     ADLX_RESULT res = pCustomResolution->IsSupported(&supported);
-    std::cout << "\tIsSupported result: " << res << ", supported: " << supported << std::endl;
+    std::cout << "\tIsSupported: " << supported << std::endl;
 }
 
 void GetResolutionList(IADLXDisplayCustomResolutionPtr pCustomResolution, IADLXDisplayResolutionList** ppResolutionList)

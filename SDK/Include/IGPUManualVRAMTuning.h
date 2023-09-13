@@ -43,7 +43,8 @@ namespace adlx
         * @addinfo
         * @ENG_START_DOX Some GPUs support memory timing presets for VRAM latency control to adjust the video memory clock speed. @ENG_END_DOX
         *
-        *@copydoc IADLXManualVRAMTuning1_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualVRAMTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupportedMemoryTiming (adlx_bool* supported) = 0;
@@ -73,7 +74,8 @@ namespace adlx
 		*
 		* Some GPUs support memory timing presets for VRAM latency control to adjust the video memory clock speed. @ENG_END_DOX
         *
-        *@copydoc IADLXManualVRAMTuning1_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualVRAMTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetSupportedMemoryTimingDescriptionList (IADLXMemoryTimingDescriptionList** ppDescriptionList) = 0;
@@ -100,7 +102,8 @@ namespace adlx
         * Some GPUs support memory timing presets for VRAM latency control to adjust the video memory clock speed.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualVRAMTuning1_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualVRAMTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetMemoryTimingDescription (ADLX_MEMORYTIMING_DESCRIPTION* description) = 0;
@@ -127,7 +130,8 @@ namespace adlx
         * Some GPUs support memory timing presets for VRAM latency control to adjust the video memory clock speed.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualVRAMTuning1_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualVRAMTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetMemoryTimingDescription (ADLX_MEMORYTIMING_DESCRIPTION description) = 0;
@@ -153,7 +157,8 @@ namespace adlx
         *@detaileddesc
         *@ENG_START_DOX @details The VRAM frequency range and the VRAM voltage range are applicable to all the VRAM states on this GPU. @ENG_END_DOX
         *
-        *@copydoc IADLXManualVRAMTuning1_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualVRAMTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetVRAMTuningRanges (ADLX_IntRange* frequencyRange, ADLX_IntRange* voltageRange) = 0;
@@ -181,7 +186,8 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@copydoc IADLXManualVRAMTuning1_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualVRAMTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetVRAMTuningStates (IADLXManualTuningStateList** ppVRAMStates) = 0;
@@ -210,7 +216,8 @@ namespace adlx
         *@ENG_START_DOX  All the value in this list are zero.
         * In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@copydoc IADLXManualVRAMTuning1_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualVRAMTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetEmptyVRAMTuningStates (IADLXManualTuningStateList** ppVRAMStates) = 0;
@@ -236,7 +243,8 @@ namespace adlx
         *@detaileddesc
         *@ENG_START_DOX @details If the __*pVRAMStates__ is valid then the method sets the __errorIndex__ to -1. @ENG_END_DOX
         *
-        *@copydoc IADLXManualVRAMTuning1_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualVRAMTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsValidVRAMTuningStates (IADLXManualTuningStateList* pVRAMStates, adlx_int* errorIndex) = 0;
@@ -258,7 +266,8 @@ namespace adlx
         * If the VRAM tuning states are not successfully set, an error code is returned.<br>
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
-        *@copydoc IADLXManualVRAMTuning1_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualVRAMTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetVRAMTuningStates (IADLXManualTuningStateList* pVRAMStates) = 0;
@@ -328,7 +337,8 @@ namespace adlx
         * Some GPUs support memory timing presets for VRAM latency control to adjust the video memory clock speed.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualVRAMTuning2_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualVRAMTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupportedMemoryTiming (adlx_bool* supported) = 0;
@@ -358,7 +368,8 @@ namespace adlx
 		*
 		* Some GPUs support memory timing presets for VRAM latency control to adjust the video memory clock speed. @ENG_END_DOX
         *
-        *@copydoc IADLXManualVRAMTuning2_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualVRAMTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetSupportedMemoryTimingDescriptionList (IADLXMemoryTimingDescriptionList** ppDescriptionList) = 0;
@@ -385,7 +396,8 @@ namespace adlx
         * Some GPUs support memory timing presets for VRAM latency control to adjust the video memory clock speed.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualVRAMTuning2_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualVRAMTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetMemoryTimingDescription (ADLX_MEMORYTIMING_DESCRIPTION* description) = 0;
@@ -412,7 +424,8 @@ namespace adlx
         * Some GPUs support memory timing presets for VRAM latency control to adjust the video memory clock speed.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualVRAMTuning2_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualVRAMTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetMemoryTimingDescription (ADLX_MEMORYTIMING_DESCRIPTION description) = 0;
@@ -434,7 +447,8 @@ namespace adlx
         * If the max frequency range is not successfully returned, an error code is returned.<br>
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
-        *@copydoc IADLXManualVRAMTuning2_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualVRAMTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetMaxVRAMFrequencyRange (ADLX_IntRange* tuningRange) = 0;
@@ -456,7 +470,8 @@ namespace adlx
         * If the max frequency value is not successfully returned, an error code is returned.<br>
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
-        *@copydoc IADLXManualVRAMTuning2_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualVRAMTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetMaxVRAMFrequency (adlx_int* freq) = 0;
@@ -478,7 +493,8 @@ namespace adlx
         * If the max frequency value is not successfully set, an error code is returned.<br>
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
-        *@copydoc IADLXManualVRAMTuning2_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualVRAMTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetMaxVRAMFrequency (adlx_int freq) = 0;

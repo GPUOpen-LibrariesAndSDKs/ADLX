@@ -22,34 +22,29 @@ def displayDemo():
     adlxHelper = ADLX.ADLXHelper()
     ret = adlxHelper.Initialize()
 
-    if ret == ADLX.ADLX_RESULT.ADLX_OK:
+    if(ret == ADLX.ADLX_RESULT.ADLX_OK):
         # Get systemServices
         system = adlxHelper.GetSystemServices()
 
-        if system is not None:
-            # Get displayServices
-            displayService = system.GetDisplaysServices()
+        # Get displayServices
+        displayService = system.GetDisplaysServices()
 
-            if displayService is not None:
-                # Get display change handler
-                displayChangeHandler = displayService.GetDisplayChangedHandling()
+        # Get display change handler
+        displayChangeHandler = displayService.GetDisplayChangedHandling()
+        # Python call back
+        callback = ADLX.DisplayListCallBack()
+        callback.call = callBackDisplayList
+        # Add call back
+        displayChangeHandler.AddDisplayListEventListener(callback)
+        print("Plug or unplug a display within 20 seconds.")
+        time.sleep(20)
+        # Remove call back
+        displayChangeHandler.RemoveDisplayListEventListener(callback)
+        # Release changeHandler interface
+        del displayChangeHandler
 
-                if displayChangeHandler is not None:
-                    # Python call back
-                    callback = ADLX.DisplayListCallBack()
-                    callback.call = callBackDisplayList
-                    # Add call back
-                    displayChangeHandler.AddDisplayListEventListener(callback)
-                    print("Plug or unplug a display within 20 seconds.")
-                    time.sleep(20)
-                    # Remove call back
-                    displayChangeHandler.RemoveDisplayListEventListener(callback)
-
-                    # Release changeHandler interface
-                    del displayChangeHandler
-
-                # Release displayService interface
-                del displayService
+        # Release displayService interface
+        del displayService
 
     # Terminate ADLX
     ret = adlxHelper.Terminate()

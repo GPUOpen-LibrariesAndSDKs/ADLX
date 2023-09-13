@@ -117,19 +117,18 @@ static const std::map<ADLX_TESSELLATION_LEVEL, const char*> Levels =
 void ShowSupport(const IADLX3DTessellationPtr& tessellation)
 {
     adlx_bool supported = false;
-    ADLX_RESULT res = tessellation->IsSupported(&supported);
-    std::cout << "\tIsSupported: " << supported << ", return code is: " << res << "(0 means success)" << std::endl;
+    tessellation->IsSupported(&supported);
+    std::cout << "\tIsSupported: " << supported << std::endl;
 }
 
 void GetState(const IADLX3DTessellationPtr& tessellation)
 {
     ADLX_TESSELLATION_MODE mode;
-    ADLX_RESULT res = tessellation->GetMode(&mode);
-    std::cout << "\tMode: " << Modes.find(mode)->second << ", return code is: " << res << "(0 means success)" << std::endl;
-
+    tessellation->GetMode(&mode);
     ADLX_TESSELLATION_LEVEL level;
-    res = tessellation->GetLevel(&level);
-    std::cout << "\tLevel: " << Levels.find(level)->second << ", return code is: " << res << "(0 means success)" << std::endl;
+    tessellation->GetLevel(&level);
+    std::cout << "\tMode: " << Modes.find(mode)->second << std::endl
+              << "\tLevel: " << Levels.find(level)->second << std::endl;
 }
 
 void SetMode(const IADLX3DTessellationPtr& tessellation, int index)

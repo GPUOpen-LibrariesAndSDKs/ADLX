@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_simple_eyefinity__destroy_all" kind="page">
+    <compoundname>DOX_IADLXSimpleEyefinity_DestroyAll</compoundname>
+    <title>DestroyAll</title>
+    <briefdescription>
+<para>Destroys all the AMD Eyefinity desktops. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Destroys all the AMD Eyefinity desktops.</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>    DestroyAll ()
+ </preformatted></para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If all AMD Eyefinity desktops are successfully destroyed, <bold>ADLX_OK</bold> is returned.<linebreak/>
+ If all AMD Eyefinity desktops are not successfully destroyed, an error code is returned.<linebreak/>
+ Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.<linebreak/>
+</para>
+<para><heading level="2">Remarks </heading>
+</para>
+<para>Destroying all AMD Eyefinity desktops can take a couple of seconds to complete. The method will block the execution thread until the operation is finished.</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IDesktops.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="event_8md" kind="file" language="Markdown">
+    <compoundname>event.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">@page<sp/>page_guide_event<sp/>Subscribing<sp/>to<sp/>Event<sp/>Notifications<sp/>using<sp/>ADLX</highlight></codeline>
+<codeline><highlight class="normal">&lt;!--</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">#</highlight></codeline>
+<codeline><highlight class="normal">#-------------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">--&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">ADLX<sp/>has<sp/>an<sp/>event<sp/>notification<sp/>mechanism<sp/>specific<sp/>to<sp/>each<sp/>ADLX<sp/>domain,<sp/>but<sp/>the<sp/>event<sp/>notification<sp/>in<sp/>all<sp/>the<sp/>domains<sp/>use<sp/>the<sp/>same<sp/>approach.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>application<sp/>implements<sp/>a<sp/>listener<sp/>interface<sp/>as<sp/>defined<sp/>in<sp/>the<sp/>ADLX<sp/>SDK.<sp/>An<sp/>instance<sp/>of<sp/>the<sp/>listener<sp/>interface<sp/>is<sp/>passed<sp/>to<sp/>ADLX<sp/>to<sp/>register<sp/>for<sp/>notification<sp/>when<sp/>the<sp/>respective<sp/>settings<sp/>are<sp/>changed.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>a<sp/>change<sp/>occurs,<sp/>ADLX<sp/>calls<sp/>the<sp/>method<sp/>in<sp/>this<sp/>listener<sp/>instance<sp/>and<sp/>passes<sp/>the<sp/>new<sp/>settings<sp/>as<sp/>parameters.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>events<sp/>notifications<sp/>are<sp/>no<sp/>longer<sp/>required<sp/>by<sp/>the<sp/>application,<sp/>the<sp/>application<sp/>unregisters<sp/>the<sp/>listener<sp/>instance<sp/>from<sp/>ADLX,<sp/>and<sp/>the<sp/>instance<sp/>of<sp/>the<sp/>listener<sp/>interface<sp/>can<sp/>be<sp/>destroyed<sp/>by<sp/>the<sp/>application.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Example:<sp/>The<sp/>Desktop<sp/>domain<sp/>provides<sp/>notifications<sp/>when<sp/>there<sp/>is<sp/>a<sp/>change<sp/>to<sp/>the<sp/>desktop<sp/>list.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Use<sp/>the<sp/>ADLX<sp/>event<sp/>notification<sp/>management<sp/>functionality<sp/>when<sp/>programming<sp/>a<sp/>new<sp/>application,<sp/>or<sp/>when<sp/>programming<sp/>an<sp/>existing<sp/>application<sp/>that<sp/>uses<sp/>ADL.<sp/>The<sp/>mechanism<sp/>remains<sp/>the<sp/>same<sp/>for<sp/>all<sp/>the<sp/>programming<sp/>languages,<sp/>but<sp/>there<sp/>are<sp/>language-specific<sp/>differences<sp/>in<sp/>implementation.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>program<sp/>an<sp/>application<sp/>to<sp/>get<sp/>notified<sp/>about<sp/>changes<sp/>such<sp/>as<sp/>when<sp/>desktops<sp/>are:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Created</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Removed</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Changed<sp/>-<sp/>Size<sp/>settings</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Changed<sp/>-<sp/>Location<sp/>settings</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>program<sp/>an<sp/>application<sp/>to<sp/>receive<sp/>desktop<sp/>list<sp/>change<sp/>notification,</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Implement,<sp/>and<sp/>then<sp/>create<sp/>an<sp/>instance<sp/>of<sp/>the<sp/>implemented<sp/>@ref<sp/>DOX_IADLXDesktopListChangedListener<sp/>interface.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Note:**<sp/>The<sp/>ADLX<sp/>Desktop<sp/>List<sp/>Changed<sp/>Listener<sp/>instance<sp/>is<sp/>passed<sp/>to<sp/>ADLX<sp/>and<sp/>must<sp/>exist<sp/>for<sp/>the<sp/>entire<sp/>duration<sp/>of<sp/>the<sp/>application’s<sp/>desktop<sp/>list<sp/>changed<sp/>event<sp/>registration.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>Call<sp/>@ref<sp/>DOX_IADLXSystem_GetDesktopsServices<sp/>&quot;IADLXSystem::GetDesktopServices&quot;<sp/>in<sp/>the<sp/>ADLX<sp/>System<sp/>interface.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Result:**<sp/>Gets<sp/>the<sp/>@ref<sp/>DOX_IADLXDesktopServices<sp/>interface.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">3.<sp/>Call<sp/>@ref<sp/>DOX_IADLXDesktopServices_GetDesktopChangedHandling<sp/>&quot;IADLXDesktopServices::GetDesktopChangedHandling&quot;<sp/>in<sp/>the<sp/>ADLX<sp/>Desktop<sp/>Services<sp/>interface.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Result:**<sp/>Gets<sp/>the<sp/>@ref<sp/>DOX_IADLXDesktopChangedHandling<sp/>interface.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">4.<sp/>Pass<sp/>the<sp/>ADLX<sp/>Desktop<sp/>List<sp/>Changed<sp/>Listener<sp/>instance<sp/>as<sp/>the<sp/>parameter<sp/>into<sp/>@ref<sp/>DOX_IADLXDesktopChangedHandling_AddDesktopListEventListener<sp/>&quot;IADLXDesktopChangedHandling::AddDesktopListEventListener&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Note:**<sp/>When<sp/>a<sp/>change<sp/>to<sp/>the<sp/>desktop<sp/>occurs,<sp/>the<sp/>@ref<sp/>DOX_IADLXDesktopListChangedListener_OnDesktopListChanged<sp/>is<sp/>called<sp/>into<sp/>the<sp/>ADLX<sp/>Desktop<sp/>List<sp/>Changed<sp/>Listener<sp/>instance,<sp/>with<sp/>the<sp/>new<sp/>desktop<sp/>list<sp/>as<sp/>the<sp/>@ref<sp/>DOX_IADLXDesktopList<sp/>parameter.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>unsubscribe<sp/>the<sp/>Desktop<sp/>List<sp/>Changed<sp/>notification:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Unregister<sp/>the<sp/>ADLX<sp/>Desktop<sp/>List<sp/>Changed<sp/>Listener<sp/>instance<sp/>from<sp/>ADLX<sp/>using<sp/>@ref<sp/>DOX_IADLXDesktopChangedHandling_RemoveDesktopListEventListener.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>Discard<sp/>the<sp/>desktop<sp/>list<sp/>changed<sp/>listener<sp/>instance<sp/>after<sp/>the<sp/>registration<sp/>is<sp/>removed.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Note:**<sp/>Other<sp/>ADLX<sp/>domains<sp/>that<sp/>support<sp/>event<sp/>subscription<sp/>use<sp/>the<sp/>same<sp/>mechanism<sp/>for<sp/>event<sp/>notifications.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>information,<sp/>for<sp/>C++<sp/>see<sp/>@ref<sp/>cpp_samples_files_sync<sp/>&quot;Receiving<sp/>Events<sp/>Notifications<sp/>C++<sp/>samples&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>C<sp/>see<sp/>@ref<sp/>c_samples_files_sync<sp/>&quot;Receiving<sp/>Events<sp/>Notifications<sp/>C<sp/>samples&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>C#<sp/>see<sp/>@ref<sp/>cs_sample_displayEvents<sp/>&quot;DisplayEvents<sp/>C#<sp/>samples&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>Java<sp/>see<sp/>@ref<sp/>java_sample_displayEvents<sp/>&quot;DisplayEvents<sp/>Java<sp/>samples&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>Python<sp/>see<sp/>@ref<sp/>py_sample_displayEvents<sp/>&quot;DisplayEvents<sp/>Python<sp/>samples&quot;.</highlight></codeline>
+    </programlisting>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXProgrammingGuide/event.md"/>
+  </compounddef>
+</doxygen>

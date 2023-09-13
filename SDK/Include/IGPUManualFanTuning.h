@@ -44,7 +44,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br>
         * @ENG_END_DOX
         *
-        * @copydoc IADLXManualFanTuningState_REQ_TABLE
+        * @requirements
+        * @DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetFanSpeed (adlx_int* value) = 0;
@@ -71,7 +72,8 @@ namespace adlx
         *@detaileddesc
         *@ENG_START_DOX @details Method for applying fan speed for the fan tuning state. @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuningState_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetFanSpeed (adlx_int value) = 0;
@@ -97,7 +99,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br>
         * @ENG_END_DOX
         *
-        * @copydoc IADLXManualFanTuningState_REQ_TABLE
+        * @requirements
+        * @DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetTemperature (adlx_int* value) = 0;
@@ -121,7 +124,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br>
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuningState_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetTemperature (adlx_int value) = 0;
@@ -196,7 +200,8 @@ namespace adlx
         * In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation.
         * @ENG_END_DOX
         *
-        * @copydoc IADLXManualFanTuningStateList_REQ_TABLE
+        * @requirements
+        * @DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL At (const adlx_uint location, IADLXManualFanTuningState** ppItem) = 0;
@@ -219,7 +224,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br>
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuningStateList_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL Add_Back (IADLXManualFanTuningState* pItem) = 0;
@@ -293,7 +299,8 @@ namespace adlx
         * The fan speed range and the temperature range are applicable to all GPU states on a GPU.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetFanTuningRanges (ADLX_IntRange* speedRange, ADLX_IntRange* temperatureRange) = 0;
@@ -321,7 +328,8 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetFanTuningStates (IADLXManualFanTuningStateList** ppStates) = 0;
@@ -349,7 +357,8 @@ namespace adlx
         *@addinfo
         *@ENG_START_DOX  In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation. @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetEmptyFanTuningStates (IADLXManualFanTuningStateList** ppStates) = 0;
@@ -375,7 +384,8 @@ namespace adlx
         *@detaileddesc
         *@ENG_START_DOX @details If the __*pStates__ is valid then the method sets the __errorIndex__ to -1. @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsValidFanTuningStates (IADLXManualFanTuningStateList* pStates, adlx_int* errorIndex) = 0;
@@ -397,7 +407,8 @@ namespace adlx
         * If the GPU fan tuning states are not successfully set, an error code is returned.<br>
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetFanTuningStates (IADLXManualFanTuningStateList* pStates) = 0;
@@ -424,7 +435,8 @@ namespace adlx
         * Zero RPM enables quiet operation when the GPU is under a light load and speeds up the fans when the GPU load and temperature increases.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupportedZeroRPM (adlx_bool* supported) = 0;
@@ -451,7 +463,8 @@ namespace adlx
         * Zero RPM enables quiet operation when the GPU is under a light load and speeds up the fans when the GPU load and temperature increases.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetZeroRPMState (adlx_bool* isSet) = 0;
@@ -478,7 +491,8 @@ namespace adlx
         * Zero RPM enables quiet operation when the GPU is under a light load and speeds up the fans when the GPU load and temperature increases.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetZeroRPMState (adlx_bool set) = 0;
@@ -505,7 +519,8 @@ namespace adlx
         * Some GPUs support Minimum Acoustic Limit adjustments (in MHz).
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupportedMinAcousticLimit (adlx_bool* supported) = 0;
@@ -532,7 +547,8 @@ namespace adlx
         * Some GPUs support Minimum Acoustic Limit adjustments (in MHz).
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetMinAcousticLimitRange (ADLX_IntRange* tuningRange) = 0;
@@ -559,7 +575,8 @@ namespace adlx
         * Some GPUs support Minimum Acoustic Limit adjustments (in MHz).
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetMinAcousticLimit (adlx_int* value) = 0;
@@ -586,7 +603,8 @@ namespace adlx
         * Some GPUs support Minimum Acoustic Limit adjustments (in MHz).
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetMinAcousticLimit (adlx_int value) = 0;
@@ -609,7 +627,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupportedMinFanSpeed (adlx_bool* supported) = 0;
@@ -632,7 +651,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetMinFanSpeedRange (ADLX_IntRange* tuningRange) = 0;
@@ -659,7 +679,8 @@ namespace adlx
         * Some GPUs support minimum fan speed adjustments (in MHz).
         * @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetMinFanSpeed (adlx_int* value) = 0;
@@ -681,7 +702,8 @@ namespace adlx
         * If the minimum fan speed value is not successfully set, an error code is returned.<br>
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetMinFanSpeed (adlx_int value) = 0;
@@ -703,7 +725,8 @@ namespace adlx
         * If the state of target fan speed feature is not successfully returned, an error code is returned.<br>
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupportedTargetFanSpeed (adlx_bool* supported) = 0;
@@ -725,7 +748,8 @@ namespace adlx
         * If the target fan speed range is not successfully returned, an error code is returned.<br>
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetTargetFanSpeedRange (ADLX_IntRange* tuningRange) = 0;
@@ -747,7 +771,8 @@ namespace adlx
         * If the target fan speed value is not successfully returned, an error code is returned.<br>
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetTargetFanSpeed (adlx_int* value) = 0;
@@ -769,7 +794,8 @@ namespace adlx
         * If the target fan speed value is not successfully set, an error code is returned.<br>
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
-        *@copydoc IADLXManualFanTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUManualFanTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetTargetFanSpeed (adlx_int value) = 0;

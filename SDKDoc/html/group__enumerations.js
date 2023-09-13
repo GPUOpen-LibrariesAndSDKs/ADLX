@@ -6,7 +6,6 @@ var group__enumerations =
     [ "ADLX_ANTI_ALIASING_LEVEL", "group__enumerations.html#ga8c2e57a18318ffeb5e36de7717ff953e"],
     [ "ADLX_ANTI_ALIASING_METHOD", "group__enumerations.html#gad99bac74ba876c14fa2d42c094641b44"],
     [ "ADLX_ANTI_ALIASING_MODE", "group__enumerations.html#ga4d154a77789a08d19a8d0a8ba809b64a"],
-    [ "ADLX_ANTILAG_STATE", "group__enumerations.html#ga67d22cfa2969510afada5140a157df62"],
     [ "ADLX_ASIC_FAMILY_TYPE", "group__enumerations.html#gaf4fd628e799e6a74201290ff40418d77"],
     [ "ADLX_COLOR_DEPTH", "group__enumerations.html#ga75858347333129a462cee4fdf4729d6b"],
     [ "ADLX_DESKTOP_TYPE", "group__enumerations.html#ga83322f63ada9c973559376760f141b89"],

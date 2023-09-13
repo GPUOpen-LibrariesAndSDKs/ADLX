@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="page_guide_bindjava" kind="page">
+    <compoundname>page_guide_bindjava</compoundname>
+    <title>Building Java bindings for ADLX</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This section outlines the steps to build a Java binding wrapper for ADLX, a prerequisite to programming with ADLX in a Java application. <heading level="2">Prerequisite(s)</heading>
+</para>
+<para><itemizedlist>
+<listitem><para><bold>ADLX SDK</bold> is installed.</para>
+</listitem><listitem><para><bold>Visual Studio 2019</bold> is installed.</para>
+</listitem><listitem><para><bold>swigwin 4.0.2</bold> is installed, and the path to the swigwin 4.0.2 installation is added to the <bold>Path</bold> user environment variable.</para>
+</listitem><listitem><para><bold>OpenJDK 17</bold> is installed.</para>
+</listitem><listitem><para>The path to the OpenJDK 17 installation is added to the <bold>JAVA_HOME</bold> system environment variable.</para>
+</listitem><listitem><para>The bin path for the OpenJDK 17 installation is added to the <bold>Path</bold> system environment variable.</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="2">To build ADLX bindings in Java</heading>
+</para>
+<para><orderedlist>
+<listitem><para>Create and name a folder for your Java ADLX binding wrapper, for example <computeroutput>ADLXJavaBind</computeroutput>.</para>
+</listitem><listitem><para>Create a new file in the <computeroutput>ADLXJavaBind</computeroutput> folder and title it <computeroutput>ADLXJavaBind.i</computeroutput>.</para>
+</listitem><listitem><para>Edit <computeroutput>ADLXJavaBind.i</computeroutput> and add the SDK header files for the interfaces you wish to wrap by using the SWIG input format.To create bindings for event notifications, turn on <computeroutput>director</computeroutput> wrapping callback for the respective listener interfaces.<linebreak/>
+For example,</para>
+<para><preformatted>
+    feature(&quot;director&quot;) IADLXDisplayListChangedListener;
+     </preformatted> <bold>Note:</bold> Refer to the Java samples <ref refid="java_sample_adlxjavabind" kindref="compound">ADLXJavaBind.i</ref> file for an example of a Java binding.</para>
+</listitem><listitem><para>Create a C++ Dynamic Link Library project named <computeroutput>ADLXJavaBind</computeroutput> and configure the project as follows:<itemizedlist>
+<listitem><para><table rows="3" cols="3"><row>
+<entry thead="yes"><para>Key   </para>
+</entry><entry thead="yes"><para>Value   </para>
+</entry><entry thead="yes"><para>Observations    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>VC++ Directories &gt; Include Directories   </para>
+</entry><entry thead="no"><para>$(JAVA_HOME)/include and $(JAVA_HOME)/include/win32   </para>
+</entry><entry thead="no"><para>Add path of java include and path of java/win32 include    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>C/C++ &gt; Precompiled Header   </para>
+</entry><entry thead="no"><para>Not Using Precompiled Headers   </para>
+</entry><entry thead="no"><para>Do not use precompiled headers   </para>
+</entry></row>
+</table>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Add the <computeroutput>ADLXJavaBind.i</computeroutput> file to the project.</para>
+</listitem><listitem><para>Right-click the <computeroutput>ADLXJavaBind.i</computeroutput> file and select Properties from the menu. In the Properties dialog select <bold>Configuration Properties</bold> &gt; <bold>General</bold> &gt; <bold>Item Type</bold> &gt; <bold>Custom Build Tool</bold>.<linebreak/>
+ Set the configuration as follows:<itemizedlist>
+<listitem><para><table rows="3" cols="3"><row>
+<entry thead="yes"><para>Key   </para>
+</entry><entry thead="yes"><para>Value   </para>
+</entry><entry thead="yes"><para>Observations    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Command Line   </para>
+</entry><entry thead="no"><para>if not exist $(SolutionDir)out mkdir $(SolutionDir)out swig.exe -c++ -java -package out -outdir ../out/ ADLXJavaBind.i   </para>
+</entry><entry thead="no"><para>Invoke SWIG.exe to build <computeroutput>ADLXJavaBind.i</computeroutput> file    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Outputs   </para>
+</entry><entry thead="no"><para>%(Filename)_wrap.cxx   </para>
+</entry><entry thead="no"><para>Set output file name format   </para>
+</entry></row>
+</table>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Build the project.</para>
+<para><bold>Result:</bold> The following files are added to the <computeroutput>ADLXJavaBind</computeroutput> project output folder:<itemizedlist>
+<listitem><para><computeroutput>ADLXJavaBind_wrap.h</computeroutput> file.</para>
+</listitem><listitem><para><computeroutput>ADLXJavaBind_wrap.cxx</computeroutput> file.</para>
+</listitem><listitem><para>Several *.java files.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Add the following files to the project:<itemizedlist>
+<listitem><para><computeroutput>ADLXJavaBind_wrap.h</computeroutput></para>
+</listitem><listitem><para><computeroutput>ADLXJavaBind_wrap.cxx</computeroutput></para>
+</listitem><listitem><para><computeroutput>SDK/Platform/Windows/WinAPIs.cpp</computeroutput></para>
+</listitem><listitem><para><computeroutput>SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h</computeroutput></para>
+</listitem><listitem><para><computeroutput>SDK/ADLXHelper/Windows/Cpp/ADLXHelper.cpp</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Rebuild the project.</para>
+<para><bold>Result:</bold> The <computeroutput>ADLXJavaBind.dll</computeroutput> is built in the <computeroutput>&quot;$(SolutionDir)$(Platform)$/(Configuration)/&quot;</computeroutput> folder. </para>
+</listitem></orderedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXProgrammingGuide/ADLXJavaBind.md"/>
+  </compounddef>
+</doxygen>

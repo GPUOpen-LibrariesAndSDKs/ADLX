@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_manual_graphics_tuning1" kind="page">
+    <compoundname>DOX_IADLXManualGraphicsTuning1</compoundname>
+    <title>IADLXManualGraphicsTuning1</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__get_empty_g_p_u_tuning_states">GetEmptyGPUTuningStates</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__get_g_p_u_tuning_ranges">GetGPUTuningRanges</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__get_g_p_u_tuning_states">GetGPUTuningStates</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__is_valid_g_p_u_tuning_states">IsValidGPUTuningStates</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__set_g_p_u_tuning_states">SetGPUTuningStates</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXManualGraphicsTuning1</bold> interface provides methods to control the GPU manual graphic tuning for pre-RDNA ASIC family.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLXManualGraphicsTuning1</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLXManualGraphicsTuning1Ptr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_interface" kindref="compound">IADLXInterface</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="6" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__get_empty_g_p_u_tuning_states" kindref="compound">GetEmptyGPUTuningStates</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted list of empty GPU tuning states.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__get_g_p_u_tuning_ranges" kindref="compound">GetGPUTuningRanges</ref>   </para>
+</entry><entry thead="no"><para>Gets the frequency range and the voltage range on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__get_g_p_u_tuning_states" kindref="compound">GetGPUTuningStates</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted list of current GPU tuning states.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__is_valid_g_p_u_tuning_states" kindref="compound">IsValidGPUTuningStates</ref>   </para>
+</entry><entry thead="no"><para>Checks if each GPU tuning state in a list is valid.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__set_g_p_u_tuning_states" kindref="compound">SetGPUTuningStates</ref>   </para>
+</entry><entry thead="no"><para>Sets the GPU tuning states on a GPU.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IGPUManualGFXTuning.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp__manual_graphics_tuning" kindref="compound">ManualGraphicsTuning C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c__manual_graphics_tuning" kindref="compound">ManualGraphicsTuning C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__get_empty_g_p_u_tuning_states" kindref="compound">GetEmptyGPUTuningStates</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__get_g_p_u_tuning_ranges" kindref="compound">GetGPUTuningRanges</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__get_g_p_u_tuning_states" kindref="compound">GetGPUTuningStates</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__is_valid_g_p_u_tuning_states" kindref="compound">IsValidGPUTuningStates</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__set_g_p_u_tuning_states" kindref="compound">SetGPUTuningStates</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXGPUTuningPage.h"/>
+  </compounddef>
+</doxygen>

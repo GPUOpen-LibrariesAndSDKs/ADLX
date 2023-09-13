@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,14 +105,25 @@ $(document).ready(function(){initNavTree('page_programwithadlx.html',''); initRe
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h2>In this section </h2>
-<p>This section contains information for developers to get started, such as hardware and software requirements, the minimum-supported operating system versions, and a Quick Start guide with instructions on how to build applications in each of the supported programming languages.</p>
-<h3>ADLX Programming Guide </h3>
-<p><a class="el" href="page_adlxprogrammingguide.html">ADLX Programming Guide</a> outlines general topics such as system requirements, benefits of using ADLX compared to ADL, a quick-start guide, and advanced configuration.<br  />
-<br  />
+<p>This section contains the ADLX Programming Guide and ADLX Samples.<br  />
 </p>
-<h3>ADLX Samples </h3>
-<p><a class="el" href="domain_sample_page.html">ADLX Samples</a> provides code samples in C, C++, C#, Java, and Python to demonstrate ADLX functionality usage scenarios in basic applications to help developers get started quickly.<br  />
+<ul>
+<li>The ADLX Programming Guide contains general information for developers to get started; outlining the benefits, system requirements, and set up configuration to start programming with ADLX APIs.</li>
+<li>The ADLX Samples section provides C, C++, C#, Java, and Python samples to demonstrate ADLX functionality implementation in basic applications.</li>
+</ul>
+<h3>Installation </h3>
+<p>The library is installed with the display driver, and the ADLX SDK consisting of the following is available on <a href="https://gpuopen.com/adl/" class="el">AMD GPUOpen</a>.</p>
+<ul>
+<li>ADLX headers with definitions of all types, constants, functions, and interfaces required to program with ADLX</li>
+<li>ADLX helper code simplifying the ADLX loading and unloading process in C++, C, C#, Java, and Python</li>
+<li>ADLX samples demonstrating full ADLX functionality in C++ and in C, as well as select functionality in C#, Java, and Python</li>
+<li>SDK developer documentation</li>
+</ul>
+<h3>Bindings </h3>
+<p>ADLX APIs are developed for C++, and mirrored in C. APIs for all other programming languages are not natively supported, but can still be utilized with bindings.<br  />
 </p>
+<p>Instructions to build and implement ADLX bindings for common use cases in C#, Java, and Python can be found in <b>Quick Start</b>.</p>
+<p>The C#, Java, and Python samples, located in <a class="el" href="sample_page.html">ADLX Samples</a> can then be used to create bindings to fit specific use cases.</p>
 <ul>
 </ul>
 </div></div><!-- contents -->

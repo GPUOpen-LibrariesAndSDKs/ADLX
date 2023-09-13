@@ -93,25 +93,20 @@ int main()
 void ShowRadeonSuperResolutionSupport(IADLX3DRadeonSuperResolution* rsr)
 {
     adlx_bool supported = false;
-    ADLX_RESULT res = rsr->pVtbl->IsSupported(rsr, &supported);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tIsSupported: %d\n", supported);
+    rsr->pVtbl->IsSupported(rsr, &supported);
+    printf("\tIsSupported: %d\n", supported);
 }
 
 void GetRadeonSuperResolutionState(IADLX3DRadeonSuperResolution* rsr)
 {
     adlx_bool enabled = false;
-    ADLX_RESULT res = rsr->pVtbl->IsEnabled(rsr, &enabled);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tIsEnabled: %d\n", enabled);
+    rsr->pVtbl->IsEnabled(rsr, &enabled);
+    printf("\tIsEnabled: %d\n", enabled);
     adlx_int sharpness;
     ADLX_IntRange sharpnessRange;
-    res = rsr->pVtbl->GetSharpness(rsr, &sharpness);
-    if (ADLX_SUCCEEDED (res))
-        printf("\tCurrent sharpness: %d\n", sharpness);
-    res = rsr->pVtbl->GetSharpnessRange(rsr, &sharpnessRange);
-    if (ADLX_SUCCEEDED (res))
-        printf("\tSharpness limit [ %d , %d ], step: %d\n", sharpnessRange.minValue, sharpnessRange.maxValue, sharpnessRange.step);
+    rsr->pVtbl->GetSharpness(rsr, &sharpness);
+    rsr->pVtbl->GetSharpnessRange(rsr, &sharpnessRange);
+    printf("\tCurrent sharpness: %d\n\tSharpness limit [ %d , %d ], step: %d\n", sharpness, sharpnessRange.minValue, sharpnessRange.maxValue, sharpnessRange.step);
 }
 
 void SetRadeonSuperResolutionState(IADLX3DRadeonSuperResolution* rsr, int index)
@@ -123,20 +118,17 @@ void SetRadeonSuperResolutionState(IADLX3DRadeonSuperResolution* rsr, int index)
     {
         adlx_int sharpness;
         ADLX_IntRange sharpnessRange;
-        ADLX_RESULT res1 = rsr->pVtbl->GetSharpness(rsr, &sharpness);
-        ADLX_RESULT res2 = rsr->pVtbl->GetSharpnessRange(rsr, &sharpnessRange);
-        if (ADLX_SUCCEEDED (res1) && ADLX_SUCCEEDED (res2))
+        rsr->pVtbl->GetSharpness(rsr, &sharpness);
+        rsr->pVtbl->GetSharpnessRange(rsr, &sharpnessRange);
+        if (sharpness != sharpnessRange.minValue)
         {
-            if (sharpness != sharpnessRange.minValue)
-            {
-                res = rsr->pVtbl->SetSharpness(rsr, sharpnessRange.minValue);
-                printf("\tUse minimum sharpness limit, return code is: %d (0 means success)\n", res);
-            }
-            else
-            {
-                res = rsr->pVtbl->SetSharpness(rsr, sharpnessRange.maxValue);
-                printf("\tUse maximum sharpness limit, return code is: %d (0 means success)\n", res);
-            }
+            res = rsr->pVtbl->SetSharpness(rsr, sharpnessRange.minValue);
+            printf("\tUse minimum sharpness limit, return code is: %d (0 means success)\n", res);
+        }
+        else
+        {
+            res = rsr->pVtbl->SetSharpness(rsr, sharpnessRange.maxValue);
+            printf("\tUse maximum sharpness limit, return code is: %d (0 means success)\n", res);
         }
     }
 }

@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_g_p_u_auto_tuning__start_undervolt_g_p_u" kind="page">
+    <compoundname>DOX_IADLXGPUAutoTuning_StartUndervoltGPU</compoundname>
+    <title>StartUndervoltGPU</title>
+    <briefdescription>
+<para>Starts GPU undervolting on a GPU. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Starts GPU undervolting on a GPU.</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>    StartUndervoltGPU (<ref refid="_d_o_x__i_a_d_l_x_g_p_u_auto_tuning_complete_listener" kindref="compound">IADLXGPUAutoTuningCompleteListener</ref>* pCompleteListener)
+ </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para><variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>1.</para>
+</entry><entry thead="no" class="paramdir"><para>[in]</para>
+</entry><entry thead="no" class="paramname"><para>pCompleteListener</para>
+</entry><entry thead="no" class="paramtype"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_auto_tuning_complete_listener" kindref="compound">IADLXGPUAutoTuningCompleteListener</ref>*</para>
+</entry><entry thead="no"><para>The pointer to a GPU tuning complete listener interface. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If the GPU undervolting is successfully started, <bold>ADLX_OK</bold> is returned.<linebreak/>
+ If the GPU undervolting is not successfully started, an error code is returned.<linebreak/>
+ Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.<linebreak/>
+</para>
+<para><heading level="2">Remarks </heading>
+</para>
+<para>The <bold>StartUndervoltGPU</bold> method triggers an asynchronous execution for the autotuning and returns immediately. When the autotuning is completed, ADLX calls <ref refid="_d_o_x__i_a_d_l_x_g_p_u_auto_tuning_complete_listener__on_g_p_u_auto_tuning_complete" kindref="compound">OnGPUAutoTuningComplete</ref> in the GPU tuning complete listener. After the event is raised, <ref refid="_d_o_x__i_a_d_l_x_g_p_u_auto_tuning__is_current_undervolt_g_p_u" kindref="compound">IsCurrentUndervoltGPU</ref> returns <bold>true</bold>.</para>
+<para><heading level="2">Additional Info </heading>
+</para>
+<para>GPU undervolting reduces voltage and maintains clock speed to improve performance per watt.</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IGPUAutoTuning.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUAutoTuning.h"/>
+  </compounddef>
+</doxygen>

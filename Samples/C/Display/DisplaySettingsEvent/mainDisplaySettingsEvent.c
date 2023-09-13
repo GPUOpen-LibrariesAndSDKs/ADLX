@@ -250,12 +250,9 @@ void DisplayUniqueName(IADLXDisplay* display, char* uniqueName)
     if (NULL != display && NULL != uniqueName)
     {
         const char* gpuName = NULL;
-        ADLX_RESULT res = display->pVtbl->Name(display, &gpuName);
-        if (ADLX_SUCCEEDED(res))
-            sprintf_s(uniqueName, 128, "name:%s", gpuName);
+        display->pVtbl->Name(display, &gpuName);
         adlx_size id;
-        res = display->pVtbl->UniqueId(display, &id);
-        if (ADLX_SUCCEEDED(res))
-            sprintf_s(uniqueName, 128, "id:%zu", id);
+        display->pVtbl->UniqueId(display, &id);
+        sprintf_s(uniqueName, 128, "name:%s, id:%zu", gpuName, id);
     }
 }

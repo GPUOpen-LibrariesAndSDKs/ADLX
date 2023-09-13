@@ -112,21 +112,20 @@ int main()
 void ShowImageSharpenSupport(IADLX3DImageSharpening* d3dImageSharpen)
 {
     adlx_bool supported = false;
-    ADLX_RESULT res = d3dImageSharpen->pVtbl->IsSupported(d3dImageSharpen, &supported);
-    printf("\tIsSupported: %d, return code is: %d(0 means success)\n", supported, res);
+    d3dImageSharpen->pVtbl->IsSupported(d3dImageSharpen, &supported);
+    printf("\tIsSupported: %d\n", supported);
 }
 
 void GetImageSharpenState(IADLX3DImageSharpening* d3dImageSharpen)
 {
     adlx_bool enabled = false;
-    ADLX_RESULT res = d3dImageSharpen->pVtbl->IsEnabled(d3dImageSharpen, &enabled);
-    printf("\tIsEnabled: %d, return code is: %d(0 means success)\n", enabled, res);
+    d3dImageSharpen->pVtbl->IsEnabled(d3dImageSharpen, &enabled);
+    printf("\tIsEnabled: %d\n", enabled);
     adlx_int min;
     ADLX_IntRange range = { 0 };
-    res = d3dImageSharpen->pVtbl->GetSharpness(d3dImageSharpen, &min);
-    printf("\tCurrent Sharpness: %d, return code is: %d(0 means success)\n", min, res);
-    res = d3dImageSharpen->pVtbl->GetSharpnessRange(d3dImageSharpen, &range);
-    printf("\tSharpness limit [ %d , %d ], step: %d, return code is: %d(0 means success)\n", range.minValue, range.maxValue, range.step, res);
+    d3dImageSharpen->pVtbl->GetSharpness(d3dImageSharpen, &min);
+    d3dImageSharpen->pVtbl->GetSharpnessRange(d3dImageSharpen, &range);
+    printf("\tCurrent Sharpness: %d\n\tSharpness limit [ %d , %d ], step: %d\n", min, range.minValue, range.maxValue, range.step);
 }
 
 void SetImageSharpenState(IADLX3DImageSharpening* d3dImageSharpen, int index)

@@ -112,25 +112,20 @@ int main()
 void ShowBoostSupport(IADLX3DBoost* d3dBoost)
 {
     adlx_bool supported = false;
-    ADLX_RESULT res = d3dBoost->pVtbl->IsSupported(d3dBoost, &supported);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tIsSupported: %d\n", supported);
+    d3dBoost->pVtbl->IsSupported(d3dBoost, &supported);
+    printf("\tIsSupported: %d\n", supported);
 }
 
 void GetBoostState(IADLX3DBoost* d3dBoost)
 {
     adlx_bool enabled = false;
-    ADLX_RESULT res = d3dBoost->pVtbl->IsEnabled(d3dBoost, &enabled);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tIsEnabled: %d\n", enabled);
+    d3dBoost->pVtbl->IsEnabled(d3dBoost, &enabled);
+    printf("\tIsEnabled: %d\n", enabled);
     adlx_int minRes;
     ADLX_IntRange resolutionRange;
-    res = d3dBoost->pVtbl->GetResolution(d3dBoost, &minRes);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tCurrent Resolution: %d\n", minRes);
-    res = d3dBoost->pVtbl->GetResolutionRange(d3dBoost, &resolutionRange);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tResolution limit [ %d , %d ], step: %d\n", resolutionRange.minValue, resolutionRange.maxValue, resolutionRange.step);
+    d3dBoost->pVtbl->GetResolution(d3dBoost, &minRes);
+    d3dBoost->pVtbl->GetResolutionRange(d3dBoost, &resolutionRange);
+    printf("\tCurrent Resolution: %d\n,\tResolution limit [ %d , %d ], step: %d\n", minRes, resolutionRange.minValue, resolutionRange.maxValue, resolutionRange.step);
 }
 
 void SetBoostState(IADLX3DBoost* d3dBoost, int index)
@@ -142,20 +137,17 @@ void SetBoostState(IADLX3DBoost* d3dBoost, int index)
     {
         adlx_int minRes;
         ADLX_IntRange resolutionRange;
-        ADLX_RESULT res1 = d3dBoost->pVtbl->GetResolution(d3dBoost, &minRes);
-        ADLX_RESULT res2 = d3dBoost->pVtbl->GetResolutionRange(d3dBoost, &resolutionRange);
-        if (ADLX_SUCCEEDED (res1) && ADLX_SUCCEEDED (res2))
+        d3dBoost->pVtbl->GetResolution(d3dBoost, &minRes);
+        d3dBoost->pVtbl->GetResolutionRange(d3dBoost, &resolutionRange);
+        if (minRes != resolutionRange.minValue)
         {
-            if (minRes != resolutionRange.minValue)
-            {
-                res = d3dBoost->pVtbl->SetResolution(d3dBoost, resolutionRange.minValue);
-                printf("\tUse minimum resolution limit, return code is: %d (0 means success)\n", res);
-            }
-            else
-            {
-                res = d3dBoost->pVtbl->SetResolution(d3dBoost, resolutionRange.maxValue);
-                printf("\tUse maximum resolution limit, return code is: %d (0 means success)\n", res);
-            }
+            res = d3dBoost->pVtbl->SetResolution(d3dBoost, resolutionRange.minValue);
+            printf("\tUse minimum resolution limit, return code is: %d (0 means success)\n", res);
+        }
+        else
+        {
+            res = d3dBoost->pVtbl->SetResolution(d3dBoost, resolutionRange.maxValue);
+            printf("\tUse maximum resolution limit, return code is: %d (0 means success)\n", res);
         }
     }
 }

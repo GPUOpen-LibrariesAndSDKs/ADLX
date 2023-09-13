@@ -155,18 +155,17 @@ static char* getLevelStr(ADLX_TESSELLATION_LEVEL level)
 void ShowSupport(IADLX3DTessellation* tessellation)
 {
     adlx_bool supported = false;
-    ADLX_RESULT res = tessellation->pVtbl->IsSupported(tessellation, &supported);
-    printf("\tIsSupported: %d, return code is: %d(0 means success)\n", supported, res);
+    tessellation->pVtbl->IsSupported(tessellation, &supported);
+    printf("\tIsSupported: %d\n", supported);
 }
 
 void GetState(IADLX3DTessellation* tessellation)
 {
     ADLX_TESSELLATION_MODE mode;
-    ADLX_RESULT res = tessellation->pVtbl->GetMode(tessellation, &mode);
-    printf("\tMode: %s, return code is: %d(0 means success)\n", getModeStr(mode), res);
+    tessellation->pVtbl->GetMode(tessellation, &mode);
     ADLX_TESSELLATION_LEVEL level;
-    res = tessellation->pVtbl->GetLevel(tessellation, &level);
-    printf("\tLevel: %s, return code is: %d(0 means success)\n", getLevelStr(level), res);
+    tessellation->pVtbl->GetLevel(tessellation, &level);
+    printf("\tMode: %s\n\tLevel: %s\n", getModeStr(mode), getLevelStr(level));
 }
 
 void SetMode(IADLX3DTessellation* tessellation, int index)

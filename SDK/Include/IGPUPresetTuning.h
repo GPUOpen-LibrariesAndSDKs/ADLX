@@ -43,7 +43,8 @@ namespace adlx
         * Use of the power saver tuning preset is limited to some GPUs.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUPresetTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUPresetTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupportedPowerSaver (adlx_bool* supported) = 0;
@@ -70,7 +71,8 @@ namespace adlx
         * The quiet tuning preset enables quiet operation with lowered power and fan settings.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUPresetTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUPresetTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupportedQuiet (adlx_bool* supported) = 0;
@@ -97,7 +99,8 @@ namespace adlx
         * The balanced tuning preset offers all-round performance with a balance of power, clocks, and fan settings. Use of the balanced tuning preset is limited to some GPUs.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUPresetTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUPresetTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupportedBalanced (adlx_bool* supported) = 0;
@@ -124,7 +127,8 @@ namespace adlx
         * The turbo tuning preset sets a higher power limit to allow more headroom for performance. Use of the turbo tuning preset is limited to some GPUs.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUPresetTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUPresetTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupportedTurbo (adlx_bool* supported) = 0;
@@ -151,7 +155,8 @@ namespace adlx
         * The rage tuning preset sets a higher power limit to allow more headroom for performance.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUPresetTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUPresetTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupportedRage (adlx_bool* supported) = 0;
@@ -178,7 +183,8 @@ namespace adlx
         * Use of the power saver tuning preset is limited to some GPUs.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUPresetTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUPresetTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsCurrentPowerSaver (adlx_bool* isPowerSaver) = 0;
@@ -205,7 +211,8 @@ namespace adlx
         * The quiet tuning preset enables quiet operation with lowered power and fan settings.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUPresetTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUPresetTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsCurrentQuiet (adlx_bool* isQuiet) = 0;
@@ -232,7 +239,8 @@ namespace adlx
         * The balanced tuning preset offers all-round performance with a balance of power, clocks, and fan settings. Use of the balanced tuning preset is limited to some GPUs.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUPresetTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUPresetTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsCurrentBalanced (adlx_bool* isBalance) = 0;
@@ -259,7 +267,8 @@ namespace adlx
         * The turbo tuning preset sets a higher power limit to allow more headroom for performance. Use of the turbo preset is limited to some GPUs.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUPresetTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUPresetTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsCurrentTurbo (adlx_bool* isTurbo) = 0;
@@ -286,7 +295,8 @@ namespace adlx
         * The rage tuning preset sets a higher power limit to allow more headroom for performance.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUPresetTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUPresetTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsCurrentRage (adlx_bool* isRage) = 0;
@@ -313,7 +323,8 @@ namespace adlx
         * Use of the power saver tuning preset is limited to some GPUs.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUPresetTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUPresetTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetPowerSaver () = 0;
@@ -340,7 +351,8 @@ namespace adlx
         * The quiet tuning preset enables quiet operation with lowered power and fan settings.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUPresetTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUPresetTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetQuiet () = 0;
@@ -367,7 +379,8 @@ namespace adlx
         * The balanced tuning preset offers all-round performance with a balance of power, clocks, and fan settings. Use of the balanced tuning preset is limited to some GPUs.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUPresetTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUPresetTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetBalanced () = 0;
@@ -394,7 +407,8 @@ namespace adlx
         * The turbo tuning preset sets a higher power limit to allow more headroom for performance. Use of the turbo tuning preset is limited to some GPUs.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUPresetTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUPresetTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetTurbo () = 0;
@@ -421,7 +435,8 @@ namespace adlx
         * The rage tuning preset sets a higher power limit to allow more headroom for performance.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXGPUPresetTuning_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IGPUPresetTuning.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetRage () = 0;

@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -228,25 +228,21 @@ $(document).ready(function(){initNavTree('cpp__boost.html',''); initResizable();
 <div class="line"><span class="keywordtype">void</span> ShowBoostSupport(<span class="keyword">const</span> IADLX3DBoostPtr&amp; d3dBoost)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dBoost-&gt;IsSupported(&amp;supported);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupported: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
+<div class="line">    d3dBoost-&gt;IsSupported(&amp;supported);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupported: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> GetBoostState(<span class="keyword">const</span> IADLX3DBoostPtr&amp; d3dBoost)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool enabled = <span class="keyword">false</span>;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dBoost-&gt;IsEnabled(&amp;enabled);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsEnabled: &quot;</span> &lt;&lt; enabled &lt;&lt; std::endl;</div>
+<div class="line">    d3dBoost-&gt;IsEnabled(&amp;enabled);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsEnabled: &quot;</span> &lt;&lt; enabled &lt;&lt; std::endl;</div>
 <div class="line">    adlx_int resolution;</div>
 <div class="line">    <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> resolutionRange;</div>
-<div class="line">    res = d3dBoost-&gt;GetResolution(&amp;resolution);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tCurrent Resolution:&quot;</span> &lt;&lt; resolution &lt;&lt; std::endl;</div>
-<div class="line">    res = d3dBoost-&gt;GetResolutionRange(&amp;resolutionRange);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tResolution limit [ &quot;</span> &lt;&lt; resolutionRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> &lt;&lt; <span class="stringliteral">&quot; ,&quot;</span> &lt;&lt; resolutionRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> &lt;&lt; <span class="stringliteral">&quot; ], step: &quot;</span> &lt;&lt; resolutionRange.<a class="code" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a> &lt;&lt; std::endl;</div>
+<div class="line">    d3dBoost-&gt;GetResolution(&amp;resolution);</div>
+<div class="line">    d3dBoost-&gt;GetResolutionRange(&amp;resolutionRange);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tCurrent Resolution:&quot;</span> &lt;&lt; resolution &lt;&lt; std::endl</div>
+<div class="line">              &lt;&lt; <span class="stringliteral">&quot;\tResolution limit [ &quot;</span> &lt;&lt; resolutionRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> &lt;&lt; <span class="stringliteral">&quot; ,&quot;</span> &lt;&lt; resolutionRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> &lt;&lt; <span class="stringliteral">&quot; ], step: &quot;</span> &lt;&lt; resolutionRange.<a class="code" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetBoostState(<span class="keyword">const</span> IADLX3DBoostPtr&amp; d3dBoost, <span class="keywordtype">int</span> index)</div>
@@ -258,20 +254,17 @@ $(document).ready(function(){initNavTree('cpp__boost.html',''); initResizable();
 <div class="line">    {</div>
 <div class="line">        adlx_int resolution;</div>
 <div class="line">        <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> resolutionRange;</div>
-<div class="line">        <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res1 = d3dBoost-&gt;GetResolution(&amp;resolution);</div>
-<div class="line">        <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res2 = d3dBoost-&gt;GetResolutionRange(&amp;resolutionRange);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res1) &amp;&amp; <a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res2))</div>
+<div class="line">        d3dBoost-&gt;GetResolution(&amp;resolution);</div>
+<div class="line">        d3dBoost-&gt;GetResolutionRange(&amp;resolutionRange);</div>
+<div class="line">        <span class="keywordflow">if</span> (resolution != resolutionRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>)</div>
 <div class="line">        {</div>
-<div class="line">            <span class="keywordflow">if</span> (resolution != resolutionRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>)</div>
-<div class="line">            {</div>
-<div class="line">                res = d3dBoost-&gt;SetResolution(resolutionRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>);</div>
-<div class="line">                std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet minimum resolution limit: return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">            }</div>
-<div class="line">            <span class="keywordflow">else</span></div>
-<div class="line">            {</div>
-<div class="line">                res = d3dBoost-&gt;SetResolution(resolutionRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>);</div>
-<div class="line">                std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet maximum resolution limit: return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">            }</div>
+<div class="line">            res = d3dBoost-&gt;SetResolution(resolutionRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>);</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet minimum resolution limit: return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">        {</div>
+<div class="line">            res = d3dBoost-&gt;SetResolution(resolutionRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>);</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet maximum resolution limit: return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
@@ -335,10 +328,10 @@ $(document).ready(function(){initNavTree('cpp__boost.html',''); initResizable();
 <div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:282</div></div>
 <div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:305</div></div>
 <div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:278</div></div>
-<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:154</div></div>
-<div class="ttc" id="agroup__structures_val_html_ae0e545b501a683c565f08089ed3e8023"><div class="ttname"><a href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">ADLX_IntRange::step</a></div><div class="ttdeci">adlx_int step</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:155</div></div>
-<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:153</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:152</div></div>
+<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:155</div></div>
+<div class="ttc" id="agroup__structures_val_html_ae0e545b501a683c565f08089ed3e8023"><div class="ttname"><a href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">ADLX_IntRange::step</a></div><div class="ttdeci">adlx_int step</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:156</div></div>
+<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:154</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">Structure contains interger range information.</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:153</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

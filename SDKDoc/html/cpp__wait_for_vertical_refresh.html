@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -237,18 +237,18 @@ $(document).ready(function(){initNavTree('cpp__wait_for_vertical_refresh.html','
 <div class="line"><span class="keywordtype">void</span> ShowvsyncSupport(<span class="keyword">const</span> IADLX3DWaitForVerticalRefreshPtr&amp; vsync)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = vsync-&gt;IsSupported(&amp;supported);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupported: &quot;</span> &lt;&lt; supported &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    vsync-&gt;IsSupported(&amp;supported);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupported: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> GetvsyncState(<span class="keyword">const</span> IADLX3DWaitForVerticalRefreshPtr&amp; vsync)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool enabled = <span class="keyword">false</span>;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = vsync-&gt;IsEnabled(&amp;enabled);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsEnabled: &quot;</span> &lt;&lt; enabled &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    vsync-&gt;IsEnabled(&amp;enabled);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsEnabled: &quot;</span> &lt;&lt; enabled &lt;&lt; std::endl;</div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga169a825952eda7e83b949176a9a81028">ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE</a> mode = WFVR_ALWAYS_OFF;</div>
-<div class="line">    res = vsync-&gt;GetMode(&amp;mode);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tMode: &quot;</span> &lt;&lt; vsyncMode.find(mode)-&gt;second &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    vsync-&gt;GetMode(&amp;mode);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tMode: &quot;</span> &lt;&lt; vsyncMode.find(mode)-&gt;second &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetvsyncMode(<span class="keyword">const</span> IADLX3DWaitForVerticalRefreshPtr&amp; vsync, <span class="keywordtype">int</span> index)</div>

@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_mapping__get_a_d_l_x_display_from_a_d_l_ids" kind="page">
+    <compoundname>DOX_IADLMapping_GetADLXDisplayFromADLIds</compoundname>
+    <title>GetADLXDisplayFromADLIds</title>
+    <briefdescription>
+<para>Gets the reference counted <ref refid="_d_o_x__i_a_d_l_x_display" kindref="compound">IADLXDisplay</ref> interface corresponding to the display with the specified ADL adapter index, display index, PCI bus number, device number, and function number. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Gets the reference counted <ref refid="_d_o_x__i_a_d_l_x_display" kindref="compound">IADLXDisplay</ref> interface corresponding to the display with the specified ADL adapter index, display index, PCI bus number, device number, and function number.</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>    GetADLXDisplayFromADLIds (adlx_int adapterIndex, adlx_int displayIndex, adlx_int bus, adlx_int device, adlx_int function, <ref refid="_d_o_x__i_a_d_l_x_display" kindref="compound">IADLXDisplay</ref>** ppDisplay)
+ </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para><variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>1.</para>
+</entry><entry thead="no" class="paramdir"><para>[in] </para>
+</entry><entry thead="no" class="paramname"><para>adapterIndex</para>
+</entry><entry thead="no" class="paramtype"><para>adlx_int </para>
+</entry><entry thead="no"><para>The ADL adapter index of the GPU where the requested display is connected. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+<variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>2.</para>
+</entry><entry thead="no" class="paramdir"><para>[in] </para>
+</entry><entry thead="no" class="paramname"><para>displayIndex</para>
+</entry><entry thead="no" class="paramtype"><para>adlx_int </para>
+</entry><entry thead="no"><para>The ADL logical display index of the requested display. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+<variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>3.</para>
+</entry><entry thead="no" class="paramdir"><para>[in] </para>
+</entry><entry thead="no" class="paramname"><para>bus</para>
+</entry><entry thead="no" class="paramtype"><para>adlx_int </para>
+</entry><entry thead="no"><para>The unique PCIE bus number of the GPU where the requested display is connected. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+<variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>4.</para>
+</entry><entry thead="no" class="paramdir"><para>[in] </para>
+</entry><entry thead="no" class="paramname"><para>device</para>
+</entry><entry thead="no" class="paramtype"><para>adlx_int </para>
+</entry><entry thead="no"><para>The device number of the GPU where the requested display is connected. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+<variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>5.</para>
+</entry><entry thead="no" class="paramdir"><para>[in] </para>
+</entry><entry thead="no" class="paramname"><para>function</para>
+</entry><entry thead="no" class="paramtype"><para>adlx_int </para>
+</entry><entry thead="no"><para>The device number of the GPU where the requested display is connected. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+<variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>6.</para>
+</entry><entry thead="no" class="paramdir"><para>[out] </para>
+</entry><entry thead="no" class="paramname"><para>ppDisplay</para>
+</entry><entry thead="no" class="paramtype"><para><ref refid="_d_o_x__i_a_d_l_x_display" kindref="compound">IADLXDisplay</ref>**</para>
+</entry><entry thead="no"><para>The address of the pointer to the returned interface. If the display was not found, the method sets the dereferenced address <bold>*ppDisplay</bold> to <bold>nullptr</bold>. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If the <ref refid="_d_o_x__i_a_d_l_x_display" kindref="compound">IADLXDisplay</ref> interface is successfully returned, <bold>ADLX_OK</bold> is returned. <linebreak/>
+ If the <ref refid="_d_o_x__i_a_d_l_x_display" kindref="compound">IADLXDisplay</ref> interface is not returned, an error code is returned. <linebreak/>
+ Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.</para>
+<para><heading level="2">Remarks </heading>
+</para>
+<para><bold>GetADLXDisplayFromADLIds</bold> is used when an ADLX method must be called for a display obtained from ADL. The ADL adapter index corresponds to the GPU to which the display is connected. <linebreak/>
+ The display index corresponds to the <bold>ADLDisplayID.iDisplayLogicalIndex</bold> field for the display. <linebreak/>
+ The PCI bus number, device number, and function number parameters correspond to ADL <bold>AdapterInfo.iBusNumber</bold>, <bold>AdapterInfo.iDeviceNumber</bold>, and <bold>AdapterInfo.iFunctionNumber</bold> for the GPU where that display is connected.<linebreak/>
+ The returned interface must be discarded with <ref refid="_d_o_x__i_a_d_l_x_interface__release" kindref="compound">Release</ref> when it is no longer needed.</para>
+<para><heading level="2">Additional Info </heading>
+</para>
+<para>In C++ when using a smart pointer for the returned interface there is no need to call <ref refid="_d_o_x__i_a_d_l_x_interface__release" kindref="compound">Release</ref> because the smart pointer calls it internally.</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include&quot;ISystem.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h"/>
+  </compounddef>
+</doxygen>

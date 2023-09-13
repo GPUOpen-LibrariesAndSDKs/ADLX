@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_display_gamma" kind="page">
+    <compoundname>DOX_IADLXDisplayGamma</compoundname>
+    <title>IADLXDisplayGamma</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__get_gamma_coefficient">GetGammaCoefficient</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__get_gamma_ramp">GetGammaRamp</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_de_gamma_ramp">IsCurrentDeGammaRamp</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma36">IsCurrentReGamma36</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma_b_t709">IsCurrentReGammaBT709</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma_p_q">IsCurrentReGammaPQ</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma_p_q2084_interim">IsCurrentReGammaPQ2084Interim</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma_ramp">IsCurrentReGammaRamp</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma_s_r_g_b">IsCurrentReGammaSRGB</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_regamma_coefficient">IsCurrentRegammaCoefficient</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__is_supported_re_gamma36">IsSupportedReGamma36</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__is_supported_re_gamma_b_t709">IsSupportedReGammaBT709</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__is_supported_re_gamma_p_q">IsSupportedReGammaPQ</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__is_supported_re_gamma_p_q2084_interim">IsSupportedReGammaPQ2084Interim</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__is_supported_re_gamma_s_r_g_b">IsSupportedReGammaSRGB</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__reset_gamma_ramp">ResetGammaRamp</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__set_de_gamma_ramp_file">SetDeGammaRamp</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__set_de_gamma_ramp_memory">SetDeGammaRamp</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma36">SetReGamma36</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_b_t709">SetReGammaBT709</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_coefficient">SetReGammaCoefficient</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_p_q">SetReGammaPQ</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_p_q2084_interim">SetReGammaPQ2084Interim</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_ramp_file">SetReGammaRamp</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_ramp_memory">SetReGammaRamp</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_s_r_g_b">SetReGammaSRGB</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="_d_o_x__i_a_d_l_x_display_gamma" kindref="compound">IADLXDisplayGamma</ref> interface configures gamma correction on a display.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLXDisplayGamma</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLXDisplayGammaPtr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_interface" kindref="compound">IADLXInterface</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para>The <ref refid="_d_o_x__i_a_d_l_x_display_gamma" kindref="compound">IADLXDisplayGamma</ref> interface provides two types of gamma correction which are gamma ramp and gamma coefficient. Both gamma ramp and gamma coefficient have two sub-types: de-gamma and re-gamma.<itemizedlist>
+<listitem><para>Gamma ramp provides a Lookup Table (LUT) for the gamma correction, it applies the LUT with the assumption that all pixels are in sRGB space.</para>
+</listitem><listitem><para>Re-Gamma coefficient uses the following non-linear formula: <programlisting filename=".cpp"><codeline><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(linear_pixel<sp/>&lt;<sp/>CofficientA0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>output<sp/>=<sp/>linear_pixel<sp/>*<sp/>CofficientA1</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>output<sp/>=<sp/>(1<sp/>+<sp/>CofficientA3)<sp/>*<sp/>linear_pixel<sp/>^<sp/>(1/Gamma)<sp/>-<sp/>CofficientA2</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>De-Gamma coefficient uses the following non-linear formula: <programlisting filename=".cpp"><codeline><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(linear_pixel<sp/>&lt;<sp/>CofficientA0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>output<sp/>=<sp/>linear_pixel<sp/>/<sp/>CofficientA1</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>output<sp/>=<sp/>((linear_pixel<sp/>+<sp/>CofficientA3)<sp/>/<sp/>(1<sp/>+<sp/>CofficientA2))<sp/>^<sp/>(Gamma)</highlight></codeline>
+</programlisting></para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="27" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__get_gamma_coefficient" kindref="compound">GetGammaCoefficient</ref>   </para>
+</entry><entry thead="no"><para>Gets the re-gamma coefficient settings on a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__get_gamma_ramp" kindref="compound">GetGammaRamp</ref>   </para>
+</entry><entry thead="no"><para>Gets the gamma ramp LUT on a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_de_gamma_ramp" kindref="compound">IsCurrentDeGammaRamp</ref>   </para>
+</entry><entry thead="no"><para>Checks if de-gamma ramp is used by a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma36" kindref="compound">IsCurrentReGamma36</ref>   </para>
+</entry><entry thead="no"><para>Checks if the 3.6 re-gamma is used by a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma_b_t709" kindref="compound">IsCurrentReGammaBT709</ref>   </para>
+</entry><entry thead="no"><para>Checks if the BT709 re-gamma is used by a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma_p_q" kindref="compound">IsCurrentReGammaPQ</ref>   </para>
+</entry><entry thead="no"><para>Checks if the PQ re-gamma is used by a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma_p_q2084_interim" kindref="compound">IsCurrentReGammaPQ2084Interim</ref>   </para>
+</entry><entry thead="no"><para>Checks if the PQ2084 re-gamma curve is used by a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma_ramp" kindref="compound">IsCurrentReGammaRamp</ref>   </para>
+</entry><entry thead="no"><para>Checks if re-gamma ramp is used by a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma_s_r_g_b" kindref="compound">IsCurrentReGammaSRGB</ref>   </para>
+</entry><entry thead="no"><para>Checks if the sRGB re-gamma is used by a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_regamma_coefficient" kindref="compound">IsCurrentRegammaCoefficient</ref>   </para>
+</entry><entry thead="no"><para>Checks if re-gamma coefficient is used by a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_supported_re_gamma36" kindref="compound">IsSupportedReGamma36</ref>   </para>
+</entry><entry thead="no"><para>Checks if the 3.6 re-gamma is supported on a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_supported_re_gamma_b_t709" kindref="compound">IsSupportedReGammaBT709</ref>   </para>
+</entry><entry thead="no"><para>Checks if the BT709 re-gamma is supported on a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_supported_re_gamma_p_q" kindref="compound">IsSupportedReGammaPQ</ref>   </para>
+</entry><entry thead="no"><para>Checks if the PQ re-gamma is supported on a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_supported_re_gamma_p_q2084_interim" kindref="compound">IsSupportedReGammaPQ2084Interim</ref>   </para>
+</entry><entry thead="no"><para>Checks if the PQ2084 re-gamma curve is supported on a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_supported_re_gamma_s_r_g_b" kindref="compound">IsSupportedReGammaSRGB</ref>   </para>
+</entry><entry thead="no"><para>Checks if the sRGB re-gamma is supported on a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__reset_gamma_ramp" kindref="compound">ResetGammaRamp</ref>   </para>
+</entry><entry thead="no"><para>Resets the gamma ramp on a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_de_gamma_ramp_file" kindref="compound">SetDeGammaRamp</ref>   </para>
+</entry><entry thead="no"><para>Sets the de-gamma on a display using a ramp file.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_de_gamma_ramp_memory" kindref="compound">SetDeGammaRamp</ref>   </para>
+</entry><entry thead="no"><para>Sets the de-gamma on a display using a ramp buffer.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma36" kindref="compound">SetReGamma36</ref>   </para>
+</entry><entry thead="no"><para>Sets the 3.6 re-gamma on a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_b_t709" kindref="compound">SetReGammaBT709</ref>   </para>
+</entry><entry thead="no"><para>Sets the BT709 re-gamma on a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_coefficient" kindref="compound">SetReGammaCoefficient</ref>   </para>
+</entry><entry thead="no"><para>Sets the re-gamma coefficient on a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_p_q" kindref="compound">SetReGammaPQ</ref>   </para>
+</entry><entry thead="no"><para>Sets the PQ re-gamma on a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_p_q2084_interim" kindref="compound">SetReGammaPQ2084Interim</ref>   </para>
+</entry><entry thead="no"><para>Sets the PQ2084 re-gamma curve on a display.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_ramp_file" kindref="compound">SetReGammaRamp</ref>   </para>
+</entry><entry thead="no"><para>Sets the re-gamma on a display using a ramp file.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_ramp_memory" kindref="compound">SetReGammaRamp</ref>   </para>
+</entry><entry thead="no"><para>Sets the re-gamma on a display using a ramp buffer.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_s_r_g_b" kindref="compound">SetReGammaSRGB</ref>   </para>
+</entry><entry thead="no"><para>Sets the sRGB re-gamma on a display.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IDisplayGamma.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp_sample_display_gamma" kindref="compound">DisplayGamma C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c_sample_display_gamma" kindref="compound">DisplayGamma C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__get_gamma_coefficient" kindref="compound">GetGammaCoefficient</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__get_gamma_ramp" kindref="compound">GetGammaRamp</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_de_gamma_ramp" kindref="compound">IsCurrentDeGammaRamp</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma36" kindref="compound">IsCurrentReGamma36</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma_b_t709" kindref="compound">IsCurrentReGammaBT709</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma_p_q" kindref="compound">IsCurrentReGammaPQ</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma_p_q2084_interim" kindref="compound">IsCurrentReGammaPQ2084Interim</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma_ramp" kindref="compound">IsCurrentReGammaRamp</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_re_gamma_s_r_g_b" kindref="compound">IsCurrentReGammaSRGB</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_current_regamma_coefficient" kindref="compound">IsCurrentRegammaCoefficient</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_supported_re_gamma36" kindref="compound">IsSupportedReGamma36</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_supported_re_gamma_b_t709" kindref="compound">IsSupportedReGammaBT709</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_supported_re_gamma_p_q" kindref="compound">IsSupportedReGammaPQ</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_supported_re_gamma_p_q2084_interim" kindref="compound">IsSupportedReGammaPQ2084Interim</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__is_supported_re_gamma_s_r_g_b" kindref="compound">IsSupportedReGammaSRGB</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__reset_gamma_ramp" kindref="compound">ResetGammaRamp</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_de_gamma_ramp_file" kindref="compound">SetDeGammaRamp</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_de_gamma_ramp_memory" kindref="compound">SetDeGammaRamp</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma36" kindref="compound">SetReGamma36</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_b_t709" kindref="compound">SetReGammaBT709</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_coefficient" kindref="compound">SetReGammaCoefficient</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_p_q" kindref="compound">SetReGammaPQ</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_p_q2084_interim" kindref="compound">SetReGammaPQ2084Interim</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_ramp_file" kindref="compound">SetReGammaRamp</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_ramp_memory" kindref="compound">SetReGammaRamp</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_s_r_g_b" kindref="compound">SetReGammaSRGB</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXDisplayPage.h"/>
+  </compounddef>
+</doxygen>

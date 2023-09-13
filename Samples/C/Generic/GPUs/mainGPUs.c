@@ -98,43 +98,43 @@ void ShowGPUInfo(IADLXGPU* gpu)
         // Show GPU info
         const char* vendorId = NULL;
         ADLX_RESULT ret = gpu->pVtbl->VendorId(gpu, &vendorId);
-        printf("VendorId: %s, return code is: %d(0 means success)\n", vendorId, ret);
+        printf("VendorId: %s\n", vendorId);
 
         ADLX_ASIC_FAMILY_TYPE asicFamilyType = ASIC_UNDEFINED;
         ret = gpu->pVtbl->ASICFamilyType(gpu, &asicFamilyType);
-        printf("ASICFamilyType: %d, return code is: %d(0 means success)\n", asicFamilyType, ret);
+        printf("ASICFamilyType: %d\n", asicFamilyType);
 
         ADLX_GPU_TYPE gpuType = GPUTYPE_UNDEFINED;
         ret = gpu->pVtbl->Type(gpu, &gpuType);
-        printf("Type: %d, return code is: %d(0 means success)\n", gpuType, ret);
+        printf("Type: %d\n", gpuType);
 
         adlx_bool isExternal = false;
         ret = gpu->pVtbl->IsExternal(gpu, &isExternal);
-        printf("IsExternal: %d, return code is: %d(0 means success)\n", isExternal, ret);
+        printf("IsExternal: %d\n", isExternal);
 
         const char* gpuName = NULL;
         ret = gpu->pVtbl->Name(gpu, &gpuName);
-        printf("Name: %s, return code is: %d(0 means success)\n", gpuName, ret);
+        printf("Name: %s\n", gpuName);
 
         const char* driverPath = NULL;
         ret = gpu->pVtbl->DriverPath(gpu, &driverPath);
-        printf("DriverPath: %s, return code is: %d(0 means success)\n", driverPath, ret);
+        printf("DriverPath: %s\n", driverPath);
 
         const char* pnpString = NULL;
         ret = gpu->pVtbl->PNPString(gpu, &pnpString);
-        printf("PNPString: %s, return code is: %d(0 means success)\n", pnpString, ret);
+        printf("PNPString: %s\n", pnpString);
 
         adlx_bool hasDesktops = false;
         ret = gpu->pVtbl->HasDesktops(gpu, &hasDesktops);
-        printf("HasDesktops: %d, return code is: %d(0 means success)\n", hasDesktops, ret);
+        printf("HasDesktops: %d\n", hasDesktops);
 
         adlx_uint totalVRAM = 0;
         ret = gpu->pVtbl->TotalVRAM(gpu, &totalVRAM);
-        printf("TotalVRAM: %d MB, return code is: %d(0 means success)\n", totalVRAM, ret);
+        printf("TotalVRAM: %d MB\n", totalVRAM);
 
         adlx_int id;
         ret = gpu->pVtbl->UniqueId(gpu, &id);
-        printf("UniqueId: %d, return code is: %d(0 means success)\n", id, ret);
+        printf("UniqueId: %d\n", id);
 
         gpu->pVtbl->Release(gpu);
         gpu = NULL;

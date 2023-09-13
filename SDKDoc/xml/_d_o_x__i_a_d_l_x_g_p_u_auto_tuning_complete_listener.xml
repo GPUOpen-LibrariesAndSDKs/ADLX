@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_g_p_u_auto_tuning_complete_listener" kind="page">
+    <compoundname>DOX_IADLXGPUAutoTuningCompleteListener</compoundname>
+    <title>IADLXGPUAutoTuningCompleteListener</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_auto_tuning_complete_listener__on_g_p_u_auto_tuning_complete">OnGPUAutoTuningComplete</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXGPUAutoTuningCompleteListener</bold> interface is implemented in the application to receive an event from ADLX when GPU automatic tuning completes.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para>An instance of the implemented <bold>IADLXGPUAutoTuningCompleteListener</bold> interface must be passed to <ref refid="_d_o_x__i_a_d_l_x_g_p_u_auto_tuning__start_undervolt_g_p_u" kindref="compound">StartUndervoltGPU</ref>, <ref refid="_d_o_x__i_a_d_l_x_g_p_u_auto_tuning__start_overclock_g_p_u" kindref="compound">StartOverclockGPU</ref>, and <ref refid="_d_o_x__i_a_d_l_x_g_p_u_auto_tuning__start_overclock_v_r_a_m" kindref="compound">StartOverclockVRAM</ref> to register for notifications when GPU automatic tuning complete.<linebreak/>
+ For more information about subscribing for notifications, refer to <ref refid="page_guide_event" kindref="compound">Subscribing to Event Notifications using ADLX</ref>.<linebreak/>
+</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_auto_tuning_complete_listener__on_g_p_u_auto_tuning_complete" kindref="compound">OnGPUAutoTuningComplete</ref>   </para>
+</entry><entry thead="no"><para>The <bold>OnGPUAutoTuningComplete</bold> is called by ADLX when GPU tuning completes.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include&quot;IGPUAutoTuning.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp__g_p_u_auto_tuning" kindref="compound">GPUAutoTuning C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c__g_p_u_auto_tuning" kindref="compound">GPUAutoTuning C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_auto_tuning_complete_listener__on_g_p_u_auto_tuning_complete" kindref="compound">OnGPUAutoTuningComplete</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXGPUTuningPage.h"/>
+  </compounddef>
+</doxygen>

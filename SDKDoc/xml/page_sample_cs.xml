@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="page_sample_cs" kind="page">
+    <compoundname>page_sample_cs</compoundname>
+    <title>C#</title>
+    <innerpage refid="cs_samples_filedesc">File Descriptions</innerpage>
+    <innerpage refid="cs_samples_more">Samples</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This document describes how to build the C# bindings for ADLX, and the ADLX C# samples, as well as the environment in which they can be executed. The ADLX C# samples demonstrate how to program with ADLX in a C# application.</para>
+<para><heading level="2">Supported Operating Systems</heading>
+</para>
+<para>Windows® 10 (32- and 64-bit versions) and up.</para>
+<para><heading level="2">Build Tool</heading>
+</para>
+<para>Visual Studio 2019 with C and C++ components for desktop, and with C# components for desktop.</para>
+<para><heading level="2">Prerequisites</heading>
+</para>
+<para><itemizedlist>
+<listitem><para><bold>ADLX SDK</bold> is installed.</para>
+</listitem><listitem><para><bold>swigwin 4.0.2</bold> is installed, and the path to the swigwin 4.0.2 installation is added to the <bold>Path</bold> user environment variable.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Note:</bold> The ADLX library is installed along with the AMD display driver.</para>
+<para><heading level="2">Build Instructions</heading>
+</para>
+<para><orderedlist>
+<listitem>
+<para>Open <computeroutput>~ADLX\drivers\ADLX\Samples\csharp\sample.sln</computeroutput> with Visual Studio 2019. </para>
+</listitem>
+<listitem>
+<para>Select the build configuration, for example, <bold>Release</bold>, and <bold>x64</bold>. </para>
+</listitem>
+<listitem>
+<para>Set the sample as startup project.  </para>
+</listitem>
+<listitem>
+<para>Rebuild the project. <linebreak/>
+ <bold>Note:</bold> This procedure also builds the <computeroutput>ADLXCSharpBind</computeroutput> project in Visual Studio, which is required for any ALDX C# sample . </para>
+</listitem>
+<listitem>
+<para>Run the sample from the path <computeroutput>~ADLX\Samples\csharp</computeroutput> for the corresponding build configuration and sample, for example <computeroutput>~ADLX\Samples\csharp\x64\Release\DisplayInfo.exe</computeroutput>. </para>
+</listitem>
+</orderedlist>
+</para>
+<para><itemizedlist>
+<listitem><para><ref refid="cs_samples_filedesc" kindref="compound">File Descriptions</ref></para>
+</listitem><listitem><para><ref refid="cs_samples_more" kindref="compound">Samples</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/Samples/csharp/ReadMe.md"/>
+  </compounddef>
+</doxygen>

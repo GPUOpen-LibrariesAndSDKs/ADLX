@@ -37,7 +37,8 @@ namespace adlx
         * If the event has an unknown trigger, __SYNC_ORIGIN_UNKNOWN__ is returned. <br>
         *@ENG_END_DOX
         *
-        *@copydoc IADLXChangedEvent_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IADLXChangedEvent.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_SYNC_ORIGIN   ADLX_STD_CALL GetOrigin() = 0;

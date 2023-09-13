@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_eyefinity_desktop__display_orientation" kind="page">
+    <compoundname>DOX_IADLXEyefinityDesktop_DisplayOrientation</compoundname>
+    <title>DisplayOrientation</title>
+    <briefdescription>
+<para>Gets the orientation of the display area on an AMD Eyefinity desktop at a given grid location. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Gets the orientation of the display area on an AMD Eyefinity desktop at a given grid location.</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>    DisplayOrientation (adlx_uint row, adlx_uint col, <ref refid="group__enumerations_1gae896c86f4fc55efe4e866450e33465b1" kindref="member">ADLX_ORIENTATION</ref>* displayOrientation)
+ </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para><variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>1.</para>
+</entry><entry thead="no" class="paramdir"><para>[in] </para>
+</entry><entry thead="no" class="paramname"><para>row</para>
+</entry><entry thead="no" class="paramtype"><para>adlx_uint </para>
+</entry><entry thead="no"><para>The row of the AMD Eyefinity grid location for the requested display. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+<variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>2.</para>
+</entry><entry thead="no" class="paramdir"><para>[in] </para>
+</entry><entry thead="no" class="paramname"><para>col</para>
+</entry><entry thead="no" class="paramtype"><para>adlx_uint </para>
+</entry><entry thead="no"><para>The column of the AMD Eyefinity grid location for the requested display. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+<variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>3.</para>
+</entry><entry thead="no" class="paramdir"><para>[out] </para>
+</entry><entry thead="no" class="paramname"><para>displayOrientation</para>
+</entry><entry thead="no" class="paramtype"><para><ref refid="group__enumerations_1gae896c86f4fc55efe4e866450e33465b1" kindref="member">ADLX_ORIENTATION</ref>* </para>
+</entry><entry thead="no"><para>The pointer to a variable where the display orientation is returned. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If the display orientation is successfully returned, <bold>ADLX_OK</bold> is returned.<linebreak/>
+ If the display orientation is not successfully returned, an error code is returned.<linebreak/>
+ Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.<linebreak/>
+</para>
+<para><heading level="2">Remarks </heading>
+</para>
+<para>The display orientation indicates the rotation angle of the display area on an AMD Eyefinity desktop.</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IDesktops.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h"/>
+  </compounddef>
+</doxygen>

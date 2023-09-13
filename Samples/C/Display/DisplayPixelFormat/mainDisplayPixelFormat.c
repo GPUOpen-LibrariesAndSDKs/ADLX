@@ -200,36 +200,26 @@ void GetSupportStateForEachPixelFormat(IADLXDisplayServices* displayService, IAD
         adlx_bool support = false;
 
         res = displayPixelFormat->pVtbl->IsSupportedRGB444Full(displayPixelFormat, &support);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIs support RGB 4:4:4 PC Standard (Full RGB): %d\n", support);
+        printf("\tIs support RGB 4:4:4 PC Standard (Full RGB): %d\n", support);
         res = displayPixelFormat->pVtbl->IsSupportedYCbCr444(displayPixelFormat, &support);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIs support YCbCr 4:4:4: %d\n", support);
+        printf("\tIs support YCbCr 4:4:4: %d\n", support);
         res = displayPixelFormat->pVtbl->IsSupportedYCbCr422(displayPixelFormat, &support);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIs support YCbCr 4:2:2: %d\n", support);
+        printf("\tIs support YCbCr 4:2:2: %d\n", support);
         res = displayPixelFormat->pVtbl->IsSupportedRGB444Limited(displayPixelFormat, &support);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIs support RGB 4:4:4 Studio (Limited RGB): %d\n", support);
+        printf("\tIs support RGB 4:4:4 Studio (Limited RGB): %d\n", support);
         res = displayPixelFormat->pVtbl->IsSupportedYCbCr420(displayPixelFormat, &support);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIs support YCbCr 4:2:0: %d\n", support);
+        printf("\tIs support YCbCr 4:2:0: %d\n", support);
 
         res = displayPixelFormat->pVtbl->IsSupportedPixelFormat(displayPixelFormat, RGB_444_FULL, &support);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIs support RGB 4:4:4 PC Standard (Full RGB): %d\n", support);
+        printf("\tIs support RGB 4:4:4 PC Standard (Full RGB): %d\n", support);
         res = displayPixelFormat->pVtbl->IsSupportedPixelFormat(displayPixelFormat, YCBCR_444, &support);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIs support YCbCr 4:4:4: %d\n", support);
+        printf("\tIs support YCbCr 4:4:4: %d\n", support);
         res = displayPixelFormat->pVtbl->IsSupportedPixelFormat(displayPixelFormat, YCBCR_422, &support);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIs support YCbCr 4:2:2: %d\n", support);
+        printf("\tIs support YCbCr 4:2:2: %d\n", support);
         res = displayPixelFormat->pVtbl->IsSupportedPixelFormat(displayPixelFormat, RGB_444_LIMITED, &support);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIs support RGB 4:4:4 Studio (Limited RGB): %d\n", support);
+        printf("\tIs support RGB 4:4:4 Studio (Limited RGB): %d\n", support);
         res = displayPixelFormat->pVtbl->IsSupportedPixelFormat(displayPixelFormat, YCBCR_420, &support);
-        if (ADLX_SUCCEEDED(res))
-            printf("\tIs support YCbCr 4:2:0: %d\n", support);
+        printf("\tIs support YCbCr 4:2:0: %d\n", support);
 
         displayPixelFormat->pVtbl->Release(displayPixelFormat);
         displayPixelFormat = NULL;

@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXGPUTuningChangedEvent</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXChangedEvent</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1a86153ef95c6e977019f529e9a986455d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUTuningChangedEvent::GetGPU</definition>
+        <argsstring>(IADLXGPU **ppGPU)=0</argsstring>
+        <name>GetGPU</name>
+        <param>
+          <type>IADLXGPU **</type>
+          <declname>ppGPU</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" line="470" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1a232295dde2c08a4e3026b6f4bdec2543" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>adlx_bool ADLX_STD_CALL</type>
+        <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXGPUTuningChangedEvent::IsAutomaticTuningChanged</definition>
+        <argsstring>()=0</argsstring>
+        <name>IsAutomaticTuningChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" line="497" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1a5669a1156795a491b70ae4ee2d9af7c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>adlx_bool ADLX_STD_CALL</type>
+        <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXGPUTuningChangedEvent::IsPresetTuningChanged</definition>
+        <argsstring>()=0</argsstring>
+        <name>IsPresetTuningChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" line="524" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1aa8efe221604838fbf15883786a710531" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>adlx_bool ADLX_STD_CALL</type>
+        <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXGPUTuningChangedEvent::IsManualGPUCLKTuningChanged</definition>
+        <argsstring>()=0</argsstring>
+        <name>IsManualGPUCLKTuningChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" line="551" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1acf162c9d2c04fb4c1137243270ea0dcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>adlx_bool ADLX_STD_CALL</type>
+        <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXGPUTuningChangedEvent::IsManualVRAMTuningChanged</definition>
+        <argsstring>()=0</argsstring>
+        <name>IsManualVRAMTuningChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" line="578" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1aa4ade12d041c34b018220dbd5825ea09" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>adlx_bool ADLX_STD_CALL</type>
+        <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXGPUTuningChangedEvent::IsManualFanTuningChanged</definition>
+        <argsstring>()=0</argsstring>
+        <name>IsManualFanTuningChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" line="605" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1adb1f042f80f0c8145bd440906e55b995" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>adlx_bool ADLX_STD_CALL</type>
+        <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXGPUTuningChangedEvent::IsManualPowerTuningChanged</definition>
+        <argsstring>()=0</argsstring>
+        <name>IsManualPowerTuningChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" line="632" column="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" line="436" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" bodystart="437" bodyend="633"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1a86153ef95c6e977019f529e9a986455d" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent</scope><name>GetGPU</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_changed_event_1aabba9d15598621fe88ce7ed8712b2380" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent</scope><name>GetOrigin</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1a232295dde2c08a4e3026b6f4bdec2543" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent</scope><name>IsAutomaticTuningChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1aa4ade12d041c34b018220dbd5825ea09" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent</scope><name>IsManualFanTuningChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1aa8efe221604838fbf15883786a710531" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent</scope><name>IsManualGPUCLKTuningChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1adb1f042f80f0c8145bd440906e55b995" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent</scope><name>IsManualPowerTuningChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1acf162c9d2c04fb4c1137243270ea0dcc" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent</scope><name>IsManualVRAMTuningChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1a5669a1156795a491b70ae4ee2d9af7c7" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent</scope><name>IsPresetTuningChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent</scope><name>Release</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,375 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_a_d_l_x_8h" kind="file" language="C++">
+    <compoundname>ADLX.h</compoundname>
+    <includes refid="_a_d_l_x_defines_8h" local="yes">ADLXDefines.h</includes>
+    <includes refid="_i_system_8h" local="yes">ISystem.h</includes>
+    <includedby refid="_cpp_2_a_d_l_x_helper_8h" local="yes">D:/03_AMDgit/22.40/drivers/ADLX/SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h</includedby>
+    <includedby refid="_c_2_a_d_l_x_helper_8h" local="yes">D:/03_AMDgit/22.40/drivers/ADLX/SDK/ADLXHelper/Windows/C/ADLXHelper.h</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>Windows.h</label>
+      </node>
+      <node id="2">
+        <label>ADLXDefines.h</label>
+        <link refid="_a_d_l_x_defines_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+      <node id="1">
+        <label>D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h</label>
+        <link refid="_a_d_l_x_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___a_d_l_x_macro_1ga230859c12673173fe14d5fa5bf3c2438" prot="public" static="no">
+        <name>ADLX_DLL_NAMEW</name>
+        <initializer>L&quot;amdadlx64.dll&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unicode name for 64-bit ADLX dll <heading level="3">Definition </heading>
+</para>
+<para><preformatted>
+  #define ADLX_DLL_NAMEW                      L&quot;amdadlx64.dll&quot;
+  </preformatted> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" line="25" column="9" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___a_d_l_x_macro_1gae6717665e58771830fb95333b9af6b35" prot="public" static="no">
+        <name>ADLX_DLL_NAMEA</name>
+        <initializer>&quot;amdadlx64.dll&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ANSI name for 64-bit ADLX dll <heading level="3">Definition </heading>
+</para>
+<para><preformatted>
+  #define ADLX_DLL_NAMEA                      &quot;amdadlx64.dll&quot;
+  </preformatted> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" line="35" column="9" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___a_d_l_x_macro_1ga01e03ede548cb4521e0895f77feacdc4" prot="public" static="no">
+        <name>ADLX_DLL_NAME</name>
+        <initializer><ref refid="group___a_d_l_x_macro_1ga230859c12673173fe14d5fa5bf3c2438" kindref="member">ADLX_DLL_NAMEW</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ADLX dll name in Unicode applications <heading level="3">Definition </heading>
+</para>
+<para><preformatted>
+  #define ADLX_DLL_NAME                       <ref refid="group___a_d_l_x_macro_1ga230859c12673173fe14d5fa5bf3c2438" kindref="member">ADLX_DLL_NAMEW</ref>
+  </preformatted> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" line="69" column="9" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___a_d_l_x_macro_1ga91ac676c95055e3ce7eefad329fb79bb" prot="public" static="no">
+        <name>ADLX_QUERY_FULL_VERSION_FUNCTION_NAME</name>
+        <initializer>&quot;ADLXQueryFullVersion&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The function name of QueryFullVersion <heading level="3">Definition </heading>
+</para>
+<para><preformatted>
+  #define ADLX_QUERY_FULL_VERSION_FUNCTION_NAME                    &quot;ADLXQueryFullVersion&quot;
+  </preformatted> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" line="111" column="9" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___a_d_l_x_macro_1ga792851e2bf013e65cadf8d1979c93aeb" prot="public" static="no">
+        <name>ADLX_QUERY_VERSION_FUNCTION_NAME</name>
+        <initializer>&quot;ADLXQueryVersion&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The function name of QueryVersion <heading level="3">Definition </heading>
+</para>
+<para><preformatted>
+  #define ADLX_QUERY_VERSION_FUNCTION_NAME            &quot;ADLXQueryVersion&quot;
+  </preformatted> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" line="122" column="9" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___a_d_l_x_macro_1ga8f14be1543fc55eae619dda67965bf35" prot="public" static="no">
+        <name>ADLX_INIT_FUNCTION_NAME</name>
+        <initializer>&quot;ADLXInitialize&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The function name of ADLXInitialize <heading level="3">Definition </heading>
+</para>
+<para><preformatted>
+  #define ADLX_INIT_FUNCTION_NAME                             &quot;ADLXInitialize&quot;
+  </preformatted> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" line="133" column="9" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___a_d_l_x_macro_1ga6219bdf1844b1f9bbb4fde96630442e4" prot="public" static="no">
+        <name>ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME</name>
+        <initializer>&quot;ADLXInitializeWithIncompatibleDriver&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The function name of ADLXInitializeWithIncompatibleDriver <heading level="3">Definition </heading>
+</para>
+<para><preformatted>
+  #define ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME          &quot;ADLXInitializeWithIncompatibleDriver&quot;
+  </preformatted> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" line="144" column="9" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___a_d_l_x_macro_1gad4b30c181751a349fccd865550dbc709" prot="public" static="no">
+        <name>ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME</name>
+        <initializer>&quot;ADLXInitializeWithCallerAdl&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The function name of ADLXInitializeWithCallerAdl <heading level="3">Definition </heading>
+</para>
+<para><preformatted>
+  #define ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME             &quot;ADLXInitializeWithCallerAdl&quot;
+  </preformatted> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" line="155" column="9" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___a_d_l_x_macro_1ga4eb1fd9b5d55b0699d498535f29c4634" prot="public" static="no">
+        <name>ADLX_TERMINATE_FUNCTION_NAME</name>
+        <initializer>&quot;ADLXTerminate&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The function name of ADLXTerminate <heading level="3">Definition </heading>
+</para>
+<para><preformatted>
+  #define ADLX_TERMINATE_FUNCTION_NAME                        &quot;ADLXTerminate&quot;
+  </preformatted> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" line="166" column="9" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group___a_d_l_x_defs_1ga6adc3b43ac10780441c675a07a0fa4ae" prot="public" static="no">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_CDECL_CALL *</type>
+        <definition>ADLXQueryFullVersion_Fn</definition>
+        <argsstring>)(adlx_uint64 *fullVersion)</argsstring>
+        <name>ADLXQueryFullVersion_Fn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The typedef of QueryFullVersion function. <heading level="3">Definition </heading>
+</para>
+<para><preformatted>
+  typedef <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> (ADLX_CDECL_CALL *QueryFullVersion_Fn)(adlx_uint64* fullVersion)
+  </preformatted> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" line="86" column="9" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___a_d_l_x_defs_1gacc89675ee4e79ce8f3a2d729bc48fc0b" prot="public" static="no">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_CDECL_CALL *</type>
+        <definition>ADLXQueryVersion_Fn</definition>
+        <argsstring>)(const char **version)</argsstring>
+        <name>ADLXQueryVersion_Fn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The typedef of QueryVersion function. <heading level="3">Definition </heading>
+</para>
+<para><preformatted>
+  typedef <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> (ADLX_CDECL_CALL *QueryVersion_Fn)(const char** version)
+  </preformatted> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" line="87" column="9" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___a_d_l_x_defs_1ga7301579b153c3612dca5c442e5f2dd45" prot="public" static="no">
+        <type>void(ADLX_STD_CALL *</type>
+        <definition>ADLX_ADL_Main_Memory_Free</definition>
+        <argsstring>)(void **buffer)</argsstring>
+        <name>ADLX_ADL_Main_Memory_Free</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The typedef of ADLX_ADL_Main_Memory_Free function. <heading level="3">Definition </heading>
+</para>
+<para><preformatted>
+  typedef void (ADLX_STD_CALL* ADLX_ADL_Main_Memory_Free)(void** buffer)
+  </preformatted> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" line="98" column="9" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___a_d_l_x_defs_1gac5f7f97490516e7be3e62c3be1383c66" prot="public" static="no">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_CDECL_CALL *</type>
+        <definition>ADLXInitialize_Fn</definition>
+        <argsstring>)(adlx_uint64 version, adlx::IADLXSystem **ppSystem)</argsstring>
+        <name>ADLXInitialize_Fn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The typedef of ADLXInitialize function. <heading level="3">Definition </heading>
+</para>
+<para><preformatted>
+ typedef <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> (ADLX_CDECL_CALL *ADLXInitialize_Fn)(adlx_uint64 version, <ref refid="_d_o_x__i_a_d_l_x_system" kindref="compound">IADLXSystem</ref>** ppSystem)
+  </preformatted> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" line="279" column="13" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" bodystart="279" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___a_d_l_x_defs_1gadb90c5a66bc15b34f864d5883158ed44" prot="public" static="no">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_CDECL_CALL *</type>
+        <definition>ADLXInitializeWithCallerAdl_Fn</definition>
+        <argsstring>)(adlx_uint64 version, adlx::IADLXSystem **ppSystem, adlx::IADLMapping **ppAdlMapping, adlx_handle adlContext, ADLX_ADL_Main_Memory_Free adlMainMemoryFree)</argsstring>
+        <name>ADLXInitializeWithCallerAdl_Fn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The typedef of ADLXInitializeWithCallerAdl function. <heading level="3">Definition </heading>
+</para>
+<para><preformatted>
+  typedef <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> (ADLX_CDECL_CALL *ADLXInitializeWithCallerAdl_Fn)(adlx_uint64 version, <ref refid="_d_o_x__i_a_d_l_x_system" kindref="compound">IADLXSystem</ref>** ppSystem, <ref refid="_d_o_x__i_a_d_l_mapping" kindref="compound">IADLMapping</ref>** ppAdlMapping, adlx_handle adlContext, <ref refid="group___a_d_l_x_defs_1ga7301579b153c3612dca5c442e5f2dd45" kindref="member">ADLX_ADL_Main_Memory_Free</ref> adlMainMemoryFree)
+  </preformatted> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" line="319" column="13" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" bodystart="319" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___a_d_l_x_defs_1ga8c0d01f62522f27bdb72ece0c7c89ded" prot="public" static="no">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_CDECL_CALL *</type>
+        <definition>ADLXTerminate_Fn</definition>
+        <argsstring>)()</argsstring>
+        <name>ADLXTerminate_Fn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The typedef of ADLXTerminate function. <heading level="3">Definition </heading>
+</para>
+<para><preformatted>
+  typedef ADLX_RESULT (ADLX_CDECL_CALL *ADLXTerminate_Fn)()
+  </preformatted> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" line="355" column="13" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h" bodystart="355" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ADLX_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADLX_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_d_l_x_defines_8h" kindref="compound">ADLXDefines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ISystem.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>dll<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_WIN32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_M_AMD64)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADLX_DLL_NAMEW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;amdadlx64.dll&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADLX_DLL_NAMEA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;amdadlx64.dll&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//_M_AMD64</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"></highlight><highlight class="normal">#define<sp/>ADLX_DLL_NAMEW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&quot;amdadlx32.dll&quot;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADLX_DLL_NAMEA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;amdadlx32.dll&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//_M_AMD64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(UNICODE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADLX_DLL_NAME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DLL_NAMEW</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//UNICODE</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"></highlight><highlight class="normal">#define<sp/>ADLX_DLL_NAME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DLL_NAMEA</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//UNICODE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>dll<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>ADLX<sp/>callbacks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_CDECL_CALL*<sp/><ref refid="group___a_d_l_x_defs_1ga6adc3b43ac10780441c675a07a0fa4ae" kindref="member">ADLXQueryFullVersion_Fn</ref>)(adlx_uint64*<sp/>fullVersion);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_CDECL_CALL*<sp/><ref refid="group___a_d_l_x_defs_1gacc89675ee4e79ce8f3a2d729bc48fc0b" kindref="member">ADLXQueryVersion_Fn</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>version);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(ADLX_STD_CALL*<sp/><ref refid="group___a_d_l_x_defs_1ga7301579b153c3612dca5c442e5f2dd45" kindref="member">ADLX_ADL_Main_Memory_Free</ref>)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>buffer);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>ADLX<sp/>callbacks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>C-style<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADLX_QUERY_FULL_VERSION_FUNCTION_NAME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;ADLXQueryFullVersion&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADLX_QUERY_VERSION_FUNCTION_NAME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;ADLXQueryVersion&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADLX_INIT_FUNCTION_NAME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;ADLXInitialize&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;ADLXInitializeWithIncompatibleDriver&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;ADLXInitializeWithCallerAdl&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADLX_TERMINATE_FUNCTION_NAME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;ADLXTerminate&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_CDECL_CALL<sp/>*<ref refid="group___a_d_l_x_defs_1ga6adc3b43ac10780441c675a07a0fa4ae" kindref="member">ADLXQueryFullVersion_Fn</ref>)(adlx_uint64*<sp/>fullVersion);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_CDECL_CALL<sp/>*<ref refid="group___a_d_l_x_defs_1gacc89675ee4e79ce8f3a2d729bc48fc0b" kindref="member">ADLXQueryVersion_Fn</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>version);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_CDECL_CALL<sp/>*<ref refid="group___a_d_l_x_defs_1gac5f7f97490516e7be3e62c3be1383c66" kindref="member">ADLXInitialize_Fn</ref>)(adlx_uint64<sp/>version,<sp/>adlx::IADLXSystem**<sp/>ppSystem);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_CDECL_CALL<sp/>*<ref refid="group___a_d_l_x_defs_1gadb90c5a66bc15b34f864d5883158ed44" kindref="member">ADLXInitializeWithCallerAdl_Fn</ref>)(adlx_uint64<sp/>version,<sp/>adlx::IADLXSystem**<sp/>ppSystem,<sp/>adlx::IADLMapping**<sp/>ppAdlMapping,<sp/>adlx_handle<sp/>adlContext,<sp/><ref refid="group___a_d_l_x_defs_1ga7301579b153c3612dca5c442e5f2dd45" kindref="member">ADLX_ADL_Main_Memory_Free</ref><sp/>adlMainMemoryFree);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_CDECL_CALL<sp/>*<ref refid="group___a_d_l_x_defs_1ga8c0d01f62522f27bdb72ece0c7c89ded" kindref="member">ADLXTerminate_Fn</ref>)();</highlight></codeline>
+<codeline lineno="356"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_CDECL_CALL<sp/>*<ref refid="group___a_d_l_x_defs_1ga6adc3b43ac10780441c675a07a0fa4ae" kindref="member">ADLXQueryFullVersion_Fn</ref>)(adlx_uint64*<sp/>fullVersion);</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_CDECL_CALL<sp/>*<ref refid="group___a_d_l_x_defs_1gacc89675ee4e79ce8f3a2d729bc48fc0b" kindref="member">ADLXQueryVersion_Fn</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>version);</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_CDECL_CALL<sp/>*<ref refid="group___a_d_l_x_defs_1gac5f7f97490516e7be3e62c3be1383c66" kindref="member">ADLXInitialize_Fn</ref>)(adlx_uint64<sp/>version,<sp/>IADLXSystem**<sp/>ppSystem);</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_CDECL_CALL<sp/>*<ref refid="group___a_d_l_x_defs_1gadb90c5a66bc15b34f864d5883158ed44" kindref="member">ADLXInitializeWithCallerAdl_Fn</ref>)(adlx_uint64<sp/>version,<sp/>IADLXSystem**<sp/>ppSystem,<sp/>IADLMapping**<sp/>ppAdlMapping,<sp/>adlx_handle<sp/>adlContext,<sp/><ref refid="group___a_d_l_x_defs_1ga7301579b153c3612dca5c442e5f2dd45" kindref="member">ADLX_ADL_Main_Memory_Free</ref><sp/>adlMainMemoryFree);</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_CDECL_CALL<sp/>*<ref refid="group___a_d_l_x_defs_1ga8c0d01f62522f27bdb72ece0c7c89ded" kindref="member">ADLXTerminate_Fn</ref>)();</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>C-style<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight><highlight class="comment">//ADLX_H</highlight></codeline>
+    </programlisting>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLX.h"/>
+  </compounddef>
+</doxygen>

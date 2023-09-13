@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x3_d_image_sharpening__set_enabled" kind="page">
+    <compoundname>DOX_IADLX3DImageSharpening_SetEnabled</compoundname>
+    <title>SetEnabled</title>
+    <briefdescription>
+<para>Sets AMD Radeon™ Image Sharpening to enabled or disabled on a GPU. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Sets AMD Radeon™ Image Sharpening to enabled or disabled on a GPU.</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>    SetEnabled (adlx_bool enable)
+ </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para><variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>1.</para>
+</entry><entry thead="no" class="paramdir"><para>[in]</para>
+</entry><entry thead="no" class="paramname"><para>enable</para>
+</entry><entry thead="no" class="paramtype"><para>adlx_bool</para>
+</entry><entry thead="no"><para>The new AMD Radeon Image Sharpening state. Set <bold>true</bold> to enable AMD Radeon Image Sharpening. Set <bold>false</bold> to disable AMD Radeon Image Sharpening. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If the state of AMD Radeon Image Sharpening is successfully set, <bold>ADLX_OK</bold> is returned.<linebreak/>
+ If the state of AMD Radeon Image Sharpening is not successfully set, an error code is returned.<linebreak/>
+ Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.<linebreak/>
+</para>
+<para><heading level="2">Additional Info </heading>
+</para>
+<para>AMD Radeon Image Sharpening restores clarity softened by other effects to in-game visuals, and select productivity and media applications.<linebreak/>
+ <bold>Note:</bold> On some AMD GPUs, AMD Radeon Image Sharpening and <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref> cannot be enabled simultaneously. If Radeon Image Sharpening is enabled, AMD Radeon Super Resolution is automatically disabled.</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;I3DSettings.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.0</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h"/>
+  </compounddef>
+</doxygen>

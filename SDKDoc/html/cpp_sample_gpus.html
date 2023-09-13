@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -224,11 +224,11 @@ $(document).ready(function(){initNavTree('cpp_sample_gpus.html',''); initResizab
 <div class="line">    <span class="comment">// Display GPU info</span></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>* vendorId = <span class="keyword">nullptr</span>;</div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> ret = gpu-&gt;VendorId(&amp;vendorId);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;VendorId: &quot;</span> &lt;&lt; vendorId &lt;&lt; <span class="stringliteral">&quot;return code is: &quot;</span>&lt;&lt; ret &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;VendorId: &quot;</span> &lt;&lt; vendorId &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    <a class="code" href="group__enumerations.html#gaf4fd628e799e6a74201290ff40418d77">ADLX_ASIC_FAMILY_TYPE</a> asicFamilyType = ASIC_UNDEFINED;</div>
 <div class="line">    ret = gpu-&gt;ASICFamilyType(&amp;asicFamilyType);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;ASICFamilyType: &quot;</span> &lt;&lt; asicFamilyType &lt;&lt; <span class="stringliteral">&quot;return code is: &quot;</span>&lt;&lt; ret &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;ASICFamilyType: &quot;</span> &lt;&lt; asicFamilyType &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga6fb3c9944d5c8aa79f7dbd0f675fac34">ADLX_GPU_TYPE</a> gpuType = GPUTYPE_UNDEFINED;</div>
 <div class="line">    ret = gpu-&gt;Type(&amp;gpuType);</div>
@@ -236,31 +236,31 @@ $(document).ready(function(){initNavTree('cpp_sample_gpus.html',''); initResizab
 <div class="line"> </div>
 <div class="line">    adlx_bool isExternal = <span class="keyword">false</span>;</div>
 <div class="line">    ret = gpu-&gt;IsExternal(&amp;isExternal);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;IsExternal: &quot;</span> &lt;&lt; isExternal &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; ret &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;IsExternal: &quot;</span> &lt;&lt; isExternal &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>* gpuName = <span class="keyword">nullptr</span>;</div>
 <div class="line">    ret = gpu-&gt;Name(&amp;gpuName);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Name: &quot;</span> &lt;&lt; gpuName &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; ret &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Name: &quot;</span> &lt;&lt; gpuName &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>* driverPath = <span class="keyword">nullptr</span>;</div>
 <div class="line">    ret = gpu-&gt;DriverPath(&amp;driverPath);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;DriverPath: &quot;</span> &lt;&lt; driverPath &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; ret &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;DriverPath: &quot;</span> &lt;&lt; driverPath &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>* pnpString = <span class="keyword">nullptr</span>;</div>
 <div class="line">    ret = gpu-&gt;PNPString(&amp;pnpString);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;PNPString: &quot;</span> &lt;&lt; pnpString &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; ret &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;PNPString: &quot;</span> &lt;&lt; pnpString &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    adlx_bool hasDesktops = <span class="keyword">false</span>;</div>
 <div class="line">    ret = gpu-&gt;HasDesktops(&amp;hasDesktops);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;HasDesktops: &quot;</span> &lt;&lt; hasDesktops &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; ret &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;HasDesktops: &quot;</span> &lt;&lt; hasDesktops &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    adlx_uint totalVRAM;</div>
 <div class="line">    ret = gpu-&gt;TotalVRAM(&amp;totalVRAM);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;TotalVRAM: &quot;</span> &lt;&lt; totalVRAM &lt;&lt; <span class="stringliteral">&quot; MB&quot;</span> &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; ret &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;TotalVRAM: &quot;</span> &lt;&lt; totalVRAM &lt;&lt; <span class="stringliteral">&quot; MB&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    adlx_int id;</div>
 <div class="line">    ret = gpu-&gt;UniqueId(&amp;<span class="keywordtype">id</span>);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;UniqueId: &quot;</span> &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; ret &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;UniqueId: &quot;</span> &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> ShowHybridGraphicType()</div>

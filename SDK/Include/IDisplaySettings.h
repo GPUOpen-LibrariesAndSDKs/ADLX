@@ -42,7 +42,8 @@ namespace adlx
         *
         * AMD FreeSync technology reduces or eliminates visual artifacts, input latency, screen tearing and stuttering during gaming and video playback. AMD FreeSync technology can be delivered through DisplayPort and HDMI® connections. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayFreeSync_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -68,7 +69,8 @@ namespace adlx
         *
         * AMD FreeSync technology reduces or eliminates visual artifacts, input latency, screen tearing and stuttering during gaming and video playback. AMD FreeSync technology can be delivered through DisplayPort and HDMI® connections. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayFreeSync_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsEnabled (adlx_bool* enabled) = 0;
@@ -95,7 +97,8 @@ namespace adlx
         * AMD FreeSync technology reduces or eliminates visual artifacts, input latency, screen tearing and stuttering during gaming and video playback. AMD FreeSync technology can be delivered through DisplayPort and HDMI® connections. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayFreeSync_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetEnabled (adlx_bool enabled) = 0;
@@ -160,7 +163,8 @@ namespace adlx
         * Virtual Super Resolution allows applications to render at resolutions higher than the display's native pixel grid and then scales images down to fit the display, producing higher quality visuals at the expense of performance.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayVSR_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -186,7 +190,8 @@ namespace adlx
         * Virtual Super Resolution allows applications to render at resolutions higher than the display's native pixel grid and then scales images down to fit the display, producing higher quality visuals at the expense of performance.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayVSR_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsEnabled (adlx_bool* enabled) = 0;
@@ -212,7 +217,8 @@ namespace adlx
         * Virtual Super Resolution allows applications to render at resolutions higher than the display's native pixel grid and then scales images down to fit the display, producing higher quality visuals at the expense of performance.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayVSR_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL SetEnabled (adlx_bool enabled) = 0;
@@ -277,7 +283,8 @@ namespace adlx
         * GPU scaling requires a digital connection (DVI, HDMI or DisplayPort™) from the display to the GPU. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayGPUScaling_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -305,7 +312,8 @@ namespace adlx
         * __Note__: @ref DOX_IADLXDisplayIntegerScaling "Integer Display Scaling" is not supported when GPU scaling is disabled.<br>
         * GPU scaling is required for @ref DOX_IADLX3DRadeonSuperResolution "Radeon™ Super Resolution". GPU scaling is automatically enabled when Radeon Super Resolution is enabled. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayGPUScaling_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsEnabled (adlx_bool* enabled) = 0;
@@ -333,7 +341,8 @@ namespace adlx
         * __Note:__ @ref DOX_IADLXDisplayIntegerScaling "Integer Display Scaling" is not supported when GPU scaling is disabled. <br>
         * GPU scaling is required for @ref DOX_IADLX3DRadeonSuperResolution "Radeon™ Super Resolution". By disabling GPU scaling when Radeon Super Resolution is enabled, Radeon Super Resolution is automatically disabled.@ENG_END_DOX
         *
-        *@copydoc IADLXDisplayGPUScaling_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL SetEnabled (adlx_bool enabled) = 0;
@@ -397,7 +406,8 @@ namespace adlx
         *@ENG_START_DOX  GPU scaling determines the method used to stretch and position images to fit the display. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayScalingMode_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -423,7 +433,8 @@ namespace adlx
         * __Note:__ On some AMD GPUs, center scaling and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If Radeon Super Resolution is enabled when the scaling mode is __CENTERED__, the scaling mode is automatically set to __FULL_PANEL__.@ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayScalingMode_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetMode (ADLX_SCALE_MODE* currentMode) = 0;
@@ -449,7 +460,8 @@ namespace adlx
         * __Note:__ On some AMD GPUs, center scaling and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If the scaling mode is set to __CENTERED__, Radeon Super Resolution is automatically disabled.@ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayScalingMode_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL SetMode (ADLX_SCALE_MODE mode) = 0;
@@ -514,7 +526,8 @@ namespace adlx
         * __Note__: Integer Display Scaling is not supported when @ref DOX_IADLXDisplayGPUScaling "GPU scaling" is disabled. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayIntegerScaling_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -540,7 +553,8 @@ namespace adlx
         * __Note:__ On some AMD GPUs, Integer Display Scaling and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If Radeon Super Resolution is enabled, Integer Display Scaling is automatically disabled.@ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayIntegerScaling_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsEnabled (adlx_bool* enabled) = 0;
@@ -566,7 +580,8 @@ namespace adlx
         * __Note:__ On some AMD GPUs, Integer Display Scaling and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If Integer Display Scaling is enabled, Radeon Super Resolution is automatically disabled.@ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayIntegerScaling_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL SetEnabled (adlx_bool enabled) = 0;
@@ -629,7 +644,8 @@ namespace adlx
         *@ENG_START_DOX  Color format configuration is supported on some AMD GPUs if the display is connected to the GPU using Dual-Link DVI or DisplayPort cable. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayColorDepth_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -654,7 +670,8 @@ namespace adlx
         *@ENG_START_DOX  Color format configuration is supported on some AMD GPUs if the display is connected to the GPU using Dual-Link DVI or DisplayPort cable. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayColorDepth_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetValue (ADLX_COLOR_DEPTH* currentColorDepth) = 0;
@@ -679,7 +696,8 @@ namespace adlx
         *@ENG_START_DOX  Color format configuration is supported on some AMD GPUs if the display is connected to the GPU using Dual-Link DVI or DisplayPort cable. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayColorDepth_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL SetValue (ADLX_COLOR_DEPTH colorDepth) = 0;
@@ -701,7 +719,8 @@ namespace adlx
         * If the support state of the color format is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayColorDepth_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedColorDepth (ADLX_COLOR_DEPTH colorDepth, adlx_bool* supported) = 0;
@@ -722,7 +741,8 @@ namespace adlx
         * If the state of color component/pixel with 6 bits is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayColorDepth_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedBPC_6 (adlx_bool* supported) = 0;
@@ -743,7 +763,8 @@ namespace adlx
         * If the state of color component/pixel with 8 bits is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayColorDepth_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedBPC_8 (adlx_bool* supported) = 0;
@@ -764,7 +785,8 @@ namespace adlx
         * If the state of color component/pixel with 10 bits is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayColorDepth_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedBPC_10 (adlx_bool* supported) = 0;
@@ -785,7 +807,8 @@ namespace adlx
         * If the state of color component/pixel with 12 bits is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayColorDepth_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedBPC_12 (adlx_bool* supported) = 0;
@@ -806,7 +829,8 @@ namespace adlx
         * If the state of color component/pixel with 14 bits is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayColorDepth_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedBPC_14 (adlx_bool* supported) = 0;
@@ -827,7 +851,8 @@ namespace adlx
         * If the state of color component/pixel with 16 bits is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayColorDepth_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedBPC_16 (adlx_bool* supported) = 0;
@@ -899,7 +924,8 @@ namespace adlx
         * Pixel format configuration is not supported for DVI-HDMI and DisplayPort-HDMI connections. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayPixelFormat_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -925,7 +951,8 @@ namespace adlx
         * Pixel format configuration is not supported for DVI-HDMI and DisplayPort-HDMI connections. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayPixelFormat_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetValue (ADLX_PIXEL_FORMAT* pixelFormat) = 0;
@@ -951,7 +978,8 @@ namespace adlx
         * Pixel format configuration is not supported for DVI-HDMI and DisplayPort-HDMI connections. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayPixelFormat_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL SetValue (ADLX_PIXEL_FORMAT pixelFormat) = 0;
@@ -973,7 +1001,8 @@ namespace adlx
         * If the support state of the pixel format is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayPixelFormat_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedPixelFormat (ADLX_PIXEL_FORMAT pixelFormat, adlx_bool* supportd) = 0;
@@ -994,7 +1023,8 @@ namespace adlx
         * If the support state of the RGB 4:4:4 PC Standard (Full RGB) pixel format is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayPixelFormat_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedRGB444Full (adlx_bool* supportd) = 0;
@@ -1015,7 +1045,8 @@ namespace adlx
         * If the support state of the YCbCr 4:4:4 pixel format is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayPixelFormat_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedYCbCr444 (adlx_bool* supportd) = 0;
@@ -1036,7 +1067,8 @@ namespace adlx
         * If the support state of the YCbCr 4:2:2 pixel format is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayPixelFormat_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedYCbCr422 (adlx_bool* supportd) = 0;
@@ -1057,7 +1089,8 @@ namespace adlx
         * If the support state of the RGB 4:4:4 Studio (Limited RGB) pixel format is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayPixelFormat_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedRGB444Limited (adlx_bool* supportd) = 0;
@@ -1078,7 +1111,8 @@ namespace adlx
         * If the support state of the YCbCr 4:2:0 pixel format is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayPixelFormat_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupportedYCbCr420 (adlx_bool* supportd) = 0;
@@ -1144,7 +1178,8 @@ namespace adlx
         * If the state of hue is not successfully returned, an error code is returned. <br>
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsHueSupported (adlx_bool* supported) = 0;
@@ -1166,7 +1201,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetHueRange (ADLX_IntRange* range) = 0;
@@ -1188,7 +1224,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetHue (adlx_int* currentHue) = 0;
@@ -1210,7 +1247,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL SetHue (adlx_int hue) = 0;
@@ -1232,7 +1270,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSaturationSupported (adlx_bool* supported) = 0;
@@ -1254,7 +1293,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetSaturationRange (ADLX_IntRange* range) = 0;
@@ -1276,7 +1316,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetSaturation (adlx_int* currentSaturation) = 0;
@@ -1298,7 +1339,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL SetSaturation (adlx_int saturation) = 0;
@@ -1320,7 +1362,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsBrightnessSupported (adlx_bool* supported) = 0;
@@ -1342,7 +1385,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetBrightnessRange (ADLX_IntRange* range) = 0;
@@ -1364,7 +1408,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetBrightness (adlx_int* currentBrightness) = 0;
@@ -1386,7 +1431,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL SetBrightness (adlx_int brightness) = 0;
@@ -1408,7 +1454,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsContrastSupported (adlx_bool* supported) = 0;
@@ -1430,7 +1477,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetContrastRange (ADLX_IntRange* range) = 0;
@@ -1452,7 +1500,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetContrast (adlx_int* currentContrast) = 0;
@@ -1474,7 +1523,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL SetContrast (adlx_int contrast) = 0;
@@ -1496,7 +1546,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsTemperatureSupported (adlx_bool* supported) = 0;
@@ -1518,7 +1569,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetTemperatureRange (ADLX_IntRange* range) = 0;
@@ -1540,7 +1592,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetTemperature (adlx_int* currentTemperature) = 0;
@@ -1562,7 +1615,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayCustomColor_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL SetTemperature (adlx_int temperature) = 0;
@@ -1650,7 +1704,8 @@ namespace adlx
         * If the HDCP is disabled on this display, digitally protected content may be unplayable, or played at a lower resolution.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayHDCP_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -1676,7 +1731,8 @@ namespace adlx
         * If the HDCP is disabled on this display, digitally protected content may be unplayable, or played at a lower resolution.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayHDCP_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsEnabled (adlx_bool* enabled) = 0;
@@ -1702,7 +1758,8 @@ namespace adlx
         * If the HDCP is disabled on this display, digitally protected content may be unplayable, or played at a lower resolution.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayHDCP_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL SetEnabled (adlx_bool enabled) = 0;
@@ -1762,7 +1819,8 @@ namespace adlx
 		* If the properties of a custom display resolution are not successfully returned, an error code is returned.<br/>
 		* Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayResolution_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL GetValue (ADLX_CustomResolution* customResolution) = 0;
@@ -1783,7 +1841,8 @@ namespace adlx
 		* If the properties of a custom display resolution are not successfully set, an error code is returned.<br/>
 		* Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayResolution_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetValue (ADLX_CustomResolution customResolution) = 0;
@@ -1853,7 +1912,8 @@ namespace adlx
         * In C++, when using ADLX interfaces as smart pointers, there is no need to call @ref DOX_IADLXInterface_Release because smart pointers call it in their internal implementation.
         * @ENG_END_DOX
         *
-        * @copydoc IADLXDisplayResolutionList_REQ_TABLE
+        * @requirements
+        * @DetailsTable{#include"IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL At (const adlx_uint location, IADLXDisplayResolution** ppItem) = 0;
@@ -1883,7 +1943,8 @@ namespace adlx
          * @ENG_END_DOX
          *
          *
-         * @copydoc IADLXDisplayResolutionList_REQ_TABLE
+         * @requirements
+         * @DetailsTable{#include"IDisplaySettings.h", @ADLX_First_Ver}
          *
          */
         virtual ADLX_RESULT         ADLX_STD_CALL Add_Back (IADLXDisplayResolution* pItem) = 0;
@@ -1956,7 +2017,8 @@ namespace adlx
 		* __Note__: Displays running in duplicate or Eyefinity mode do not support custom resolutions.
         * @ENG_END_DOX
 		*
-        *@copydoc IADLXDisplayCustomResolution_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -1990,7 +2052,8 @@ namespace adlx
 		* __Note__: Displays running in duplicate or Eyefinity mode do not support custom resolutions.
         * @ENG_END_DOX
 		*
-        *@copydoc IADLXDisplayCustomResolution_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetResolutionList (IADLXDisplayResolutionList** ppResolutionList) = 0;
@@ -2024,7 +2087,8 @@ namespace adlx
 		* __Note__: Displays running in duplicate or Eyefinity mode do not support custom resolutions.
         * @ENG_END_DOX
 		*
-        *@copydoc IADLXDisplayCustomResolution_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetCurrentAppliedResolution (IADLXDisplayResolution** ppResolution) = 0;
@@ -2051,7 +2115,8 @@ namespace adlx
 		* __Note__: Displays running in duplicate or Eyefinity mode do not support custom resolutions.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayCustomResolution_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL CreateNewResolution (IADLXDisplayResolution* pResolution) = 0;
@@ -2078,7 +2143,8 @@ namespace adlx
 		* __Note__: Displays running in duplicate or Eyefinity mode do not support custom resolutions.
         * @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayCustomResolution_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL DeleteResolution (IADLXDisplayResolution* pResolution) = 0;
@@ -2140,7 +2206,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayVariBright_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT ADLX_STD_CALL IsSupported (adlx_bool* supported) = 0;
@@ -2162,7 +2229,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayVariBright_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsEnabled (adlx_bool* enabled) = 0;
@@ -2184,7 +2252,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayVariBright_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetEnabled (adlx_bool enabled) = 0;
@@ -2206,7 +2275,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayVariBright_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsCurrentMaximizeBrightness (adlx_bool* maximizeBrightness) = 0;
@@ -2228,7 +2298,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayVariBright_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsCurrentOptimizeBrightness (adlx_bool* optimizeBrightness) = 0;
@@ -2250,7 +2321,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayVariBright_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsCurrentBalanced (adlx_bool* balanced) = 0;
@@ -2272,7 +2344,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayVariBright_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsCurrentOptimizeBattery (adlx_bool* optimizeBattery) = 0;
@@ -2294,7 +2367,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayVariBright_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL IsCurrentMaximizeBattery (adlx_bool* maximizeBattery) = 0;
@@ -2316,7 +2390,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayVariBright_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetMaximizeBrightness () = 0;
@@ -2338,7 +2413,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayVariBright_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetOptimizeBrightness () = 0;
@@ -2360,7 +2436,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayVariBright_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetBalanced () = 0;
@@ -2382,7 +2459,8 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
         *
         *
-        *@copydoc IADLXDisplayVariBright_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetOptimizeBattery () = 0;
@@ -2407,7 +2485,8 @@ namespace adlx
         *
         *@ENG_START_DOX @details The maximized battery preset maximizes battery time. @ENG_END_DOX
         *
-        *@copydoc IADLXDisplayVariBright_REQ_TABLE
+        *@requirements
+        *@DetailsTable{#include "IDisplaySettings.h", @ADLX_First_Ver}
         *
         */
         virtual ADLX_RESULT         ADLX_STD_CALL SetMaximizeBattery () = 0;
@@ -2449,334 +2528,4 @@ struct IADLXDisplayVariBright
 #endif
 
 #pragma endregion IADLXDisplayVariBright interface
-
-#pragma region IADLXDisplayBlanking interface
-
-#if defined (__cplusplus)
-namespace adlx
-{
-    class ADLX_NO_VTABLE IADLXDisplayBlanking : public IADLXInterface
-    {
-    public:
-        ADLX_DECLARE_IID(L"IADLXDisplayBlanking")
-
-        /**
-        *@page DOX_IADLXDisplayBlanking_IsSupported IsSupported
-        *@ENG_START_DOX @brief Check if display blanking is supported on a display. @ENG_END_DOX
-        *
-        *@syntax
-        *@codeStart
-        * @ref ADLX_RESULT    IsSupported (adlx_bool* supported)
-        *@codeEnd
-        *
-        *@params
-        *@paramrow{1.,[out],supported,adlx_bool*,@ENG_START_DOX The pointer to a variable where the state of display blanking is returned. The variable is __true__ if display blanking is supported. The variable is __false__ if display blanking is not supported. @ENG_END_DOX}
-        *
-        *@retvalues
-        *@ENG_START_DOX  If the state of display blanking is successfully returned, __ADLX_OK__ is returned. <br>
-        * If the state of display blanking is not successfully returned, an error code is returned. <br>
-        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
-        *
-        *@copydoc IADLXDisplayBlanking_REQ_TABLE
-        *
-        */
-        virtual ADLX_RESULT         ADLX_STD_CALL IsSupported(adlx_bool* supported) = 0;
-
-        /**
-        *@page DOX_IADLXDisplayBlanking_IsCurrentBlanked IsCurrentBlanked
-        *@ENG_START_DOX @brief Checks if the current display is blanked. @ENG_END_DOX
-        *
-        *@syntax
-        *@codeStart
-        * @ref ADLX_RESULT    IsCurrentBlanked (adlx_bool* blanked)
-        *@codeEnd
-        *
-        *@params
-        *@paramrow{1.,[out],blanked,adlx_bool*,@ENG_START_DOX The pointer to a variable where the state of the display blanking is returned. The variable is __true__ if display blanking is enabled. The variable is __false__ if display blanking is not enabled. @ENG_END_DOX}
-        *
-        *@retvalues
-        *@ENG_START_DOX  If the state of display blanking is successfully returned, __ADLX_OK__ is returned. <br>
-        * If the state of display blanking is not successfully returned, an error code is returned. <br>
-        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
-        *
-        *@copydoc IADLXDisplayBlanking_REQ_TABLE
-        *
-        */
-        virtual ADLX_RESULT         ADLX_STD_CALL IsCurrentBlanked(adlx_bool* blanked) = 0;
-
-        /**
-        *@page DOX_IADLXDisplayBlanking_IsCurrentUnblanked IsCurrentUnblanked
-        *@ENG_START_DOX @brief Check if the current display is unblanked. @ENG_END_DOX
-        *
-        *@syntax
-        *@codeStart
-        * @ref ADLX_RESULT    IsCurrentUnblanked (adlx_bool* unBlanked)
-        *@codeEnd
-        *
-        *@params
-        *@paramrow{1.,[out],unBlanked,adlx_bool*,@ENG_START_DOX The pointer to a variable where the state of the display blanking is returned. The variable is __true__ if display blanking is not enabled. The variable is __false__ if display blanking is enabled. @ENG_END_DOX}
-        *
-        *@retvalues
-        *@ENG_START_DOX  If the state of display blanking is successfully returned, __ADLX_OK__ is returned. <br>
-        * If the state of display blanking is not successfully returned, an error code is returned. <br>
-        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
-        *
-        *@copydoc IADLXDisplayBlanking_REQ_TABLE
-        *
-        */
-        virtual ADLX_RESULT         ADLX_STD_CALL IsCurrentUnblanked(adlx_bool* unBlanked) = 0;
-
-        /**
-        *@page DOX_IADLXDisplayBlanking_SetBlanked SetBlanked
-        *@ENG_START_DOX @brief Set the state of display blanking to "blanked". @ENG_END_DOX
-        *
-        *@syntax
-        *@codeStart
-        * @ref ADLX_RESULT    SetBlanked ()
-        *@codeEnd
-        *
-        *@params
-        * N/A
-        *
-        *@retvalues
-        *@ENG_START_DOX  If the state of display blanking is successfully returned, __ADLX_OK__ is returned. <br>
-        * If the state of display blanking is not successfully returned, an error code is returned. <br>
-        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
-        *
-        *@copydoc IADLXDisplayBlanking_REQ_TABLE
-        *
-        */
-        virtual ADLX_RESULT         ADLX_STD_CALL SetBlanked() = 0;
-
-        /**
-        *@page DOX_IADLXDisplayBlanking_SetUnblanked SetUnblanked
-        *@ENG_START_DOX @brief Set the state of display blanking to "unblanked". @ENG_END_DOX
-        *
-        *@syntax
-        *@codeStart
-        * @ref ADLX_RESULT    SetUnblanked ()
-        *@codeEnd
-        *
-        *@params
-        * N/A
-        *
-        *@retvalues
-        *@ENG_START_DOX  If the state of display blanking is successfully returned, __ADLX_OK__ is returned. <br>
-        * If the state of display blanking is not successfully returned, an error code is returned. <br>
-        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
-        *
-        *@copydoc IADLXDisplayBlanking_REQ_TABLE
-        *
-        */
-        virtual ADLX_RESULT         ADLX_STD_CALL SetUnblanked() = 0;
-    };
-
-    typedef IADLXInterfacePtr_T<IADLXDisplayBlanking> IADLXDisplayBlankingPtr;
-}
-#else
-ADLX_DECLARE_IID(IADLXDisplayBlanking, L"IADLXDisplayBlanking")
-typedef struct IADLXDisplayBlanking IADLXDisplayBlanking;
-
-typedef struct IADLXDisplayBlankingVtbl
-{
-    //IADLXInterface
-    adlx_long(ADLX_STD_CALL* Acquire)(IADLXDisplayBlanking* pThis);
-    adlx_long(ADLX_STD_CALL* Release)(IADLXDisplayBlanking* pThis);
-    ADLX_RESULT(ADLX_STD_CALL* QueryInterface)(IADLXDisplayBlanking* pThis, const wchar_t* interfaceId, void** ppInterface);
-
-    //DisplayBlanking interface
-    ADLX_RESULT(ADLX_STD_CALL* IsSupported)(IADLXDisplayBlanking* pThis, adlx_bool* supported);
-    ADLX_RESULT(ADLX_STD_CALL* IsCurrentBlanked)(IADLXDisplayBlanking* pThis, adlx_bool* blanked);
-    ADLX_RESULT(ADLX_STD_CALL* IsCurrentUnblanked)(IADLXDisplayBlanking* pThis, adlx_bool* unBlanked);
-    ADLX_RESULT(ADLX_STD_CALL* SetBlanked)(IADLXDisplayBlanking* pThis);
-    ADLX_RESULT(ADLX_STD_CALL* SetUnblanked)(IADLXDisplayBlanking* pThis);
-} IADLXDisplayBlankingVtbl;
-
-struct IADLXDisplayBlanking
-{
-    const IADLXDisplayBlankingVtbl* pVtbl;
-};
-#endif
-
-#pragma endregion IADLXDisplayBlanking interface
-
-
-#pragma region IADLXBlueLightReduction interface
-
-#if defined (__cplusplus)
-namespace adlx
-{
-    class ADLX_NO_VTABLE IADLXBlueLightReduction : public IADLXInterface
-    {
-    public:
-        ADLX_DECLARE_IID(L"IADLXBlueLightReduction")
-
-            /**
-            *@page DOX_IADLXBlueLightReduction_IsSupported IsSupported
-            *@ENG_START_DOX @brief Checks if Blue Light Reduction is supported on the display. @ENG_END_DOX
-            *
-            *@syntax
-            *@codeStart
-            * @ref ADLX_RESULT        IsSupported (adlx_bool* supported)
-            *@codeEnd
-            *
-            *@params
-            *@paramrow{1.,[out],supported,adlx_bool*,@ENG_START_DOX The pointer to a variable where the state of Blue Light Reduction is returned. The variable is __true__ if Blue Light Reduction is supported. The variable is __false__ if Blue Light Reduction is not supported. @ENG_END_DOX}
-            *
-            *@retvalues
-            *@ENG_START_DOX  If the state of Blue Light Reduction is successfully returned, __ADLX_OK__ is returned. <br>
-            * If the state of Blue Light Reduction is not successfully returned, an error code is returned. <br>
-            * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
-            *
-            *@copydoc IADLXBlueLightReduction_REQ_TABLE
-            *
-            */
-            virtual ADLX_RESULT         ADLX_STD_CALL IsSupported(adlx_bool* supported) = 0;
-
-        /**
-        *@page DOX_IADLXBlueLightReduction_IsEnabled IsEnabled
-        *@ENG_START_DOX @brief Checks if Blue Light Reduction is enabled on a display. @ENG_END_DOX
-        *
-        *@syntax
-        *@codeStart
-        * @ref ADLX_RESULT    IsEnabled (adlx_bool* enabled)
-        *@codeEnd
-        *
-        *@params
-        * @paramrow{1.,[out],enabled,adlx_bool*,@ENG_START_DOX The pointer to a variable where the state of Blue Light Reduction is returned. The variable is __true__ if Blue Light Reduction is enabled. The variable is __false__ if Blue Light Reduction is not enabled. @ENG_END_DOX}
-        *
-        *@retvalues
-        *@ENG_START_DOX  If the state of Blue Light Reduction is successfully returned, __ADLX_OK__ is returned. <br>
-        * If the state of Blue Light Reduction is not successfully returned, an error code is returned. <br>
-        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
-        *
-        *@addinfo
-        *@ENG_START_DOX  Blue Light Reduction ensures an improvement in Retina Protection Factor (RPF). When this feature is enabled, a minimum RPF value of 35 - the lowest setting - is applied and maintained without a significant change in visuals. @ENG_END_DOX
-        *
-        *@copydoc IADLXBlueLightReduction_REQ_TABLE
-        *
-        */
-        virtual ADLX_RESULT         ADLX_STD_CALL IsEnabled(adlx_bool* enabled) = 0;
-
-        /**
-        *@page DOX_IADLXBlueLightReduction_SetEnabled SetEnabled
-        *@ENG_START_DOX @brief Sets the state of Blue Light Reduction to enabled or disabled on the current display. @ENG_END_DOX
-        *
-        *@syntax
-        *@codeStart
-        * @ref ADLX_RESULT    SetEnabled (adlx_bool enable)
-        *@codeEnd
-        *
-        *@params
-        * @paramrow{1.,[in],enable,adlx_bool,@ENG_START_DOX The new Blue Light Reduction state. Set __true__ to enable Blue Light Reduction. Set __false__ to disable Blue Light Reduction. @ENG_END_DOX}
-        *
-        *@retvalues
-        *@ENG_START_DOX  If the state of Blue Light Reduction is successfully set, __ADLX_OK__ is returned.<br/>
-        * If the state of Blue Light Reduction is not successfully set, an error code is returned.<br/>
-        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
-        *
-        * @addinfo
-        *@ENG_START_DOX  Blue Light Reduction ensures an improvement in Retina Protection Factor (RPF). When this feature is enabled, a minimum RPF value of 35 - the lowest setting - is applied and maintained without a significant change in visuals. @ENG_END_DOX
-        *
-        *@copydoc IADLXBlueLightReduction_REQ_TABLE
-        *
-        */
-        virtual ADLX_RESULT ADLX_STD_CALL SetEnabled(adlx_bool enabled) = 0;
-        /**
-        *@page DOX_IADLXBlueLightReduction_GetLevelRange GetLevelRange
-        *@ENG_START_DOX @brief Gets Blue Light Reduction level minimum range, maximum range, and step range of a display. @ENG_END_DOX
-        *
-        *@syntax
-        *@codeStart
-        * @ref ADLX_RESULT    GetLevelRange (@ref ADLX_IntRange* range)
-        *@codeEnd
-        *
-        *@params
-        *@paramrow{1.,[out],range,@ref ADLX_IntRange*,@ENG_START_DOX The pointer to a variable where the Blue Light Reduction level range is returned. @ENG_END_DOX}
-        *
-        *@retvalues
-        *@ENG_START_DOX  If the Blue Light Reduction level range is successfully returned, __ADLX_OK__ is returned. <br>
-        * If the Blue Light Reduction level range is not successfully returned, an error code is returned. <br>
-        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
-        *
-        *
-        *@copydoc IADLXBlueLightReduction_REQ_TABLE
-        *
-        */
-        virtual ADLX_RESULT ADLX_STD_CALL GetLevelRange(ADLX_IntRange* range) = 0;
-        /**
-        *@page DOX_IADLXBlueLightReduction_GetLevel GetLevel
-        *@ENG_START_DOX @brief Gets the current Blue Light Reduction level of a display. @ENG_END_DOX
-        *
-        *@syntax
-        *@codeStart
-        * @ref ADLX_RESULT    GetLevel(adlx_int* currentLevel)
-        *@codeEnd
-        *
-        *@params
-        * @paramrow{1.,[out],currentLevel,adlx_int*,@ENG_START_DOX The pointer to a variable where the current Blue Light Reduction level of the display is returned. @ENG_END_DOX}
-        *
-        *@retvalues
-        *@ENG_START_DOX  If the current Blue Light Reduction level is successfully returned, __ADLX_OK__ is returned. <br>
-        * If the current Blue Light Reduction level is not successfully returned, an error code is returned. <br>
-        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
-        *
-        *
-        *@copydoc IADLXBlueLightReduction_REQ_TABLE
-        *
-        */
-        virtual ADLX_RESULT ADLX_STD_CALL GetLevel(adlx_uint* currentLevel) = 0;
-        /**
-        *@page DOX_IADLXBlueLightReduction_SetLevel SetLevel
-        *@ENG_START_DOX @brief Sets the Blue Light Reduction level of a display. @ENG_END_DOX
-        *
-        *@syntax
-        *@codeStart
-        * @ref ADLX_RESULT    SetLevel(adlx_int value)
-        *@codeEnd
-        *
-        *@params
-        * @paramrow{1.,[out],level,adlx_int,@ENG_START_DOX The new Blue Light Reduction level value. @ENG_END_DOX}
-        *
-        *@retvalues
-        *@ENG_START_DOX  If the Blue Light Reduction level is successfully set, __ADLX_OK__ is returned. <br>
-        * If the Blue Light Reduction level is not successfully set, an error code is returned. <br>
-        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
-        *
-        *
-        *@copydoc IADLXBlueLightReduction_REQ_TABLE
-        *
-        */
-        virtual ADLX_RESULT ADLX_STD_CALL SetLevel(adlx_uint level) = 0;
-    };
-
-    typedef IADLXInterfacePtr_T<IADLXBlueLightReduction> IADLXBlueLightReductionPtr;
-}
-#else
-ADLX_DECLARE_IID(IADLXBlueLightReduction, L"IADLXBlueLightReduction")
-typedef struct IADLXBlueLightReduction IADLXBlueLightReduction;
-
-typedef struct IADLXBlueLightReductionVtbl
-{
-    //IADLXInterface
-    adlx_long(ADLX_STD_CALL* Acquire)(IADLXBlueLightReduction* pThis);
-    adlx_long(ADLX_STD_CALL* Release)(IADLXBlueLightReduction* pThis);
-    ADLX_RESULT(ADLX_STD_CALL* QueryInterface)(IADLXBlueLightReduction* pThis, const wchar_t* interfaceId, void** ppInterface);
-
-    //BlueLightReduction interface
-    ADLX_RESULT(ADLX_STD_CALL* IsSupported)(IADLXBlueLightReduction* pThis, adlx_bool* supported);
-    ADLX_RESULT(ADLX_STD_CALL* IsEnabled)(IADLXBlueLightReduction* pThis, adlx_bool* enabled);
-    ADLX_RESULT(ADLX_STD_CALL* SetEnabled)(IADLXBlueLightReduction* pThis, adlx_bool enabled);
-    ADLX_RESULT(ADLX_STD_CALL* GetLevelRange)(IADLXBlueLightReduction* pThis, ADLX_IntRange* range);
-    ADLX_RESULT(ADLX_STD_CALL* GetLevel)(IADLXBlueLightReduction* pThis, adlx_int* currentLevel);
-    ADLX_RESULT(ADLX_STD_CALL* SetLevel)(IADLXBlueLightReduction* pThis, adlx_int Level);
-} IADLXBlueLightReductionVtbl;
-
-struct IADLXBlueLightReduction
-{
-    const IADLXBlueLightReductionVtbl* pVtbl;
-};
-#endif
-
-#pragma endregion IADLXBlueLightReduction interface
 #endif // ADLX_IDISPLAYSETTING_H

@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -334,36 +334,26 @@ $(document).ready(function(){initNavTree('c_display__pixel_format.html',''); ini
 <div class="line">        adlx_bool support = <span class="keyword">false</span>;</div>
 <div class="line"> </div>
 <div class="line">        res = displayPixelFormat-&gt;pVtbl-&gt;IsSupportedRGB444Full(displayPixelFormat, &amp;support);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIs support RGB 4:4:4 PC Standard (Full RGB): %d\n&quot;</span>, support);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIs support RGB 4:4:4 PC Standard (Full RGB): %d\n&quot;</span>, support);</div>
 <div class="line">        res = displayPixelFormat-&gt;pVtbl-&gt;IsSupportedYCbCr444(displayPixelFormat, &amp;support);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIs support YCbCr 4:4:4: %d\n&quot;</span>, support);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIs support YCbCr 4:4:4: %d\n&quot;</span>, support);</div>
 <div class="line">        res = displayPixelFormat-&gt;pVtbl-&gt;IsSupportedYCbCr422(displayPixelFormat, &amp;support);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIs support YCbCr 4:2:2: %d\n&quot;</span>, support);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIs support YCbCr 4:2:2: %d\n&quot;</span>, support);</div>
 <div class="line">        res = displayPixelFormat-&gt;pVtbl-&gt;IsSupportedRGB444Limited(displayPixelFormat, &amp;support);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIs support RGB 4:4:4 Studio (Limited RGB): %d\n&quot;</span>, support);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIs support RGB 4:4:4 Studio (Limited RGB): %d\n&quot;</span>, support);</div>
 <div class="line">        res = displayPixelFormat-&gt;pVtbl-&gt;IsSupportedYCbCr420(displayPixelFormat, &amp;support);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIs support YCbCr 4:2:0: %d\n&quot;</span>, support);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIs support YCbCr 4:2:0: %d\n&quot;</span>, support);</div>
 <div class="line"> </div>
 <div class="line">        res = displayPixelFormat-&gt;pVtbl-&gt;IsSupportedPixelFormat(displayPixelFormat, RGB_444_FULL, &amp;support);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIs support RGB 4:4:4 PC Standard (Full RGB): %d\n&quot;</span>, support);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIs support RGB 4:4:4 PC Standard (Full RGB): %d\n&quot;</span>, support);</div>
 <div class="line">        res = displayPixelFormat-&gt;pVtbl-&gt;IsSupportedPixelFormat(displayPixelFormat, YCBCR_444, &amp;support);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIs support YCbCr 4:4:4: %d\n&quot;</span>, support);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIs support YCbCr 4:4:4: %d\n&quot;</span>, support);</div>
 <div class="line">        res = displayPixelFormat-&gt;pVtbl-&gt;IsSupportedPixelFormat(displayPixelFormat, YCBCR_422, &amp;support);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIs support YCbCr 4:2:2: %d\n&quot;</span>, support);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIs support YCbCr 4:2:2: %d\n&quot;</span>, support);</div>
 <div class="line">        res = displayPixelFormat-&gt;pVtbl-&gt;IsSupportedPixelFormat(displayPixelFormat, RGB_444_LIMITED, &amp;support);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIs support RGB 4:4:4 Studio (Limited RGB): %d\n&quot;</span>, support);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIs support RGB 4:4:4 Studio (Limited RGB): %d\n&quot;</span>, support);</div>
 <div class="line">        res = displayPixelFormat-&gt;pVtbl-&gt;IsSupportedPixelFormat(displayPixelFormat, YCBCR_420, &amp;support);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tIs support YCbCr 4:2:0: %d\n&quot;</span>, support);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIs support YCbCr 4:2:0: %d\n&quot;</span>, support);</div>
 <div class="line"> </div>
 <div class="line">        displayPixelFormat-&gt;pVtbl-&gt;Release(displayPixelFormat);</div>
 <div class="line">        displayPixelFormat = NULL;</div>

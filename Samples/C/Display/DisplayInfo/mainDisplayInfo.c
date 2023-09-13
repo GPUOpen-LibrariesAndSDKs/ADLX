@@ -98,23 +98,19 @@ void ShowDisplayInfo(IADLXDisplay* display)
     printf("\n  === Display info ===\n");
     const char* dispName;
     res = display->pVtbl->Name(display, &dispName);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tDisplay name: %s\n", dispName);
+    printf("\tDisplay name: %s\n", dispName);
 
     adlx_uint manufacturerID;
     res = display->pVtbl->ManufacturerID(display, &manufacturerID);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tManufacturer id: %d\n", manufacturerID);
+    printf("\tManufacturer id: %d\n", manufacturerID);
 
     ADLX_DISPLAY_TYPE displayType;
     res = display->pVtbl->DisplayType(display, &displayType);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tDisplay type: %s\n", GetDisplayTypeStr(displayType));
+    printf("\tDisplay type: %s\n", GetDisplayTypeStr(displayType));
 
     ADLX_DISPLAY_CONNECTOR_TYPE connectType;
     res = display->pVtbl->ConnectorType(display, &connectType);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tConnector type: %s\n", GetDisplayConnectorStr(connectType));
+    printf("\tConnector type: %s\n", GetDisplayConnectorStr(connectType));
 
     const char* edid;
     res = display->pVtbl->EDID(display, &edid);
@@ -125,29 +121,24 @@ void ShowDisplayInfo(IADLXDisplay* display)
 
     adlx_double refreshRate;
     res = display->pVtbl->RefreshRate(display, &refreshRate);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tRefresh rate: %f\n", refreshRate);
+    printf("\tRefresh rate: %f\n", refreshRate);
 
     adlx_uint pixelClock;
     res = display->pVtbl->PixelClock(display, &pixelClock);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tPixel clock: %d\n", pixelClock);
+    printf("\tPixel clock: %d\n", pixelClock);
 
     adlx_int maxHResolution = 0;
     adlx_int maxVResolution = 0;
     res = display->pVtbl->NativeResolution(display, &maxHResolution, &maxVResolution);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tNative resolution[h*v]: %d  %d\n", maxHResolution, maxVResolution);
+    printf("\tNative resolution[h*v]: %d  %d\n", maxHResolution, maxVResolution);
 
     ADLX_DISPLAY_SCAN_TYPE scanType;
     res = display->pVtbl->ScanType(display, &scanType);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tScan type: %s\n", GetScanTypeStr(scanType));
+    printf("\tScan type: %s\n", GetScanTypeStr(scanType));
 
     adlx_size id;
     res = display->pVtbl->UniqueId(display, &id);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tUniqueId: %zu\n", id);
+    printf("\tUniqueId: %zu\n", id);
 }
 
 // Wait for exit with error message

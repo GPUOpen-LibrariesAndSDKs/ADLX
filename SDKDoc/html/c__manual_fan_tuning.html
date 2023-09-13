@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -375,55 +375,47 @@ $(document).ready(function(){initNavTree('c__manual_fan_tuning.html',''); initRe
 <div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = manualFanTuning-&gt;pVtbl-&gt;GetFanTuningRanges (manualFanTuning, &amp;fanSpeedRange, &amp;fanTemperatureRange);</div>
 <div class="line">    printf (<span class="stringliteral">&quot;\tFan speed range: (%d, %d)\n&quot;</span>, fanSpeedRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, fanSpeedRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>);</div>
 <div class="line">    printf (<span class="stringliteral">&quot;\tFan temperature range: (%d, %d)\n&quot;</span>, fanTemperatureRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, fanTemperatureRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>);</div>
-<div class="line">    printf (<span class="stringliteral">&quot;\tReturn code is: %d(0 means success)\n&quot;</span>, res);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Display current fan tuning states</span></div>
 <div class="line">    IADLXManualFanTuningStateList* states;</div>
 <div class="line">    IADLXManualFanTuningState* oneState;</div>
 <div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;GetFanTuningStates (manualFanTuning, &amp;states);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
+<div class="line">    <span class="keywordflow">for</span> (adlx_uint crt = states-&gt;pVtbl-&gt;Begin (states); crt != states-&gt;pVtbl-&gt;End (states); ++crt)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">for</span> (adlx_uint crt = states-&gt;pVtbl-&gt;Begin (states); crt != states-&gt;pVtbl-&gt;End (states); ++crt)</div>
+<div class="line">        res = states-&gt;pVtbl-&gt;At_ManualFanTuningStateList (states, crt, &amp;oneState);</div>
+<div class="line">        adlx_int speed = 0, temperature = 0;</div>
+<div class="line">        oneState-&gt;pVtbl-&gt;GetFanSpeed (oneState, &amp;speed);</div>
+<div class="line">        oneState-&gt;pVtbl-&gt;GetTemperature (oneState, &amp;temperature);</div>
+<div class="line">        printf (<span class="stringliteral">&quot;\tThe current %d state: speed is %d temperature is %d\n&quot;</span>, crt, speed, temperature);</div>
+<div class="line">        <span class="keywordflow">if</span> (oneState != NULL)</div>
 <div class="line">        {</div>
-<div class="line">            res = states-&gt;pVtbl-&gt;At_ManualFanTuningStateList (states, crt, &amp;oneState);</div>
-<div class="line">            adlx_int speed = 0, temperature = 0;</div>
-<div class="line">            oneState-&gt;pVtbl-&gt;GetFanSpeed (oneState, &amp;speed);</div>
-<div class="line">            oneState-&gt;pVtbl-&gt;GetTemperature (oneState, &amp;temperature);</div>
-<div class="line">            printf (<span class="stringliteral">&quot;\tThe current %d state: speed is %d temperature is %d\n&quot;</span>, crt, speed, temperature);</div>
-<div class="line">            <span class="keywordflow">if</span> (oneState != NULL)</div>
-<div class="line">            {</div>
-<div class="line">                oneState-&gt;pVtbl-&gt;Release (oneState);</div>
-<div class="line">                oneState = NULL;</div>
-<div class="line">            }</div>
-<div class="line">        }</div>
-<div class="line">        <span class="keywordflow">if</span> (states != NULL)</div>
-<div class="line">        {</div>
-<div class="line">            states-&gt;pVtbl-&gt;Release (states);</div>
-<div class="line">            states = NULL;</div>
+<div class="line">            oneState-&gt;pVtbl-&gt;Release (oneState);</div>
+<div class="line">            oneState = NULL;</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
-<div class="line">    </div>
+<div class="line">    <span class="keywordflow">if</span> (states != NULL)</div>
+<div class="line">    {</div>
+<div class="line">        states-&gt;pVtbl-&gt;Release (states);</div>
+<div class="line">        states = NULL;</div>
+<div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Set empty fan tuning states</span></div>
 <div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;GetEmptyFanTuningStates (manualFanTuning, &amp;states);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
+<div class="line">    <span class="keywordflow">for</span> (adlx_uint crt = states-&gt;pVtbl-&gt;Begin (states); crt != states-&gt;pVtbl-&gt;End (states); ++crt)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">for</span> (adlx_uint crt = states-&gt;pVtbl-&gt;Begin (states); crt != states-&gt;pVtbl-&gt;End (states); ++crt)</div>
+<div class="line">        res = states-&gt;pVtbl-&gt;At_ManualFanTuningStateList (states, crt, &amp;oneState);</div>
+<div class="line">        adlx_int speed = 0, temperature = 0;</div>
+<div class="line">        <span class="keywordtype">int</span> fanSpeedStep = (fanSpeedRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - fanSpeedRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / states-&gt;pVtbl-&gt;Size (states);</div>
+<div class="line">        <span class="keywordtype">int</span> fanTemperatureStep = (fanTemperatureRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - fanTemperatureRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / states-&gt;pVtbl-&gt;Size (states);</div>
+<div class="line">        oneState-&gt;pVtbl-&gt;SetFanSpeed (oneState, fanSpeedRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + fanSpeedStep * crt);</div>
+<div class="line">        oneState-&gt;pVtbl-&gt;GetFanSpeed (oneState, &amp;speed);</div>
+<div class="line">        oneState-&gt;pVtbl-&gt;SetTemperature (oneState, fanTemperatureRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + fanTemperatureStep * crt);</div>
+<div class="line">        oneState-&gt;pVtbl-&gt;GetTemperature (oneState, &amp;temperature);</div>
+<div class="line">        printf (<span class="stringliteral">&quot;\tSet empty %d state: speed is %d temperature is %d\n&quot;</span>, crt, speed, temperature);</div>
+<div class="line">        <span class="keywordflow">if</span> (oneState != NULL)</div>
 <div class="line">        {</div>
-<div class="line">            res = states-&gt;pVtbl-&gt;At_ManualFanTuningStateList (states, crt, &amp;oneState);</div>
-<div class="line">            adlx_int speed = 0, temperature = 0;</div>
-<div class="line">            <span class="keywordtype">int</span> fanSpeedStep = (fanSpeedRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - fanSpeedRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / states-&gt;pVtbl-&gt;Size (states);</div>
-<div class="line">            <span class="keywordtype">int</span> fanTemperatureStep = (fanTemperatureRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - fanTemperatureRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / states-&gt;pVtbl-&gt;Size (states);</div>
-<div class="line">            oneState-&gt;pVtbl-&gt;SetFanSpeed (oneState, fanSpeedRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + fanSpeedStep * crt);</div>
-<div class="line">            oneState-&gt;pVtbl-&gt;GetFanSpeed (oneState, &amp;speed);</div>
-<div class="line">            oneState-&gt;pVtbl-&gt;SetTemperature (oneState, fanTemperatureRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + fanTemperatureStep * crt);</div>
-<div class="line">            oneState-&gt;pVtbl-&gt;GetTemperature (oneState, &amp;temperature);</div>
-<div class="line">            printf (<span class="stringliteral">&quot;\tSet empty %d state: speed is %d temperature is %d\n&quot;</span>, crt, speed, temperature);</div>
-<div class="line">            <span class="keywordflow">if</span> (oneState != NULL)</div>
-<div class="line">            {</div>
-<div class="line">                oneState-&gt;pVtbl-&gt;Release (oneState);</div>
-<div class="line">                oneState = NULL;</div>
-<div class="line">            }</div>
+<div class="line">            oneState-&gt;pVtbl-&gt;Release (oneState);</div>
+<div class="line">            oneState = NULL;</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"> </div>
@@ -441,27 +433,24 @@ $(document).ready(function(){initNavTree('c__manual_fan_tuning.html',''); initRe
 <div class="line">        states = NULL;</div>
 <div class="line">    }</div>
 <div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;GetFanTuningStates (manualFanTuning, &amp;states);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
+<div class="line">    printf (<span class="stringliteral">&quot;\tAfter setting:\n&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">for</span> (adlx_uint crt = states-&gt;pVtbl-&gt;Begin (states); crt != states-&gt;pVtbl-&gt;End (states); ++crt)</div>
 <div class="line">    {</div>
-<div class="line">        printf (<span class="stringliteral">&quot;\tAfter setting:\n&quot;</span>);</div>
-<div class="line">        <span class="keywordflow">for</span> (adlx_uint crt = states-&gt;pVtbl-&gt;Begin (states); crt != states-&gt;pVtbl-&gt;End (states); ++crt)</div>
+<div class="line">        res = states-&gt;pVtbl-&gt;At_ManualFanTuningStateList (states, crt, &amp;oneState);</div>
+<div class="line">        adlx_int speed = 0, temperature = 0;</div>
+<div class="line">        oneState-&gt;pVtbl-&gt;GetFanSpeed (oneState, &amp;speed);</div>
+<div class="line">        oneState-&gt;pVtbl-&gt;GetTemperature (oneState, &amp;temperature);</div>
+<div class="line">        printf (<span class="stringliteral">&quot;\tThe current %d state: speed is %d temperature is %d\n&quot;</span>, crt, speed, temperature);</div>
+<div class="line">        <span class="keywordflow">if</span> (oneState != NULL)</div>
 <div class="line">        {</div>
-<div class="line">            res = states-&gt;pVtbl-&gt;At_ManualFanTuningStateList (states, crt, &amp;oneState);</div>
-<div class="line">            adlx_int speed = 0, temperature = 0;</div>
-<div class="line">            oneState-&gt;pVtbl-&gt;GetFanSpeed (oneState, &amp;speed);</div>
-<div class="line">            oneState-&gt;pVtbl-&gt;GetTemperature (oneState, &amp;temperature);</div>
-<div class="line">            printf (<span class="stringliteral">&quot;\tThe current %d state: speed is %d temperature is %d\n&quot;</span>, crt, speed, temperature);</div>
-<div class="line">            <span class="keywordflow">if</span> (oneState != NULL)</div>
-<div class="line">            {</div>
-<div class="line">                oneState-&gt;pVtbl-&gt;Release (oneState);</div>
-<div class="line">                oneState = NULL;</div>
-<div class="line">            }</div>
+<div class="line">            oneState-&gt;pVtbl-&gt;Release (oneState);</div>
+<div class="line">            oneState = NULL;</div>
 <div class="line">        }</div>
-<div class="line">        <span class="keywordflow">if</span> (states != NULL)</div>
-<div class="line">        {</div>
-<div class="line">            states-&gt;pVtbl-&gt;Release (states);</div>
-<div class="line">            states = NULL;</div>
-<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (states != NULL)</div>
+<div class="line">    {</div>
+<div class="line">        states-&gt;pVtbl-&gt;Release (states);</div>
+<div class="line">        states = NULL;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -474,14 +463,14 @@ $(document).ready(function(){initNavTree('c__manual_fan_tuning.html',''); initRe
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a> (res) || !supported)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    adlx_bool isZeroRPMStateSet = <span class="keyword">false</span>;</div>
-<div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;SetZeroRPMState (manualFanTuning, <span class="keyword">true</span>);</div>
-<div class="line">    printf (<span class="stringliteral">&quot;\tSet ZeroRPM state, return code is: %d(0 means success)\n&quot;</span>, res);</div>
-<div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;GetZeroRPMState (manualFanTuning, &amp;isZeroRPMStateSet);</div>
-<div class="line">    printf (<span class="stringliteral">&quot;\tIs ZeroRPM state set: %d, return code is: %d(0 means success)\n&quot;</span>, isZeroRPMStateSet, res);</div>
-<div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;SetZeroRPMState (manualFanTuning, <span class="keyword">false</span>);</div>
-<div class="line">    printf (<span class="stringliteral">&quot;\tReset ZeroRPM state, return code is: %d(0 means success)\n&quot;</span>, res);</div>
-<div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;GetZeroRPMState (manualFanTuning, &amp;isZeroRPMStateSet);</div>
-<div class="line">    printf (<span class="stringliteral">&quot;\tIs ZeroRPM state set: %d, return code is: %d(0 means success)\n&quot;</span>, isZeroRPMStateSet, res);</div>
+<div class="line">    manualFanTuning-&gt;pVtbl-&gt;SetZeroRPMState (manualFanTuning, <span class="keyword">true</span>);</div>
+<div class="line">    printf (<span class="stringliteral">&quot;\tSet ZeroRPM state\n&quot;</span>);</div>
+<div class="line">    manualFanTuning-&gt;pVtbl-&gt;GetZeroRPMState (manualFanTuning, &amp;isZeroRPMStateSet);</div>
+<div class="line">    printf (<span class="stringliteral">&quot;\tIs ZeroRPM state set: %d\n&quot;</span>, isZeroRPMStateSet);</div>
+<div class="line">    manualFanTuning-&gt;pVtbl-&gt;SetZeroRPMState (manualFanTuning, <span class="keyword">false</span>);</div>
+<div class="line">    printf (<span class="stringliteral">&quot;\tReset ZeroRPM state\n&quot;</span>);</div>
+<div class="line">    manualFanTuning-&gt;pVtbl-&gt;GetZeroRPMState (manualFanTuning, &amp;isZeroRPMStateSet);</div>
+<div class="line">    printf (<span class="stringliteral">&quot;\tIs ZeroRPM state set: %d\n&quot;</span>, isZeroRPMStateSet);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Display and set MinAcoustic settings</span></div>
@@ -494,15 +483,15 @@ $(document).ready(function(){initNavTree('c__manual_fan_tuning.html',''); initRe
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line"> </div>
 <div class="line">    <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> tuningRange;</div>
-<div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;GetMinAcousticLimitRange (manualFanTuning, &amp;tuningRange);</div>
-<div class="line">    printf (<span class="stringliteral">&quot;\tMinAcoustic limit range: (%d, %d), return code is: %d(0 means success)\n&quot;</span>, tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, tuningRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>, res);</div>
+<div class="line">    manualFanTuning-&gt;pVtbl-&gt;GetMinAcousticLimitRange (manualFanTuning, &amp;tuningRange);</div>
+<div class="line">    printf (<span class="stringliteral">&quot;\tMinAcoustic limit range: (%d, %d)\n&quot;</span>, tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, tuningRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>);</div>
 <div class="line"> </div>
 <div class="line">    adlx_int minAcousticLimit;</div>
-<div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;GetMinAcousticLimit (manualFanTuning, &amp;minAcousticLimit);</div>
-<div class="line">    printf (<span class="stringliteral">&quot;\tCurrent min acoustic limit: %d, return code is: %d(0 means success)\n&quot;</span>, minAcousticLimit, res);</div>
-<div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;SetMinAcousticLimit (manualFanTuning, tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + (tuningRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / 2);</div>
-<div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;GetMinAcousticLimit (manualFanTuning, &amp;minAcousticLimit);</div>
-<div class="line">    printf (<span class="stringliteral">&quot;\tSet current min acoustic limit to: %d, return code is: %d(0 means success)\n&quot;</span>, minAcousticLimit, res);</div>
+<div class="line">    manualFanTuning-&gt;pVtbl-&gt;GetMinAcousticLimit (manualFanTuning, &amp;minAcousticLimit);</div>
+<div class="line">    printf (<span class="stringliteral">&quot;\tCurrent min acoustic limit: %d\n&quot;</span>, minAcousticLimit);</div>
+<div class="line">    manualFanTuning-&gt;pVtbl-&gt;SetMinAcousticLimit (manualFanTuning, tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + (tuningRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / 2);</div>
+<div class="line">    manualFanTuning-&gt;pVtbl-&gt;GetMinAcousticLimit (manualFanTuning, &amp;minAcousticLimit);</div>
+<div class="line">    printf (<span class="stringliteral">&quot;\tSet current min acoustic limit to: %d\n&quot;</span>, minAcousticLimit);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Display and set MinFanSpeed settings</span></div>
@@ -515,15 +504,15 @@ $(document).ready(function(){initNavTree('c__manual_fan_tuning.html',''); initRe
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line"> </div>
 <div class="line">    <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> tuningRange;</div>
-<div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;GetMinFanSpeedRange (manualFanTuning, &amp;tuningRange);</div>
-<div class="line">    printf (<span class="stringliteral">&quot;\tMinFanSpeed range: (%d, %d), return code is: %d(0 means success)\n&quot;</span>, tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, tuningRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>, res);</div>
+<div class="line">    manualFanTuning-&gt;pVtbl-&gt;GetMinFanSpeedRange (manualFanTuning, &amp;tuningRange);</div>
+<div class="line">    printf (<span class="stringliteral">&quot;\tMinFanSpeed range: (%d, %d)\n&quot;</span>, tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, tuningRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>);</div>
 <div class="line"> </div>
 <div class="line">    adlx_int minFanSpeed = 0;</div>
-<div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;GetMinFanSpeed (manualFanTuning, &amp;minFanSpeed);</div>
-<div class="line">    printf (<span class="stringliteral">&quot;\tCurrent MinFanSpeed: %d, return code is: %d(0 means success)\n&quot;</span>, minFanSpeed, res);</div>
-<div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;SetMinFanSpeed (manualFanTuning, tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + (tuningRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / 2);</div>
-<div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;GetMinFanSpeed (manualFanTuning, &amp;minFanSpeed);</div>
-<div class="line">    printf (<span class="stringliteral">&quot;\tSet current MinFanSpeed to: %d, return code is: %d(0 means success)\n&quot;</span>, minFanSpeed, res);</div>
+<div class="line">    manualFanTuning-&gt;pVtbl-&gt;GetMinFanSpeed (manualFanTuning, &amp;minFanSpeed);</div>
+<div class="line">    printf (<span class="stringliteral">&quot;\tCurrent MinFanSpeed: %d\n&quot;</span>, minFanSpeed);</div>
+<div class="line">    manualFanTuning-&gt;pVtbl-&gt;SetMinFanSpeed (manualFanTuning, tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + (tuningRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / 2);</div>
+<div class="line">    manualFanTuning-&gt;pVtbl-&gt;GetMinFanSpeed (manualFanTuning, &amp;minFanSpeed);</div>
+<div class="line">    printf (<span class="stringliteral">&quot;\tSet current MinFanSpeed to: %d\n&quot;</span>, minFanSpeed);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Display and set TargetFanSpeed settings</span></div>
@@ -536,23 +525,23 @@ $(document).ready(function(){initNavTree('c__manual_fan_tuning.html',''); initRe
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line"> </div>
 <div class="line">    <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> tuningRange;</div>
-<div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;GetTargetFanSpeedRange (manualFanTuning, &amp;tuningRange);</div>
-<div class="line">    printf (<span class="stringliteral">&quot;\tTargetFanSpeed range: (%d, %d), return code is: %d(0 means success)\n&quot;</span>, tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, tuningRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>, res);</div>
+<div class="line">    manualFanTuning-&gt;pVtbl-&gt;GetTargetFanSpeedRange (manualFanTuning, &amp;tuningRange);</div>
+<div class="line">    printf (<span class="stringliteral">&quot;\tTargetFanSpeed range: (%d, %d)\n&quot;</span>, tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, tuningRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>);</div>
 <div class="line"> </div>
 <div class="line">    adlx_int minAcousticLimit;</div>
-<div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;GetTargetFanSpeed (manualFanTuning, &amp;minAcousticLimit);</div>
-<div class="line">    printf (<span class="stringliteral">&quot;\tCurrent TargetFanSpeed: %d, return code is: %d(0 means success)\n&quot;</span>, minAcousticLimit, res);</div>
-<div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;SetTargetFanSpeed (manualFanTuning, tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + (tuningRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / 2);</div>
-<div class="line">    res = manualFanTuning-&gt;pVtbl-&gt;GetTargetFanSpeed (manualFanTuning, &amp;minAcousticLimit);</div>
-<div class="line">    printf (<span class="stringliteral">&quot;\tSet current TargetFanSpeed to: %d, return code is: %d(0 means success)\n&quot;</span>, minAcousticLimit, res);</div>
+<div class="line">    manualFanTuning-&gt;pVtbl-&gt;GetTargetFanSpeed (manualFanTuning, &amp;minAcousticLimit);</div>
+<div class="line">    printf (<span class="stringliteral">&quot;\tCurrent TargetFanSpeed: %d\n&quot;</span>, minAcousticLimit);</div>
+<div class="line">    manualFanTuning-&gt;pVtbl-&gt;SetTargetFanSpeed (manualFanTuning, tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + (tuningRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - tuningRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / 2);</div>
+<div class="line">    manualFanTuning-&gt;pVtbl-&gt;GetTargetFanSpeed (manualFanTuning, &amp;minAcousticLimit);</div>
+<div class="line">    printf (<span class="stringliteral">&quot;\tSet current TargetFanSpeed to: %d\n&quot;</span>, minAcousticLimit);</div>
 <div class="line">}</div>
 <div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:282</div></div>
 <div class="ttc" id="agroup___a_d_l_x_macro_html_ga6ea0e7f02e40768a1e47cb60e0e6f482"><div class="ttname"><a href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a></div><div class="ttdeci">#define ADLX_FAILED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:316</div></div>
 <div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:305</div></div>
 <div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:278</div></div>
-<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:154</div></div>
-<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:153</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:152</div></div>
+<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:155</div></div>
+<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:154</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">Structure contains interger range information.</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:153</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

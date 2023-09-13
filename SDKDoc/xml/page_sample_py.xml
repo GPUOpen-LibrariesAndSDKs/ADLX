@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="page_sample_py" kind="page">
+    <compoundname>page_sample_py</compoundname>
+    <title>Python</title>
+    <innerpage refid="py_samples_filedesc">File Descriptions</innerpage>
+    <innerpage refid="py_samples_more">Samples</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This document describes how to build the Python bindings for ADLX, and the ADLX Python samples, as well as the environment in which they can be executed. The ADLX Python samples demonstrate how to program with ADLX in a Python application.</para>
+<para><heading level="2">Supported Operating Systems</heading>
+</para>
+<para>Windows® 10 (32- and 64-bit versions) and up.</para>
+<para><heading level="2">Building the ADLXCSharpBind</heading>
+</para>
+<para>These are the instructions for building the ADLX Python bindings for the ADLX Python samples.</para>
+<para><heading level="2">Build Tool</heading>
+</para>
+<para>Visual Studio 2019 with C and C++ components for desktop.</para>
+<para><heading level="2">Prerequisites</heading>
+</para>
+<para><itemizedlist>
+<listitem><para><bold>ADLX SDK</bold> is installed.</para>
+</listitem><listitem><para><bold>Python 3.9</bold> is installed.</para>
+</listitem><listitem><para><bold>pybind11</bold> is installed.</para>
+</listitem><listitem><para>The path to the Python 3.9 installation is set to the <bold>PYHOME</bold> system environment variable.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Note:</bold> The ADLX library is installed along with the AMD display driver.</para>
+<para><heading level="2">Build Instructions</heading>
+</para>
+<para><orderedlist>
+<listitem>
+<para>Run Visual Studio 2019.  </para>
+</listitem>
+<listitem>
+<para>Open <computeroutput>~ADLX\drivers\ADLX\Samples\python\ADLXPybind\ADLXPybind.sln</computeroutput>. </para>
+</listitem>
+<listitem>
+<para>Rebuild the project. </para>
+</listitem>
+</orderedlist>
+</para>
+<para><heading level="2">Building the ADLX Python samples</heading>
+</para>
+<para>These are the instructions for building the <bold>DisplayInfo</bold> ADLX Python sample. Similar instructions must be followed for building the other ADLX Python samples.</para>
+<para><heading level="2">Build Tool</heading>
+</para>
+<para>Visual Studio Code</para>
+<para><heading level="2">Prerequisites</heading>
+</para>
+<para><itemizedlist>
+<listitem><para><bold>ADLX SDK</bold> is installed.</para>
+</listitem><listitem><para><bold>ADLXCSharpBind</bold> is built.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Note:</bold> The ADLX library is installed along with the AMD display driver.</para>
+<para><heading level="2">Build Instructions</heading>
+</para>
+<para><orderedlist>
+<listitem>
+<para>Run Visual Studio Code.  </para>
+</listitem>
+<listitem>
+<para>Open <computeroutput>~ADLX\drivers\ADLX\Samples\python\DisplayInfo</computeroutput>.  </para>
+</listitem>
+<listitem>
+<para>Rebuild the project. </para>
+</listitem>
+</orderedlist>
+</para>
+<para><itemizedlist>
+<listitem><para><ref refid="py_samples_filedesc" kindref="compound">File Descriptions</ref></para>
+</listitem><listitem><para><ref refid="py_samples_more" kindref="compound">Samples</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/Samples/python/ReadMe.md"/>
+  </compounddef>
+</doxygen>

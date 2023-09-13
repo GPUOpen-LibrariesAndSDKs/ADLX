@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_display_integer_scaling" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXDisplayIntegerScaling</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_integer_scaling_1aae885f9cb00ae1c36466ce335de265c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayIntegerScaling::IsSupported</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupported</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="533" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_integer_scaling_1af3323ff6cbff4439d68541c64b1f39fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayIntegerScaling::IsEnabled</definition>
+        <argsstring>(adlx_bool *enabled)=0</argsstring>
+        <name>IsEnabled</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="560" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_integer_scaling_1a5237e55a65c4744fb0d06dd68dfb59b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayIntegerScaling::SetEnabled</definition>
+        <argsstring>(adlx_bool enabled)=0</argsstring>
+        <name>SetEnabled</name>
+        <param>
+          <type>adlx_bool</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="587" column="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="502" column="5" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="503" bodyend="588"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayIntegerScaling</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_integer_scaling_1af3323ff6cbff4439d68541c64b1f39fe" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayIntegerScaling</scope><name>IsEnabled</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_integer_scaling_1aae885f9cb00ae1c36466ce335de265c9" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayIntegerScaling</scope><name>IsSupported</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayIntegerScaling</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayIntegerScaling</scope><name>Release</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_integer_scaling_1a5237e55a65c4744fb0d06dd68dfb59b7" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayIntegerScaling</scope><name>SetEnabled</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
