@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('cpp_display__color_depth.html',''); in
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('cpp_display__color_depth.html',''); in
 </body>
 </html> <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -241,7 +241,7 @@ $(document).ready(function(){initNavTree('cpp_display__color_depth.html',''); in
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;  === Get color depth supported status ===&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">        adlx_bool supported = <span class="keyword">false</span>;</div>
 <div class="line">        res = displayColorDepth-&gt;IsSupported(&amp;supported);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupported: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupported, res &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;, supported: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"><span class="keywordtype">void</span> GetSupportStateForEachColorDepth (<span class="keyword">const</span> IADLXDisplayServicesPtr&amp; displayService, <span class="keyword">const</span> IADLXDisplayPtr&amp; display)</div>
@@ -253,17 +253,23 @@ $(document).ready(function(){initNavTree('cpp_display__color_depth.html',''); in
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;  === Get color depth support list ===&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">        adlx_bool isSupported = <span class="keyword">false</span>;</div>
 <div class="line">        res = displayColorDepth-&gt;IsSupportedBPC_6 (&amp;isSupported);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedBPC_6, result &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot; BPC_6 support: &quot;</span> &lt;&lt; isSupported &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedBPC_6, result &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot; BPC_6 support: &quot;</span> &lt;&lt; isSupported &lt;&lt; std::endl;</div>
 <div class="line">        res = displayColorDepth-&gt;IsSupportedBPC_8 (&amp;isSupported);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedBPC_6, result &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot; BPC_8 support: &quot;</span> &lt;&lt; isSupported &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedBPC_6, result &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot; BPC_8 support: &quot;</span> &lt;&lt; isSupported &lt;&lt; std::endl;</div>
 <div class="line">        res = displayColorDepth-&gt;IsSupportedBPC_10 (&amp;isSupported);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedBPC_10, result &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot; BPC_10 support: &quot;</span> &lt;&lt; isSupported &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedBPC_10, result &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot; BPC_10 support: &quot;</span> &lt;&lt; isSupported &lt;&lt; std::endl;</div>
 <div class="line">        res = displayColorDepth-&gt;IsSupportedBPC_12 (&amp;isSupported);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedBPC_12, result &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot; BPC_12 support: &quot;</span> &lt;&lt; isSupported &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedBPC_12, result &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot; BPC_12 support: &quot;</span> &lt;&lt; isSupported &lt;&lt; std::endl;</div>
 <div class="line">        res = displayColorDepth-&gt;IsSupportedBPC_14 (&amp;isSupported);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedBPC_14, result &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot; BPC_14 support: &quot;</span> &lt;&lt; isSupported &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedBPC_14, result &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot; BPC_14 support: &quot;</span> &lt;&lt; isSupported &lt;&lt; std::endl;</div>
 <div class="line">        res = displayColorDepth-&gt;IsSupportedBPC_16 (&amp;isSupported);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedBPC_16, result &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot; BPC_16 support: &quot;</span> &lt;&lt; isSupported &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedBPC_16, result &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot; BPC_16 support: &quot;</span> &lt;&lt; isSupported &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">        <span class="keyword">const</span> std::unordered_map&lt;ADLX_COLOR_DEPTH, std::string&gt; colorDepthMap{</div>
 <div class="line">            {BPC_6, <span class="stringliteral">&quot;BPC_6&quot;</span>},</div>

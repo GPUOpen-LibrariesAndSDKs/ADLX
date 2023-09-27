@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -98,43 +98,43 @@ void ShowGPUInfo(IADLXGPU* gpu)
         // Show GPU info
         const char* vendorId = NULL;
         ADLX_RESULT ret = gpu->pVtbl->VendorId(gpu, &vendorId);
-        printf("VendorId: %s\n", vendorId);
+        printf("VendorId: %s, return code is: %d(0 means success)\n", vendorId, ret);
 
         ADLX_ASIC_FAMILY_TYPE asicFamilyType = ASIC_UNDEFINED;
         ret = gpu->pVtbl->ASICFamilyType(gpu, &asicFamilyType);
-        printf("ASICFamilyType: %d\n", asicFamilyType);
+        printf("ASICFamilyType: %d, return code is: %d(0 means success)\n", asicFamilyType, ret);
 
         ADLX_GPU_TYPE gpuType = GPUTYPE_UNDEFINED;
         ret = gpu->pVtbl->Type(gpu, &gpuType);
-        printf("Type: %d\n", gpuType);
+        printf("Type: %d, return code is: %d(0 means success)\n", gpuType, ret);
 
         adlx_bool isExternal = false;
         ret = gpu->pVtbl->IsExternal(gpu, &isExternal);
-        printf("IsExternal: %d\n", isExternal);
+        printf("IsExternal: %d, return code is: %d(0 means success)\n", isExternal, ret);
 
         const char* gpuName = NULL;
         ret = gpu->pVtbl->Name(gpu, &gpuName);
-        printf("Name: %s\n", gpuName);
+        printf("Name: %s, return code is: %d(0 means success)\n", gpuName, ret);
 
         const char* driverPath = NULL;
         ret = gpu->pVtbl->DriverPath(gpu, &driverPath);
-        printf("DriverPath: %s\n", driverPath);
+        printf("DriverPath: %s, return code is: %d(0 means success)\n", driverPath, ret);
 
         const char* pnpString = NULL;
         ret = gpu->pVtbl->PNPString(gpu, &pnpString);
-        printf("PNPString: %s\n", pnpString);
+        printf("PNPString: %s, return code is: %d(0 means success)\n", pnpString, ret);
 
         adlx_bool hasDesktops = false;
         ret = gpu->pVtbl->HasDesktops(gpu, &hasDesktops);
-        printf("HasDesktops: %d\n", hasDesktops);
+        printf("HasDesktops: %d, return code is: %d(0 means success)\n", hasDesktops, ret);
 
         adlx_uint totalVRAM = 0;
         ret = gpu->pVtbl->TotalVRAM(gpu, &totalVRAM);
-        printf("TotalVRAM: %d MB\n", totalVRAM);
+        printf("TotalVRAM: %d MB, return code is: %d(0 means success)\n", totalVRAM, ret);
 
         adlx_int id;
         ret = gpu->pVtbl->UniqueId(gpu, &id);
-        printf("UniqueId: %d\n", id);
+        printf("UniqueId: %d, return code is: %d(0 means success)\n", id, ret);
 
         gpu->pVtbl->Release(gpu);
         gpu = NULL;

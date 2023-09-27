@@ -117,6 +117,10 @@
     <member refid="classadlx_1_1_i_a_d_l_x3_d_anti_lag_1ad60658b4b0b677f7349596d005fe3d7a" kind="function"><name>IsEnabled</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_anti_lag_1a69f5e7a4b84c27900330704b10b94694" kind="function"><name>SetEnabled</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x3_d_anti_lag1" kind="class"><name>adlx::IADLX3DAntiLag1</name>
+    <member refid="classadlx_1_1_i_a_d_l_x3_d_anti_lag1_1aff924449737da73262971ceb7d4ee3b1" kind="function"><name>GetLevel</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x3_d_anti_lag1_1a00e84af82b693edc9252c7a1dac24874" kind="function"><name>SetLevel</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x3_d_boost" kind="class"><name>adlx::IADLX3DBoost</name>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_boost_1a1fc7d7ad67040657416b5ffa46141a3c" kind="function"><name>IsSupported</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_boost_1adf71c7c4e54110e0e119bb1297aaa13b" kind="function"><name>IsEnabled</name></member>
@@ -305,6 +309,13 @@
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_display3_d_l_u_t_changed_listener" kind="class"><name>adlx::IADLXDisplay3DLUTChangedListener</name>
     <member refid="classadlx_1_1_i_a_d_l_x_display3_d_l_u_t_changed_listener_1aa86c067ac6873c444a9923ea4315bd56" kind="function"><name>OnDisplay3DLUTChanged</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_display_blanking" kind="class"><name>adlx::IADLXDisplayBlanking</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_blanking_1adc36405f06227b421e7507e33b7c49d3" kind="function"><name>IsSupported</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_blanking_1a109905aae51edc9be22c02b714554caa" kind="function"><name>IsCurrentBlanked</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_blanking_1a1a06579a08723890e1cf977101a86309" kind="function"><name>IsCurrentUnblanked</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_blanking_1a8999e5efe8836d81adf3ec8cad9a8fda" kind="function"><name>SetBlanked</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_blanking_1abe6d809309ca273cf9f7db44a629b5e9" kind="function"><name>SetUnblanked</name></member>
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_display_changed_handling" kind="class"><name>adlx::IADLXDisplayChangedHandling</name>
     <member refid="classadlx_1_1_i_a_d_l_x_display_changed_handling_1a47732c94ff51d8d52075f442ee75d8d3" kind="function"><name>AddDisplayListEventListener</name></member>
@@ -505,6 +516,9 @@
     <member refid="classadlx_1_1_i_a_d_l_x_display_services_1a0c1db6c20e08e6a796eea73929f94579" kind="function"><name>GetCustomResolution</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_display_services_1a7f803aa86a7a2bcf57fcef4e9a90132d" kind="function"><name>GetVariBright</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_display_services1" kind="class"><name>adlx::IADLXDisplayServices1</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_services1_1acf6744c63d24a8cffa07ac8d774172d4" kind="function"><name>GetDisplayBlanking</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event" kind="class"><name>adlx::IADLXDisplaySettingsChangedEvent</name>
     <member refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event_1a5e10b7495e626d48dd01cd25b63da3b4" kind="function"><name>GetDisplay</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event_1a87a494e4809ef67aa06683f4f2fd068c" kind="function"><name>IsFreeSyncChanged</name></member>
@@ -522,6 +536,9 @@
     <member refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event_1a198ac38734d9430d1d7b6c9e82e59ea3" kind="function"><name>IsCustomColorContrastChanged</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event_1a8e45287ac3142690e1ef849b27150d31" kind="function"><name>IsCustomResolutionChanged</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event_1ab6e3bfd3275c3b947360c584c278ee27" kind="function"><name>IsVariBrightChanged</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event1" kind="class"><name>adlx::IADLXDisplaySettingsChangedEvent1</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event1_1a15f59320625543aed83c6e266500e5ab" kind="function"><name>IsDisplayBlankingChanged</name></member>
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_listener" kind="class"><name>adlx::IADLXDisplaySettingsChangedListener</name>
     <member refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_listener_1af5c440cafb215635ac05c392a445901b" kind="function"><name>OnDisplaySettingsChanged</name></member>
@@ -911,6 +928,7 @@
   <compound refid="namespaceadlx" kind="namespace"><name>adlx</name>
     <member refid="_a_d_l_x_defines_8h_1a1bab3fefaeca83e25dceb93bb9fd182f" kind="typedef"><name>IADLXInterfacePtr</name></member>
     <member refid="_i3_d_settings_8h_1a133af6f210a67cfd674eb232bebae4c4" kind="typedef"><name>IADLX3DAntiLagPtr</name></member>
+    <member refid="_i3_d_settings_8h_1a461338f2e4f552530ec2686cd5dd1b35" kind="typedef"><name>IADLX3DAntiLag1Ptr</name></member>
     <member refid="_i3_d_settings_8h_1a0d983f9162a72c981bf3b03a50678a76" kind="typedef"><name>IADLX3DChillPtr</name></member>
     <member refid="_i3_d_settings_8h_1a248f2f44dd35666fb7429966f69dc04e" kind="typedef"><name>IADLX3DBoostPtr</name></member>
     <member refid="_i3_d_settings_8h_1a3cc277cc0ea830c5f4e24c4cee7835e8" kind="typedef"><name>IADLX3DImageSharpeningPtr</name></member>
@@ -945,6 +963,8 @@
     <member refid="_i_displays_8h_1a8e33d2bc62d06a371cc7e6f0b015c976" kind="typedef"><name>IADLXDisplaySettingsChangedEventPtr</name></member>
     <member refid="_i_displays_8h_1a69ab463da7241ea3a862cfb0d3df8be8" kind="typedef"><name>IADLXDisplayChangedHandlingPtr</name></member>
     <member refid="_i_displays_8h_1a6fc78a3cf4751f10ef9fe883d7535b1c" kind="typedef"><name>IADLXDisplayServicesPtr</name></member>
+    <member refid="_i_displays1_8h_1a9af7e51610ec768f0230786242fe90a9" kind="typedef"><name>IADLXDisplayServices1Ptr</name></member>
+    <member refid="_i_displays1_8h_1ac98eecb49247e7d032d4a037d81f8c83" kind="typedef"><name>IADLXDisplaySettingsChangedEvent1Ptr</name></member>
     <member refid="_i_display_settings_8h_1abdba048ed21032402bd13a091a6548ed" kind="typedef"><name>IADLXDisplayFreeSyncPtr</name></member>
     <member refid="_i_display_settings_8h_1a9384670df44322b41520cebffbca23eb" kind="typedef"><name>IADLXDisplayVSRPtr</name></member>
     <member refid="_i_display_settings_8h_1ae1a4fa0fb7df656b1f03f73228a391b3" kind="typedef"><name>IADLXDisplayGPUScalingPtr</name></member>
@@ -958,6 +978,7 @@
     <member refid="_i_display_settings_8h_1a664fd818994e7748b838068749ac55bd" kind="typedef"><name>IADLXDisplayResolutionListPtr</name></member>
     <member refid="_i_display_settings_8h_1ac715a0ea0eb974e848aeb7e42cc450ce" kind="typedef"><name>IADLXDisplayCustomResolutionPtr</name></member>
     <member refid="_i_display_settings_8h_1a30158c9ae40dce74b8320a7550faf510" kind="typedef"><name>IADLXDisplayVariBrightPtr</name></member>
+    <member refid="_i_display_settings_8h_1a9bf65fe16717da40f34d7159f57e3d49" kind="typedef"><name>IADLXDisplayBlankingPtr</name></member>
     <member refid="_i_g_p_u_auto_tuning_8h_1a666e230a668e39fecb3f1936e473de92" kind="typedef"><name>IADLXGPUAutoTuningCompleteEventPtr</name></member>
     <member refid="_i_g_p_u_auto_tuning_8h_1a2cc8a05998a895c679c89ed93b9daa1c" kind="typedef"><name>IADLXGPUAutoTuningPtr</name></member>
     <member refid="_i_g_p_u_manual_fan_tuning_8h_1a9d0f53b18a09fe846023b97c71b4a57e" kind="typedef"><name>IADLXManualFanTuningStatePtr</name></member>
@@ -1008,6 +1029,7 @@
     <member refid="_i_displays_8h_1a701fd229b66b78d251d5ec8db351202a" kind="variable"><name>IADLXDisplayHDCP</name></member>
     <member refid="_i_displays_8h_1a636fba4c8ab5d256a68695f81d8e0917" kind="variable"><name>IADLXDisplayCustomResolution</name></member>
     <member refid="_i_displays_8h_1a4c846daf0fa86bf16617e5c0e7b9fc9d" kind="variable"><name>IADLXDisplayVariBright</name></member>
+    <member refid="_i_displays1_8h_1a27804818e7a53b0202cf352968ccf2e1" kind="variable"><name>IADLXDisplayBlanking</name></member>
     <member refid="_i_g_p_u_manual_g_f_x_tuning_8h_1a9bf0af970e80e3ab6115b5f7e598723f" kind="variable"><name>IADLXManualTuningStateList</name></member>
     <member refid="_i_g_p_u_manual_v_r_a_m_tuning_8h_1a714987b15fc446c93375ef5145f880c6" kind="variable"><name>IADLXMemoryTimingDescriptionList</name></member>
     <member refid="_i_system_8h_1ab4277ec9523d6b0012de2d2ce686352c" kind="variable"><name>IADLXDesktopServices</name></member>
@@ -1048,8 +1070,6 @@
   </compound>
   <compound refid="legalinfo_8md" kind="file"><name>legalinfo.md</name>
   </compound>
-  <compound refid="_notices_8md" kind="file"><name>Notices.md</name>
-  </compound>
   <compound refid="_trademark_8md" kind="file"><name>Trademark.md</name>
   </compound>
   <compound refid="_a_d_l_x_c_sharp_bind_8md" kind="file"><name>ADLXCSharpBind.md</name>
@@ -1075,8 +1095,6 @@
   <compound refid="servicecall_8md" kind="file"><name>servicecall.md</name>
   </compound>
   <compound refid="use_a_d_l_xin_app_8md" kind="file"><name>useADLXinApp.md</name>
-  </compound>
-  <compound refid="_a_d_l_x_sample_page_8h" kind="file"><name>ADLXSamplePage.h</name>
   </compound>
   <compound refid="c3d_8md" kind="file"><name>c3d.md</name>
   </compound>
@@ -1113,6 +1131,10 @@
   <compound refid="cservicecall_8md" kind="file"><name>cservicecall.md</name>
   </compound>
   <compound refid="csync_8md" kind="file"><name>csync.md</name>
+  </compound>
+  <compound refid="z_a_d_l_x_sample_page_8h" kind="file"><name>zADLXSamplePage.h</name>
+  </compound>
+  <compound refid="interfacereqtable_8h" kind="file"><name>interfacereqtable.h</name>
   </compound>
   <compound refid="_c_p_p_2_read_me_8md" kind="file"><name>ReadMe.md</name>
   </compound>
@@ -1389,6 +1411,9 @@
     <member refid="group__enumerations_1gabe8d6f1562d0472d97c5edbf55c6d8cca39dc38d674d4dbbc54dde4383bb8c842" kind="enumvalue"><name>CS_BT2020</name></member>
     <member refid="group__enumerations_1gabe8d6f1562d0472d97c5edbf55c6d8ccaef18171467fde57447ed94e29d9b4ebb" kind="enumvalue"><name>CS_DCIP3</name></member>
     <member refid="group__enumerations_1gabe8d6f1562d0472d97c5edbf55c6d8cca9e90a1fb63e1904946eb400980364fdc" kind="enumvalue"><name>CS_NATIVE</name></member>
+    <member refid="group__enumerations_1ga67d22cfa2969510afada5140a157df62" kind="enum"><name>ADLX_ANTILAG_STATE</name></member>
+    <member refid="group__enumerations_1ga67d22cfa2969510afada5140a157df62ad52630a26f9490c28cc16b38e0205ce9" kind="enumvalue"><name>ANTILAG</name></member>
+    <member refid="group__enumerations_1ga67d22cfa2969510afada5140a157df62a86bd1f9314544ffffd7a1a374a807e9f" kind="enumvalue"><name>ANTILAGNEXT</name></member>
     <member refid="_a_d_l_x_defines_8h_1a460278d9913c4386415ed4a7ef39afd7" kind="typedef"><name>adlx_int64</name></member>
     <member refid="_a_d_l_x_defines_8h_1abd92771e6d61812965634c05dbe8fca4" kind="typedef"><name>adlx_int32</name></member>
     <member refid="_a_d_l_x_defines_8h_1ada96c7e9db50fae4e3f93a35f08be2c2" kind="typedef"><name>adlx_int16</name></member>
@@ -1441,6 +1466,8 @@
   <compound refid="_i_display_gamut_8h" kind="file"><name>IDisplayGamut.h</name>
   </compound>
   <compound refid="_i_displays_8h" kind="file"><name>IDisplays.h</name>
+  </compound>
+  <compound refid="_i_displays1_8h" kind="file"><name>IDisplays1.h</name>
   </compound>
   <compound refid="_i_display_settings_8h" kind="file"><name>IDisplaySettings.h</name>
   </compound>
@@ -1668,6 +1695,9 @@
     <member refid="group__enumerations_1gabe8d6f1562d0472d97c5edbf55c6d8cca39dc38d674d4dbbc54dde4383bb8c842" kind="enumvalue"><name>CS_BT2020</name></member>
     <member refid="group__enumerations_1gabe8d6f1562d0472d97c5edbf55c6d8ccaef18171467fde57447ed94e29d9b4ebb" kind="enumvalue"><name>CS_DCIP3</name></member>
     <member refid="group__enumerations_1gabe8d6f1562d0472d97c5edbf55c6d8cca9e90a1fb63e1904946eb400980364fdc" kind="enumvalue"><name>CS_NATIVE</name></member>
+    <member refid="group__enumerations_1ga67d22cfa2969510afada5140a157df62" kind="enum"><name>ADLX_ANTILAG_STATE</name></member>
+    <member refid="group__enumerations_1ga67d22cfa2969510afada5140a157df62ad52630a26f9490c28cc16b38e0205ce9" kind="enumvalue"><name>ANTILAG</name></member>
+    <member refid="group__enumerations_1ga67d22cfa2969510afada5140a157df62a86bd1f9314544ffffd7a1a374a807e9f" kind="enumvalue"><name>ANTILAGNEXT</name></member>
   </compound>
   <compound refid="group__structures_val" kind="group"><name>structuresVal</name>
   </compound>
@@ -1793,6 +1823,10 @@
   <compound refid="_d_o_x__i_a_d_l_x3_d_anti_lag__is_enabled" kind="page"><name>DOX_IADLX3DAntiLag_IsEnabled</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x3_d_anti_lag__set_enabled" kind="page"><name>DOX_IADLX3DAntiLag_SetEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_anti_lag1__get_level" kind="page"><name>DOX_IADLX3DAntiLag1_GetLevel</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_anti_lag1__set_level" kind="page"><name>DOX_IADLX3DAntiLag1_SetLevel</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x3_d_chill__is_supported" kind="page"><name>DOX_IADLX3DChill_IsSupported</name>
   </compound>
@@ -2336,6 +2370,10 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_services__get_vari_bright" kind="page"><name>DOX_IADLXDisplayServices_GetVariBright</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_services1__get_display_blanking" kind="page"><name>DOX_IADLXDisplayServices1_GetDisplayBlanking</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_settings_changed_event1__is_display_blanking_changed" kind="page"><name>DOX_IADLXDisplaySettingsChangedEvent1_IsDisplayBlankingChanged</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_free_sync__is_supported" kind="page"><name>DOX_IADLXDisplayFreeSync_IsSupported</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_free_sync__is_enabled" kind="page"><name>DOX_IADLXDisplayFreeSync_IsEnabled</name>
@@ -2493,6 +2531,16 @@
   <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright__set_optimize_battery" kind="page"><name>DOX_IADLXDisplayVariBright_SetOptimizeBattery</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright__set_maximize_battery" kind="page"><name>DOX_IADLXDisplayVariBright_SetMaximizeBattery</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_blanking__is_supported" kind="page"><name>DOX_IADLXDisplayBlanking_IsSupported</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_blanking__is_current_blanked" kind="page"><name>DOX_IADLXDisplayBlanking_IsCurrentBlanked</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_blanking__is_current_unblanked" kind="page"><name>DOX_IADLXDisplayBlanking_IsCurrentUnblanked</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_blanking__set_blanked" kind="page"><name>DOX_IADLXDisplayBlanking_SetBlanked</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_blanking__set_unblanked" kind="page"><name>DOX_IADLXDisplayBlanking_SetUnblanked</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_g_p_u_auto_tuning_complete_event__is_undervolt_g_p_u_completed" kind="page"><name>DOX_IADLXGPUAutoTuningCompleteEvent_IsUndervoltGPUCompleted</name>
   </compound>
@@ -2996,6 +3044,8 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x3_d_anti_lag" kind="page"><name>DOX_IADLX3DAntiLag</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_anti_lag1" kind="page"><name>DOX_IADLX3DAntiLag1</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x3_d_chill" kind="page"><name>DOX_IADLX3DChill</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x3_d_boost" kind="page"><name>DOX_IADLX3DBoost</name>
@@ -3062,11 +3112,15 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_settings_changed_event" kind="page"><name>DOX_IADLXDisplaySettingsChangedEvent</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_settings_changed_event1" kind="page"><name>DOX_IADLXDisplaySettingsChangedEvent1</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_settings_changed_listener" kind="page"><name>DOX_IADLXDisplaySettingsChangedListener</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_changed_handling" kind="page"><name>DOX_IADLXDisplayChangedHandling</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_services" kind="page"><name>DOX_IADLXDisplayServices</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_services1" kind="page"><name>DOX_IADLXDisplayServices1</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_free_sync" kind="page"><name>DOX_IADLXDisplayFreeSync</name>
   </compound>
@@ -3099,6 +3153,8 @@
   <compound refid="_d_o_x__i_a_d_l_x_display_gamma" kind="page"><name>DOX_IADLXDisplayGamma</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display3_d_l_u_t" kind="page"><name>DOX_IADLXDisplay3DLUT</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_blanking" kind="page"><name>DOX_IADLXDisplayBlanking</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_g_p_u" kind="page"><name>DOX_IADLXGPU</name>
   </compound>
@@ -3194,31 +3250,43 @@
   </compound>
   <compound refid="page_sample_java" kind="page"><name>page_sample_java</name>
   </compound>
-  <compound refid="sample_page" kind="page"><name>samplePage</name>
+  <compound refid="domain_c_sample_3_d_graphics" kind="page"><name>domain_c_sample_3DGraphics</name>
   </compound>
-  <compound refid="cpp_samples_filedesc" kind="page"><name>cpp_samples_filedesc</name>
+  <compound refid="domain_c_sample__desktop" kind="page"><name>domain_c_sample_Desktop</name>
   </compound>
-  <compound refid="cpp_samples_more" kind="page"><name>cpp_samples_more</name>
+  <compound refid="domain_c_sample__display" kind="page"><name>domain_c_sample_Display</name>
   </compound>
-  <compound refid="cpp_sample__generic" kind="page"><name>cpp_sample_Generic</name>
+  <compound refid="domain_c_sample__generic" kind="page"><name>domain_c_sample_Generic</name>
   </compound>
-  <compound refid="cpp_sample__desktop" kind="page"><name>cpp_sample_Desktop</name>
+  <compound refid="domain_c_sample__g_p_u_tuning" kind="page"><name>domain_c_sample_GPUTuning</name>
   </compound>
-  <compound refid="cpp_sample_gpu" kind="page"><name>cpp_sample_gpu</name>
+  <compound refid="domain_c_sample__i2_c" kind="page"><name>domain_c_sample_I2C</name>
   </compound>
-  <compound refid="cpp_sample__display" kind="page"><name>cpp_sample_Display</name>
+  <compound refid="domain_c_sample__performance_monitoring" kind="page"><name>domain_c_sample_PerformanceMonitoring</name>
   </compound>
-  <compound refid="cpp_sample_3_d_graphics" kind="page"><name>cpp_sample_3DGraphics</name>
+  <compound refid="domain_cpp_sample_3_d_graphics" kind="page"><name>domain_cpp_sample_3DGraphics</name>
   </compound>
-  <compound refid="cpp_sample__g_p_u_tuning" kind="page"><name>cpp_sample_GPUTuning</name>
+  <compound refid="domain_cpp_sample__desktop" kind="page"><name>domain_cpp_sample_Desktop</name>
   </compound>
-  <compound refid="cpp_sample__performance_monitoring" kind="page"><name>cpp_sample_PerformanceMonitoring</name>
+  <compound refid="domain_cpp_sample__display" kind="page"><name>domain_cpp_sample_Display</name>
   </compound>
-  <compound refid="cpp_sample__i2_c" kind="page"><name>cpp_sample_I2C</name>
+  <compound refid="domain_cpp_sample__generic" kind="page"><name>domain_cpp_sample_Generic</name>
   </compound>
-  <compound refid="cpp_sample_globalsync" kind="page"><name>cpp_sample_globalsync</name>
+  <compound refid="domain_cpp_sample__g_p_u_tuning" kind="page"><name>domain_cpp_sample_GPUTuning</name>
   </compound>
-  <compound refid="cpp_sample_servicecall" kind="page"><name>cpp_sample_servicecall</name>
+  <compound refid="domain_cpp_sample__i2_c" kind="page"><name>domain_cpp_sample_I2C</name>
+  </compound>
+  <compound refid="domain_cpp_sample__performance_monitoring" kind="page"><name>domain_cpp_sample_PerformanceMonitoring</name>
+  </compound>
+  <compound refid="domain_cpp_sample_servicecall" kind="page"><name>domain_cpp_sample_servicecall</name>
+  </compound>
+  <compound refid="domain_cpp_sample_globalsync" kind="page"><name>domain_cpp_sample_globalsync</name>
+  </compound>
+  <compound refid="domain_c_sample_servicecall" kind="page"><name>domain_c_sample_servicecall</name>
+  </compound>
+  <compound refid="domain_c_sample_globalsync" kind="page"><name>domain_c_sample_globalsync</name>
+  </compound>
+  <compound refid="domain_sample_page" kind="page"><name>domain_samplePage</name>
   </compound>
   <compound refid="cpp_sample_gpus" kind="page"><name>cpp_sample_gpus</name>
   </compound>
@@ -3241,6 +3309,8 @@
   <compound refid="cpp_sample_display_gamma" kind="page"><name>cpp_sample_displayGamma</name>
   </compound>
   <compound refid="cpp_sample_display3_d_l_u_t" kind="page"><name>cpp_sample_display3DLUT</name>
+  </compound>
+  <compound refid="cpp_sample_display_blanking" kind="page"><name>cpp_sample_displayBlanking</name>
   </compound>
   <compound refid="cpp_sample_display_events" kind="page"><name>cpp_sample_displayEvents</name>
   </compound>
@@ -3330,30 +3400,6 @@
   </compound>
   <compound refid="cpp_sample_userprocess" kind="page"><name>cpp_sample_userprocess</name>
   </compound>
-  <compound refid="c_samples_filedesc" kind="page"><name>c_samples_filedesc</name>
-  </compound>
-  <compound refid="c_samples_more" kind="page"><name>c_samples_more</name>
-  </compound>
-  <compound refid="c_sample__generic" kind="page"><name>c_sample_Generic</name>
-  </compound>
-  <compound refid="c_sample__desktop" kind="page"><name>c_sample_Desktop</name>
-  </compound>
-  <compound refid="c_sample_gpu" kind="page"><name>c_sample_gpu</name>
-  </compound>
-  <compound refid="c_sample__display" kind="page"><name>c_sample_Display</name>
-  </compound>
-  <compound refid="c_sample_3_d_graphics" kind="page"><name>c_sample_3DGraphics</name>
-  </compound>
-  <compound refid="c_sample__g_p_u_tuning" kind="page"><name>c_sample_GPUTuning</name>
-  </compound>
-  <compound refid="c_sample__performance_monitoring" kind="page"><name>c_sample_PerformanceMonitoring</name>
-  </compound>
-  <compound refid="c_sample__i2_c" kind="page"><name>c_sample_I2C</name>
-  </compound>
-  <compound refid="c_sample_globalsync" kind="page"><name>c_sample_globalsync</name>
-  </compound>
-  <compound refid="c_sample_servicecall" kind="page"><name>c_sample_servicecall</name>
-  </compound>
   <compound refid="c_sample_gpus" kind="page"><name>c_sample_gpus</name>
   </compound>
   <compound refid="c_sample_eyefinity" kind="page"><name>c_sample_eyefinity</name>
@@ -3375,6 +3421,8 @@
   <compound refid="c_sample_display_gamma" kind="page"><name>c_sample_displayGamma</name>
   </compound>
   <compound refid="c_sample_display3_d_l_u_t" kind="page"><name>c_sample_display3DLUT</name>
+  </compound>
+  <compound refid="c_sample_display_blanking" kind="page"><name>c_sample_displayBlanking</name>
   </compound>
   <compound refid="c_sample_display_events" kind="page"><name>c_sample_displayEvents</name>
   </compound>
@@ -3464,19 +3512,11 @@
   </compound>
   <compound refid="c_sample_userprocess" kind="page"><name>c_sample_userprocess</name>
   </compound>
-  <compound refid="cs_samples_filedesc" kind="page"><name>cs_samples_filedesc</name>
-  </compound>
-  <compound refid="cs_samples_more" kind="page"><name>cs_samples_more</name>
-  </compound>
   <compound refid="cs_sample_adlxcsharpbind" kind="page"><name>cs_sample_adlxcsharpbind</name>
   </compound>
   <compound refid="cs_sample_displayinfo" kind="page"><name>cs_sample_displayinfo</name>
   </compound>
   <compound refid="cs_sample_display_events" kind="page"><name>cs_sample_displayEvents</name>
-  </compound>
-  <compound refid="java_samples_filedesc" kind="page"><name>java_samples_filedesc</name>
-  </compound>
-  <compound refid="java_samples_more" kind="page"><name>java_samples_more</name>
   </compound>
   <compound refid="java_sample_adlxjavabind" kind="page"><name>java_sample_adlxjavabind</name>
   </compound>
@@ -3484,57 +3524,15 @@
   </compound>
   <compound refid="java_sample_display_events" kind="page"><name>java_sample_displayEvents</name>
   </compound>
-  <compound refid="py_samples_filedesc" kind="page"><name>py_samples_filedesc</name>
-  </compound>
-  <compound refid="py_samples_more" kind="page"><name>py_samples_more</name>
-  </compound>
   <compound refid="py_sample_adlxpybind" kind="page"><name>py_sample_adlxpybind</name>
   </compound>
   <compound refid="py_sample_displayinfo" kind="page"><name>py_sample_displayinfo</name>
   </compound>
   <compound refid="py_sample_display_events" kind="page"><name>py_sample_displayEvents</name>
   </compound>
-  <compound refid="c_samples_files_3d" kind="page"><name>c_samples_files_3d</name>
-  </compound>
-  <compound refid="c_samples_files_desktop" kind="page"><name>c_samples_files_desktop</name>
-  </compound>
-  <compound refid="c_samples_files_display" kind="page"><name>c_samples_files_display</name>
-  </compound>
-  <compound refid="c_samples_files_general" kind="page"><name>c_samples_files_general</name>
-  </compound>
-  <compound refid="c_samples_files_gputuning" kind="page"><name>c_samples_files_gputuning</name>
-  </compound>
-  <compound refid="c_samples_files_i2c" kind="page"><name>c_samples_files_i2c</name>
-  </compound>
-  <compound refid="c_samples_files_performance" kind="page"><name>c_samples_files_performance</name>
-  </compound>
-  <compound refid="cpp_samples_files_3d" kind="page"><name>cpp_samples_files_3d</name>
-  </compound>
-  <compound refid="cpp_samples_files_desktop" kind="page"><name>cpp_samples_files_desktop</name>
-  </compound>
-  <compound refid="cpp_samples_files_display" kind="page"><name>cpp_samples_files_display</name>
-  </compound>
-  <compound refid="cpp_samples_files_general" kind="page"><name>cpp_samples_files_general</name>
-  </compound>
-  <compound refid="cpp_samples_files_gputuning" kind="page"><name>cpp_samples_files_gputuning</name>
-  </compound>
-  <compound refid="cpp_samples_files_i2c" kind="page"><name>cpp_samples_files_i2c</name>
-  </compound>
-  <compound refid="cpp_samples_files_performance" kind="page"><name>cpp_samples_files_performance</name>
-  </compound>
-  <compound refid="cpp_samples_files_servicecall" kind="page"><name>cpp_samples_files_servicecall</name>
-  </compound>
-  <compound refid="cpp_samples_files_sync" kind="page"><name>cpp_samples_files_sync</name>
-  </compound>
-  <compound refid="c_samples_files_servicecall" kind="page"><name>c_samples_files_servicecall</name>
-  </compound>
-  <compound refid="c_samples_files_sync" kind="page"><name>c_samples_files_sync</name>
-  </compound>
   <compound refid="page_legal__disclaimer" kind="page"><name>page_legal_Disclaimer</name>
   </compound>
   <compound refid="page_legal" kind="page"><name>page_legal</name>
-  </compound>
-  <compound refid="page_legal_notices" kind="page"><name>page_legal_notices</name>
   </compound>
   <compound refid="page_legal__trademark" kind="page"><name>page_legal_Trademark</name>
   </compound>
@@ -3574,39 +3572,39 @@
   </compound>
   <compound refid="page_cpp_help_get_adl_mapping" kind="page"><name>page_cppHelpGetAdlMapping</name>
   </compound>
-  <compound refid="dir_16efc9621f5d2e1cb4bad055b0f276b2" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/SDK/ADLXHelper</name>
+  <compound refid="dir_16efc9621f5d2e1cb4bad055b0f276b2" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/SDK/ADLXHelper</name>
   </compound>
-  <compound refid="dir_902de48ee18c71cf36cb2c92b94e2165" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage</name>
+  <compound refid="dir_902de48ee18c71cf36cb2c92b94e2165" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXInterfacePage</name>
   </compound>
-  <compound refid="dir_9dd9cbaa815e0fb4350c0e1dee7fc28f" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXLegal</name>
+  <compound refid="dir_9dd9cbaa815e0fb4350c0e1dee7fc28f" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXLegal</name>
   </compound>
-  <compound refid="dir_32f501a9a44fa5b987b82f09ad085bbe" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXProgrammingGuide</name>
+  <compound refid="dir_32f501a9a44fa5b987b82f09ad085bbe" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXProgrammingGuide</name>
   </compound>
-  <compound refid="dir_38661bf1cff6bbf8d643288778f7dda5" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXSamplesPage</name>
+  <compound refid="dir_38661bf1cff6bbf8d643288778f7dda5" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXSamplesPage</name>
   </compound>
-  <compound refid="dir_e8f4cbcc6a2aa4d47ef9f831f2e336d4" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/Samples/C</name>
+  <compound refid="dir_e8f4cbcc6a2aa4d47ef9f831f2e336d4" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/Samples/C</name>
   </compound>
-  <compound refid="dir_027b3822e68cea2333c40389ff559349" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/SDK/ADLXHelper/Windows/C</name>
+  <compound refid="dir_027b3822e68cea2333c40389ff559349" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/SDK/ADLXHelper/Windows/C</name>
   </compound>
-  <compound refid="dir_e722523abc32cefc280070c505cb9f82" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/docs/Config</name>
+  <compound refid="dir_e722523abc32cefc280070c505cb9f82" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/docs/Config</name>
   </compound>
-  <compound refid="dir_c5db9f0563fe1d2d90e845bf2fbf723c" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/Samples/CPP</name>
+  <compound refid="dir_c5db9f0563fe1d2d90e845bf2fbf723c" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/Samples/CPP</name>
   </compound>
-  <compound refid="dir_537881034b1f7d49233316885f2cd2ce" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/SDK/ADLXHelper/Windows/Cpp</name>
+  <compound refid="dir_537881034b1f7d49233316885f2cd2ce" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/SDK/ADLXHelper/Windows/Cpp</name>
   </compound>
-  <compound refid="dir_66c87b55badc78d3b4aa518cd95dfa04" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/Samples/csharp</name>
+  <compound refid="dir_66c87b55badc78d3b4aa518cd95dfa04" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/Samples/csharp</name>
   </compound>
-  <compound refid="dir_a12a240c2aa7d26dd72e7a22857dd4bb" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include</name>
+  <compound refid="dir_a12a240c2aa7d26dd72e7a22857dd4bb" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include</name>
   </compound>
-  <compound refid="dir_c8ab53e67140eaecfb977988f71b2a99" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/Samples/java</name>
+  <compound refid="dir_c8ab53e67140eaecfb977988f71b2a99" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/Samples/java</name>
   </compound>
-  <compound refid="dir_6e22ff5a6df353352cbcbff529ec7bf5" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/Samples/python</name>
+  <compound refid="dir_6e22ff5a6df353352cbcbff529ec7bf5" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/Samples/python</name>
   </compound>
-  <compound refid="dir_24e107d8aaaa0f0fb9ce89773de45c08" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/Samples</name>
+  <compound refid="dir_24e107d8aaaa0f0fb9ce89773de45c08" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/Samples</name>
   </compound>
-  <compound refid="dir_ca6309d378ceffb9970caf11a0592736" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/SDK</name>
+  <compound refid="dir_ca6309d378ceffb9970caf11a0592736" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/SDK</name>
   </compound>
-  <compound refid="dir_42276f7418706d1ade0d3bc4e4f60731" kind="dir"><name>D:/03_AMDgit/22.40/drivers/ADLX/SDK/ADLXHelper/Windows</name>
+  <compound refid="dir_42276f7418706d1ade0d3bc4e4f60731" kind="dir"><name>D:/AMD_Git/engbranch/drivers/ADLX/SDK/ADLXHelper/Windows</name>
   </compound>
   <compound refid="indexpage" kind="page"><name>index</name>
   </compound>

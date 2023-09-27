@@ -9,7 +9,7 @@
 <para>While ADLX cannot be used directly in a system service application, its functionality can be accessed in a system service application through a user mode process. A communication mechanism between the user mode process and the system service, such as shared memory, will provide the ADLX functionality to the system service.</para>
 <para>To use ADLX in a system service,<orderedlist>
 <listitem><para>Create a system service application.</para>
-<para><bold>Note:</bold> For more information on how to create a system service in C++, see <ref refid="cpp_sample_servicecall" kindref="compound">ServiceCall C++ sample</ref>. For more information on how to create a system service in C, see <ref refid="c_sample_servicecall" kindref="compound">ServiceCall C sample</ref>.</para>
+<para><bold>Note:</bold> For more information on how to create a system service in C++, see <ref refid="domain_cpp_sample_servicecall" kindref="compound">ServiceCall C++ sample</ref>. For more information on how to create a system service in C, see <ref refid="domain_c_sample_servicecall" kindref="compound">ServiceCall C sample</ref>.</para>
 </listitem><listitem><para>In the system service, start a thread to complete the service work, such as ServiceWorkerThread.</para>
 </listitem><listitem><para>On the ServiceWorkerThread, get the token of the current process to create a user process using CreateProcessAsUserW.</para>
 <para><bold>Note:</bold> For more information on how to create a user process into a service application in C++, see <ref refid="cpp_sample_userprocess" kindref="compound">UserProcess C++ sample</ref>. For more information on how to create a user process into a service application in C, see <ref refid="c_sample_userprocess" kindref="compound">UserProcess C sample</ref>.</para>
@@ -18,8 +18,8 @@
 </listitem><listitem><para>Run the user mode process and the service application.</para>
 </listitem></orderedlist>
 </para>
-<para>For more information, see <ref refid="cpp_sample_servicecall" kindref="compound">GPUServiceCall C++ samples</ref> and <ref refid="c_sample_servicecall" kindref="compound">GPUServiceCall C samples</ref>. </para>
+<para>For more information, see <ref refid="domain_cpp_sample_servicecall" kindref="compound">GPUServiceCall C++ samples</ref> and <ref refid="domain_c_sample_servicecall" kindref="compound">GPUServiceCall C samples</ref>. </para>
     </detaileddescription>
-    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXProgrammingGuide/servicecall.md"/>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXProgrammingGuide/servicecall.md"/>
   </compounddef>
 </doxygen>

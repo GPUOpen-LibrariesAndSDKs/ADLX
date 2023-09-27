@@ -1,5 +1,5 @@
 #<!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 #-->
@@ -22,29 +22,34 @@ def displayDemo():
     adlxHelper = ADLX.ADLXHelper()
     ret = adlxHelper.Initialize()
 
-    if(ret == ADLX.ADLX_RESULT.ADLX_OK):
+    if ret == ADLX.ADLX_RESULT.ADLX_OK:
         # Get systemServices
         system = adlxHelper.GetSystemServices()
 
-        # Get displayServices
-        displayService = system.GetDisplaysServices()
+        if system is not None:
+            # Get displayServices
+            displayService = system.GetDisplaysServices()
 
-        # Get display change handler
-        displayChangeHandler = displayService.GetDisplayChangedHandling()
-        # Python call back
-        callback = ADLX.DisplayListCallBack()
-        callback.call = callBackDisplayList
-        # Add call back
-        displayChangeHandler.AddDisplayListEventListener(callback)
-        print("Plug or unplug a display within 20 seconds.")
-        time.sleep(20)
-        # Remove call back
-        displayChangeHandler.RemoveDisplayListEventListener(callback)
-        # Release changeHandler interface
-        del displayChangeHandler
+            if displayService is not None:
+                # Get display change handler
+                displayChangeHandler = displayService.GetDisplayChangedHandling()
 
-        # Release displayService interface
-        del displayService
+                if displayChangeHandler is not None:
+                    # Python call back
+                    callback = ADLX.DisplayListCallBack()
+                    callback.call = callBackDisplayList
+                    # Add call back
+                    displayChangeHandler.AddDisplayListEventListener(callback)
+                    print("Plug or unplug a display within 20 seconds.")
+                    time.sleep(20)
+                    # Remove call back
+                    displayChangeHandler.RemoveDisplayListEventListener(callback)
+
+                    # Release changeHandler interface
+                    del displayChangeHandler
+
+                # Release displayService interface
+                del displayService
 
     # Terminate ADLX
     ret = adlxHelper.Terminate()

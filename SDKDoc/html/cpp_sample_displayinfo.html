@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('cpp_sample_displayinfo.html',''); init
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('cpp_sample_displayinfo.html',''); init
 </body>
 </html> <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -238,7 +238,9 @@ $(document).ready(function(){initNavTree('cpp_sample_displayinfo.html',''); init
 <div class="line"><span class="comment">// Map with the scan type and associated string</span></div>
 <div class="line"><span class="keyword">static</span> <span class="keyword">const</span> std::map&lt;ADLX_DISPLAY_SCAN_TYPE, const char*&gt; scanTypeMap =</div>
 <div class="line">    {</div>
-<div class="line">        {PROGRESSIVE, <span class="stringliteral">&quot;PROGRESSIVE&quot;</span>}, {INTERLACED, <span class="stringliteral">&quot;INTERLACED&quot;</span>}};</div>
+<div class="line">        {PROGRESSIVE, <span class="stringliteral">&quot;PROGRESSIVE&quot;</span>}, </div>
+<div class="line">        {INTERLACED, <span class="stringliteral">&quot;INTERLACED&quot;</span>}</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Print diplayInfo information</span></div>
 <div class="line"><span class="keywordtype">void</span> ShowDisplayInfo(<span class="keyword">const</span> IADLXDisplayPtr&amp; display)</div>
@@ -248,19 +250,23 @@ $(document).ready(function(){initNavTree('cpp_sample_displayinfo.html',''); init
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\n  === Display info ===&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>* dispName;</div>
 <div class="line">    res = display-&gt;Name(&amp;dispName);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tDisplay name: &quot;</span> &lt;&lt; dispName &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tDisplay name: &quot;</span> &lt;&lt; dispName &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    adlx_uint manufacturerID;</div>
 <div class="line">    res = display-&gt;ManufacturerID(&amp;manufacturerID);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tManufacturer id: &quot;</span> &lt;&lt; manufacturerID &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tManufacturer id: &quot;</span> &lt;&lt; manufacturerID &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    <a class="code" href="group__enumerations.html#gae7e516225131af0ff164e9384d8d0a44">ADLX_DISPLAY_TYPE</a> displayType;</div>
 <div class="line">    res = display-&gt;DisplayType(&amp;displayType);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tDisplay type: &quot;</span> &lt;&lt; displayTypeMap.find(displayType)-&gt;second &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tDisplay type: &quot;</span> &lt;&lt; displayTypeMap.find(displayType)-&gt;second &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga84edd2809be33537c99fb2ab8d04aa5d">ADLX_DISPLAY_CONNECTOR_TYPE</a> connectType;</div>
 <div class="line">    res = display-&gt;ConnectorType(&amp;connectType);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tConnector type: &quot;</span> &lt;&lt; displayConnectorMap.find(connectType)-&gt;second &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tConnector type: &quot;</span> &lt;&lt; displayConnectorMap.find(connectType)-&gt;second &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>* edid;</div>
 <div class="line">    res = display-&gt;EDID(&amp;edid);</div>
@@ -271,24 +277,29 @@ $(document).ready(function(){initNavTree('cpp_sample_displayinfo.html',''); init
 <div class="line"> </div>
 <div class="line">    adlx_double refreshRate;</div>
 <div class="line">    res = display-&gt;RefreshRate(&amp;refreshRate);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tRefresh rate: &quot;</span> &lt;&lt; refreshRate &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tRefresh rate: &quot;</span> &lt;&lt; refreshRate &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    adlx_uint pixelClock;</div>
 <div class="line">    res = display-&gt;PixelClock(&amp;pixelClock);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tPixel clock: &quot;</span> &lt;&lt; pixelClock &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tPixel clock: &quot;</span> &lt;&lt; pixelClock &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    adlx_int maxHResolution = 0;</div>
 <div class="line">    adlx_int maxVResolution = 0;</div>
 <div class="line">    res = display-&gt;NativeResolution(&amp;maxHResolution, &amp;maxVResolution);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tNative resolution[h*v]:&quot;</span> &lt;&lt; maxHResolution &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; maxVResolution &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tNative resolution[h*v]:&quot;</span> &lt;&lt; maxHResolution &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; maxVResolution &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    <a class="code" href="group__enumerations.html#gae2d0250dc861156a468001600a2ee648">ADLX_DISPLAY_SCAN_TYPE</a> scanType;</div>
 <div class="line">    res = display-&gt;ScanType(&amp;scanType);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tScan type: &quot;</span> &lt;&lt; scanTypeMap.find(scanType)-&gt;second &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tScan type: &quot;</span> &lt;&lt; scanTypeMap.find(scanType)-&gt;second &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    adlx_size id;</div>
 <div class="line">    res = display-&gt;UniqueId(&amp;<span class="keywordtype">id</span>);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tUniqueId: &quot;</span> &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tUniqueId: &quot;</span> &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Wait for exit with error message</span></div>

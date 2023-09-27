@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
 <para><htmlonly>&lt;!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 --&gt;
@@ -37,7 +37,7 @@
 &lt;/html&gt;</htmlonly> <heading level="2">Code </heading>
 </para>
 <para>C++ <programlisting filename="./3DGraphics/WaitForVerticalRefresh/mainWaitForVerticalRefresh.cpp"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2023<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -140,18 +140,18 @@
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowvsyncSupport(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLX3DWaitForVerticalRefreshPtr&amp;<sp/>vsync)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool<sp/>supported<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vsync-&gt;IsSupported(&amp;supported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tIsSupported:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>supported<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>vsync-&gt;IsSupported(&amp;supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tIsSupported:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>supported<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>return<sp/>code<sp/>is:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>res<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(0<sp/>means<sp/>success)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetvsyncState(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLX3DWaitForVerticalRefreshPtr&amp;<sp/>vsync)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool<sp/>enabled<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vsync-&gt;IsEnabled(&amp;enabled);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tIsEnabled:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>enabled<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>vsync-&gt;IsEnabled(&amp;enabled);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tIsEnabled:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>enabled<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>return<sp/>code<sp/>is:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>res<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(0<sp/>means<sp/>success)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga169a825952eda7e83b949176a9a81028" kindref="member">ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE</ref><sp/>mode<sp/>=<sp/><ref refid="_a_d_l_x_defines_8h_1ga169a825952eda7e83b949176a9a81028a5c956c1e3c8b9261a07df15adbc10347" kindref="member">WFVR_ALWAYS_OFF</ref>;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vsync-&gt;GetMode(&amp;mode);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tMode:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>vsyncMode.find(mode)-&gt;second<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>vsync-&gt;GetMode(&amp;mode);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tMode:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>vsyncMode.find(mode)-&gt;second<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>return<sp/>code<sp/>is:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>res<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(0<sp/>means<sp/>success)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetvsyncMode(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLX3DWaitForVerticalRefreshPtr&amp;<sp/>vsync,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)</highlight></codeline>
@@ -224,6 +224,6 @@
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> </para>
     </detaileddescription>
-    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXSamplesPage/ADLXSamplePage.h"/>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXSamplesPage/zADLXSamplePage.h"/>
   </compounddef>
 </doxygen>

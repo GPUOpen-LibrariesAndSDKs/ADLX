@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('c__manual_v_r_a_m_tuning.html',''); in
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -132,7 +132,7 @@ $(document).ready(function(){initNavTree('c__manual_v_r_a_m_tuning.html',''); in
 </body>
 </html> <h2>Code </h2>
 <div class="codeHeader"><span class="language">C</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -272,21 +272,22 @@ $(document).ready(function(){initNavTree('c__manual_v_r_a_m_tuning.html',''); in
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> ShowSupport(IADLXInterface* vramTuningIfc)</div>
 <div class="line">{</div>
-<div class="line">    adlx_bool supported;</div>
+<div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
 <div class="line">    IADLXManualVRAMTuning2* vramTuning2 = NULL;</div>
 <div class="line">    vramTuningIfc-&gt;pVtbl-&gt;QueryInterface(vramTuningIfc, IID_IADLXManualVRAMTuning2(), &amp;vramTuning2);</div>
 <div class="line">    IADLXManualVRAMTuning1* vramTuning1 = NULL;</div>
 <div class="line">    vramTuningIfc-&gt;pVtbl-&gt;QueryInterface(vramTuningIfc, IID_IADLXManualVRAMTuning1(), &amp;vramTuning1);</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = ADLX_FAIL;</div>
 <div class="line">    <span class="keywordflow">if</span> (vramTuning2)</div>
 <div class="line">    {</div>
-<div class="line">        vramTuning2-&gt;pVtbl-&gt;IsSupportedMemoryTiming(vramTuning2, &amp;supported);</div>
+<div class="line">        res = vramTuning2-&gt;pVtbl-&gt;IsSupportedMemoryTiming(vramTuning2, &amp;supported);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vramTuning1)</div>
 <div class="line">    {</div>
-<div class="line">        vramTuning1-&gt;pVtbl-&gt;IsSupportedMemoryTiming(vramTuning1, &amp;supported);</div>
+<div class="line">        res = vramTuning1-&gt;pVtbl-&gt;IsSupportedMemoryTiming(vramTuning1, &amp;supported);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tIsSupported: %d\n&quot;</span>, supported);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tIsSupported: %d, return code is: %d(0 means success)\n&quot;</span>, supported, res);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Release the ManualVRAMTuning2 interface</span></div>
 <div class="line">    <span class="keywordflow">if</span> (vramTuning2 != NULL)</div>
@@ -318,10 +319,10 @@ $(document).ready(function(){initNavTree('c__manual_v_r_a_m_tuning.html',''); in
 <div class="line"> </div>
 <div class="line">        adlx_int freq;</div>
 <div class="line">        <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> rang;</div>
-<div class="line">        vramTuning2-&gt;pVtbl-&gt;GetMaxVRAMFrequency(vramTuning2, &amp;freq);</div>
-<div class="line">        vramTuning2-&gt;pVtbl-&gt;GetMaxVRAMFrequencyRange(vramTuning2, &amp;rang);</div>
-<div class="line"> </div>
-<div class="line">        printf(<span class="stringliteral">&quot;\tMaxVRAMFrequency is: %d\n\tMaxVRAMFrequencyRange: [ %d, %d ], step: %d\n&quot;</span>, freq, rang.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, rang.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>, rang.<a class="code" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a>);</div>
+<div class="line">        <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = vramTuning2-&gt;pVtbl-&gt;GetMaxVRAMFrequency(vramTuning2, &amp;freq);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tMaxVRAMFrequency is: %d, return code is: %d(0 means success)\n&quot;</span>, freq, res);</div>
+<div class="line">        res = vramTuning2-&gt;pVtbl-&gt;GetMaxVRAMFrequencyRange(vramTuning2, &amp;rang);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tMaxVRAMFrequencyRange: [ %d, %d ], step: %d, return code is: %d(0 means success)\n&quot;</span>, rang.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, rang.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>, rang.<a class="code" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a>, res);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vramTuning1)</div>
 <div class="line">    {</div>
@@ -341,13 +342,23 @@ $(document).ready(function(){initNavTree('c__manual_v_r_a_m_tuning.html',''); in
 <div class="line">            state-&gt;pVtbl-&gt;GetFrequency(state, &amp;frequency);</div>
 <div class="line">            state-&gt;pVtbl-&gt;GetVoltage(state, &amp;voltage);</div>
 <div class="line">            printf(<span class="stringliteral">&quot;\t\tfrequency: %d, voltage: %d \n&quot;</span>, frequency, voltage);</div>
+<div class="line">            <span class="keywordflow">if</span> (state != NULL)</div>
+<div class="line">            {</div>
+<div class="line">                state-&gt;pVtbl-&gt;Release(state);</div>
+<div class="line">                state = NULL;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span> (states != NULL)</div>
+<div class="line">        {</div>
+<div class="line">            states-&gt;pVtbl-&gt;Release(states);</div>
+<div class="line">            states = NULL;</div>
 <div class="line">        }</div>
 <div class="line"> </div>
 <div class="line">        <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> frequencyRange;</div>
 <div class="line">        <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> voltageRange;</div>
-<div class="line">        vramTuning1-&gt;pVtbl-&gt;GetVRAMTuningRanges(vramTuning1, &amp;frequencyRange, &amp;voltageRange);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;\tFrequency Range: [ %d, %d ], step: %d\n&quot;</span>, frequencyRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, frequencyRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>, frequencyRange.<a class="code" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a>);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;\tVoltage Range: [ %d, %d ], step: %d\n&quot;</span>, voltageRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, voltageRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>, voltageRange.<a class="code" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a>);</div>
+<div class="line">        <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = vramTuning1-&gt;pVtbl-&gt;GetVRAMTuningRanges(vramTuning1, &amp;frequencyRange, &amp;voltageRange);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tFrequency Range: [ %d, %d ], step: %d, return code is: %d(0 means success)\n&quot;</span>, frequencyRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, frequencyRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>, frequencyRange.<a class="code" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a>, res);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tVoltage Range: [ %d, %d ], step: %d, return code is: %d(0 means success)\n&quot;</span>, voltageRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, voltageRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>, voltageRange.<a class="code" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a>, res);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">if</span> (descList)</div>
@@ -403,50 +414,70 @@ $(document).ready(function(){initNavTree('c__manual_v_r_a_m_tuning.html',''); in
 <div class="line">    <a class="code" href="group__enumerations.html#gaa25f244e38a3502a52167c303abcec11">ADLX_MEMORYTIMING_DESCRIPTION</a> desc, currentDesc;</div>
 <div class="line">    IADLXMemoryTimingDescriptionList* descList = NULL;</div>
 <div class="line">    IADLXMemoryTimingDescription* item = NULL;</div>
+<div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
 <div class="line">    <span class="keywordflow">if</span> (vramTuning2)</div>
 <div class="line">    {</div>
-<div class="line">        res = vramTuning2-&gt;pVtbl-&gt;GetSupportedMemoryTimingDescriptionList(vramTuning2, &amp;descList);</div>
-<div class="line">        <span class="keywordflow">if</span> (descList)</div>
+<div class="line">        <span class="comment">//If MemoryTiming is supported, then only will set the MemoryTiming</span></div>
+<div class="line">        res = vramTuning2-&gt;pVtbl-&gt;IsSupportedMemoryTiming(vramTuning2, &amp;supported);</div>
+<div class="line">        <span class="keywordflow">if</span> (supported)</div>
 <div class="line">        {</div>
-<div class="line">            vramTuning2-&gt;pVtbl-&gt;GetMemoryTimingDescription (vramTuning2, &amp;currentDesc);</div>
-<div class="line">            <span class="keywordflow">for</span> (adlx_uint s = 0; s != descList-&gt;pVtbl-&gt;End (descList); s++)</div>
+<div class="line">            res = vramTuning2-&gt;pVtbl-&gt;GetSupportedMemoryTimingDescriptionList(vramTuning2, &amp;descList);</div>
+<div class="line">            <span class="keywordflow">if</span> (descList)</div>
 <div class="line">            {</div>
-<div class="line">                descList-&gt;pVtbl-&gt;At_MemoryTimingDescriptionList (descList, s, &amp;item);</div>
-<div class="line">                item-&gt;pVtbl-&gt;GetDescription (item, &amp;desc);</div>
-<div class="line">                <span class="keywordflow">if</span> (desc != currentDesc)</div>
+<div class="line">                vramTuning2-&gt;pVtbl-&gt;GetMemoryTimingDescription(vramTuning2, &amp;currentDesc);</div>
+<div class="line">                <span class="keywordflow">for</span> (adlx_uint s = 0; s != descList-&gt;pVtbl-&gt;End(descList); s++)</div>
 <div class="line">                {</div>
-<div class="line">                    res = vramTuning2-&gt;pVtbl-&gt;SetMemoryTimingDescription (vramTuning2, desc);</div>
-<div class="line">                    printf(<span class="stringliteral">&quot;\tSet Memory Timing description to %s: return code is: %d (0 means success)\n&quot;</span>, getDescStr(desc), res);</div>
-<div class="line">                    <span class="keywordflow">break</span>;</div>
+<div class="line">                    descList-&gt;pVtbl-&gt;At_MemoryTimingDescriptionList(descList, s, &amp;item);</div>
+<div class="line">                    item-&gt;pVtbl-&gt;GetDescription(item, &amp;desc);</div>
+<div class="line">                    <span class="keywordflow">if</span> (desc != currentDesc)</div>
+<div class="line">                    {</div>
+<div class="line">                        res = vramTuning2-&gt;pVtbl-&gt;SetMemoryTimingDescription(vramTuning2, desc);</div>
+<div class="line">                        printf(<span class="stringliteral">&quot;\tSet Memory Timing description to %s: return code is: %d (0 means success)\n&quot;</span>, getDescStr(desc), res);</div>
+<div class="line">                        <span class="keywordflow">break</span>;</div>
+<div class="line">                    }</div>
 <div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">else</span></div>
+<div class="line">            {</div>
+<div class="line">                printf(<span class="stringliteral">&quot;\tFailed to get the Supported Memory Timing Description List.\n&quot;</span>);</div>
 <div class="line">            }</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span></div>
 <div class="line">        {</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tFailed to get the Supported Memory Timing Description List.\n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">            printf(<span class="stringliteral">&quot;\tMemory Timing level not supported, so cannot set Memory Timing Description List\n&quot;</span>);</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vramTuning1)</div>
 <div class="line">    {</div>
-<div class="line">        res = vramTuning1-&gt;pVtbl-&gt;GetSupportedMemoryTimingDescriptionList(vramTuning1, &amp;descList);</div>
-<div class="line">        <span class="keywordflow">if</span> (descList)</div>
+<div class="line">        <span class="comment">//If MemoryTiming is supported, then only will set the MemoryTiming</span></div>
+<div class="line">        res = vramTuning1-&gt;pVtbl-&gt;IsSupportedMemoryTiming(vramTuning1, &amp;supported);</div>
+<div class="line">        <span class="keywordflow">if</span> (supported)</div>
 <div class="line">        {</div>
-<div class="line">            vramTuning1-&gt;pVtbl-&gt;GetMemoryTimingDescription (vramTuning1, &amp;currentDesc);</div>
-<div class="line">            <span class="keywordflow">for</span> (adlx_uint s = 0; s != descList-&gt;pVtbl-&gt;End (descList); s++)</div>
+<div class="line">            res = vramTuning1-&gt;pVtbl-&gt;GetSupportedMemoryTimingDescriptionList(vramTuning1, &amp;descList);</div>
+<div class="line">            <span class="keywordflow">if</span> (descList)</div>
 <div class="line">            {</div>
-<div class="line">                descList-&gt;pVtbl-&gt;At_MemoryTimingDescriptionList (descList, s, &amp;item);</div>
-<div class="line">                item-&gt;pVtbl-&gt;GetDescription (item, &amp;desc);</div>
-<div class="line">                <span class="keywordflow">if</span> (desc != currentDesc)</div>
+<div class="line">                vramTuning1-&gt;pVtbl-&gt;GetMemoryTimingDescription(vramTuning1, &amp;currentDesc);</div>
+<div class="line">                <span class="keywordflow">for</span> (adlx_uint s = 0; s != descList-&gt;pVtbl-&gt;End(descList); s++)</div>
 <div class="line">                {</div>
-<div class="line">                    res = vramTuning1-&gt;pVtbl-&gt;SetMemoryTimingDescription (vramTuning1, desc);</div>
-<div class="line">                    printf(<span class="stringliteral">&quot;\tSet Memory Timing description to %s: return code is: %d (0 means success)\n&quot;</span>, getDescStr(desc), res);</div>
-<div class="line">                    <span class="keywordflow">break</span>;</div>
+<div class="line">                    descList-&gt;pVtbl-&gt;At_MemoryTimingDescriptionList(descList, s, &amp;item);</div>
+<div class="line">                    item-&gt;pVtbl-&gt;GetDescription(item, &amp;desc);</div>
+<div class="line">                    <span class="keywordflow">if</span> (desc != currentDesc)</div>
+<div class="line">                    {</div>
+<div class="line">                        res = vramTuning1-&gt;pVtbl-&gt;SetMemoryTimingDescription(vramTuning1, desc);</div>
+<div class="line">                        printf(<span class="stringliteral">&quot;\tSet Memory Timing description to %s: return code is: %d (0 means success)\n&quot;</span>, getDescStr(desc), res);</div>
+<div class="line">                        <span class="keywordflow">break</span>;</div>
+<div class="line">                    }</div>
 <div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">else</span></div>
+<div class="line">            {</div>
+<div class="line">                printf(<span class="stringliteral">&quot;\tFailed to get the Supported Memory Timing Description List.\n&quot;</span>);</div>
 <div class="line">            }</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span></div>
 <div class="line">        {</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tFailed to get the Supported Memory Timing Description List.\n&quot;</span>);</div>
+<div class="line">            printf(<span class="stringliteral">&quot;\tMemory Timing level not supported, so cannot set Memory Timing Description List\n&quot;</span>);</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"> </div>
@@ -486,46 +517,65 @@ $(document).ready(function(){initNavTree('c__manual_v_r_a_m_tuning.html',''); in
 <div class="line">    vramTuningIfc-&gt;pVtbl-&gt;QueryInterface(vramTuningIfc, IID_IADLXManualVRAMTuning2(), &amp;vramTuning2);</div>
 <div class="line">    IADLXManualVRAMTuning1* vramTuning1 = NULL;</div>
 <div class="line">    vramTuningIfc-&gt;pVtbl-&gt;QueryInterface(vramTuningIfc, IID_IADLXManualVRAMTuning1(), &amp;vramTuning1);</div>
+<div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
 <div class="line">    <span class="keywordflow">if</span> (vramTuning2)</div>
 <div class="line">    {</div>
-<div class="line">        adlx_int freq;</div>
-<div class="line">        <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> rang;</div>
-<div class="line">        vramTuning2-&gt;pVtbl-&gt;GetMaxVRAMFrequency(vramTuning2, &amp;freq);</div>
-<div class="line">        vramTuning2-&gt;pVtbl-&gt;GetMaxVRAMFrequencyRange(vramTuning2, &amp;rang);</div>
-<div class="line">        <span class="keywordflow">if</span> (freq != rang.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>)</div>
+<div class="line">        <span class="comment">//If MemoryTiming is supported, then only will set the state</span></div>
+<div class="line">        res = vramTuning2-&gt;pVtbl-&gt;IsSupportedMemoryTiming(vramTuning2, &amp;supported);</div>
+<div class="line">        <span class="keywordflow">if</span> (supported)</div>
 <div class="line">        {</div>
-<div class="line">            res = vramTuning2-&gt;pVtbl-&gt;SetMaxVRAMFrequency(vramTuning2, rang.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>);</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tSet minimum frequency: return code is: %d (0 means success)\n&quot;</span>, res);</div>
+<div class="line">            adlx_int freq;</div>
+<div class="line">            <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> rang;</div>
+<div class="line">            vramTuning2-&gt;pVtbl-&gt;GetMaxVRAMFrequency(vramTuning2, &amp;freq);</div>
+<div class="line">            vramTuning2-&gt;pVtbl-&gt;GetMaxVRAMFrequencyRange(vramTuning2, &amp;rang);</div>
+<div class="line">            <span class="keywordflow">if</span> (freq != rang.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>)</div>
+<div class="line">            {</div>
+<div class="line">                res = vramTuning2-&gt;pVtbl-&gt;SetMaxVRAMFrequency(vramTuning2, rang.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>);</div>
+<div class="line">                printf(<span class="stringliteral">&quot;\tSet minimum frequency: return code is: %d (0 means success)\n&quot;</span>, res);</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">else</span></div>
+<div class="line">            {</div>
+<div class="line">                res = vramTuning2-&gt;pVtbl-&gt;SetMaxVRAMFrequency(vramTuning2, rang.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + rang.<a class="code" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a> * 2);</div>
+<div class="line">                printf(<span class="stringliteral">&quot;\tSet maximum frequency: return code is: %d (0 means success)\n&quot;</span>, res);</div>
+<div class="line">            }</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span></div>
 <div class="line">        {</div>
-<div class="line">            res = vramTuning2-&gt;pVtbl-&gt;SetMaxVRAMFrequency(vramTuning2, rang.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + rang.<a class="code" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a> * 2);</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tSet maximum frequency: return code is: %d (0 means success)\n&quot;</span>, res);</div>
+<div class="line">            printf(<span class="stringliteral">&quot;\tTuning not supported, cannot set the state\n&quot;</span>);</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vramTuning1)</div>
 <div class="line">    {</div>
-<div class="line">        <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> frequencyRange;</div>
-<div class="line">        <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> voltageRange;</div>
-<div class="line">        vramTuning1-&gt;pVtbl-&gt;GetVRAMTuningRanges(vramTuning1, &amp;frequencyRange, &amp;voltageRange);</div>
-<div class="line">        IADLXManualTuningStateList* states = NULL;</div>
-<div class="line">        vramTuning1-&gt;pVtbl-&gt;GetVRAMTuningStates(vramTuning1, &amp;states);</div>
-<div class="line">        adlx_uint s = states-&gt;pVtbl-&gt;Begin(states);</div>
-<div class="line">        <span class="keywordflow">for</span> (; s != states-&gt;pVtbl-&gt;End(states); s++)</div>
+<div class="line">        <span class="comment">//If MemoryTiming is supported, then only will set the state</span></div>
+<div class="line">        res = vramTuning1-&gt;pVtbl-&gt;IsSupportedMemoryTiming(vramTuning1, &amp;supported);</div>
+<div class="line">        <span class="keywordflow">if</span> (supported)</div>
 <div class="line">        {</div>
-<div class="line">            IADLXManualTuningState* state = NULL;</div>
-<div class="line">            adlx_int frequency;</div>
-<div class="line">            adlx_int voltage;</div>
-<div class="line">            states-&gt;pVtbl-&gt;At_ManualTuningStateList(states, s, &amp;state);</div>
-<div class="line">            state-&gt;pVtbl-&gt;GetFrequency(state, &amp;frequency);</div>
-<div class="line">            state-&gt;pVtbl-&gt;GetVoltage(state, &amp;voltage);</div>
-<div class="line">            <span class="comment">// Only change the first</span></div>
-<div class="line">            res = state-&gt;pVtbl-&gt;SetFrequency(state, frequency != frequencyRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> ? frequencyRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> : frequencyRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>);</div>
-<div class="line">            res = state-&gt;pVtbl-&gt;SetVoltage(state, voltage != voltageRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> ? voltageRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> : voltageRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>);</div>
-<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">            <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> frequencyRange;</div>
+<div class="line">            <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> voltageRange;</div>
+<div class="line">            vramTuning1-&gt;pVtbl-&gt;GetVRAMTuningRanges(vramTuning1, &amp;frequencyRange, &amp;voltageRange);</div>
+<div class="line">            IADLXManualTuningStateList* states = NULL;</div>
+<div class="line">            vramTuning1-&gt;pVtbl-&gt;GetVRAMTuningStates(vramTuning1, &amp;states);</div>
+<div class="line">            adlx_uint s = states-&gt;pVtbl-&gt;Begin(states);</div>
+<div class="line">            <span class="keywordflow">for</span> (; s != states-&gt;pVtbl-&gt;End(states); s++)</div>
+<div class="line">            {</div>
+<div class="line">                IADLXManualTuningState* state = NULL;</div>
+<div class="line">                adlx_int frequency;</div>
+<div class="line">                adlx_int voltage;</div>
+<div class="line">                states-&gt;pVtbl-&gt;At_ManualTuningStateList(states, s, &amp;state);</div>
+<div class="line">                state-&gt;pVtbl-&gt;GetFrequency(state, &amp;frequency);</div>
+<div class="line">                state-&gt;pVtbl-&gt;GetVoltage(state, &amp;voltage);</div>
+<div class="line">                <span class="comment">// Only change the first</span></div>
+<div class="line">                res = state-&gt;pVtbl-&gt;SetFrequency(state, frequency != frequencyRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> ? frequencyRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> : frequencyRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>);</div>
+<div class="line">                res = state-&gt;pVtbl-&gt;SetVoltage(state, voltage != voltageRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> ? voltageRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> : voltageRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>);</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            }</div>
+<div class="line">            res = vramTuning1-&gt;pVtbl-&gt;SetVRAMTuningStates(vramTuning1, states);</div>
+<div class="line">            printf(<span class="stringliteral">&quot;\tChange VRAM tuning states: return code is: %d (0 means success)\n&quot;</span>, res);</div>
 <div class="line">        }</div>
-<div class="line">        res = vramTuning1-&gt;pVtbl-&gt;SetVRAMTuningStates(vramTuning1, states);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;\tChange VRAM tuning states: return code is: %d (0 means success)\n&quot;</span>, res);</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">        {</div>
+<div class="line">            printf(<span class="stringliteral">&quot;\tTuning not supported, cannot set the state\n&quot;</span>);</div>
+<div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Release the ManualVRAMTuning2 interface</span></div>
@@ -628,10 +678,10 @@ $(document).ready(function(){initNavTree('c__manual_v_r_a_m_tuning.html',''); in
 <div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:305</div></div>
 <div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:278</div></div>
 <div class="ttc" id="agroup__enumerations_html_gaa25f244e38a3502a52167c303abcec11"><div class="ttname"><a href="group__enumerations.html#gaa25f244e38a3502a52167c303abcec11">ADLX_MEMORYTIMING_DESCRIPTION</a></div><div class="ttdeci">ADLX_MEMORYTIMING_DESCRIPTION</div><div class="ttdoc">Indicates the priority of the log entry.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:813</div></div>
-<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:155</div></div>
-<div class="ttc" id="agroup__structures_val_html_ae0e545b501a683c565f08089ed3e8023"><div class="ttname"><a href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">ADLX_IntRange::step</a></div><div class="ttdeci">adlx_int step</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:156</div></div>
-<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:154</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">Structure contains interger range information.</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:153</div></div>
+<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:154</div></div>
+<div class="ttc" id="agroup__structures_val_html_ae0e545b501a683c565f08089ed3e8023"><div class="ttname"><a href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">ADLX_IntRange::step</a></div><div class="ttdeci">adlx_int step</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:155</div></div>
+<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:153</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:152</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -115,7 +115,7 @@ void ShowCustomResolutionSupport(IADLXDisplayCustomResolutionPtr pCustomResoluti
     std::cout << "  === custom resolution supported ===" << std::endl;
     adlx_bool supported = false;
     ADLX_RESULT res = pCustomResolution->IsSupported(&supported);
-    std::cout << "\tIsSupported: " << supported << std::endl;
+    std::cout << "\tIsSupported result: " << res << ", supported: " << supported << std::endl;
 }
 
 void GetResolutionList(IADLXDisplayCustomResolutionPtr pCustomResolution, IADLXDisplayResolutionList** ppResolutionList)

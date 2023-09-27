@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -27,6 +27,7 @@ void ShowGPUMetricsRange(IADLXPerformanceMonitoringServices* perfMonitoringServi
  */
 // Show current GPU metrics
 void ShowCurrentGPUMetrics(IADLXPerformanceMonitoringServices *perfMonitoringServices, IADLXGPU *oneGPU);
+void ShowCurrentGPUMetricsFromHistorical(IADLXPerformanceMonitoringServices* perfMonitoringServices, IADLXGPU* oneGPU);
 
 // Show historical GPU metrics
 void ShowHistoricalGPUMetrics(IADLXPerformanceMonitoringServices *perfMonitoringServices, IADLXGPU *oneGPU);
@@ -108,7 +109,8 @@ void MainMenu()
 
     printf("\t->Press 1 to display the GPU metrics range\n");
     printf("\t->Press 2 to display the current GPU metrics\n");
-    printf("\t->Press 3 to display the historical GPU metrics\n");
+    printf("\t->Press 3 to display the current GPU metrics from historical data\n");
+    printf("\t->Press 4 to display the historical GPU metrics\n");
 
     printf("\t->Press Q/q to terminate the application\n");
     printf("\t->Press M/m to display the main menu options\n");
@@ -132,8 +134,13 @@ void MenuControl(IADLXPerformanceMonitoringServices *perfMonitoringServices, IAD
             ShowCurrentGPUMetrics(perfMonitoringServices, oneGPU);
             break;
 
-        // Display historical GPU metrics
+        // Display current GPU metrics from historical data
         case '3':
+            ShowCurrentGPUMetricsFromHistorical(perfMonitoringServices, oneGPU);
+            break;
+
+        // Display historical GPU metrics
+        case '4':
             ShowHistoricalGPUMetrics(perfMonitoringServices, oneGPU);
             break;
 
@@ -519,6 +526,99 @@ void ShowCurrentGPUMetrics(IADLXPerformanceMonitoringServices *perfMonitoringSer
     {
         gpuMetricsSupport->pVtbl->Release(gpuMetricsSupport);
         gpuMetricsSupport = NULL;
+    }
+
+    MainMenu();
+}
+
+void ShowCurrentGPUMetricsFromHistorical(IADLXPerformanceMonitoringServices* perfMonitoringServices, IADLXGPU* oneGPU)
+{
+    // Clear historical performance metrics data
+    ADLX_RESULT res = perfMonitoringServices->pVtbl->ClearPerformanceMetricsHistory(perfMonitoringServices);
+    if (ADLX_FAILED(res))
+    {
+        printf("Failed to clear historical data\n");
+        return;
+    }
+
+    // Start tracking performance metrics
+    res = perfMonitoringServices->pVtbl->StartPerformanceMetricsTracking(perfMonitoringServices);
+    if (ADLX_FAILED(res))
+    {
+        printf("Failed to start tracking performance metrics\n");
+        return;
+    }
+
+    // Get GPU metrics support
+    IADLXGPUMetricsSupport* gpuMetricsSupport = NULL;
+    ADLX_RESULT metricsSupportRet = perfMonitoringServices->pVtbl->GetSupportedGPUMetrics(perfMonitoringServices, oneGPU, &gpuMetricsSupport);
+
+    // Accumulate and display current metrics for each of 10 loops
+    adlx_int startMs = 0;
+    adlx_int stopMs = 0;
+    for (int it = 0; it < 10; ++it)
+    {
+        // Clear screen
+        system("cls");
+
+        IADLXGPUMetricsList* gpuMetricsList = NULL;
+        res = perfMonitoringServices->pVtbl->GetGPUMetricsHistory(perfMonitoringServices, oneGPU, startMs, stopMs, &gpuMetricsList);
+        if (ADLX_SUCCEEDED(res))
+        {
+            // Display all the GPU metrics in the list
+            IADLXGPUMetrics* gpuMetrics = NULL;
+            for (int i = gpuMetricsList->pVtbl->Begin(gpuMetricsList); i != gpuMetricsList->pVtbl->End(gpuMetricsList); ++i)
+            {
+                res = gpuMetricsList->pVtbl->At_GPUMetricsList(gpuMetricsList, i, &gpuMetrics);
+                // Display timestamp and GPU metrics
+                if (ADLX_SUCCEEDED(metricsSupportRet) && ADLX_SUCCEEDED(res))
+                {
+                    printf("The current GPU metrics: \n");
+                    GetTimeStamp(gpuMetrics);
+                    ShowGPUUsage(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUClockSpeed(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUVRAMClockSpeed(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUTemperature(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUHotspotTemperature(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUPower(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUFanSpeed(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUVRAM(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUTotalBoardPower(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUIntakeTemperature(gpuMetricsSupport, gpuMetrics);
+                }
+
+                // Release IADLXGPUMetrics interface
+                if (gpuMetrics != NULL)
+                {
+                    gpuMetrics->pVtbl->Release(gpuMetrics);
+                    gpuMetrics = NULL;
+                }
+            }
+        }
+
+        // Release IADLXGPUMetricsList interface
+        if (gpuMetricsList != NULL)
+        {
+            gpuMetricsList->pVtbl->Release(gpuMetricsList);
+            gpuMetricsList = NULL;
+        }
+
+        Sleep(1000);
+    }
+
+    // Release IADLXGPUMetricsSupport interface
+    if (gpuMetricsSupport != NULL)
+    {
+        gpuMetricsSupport->pVtbl->Release(gpuMetricsSupport);
+        gpuMetricsSupport = NULL;
+    }
+
+    // Stop tracking performance metrics
+    res = perfMonitoringServices->pVtbl->StopPerformanceMetricsTracking(perfMonitoringServices);
+    if (ADLX_FAILED(res))
+    {
+        printf("Failed to stop tracking performance metrics\n");
     }
 
     MainMenu();

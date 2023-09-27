@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -243,47 +243,55 @@ void ShowGetAndSetFan (IADLXManualFanTuning* manualFanTuning)
     ADLX_RESULT res = manualFanTuning->pVtbl->GetFanTuningRanges (manualFanTuning, &fanSpeedRange, &fanTemperatureRange);
     printf ("\tFan speed range: (%d, %d)\n", fanSpeedRange.minValue, fanSpeedRange.maxValue);
     printf ("\tFan temperature range: (%d, %d)\n", fanTemperatureRange.minValue, fanTemperatureRange.maxValue);
+    printf ("\tReturn code is: %d(0 means success)\n", res);
 
     // Display current fan tuning states
     IADLXManualFanTuningStateList* states;
     IADLXManualFanTuningState* oneState;
     res = manualFanTuning->pVtbl->GetFanTuningStates (manualFanTuning, &states);
-    for (adlx_uint crt = states->pVtbl->Begin (states); crt != states->pVtbl->End (states); ++crt)
+    if (ADLX_SUCCEEDED (res))
     {
-        res = states->pVtbl->At_ManualFanTuningStateList (states, crt, &oneState);
-        adlx_int speed = 0, temperature = 0;
-        oneState->pVtbl->GetFanSpeed (oneState, &speed);
-        oneState->pVtbl->GetTemperature (oneState, &temperature);
-        printf ("\tThe current %d state: speed is %d temperature is %d\n", crt, speed, temperature);
-        if (oneState != NULL)
+        for (adlx_uint crt = states->pVtbl->Begin (states); crt != states->pVtbl->End (states); ++crt)
         {
-            oneState->pVtbl->Release (oneState);
-            oneState = NULL;
+            res = states->pVtbl->At_ManualFanTuningStateList (states, crt, &oneState);
+            adlx_int speed = 0, temperature = 0;
+            oneState->pVtbl->GetFanSpeed (oneState, &speed);
+            oneState->pVtbl->GetTemperature (oneState, &temperature);
+            printf ("\tThe current %d state: speed is %d temperature is %d\n", crt, speed, temperature);
+            if (oneState != NULL)
+            {
+                oneState->pVtbl->Release (oneState);
+                oneState = NULL;
+            }
+        }
+        if (states != NULL)
+        {
+            states->pVtbl->Release (states);
+            states = NULL;
         }
     }
-    if (states != NULL)
-    {
-        states->pVtbl->Release (states);
-        states = NULL;
-    }
+    
 
     // Set empty fan tuning states
     res = manualFanTuning->pVtbl->GetEmptyFanTuningStates (manualFanTuning, &states);
-    for (adlx_uint crt = states->pVtbl->Begin (states); crt != states->pVtbl->End (states); ++crt)
+    if (ADLX_SUCCEEDED (res))
     {
-        res = states->pVtbl->At_ManualFanTuningStateList (states, crt, &oneState);
-        adlx_int speed = 0, temperature = 0;
-        int fanSpeedStep = (fanSpeedRange.maxValue - fanSpeedRange.minValue) / states->pVtbl->Size (states);
-        int fanTemperatureStep = (fanTemperatureRange.maxValue - fanTemperatureRange.minValue) / states->pVtbl->Size (states);
-        oneState->pVtbl->SetFanSpeed (oneState, fanSpeedRange.minValue + fanSpeedStep * crt);
-        oneState->pVtbl->GetFanSpeed (oneState, &speed);
-        oneState->pVtbl->SetTemperature (oneState, fanTemperatureRange.minValue + fanTemperatureStep * crt);
-        oneState->pVtbl->GetTemperature (oneState, &temperature);
-        printf ("\tSet empty %d state: speed is %d temperature is %d\n", crt, speed, temperature);
-        if (oneState != NULL)
+        for (adlx_uint crt = states->pVtbl->Begin (states); crt != states->pVtbl->End (states); ++crt)
         {
-            oneState->pVtbl->Release (oneState);
-            oneState = NULL;
+            res = states->pVtbl->At_ManualFanTuningStateList (states, crt, &oneState);
+            adlx_int speed = 0, temperature = 0;
+            int fanSpeedStep = (fanSpeedRange.maxValue - fanSpeedRange.minValue) / states->pVtbl->Size (states);
+            int fanTemperatureStep = (fanTemperatureRange.maxValue - fanTemperatureRange.minValue) / states->pVtbl->Size (states);
+            oneState->pVtbl->SetFanSpeed (oneState, fanSpeedRange.minValue + fanSpeedStep * crt);
+            oneState->pVtbl->GetFanSpeed (oneState, &speed);
+            oneState->pVtbl->SetTemperature (oneState, fanTemperatureRange.minValue + fanTemperatureStep * crt);
+            oneState->pVtbl->GetTemperature (oneState, &temperature);
+            printf ("\tSet empty %d state: speed is %d temperature is %d\n", crt, speed, temperature);
+            if (oneState != NULL)
+            {
+                oneState->pVtbl->Release (oneState);
+                oneState = NULL;
+            }
         }
     }
 
@@ -301,24 +309,27 @@ void ShowGetAndSetFan (IADLXManualFanTuning* manualFanTuning)
         states = NULL;
     }
     res = manualFanTuning->pVtbl->GetFanTuningStates (manualFanTuning, &states);
-    printf ("\tAfter setting:\n");
-    for (adlx_uint crt = states->pVtbl->Begin (states); crt != states->pVtbl->End (states); ++crt)
+    if (ADLX_SUCCEEDED (res))
     {
-        res = states->pVtbl->At_ManualFanTuningStateList (states, crt, &oneState);
-        adlx_int speed = 0, temperature = 0;
-        oneState->pVtbl->GetFanSpeed (oneState, &speed);
-        oneState->pVtbl->GetTemperature (oneState, &temperature);
-        printf ("\tThe current %d state: speed is %d temperature is %d\n", crt, speed, temperature);
-        if (oneState != NULL)
+        printf ("\tAfter setting:\n");
+        for (adlx_uint crt = states->pVtbl->Begin (states); crt != states->pVtbl->End (states); ++crt)
         {
-            oneState->pVtbl->Release (oneState);
-            oneState = NULL;
+            res = states->pVtbl->At_ManualFanTuningStateList (states, crt, &oneState);
+            adlx_int speed = 0, temperature = 0;
+            oneState->pVtbl->GetFanSpeed (oneState, &speed);
+            oneState->pVtbl->GetTemperature (oneState, &temperature);
+            printf ("\tThe current %d state: speed is %d temperature is %d\n", crt, speed, temperature);
+            if (oneState != NULL)
+            {
+                oneState->pVtbl->Release (oneState);
+                oneState = NULL;
+            }
         }
-    }
-    if (states != NULL)
-    {
-        states->pVtbl->Release (states);
-        states = NULL;
+        if (states != NULL)
+        {
+            states->pVtbl->Release (states);
+            states = NULL;
+        }
     }
 }
 
@@ -331,14 +342,14 @@ void ShowGetAndSetZeroRPM (IADLXManualFanTuning* manualFanTuning)
     if (ADLX_FAILED (res) || !supported)
         return;
     adlx_bool isZeroRPMStateSet = false;
-    manualFanTuning->pVtbl->SetZeroRPMState (manualFanTuning, true);
-    printf ("\tSet ZeroRPM state\n");
-    manualFanTuning->pVtbl->GetZeroRPMState (manualFanTuning, &isZeroRPMStateSet);
-    printf ("\tIs ZeroRPM state set: %d\n", isZeroRPMStateSet);
-    manualFanTuning->pVtbl->SetZeroRPMState (manualFanTuning, false);
-    printf ("\tReset ZeroRPM state\n");
-    manualFanTuning->pVtbl->GetZeroRPMState (manualFanTuning, &isZeroRPMStateSet);
-    printf ("\tIs ZeroRPM state set: %d\n", isZeroRPMStateSet);
+    res = manualFanTuning->pVtbl->SetZeroRPMState (manualFanTuning, true);
+    printf ("\tSet ZeroRPM state, return code is: %d(0 means success)\n", res);
+    res = manualFanTuning->pVtbl->GetZeroRPMState (manualFanTuning, &isZeroRPMStateSet);
+    printf ("\tIs ZeroRPM state set: %d, return code is: %d(0 means success)\n", isZeroRPMStateSet, res);
+    res = manualFanTuning->pVtbl->SetZeroRPMState (manualFanTuning, false);
+    printf ("\tReset ZeroRPM state, return code is: %d(0 means success)\n", res);
+    res = manualFanTuning->pVtbl->GetZeroRPMState (manualFanTuning, &isZeroRPMStateSet);
+    printf ("\tIs ZeroRPM state set: %d, return code is: %d(0 means success)\n", isZeroRPMStateSet, res);
 }
 
 // Display and set MinAcoustic settings
@@ -351,15 +362,15 @@ void ShowGetAndSetMinAcoustic (IADLXManualFanTuning* manualFanTuning)
         return;
 
     ADLX_IntRange tuningRange;
-    manualFanTuning->pVtbl->GetMinAcousticLimitRange (manualFanTuning, &tuningRange);
-    printf ("\tMinAcoustic limit range: (%d, %d)\n", tuningRange.minValue, tuningRange.maxValue);
+    res = manualFanTuning->pVtbl->GetMinAcousticLimitRange (manualFanTuning, &tuningRange);
+    printf ("\tMinAcoustic limit range: (%d, %d), return code is: %d(0 means success)\n", tuningRange.minValue, tuningRange.maxValue, res);
 
     adlx_int minAcousticLimit;
-    manualFanTuning->pVtbl->GetMinAcousticLimit (manualFanTuning, &minAcousticLimit);
-    printf ("\tCurrent min acoustic limit: %d\n", minAcousticLimit);
-    manualFanTuning->pVtbl->SetMinAcousticLimit (manualFanTuning, tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
-    manualFanTuning->pVtbl->GetMinAcousticLimit (manualFanTuning, &minAcousticLimit);
-    printf ("\tSet current min acoustic limit to: %d\n", minAcousticLimit);
+    res = manualFanTuning->pVtbl->GetMinAcousticLimit (manualFanTuning, &minAcousticLimit);
+    printf ("\tCurrent min acoustic limit: %d, return code is: %d(0 means success)\n", minAcousticLimit, res);
+    res = manualFanTuning->pVtbl->SetMinAcousticLimit (manualFanTuning, tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
+    res = manualFanTuning->pVtbl->GetMinAcousticLimit (manualFanTuning, &minAcousticLimit);
+    printf ("\tSet current min acoustic limit to: %d, return code is: %d(0 means success)\n", minAcousticLimit, res);
 }
 
 // Display and set MinFanSpeed settings
@@ -372,15 +383,15 @@ void ShowGetAndSetMinFanSpeed (IADLXManualFanTuning* manualFanTuning)
         return;
 
     ADLX_IntRange tuningRange;
-    manualFanTuning->pVtbl->GetMinFanSpeedRange (manualFanTuning, &tuningRange);
-    printf ("\tMinFanSpeed range: (%d, %d)\n", tuningRange.minValue, tuningRange.maxValue);
+    res = manualFanTuning->pVtbl->GetMinFanSpeedRange (manualFanTuning, &tuningRange);
+    printf ("\tMinFanSpeed range: (%d, %d), return code is: %d(0 means success)\n", tuningRange.minValue, tuningRange.maxValue, res);
 
     adlx_int minFanSpeed = 0;
-    manualFanTuning->pVtbl->GetMinFanSpeed (manualFanTuning, &minFanSpeed);
-    printf ("\tCurrent MinFanSpeed: %d\n", minFanSpeed);
-    manualFanTuning->pVtbl->SetMinFanSpeed (manualFanTuning, tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
-    manualFanTuning->pVtbl->GetMinFanSpeed (manualFanTuning, &minFanSpeed);
-    printf ("\tSet current MinFanSpeed to: %d\n", minFanSpeed);
+    res = manualFanTuning->pVtbl->GetMinFanSpeed (manualFanTuning, &minFanSpeed);
+    printf ("\tCurrent MinFanSpeed: %d, return code is: %d(0 means success)\n", minFanSpeed, res);
+    res = manualFanTuning->pVtbl->SetMinFanSpeed (manualFanTuning, tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
+    res = manualFanTuning->pVtbl->GetMinFanSpeed (manualFanTuning, &minFanSpeed);
+    printf ("\tSet current MinFanSpeed to: %d, return code is: %d(0 means success)\n", minFanSpeed, res);
 }
 
 // Display and set TargetFanSpeed settings
@@ -393,13 +404,13 @@ void ShowGetAndSetTargetFanSpeed (IADLXManualFanTuning* manualFanTuning)
         return;
 
     ADLX_IntRange tuningRange;
-    manualFanTuning->pVtbl->GetTargetFanSpeedRange (manualFanTuning, &tuningRange);
-    printf ("\tTargetFanSpeed range: (%d, %d)\n", tuningRange.minValue, tuningRange.maxValue);
+    res = manualFanTuning->pVtbl->GetTargetFanSpeedRange (manualFanTuning, &tuningRange);
+    printf ("\tTargetFanSpeed range: (%d, %d), return code is: %d(0 means success)\n", tuningRange.minValue, tuningRange.maxValue, res);
 
     adlx_int minAcousticLimit;
-    manualFanTuning->pVtbl->GetTargetFanSpeed (manualFanTuning, &minAcousticLimit);
-    printf ("\tCurrent TargetFanSpeed: %d\n", minAcousticLimit);
-    manualFanTuning->pVtbl->SetTargetFanSpeed (manualFanTuning, tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
-    manualFanTuning->pVtbl->GetTargetFanSpeed (manualFanTuning, &minAcousticLimit);
-    printf ("\tSet current TargetFanSpeed to: %d\n", minAcousticLimit);
+    res = manualFanTuning->pVtbl->GetTargetFanSpeed (manualFanTuning, &minAcousticLimit);
+    printf ("\tCurrent TargetFanSpeed: %d, return code is: %d(0 means success)\n", minAcousticLimit, res);
+    res = manualFanTuning->pVtbl->SetTargetFanSpeed (manualFanTuning, tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
+    res = manualFanTuning->pVtbl->GetTargetFanSpeed (manualFanTuning, &minAcousticLimit);
+    printf ("\tSet current TargetFanSpeed to: %d, return code is: %d(0 means success)\n", minAcousticLimit, res);
 }

@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
 <para><htmlonly>&lt;!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 --&gt;
@@ -35,7 +35,7 @@
 &lt;/html&gt;</htmlonly> <heading level="2">Code </heading>
 </para>
 <para>C <programlisting filename="./C/3DGraphics/AnisotropicFiltering/mainAnisotropicFiltering.c"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2023<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -165,18 +165,21 @@
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowSupport(IADLX3DAnisotropicFiltering*<sp/>anisotropicFiltering)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool<sp/>supported<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>anisotropicFiltering-&gt;pVtbl-&gt;IsSupported(anisotropicFiltering,<sp/>&amp;supported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupported:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>anisotropicFiltering-&gt;pVtbl-&gt;IsSupported(anisotropicFiltering,<sp/>&amp;supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupported:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>supported);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetState(IADLX3DAnisotropicFiltering*<sp/>anisotropicFiltering)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool<sp/>enabled<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>anisotropicFiltering-&gt;pVtbl-&gt;IsEnabled(anisotropicFiltering,<sp/>&amp;enabled);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsEnabled:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>enabled);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>anisotropicFiltering-&gt;pVtbl-&gt;IsEnabled(anisotropicFiltering,<sp/>&amp;enabled);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsEnabled:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>enabled);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1gac99ad138a55f9242874a960af8e64579" kindref="member">ADLX_ANISOTROPIC_FILTERING_LEVEL</ref><sp/>level;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>anisotropicFiltering-&gt;pVtbl-&gt;GetLevel(anisotropicFiltering,<sp/>&amp;level);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tLevel:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>getlevelStr(level));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>anisotropicFiltering-&gt;pVtbl-&gt;GetLevel(anisotropicFiltering,<sp/>&amp;level);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tLevel:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>getlevelStr(level));</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetState(IADLX3DAnisotropicFiltering*<sp/>anisotropicFiltering,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)</highlight></codeline>
@@ -188,10 +191,13 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index<sp/>==<sp/>0<sp/>&amp;&amp;<sp/><ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1gac99ad138a55f9242874a960af8e64579" kindref="member">ADLX_ANISOTROPIC_FILTERING_LEVEL</ref><sp/>level;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>anisotropicFiltering-&gt;pVtbl-&gt;GetLevel(anisotropicFiltering,<sp/>&amp;level);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>level<sp/>=<sp/>(level<sp/>==<sp/><ref refid="_a_d_l_x_defines_8h_1gac99ad138a55f9242874a960af8e64579a7c3092ac1cb5e292fa3492cc3d61ebbe" kindref="member">AF_LEVEL_X2</ref>)<sp/>?<sp/><ref refid="_a_d_l_x_defines_8h_1gac99ad138a55f9242874a960af8e64579a66e217a4423ff7bc5b548f3f0be82b00" kindref="member">AF_LEVEL_X4</ref><sp/>:<sp/><ref refid="_a_d_l_x_defines_8h_1gac99ad138a55f9242874a960af8e64579a7c3092ac1cb5e292fa3492cc3d61ebbe" kindref="member">AF_LEVEL_X2</ref>;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>anisotropicFiltering-&gt;pVtbl-&gt;SetLevel(anisotropicFiltering,<sp/>level);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>level:<sp/>%s<sp/><sp/>,return<sp/>code<sp/>is:<sp/>%d<sp/>(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>getlevelStr(level),<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>anisotropicFiltering-&gt;pVtbl-&gt;GetLevel(anisotropicFiltering,<sp/>&amp;level);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>level<sp/>=<sp/>(level<sp/>==<sp/><ref refid="_a_d_l_x_defines_8h_1gac99ad138a55f9242874a960af8e64579a7c3092ac1cb5e292fa3492cc3d61ebbe" kindref="member">AF_LEVEL_X2</ref>)<sp/>?<sp/><ref refid="_a_d_l_x_defines_8h_1gac99ad138a55f9242874a960af8e64579a66e217a4423ff7bc5b548f3f0be82b00" kindref="member">AF_LEVEL_X4</ref><sp/>:<sp/><ref refid="_a_d_l_x_defines_8h_1gac99ad138a55f9242874a960af8e64579a7c3092ac1cb5e292fa3492cc3d61ebbe" kindref="member">AF_LEVEL_X2</ref>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>anisotropicFiltering-&gt;pVtbl-&gt;SetLevel(anisotropicFiltering,<sp/>level);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>level:<sp/>%s<sp/><sp/>,return<sp/>code<sp/>is:<sp/>%d<sp/>(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>getlevelStr(level),<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -243,6 +249,6 @@
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> </para>
     </detaileddescription>
-    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXSamplesPage/ADLXSamplePage.h"/>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXSamplesPage/zADLXSamplePage.h"/>
   </compounddef>
 </doxygen>

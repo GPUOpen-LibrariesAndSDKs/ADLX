@@ -1,6 +1,6 @@
 
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -94,8 +94,8 @@ int main()
 void ShowSupport(const IADLX3DResetShaderCachePtr& resetShaderCache)
 {
     adlx_bool supported = false;
-    resetShaderCache->IsSupported(&supported);
-    std::cout << "\tIsSupported: " << supported << std::endl;
+    ADLX_RESULT res = resetShaderCache->IsSupported(&supported);
+    std::cout << "\tIsSupported: " << supported << ", return code is: " << res << "(0 means success)" << std::endl;
 }
 
 void ResetShaderCache(const IADLX3DResetShaderCachePtr& resetShaderCache)

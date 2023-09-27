@@ -3,6 +3,7 @@ var gfx3dgraphics =
     [ "IADLX3DAnisotropicFiltering", "_d_o_x__i_a_d_l_x3_d_anisotropic_filtering.html", "_d_o_x__i_a_d_l_x3_d_anisotropic_filtering" ],
     [ "IADLX3DAntiAliasing", "_d_o_x__i_a_d_l_x3_d_anti_aliasing.html", "_d_o_x__i_a_d_l_x3_d_anti_aliasing" ],
     [ "IADLX3DAntiLag", "_d_o_x__i_a_d_l_x3_d_anti_lag.html", "_d_o_x__i_a_d_l_x3_d_anti_lag" ],
+    [ "IADLX3DAntiLag1", "_d_o_x__i_a_d_l_x3_d_anti_lag1.html", "_d_o_x__i_a_d_l_x3_d_anti_lag1" ],
     [ "IADLX3DBoost", "_d_o_x__i_a_d_l_x3_d_boost.html", "_d_o_x__i_a_d_l_x3_d_boost" ],
     [ "IADLX3DChill", "_d_o_x__i_a_d_l_x3_d_chill.html", "_d_o_x__i_a_d_l_x3_d_chill" ],
     [ "IADLX3DEnhancedSync", "_d_o_x__i_a_d_l_x3_d_enhanced_sync.html", "_d_o_x__i_a_d_l_x3_d_enhanced_sync" ],

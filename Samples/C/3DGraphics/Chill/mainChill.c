@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -112,21 +112,28 @@ int main()
 void ShowChillSupport(IADLX3DChill* d3dChill)
 {
     adlx_bool supported = false;
-    d3dChill->pVtbl->IsSupported(d3dChill, &supported);
-    printf("\tIsSupported: %d\n", supported);
+    ADLX_RESULT res = d3dChill->pVtbl->IsSupported(d3dChill, &supported);
+    if (ADLX_SUCCEEDED(res))
+        printf("\tIsSupported: %d\n", supported);
 }
 
 void GetChillState(IADLX3DChill* d3dChill)
 {
     adlx_bool enabled = false;
-    d3dChill->pVtbl->IsEnabled(d3dChill, &enabled);
-    printf("\tIsEnabled: %d\n", enabled);
+    ADLX_RESULT res = d3dChill->pVtbl->IsEnabled(d3dChill, &enabled);
+    if (ADLX_SUCCEEDED(res))
+        printf("\tIsEnabled: %d\n", enabled);
     adlx_int minFPS, maxFPS;
     ADLX_IntRange fpsRange;
-    d3dChill->pVtbl->GetMinFPS(d3dChill, &minFPS);
-    d3dChill->pVtbl->GetMaxFPS(d3dChill, &maxFPS);
-    d3dChill->pVtbl->GetFPSRange(d3dChill, &fpsRange);
-    printf("\tCurrentFPS [ %d , %d ]\n\tFPSSet limit [ %d, %d ], step: %d\n", minFPS, maxFPS, fpsRange.minValue, fpsRange.maxValue, fpsRange.step);
+    res = d3dChill->pVtbl->GetMinFPS(d3dChill, &minFPS);
+    if (ADLX_SUCCEEDED (res))
+        printf ("\tCurrent MinFPS: %d\n", minFPS);
+    res = d3dChill->pVtbl->GetMaxFPS(d3dChill, &maxFPS);
+    if (ADLX_SUCCEEDED (res))
+        printf ("\tCurrent MaxFPS: %d\n", maxFPS);
+    res = d3dChill->pVtbl->GetFPSRange(d3dChill, &fpsRange);
+    if (ADLX_SUCCEEDED (res))
+        printf("\tFPSSet limit [ %d, %d ], step: %d\n", fpsRange.minValue, fpsRange.maxValue, fpsRange.step);
 }
 
 void SetChillState(IADLX3DChill* d3dChill, int index)

@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -418,9 +418,14 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:gabe8d6f1562d0472d97c5edbf55c6d8cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the custom 3D LUT color space.  <a href="group__enumerations.html#gabe8d6f1562d0472d97c5edbf55c6d8cc">More...</a><br /></td></tr>
 <tr class="separator:gabe8d6f1562d0472d97c5edbf55c6d8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga67d22cfa2969510afada5140a157df62"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerations.html#ga67d22cfa2969510afada5140a157df62">ADLX_ANTILAG_STATE</a> { <a class="el" href="group__enumerations.html#ga67d22cfa2969510afada5140a157df62ad52630a26f9490c28cc16b38e0205ce9">ANTILAG</a> = 0
+, <a class="el" href="group__enumerations.html#ga67d22cfa2969510afada5140a157df62a86bd1f9314544ffffd7a1a374a807e9f">ANTILAGNEXT</a>
+ }</td></tr>
+<tr class="memdesc:ga67d22cfa2969510afada5140a157df62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the state of Anti Lag.  <a href="group__enumerations.html#ga67d22cfa2969510afada5140a157df62">More...</a><br /></td></tr>
+<tr class="separator:ga67d22cfa2969510afada5140a157df62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>This section provides documentation for the ADLX enums.</p>
+<p>This section indicates the enumerator values for various ADLX functionalities.</p>
 <h2>Requirements </h2>
 <table class="doxtable">
 <tr style="height=40px">
@@ -612,6 +617,30 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
+<a id="ga67d22cfa2969510afada5140a157df62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga67d22cfa2969510afada5140a157df62">&#9670;&nbsp;</a></span>ADLX_ANTILAG_STATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__enumerations.html#ga67d22cfa2969510afada5140a157df62">ADLX_ANTILAG_STATE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates the state of Anti Lag. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ga67d22cfa2969510afada5140a157df62ad52630a26f9490c28cc16b38e0205ce9"></a>ANTILAG&#160;</td><td class="fielddoc"><p>The Antilag level is AntiLag. <br  />
+ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ga67d22cfa2969510afada5140a157df62a86bd1f9314544ffffd7a1a374a807e9f"></a>ANTILAGNEXT&#160;</td><td class="fielddoc"><p>The Antilag level is AntiLag Next. <br  />
+ </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="gaf4fd628e799e6a74201290ff40418d77"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf4fd628e799e6a74201290ff40418d77">&#9670;&nbsp;</a></span>ADLX_ASIC_FAMILY_TYPE</h2>
 
@@ -704,10 +733,10 @@ Enumerations</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ga83322f63ada9c973559376760f141b89a03058f4b63d7d11fe6a5aa47154590a4"></a>DESKTOP_SINGLE&#160;</td><td class="fielddoc"><p>Single display desktop: one display showing the entire desktop <br  />
  </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ga83322f63ada9c973559376760f141b89ac96f7ed618b411fc68b0e1fe21f2e62c"></a>DESKTOP_DUPLCATE&#160;</td><td class="fielddoc"><p>Duplicate desktop: two or mode displays each show the entire desktop <br  />
+<tr><td class="fieldname"><a id="ga83322f63ada9c973559376760f141b89ac96f7ed618b411fc68b0e1fe21f2e62c"></a>DESKTOP_DUPLCATE&#160;</td><td class="fielddoc"><p>Duplicate desktop: two or more displays each show the entire desktop <br  />
  </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ga83322f63ada9c973559376760f141b89ac483eaf5310613780a7901e317b9b2a2"></a>DESKTOP_EYEFINITY&#160;</td><td class="fielddoc"><p>AMD Eyefinity desktop: two or mode displays each show a portion of the desktop <br  />
+<tr><td class="fieldname"><a id="ga83322f63ada9c973559376760f141b89ac483eaf5310613780a7901e317b9b2a2"></a>DESKTOP_EYEFINITY&#160;</td><td class="fielddoc"><p>AMD Eyefinity desktop: two or more displays each show a portion of the desktop <br  />
  </p>
 </td></tr>
 </table>

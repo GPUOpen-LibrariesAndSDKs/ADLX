@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -253,27 +253,28 @@ int WaitAndExit(const char* msg, const int retCode,
 void ShowGetPowerLimitRange(IADLXManualPowerTuning* manualPowerTuning)
 {
     ADLX_IntRange powerRange;
-    manualPowerTuning->pVtbl->GetPowerLimitRange(manualPowerTuning, &powerRange);
-    printf("\tPower limit range: (%d, %d)\n", powerRange.minValue, powerRange.maxValue);
+    ADLX_RESULT res = manualPowerTuning->pVtbl->GetPowerLimitRange(manualPowerTuning, &powerRange);
+    printf("\tPower limit range: (%d, %d), return code is: %d(0 means success)\n", powerRange.minValue, powerRange.maxValue, res);
 }
 
 // Display current power limit
 void ShowGetPowerLimit(IADLXManualPowerTuning* manualPowerTuning)
 {
     adlx_int powerLimit;
-    manualPowerTuning->pVtbl->GetPowerLimit(manualPowerTuning, &powerLimit);
-    printf("\tCurrent power limit: %d\n", powerLimit);
+    ADLX_RESULT res = manualPowerTuning->pVtbl->GetPowerLimit(manualPowerTuning, &powerLimit);
+    printf("\tCurrent power limit: %d, return code is: %d(0 means success)\n", powerLimit, res);
 }
 
 // Set power limit
 void ShowSetPowerLimit(IADLXManualPowerTuning* manualPowerTuning)
 {
     ADLX_IntRange powerRange;
-    manualPowerTuning->pVtbl->GetPowerLimitRange(manualPowerTuning, &powerRange);
-    manualPowerTuning->pVtbl->SetPowerLimit(manualPowerTuning, powerRange.minValue + (powerRange.maxValue - powerRange.minValue) / 2);
+    ADLX_RESULT res = manualPowerTuning->pVtbl->GetPowerLimitRange(manualPowerTuning, &powerRange);
+    res = manualPowerTuning->pVtbl->SetPowerLimit(manualPowerTuning, powerRange.minValue + (powerRange.maxValue - powerRange.minValue) / 2);
+    printf("\tSet power limit %s\n", (ADLX_SUCCEEDED (res) ? "succeeded" : "failed"));
     adlx_int powerLimit;
-    manualPowerTuning->pVtbl->GetPowerLimit(manualPowerTuning, &powerLimit);
-    printf("\tSet current power limit to: %d\n", powerLimit);
+    res = manualPowerTuning->pVtbl->GetPowerLimit(manualPowerTuning, &powerLimit);
+    printf("\tSet current power limit to: %d, return code is: %d(0 means success)\n", powerLimit, res);
 }
 
 
@@ -281,8 +282,8 @@ void ShowSetPowerLimit(IADLXManualPowerTuning* manualPowerTuning)
 void ShowTDCLimitSupported(IADLXManualPowerTuning* manualPowerTuning)
 {
     adlx_bool tdcSupported;
-    manualPowerTuning->pVtbl->IsSupportedTDCLimit(manualPowerTuning, &tdcSupported);
-    printf("\tIs TDC Limit supported: %d\n", tdcSupported);
+    ADLX_RESULT res = manualPowerTuning->pVtbl->IsSupportedTDCLimit(manualPowerTuning, &tdcSupported);
+    printf("\tIs TDC Limit supported: %d, return code is: %d(0 means success)\n", tdcSupported, res);
 }
 
 // Show how to get TDC limit range.

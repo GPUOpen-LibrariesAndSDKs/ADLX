@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -250,9 +250,12 @@ void DisplayUniqueName(IADLXDisplay* display, char* uniqueName)
     if (NULL != display && NULL != uniqueName)
     {
         const char* gpuName = NULL;
-        display->pVtbl->Name(display, &gpuName);
+        ADLX_RESULT res = display->pVtbl->Name(display, &gpuName);
+        if (ADLX_SUCCEEDED(res))
+            sprintf_s(uniqueName, 128, "name:%s", gpuName);
         adlx_size id;
-        display->pVtbl->UniqueId(display, &id);
-        sprintf_s(uniqueName, 128, "name:%s, id:%zu", gpuName, id);
+        res = display->pVtbl->UniqueId(display, &id);
+        if (ADLX_SUCCEEDED(res))
+            sprintf_s(uniqueName, 128, "id:%zu", id);
     }
 }

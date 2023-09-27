@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
 <para><htmlonly>&lt;!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 --&gt;
@@ -38,7 +38,7 @@
 &lt;/html&gt;</htmlonly> <heading level="2">Code </heading>
 </para>
 <para>C <programlisting filename="./C/3DGraphics/AntiAliasing/mainAntiAliasing.c"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2023<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -208,19 +208,25 @@
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowAntiAliasingSupport(IADLX3DAntiAliasing*<sp/>antiAliasing)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool<sp/>supported<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>antiAliasing-&gt;pVtbl-&gt;IsSupported(antiAliasing,<sp/>&amp;supported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupported:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>antiAliasing-&gt;pVtbl-&gt;IsSupported(antiAliasing,<sp/>&amp;supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupported:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>supported);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetAntiAliasingState(IADLX3DAntiAliasing*<sp/>antiAliasing)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga4d154a77789a08d19a8d0a8ba809b64a" kindref="member">ADLX_ANTI_ALIASING_MODE</ref><sp/>mode;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>antiAliasing-&gt;pVtbl-&gt;GetMode(antiAliasing,<sp/>&amp;mode);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>antiAliasing-&gt;pVtbl-&gt;GetMode(antiAliasing,<sp/>&amp;mode);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tMode:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>getModeStr(mode));</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1gad99bac74ba876c14fa2d42c094641b44" kindref="member">ADLX_ANTI_ALIASING_METHOD</ref><sp/>method;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>antiAliasing-&gt;pVtbl-&gt;GetMethod(antiAliasing,<sp/>&amp;method);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>antiAliasing-&gt;pVtbl-&gt;GetMethod(antiAliasing,<sp/>&amp;method);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tMethod:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>getMethodStr(method));</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga8c2e57a18318ffeb5e36de7717ff953e" kindref="member">ADLX_ANTI_ALIASING_LEVEL</ref><sp/>level;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>antiAliasing-&gt;pVtbl-&gt;GetLevel(antiAliasing,<sp/>&amp;level);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tMode:<sp/>%s\n\tMethod:<sp/>%s\n\tLevel:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>getModeStr(mode),<sp/>getMethodStr(method),<sp/>getLevelStr(level));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>antiAliasing-&gt;pVtbl-&gt;GetLevel(antiAliasing,<sp/>&amp;level);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tLevel:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>getLevelStr(level));</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetAntiAliasingMode(IADLX3DAntiAliasing*<sp/>antiAliasing,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)</highlight></codeline>
@@ -235,19 +241,25 @@
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetAntiAliasingMethod(IADLX3DAntiAliasing*<sp/>antiAliasing)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1gad99bac74ba876c14fa2d42c094641b44" kindref="member">ADLX_ANTI_ALIASING_METHOD</ref><sp/>method<sp/>=<sp/><ref refid="_a_d_l_x_defines_8h_1gad99bac74ba876c14fa2d42c094641b44aa4eb7e0a05f331b28effb11f1a81396d" kindref="member">AA_METHOD_MULTISAMPLING</ref>;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>antiAliasing-&gt;pVtbl-&gt;GetMethod(antiAliasing,<sp/>&amp;method);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>method<sp/>=<sp/>(<ref refid="group__enumerations_1gad99bac74ba876c14fa2d42c094641b44" kindref="member">ADLX_ANTI_ALIASING_METHOD</ref>)((method<sp/>+<sp/>1)<sp/>%<sp/>3);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>antiAliasing-&gt;pVtbl-&gt;SetMethod(antiAliasing,<sp/>method);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>method:<sp/>%s,<sp/>res<sp/>is:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>getMethodStr(method),<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>antiAliasing-&gt;pVtbl-&gt;GetMethod(antiAliasing,<sp/>&amp;method);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>method<sp/>=<sp/>(<ref refid="group__enumerations_1gad99bac74ba876c14fa2d42c094641b44" kindref="member">ADLX_ANTI_ALIASING_METHOD</ref>)((method<sp/>+<sp/>1)<sp/>%<sp/>3);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>antiAliasing-&gt;pVtbl-&gt;SetMethod(antiAliasing,<sp/>method);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>method:<sp/>%s,<sp/>res<sp/>is:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>getMethodStr(method),<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetAntiAliasingLevel(IADLX3DAntiAliasing*<sp/>antiAliasing)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga8c2e57a18318ffeb5e36de7717ff953e" kindref="member">ADLX_ANTI_ALIASING_LEVEL</ref><sp/>level;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>antiAliasing-&gt;pVtbl-&gt;GetLevel(antiAliasing,<sp/>&amp;level);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>level<sp/>=<sp/>(level<sp/>==<sp/><ref refid="_a_d_l_x_defines_8h_1ga8c2e57a18318ffeb5e36de7717ff953eaeb58238bdb8609c4c2e0a388e294db2f" kindref="member">AA_LEVEL_2X</ref>)<sp/>?<sp/><ref refid="_a_d_l_x_defines_8h_1ga8c2e57a18318ffeb5e36de7717ff953ea701fd055b77bc3bbf3abb1d4f739f04c" kindref="member">AA_LEVEL_4X</ref><sp/>:<sp/><ref refid="_a_d_l_x_defines_8h_1ga8c2e57a18318ffeb5e36de7717ff953eaeb58238bdb8609c4c2e0a388e294db2f" kindref="member">AA_LEVEL_2X</ref>;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>antiAliasing-&gt;pVtbl-&gt;SetLevel(antiAliasing,<sp/>level);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>level:<sp/>%s,<sp/>res<sp/>is:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>getLevelStr(level),<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>antiAliasing-&gt;pVtbl-&gt;GetLevel(antiAliasing,<sp/>&amp;level);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>level<sp/>=<sp/>(level<sp/>==<sp/><ref refid="_a_d_l_x_defines_8h_1ga8c2e57a18318ffeb5e36de7717ff953eaeb58238bdb8609c4c2e0a388e294db2f" kindref="member">AA_LEVEL_2X</ref>)<sp/>?<sp/><ref refid="_a_d_l_x_defines_8h_1ga8c2e57a18318ffeb5e36de7717ff953ea701fd055b77bc3bbf3abb1d4f739f04c" kindref="member">AA_LEVEL_4X</ref><sp/>:<sp/><ref refid="_a_d_l_x_defines_8h_1ga8c2e57a18318ffeb5e36de7717ff953eaeb58238bdb8609c4c2e0a388e294db2f" kindref="member">AA_LEVEL_2X</ref>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>antiAliasing-&gt;pVtbl-&gt;SetLevel(antiAliasing,<sp/>level);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>level:<sp/>%s,<sp/>res<sp/>is:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>getLevelStr(level),<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MainMenu()</highlight></codeline>
@@ -313,6 +325,6 @@
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> </para>
     </detaileddescription>
-    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXSamplesPage/ADLXSamplePage.h"/>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXSamplesPage/zADLXSamplePage.h"/>
   </compounddef>
 </doxygen>

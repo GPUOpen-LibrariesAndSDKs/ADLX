@@ -1,0 +1,14 @@
+﻿#
+# Copyright (c) 2023 Advanced Micro Devices, Inc. All rights reserved.
+#
+#-------------------------------------------------------------------------------------------------
+set(project "DisplayBlanking")
+
+set(all_file
+  "mainDisplayBlanking.cpp"
+  ${CMAKE_SOURCE_DIR}/../../SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h
+  ${CMAKE_SOURCE_DIR}/../../SDK/ADLXHelper/Windows/Cpp/ADLXHelper.cpp
+  ${CMAKE_SOURCE_DIR}/../../SDK/platform/Windows/WinAPIs.cpp
+ )
+
+add_executable (${project} ${all_file})

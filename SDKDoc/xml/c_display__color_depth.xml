@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
 <para><htmlonly>&lt;!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 --&gt;
@@ -37,7 +37,7 @@
 &lt;/html&gt;</htmlonly> <heading level="2">Code </heading>
 </para>
 <para>C <programlisting filename="./C/Display/DisplayColorDepth/mainDisplayColorDepth.c"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2023<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -165,40 +165,52 @@
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_bool<sp/>isSupported<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>pDisplayColorDepth-&gt;pVtbl-&gt;IsSupportedBPC_6<sp/>(pDisplayColorDepth,<sp/>&amp;isSupported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_6,<sp/>result<sp/>%d,<sp/><sp/>BPC_6<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_6,<sp/>result<sp/>%d,<sp/><sp/>BPC_6<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>pDisplayColorDepth-&gt;pVtbl-&gt;IsSupportedBPC_8<sp/>(pDisplayColorDepth,<sp/>&amp;isSupported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_8,<sp/>result<sp/>%d,<sp/><sp/>BPC_8<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_8,<sp/>result<sp/>%d,<sp/><sp/>BPC_8<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>pDisplayColorDepth-&gt;pVtbl-&gt;IsSupportedBPC_10<sp/>(pDisplayColorDepth,<sp/>&amp;isSupported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_10,<sp/>result<sp/>%d,<sp/><sp/>BPC_10<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_10,<sp/>result<sp/>%d,<sp/><sp/>BPC_10<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>pDisplayColorDepth-&gt;pVtbl-&gt;IsSupportedBPC_12<sp/>(pDisplayColorDepth,<sp/>&amp;isSupported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_12,<sp/>result<sp/>%d,<sp/><sp/>BPC_12<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_12,<sp/>result<sp/>%d,<sp/><sp/>BPC_12<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>pDisplayColorDepth-&gt;pVtbl-&gt;IsSupportedBPC_14<sp/>(pDisplayColorDepth,<sp/>&amp;isSupported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_14,<sp/>result<sp/>%d,<sp/><sp/>BPC_14<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_14,<sp/>result<sp/>%d,<sp/><sp/>BPC_14<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>pDisplayColorDepth-&gt;pVtbl-&gt;IsSupportedBPC_16<sp/>(pDisplayColorDepth,<sp/>&amp;isSupported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_16,<sp/>result<sp/>%d,<sp/><sp/>BPC_16<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_16,<sp/>result<sp/>%d,<sp/><sp/>BPC_16<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>pDisplayColorDepth-&gt;pVtbl-&gt;IsSupportedColorDepth<sp/>(pDisplayColorDepth,<sp/><ref refid="_a_d_l_x_defines_8h_1ga75858347333129a462cee4fdf4729d6ba2979beb1814574eb6d8a2d8bf7adca5c" kindref="member">BPC_6</ref>,<sp/>&amp;isSupported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_6,<sp/>result<sp/>%d,<sp/><sp/>BPC_6<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_6,<sp/>result<sp/>%d,<sp/><sp/>BPC_6<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>pDisplayColorDepth-&gt;pVtbl-&gt;IsSupportedColorDepth<sp/>(pDisplayColorDepth,<sp/><ref refid="_a_d_l_x_defines_8h_1ga75858347333129a462cee4fdf4729d6ba156db294ea7f1db8499f7c059343a5b4" kindref="member">BPC_8</ref>,<sp/>&amp;isSupported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_8,<sp/>result<sp/>%d,<sp/><sp/>BPC_8<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_8,<sp/>result<sp/>%d,<sp/><sp/>BPC_8<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>pDisplayColorDepth-&gt;pVtbl-&gt;IsSupportedColorDepth<sp/>(pDisplayColorDepth,<sp/><ref refid="_a_d_l_x_defines_8h_1ga75858347333129a462cee4fdf4729d6baaf8c112f48f64b58156bcbd3368fee1e" kindref="member">BPC_10</ref>,<sp/>&amp;isSupported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_10,<sp/>result<sp/>%d,<sp/><sp/>BPC_10<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_10,<sp/>result<sp/>%d,<sp/><sp/>BPC_10<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>pDisplayColorDepth-&gt;pVtbl-&gt;IsSupportedColorDepth<sp/>(pDisplayColorDepth,<sp/><ref refid="_a_d_l_x_defines_8h_1ga75858347333129a462cee4fdf4729d6baba8a9bc6354201651acc2dfed9bce5be" kindref="member">BPC_12</ref>,<sp/>&amp;isSupported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_12,<sp/>result<sp/>%d,<sp/><sp/>BPC_12<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_12,<sp/>result<sp/>%d,<sp/><sp/>BPC_12<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>pDisplayColorDepth-&gt;pVtbl-&gt;IsSupportedColorDepth<sp/>(pDisplayColorDepth,<sp/><ref refid="_a_d_l_x_defines_8h_1ga75858347333129a462cee4fdf4729d6bae6150c4c30145fa7b316577e56dfecf0" kindref="member">BPC_14</ref>,<sp/>&amp;isSupported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_14,<sp/>result<sp/>%d,<sp/><sp/>BPC_14<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_14,<sp/>result<sp/>%d,<sp/><sp/>BPC_14<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>pDisplayColorDepth-&gt;pVtbl-&gt;IsSupportedColorDepth<sp/>(pDisplayColorDepth,<sp/><ref refid="_a_d_l_x_defines_8h_1ga75858347333129a462cee4fdf4729d6bab3d477dbdc1ade25a89485357b8ee0ca" kindref="member">BPC_16</ref>,<sp/>&amp;isSupported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_16,<sp/>result<sp/>%d,<sp/><sp/>BPC_16<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupportedBPC_16,<sp/>result<sp/>%d,<sp/><sp/>BPC_16<sp/>support:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res,<sp/>isSupported);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Release<sp/>the<sp/>DisplayColorDepth<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDisplayColorDepth-&gt;pVtbl-&gt;Release(pDisplayColorDepth);</highlight></codeline>
@@ -346,6 +358,6 @@
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> </para>
     </detaileddescription>
-    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXSamplesPage/ADLXSamplePage.h"/>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXSamplesPage/zADLXSamplePage.h"/>
   </compounddef>
 </doxygen>

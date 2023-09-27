@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
 <para><htmlonly>&lt;!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 --&gt;
@@ -38,7 +38,7 @@
 &lt;/html&gt;</htmlonly> <heading level="2">Code </heading>
 </para>
 <para>C <programlisting filename="./C/GPUTuning/ManualPowerTuning/mainManualPowerTuning.c"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2023<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -290,27 +290,28 @@
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowGetPowerLimitRange(IADLXManualPowerTuning*<sp/>manualPowerTuning)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref><sp/>powerRange;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manualPowerTuning-&gt;pVtbl-&gt;GetPowerLimitRange(manualPowerTuning,<sp/>&amp;powerRange);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tPower<sp/>limit<sp/>range:<sp/>(%d,<sp/>%d)\n&quot;</highlight><highlight class="normal">,<sp/>powerRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>,<sp/>powerRange.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>manualPowerTuning-&gt;pVtbl-&gt;GetPowerLimitRange(manualPowerTuning,<sp/>&amp;powerRange);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tPower<sp/>limit<sp/>range:<sp/>(%d,<sp/>%d),<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>powerRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>,<sp/>powerRange.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref>,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Display<sp/>current<sp/>power<sp/>limit</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowGetPowerLimit(IADLXManualPowerTuning*<sp/>manualPowerTuning)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_int<sp/>powerLimit;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manualPowerTuning-&gt;pVtbl-&gt;GetPowerLimit(manualPowerTuning,<sp/>&amp;powerLimit);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tCurrent<sp/>power<sp/>limit:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>powerLimit);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>manualPowerTuning-&gt;pVtbl-&gt;GetPowerLimit(manualPowerTuning,<sp/>&amp;powerLimit);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tCurrent<sp/>power<sp/>limit:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>powerLimit,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Set<sp/>power<sp/>limit</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowSetPowerLimit(IADLXManualPowerTuning*<sp/>manualPowerTuning)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref><sp/>powerRange;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manualPowerTuning-&gt;pVtbl-&gt;GetPowerLimitRange(manualPowerTuning,<sp/>&amp;powerRange);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manualPowerTuning-&gt;pVtbl-&gt;SetPowerLimit(manualPowerTuning,<sp/>powerRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref><sp/>+<sp/>(powerRange.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref><sp/>-<sp/>powerRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>)<sp/>/<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>manualPowerTuning-&gt;pVtbl-&gt;GetPowerLimitRange(manualPowerTuning,<sp/>&amp;powerRange);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualPowerTuning-&gt;pVtbl-&gt;SetPowerLimit(manualPowerTuning,<sp/>powerRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref><sp/>+<sp/>(powerRange.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref><sp/>-<sp/>powerRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>)<sp/>/<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>power<sp/>limit<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res)<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;succeeded&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;failed&quot;</highlight><highlight class="normal">));</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_int<sp/>powerLimit;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manualPowerTuning-&gt;pVtbl-&gt;GetPowerLimit(manualPowerTuning,<sp/>&amp;powerLimit);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>current<sp/>power<sp/>limit<sp/>to:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>powerLimit);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualPowerTuning-&gt;pVtbl-&gt;GetPowerLimit(manualPowerTuning,<sp/>&amp;powerLimit);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>current<sp/>power<sp/>limit<sp/>to:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>powerLimit,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -318,8 +319,8 @@
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowTDCLimitSupported(IADLXManualPowerTuning*<sp/>manualPowerTuning)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool<sp/>tdcSupported;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manualPowerTuning-&gt;pVtbl-&gt;IsSupportedTDCLimit(manualPowerTuning,<sp/>&amp;tdcSupported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>TDC<sp/>Limit<sp/>supported:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>tdcSupported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>manualPowerTuning-&gt;pVtbl-&gt;IsSupportedTDCLimit(manualPowerTuning,<sp/>&amp;tdcSupported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>TDC<sp/>Limit<sp/>supported:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>tdcSupported,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Show<sp/>how<sp/>to<sp/>get<sp/>TDC<sp/>limit<sp/>range.</highlight><highlight class="normal"></highlight></codeline>
@@ -350,6 +351,6 @@
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> </para>
     </detaileddescription>
-    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXSamplesPage/ADLXSamplePage.h"/>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXSamplesPage/zADLXSamplePage.h"/>
   </compounddef>
 </doxygen>

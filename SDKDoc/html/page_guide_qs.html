@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -104,24 +104,41 @@ $(document).ready(function(){initNavTree('page_guide_qs.html',''); initResizable
 <div class="title">Quick Start </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The Quick Start section contains basic set up information to start programming with ADLX in various applications. Native support for C and C++ applications, as well as non-native support for C#, Java, and Python applications is provided with the ADLX library. </p><h2>Prerequisite(s) </h2>
+<div class="textblock"><h2>In this section </h2>
+<p>The Quick Start guide is designed to help developers build applications using the ADLX API in one of the supported programming languages, and covers the basic steps needed to initialize the API, retrieve device information, and access device resources.</p>
+<h2>ADLX Quick Start Guide</h2>
+<p>Follow these steps to start programming with ADLX.</p>
+<h3>Prerequisite(s) </h3>
 <ul>
 <li><b>ADLX SDK</b> is installed.</li>
 </ul>
-<h2>Before you start</h2>
+<h3>Steps </h3>
 <ol type="1">
-<li>If your application is in C#, Java, or Python, develop bindings for ADLX in the desired programming language.</li>
-<li>Load the ADLX library code within the application code, and call the desired initialization function as provided in the ADLX SDK.</li>
-<li>Use the ADLX System interface provided by the initialization function to access other ADLX features.</li>
-</ol>
-<ul>
+<li>If your application is in C#, Java, or Python, develop bindings for ADLX for the associated programming language. Proceed to Step 2 if your application is in C or C++.<ul>
 <li><a class="el" href="page_guide_bindcsharp.html">Building C# bindings for ADLX</a></li>
 <li><a class="el" href="page_guide_bindjava.html">Building Java bindings for ADLX</a></li>
 <li><a class="el" href="page_guide_bindpy.html">Building Python bindings for ADLX</a></li>
-<li><a class="el" href="page_guide_use__a_d_l_x.html">Using ADLX in an application</a></li>
+</ul>
+</li>
+<li>Load the ADLX library code within the application code, and call the desired initialization function as provided in the ADLX SDK.<ul>
 <li><a class="el" href="page_guide_init_help.html">Initializing ADLX with the ADLX Helpers</a></li>
 <li><a class="el" href="page_guide_init_pointer.html">Initializing ADLX with function pointers</a></li>
-<li><a class="el" href="page_guide_event.html">Subscribing to Event Notifications using ADLX</a> </li>
+</ul>
+</li>
+<li>Use the ADLX System interface provided by the initialization function to access other ADLX features.<ul>
+<li><a class="el" href="page_guide_use__a_d_l_x.html">Using ADLX in an application</a></li>
+<li><a class="el" href="page_guide_event.html">Subscribing to Event Notifications using ADLX</a></li>
+</ul>
+</li>
+</ol>
+<h4>ADLX SDK Installation </h4>
+<p>The library is installed with the display driver, and the ADLX SDK consisting of the following is available on <a href="https://gpuopen.com/adlx/" class="el">AMD GPUOpen</a>.<br  />
+ This includes:</p>
+<ul>
+<li>ADLX headers with definitions of all types, constants, functions, and interfaces required to program with ADLX</li>
+<li>ADLX helper code simplifying the ADLX loading and unloading process in C++, C, C#, Java, and Python</li>
+<li>ADLX samples demonstrating full ADLX functionality in C++ and in C, as well as select functionality in C#, Java, and Python</li>
+<li>SDK developer documentation </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

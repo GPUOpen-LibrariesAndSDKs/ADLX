@@ -4,6 +4,7 @@ var display =
     [ "IADLXDisplay3DLUT", "_d_o_x__i_a_d_l_x_display3_d_l_u_t.html", "_d_o_x__i_a_d_l_x_display3_d_l_u_t" ],
     [ "IADLXDisplay3DLUTChangedEvent", "_d_o_x__i_a_d_l_x_display3_d_l_u_t_changed_event.html", "_d_o_x__i_a_d_l_x_display3_d_l_u_t_changed_event" ],
     [ "IADLXDisplay3DLUTChangedListener", "_d_o_x__i_a_d_l_x_display3_d_l_u_t_changed_listener.html", "_d_o_x__i_a_d_l_x_display3_d_l_u_t_changed_listener" ],
+    [ "IADLXDisplayBlanking", "_d_o_x__i_a_d_l_x_display_blanking.html", "_d_o_x__i_a_d_l_x_display_blanking" ],
     [ "IADLXDisplayChangedHandling", "_d_o_x__i_a_d_l_x_display_changed_handling.html", "_d_o_x__i_a_d_l_x_display_changed_handling" ],
     [ "IADLXDisplayColorDepth", "_d_o_x__i_a_d_l_x_display_color_depth.html", "_d_o_x__i_a_d_l_x_display_color_depth" ],
     [ "IADLXDisplayCustomColor", "_d_o_x__i_a_d_l_x_display_custom_color.html", "_d_o_x__i_a_d_l_x_display_custom_color" ],
@@ -25,7 +26,9 @@ var display =
     [ "IADLXDisplayResolutionList", "_d_o_x__i_a_d_l_x_display_resolution_list.html", "_d_o_x__i_a_d_l_x_display_resolution_list" ],
     [ "IADLXDisplayScalingMode", "_d_o_x__i_a_d_l_x_display_scaling_mode.html", "_d_o_x__i_a_d_l_x_display_scaling_mode" ],
     [ "IADLXDisplayServices", "_d_o_x__i_a_d_l_x_display_services.html", "_d_o_x__i_a_d_l_x_display_services" ],
+    [ "IADLXDisplayServices1", "_d_o_x__i_a_d_l_x_display_services1.html", "_d_o_x__i_a_d_l_x_display_services1" ],
     [ "IADLXDisplaySettingsChangedEvent", "_d_o_x__i_a_d_l_x_display_settings_changed_event.html", "_d_o_x__i_a_d_l_x_display_settings_changed_event" ],
+    [ "IADLXDisplaySettingsChangedEvent1", "_d_o_x__i_a_d_l_x_display_settings_changed_event1.html", "_d_o_x__i_a_d_l_x_display_settings_changed_event1" ],
     [ "IADLXDisplaySettingsChangedListener", "_d_o_x__i_a_d_l_x_display_settings_changed_listener.html", "_d_o_x__i_a_d_l_x_display_settings_changed_listener" ],
     [ "IADLXDisplayVSR", "_d_o_x__i_a_d_l_x_display_v_s_r.html", "_d_o_x__i_a_d_l_x_display_v_s_r" ],
     [ "IADLXDisplayVariBright", "_d_o_x__i_a_d_l_x_display_vari_bright.html", "_d_o_x__i_a_d_l_x_display_vari_bright" ]

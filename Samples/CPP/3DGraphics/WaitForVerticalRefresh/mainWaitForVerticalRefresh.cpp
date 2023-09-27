@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -104,18 +104,18 @@ static const std::map<ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE, const char*> vsyncMod
 void ShowvsyncSupport(const IADLX3DWaitForVerticalRefreshPtr& vsync)
 {
     adlx_bool supported = false;
-    vsync->IsSupported(&supported);
-    std::cout << "\tIsSupported: " << supported << std::endl;
+    ADLX_RESULT res = vsync->IsSupported(&supported);
+    std::cout << "\tIsSupported: " << supported << ", return code is: " << res << "(0 means success)" << std::endl;
 }
 
 void GetvsyncState(const IADLX3DWaitForVerticalRefreshPtr& vsync)
 {
     adlx_bool enabled = false;
-    vsync->IsEnabled(&enabled);
-    std::cout << "\tIsEnabled: " << enabled << std::endl;
+    ADLX_RESULT res = vsync->IsEnabled(&enabled);
+    std::cout << "\tIsEnabled: " << enabled << ", return code is: " << res << "(0 means success)" << std::endl;
     ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE mode = WFVR_ALWAYS_OFF;
-    vsync->GetMode(&mode);
-    std::cout << "\tMode: " << vsyncMode.find(mode)->second << std::endl;
+    res = vsync->GetMode(&mode);
+    std::cout << "\tMode: " << vsyncMode.find(mode)->second << ", return code is: " << res << "(0 means success)" << std::endl;
 }
 
 void SetvsyncMode(const IADLX3DWaitForVerticalRefreshPtr& vsync, int index)

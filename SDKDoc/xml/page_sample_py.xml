@@ -2,9 +2,10 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="page_sample_py" kind="page">
     <compoundname>page_sample_py</compoundname>
-    <title>Python</title>
-    <innerpage refid="py_samples_filedesc">File Descriptions</innerpage>
-    <innerpage refid="py_samples_more">Samples</innerpage>
+    <title>Python Samples</title>
+    <innerpage refid="py_sample_adlxpybind">ADLXPybind</innerpage>
+    <innerpage refid="py_sample_display_events">DisplayEvents</innerpage>
+    <innerpage refid="py_sample_displayinfo">DisplayInfo</innerpage>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -70,12 +71,33 @@
 </listitem>
 </orderedlist>
 </para>
+<para><heading level="2">Samples</heading>
+</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="yes"><para>FileName   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="py_sample_adlxpybind" kindref="compound">ADLXPybind</ref>   </para>
+</entry><entry thead="no"><para>Show how to wrap ADLX with pybind11    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="py_sample_display_events" kindref="compound">DisplayEvents</ref>   </para>
+</entry><entry thead="no"><para>Python test uses ADLXPybind.pyd, about the call of ADLX display list changed event    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="py_sample_displayinfo" kindref="compound">DisplayInfo</ref>   </para>
+</entry><entry thead="no"><para>Python test uses ADLXPybind.pyd, about the call of ADLX display   </para>
+</entry></row>
+</table>
+</para>
 <para><itemizedlist>
-<listitem><para><ref refid="py_samples_filedesc" kindref="compound">File Descriptions</ref></para>
-</listitem><listitem><para><ref refid="py_samples_more" kindref="compound">Samples</ref> </para>
+<listitem><para><ref refid="py_sample_adlxpybind" kindref="compound">ADLXPybind</ref></para>
+</listitem><listitem><para><ref refid="py_sample_display_events" kindref="compound">DisplayEvents</ref></para>
+</listitem><listitem><para><ref refid="py_sample_displayinfo" kindref="compound">DisplayInfo</ref> </para>
 </listitem></itemizedlist>
 </para>
     </detaileddescription>
-    <location file="D:/03_AMDgit/22.40/drivers/ADLX/Samples/python/ReadMe.md"/>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/Samples/python/ReadMe.md"/>
   </compounddef>
 </doxygen>

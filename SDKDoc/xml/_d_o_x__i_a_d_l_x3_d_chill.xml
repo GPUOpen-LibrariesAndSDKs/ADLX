@@ -34,8 +34,11 @@
 </table>
 </para>
 <para>AMD Radeon Chill conserves GPU power and reduces heat by adjusting the FPS based on the intensity of in-game movement.<linebreak/>
- <bold>Note:</bold> AMD Radeon Chill, <ref refid="_d_o_x__i_a_d_l_x3_d_boost" kindref="compound">AMD Radeon Boost</ref>, and <ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag" kindref="compound">AMD Radeon Anti-Lag</ref> features cannot be enabled simultaneously. <linebreak/>
- For example, If AMD Radeon Anti-Lag is enabled, AMD Radeon Boost and AMD Radeon Chill are automatically disabled. However, configurations of the disabled features are preserved. If AMD Radeon Chill is re-enabled, the Max FPS for AMD Radeon Chill along with other configuration settings are restored.</para>
+</para>
+<sect2 id="_d_o_x__i_a_d_l_x3_d_chill_1autotoc_md14">
+<title>Dependent Interfaces</title>
+<para>When AMD Radeon Chill is enabled, the <ref refid="_d_o_x__i_a_d_l_x3_d_boost" kindref="compound">AMD Radeon Boost</ref>, <ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag" kindref="compound">AMD Radeon Anti-Lag</ref>, and <ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag1" kindref="compound">AMD Radeon™ Anti-Lag Next</ref> interfaces are automatically disabled. <linebreak/>
+ <bold>Note:</bold> If the disabled interface is later re-enabled, its previous configuration settings will be restored.</para>
 <para><heading level="2">Methods </heading>
 </para>
 <para><table rows="9" cols="2"><row>
@@ -103,7 +106,8 @@
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_chill__set_min_f_p_s" kindref="compound">SetMinFPS</ref> </para>
 </listitem></itemizedlist>
 </para>
+</sect2>
     </detaileddescription>
-    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLX3DSettingsPage.h"/>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLX3DSettingsPage.h"/>
   </compounddef>
 </doxygen>

@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -23,6 +23,7 @@ adlx_bool ADLX_STD_CALL On3DSettingsChanged(IADLX3DSettingsChangedListener *pThi
     // Get the GPU interface
     IADLXGPU* gpu = NULL;
     p3DSettingsChangedEvent->pVtbl->GetGPU(p3DSettingsChangedEvent, &gpu);
+
     //RadeonSuperResolution is a global feature (the GPU interface is NULL); skip printing its name
     if (!p3DSettingsChangedEvent->pVtbl->IsRadeonSuperResolutionChanged(p3DSettingsChangedEvent))
     {

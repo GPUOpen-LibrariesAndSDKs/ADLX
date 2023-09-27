@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
 <para><htmlonly>&lt;!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 --&gt;
@@ -38,7 +38,7 @@
 &lt;/html&gt;</htmlonly> <heading level="2">Code </heading>
 </para>
 <para>C++ <programlisting filename="./3DGraphics/AntiAliasing/mainAntiAliasing.cpp"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2023<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -166,21 +166,25 @@
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowAntiAliasingSupport(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLX3DAntiAliasingPtr&amp;<sp/>antiAliasing)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool<sp/>supported<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>antiAliasing-&gt;IsSupported(&amp;supported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tIsSupported:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>supported<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>antiAliasing-&gt;IsSupported(&amp;supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tIsSupported:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>supported<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetAntiAliasingState(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLX3DAntiAliasingPtr&amp;<sp/>antiAliasing)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga4d154a77789a08d19a8d0a8ba809b64a" kindref="member">ADLX_ANTI_ALIASING_MODE</ref><sp/>mode;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>antiAliasing-&gt;GetMode(&amp;mode);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>antiAliasing-&gt;GetMode(&amp;mode);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tMode:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>antiAliasingMode.find<sp/>(mode)-&gt;second<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1gad99bac74ba876c14fa2d42c094641b44" kindref="member">ADLX_ANTI_ALIASING_METHOD</ref><sp/>method;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>antiAliasing-&gt;GetMethod(&amp;method);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>antiAliasing-&gt;GetMethod(&amp;method);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tMethod:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>antiAliasingMethod.find<sp/>(method)-&gt;second<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga8c2e57a18318ffeb5e36de7717ff953e" kindref="member">ADLX_ANTI_ALIASING_LEVEL</ref><sp/>level;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>antiAliasing-&gt;GetLevel(&amp;level);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tMode:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>antiAliasingMode.find(mode)-&gt;second<sp/>&lt;&lt;<sp/>std::endl</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tMethod:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>antiAliasingMethod.find(method)-&gt;second<sp/>&lt;&lt;<sp/>std::endl</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tLevel:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>antiAliasingLevel.find(level)-&gt;second<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>antiAliasing-&gt;GetLevel(&amp;level);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tLevel:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>antiAliasingLevel.find(level)-&gt;second<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetAntiAliasingMode(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLX3DAntiAliasingPtr&amp;<sp/>antiAliasing,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)</highlight></codeline>
@@ -195,19 +199,25 @@
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetAntiAliasingMethod(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLX3DAntiAliasingPtr&amp;<sp/>antiAliasing)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1gad99bac74ba876c14fa2d42c094641b44" kindref="member">ADLX_ANTI_ALIASING_METHOD</ref><sp/>method<sp/>=<sp/><ref refid="_a_d_l_x_defines_8h_1gad99bac74ba876c14fa2d42c094641b44aa4eb7e0a05f331b28effb11f1a81396d" kindref="member">AA_METHOD_MULTISAMPLING</ref>;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>antiAliasing-&gt;GetMethod(&amp;method);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>method<sp/>=<sp/>(<ref refid="group__enumerations_1gad99bac74ba876c14fa2d42c094641b44" kindref="member">ADLX_ANTI_ALIASING_METHOD</ref>)((method<sp/>+<sp/>1)<sp/>%<sp/>3);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>antiAliasing-&gt;SetMethod(method);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tSet<sp/>method:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>antiAliasingMethod.find(method)-&gt;second<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>res<sp/>is<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>res<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>antiAliasing-&gt;GetMethod(&amp;method);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>method<sp/>=<sp/>(<ref refid="group__enumerations_1gad99bac74ba876c14fa2d42c094641b44" kindref="member">ADLX_ANTI_ALIASING_METHOD</ref>)((method<sp/>+<sp/>1)<sp/>%<sp/>3);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>antiAliasing-&gt;SetMethod(method);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tSet<sp/>method:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>antiAliasingMethod.find(method)-&gt;second<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>res<sp/>is<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>res<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetAntiAliasingLevel(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLX3DAntiAliasingPtr&amp;<sp/>antiAliasing)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga8c2e57a18318ffeb5e36de7717ff953e" kindref="member">ADLX_ANTI_ALIASING_LEVEL</ref><sp/>level;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>antiAliasing-&gt;GetLevel(&amp;level);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>level<sp/>=<sp/>(level<sp/>==<sp/><ref refid="_a_d_l_x_defines_8h_1ga8c2e57a18318ffeb5e36de7717ff953eaeb58238bdb8609c4c2e0a388e294db2f" kindref="member">AA_LEVEL_2X</ref>)<sp/>?<sp/><ref refid="_a_d_l_x_defines_8h_1ga8c2e57a18318ffeb5e36de7717ff953ea701fd055b77bc3bbf3abb1d4f739f04c" kindref="member">AA_LEVEL_4X</ref><sp/>:<sp/><ref refid="_a_d_l_x_defines_8h_1ga8c2e57a18318ffeb5e36de7717ff953eaeb58238bdb8609c4c2e0a388e294db2f" kindref="member">AA_LEVEL_2X</ref>;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>antiAliasing-&gt;SetLevel(level);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tSet<sp/>level:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>antiAliasingLevel.find(level)-&gt;second<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>res<sp/>is<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>res<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>antiAliasing-&gt;GetLevel(&amp;level);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>level<sp/>=<sp/>(level<sp/>==<sp/><ref refid="_a_d_l_x_defines_8h_1ga8c2e57a18318ffeb5e36de7717ff953eaeb58238bdb8609c4c2e0a388e294db2f" kindref="member">AA_LEVEL_2X</ref>)<sp/>?<sp/><ref refid="_a_d_l_x_defines_8h_1ga8c2e57a18318ffeb5e36de7717ff953ea701fd055b77bc3bbf3abb1d4f739f04c" kindref="member">AA_LEVEL_4X</ref><sp/>:<sp/><ref refid="_a_d_l_x_defines_8h_1ga8c2e57a18318ffeb5e36de7717ff953eaeb58238bdb8609c4c2e0a388e294db2f" kindref="member">AA_LEVEL_2X</ref>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>antiAliasing-&gt;SetLevel(level);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tSet<sp/>level:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>antiAliasingLevel.find(level)-&gt;second<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>res<sp/>is<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>res<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>WaitAndExit(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>msg,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>retCode)</highlight></codeline>
@@ -283,6 +293,6 @@
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> </para>
     </detaileddescription>
-    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXSamplesPage/ADLXSamplePage.h"/>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXSamplesPage/zADLXSamplePage.h"/>
   </compounddef>
 </doxygen>

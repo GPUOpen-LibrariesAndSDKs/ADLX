@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -96,15 +96,15 @@ int main()
 void ShowEnhancedSyncSupport(const IADLX3DEnhancedSyncPtr& d3dEnhancedSync)
 {
     adlx_bool supported = false;
-    d3dEnhancedSync->IsSupported(&supported);
-    std::cout << "\tIsSupported: " << supported << std::endl;
+    ADLX_RESULT res = d3dEnhancedSync->IsSupported(&supported);
+    std::cout << "\tIsSupported: " << supported << ", return code is: " << res << "(0 means success)" << std::endl;
 }
 
 void GetEnhancedSyncState(const IADLX3DEnhancedSyncPtr& d3dEnhancedSync)
 {
     adlx_bool enabled = false;
-    d3dEnhancedSync->IsEnabled(&enabled);
-    std::cout << "\tIsEnabled: " << enabled << std::endl;
+    ADLX_RESULT res = d3dEnhancedSync->IsEnabled(&enabled);
+    std::cout << "\tIsEnabled: " << enabled << ", return code is: " << res << "(0 means success)" << std::endl;
 }
 
 void SetEnhancedSyncState(const IADLX3DEnhancedSyncPtr& d3dEnhancedSync, int index)

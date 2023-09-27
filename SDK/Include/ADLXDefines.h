@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -568,8 +568,8 @@ typedef enum
  */
 typedef enum {
     DESKTOP_SINGLE = 0,     /**< @ENG_START_DOX Single display desktop: one display showing the entire desktop @ENG_END_DOX */
-    DESKTOP_DUPLCATE = 1,   /**< @ENG_START_DOX Duplicate desktop: two or mode displays each show the entire desktop @ENG_END_DOX */
-    DESKTOP_EYEFINITY = 2,  /**< @ENG_START_DOX AMD Eyefinity desktop: two or mode displays each show a portion of the desktop @ENG_END_DOX */
+    DESKTOP_DUPLCATE = 1,   /**< @ENG_START_DOX Duplicate desktop: two or more displays each show the entire desktop @ENG_END_DOX */
+    DESKTOP_EYEFINITY = 2,  /**< @ENG_START_DOX AMD Eyefinity desktop: two or more displays each show a portion of the desktop @ENG_END_DOX */
 } ADLX_DESKTOP_TYPE;
 #pragma endregion ADLX_DESKTOP_TYPE
 
@@ -885,6 +885,21 @@ typedef enum
     CS_NATIVE           /**< @ENG_START_DOX The color space is native. @ENG_END_DOX */
 } ADLX_3DLUT_COLORSPACE;
 #pragma endregion ADLX_3DLUT_COLORSPACE
+
+#pragma region ADLX_ANTILAG_STATE
+/**
+ * @enum ADLX_ANTILAG_STATE
+ * @ingroup enumerations
+ * @ENG_START_DOX
+ * @brief Indicates the state of Anti Lag.
+ * @ENG_END_DOX
+ */
+typedef enum
+{
+    ANTILAG = 0,                        /**< @ENG_START_DOX The Antilag level is AntiLag. @ENG_END_DOX */
+    ANTILAGNEXT,                        /**< @ENG_START_DOX The Antilag level is AntiLag Next. @ENG_END_DOX */
+} ADLX_ANTILAG_STATE;
+#pragma endregion ADLX_ANTILAG_STATE
 
 #pragma endregion ADLX data types
 
@@ -1210,6 +1225,7 @@ namespace adlx
     }; //IADLXInterfacePtr_T
 
     typedef IADLXInterfacePtr_T<IADLXInterface> IADLXInterfacePtr;
+
 }   // namespace adlx
 #endif //__cplusplus
 #pragma endregion IADLXInterfacePtr

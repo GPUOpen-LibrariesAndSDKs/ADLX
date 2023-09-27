@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -221,9 +221,9 @@ void ShowFrequencyAndVoltageRange(IADLXManualGraphicsTuning1Ptr manualGFXTuning1
     ADLX_IntRange freqRange, voltRange;
     ADLX_RESULT res = manualGFXTuning1->GetGPUTuningRanges(&freqRange, &voltRange);
     std::cout << "\tFrequency range: (" << freqRange.minValue
-              << ", " << freqRange.maxValue << ")" << std::endl;
+              << ", " << freqRange.maxValue << ")" << ", return code is: "<< res << "(0 means success)" << std::endl;
     std::cout << "\tVoltage range: (" << voltRange.minValue
-              << ", " << voltRange.maxValue << ")" << std::endl;
+              << ", " << voltRange.maxValue << ")" << ", return code is: "<< res << "(0 means success)" << std::endl;
 }
 
 // Display current GPU tuning states
@@ -231,14 +231,18 @@ void GetCurrentStates(IADLXManualGraphicsTuning1Ptr manualGFXTuning1)
 {
     IADLXManualTuningStateListPtr states;
     IADLXManualTuningStatePtr oneState;
-    manualGFXTuning1->GetGPUTuningStates(&states);
-    for (adlx_uint crt = states->Begin(); crt != states->End(); ++crt)
+    ADLX_RESULT res = manualGFXTuning1->GetGPUTuningStates(&states);
+    if (ADLX_SUCCEEDED (res))
     {
-        states->At(crt, &oneState);
-        adlx_int freq = 0, volt = 0;
-        oneState->GetFrequency(&freq);
-        oneState->GetVoltage(&volt);
-        std::cout << "\tThe current state " << crt << ": frequency is " << freq << ", voltage is " << volt << std::endl;
+        for (adlx_uint crt = states->Begin(); crt != states->End(); ++crt)
+        {
+            states->At(crt, &oneState);
+            adlx_int freq = 0, volt = 0;
+            res = oneState->GetFrequency(&freq);
+            std::cout << "\tThe current state " << crt << ": frequency is " << freq << ", return code is: "<< res << "(0 means success)" << std::endl;
+            res = oneState->GetVoltage(&volt);
+            std::cout << "\tThe current state " << crt << ": voltage is " << volt << ", return code is: "<< res << "(0 means success)" << std::endl;
+        }
     }
 }
 
@@ -247,39 +251,53 @@ void SetGPUStates(IADLXManualGraphicsTuning1Ptr manualGFXTuning1)
 {
     IADLXManualTuningStateListPtr states;
     IADLXManualTuningStatePtr oneState;
-    manualGFXTuning1->GetEmptyGPUTuningStates(&states);
+    ADLX_RESULT res1 = manualGFXTuning1->GetEmptyGPUTuningStates(&states);
     ADLX_IntRange freqRange, voltRange;
-    ADLX_RESULT res = manualGFXTuning1->GetGPUTuningRanges(&freqRange, &voltRange);
-    for (adlx_uint crt = states->Begin(); crt != states->End(); ++crt)
+    ADLX_RESULT res2 = manualGFXTuning1->GetGPUTuningRanges(&freqRange, &voltRange);
+    if (ADLX_SUCCEEDED (res1) && ADLX_SUCCEEDED (res2))
     {
-        states->At(crt, &oneState);
-        adlx_int freq = 0, volt = 0;
-        int freqStep = (freqRange.maxValue - freqRange.minValue) / (states->Size());
-        int voltStep = (voltRange.maxValue - voltRange.minValue) / (states->Size());
-        oneState->SetFrequency(freqRange.minValue + freqStep * crt);
-        oneState->GetFrequency(&freq);
-        oneState->SetVoltage(voltRange.minValue + voltStep * crt);
-        oneState->GetVoltage(&volt);
-        std::cout << "\tSet empty state " << crt << ": frequency is " << freq << ", voltage is " << volt << std::endl;
+        for (adlx_uint crt = states->Begin(); crt != states->End(); ++crt)
+        {
+            states->At(crt, &oneState);
+            adlx_int freq = 0, volt = 0;
+            int freqStep = (freqRange.maxValue - freqRange.minValue) / (states->Size());
+            // The Step should not be too large
+            if (freqStep >= 60)
+                freqStep = 60;
+            int voltStep = (voltRange.maxValue - voltRange.minValue) / (states->Size());
+            // The Step should not be too large
+            if (voltStep >= 20)
+                voltStep = 20;
+            ADLX_RESULT res = oneState->SetFrequency(freqRange.minValue + freqStep * crt);
+            res = oneState->GetFrequency(&freq);
+            res = oneState->SetVoltage(voltRange.minValue + voltStep * crt);
+            res = oneState->GetVoltage(&volt);
+            std::cout << "\tSet empty state " << crt << ": frequency is " << freq << ", voltage is " << volt << ", return code is: "<< res << "(0 means success)" << std::endl;
+        }
     }
+    
     adlx_int errorIndex;
-    res = manualGFXTuning1->IsValidGPUTuningStates(states, &errorIndex);
+    ADLX_RESULT res = manualGFXTuning1->IsValidGPUTuningStates(states, &errorIndex);
     if (ADLX_SUCCEEDED(res))
     {
-        manualGFXTuning1->SetGPUTuningStates(states);
+        res = manualGFXTuning1->SetGPUTuningStates(states);
+        std::cout << "\tSet GPU tuning states " << (ADLX_SUCCEEDED (res) ? "succeeded" : "failed") << std::endl;
     }
     else
         std::cout << "\tIsValidGPUTuningStates, errorIndex is : " << errorIndex << std::endl;
 
     res = manualGFXTuning1->GetGPUTuningStates(&states);
     std::cout << "\tAfter setting:" << std::endl;
-    for (adlx_uint crt = states->Begin(); crt != states->End(); ++crt)
+    if (ADLX_SUCCEEDED (res))
     {
-        res = states->At(crt, &oneState);
-        adlx_int freq = 0, volt = 0;
-        oneState->GetFrequency(&freq);
-        oneState->GetVoltage(&volt);
-        std::cout << "\tThe current state " << crt << ": frequency is " << freq << ", voltage is " << volt << std::endl;
+        for (adlx_uint crt = states->Begin(); crt != states->End(); ++crt)
+        {
+            res = states->At(crt, &oneState);
+            adlx_int freq = 0, volt = 0;
+            res = oneState->GetFrequency(&freq);
+            res = oneState->GetVoltage(&volt);
+            std::cout << "\tThe current state " << crt << ": frequency is " << freq << ", voltage is " << volt << ", return code is: "<< res << "(0 means success)" << std::endl;
+        }
     }
 }
 
@@ -287,44 +305,47 @@ void SetGPUStates(IADLXManualGraphicsTuning1Ptr manualGFXTuning1)
 void ShowFrequencyAndVoltageRange(IADLXManualGraphicsTuning2Ptr manualGFXTuning2)
 {
     ADLX_IntRange freqRange, voltRange;
-    manualGFXTuning2->GetGPUMinFrequencyRange(&freqRange);
+    ADLX_RESULT res = manualGFXTuning2->GetGPUMinFrequencyRange(&freqRange);
     std::cout << "\tGPU min frequency range: (" << freqRange.minValue
-              << ", " << freqRange.maxValue << ")" << std::endl;
-    manualGFXTuning2->GetGPUMaxFrequencyRange(&freqRange);
+              << ", " << freqRange.maxValue << ")" << ", return code is: "<< res << "(0 means success)" << std::endl;
+    res = manualGFXTuning2->GetGPUMaxFrequencyRange(&freqRange);
     std::cout << "\tGPU max frequency range: (" << freqRange.minValue
-              << ", " << freqRange.maxValue << ")" << std::endl;
-    ADLX_RESULT res = manualGFXTuning2->GetGPUVoltageRange(&voltRange);
+              << ", " << freqRange.maxValue << ")" << ", return code is: "<< res << "(0 means success)" << std::endl;
+    res = manualGFXTuning2->GetGPUVoltageRange(&voltRange);
     std::cout << "\tVoltage range: (" << voltRange.minValue
-              << ", " << voltRange.maxValue << ")" << std::endl;
+              << ", " << voltRange.maxValue << ")" << ", return code is: "<< res << "(0 means success)" << std::endl;
 }
 
 // Display current GPU tuning states
 void GetCurrentStates(IADLXManualGraphicsTuning2Ptr manualGFXTuning2)
 {
     adlx_int minFreq = 0, maxFreq = 0, volt = 0;
-    manualGFXTuning2->GetGPUMinFrequency(&minFreq);
-    manualGFXTuning2->GetGPUMaxFrequency(&maxFreq);
-    manualGFXTuning2->GetGPUVoltage(&volt);
-    std::cout << "\tCurrent GPU min frequency: " << minFreq << std::endl;
-    std::cout << "\tCurrent GPU max frequency: " << maxFreq << std::endl;
-    std::cout << "\tCurrent GPU clock voltage: " << volt << std::endl;
+    ADLX_RESULT res = manualGFXTuning2->GetGPUMinFrequency(&minFreq);
+    std::cout << "\tCurrent GPU min frequency: " << minFreq << ", return code is: "<< res << "(0 means success)" << std::endl;
+    res = manualGFXTuning2->GetGPUMaxFrequency(&maxFreq);
+    std::cout << "\tCurrent GPU max frequency: " << maxFreq << ", return code is: "<< res << "(0 means success)" << std::endl;
+    res = manualGFXTuning2->GetGPUVoltage(&volt);
+    std::cout << "\tCurrent GPU clock voltage: " << volt << ", return code is: "<< res << "(0 means success)" << std::endl;
 }
 
 // Set GPU states
 void SetGPUStates(IADLXManualGraphicsTuning2Ptr manualGFXTuning2)
 {
     ADLX_IntRange freqRange, voltRange;
-    manualGFXTuning2->GetGPUMinFrequencyRange(&freqRange);
-    manualGFXTuning2->GetGPUVoltageRange(&voltRange);
-    manualGFXTuning2->SetGPUMinFrequency(freqRange.minValue);
-    manualGFXTuning2->SetGPUMaxFrequency(freqRange.maxValue);
-    manualGFXTuning2->SetGPUVoltage(voltRange.minValue + (voltRange.maxValue - voltRange.minValue) / 2);
+    ADLX_RESULT res = manualGFXTuning2->GetGPUMinFrequencyRange(&freqRange);
+    res = manualGFXTuning2->GetGPUVoltageRange(&voltRange);
+    res = manualGFXTuning2->SetGPUMinFrequency(freqRange.minValue);
+    std::cout << "\tSet GPU min frequency " << (ADLX_SUCCEEDED (res) ? "succeeded" : "failed") << std::endl;
+    res = manualGFXTuning2->SetGPUMaxFrequency(freqRange.maxValue);
+    std::cout << "\tSet GPU max frequency " << (ADLX_SUCCEEDED (res) ? "succeeded" : "failed") << std::endl;
+    res = manualGFXTuning2->SetGPUVoltage(voltRange.minValue + (voltRange.maxValue - voltRange.minValue) / 2);
+    std::cout << "\tSet GPU voltage " << (ADLX_SUCCEEDED (res) ? "succeeded" : "failed") << std::endl;
     std::cout << "\tAfter setting:" << std::endl;
     adlx_int minFreq = 0, maxFreq = 0, volt = 0;
-    manualGFXTuning2->GetGPUMinFrequency(&minFreq);
-    manualGFXTuning2->GetGPUMaxFrequency(&maxFreq);
-    manualGFXTuning2->GetGPUVoltage(&volt);
-    std::cout << "\tCurrent GPU min frequency: " << minFreq << std::endl;
-    std::cout << "\tCurrent GPU max frequency: " << maxFreq << std::endl;
-    std::cout << "\tCurrent GPU clock voltage: " << volt << std::endl;
+    res = manualGFXTuning2->GetGPUMinFrequency(&minFreq);
+    std::cout << "\tCurrent GPU min frequency: " << minFreq << ", return code is: "<< res << "(0 means success)" << std::endl;
+    res = manualGFXTuning2->GetGPUMaxFrequency(&maxFreq);
+    std::cout << "\tCurrent GPU max frequency: " << maxFreq << ", return code is: "<< res << "(0 means success)" << std::endl;
+    res = manualGFXTuning2->GetGPUVoltage(&volt);
+    std::cout << "\tCurrent GPU clock voltage: " << volt << ", return code is: "<< res << "(0 means success)" << std::endl;
 }

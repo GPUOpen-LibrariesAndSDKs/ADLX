@@ -1,6 +1,6 @@
 
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -110,8 +110,8 @@ int main()
 void ShowSupport(IADLX3DResetShaderCache* resetShaderCache)
 {
     adlx_bool supported = false;
-    resetShaderCache->pVtbl->IsSupported(resetShaderCache, &supported);
-    printf("\tIsSupported: %d\n", supported);
+    ADLX_RESULT res = resetShaderCache->pVtbl->IsSupported(resetShaderCache, &supported);
+    printf("\tIsSupported: %d, return code is: %d(0 means success)\n", supported, res);
 }
 
 void ResetShaderCache(IADLX3DResetShaderCache* resetShaderCache)

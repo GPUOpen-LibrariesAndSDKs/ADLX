@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('page_guide_usingservice.html',''); ini
 <div class="textblock"><p>While ADLX cannot be used directly in a system service application, its functionality can be accessed in a system service application through a user mode process. A communication mechanism between the user mode process and the system service, such as shared memory, will provide the ADLX functionality to the system service.</p>
 <p>To use ADLX in a system service,</p><ol type="1">
 <li><p class="startli">Create a system service application.</p>
-<p class="startli"><b>Note:</b> For more information on how to create a system service in C++, see <a class="el" href="cpp_sample_servicecall.html">ServiceCall C++ sample</a>. For more information on how to create a system service in C, see <a class="el" href="c_sample_servicecall.html">ServiceCall C sample</a>.</p>
+<p class="startli"><b>Note:</b> For more information on how to create a system service in C++, see <a class="el" href="domain_cpp_sample_servicecall.html">ServiceCall C++ sample</a>. For more information on how to create a system service in C, see <a class="el" href="domain_c_sample_servicecall.html">ServiceCall C sample</a>.</p>
 </li>
 <li>In the system service, start a thread to complete the service work, such as ServiceWorkerThread.</li>
 <li><p class="startli">On the ServiceWorkerThread, get the token of the current process to create a user process using CreateProcessAsUserW.</p>
@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('page_guide_usingservice.html',''); ini
 <li>In user mode, process implement a communication mechanism suitable for communicating with the system service – such as shared memory – and tie the ADLX data with the communication mechanism.</li>
 <li>Run the user mode process and the service application.</li>
 </ol>
-<p>For more information, see <a class="el" href="cpp_sample_servicecall.html">GPUServiceCall C++ samples</a> and <a class="el" href="c_sample_servicecall.html">GPUServiceCall C samples</a>. </p>
+<p>For more information, see <a class="el" href="domain_cpp_sample_servicecall.html">GPUServiceCall C++ samples</a> and <a class="el" href="domain_c_sample_servicecall.html">GPUServiceCall C samples</a>. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

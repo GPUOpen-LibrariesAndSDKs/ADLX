@@ -7,6 +7,7 @@
     <innerpage refid="_d_o_x__i_a_d_l_x_display3_d_l_u_t">IADLXDisplay3DLUT</innerpage>
     <innerpage refid="_d_o_x__i_a_d_l_x_display3_d_l_u_t_changed_event">IADLXDisplay3DLUTChangedEvent</innerpage>
     <innerpage refid="_d_o_x__i_a_d_l_x_display3_d_l_u_t_changed_listener">IADLXDisplay3DLUTChangedListener</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_blanking">IADLXDisplayBlanking</innerpage>
     <innerpage refid="_d_o_x__i_a_d_l_x_display_changed_handling">IADLXDisplayChangedHandling</innerpage>
     <innerpage refid="_d_o_x__i_a_d_l_x_display_color_depth">IADLXDisplayColorDepth</innerpage>
     <innerpage refid="_d_o_x__i_a_d_l_x_display_custom_color">IADLXDisplayCustomColor</innerpage>
@@ -28,7 +29,9 @@
     <innerpage refid="_d_o_x__i_a_d_l_x_display_resolution_list">IADLXDisplayResolutionList</innerpage>
     <innerpage refid="_d_o_x__i_a_d_l_x_display_scaling_mode">IADLXDisplayScalingMode</innerpage>
     <innerpage refid="_d_o_x__i_a_d_l_x_display_services">IADLXDisplayServices</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_services1">IADLXDisplayServices1</innerpage>
     <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event">IADLXDisplaySettingsChangedEvent</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_event1">IADLXDisplaySettingsChangedEvent1</innerpage>
     <innerpage refid="_d_o_x__i_a_d_l_x_display_settings_changed_listener">IADLXDisplaySettingsChangedListener</innerpage>
     <innerpage refid="_d_o_x__i_a_d_l_x_display_v_s_r">IADLXDisplayVSR</innerpage>
     <innerpage refid="_d_o_x__i_a_d_l_x_display_vari_bright">IADLXDisplayVariBright</innerpage>
@@ -36,11 +39,13 @@
     </briefdescription>
     <detaileddescription>
 <para>The Display domain contains interfaces that provide display functionalities. Examples include obtaining the list of displays, registering for display related notifications, and gaining access to various display information and configuration.</para>
+<para><bold>Note:</bold> Many display settings when changed will cause the display to become blank for a moment.</para>
 <para><itemizedlist>
 <listitem><para><ref refid="_d_o_x__i_a_d_l_x_display" kindref="compound">IADLXDisplay</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display3_d_l_u_t" kindref="compound">IADLXDisplay3DLUT</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display3_d_l_u_t_changed_event" kindref="compound">IADLXDisplay3DLUTChangedEvent</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display3_d_l_u_t_changed_listener" kindref="compound">IADLXDisplay3DLUTChangedListener</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_blanking" kindref="compound">IADLXDisplayBlanking</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_changed_handling" kindref="compound">IADLXDisplayChangedHandling</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_color_depth" kindref="compound">IADLXDisplayColorDepth</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_custom_color" kindref="compound">IADLXDisplayCustomColor</ref></para>
@@ -62,14 +67,15 @@
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_resolution_list" kindref="compound">IADLXDisplayResolutionList</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_scaling_mode" kindref="compound">IADLXDisplayScalingMode</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services" kindref="compound">IADLXDisplayServices</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_services1" kindref="compound">IADLXDisplayServices1</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event" kindref="compound">IADLXDisplaySettingsChangedEvent</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_event1" kindref="compound">IADLXDisplaySettingsChangedEvent1</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_settings_changed_listener" kindref="compound">IADLXDisplaySettingsChangedListener</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_v_s_r" kindref="compound">IADLXDisplayVSR</ref></para>
-</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_vari_bright" kindref="compound">IADLXDisplayVariBright</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_display_vari_bright" kindref="compound">IADLXDisplayVariBright</ref> </para>
 </listitem></itemizedlist>
 </para>
-<para><bold>Note:</bold> Many display settings when changed will cause the display to become blank for a moment. </para>
     </detaileddescription>
-    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXDox.h"/>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXDox.h"/>
   </compounddef>
 </doxygen>

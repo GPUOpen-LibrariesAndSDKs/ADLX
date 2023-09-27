@@ -10,7 +10,7 @@
 <codeline><highlight class="normal">@page<sp/>page_guide_usingservice<sp/>Using<sp/>ADLX<sp/>in<sp/>a<sp/>system<sp/>service<sp/>application</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;!--</highlight></codeline>
-<codeline><highlight class="normal">#<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2023<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
 <codeline><highlight class="normal">#</highlight></codeline>
 <codeline><highlight class="normal">#-------------------------------------------------------------------------------------------------</highlight></codeline>
 <codeline><highlight class="normal">--&gt;</highlight></codeline>
@@ -20,7 +20,7 @@
 <codeline><highlight class="normal">To<sp/>use<sp/>ADLX<sp/>in<sp/>a<sp/>system<sp/>service,</highlight></codeline>
 <codeline><highlight class="normal">1.<sp/>Create<sp/>a<sp/>system<sp/>service<sp/>application.</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Note:**<sp/>For<sp/>more<sp/>information<sp/>on<sp/>how<sp/>to<sp/>create<sp/>a<sp/>system<sp/>service<sp/>in<sp/>C++,<sp/>see<sp/>@ref<sp/>cpp_sample_servicecall<sp/>&quot;ServiceCall<sp/>C++<sp/>sample&quot;.<sp/>For<sp/>more<sp/>information<sp/>on<sp/>how<sp/>to<sp/>create<sp/>a<sp/>system<sp/>service<sp/>in<sp/>C,<sp/>see<sp/>@ref<sp/>c_sample_servicecall<sp/>&quot;ServiceCall<sp/>C<sp/>sample&quot;.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Note:**<sp/>For<sp/>more<sp/>information<sp/>on<sp/>how<sp/>to<sp/>create<sp/>a<sp/>system<sp/>service<sp/>in<sp/>C++,<sp/>see<sp/>@ref<sp/>domain_cpp_sample_servicecall<sp/>&quot;ServiceCall<sp/>C++<sp/>sample&quot;.<sp/>For<sp/>more<sp/>information<sp/>on<sp/>how<sp/>to<sp/>create<sp/>a<sp/>system<sp/>service<sp/>in<sp/>C,<sp/>see<sp/>@ref<sp/>domain_c_sample_servicecall<sp/>&quot;ServiceCall<sp/>C<sp/>sample&quot;.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">2.<sp/>In<sp/>the<sp/>system<sp/>service,<sp/>start<sp/>a<sp/>thread<sp/>to<sp/>complete<sp/>the<sp/>service<sp/>work,<sp/>such<sp/>as<sp/>ServiceWorkerThread.</highlight></codeline>
 <codeline><highlight class="normal">3.<sp/>On<sp/>the<sp/>ServiceWorkerThread,<sp/>get<sp/>the<sp/>token<sp/>of<sp/>the<sp/>current<sp/>process<sp/>to<sp/>create<sp/>a<sp/>user<sp/>process<sp/>using<sp/>CreateProcessAsUserW.</highlight></codeline>
@@ -33,9 +33,9 @@
 <codeline><highlight class="normal">5.<sp/>In<sp/>user<sp/>mode,<sp/>process<sp/>implement<sp/>a<sp/>communication<sp/>mechanism<sp/>suitable<sp/>for<sp/>communicating<sp/>with<sp/>the<sp/>system<sp/>service<sp/>–<sp/>such<sp/>as<sp/>shared<sp/>memory<sp/>–<sp/>and<sp/>tie<sp/>the<sp/>ADLX<sp/>data<sp/>with<sp/>the<sp/>communication<sp/>mechanism.</highlight></codeline>
 <codeline><highlight class="normal">6.<sp/>Run<sp/>the<sp/>user<sp/>mode<sp/>process<sp/>and<sp/>the<sp/>service<sp/>application.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">For<sp/>more<sp/>information,<sp/>see<sp/>@ref<sp/>cpp_sample_servicecall<sp/>&quot;GPUServiceCall<sp/>C++<sp/>samples&quot;<sp/>and<sp/>@ref<sp/>c_sample_servicecall<sp/>&quot;GPUServiceCall<sp/>C<sp/>samples&quot;.</highlight></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>information,<sp/>see<sp/>@ref<sp/>domain_cpp_sample_servicecall<sp/>&quot;GPUServiceCall<sp/>C++<sp/>samples&quot;<sp/>and<sp/>@ref<sp/>domain_c_sample_servicecall<sp/>&quot;GPUServiceCall<sp/>C<sp/>samples&quot;.</highlight></codeline>
 <codeline></codeline>
     </programlisting>
-    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXProgrammingGuide/servicecall.md"/>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXProgrammingGuide/servicecall.md"/>
   </compounddef>
 </doxygen>

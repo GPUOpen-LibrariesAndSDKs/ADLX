@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('cpp_sample_display3_d_l_u_t.html','');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -139,7 +139,7 @@ $(document).ready(function(){initNavTree('cpp_sample_display3_d_l_u_t.html','');
 </body>
 </html> <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -317,13 +317,17 @@ $(document).ready(function(){initNavTree('cpp_sample_display3_d_l_u_t.html','');
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;  === 3D LUT supported status ===&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">        adlx_bool supported;</div>
 <div class="line">        <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = display3DLUT-&gt;IsSupportedSCE(&amp;supported);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedSCE: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedSCE: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
 <div class="line">        res = display3DLUT-&gt;IsSupportedSCEVividGaming(&amp;supported);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedSCE_VividGaming: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedSCE_VividGaming: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
 <div class="line">        res = display3DLUT-&gt;IsSupportedSCEDynamicContrast(&amp;supported);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedSCEDynamicContrast: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedSCEDynamicContrast: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
 <div class="line">        res = display3DLUT-&gt;IsSupportedUser3DLUT(&amp;supported);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedUser3DLUT: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedUser3DLUT: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -338,11 +342,14 @@ $(document).ready(function(){initNavTree('cpp_sample_display3_d_l_u_t.html','');
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;  === Get 3D LUT ===&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">        adlx_bool applied = <span class="keyword">false</span>;</div>
 <div class="line">        res = display3DLUT-&gt;IsCurrentSCEDisabled(&amp;applied);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsCurrentSCEDisabled: &quot;</span> &lt;&lt; applied &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsCurrentSCEDisabled: &quot;</span> &lt;&lt; applied &lt;&lt; std::endl;</div>
 <div class="line">        res = display3DLUT-&gt;IsCurrentSCEVividGaming(&amp;applied);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsCurrentSCEVividGaming: &quot;</span> &lt;&lt; applied &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsCurrentSCEVividGaming: &quot;</span> &lt;&lt; applied &lt;&lt; std::endl;</div>
 <div class="line">        res = display3DLUT-&gt;IsCurrentSCEDynamicContrast(&amp;applied);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsCurrentSCEDynamicContrast: &quot;</span> &lt;&lt; applied &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsCurrentSCEDynamicContrast: &quot;</span> &lt;&lt; applied &lt;&lt; std::endl;</div>
 <div class="line">        <span class="keywordflow">if</span> (applied)</div>
 <div class="line">        {</div>
 <div class="line">            <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> range;</div>
@@ -707,15 +714,15 @@ $(document).ready(function(){initNavTree('cpp_sample_display3_d_l_u_t.html','');
 <div class="ttc" id="agroup__enumerations_html_ga7ebbfe051a5113c2c1521af3426b7955"><div class="ttname"><a href="group__enumerations.html#ga7ebbfe051a5113c2c1521af3426b7955">ADLX_3DLUT_TRANSFER_FUNCTION</a></div><div class="ttdeci">ADLX_3DLUT_TRANSFER_FUNCTION</div><div class="ttdoc">Indicates the User 3D LUT transfer function.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:866</div></div>
 <div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:278</div></div>
 <div class="ttc" id="agroup__enumerations_html_gabe8d6f1562d0472d97c5edbf55c6d8cc"><div class="ttname"><a href="group__enumerations.html#gabe8d6f1562d0472d97c5edbf55c6d8cc">ADLX_3DLUT_COLORSPACE</a></div><div class="ttdeci">ADLX_3DLUT_COLORSPACE</div><div class="ttdoc">Indicates the custom 3D LUT color space.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:881</div></div>
-<div class="ttc" id="agroup__structures_val_html_a34a0f0cc6253a1238f5115694538607f"><div class="ttname"><a href="group__structures_val.html#a34a0f0cc6253a1238f5115694538607f">ADLX_UINT16_RGB::green</a></div><div class="ttdeci">adlx_uint16 green</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:171</div></div>
-<div class="ttc" id="agroup__structures_val_html_a4080ff87d27524db90af579adfb83d72"><div class="ttname"><a href="group__structures_val.html#a4080ff87d27524db90af579adfb83d72">ADLX_UINT16_RGB::blue</a></div><div class="ttdeci">adlx_uint16 blue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:172</div></div>
-<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:155</div></div>
-<div class="ttc" id="agroup__structures_val_html_a6c9de079cb901629ad01e9b90df8d501"><div class="ttname"><a href="group__structures_val.html#a6c9de079cb901629ad01e9b90df8d501">ADLX_3DLUT_Data::data</a></div><div class="ttdeci">ADLX_UINT16_RGB data[MAX_USER_3DLUT_NUM_POINTS *MAX_USER_3DLUT_NUM_POINTS *MAX_USER_3DLUT_NUM_POINTS]</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:187</div></div>
-<div class="ttc" id="agroup__structures_val_html_ab8b0398e4a3ec75946dfd7f2fb1f2e95"><div class="ttname"><a href="group__structures_val.html#ab8b0398e4a3ec75946dfd7f2fb1f2e95">ADLX_UINT16_RGB::red</a></div><div class="ttdeci">adlx_uint16 red</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:170</div></div>
-<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:154</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x__3_d_l_u_t___data"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x__3_d_l_u_t___data">ADLX_3DLUT_Data</a></div><div class="ttdoc">Structure containing information about custom 3D LUT information.</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:186</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">Structure contains interger range information.</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:153</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___u_i_n_t16___r_g_b"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___u_i_n_t16___r_g_b">ADLX_UINT16_RGB</a></div><div class="ttdoc">Structure containing information about RGB information.</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:169</div></div>
+<div class="ttc" id="agroup__structures_val_html_a34a0f0cc6253a1238f5115694538607f"><div class="ttname"><a href="group__structures_val.html#a34a0f0cc6253a1238f5115694538607f">ADLX_UINT16_RGB::green</a></div><div class="ttdeci">adlx_uint16 green</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:170</div></div>
+<div class="ttc" id="agroup__structures_val_html_a4080ff87d27524db90af579adfb83d72"><div class="ttname"><a href="group__structures_val.html#a4080ff87d27524db90af579adfb83d72">ADLX_UINT16_RGB::blue</a></div><div class="ttdeci">adlx_uint16 blue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:171</div></div>
+<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:154</div></div>
+<div class="ttc" id="agroup__structures_val_html_a6c9de079cb901629ad01e9b90df8d501"><div class="ttname"><a href="group__structures_val.html#a6c9de079cb901629ad01e9b90df8d501">ADLX_3DLUT_Data::data</a></div><div class="ttdeci">ADLX_UINT16_RGB data[MAX_USER_3DLUT_NUM_POINTS *MAX_USER_3DLUT_NUM_POINTS *MAX_USER_3DLUT_NUM_POINTS]</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:186</div></div>
+<div class="ttc" id="agroup__structures_val_html_ab8b0398e4a3ec75946dfd7f2fb1f2e95"><div class="ttname"><a href="group__structures_val.html#ab8b0398e4a3ec75946dfd7f2fb1f2e95">ADLX_UINT16_RGB::red</a></div><div class="ttdeci">adlx_uint16 red</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:169</div></div>
+<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:153</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x__3_d_l_u_t___data"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x__3_d_l_u_t___data">ADLX_3DLUT_Data</a></div><div class="ttdoc">This structure contains custom 3D LUT information.</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:185</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:152</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___u_i_n_t16___r_g_b"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___u_i_n_t16___r_g_b">ADLX_UINT16_RGB</a></div><div class="ttdoc">This structure contains UINT16 RGB information.</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:168</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -8,6 +8,7 @@
 
 #include "SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
 #include "SDK/Include/IDisplays.h"
+#include "SDK/Include/IDisplays1.h"
 #include "SDK/Include/IDisplaySettings.h"
 #include "conio.h"
 #include <iostream>
@@ -39,6 +40,12 @@ public:
     adlx_bool ADLX_STD_CALL OnDisplaySettingsChanged(IADLXDisplaySettingsChangedEvent* pDisplaySettingsChangedEvent) override
     {
         ADLX_SYNC_ORIGIN origin = pDisplaySettingsChangedEvent->GetOrigin();
+        IADLXDisplaySettingsChangedEvent1Ptr pDisplaySettingChangedEvent1(pDisplaySettingsChangedEvent);
+        if (nullptr == pDisplaySettingChangedEvent1)
+        {
+            std::cout << "IADLXDisplaySettingsChangedEvent1 not supported" << std::endl;
+        }
+        
         if (origin == SYNC_ORIGIN_EXTERNAL)
         {
             IADLXDisplayServicesPtr displayServices;
@@ -107,6 +114,15 @@ public:
             {
                 std::cout << "Display " << displayName << "Get sync event, VSR is changed" << std::endl;
             }
+
+            if (pDisplaySettingChangedEvent1)
+            {
+                if (pDisplaySettingChangedEvent1->IsDisplayBlankingChanged())
+                {
+                    std::cout << "Display " << displayName << "Get sync event, display blanking is changed" << std::endl;
+                }
+            }
+
         }
         SetEvent(displaySettingsEvent);
 

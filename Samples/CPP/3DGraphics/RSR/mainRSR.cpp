@@ -1,5 +1,5 @@
 ﻿//
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -92,21 +92,25 @@ int main()
 void ShowRadeonSuperResolutionSupport(const IADLX3DRadeonSuperResolutionPtr& rsr)
 {
     adlx_bool supported = false;
-    rsr->IsSupported(&supported);
-    std::cout << "\tIsSupported: " << supported << std::endl;
+    ADLX_RESULT res = rsr->IsSupported(&supported);
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tIsSupported: " << supported << std::endl;
 }
 
 void GetRadeonSuperResolutionState(const IADLX3DRadeonSuperResolutionPtr& rsr)
 {
     adlx_bool enabled = false;
-    rsr->IsEnabled(&enabled);
-    std::cout << "\tIsEnabled: " << enabled << std::endl;
+    ADLX_RESULT res = rsr->IsEnabled(&enabled);
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tIsEnabled: " << enabled << std::endl;
     adlx_int sharpness;
     ADLX_IntRange sharpnessRange;
-    rsr->GetSharpness(&sharpness);
-    rsr->GetSharpnessRange(&sharpnessRange);
-    std::cout << "\tCurrent sharpness:" << sharpness << std::endl
-              << "\tSharpness limit [ " << sharpnessRange.minValue << " ," << sharpnessRange.maxValue << " ], step: " << sharpnessRange.step << std::endl;
+    res = rsr->GetSharpness(&sharpness);
+    if (ADLX_SUCCEEDED (res))
+        std::cout << "\tCurrent sharpness:" << sharpness << std::endl;
+    res = rsr->GetSharpnessRange(&sharpnessRange);
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tSharpness limit [ " << sharpnessRange.minValue << " ," << sharpnessRange.maxValue << " ], step: " << sharpnessRange.step << std::endl;
 }
 
 void SetRadeonSuperResolutionState(const IADLX3DRadeonSuperResolutionPtr& rsr, int index)
@@ -118,17 +122,20 @@ void SetRadeonSuperResolutionState(const IADLX3DRadeonSuperResolutionPtr& rsr, i
     {
         adlx_int sharpness;
         ADLX_IntRange sharpnessRange;
-        rsr->GetSharpness(&sharpness);
-        rsr->GetSharpnessRange(&sharpnessRange);
-        if (sharpness != sharpnessRange.minValue)
+        ADLX_RESULT res1 = rsr->GetSharpness(&sharpness);
+        ADLX_RESULT res2 = rsr->GetSharpnessRange(&sharpnessRange);
+        if (ADLX_SUCCEEDED (res1) && ADLX_SUCCEEDED (res2))
         {
-            res = rsr->SetSharpness(sharpnessRange.minValue);
-            std::cout << "\tSet minimum sharpness limit: return code is: " << res << "(0 means success)" << std::endl;
-        }
-        else
-        {
-            res = rsr->SetSharpness(sharpnessRange.maxValue);
-            std::cout << "\tSet maximum sharpness limit: return code is: " << res << "(0 means success)" << std::endl;
+            if (sharpness != sharpnessRange.minValue)
+            {
+                res = rsr->SetSharpness(sharpnessRange.minValue);
+                std::cout << "\tSet minimum sharpness limit: return code is: " << res << "(0 means success)" << std::endl;
+            }
+            else
+            {
+                res = rsr->SetSharpness(sharpnessRange.maxValue);
+                std::cout << "\tSet maximum sharpness limit: return code is: " << res << "(0 means success)" << std::endl;
+            }
         }
     }
 }

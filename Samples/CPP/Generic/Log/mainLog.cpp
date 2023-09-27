@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -114,8 +114,8 @@ void UseLocalFile()
     std::cout << "Enabled log res: " << res << "(0 means success)" << std::endl;
 }
 
-// Configure ADLX log to send errors, warnings and debug information messages to the application debugger.
-void UseWindowDebugger()
+// Configure ADLX log to send errors, warnings and debug information messages to the DebugView.
+void UseDebugView()
 {
     // Log destination, severity
     ADLX_LOG_DESTINATION mode = DBGVIEW;
@@ -143,7 +143,7 @@ void MainMenu()
 {
     std::cout << "\tChoose from the following options:" << std::endl;
     std::cout << "\t->Press 1 to enable log with local file, file [./ADLX.log] will be created." << std::endl;
-    std::cout << "\t->Press 2 to enable log with window debugger" << std::endl;
+    std::cout << "\t->Press 2 to enable log with DebugView" << std::endl;
     std::cout << "\t->Press 3 to enable log with app handle" << std::endl;
 }
 
@@ -159,9 +159,9 @@ void MenuControl()
         UseLocalFile();
         break;
 
-    // Window debugger
+    // DebugView
     case '2':
-        UseWindowDebugger();
+        UseDebugView();
         break;
 
     // Application handle

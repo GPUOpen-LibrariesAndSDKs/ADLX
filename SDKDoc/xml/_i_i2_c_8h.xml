@@ -10,6 +10,12 @@
       <node id="3">
         <label>Windows.h</label>
       </node>
+      <node id="1">
+        <label>D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/II2C.h</label>
+        <link refid="_i_i2_c_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
       <node id="2">
         <label>ADLXDefines.h</label>
         <link refid="_a_d_l_x_defines_8h"/>
@@ -18,12 +24,6 @@
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/II2C.h</label>
-        <link refid="_i_i2_c_8h"/>
-        <childnode refid="2" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -38,7 +38,7 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2023<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
@@ -62,47 +62,47 @@
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DECLARE_IID<sp/>(L</highlight><highlight class="stringliteral">&quot;IADLXI2C&quot;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>Version<sp/>(adlx_int*<sp/>major,<sp/>adlx_int*<sp/>minor)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>IsSupported<sp/>(<ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref><sp/>line,<sp/>adlx_int<sp/>address,<sp/>adlx_bool*<sp/>isSupported)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>Read<sp/>(<ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref><sp/>line,<sp/>adlx_int<sp/>speed,<sp/>adlx_int<sp/>address,<sp/>adlx_int<sp/>offset,<sp/>adlx_int<sp/>dataSize,<sp/>adlx_byte*<sp/>data)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>RepeatedStartRead<sp/>(<ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref><sp/>line,<sp/>adlx_int<sp/>speed,<sp/>adlx_int<sp/>address,<sp/>adlx_int<sp/>offset,<sp/>adlx_int<sp/>dataSize,<sp/>adlx_byte*<sp/>data)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"></highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>Write<sp/>(<ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref><sp/>line,<sp/>adlx_int<sp/>speed,<sp/>adlx_int<sp/>address,<sp/>adlx_int<sp/>offset,<sp/>adlx_int<sp/>dataSize,<sp/>adlx_byte*<sp/>data)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"></highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>};<sp/><sp/></highlight><highlight class="comment">//IADLXI2C</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLXI2C&gt;<sp/>IADLXI2CPtr;</highlight></codeline>
-<codeline lineno="177"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="178"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="179"><highlight class="normal">ADLX_DECLARE_IID<sp/>(IADLXI2C,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLXI2C&quot;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"></highlight></codeline>
-<codeline lineno="181"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXI2C<sp/>IADLXI2C;</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"></highlight></codeline>
-<codeline lineno="183"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXI2CVtbl</highlight></codeline>
-<codeline lineno="184"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long<sp/>(ADLX_STD_CALL<sp/>*Acquire)(IADLXI2C*<sp/>pThis);</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long<sp/>(ADLX_STD_CALL<sp/>*Release)(IADLXI2C*<sp/>pThis);</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*QueryInterface)(IADLXI2C*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"></highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXI2C</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL<sp/>*Version)(IADLXI2C*<sp/>pThis,<sp/>adlx_int*<sp/>major,<sp/>adlx_int*<sp/>minor);</highlight></codeline>
-<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL<sp/>*IsSupported)(IADLXI2C*<sp/>pThis,<sp/><ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref><sp/>line,<sp/>adlx_int<sp/>address,<sp/>adlx_bool*<sp/>isSupported);</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL<sp/>*Read)(IADLXI2C*<sp/>pThis,<sp/><ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref><sp/>line,<sp/>adlx_int<sp/>speed,<sp/>adlx_int<sp/>address,<sp/>adlx_int<sp/>offset,<sp/>adlx_int<sp/>dataSize,<sp/>adlx_byte*<sp/>data);</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL<sp/>*RepeatedStartRead)(IADLXI2C*<sp/>pThis,<sp/><ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref><sp/>line,<sp/>adlx_int<sp/>speed,<sp/>adlx_int<sp/>address,<sp/>adlx_int<sp/>offset,<sp/>adlx_int<sp/>dataSize,<sp/>adlx_byte*<sp/>data);</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL<sp/>*Write)(IADLXI2C*<sp/>pThis,<sp/><ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref><sp/>line,<sp/>adlx_int<sp/>speed,<sp/>adlx_int<sp/>address,<sp/>adlx_int<sp/>offset,<sp/>adlx_int<sp/>dataSize,<sp/>adlx_byte*<sp/>data);</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"></highlight></codeline>
-<codeline lineno="197"><highlight class="normal">}IADLXI2CVtbl;</highlight></codeline>
-<codeline lineno="198"><highlight class="normal"></highlight></codeline>
-<codeline lineno="199"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXI2C<sp/>{<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLXI2CVtbl<sp/>*pVtbl;<sp/>};</highlight></codeline>
-<codeline lineno="200"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="201"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXI2C</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="202"><highlight class="normal"></highlight></codeline>
-<codeline lineno="203"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//ADLX_II2C_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>Version<sp/>(adlx_int*<sp/>major,<sp/>adlx_int*<sp/>minor)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>IsSupported<sp/>(<ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref><sp/>line,<sp/>adlx_int<sp/>address,<sp/>adlx_bool*<sp/>isSupported)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>Read<sp/>(<ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref><sp/>line,<sp/>adlx_int<sp/>speed,<sp/>adlx_int<sp/>address,<sp/>adlx_int<sp/>offset,<sp/>adlx_int<sp/>dataSize,<sp/>adlx_byte*<sp/>data)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>RepeatedStartRead<sp/>(<ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref><sp/>line,<sp/>adlx_int<sp/>speed,<sp/>adlx_int<sp/>address,<sp/>adlx_int<sp/>offset,<sp/>adlx_int<sp/>dataSize,<sp/>adlx_byte*<sp/>data)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>Write<sp/>(<ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref><sp/>line,<sp/>adlx_int<sp/>speed,<sp/>adlx_int<sp/>address,<sp/>adlx_int<sp/>offset,<sp/>adlx_int<sp/>dataSize,<sp/>adlx_byte*<sp/>data)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>};<sp/><sp/></highlight><highlight class="comment">//IADLXI2C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLXI2C&gt;<sp/>IADLXI2CPtr;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal">ADLX_DECLARE_IID<sp/>(IADLXI2C,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLXI2C&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXI2C<sp/>IADLXI2C;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXI2CVtbl</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long<sp/>(ADLX_STD_CALL<sp/>*Acquire)(IADLXI2C*<sp/>pThis);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long<sp/>(ADLX_STD_CALL<sp/>*Release)(IADLXI2C*<sp/>pThis);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*QueryInterface)(IADLXI2C*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXI2C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL<sp/>*Version)(IADLXI2C*<sp/>pThis,<sp/>adlx_int*<sp/>major,<sp/>adlx_int*<sp/>minor);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL<sp/>*IsSupported)(IADLXI2C*<sp/>pThis,<sp/><ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref><sp/>line,<sp/>adlx_int<sp/>address,<sp/>adlx_bool*<sp/>isSupported);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL<sp/>*Read)(IADLXI2C*<sp/>pThis,<sp/><ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref><sp/>line,<sp/>adlx_int<sp/>speed,<sp/>adlx_int<sp/>address,<sp/>adlx_int<sp/>offset,<sp/>adlx_int<sp/>dataSize,<sp/>adlx_byte*<sp/>data);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL<sp/>*RepeatedStartRead)(IADLXI2C*<sp/>pThis,<sp/><ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref><sp/>line,<sp/>adlx_int<sp/>speed,<sp/>adlx_int<sp/>address,<sp/>adlx_int<sp/>offset,<sp/>adlx_int<sp/>dataSize,<sp/>adlx_byte*<sp/>data);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL<sp/>*Write)(IADLXI2C*<sp/>pThis,<sp/><ref refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kindref="member">ADLX_I2C_LINE</ref><sp/>line,<sp/>adlx_int<sp/>speed,<sp/>adlx_int<sp/>address,<sp/>adlx_int<sp/>offset,<sp/>adlx_int<sp/>dataSize,<sp/>adlx_byte*<sp/>data);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}IADLXI2CVtbl;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXI2C<sp/>{<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLXI2CVtbl<sp/>*pVtbl;<sp/>};</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXI2C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//ADLX_II2C_H</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/II2C.h"/>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/II2C.h"/>
   </compounddef>
 </doxygen>

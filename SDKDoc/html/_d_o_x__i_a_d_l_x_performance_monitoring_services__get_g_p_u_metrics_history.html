@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -147,7 +147,7 @@ $(document).ready(function(){initNavTree('_d_o_x__i_a_d_l_x_performance_monitori
  Refer to <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> for success codes and error codes.</p>
 <h2>Remarks </h2>
 <p>Use the <b>startMs</b> and <b>stopMs</b> to specify the time intervals for fetching the history.</p><ul>
-<li>To get the reference counted list of all the performance metric samples from the performance monitoring buffer, specify both the <b>startMs</b> and <b>stopMs</b> as zero.<br  />
+<li>To get the reference counted list of the latest performance metric samples from the performance monitoring buffer, specify both the <b>startMs</b> and <b>stopMs</b> as zero.<br  />
 </li>
 <li>To get the reference counted list of the performance metric samples from A ms ago to the present time, specify <b>startMs</b> as A ms and <b>stopMs</b> as zero. <br  />
 </li>
@@ -156,15 +156,6 @@ $(document).ready(function(){initNavTree('_d_o_x__i_a_d_l_x_performance_monitori
 </ul>
 <p>The returned interface must be discarded with <a class="el" href="_d_o_x__i_a_d_l_x_interface__release.html">Release</a> when it is no longer needed. <br  />
 </p>
-<h2>Additional Info </h2>
-<p>In C++, when using ADLX interfaces as smart pointers, there is no need to call <a class="el" href="_d_o_x__i_a_d_l_x_interface__release.html">Release</a> because smart pointers call it in their internal implementation.</p>
-<h2>Requirements </h2>
-<table class="doxtable">
-<tr style="height=40px">
-<td style="font-weight:bold">Header</td><td style="text-align:left">include "IPerformanceMonitoring.h"</td></tr>
-<tr style="height=40px">
-<td style="font-weight:bold">Minimum version</td><td style="text-align:left">1.0</td></tr>
-</table>
 <h2>Additional Info </h2>
 <p>In C++, when using ADLX interfaces as smart pointers, there is no need to call <a class="el" href="_d_o_x__i_a_d_l_x_interface__release.html">Release</a> because smart pointers call it in their internal implementation.</p>
 <h2>Requirements </h2>

@@ -5,6 +5,7 @@
     <innerclass refid="classadlx_1_1_i_a_d_l_x_interface" prot="public">adlx::IADLXInterface</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t" prot="public">adlx::IADLXInterfacePtr_T</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x3_d_anti_lag" prot="public">adlx::IADLX3DAntiLag</innerclass>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x3_d_anti_lag1" prot="public">adlx::IADLX3DAntiLag1</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x3_d_chill" prot="public">adlx::IADLX3DChill</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x3_d_boost" prot="public">adlx::IADLX3DBoost</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x3_d_image_sharpening" prot="public">adlx::IADLX3DImageSharpening</innerclass>
@@ -46,6 +47,8 @@
     <innerclass refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_listener" prot="public">adlx::IADLXDisplaySettingsChangedListener</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_display_changed_handling" prot="public">adlx::IADLXDisplayChangedHandling</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_display_services" prot="public">adlx::IADLXDisplayServices</innerclass>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x_display_services1" prot="public">adlx::IADLXDisplayServices1</innerclass>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event1" prot="public">adlx::IADLXDisplaySettingsChangedEvent1</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_display_free_sync" prot="public">adlx::IADLXDisplayFreeSync</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_display_v_s_r" prot="public">adlx::IADLXDisplayVSR</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_display_g_p_u_scaling" prot="public">adlx::IADLXDisplayGPUScaling</innerclass>
@@ -59,6 +62,7 @@
     <innerclass refid="classadlx_1_1_i_a_d_l_x_display_resolution_list" prot="public">adlx::IADLXDisplayResolutionList</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_display_custom_resolution" prot="public">adlx::IADLXDisplayCustomResolution</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_display_vari_bright" prot="public">adlx::IADLXDisplayVariBright</innerclass>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x_display_blanking" prot="public">adlx::IADLXDisplayBlanking</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_complete_event" prot="public">adlx::IADLXGPUAutoTuningCompleteEvent</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_complete_listener" prot="public">adlx::IADLXGPUAutoTuningCompleteListener</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning" prot="public">adlx::IADLXGPUAutoTuning</innerclass>
@@ -110,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLXDefines.h" line="1212" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLXDefines.h" bodystart="1212" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ADLXDefines.h" line="1227" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ADLXDefines.h" bodystart="1227" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i3_d_settings_8h_1a133af6f210a67cfd674eb232bebae4c4" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLX3DAntiLag &gt;</type>
@@ -123,7 +127,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="114" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="114" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="111" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_i3_d_settings_8h_1a461338f2e4f552530ec2686cd5dd1b35" prot="public" static="no">
+        <type>IADLXInterfacePtr_T&lt; IADLX3DAntiLag1 &gt;</type>
+        <definition>typedef IADLXInterfacePtr_T&lt;IADLX3DAntiLag1&gt; adlx::IADLX3DAntiLag1Ptr</definition>
+        <argsstring></argsstring>
+        <name>IADLX3DAntiLag1Ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="201" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="201" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i3_d_settings_8h_1a0d983f9162a72c981bf3b03a50678a76" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLX3DChill &gt;</type>
@@ -136,7 +153,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="394" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="394" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="476" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="476" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i3_d_settings_8h_1a248f2f44dd35666fb7429966f69dc04e" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLX3DBoost &gt;</type>
@@ -149,7 +166,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="607" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="607" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="683" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="683" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i3_d_settings_8h_1a3cc277cc0ea830c5f4e24c4cee7835e8" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLX3DImageSharpening &gt;</type>
@@ -162,7 +179,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="814" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="814" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="884" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="884" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i3_d_settings_8h_1a2f058c851295dfa1cc773ec49a8702d5" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLX3DEnhancedSync &gt;</type>
@@ -175,7 +192,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="946" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="946" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="1013" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="1013" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i3_d_settings_8h_1a85afa1edac7edcf94de77ae0ed55f7a7" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLX3DWaitForVerticalRefresh &gt;</type>
@@ -188,7 +205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="1107" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="1107" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="1170" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="1170" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i3_d_settings_8h_1adcd0a0e832e12f8495e8dec068f9b419" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLX3DFrameRateTargetControl &gt;</type>
@@ -201,7 +218,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="1316" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="1316" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="1373" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="1373" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i3_d_settings_8h_1a5faabd0219f5ea5094642d593e60b700" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLX3DAntiAliasing &gt;</type>
@@ -214,7 +231,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="1547" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="1547" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="1597" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="1597" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i3_d_settings_8h_1a1e640b5f477df715186798afa62e6775" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLX3DMorphologicalAntiAliasing &gt;</type>
@@ -227,7 +244,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="1679" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="1679" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="1726" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="1726" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i3_d_settings_8h_1a636b39d1881372cdb1f0b78e3dfd5fd3" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLX3DAnisotropicFiltering &gt;</type>
@@ -240,7 +257,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="1855" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="1855" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="1897" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="1897" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i3_d_settings_8h_1a033dcfda60a71a054059b8b333b29d5c" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLX3DTessellation &gt;</type>
@@ -253,7 +270,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="2028" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="2028" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="2065" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="2065" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i3_d_settings_8h_1a0f3d5cadbe9fbcbc5b6e3402b17df84c" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLX3DRadeonSuperResolution &gt;</type>
@@ -266,7 +283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="2245" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="2245" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="2276" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="2276" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i3_d_settings_8h_1a6a63cb2de5e50559cec178abc2421515" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLX3DResetShaderCache &gt;</type>
@@ -279,7 +296,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="2341" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="2341" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="2370" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="2370" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i3_d_settings_8h_1a58bd68cd3be86e66af411167cd847f9d" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLX3DSettingsChangedEvent &gt;</type>
@@ -292,7 +309,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="2769" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="2769" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="2784" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="2784" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i3_d_settings_8h_1a3f8174f6d4fd4d0255ca3608b8bd0f49" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLX3DSettingsChangedHandling &gt;</type>
@@ -305,7 +322,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="2928" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="2928" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="2940" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="2940" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i3_d_settings_8h_1ac2b48e33bc31f4cdcc05c5cfd7d0e3de" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLX3DSettingsServices &gt;</type>
@@ -318,7 +335,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="3383" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="3383" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="3381" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="3381" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_changed_event_8h_1ad191c2004ec35a4fbe51f91155b678db" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXChangedEvent &gt;</type>
@@ -331,7 +348,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IChangedEvent.h" line="47" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IChangedEvent.h" bodystart="47" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IChangedEvent.h" line="46" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IChangedEvent.h" bodystart="46" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_collections_8h_1ac394bd62b6480eb12102a1e4aa93f752" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXList &gt;</type>
@@ -344,7 +361,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ICollections.h" line="301" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ICollections.h" bodystart="301" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ICollections.h" line="293" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ICollections.h" bodystart="293" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_desktops_8h_1ab10ce8506bd1dd3a8695fc8f7d1d0d78" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDesktop &gt;</type>
@@ -357,7 +374,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" line="187" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="187" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDesktops.h" line="181" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="181" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_desktops_8h_1ad8b476d72601328f31785f3c8a08f0f1" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXEyefinityDesktop &gt;</type>
@@ -370,7 +387,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" line="365" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="365" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDesktops.h" line="354" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="354" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_desktops_8h_1a1bb31a5c6e926dad5f3a04baa13285d9" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDesktopList &gt;</type>
@@ -383,7 +400,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" line="466" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="466" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDesktops.h" line="453" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="453" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_desktops_8h_1a34d26d22a89735962136f7f1058152b3" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDesktopChangedHandling &gt;</type>
@@ -396,7 +413,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" line="618" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="618" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDesktops.h" line="602" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="602" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_desktops_8h_1acdb90acd3d29ca7ea3dd0bcf8594253f" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXSimpleEyefinity &gt;</type>
@@ -409,7 +426,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" line="760" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="760" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDesktops.h" line="740" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="740" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_desktops_8h_1a9c1aab526fcd6f6b351704d18a51610b" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDesktopServices &gt;</type>
@@ -422,7 +439,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" line="920" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="920" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDesktops.h" line="896" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="896" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_display3_d_l_u_t_8h_1af44faee6c057d3057ee0058018bd4fb6" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplay3DLUT &gt;</type>
@@ -435,7 +452,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplay3DLUT.h" line="636" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplay3DLUT.h" bodystart="636" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplay3DLUT.h" line="617" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplay3DLUT.h" bodystart="617" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_display_gamma_8h_1a751ba92eade22387afa7dc2e9b767a82" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayGamma &gt;</type>
@@ -448,7 +465,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="658" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamma.h" bodystart="658" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="632" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplayGamma.h" bodystart="632" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_display_gamut_8h_1a7798866cbd825874755f0294fcd4c7de" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayGamut &gt;</type>
@@ -461,7 +478,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamut.h" line="731" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplayGamut.h" bodystart="731" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplayGamut.h" line="703" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplayGamut.h" bodystart="703" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_displays_8h_1ad0331d4efefa6ff4d1ad62f13011edef" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplay &gt;</type>
@@ -474,7 +491,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="400" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="400" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="389" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="389" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_displays_8h_1ae017109b49c57673432ba990678c9860" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayList &gt;</type>
@@ -487,7 +504,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="514" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="514" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="501" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="501" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_displays_8h_1a233b0d5056915703fd762d5d752fd3cb" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayGamutChangedEvent &gt;</type>
@@ -500,7 +517,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="706" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="706" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="689" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="689" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_displays_8h_1a707b5ab1366db1a49ef6d370fa4cd065" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayGammaChangedEvent &gt;</type>
@@ -513,7 +530,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="950" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="950" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="927" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="927" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_displays_8h_1adda3c498b42c7726246f85a1d83bb586" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplay3DLUTChangedEvent &gt;</type>
@@ -526,7 +543,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="1135" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="1135" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="1108" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="1108" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_displays_8h_1a8e33d2bc62d06a371cc7e6f0b015c976" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplaySettingsChangedEvent &gt;</type>
@@ -539,7 +556,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="1691" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="1691" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="1647" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="1647" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_displays_8h_1a69ab463da7241ea3a862cfb0d3df8be8" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayChangedHandling &gt;</type>
@@ -552,7 +569,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="2100" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="2100" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="2045" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="2045" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_displays_8h_1a6fc78a3cf4751f10ef9fe883d7535b1c" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayServices &gt;</type>
@@ -565,7 +582,33 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="2698" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="2698" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="2626" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="2626" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_i_displays1_8h_1a9af7e51610ec768f0230786242fe90a9" prot="public" static="no">
+        <type>IADLXInterfacePtr_T&lt; IADLXDisplayServices1 &gt;</type>
+        <definition>typedef IADLXInterfacePtr_T&lt;IADLXDisplayServices1&gt; adlx::IADLXDisplayServices1Ptr</definition>
+        <argsstring></argsstring>
+        <name>IADLXDisplayServices1Ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays1.h" line="59" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays1.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_i_displays1_8h_1ac98eecb49247e7d032d4a037d81f8c83" prot="public" static="no">
+        <type>IADLXInterfacePtr_T&lt; IADLXDisplaySettingsChangedEvent1 &gt;</type>
+        <definition>typedef IADLXInterfacePtr_T&lt;IADLXDisplaySettingsChangedEvent1&gt; adlx::IADLXDisplaySettingsChangedEvent1Ptr</definition>
+        <argsstring></argsstring>
+        <name>IADLXDisplaySettingsChangedEvent1Ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays1.h" line="147" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays1.h" bodystart="147" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_display_settings_8h_1abdba048ed21032402bd13a091a6548ed" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayFreeSync &gt;</type>
@@ -578,7 +621,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="106" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="106" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="103" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_display_settings_8h_1a9384670df44322b41520cebffbca23eb" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayVSR &gt;</type>
@@ -591,7 +634,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="226" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="226" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="220" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="220" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_display_settings_8h_1ae1a4fa0fb7df656b1f03f73228a391b3" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayGPUScaling &gt;</type>
@@ -604,7 +647,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="351" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="351" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="342" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="342" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_display_settings_8h_1a6aab334f852150f338b70a9a193996ca" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayScalingMode &gt;</type>
@@ -617,7 +660,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="470" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="470" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="458" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="458" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_display_settings_8h_1a51e685e0d73a7145ca97b3badd14b37d" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayIntegerScaling &gt;</type>
@@ -630,7 +673,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="589" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="589" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="574" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="574" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_display_settings_8h_1a6f49df28c560a05ef71fd4135db499e3" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayColorDepth &gt;</type>
@@ -643,7 +686,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="861" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="861" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="836" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="836" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_display_settings_8h_1ab8f7edd21766fa1d120896fd34217628" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayPixelFormat &gt;</type>
@@ -656,7 +699,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1121" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="1121" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1087" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="1087" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_display_settings_8h_1a05ec0d4cd14f430a8e35e8c3d9dd3704" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayCustomColor &gt;</type>
@@ -669,7 +712,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1625" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="1625" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1571" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="1571" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_display_settings_8h_1a1a4673e41ce03d71c70489c8007b1a1b" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayHDCP &gt;</type>
@@ -682,7 +725,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1768" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="1768" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1711" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="1711" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_display_settings_8h_1a41d6ea7917841538bdb3e5f3ab7f53b7" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayResolution &gt;</type>
@@ -695,7 +738,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1851" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="1851" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1792" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="1792" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_display_settings_8h_1a664fd818994e7748b838068749ac55bd" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayResolutionList &gt;</type>
@@ -708,7 +751,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1953" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="1953" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="1892" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="1892" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_display_settings_8h_1ac715a0ea0eb974e848aeb7e42cc450ce" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayCustomResolution &gt;</type>
@@ -721,7 +764,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2153" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="2153" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2087" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="2087" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_display_settings_8h_1a30158c9ae40dce74b8320a7550faf510" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXDisplayVariBright &gt;</type>
@@ -734,7 +777,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2495" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="2495" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2416" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="2416" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_i_display_settings_8h_1a9bf65fe16717da40f34d7159f57e3d49" prot="public" static="no">
+        <type>IADLXInterfacePtr_T&lt; IADLXDisplayBlanking &gt;</type>
+        <definition>typedef IADLXInterfacePtr_T&lt;IADLXDisplayBlanking&gt; adlx::IADLXDisplayBlankingPtr</definition>
+        <argsstring></argsstring>
+        <name>IADLXDisplayBlankingPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2574" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="2574" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_auto_tuning_8h_1a666e230a668e39fecb3f1936e473de92" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXGPUAutoTuningCompleteEvent &gt;</type>
@@ -747,7 +803,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" line="93" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" bodystart="93" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" line="90" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_auto_tuning_8h_1a2cc8a05998a895c679c89ed93b9daa1c" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXGPUAutoTuning &gt;</type>
@@ -760,7 +816,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" line="440" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" bodystart="440" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" line="427" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" bodystart="427" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_manual_fan_tuning_8h_1a9d0f53b18a09fe846023b97c71b4a57e" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXManualFanTuningState &gt;</type>
@@ -773,7 +829,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualFanTuning.h" line="134" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualFanTuning.h" bodystart="134" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualFanTuning.h" line="130" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualFanTuning.h" bodystart="130" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_manual_fan_tuning_8h_1af17600f8667e97783b369335a33040d5" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXManualFanTuningStateList &gt;</type>
@@ -786,7 +842,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualFanTuning.h" line="234" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualFanTuning.h" bodystart="234" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualFanTuning.h" line="228" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualFanTuning.h" bodystart="228" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_manual_fan_tuning_8h_1ab794277ab94e9e4f8937a792c9c66e20" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXManualFanTuning &gt;</type>
@@ -799,7 +855,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualFanTuning.h" line="804" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualFanTuning.h" bodystart="804" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualFanTuning.h" line="778" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualFanTuning.h" bodystart="778" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_manual_g_f_x_tuning_8h_1aba9d49863a239ade74b3c2978ca7a9cd" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXManualGraphicsTuning1 &gt;</type>
@@ -812,7 +868,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="183" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" bodystart="183" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="178" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" bodystart="178" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_manual_g_f_x_tuning_8h_1ab9623bce2f13b6a35651298b90b08248" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXManualGraphicsTuning2 &gt;</type>
@@ -825,7 +881,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="472" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" bodystart="472" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="458" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" bodystart="458" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_manual_power_tuning_8h_1afa10076f98ac539a2d96065de3cce32d" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXManualPowerTuning &gt;</type>
@@ -838,7 +894,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualPowerTuning.h" line="231" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualPowerTuning.h" bodystart="231" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualPowerTuning.h" line="224" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualPowerTuning.h" bodystart="224" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_manual_v_r_a_m_tuning_8h_1a5e06aaf1f10b586a3ccfb1f346d61dac" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXManualVRAMTuning1 &gt;</type>
@@ -851,7 +907,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualVRAMTuning.h" line="276" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualVRAMTuning.h" bodystart="276" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualVRAMTuning.h" line="267" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualVRAMTuning.h" bodystart="267" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_manual_v_r_a_m_tuning_8h_1a9dc9b700a9e0104d12179dd4aa9b2e53" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXManualVRAMTuning2 &gt;</type>
@@ -864,7 +920,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualVRAMTuning.h" line="503" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualVRAMTuning.h" bodystart="503" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualVRAMTuning.h" line="487" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualVRAMTuning.h" bodystart="487" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_preset_tuning_8h_1a28a4dd668888c5d1bf57636bb0a2f9b2" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXGPUPresetTuning &gt;</type>
@@ -877,7 +933,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUPresetTuning.h" line="445" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUPresetTuning.h" bodystart="445" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUPresetTuning.h" line="430" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUPresetTuning.h" bodystart="430" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_tuning_8h_1a03cad6a5a6b3595203d6349fad449d33" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXManualTuningState &gt;</type>
@@ -890,7 +946,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" line="128" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" bodystart="128" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUTuning.h" line="124" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUTuning.h" bodystart="124" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_tuning_8h_1a7f10185b5de52926707142c5b8604503" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXMemoryTimingDescription &gt;</type>
@@ -903,7 +959,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" line="189" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" bodystart="189" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUTuning.h" line="184" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUTuning.h" bodystart="184" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_tuning_8h_1a1f8fbe6af9aa37c0aa90cbb1f5335ce2" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXManualTuningStateList &gt;</type>
@@ -916,7 +972,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" line="287" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" bodystart="287" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUTuning.h" line="280" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUTuning.h" bodystart="280" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_tuning_8h_1a9585471bcf57dae5595efd2c1f99a988" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXMemoryTimingDescriptionList &gt;</type>
@@ -929,7 +985,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" line="396" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" bodystart="396" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUTuning.h" line="387" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUTuning.h" bodystart="387" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_tuning_8h_1a39d0cced33dc36cd59bfa7909e87baed" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXGPUTuningChangedEvent &gt;</type>
@@ -942,7 +998,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" line="635" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" bodystart="635" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUTuning.h" line="619" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUTuning.h" bodystart="619" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_tuning_8h_1ac166518501cc41022e75043708305c01" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXGPUTuningChangedHandling &gt;</type>
@@ -955,7 +1011,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" line="784" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" bodystart="784" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUTuning.h" line="765" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUTuning.h" bodystart="765" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_g_p_u_tuning_8h_1a3359bcb258cea878a100d075e1741fa7" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXGPUTuningServices &gt;</type>
@@ -968,7 +1024,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" line="1236" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUTuning.h" bodystart="1236" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUTuning.h" line="1202" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUTuning.h" bodystart="1202" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_i2_c_8h_1a4182193070ccc015756a9ccb5cda30ea" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXI2C &gt;</type>
@@ -981,7 +1037,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/II2C.h" line="176" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/II2C.h" bodystart="176" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/II2C.h" line="171" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/II2C.h" bodystart="171" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_performance_monitoring_8h_1afeef552aeb0732fbd2dc9abe2ed96010" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXGPUMetricsSupport &gt;</type>
@@ -994,7 +1050,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="576" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="576" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="555" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="555" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_performance_monitoring_8h_1a773d62980c82e49e256ae6faf213f8dc" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXSystemMetricsSupport &gt;</type>
@@ -1007,7 +1063,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="781" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="781" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="754" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="754" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_performance_monitoring_8h_1a62288f1ee131efae0f75a6ad2769733e" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXGPUMetrics &gt;</type>
@@ -1020,7 +1076,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1111" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1111" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1077" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1077" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_performance_monitoring_8h_1a442d51143c03978fdabc1b52885be3b8" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXGPUMetricsList &gt;</type>
@@ -1033,7 +1089,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1218" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1218" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1182" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1182" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_performance_monitoring_8h_1a8232f63966d4e3580140332e486ab815" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXSystemMetrics &gt;</type>
@@ -1046,7 +1102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1365" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1365" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1325" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1325" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_performance_monitoring_8h_1ab31efa1bfec9e6aad92bbc1b896a496b" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXSystemMetricsList &gt;</type>
@@ -1059,7 +1115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1464" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1464" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1422" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1422" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_performance_monitoring_8h_1a95d459ddbf41a923bf7e0fa0d6a19f51" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXFPS &gt;</type>
@@ -1072,7 +1128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1557" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1557" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1513" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1513" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_performance_monitoring_8h_1aa38f53d0f13e794aef7e10e32c06dd3f" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXFPSList &gt;</type>
@@ -1085,7 +1141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1654" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1654" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1608" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1608" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_performance_monitoring_8h_1a2ac91f52f6a5a6c3bade43bf710d4b1a" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXAllMetrics &gt;</type>
@@ -1098,7 +1154,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1810" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1810" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1760" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1760" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_performance_monitoring_8h_1a935bfd052f507b1ac389238a2020d8a7" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXAllMetricsList &gt;</type>
@@ -1111,7 +1167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1911" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1911" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1859" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="1859" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_performance_monitoring_8h_1a7d3793d3ddb0952da553fde3126ba232" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXPerformanceMonitoringServices &gt;</type>
@@ -1124,7 +1180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2569" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="2569" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2480" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" bodystart="2480" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_system_8h_1a7ccb994ad9cf40ecac4d7accf39f7ec6" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXGPU &gt;</type>
@@ -1137,7 +1193,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="482" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" bodystart="482" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" line="480" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" bodystart="480" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_system_8h_1a2c020d9f8765d8ac4383b3ef31971857" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXGPUList &gt;</type>
@@ -1150,7 +1206,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="601" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" bodystart="601" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" line="597" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" bodystart="597" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_system_8h_1a92406c172e2cbca0f3f78a49dc7f56c9" prot="public" static="no">
         <type>IADLXInterfacePtr_T&lt; IADLXGPUsChangedHandling &gt;</type>
@@ -1163,7 +1219,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="737" column="33" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" bodystart="737" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" line="730" column="33" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" bodystart="730" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -1178,7 +1234,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" line="2337" column="51" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="2369" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" line="2366" column="51" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="2398" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_desktops_8h_1a5e0189f42408653036b0ad71960d5f0c" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1191,7 +1247,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="21" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDesktops.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_desktops_8h_1ab74c9ab9636492510206915ee0ca5171" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1204,7 +1260,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" line="184" column="43" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="218" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDesktops.h" line="178" column="43" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDesktops.h" bodystart="212" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_displays_8h_1a831b0bab65be7e6e5dab8d372ab28e7f" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1217,7 +1273,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="23" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_displays_8h_1ac76a2a777911bcc3a558b408ad4c1cff" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1230,7 +1286,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="24" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_displays_8h_1afa43c24857b399bf6fa0e486af6cc5e4" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1243,7 +1299,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="25" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_displays_8h_1a3e487b9e9469b2493225abcdc4ca55b7" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1256,7 +1312,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="26" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_displays_8h_1acd12074a9fa4d4f7ddde72900b2d3682" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1269,7 +1325,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="27" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_displays_8h_1a814e0ad26dd7a17d8af4069119136361" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1282,7 +1338,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="28" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_displays_8h_1a0fff3d33ccbe9629f33f44d06acb85a8" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1295,7 +1351,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="29" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_displays_8h_1a5279811b2138a90848e394110ac5ed1a" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1308,7 +1364,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="30" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_displays_8h_1a13802c624d96da600122dc65a7ec806c" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1321,7 +1377,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="31" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_displays_8h_1a69b1572ef283d70f0c43e9fdfb170873" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1334,7 +1390,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="32" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_displays_8h_1a3189b00f67881cdbc1ea7681f35882b9" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1347,7 +1403,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="33" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_displays_8h_1a701fd229b66b78d251d5ec8db351202a" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1360,7 +1416,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="34" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_displays_8h_1a636fba4c8ab5d256a68695f81d8e0917" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1373,7 +1429,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="35" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_displays_8h_1a4c846daf0fa86bf16617e5c0e7b9fc9d" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1386,7 +1442,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="36" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_i_displays1_8h_1a27804818e7a53b0202cf352968ccf2e1" prot="public" static="no" mutable="no">
+        <type>class ADLX_NO_VTABLE</type>
+        <definition>class ADLX_NO_VTABLE adlx::IADLXDisplayBlanking</definition>
+        <argsstring></argsstring>
+        <name>IADLXDisplayBlanking</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays1.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplays1.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_g_p_u_manual_g_f_x_tuning_8h_1a9bf0af970e80e3ab6115b5f7e598723f" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1399,7 +1468,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" bodystart="19" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" bodystart="19" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_g_p_u_manual_v_r_a_m_tuning_8h_1a714987b15fc446c93375ef5145f880c6" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1412,7 +1481,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualVRAMTuning.h" line="1" column="0" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/IGPUManualVRAMTuning.h" bodystart="20" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualVRAMTuning.h" line="1" column="0" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IGPUManualVRAMTuning.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_system_8h_1ab4277ec9523d6b0012de2d2ce686352c" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1425,7 +1494,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="733" column="43" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" bodystart="782" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" line="726" column="43" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" bodystart="775" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_system_8h_1aa4c693feb2aa13ce16caa71196eb4062" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1438,7 +1507,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="733" column="43" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" bodystart="783" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" line="726" column="43" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" bodystart="776" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_system_8h_1ac59a826e3661a40c813505a09dc0e116" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1451,7 +1520,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="733" column="43" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" bodystart="784" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" line="726" column="43" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" bodystart="777" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_system_8h_1a69997bb54ce7478c47f2f7ebb6053069" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1464,7 +1533,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="733" column="43" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" bodystart="785" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" line="726" column="43" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" bodystart="778" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_system_8h_1ac231d7b2dc45eb6998fbe38da2f35bed" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1477,7 +1546,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="733" column="43" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" bodystart="786" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" line="726" column="43" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" bodystart="779" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_system_8h_1a4501c2f8bf5e4f20b30fe4f55d4e4d32" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1490,7 +1559,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="733" column="43" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" bodystart="787" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" line="726" column="43" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" bodystart="780" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_system_8h_1af86ccb39b4237bf79c94e01120d780b1" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1503,7 +1572,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="733" column="43" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" bodystart="788" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" line="726" column="43" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" bodystart="781" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_i_system_8h_1a4b013e7b15eaee0bc09bee87a0744cfa" prot="public" static="no" mutable="no">
         <type>class ADLX_NO_VTABLE</type>
@@ -1516,13 +1585,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" line="1198" column="43" bodyfile="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ISystem.h" bodystart="1247" bodyend="-1"/>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" line="1179" column="43" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ISystem.h" bodystart="1228" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/03_AMDgit/22.40/drivers/ADLX/SDK/Include/ADLXDefines.h" line="913" column="1"/>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ADLXDefines.h" line="928" column="1"/>
   </compounddef>
 </doxygen>

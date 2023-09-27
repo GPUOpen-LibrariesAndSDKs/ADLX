@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_display_blanking" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXDisplayBlanking</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_blanking_1adc36405f06227b421e7507e33b7c49d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayBlanking::IsSupported</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupported</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2483" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_blanking_1a109905aae51edc9be22c02b714554caa" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayBlanking::IsCurrentBlanked</definition>
+        <argsstring>(adlx_bool *blanked)=0</argsstring>
+        <name>IsCurrentBlanked</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>blanked</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2505" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_blanking_1a1a06579a08723890e1cf977101a86309" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayBlanking::IsCurrentUnblanked</definition>
+        <argsstring>(adlx_bool *unBlanked)=0</argsstring>
+        <name>IsCurrentUnblanked</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>unBlanked</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2527" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_blanking_1a8999e5efe8836d81adf3ec8cad9a8fda" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayBlanking::SetBlanked</definition>
+        <argsstring>()=0</argsstring>
+        <name>SetBlanked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2549" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_blanking_1abe6d809309ca273cf9f7db44a629b5e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayBlanking::SetUnblanked</definition>
+        <argsstring>()=0</argsstring>
+        <name>SetUnblanked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2571" column="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2458" column="5" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="2459" bodyend="2572"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayBlanking</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_blanking_1a109905aae51edc9be22c02b714554caa" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayBlanking</scope><name>IsCurrentBlanked</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_blanking_1a1a06579a08723890e1cf977101a86309" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayBlanking</scope><name>IsCurrentUnblanked</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_blanking_1adc36405f06227b421e7507e33b7c49d3" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayBlanking</scope><name>IsSupported</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayBlanking</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayBlanking</scope><name>Release</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_blanking_1a8999e5efe8836d81adf3ec8cad9a8fda" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayBlanking</scope><name>SetBlanked</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_blanking_1abe6d809309ca273cf9f7db44a629b5e9" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayBlanking</scope><name>SetUnblanked</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

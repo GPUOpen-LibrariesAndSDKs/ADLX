@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('cpp__perf_g_p_u_metrics.html',''); ini
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -119,10 +119,12 @@ $(document).ready(function(){initNavTree('cpp__perf_g_p_u_metrics.html',''); ini
         <tr style="height:40px"><th>Command Prompt</th><th>Description</th></tr>
         </thead>
         <tbody>
-		<tr><td>1</td><td> Show current GPU metrics.</td></tr>
-		<tr><td>2</td><td> Show historical GPU metrics.</td></tr>
-		<tr><td>M/m</td><td> Show this menu.</td></tr>
-		<tr><td>Q/q</td><td> Quit.</td></tr>
+        <tr><td>1</td><td> Show GPU metrics range.</td></tr>
+        <tr><td>2</td><td> Show current GPU metrics.</td></tr>
+        <tr><td>3</td><td> Show current GPU metrics from historical data.</td></tr>
+        <tr><td>4</td><td> Show historical GPU metrics.</td></tr>
+        <tr><td>M/m</td><td> Show this menu.</td></tr>
+        <tr><td>Q/q</td><td> Quit.</td></tr>
         </tbody>
     </table>
     <h2>Sample Path</h2>
@@ -130,7 +132,7 @@ $(document).ready(function(){initNavTree('cpp__perf_g_p_u_metrics.html',''); ini
 </body>
 </html> <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -168,6 +170,7 @@ $(document).ready(function(){initNavTree('cpp__perf_g_p_u_metrics.html',''); ini
 <div class="line"><span class="comment"> */</span></div>
 <div class="line"><span class="comment">// Show current GPU metrics</span></div>
 <div class="line"><span class="keywordtype">void</span> ShowCurrentGPUMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitoringServices, IADLXGPUPtr oneGPU);</div>
+<div class="line"><span class="keywordtype">void</span> ShowCurrentGPUMetricsFromHistorical(IADLXPerformanceMonitoringServicesPtr perfMonitoringServices, IADLXGPUPtr oneGPU);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Show historical GPU metrics</span></div>
 <div class="line"><span class="keywordtype">void</span> ShowHistoricalGPUMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitoringServices, IADLXGPUPtr oneGPU);</div>
@@ -230,7 +233,8 @@ $(document).ready(function(){initNavTree('cpp__perf_g_p_u_metrics.html',''); ini
 <div class="line"> </div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 1 to display GPU metrics range&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 2 to display current GPU metrics&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 3 to display historical GPU metrics&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 3 to display current GPU metrics from historical data&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 4 to display historical GPU metrics&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press Q/q to terminate the application&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press M/m to display the main menu options&quot;</span> &lt;&lt; std::endl;</div>
@@ -254,8 +258,13 @@ $(document).ready(function(){initNavTree('cpp__perf_g_p_u_metrics.html',''); ini
 <div class="line">            ShowCurrentGPUMetrics(perfMonitoringServices, oneGPU);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
-<div class="line">        <span class="comment">// Display historical GPU metrics</span></div>
+<div class="line">        <span class="comment">// Display current GPU metrics from historical data</span></div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>:</div>
+<div class="line">            ShowCurrentGPUMetricsFromHistorical(perfMonitoringServices, oneGPU);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Display historical GPU metrics</span></div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;4&#39;</span>:</div>
 <div class="line">            ShowHistoricalGPUMetrics(perfMonitoringServices, oneGPU);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
@@ -627,6 +636,79 @@ $(document).ready(function(){initNavTree('cpp__perf_g_p_u_metrics.html',''); ini
 <div class="line">            std::cout &lt;&lt; std::noboolalpha;</div>
 <div class="line">        }</div>
 <div class="line">        Sleep(1000);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    MainMenu();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> ShowCurrentGPUMetricsFromHistorical(IADLXPerformanceMonitoringServicesPtr perfMonitoringServices, IADLXGPUPtr oneGPU)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Clear historical performance metrics data</span></div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = perfMonitoringServices-&gt;ClearPerformanceMetricsHistory();</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a>(res))</div>
+<div class="line">    {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Clear historical data failed&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Start tracking performance metrics</span></div>
+<div class="line">    res = perfMonitoringServices-&gt;StartPerformanceMetricsTracking();</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a>(res))</div>
+<div class="line">    {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Start tracking performance metrics failed&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Get GPU metrics support</span></div>
+<div class="line">    IADLXGPUMetricsSupportPtr gpuMetricsSupport;</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> metricsSupportRet = perfMonitoringServices-&gt;GetSupportedGPUMetrics(oneGPU, &amp;gpuMetricsSupport);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Accumulate and display current metrics for each of 10 loops</span></div>
+<div class="line">    adlx_int startMs = 0;</div>
+<div class="line">    adlx_int stopMs = 0;</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> it = 0; it &lt; 10; ++it)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// Clear screen</span></div>
+<div class="line">        system(<span class="stringliteral">&quot;cls&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">        IADLXGPUMetricsListPtr gpuMetricsList;</div>
+<div class="line">        res = perfMonitoringServices-&gt;GetGPUMetricsHistory(oneGPU, startMs, stopMs, &amp;gpuMetricsList);</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Display all the GPU metrics in the list</span></div>
+<div class="line">        IADLXGPUMetricsPtr gpuMetrics;</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = gpuMetricsList-&gt;Begin(); i != gpuMetricsList-&gt;End(); ++i)</div>
+<div class="line">        {</div>
+<div class="line">            res = gpuMetricsList-&gt;At(i, &amp;gpuMetrics);</div>
+<div class="line">            <span class="comment">// Display timestamp and GPU metrics</span></div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(metricsSupportRet) &amp;&amp; <a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            {</div>
+<div class="line">                std::cout &lt;&lt; <span class="stringliteral">&quot;The current GPU metrics: &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">                std::cout &lt;&lt; std::boolalpha;  <span class="comment">// Display boolean variable as true or false</span></div>
+<div class="line">                GetTimeStamp(gpuMetrics);</div>
+<div class="line">                ShowGPUUsage(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                ShowGPUClockSpeed(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                ShowGPUVRAMClockSpeed(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                ShowGPUTemperature(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                ShowGPUHotspotTemperature(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                ShowGPUPower(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                ShowGPUFanSpeed(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                ShowGPUVRAM(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                ShowGPUTotalBoardPower(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                ShowGPUIntakeTemperature(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                std::cout &lt;&lt; std::noboolalpha;</div>
+<div class="line">            }</div>
+<div class="line">            std::cout &lt;&lt; std::endl;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        Sleep(1000);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Stop tracking performance metrics</span></div>
+<div class="line">    res = perfMonitoringServices-&gt;StopPerformanceMetricsTracking();</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a>(res))</div>
+<div class="line">    {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Stop tracking performance metrics failed&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    MainMenu();</div>

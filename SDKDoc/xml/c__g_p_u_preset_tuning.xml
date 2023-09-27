@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
 <para><htmlonly>&lt;!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 --&gt;
@@ -34,7 +34,7 @@
 &lt;/html&gt;</htmlonly> <heading level="2">Code </heading>
 </para>
 <para>C <programlisting filename="./C/GPUTuning/GPUPresetTuning/mainGPUPresetTuning.c"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2023<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -257,68 +257,68 @@
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowIsSupported(IADLXGPUPresetTuning*<sp/>gpuPresetTuning)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool<sp/>supported<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedPowerSaver(gpuPresetTuning,<sp/>&amp;supported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Power<sp/>Save<sp/>supported<sp/>by<sp/>the<sp/>GPU:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedPowerSaver(gpuPresetTuning,<sp/>&amp;supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Power<sp/>Save<sp/>supported<sp/>by<sp/>the<sp/>GPU:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>supported,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>supported<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedQuiet(gpuPresetTuning,<sp/>&amp;supported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Quiet<sp/>supported<sp/>by<sp/>the<sp/>GPU:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedQuiet(gpuPresetTuning,<sp/>&amp;supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Quiet<sp/>supported<sp/>by<sp/>the<sp/>GPU:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>supported,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>supported<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedBalanced(gpuPresetTuning,<sp/>&amp;supported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Balanced<sp/>supported<sp/>by<sp/>the<sp/>GPU:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedBalanced(gpuPresetTuning,<sp/>&amp;supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Balanced<sp/>supported<sp/>by<sp/>the<sp/>GPU:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>supported,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>supported<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedTurbo(gpuPresetTuning,<sp/>&amp;supported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Turbo<sp/>supported<sp/>by<sp/>the<sp/>GPU:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedTurbo(gpuPresetTuning,<sp/>&amp;supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Turbo<sp/>supported<sp/>by<sp/>the<sp/>GPU:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>supported,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>supported<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedRage(gpuPresetTuning,<sp/>&amp;supported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Rage<sp/>supported<sp/>by<sp/>the<sp/>GPU:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsSupportedRage(gpuPresetTuning,<sp/>&amp;supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Rage<sp/>supported<sp/>by<sp/>the<sp/>GPU:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>supported,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Display<sp/>current<sp/>GPU<sp/>tuning<sp/>states</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetCurrentStates(IADLXGPUPresetTuning*<sp/>gpuPresetTuning)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool<sp/>applied<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentPowerSaver(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Power<sp/>Saver<sp/>applied:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>applied);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentPowerSaver(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Power<sp/>Saver<sp/>applied:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>applied,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>applied<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentQuiet(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Quiet<sp/>applied:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>applied);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentQuiet(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Quiet<sp/>applied:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>applied,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>applied<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentBalanced(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Balanced<sp/>applied:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>applied);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentBalanced(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Balanced<sp/>applied:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>applied,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>applied<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentTurbo(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Turbo<sp/>applied:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>applied);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentTurbo(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Turbo<sp/>applied:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>applied,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>applied<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentRage(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Rage<sp/>applied:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>applied);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentRage(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>Rage<sp/>applied:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>applied,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Set<sp/>GPU<sp/>states</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetGPUStates(IADLXGPUPresetTuning*<sp/>gpuPresetTuning)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool<sp/>applied<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;SetPowerSaver(gpuPresetTuning);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentPowerSaver(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>Power<sp/>Saver<sp/>preset<sp/>tuning<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>(applied<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;Successful&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;failed&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;SetPowerSaver(gpuPresetTuning);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentPowerSaver(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>Power<sp/>Saver<sp/>preset<sp/>tuning<sp/>%s,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>(applied<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;Successful&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;failed&quot;</highlight><highlight class="normal">),<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>applied<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;SetQuiet(gpuPresetTuning);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentQuiet(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>Quiet<sp/>preset<sp/>tuning<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>(applied<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;Successful&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;failed&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;SetQuiet(gpuPresetTuning);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentQuiet(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>Quiet<sp/>preset<sp/>tuning<sp/>%s,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>(applied<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;Successful&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;failed&quot;</highlight><highlight class="normal">),<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>applied<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;SetBalanced(gpuPresetTuning);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentBalanced(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>Balanced<sp/>preset<sp/>tuning<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>(applied<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;Successful&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;failed&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;SetBalanced(gpuPresetTuning);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentBalanced(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>Balanced<sp/>preset<sp/>tuning<sp/>%s,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>(applied<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;Successful&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;failed&quot;</highlight><highlight class="normal">),<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>applied<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;SetTurbo(gpuPresetTuning);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentTurbo(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>Turbo<sp/>preset<sp/>tuning<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>(applied<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;Successful&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;failed&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;SetTurbo(gpuPresetTuning);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentTurbo(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>Turbo<sp/>preset<sp/>tuning<sp/>%s,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>(applied<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;Successful&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;failed&quot;</highlight><highlight class="normal">),<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>applied<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;SetRage(gpuPresetTuning);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentRage(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>Rage<sp/>preset<sp/>tuning<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>(applied<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;Successful&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;failed&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;SetRage(gpuPresetTuning);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuPresetTuning-&gt;pVtbl-&gt;IsCurrentRage(gpuPresetTuning,<sp/>&amp;applied);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>Rage<sp/>preset<sp/>tuning<sp/>%s,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>(applied<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;Successful&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;failed&quot;</highlight><highlight class="normal">),<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> </para>
     </detaileddescription>
-    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXSamplesPage/ADLXSamplePage.h"/>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXSamplesPage/zADLXSamplePage.h"/>
   </compounddef>
 </doxygen>

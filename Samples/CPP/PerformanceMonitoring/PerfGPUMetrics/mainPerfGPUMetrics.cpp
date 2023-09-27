@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -39,6 +39,7 @@ void ShowGPUMetricsRange(IADLXPerformanceMonitoringServicesPtr perfMonitoringSer
  */
 // Show current GPU metrics
 void ShowCurrentGPUMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitoringServices, IADLXGPUPtr oneGPU);
+void ShowCurrentGPUMetricsFromHistorical(IADLXPerformanceMonitoringServicesPtr perfMonitoringServices, IADLXGPUPtr oneGPU);
 
 // Show historical GPU metrics
 void ShowHistoricalGPUMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitoringServices, IADLXGPUPtr oneGPU);
@@ -101,7 +102,8 @@ void MainMenu()
 
     std::cout << "\t->Press 1 to display GPU metrics range" << std::endl;
     std::cout << "\t->Press 2 to display current GPU metrics" << std::endl;
-    std::cout << "\t->Press 3 to display historical GPU metrics" << std::endl;
+    std::cout << "\t->Press 3 to display current GPU metrics from historical data" << std::endl;
+    std::cout << "\t->Press 4 to display historical GPU metrics" << std::endl;
 
     std::cout << "\t->Press Q/q to terminate the application" << std::endl;
     std::cout << "\t->Press M/m to display the main menu options" << std::endl;
@@ -125,8 +127,13 @@ void MenuControl(IADLXPerformanceMonitoringServicesPtr perfMonitoringServices, I
             ShowCurrentGPUMetrics(perfMonitoringServices, oneGPU);
             break;
 
-        // Display historical GPU metrics
+        // Display current GPU metrics from historical data
         case '3':
+            ShowCurrentGPUMetricsFromHistorical(perfMonitoringServices, oneGPU);
+            break;
+
+        // Display historical GPU metrics
+        case '4':
             ShowHistoricalGPUMetrics(perfMonitoringServices, oneGPU);
             break;
 
@@ -498,6 +505,79 @@ void ShowCurrentGPUMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitoringS
             std::cout << std::noboolalpha;
         }
         Sleep(1000);
+    }
+
+    MainMenu();
+}
+
+void ShowCurrentGPUMetricsFromHistorical(IADLXPerformanceMonitoringServicesPtr perfMonitoringServices, IADLXGPUPtr oneGPU)
+{
+    // Clear historical performance metrics data
+    ADLX_RESULT res = perfMonitoringServices->ClearPerformanceMetricsHistory();
+    if (ADLX_FAILED(res))
+    {
+        std::cout << "Clear historical data failed" << std::endl;
+        return;
+    }
+
+    // Start tracking performance metrics
+    res = perfMonitoringServices->StartPerformanceMetricsTracking();
+    if (ADLX_FAILED(res))
+    {
+        std::cout << "Start tracking performance metrics failed" << std::endl;
+        return;
+    }
+
+    // Get GPU metrics support
+    IADLXGPUMetricsSupportPtr gpuMetricsSupport;
+    ADLX_RESULT metricsSupportRet = perfMonitoringServices->GetSupportedGPUMetrics(oneGPU, &gpuMetricsSupport);
+
+    // Accumulate and display current metrics for each of 10 loops
+    adlx_int startMs = 0;
+    adlx_int stopMs = 0;
+    for (int it = 0; it < 10; ++it)
+    {
+        // Clear screen
+        system("cls");
+
+        IADLXGPUMetricsListPtr gpuMetricsList;
+        res = perfMonitoringServices->GetGPUMetricsHistory(oneGPU, startMs, stopMs, &gpuMetricsList);
+
+        // Display all the GPU metrics in the list
+        IADLXGPUMetricsPtr gpuMetrics;
+        for (int i = gpuMetricsList->Begin(); i != gpuMetricsList->End(); ++i)
+        {
+            res = gpuMetricsList->At(i, &gpuMetrics);
+            // Display timestamp and GPU metrics
+            if (ADLX_SUCCEEDED(metricsSupportRet) && ADLX_SUCCEEDED(res))
+            {
+                std::cout << "The current GPU metrics: " << std::endl;
+                std::cout << std::boolalpha;  // Display boolean variable as true or false
+                GetTimeStamp(gpuMetrics);
+                ShowGPUUsage(gpuMetricsSupport, gpuMetrics);
+                ShowGPUClockSpeed(gpuMetricsSupport, gpuMetrics);
+                ShowGPUVRAMClockSpeed(gpuMetricsSupport, gpuMetrics);
+                ShowGPUTemperature(gpuMetricsSupport, gpuMetrics);
+                ShowGPUHotspotTemperature(gpuMetricsSupport, gpuMetrics);
+                ShowGPUPower(gpuMetricsSupport, gpuMetrics);
+                ShowGPUFanSpeed(gpuMetricsSupport, gpuMetrics);
+                ShowGPUVRAM(gpuMetricsSupport, gpuMetrics);
+                ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);
+                ShowGPUTotalBoardPower(gpuMetricsSupport, gpuMetrics);
+                ShowGPUIntakeTemperature(gpuMetricsSupport, gpuMetrics);
+                std::cout << std::noboolalpha;
+            }
+            std::cout << std::endl;
+        }
+
+        Sleep(1000);
+    }
+
+    // Stop tracking performance metrics
+    res = perfMonitoringServices->StopPerformanceMetricsTracking();
+    if (ADLX_FAILED(res))
+    {
+        std::cout << "Stop tracking performance metrics failed" << std::endl;
     }
 
     MainMenu();

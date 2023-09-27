@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -8,6 +8,7 @@
 
 #include "SDK/ADLXHelper/Windows/C/ADLXHelper.h"
 #include "SDK/Include/IDisplays.h"
+#include "SDK/Include/IDisplays1.h"
 #include "SDK/Include/IDisplaySettings.h"
 #include "conio.h"
 
@@ -23,7 +24,14 @@ void DisplayUniqueName(IADLXDisplay* display, char* uniqueName);
 // Call back to handle changed events
 adlx_bool ADLX_STD_CALL OnDisplaySettingsChanged(IADLXDisplaySettingsChangedListener* pThis, IADLXDisplaySettingsChangedEvent* pDisplaySettingsChangedEvent)
 {
+    IADLXDisplaySettingsChangedEvent1* pDisplaySettingChangedEvent1 = NULL;
+    ADLX_RESULT res = pDisplaySettingsChangedEvent->pVtbl->QueryInterface(pDisplaySettingsChangedEvent, IID_IADLXDisplaySettingsChangedEvent1(), &pDisplaySettingChangedEvent1);
+    if (!ADLX_SUCCEEDED(res) || NULL == pDisplaySettingChangedEvent1)
+    {
+        printf("IID_IADLXDisplaySettingsChangedEvent1 not supported");
+    }
     ADLX_SYNC_ORIGIN origin = pDisplaySettingsChangedEvent->pVtbl->GetOrigin(pDisplaySettingsChangedEvent);
+
     if (origin == SYNC_ORIGIN_EXTERNAL)
     {
         IADLXDisplay *display = NULL;
@@ -89,6 +97,14 @@ adlx_bool ADLX_STD_CALL OnDisplaySettingsChanged(IADLXDisplaySettingsChangedList
         else if (pDisplaySettingsChangedEvent->pVtbl->IsVSRChanged(pDisplaySettingsChangedEvent))
         {
             printf("Display %s get sync event, VSR is changed\n", displayName);
+        }
+        
+        if (pDisplaySettingChangedEvent1)
+        {
+            if (pDisplaySettingChangedEvent1->pVtbl->IsDisplayBlankingChanged(pDisplaySettingChangedEvent1))
+            {
+                printf("Display %s get sync event, display blanking is changed\n", displayName);
+            }
         }
 
         // Release the Display interface

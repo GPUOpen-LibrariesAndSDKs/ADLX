@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -88,8 +88,8 @@ int main()
                 IADLX3DSettingsChangedListener* call = new CallBack3DSettingsChanged;
 
                 // Add call back
-                changeHandle->Add3DSettingsEventListener(call);
-
+                ADLX_RESULT addListenerRes = changeHandle->Add3DSettingsEventListener(call);
+                
                 // Change anti-lag state
                 IADLX3DAntiLagPtr antiLag;
                 d3dSettingSrv->GetAntiLag(gpuInfo, &antiLag);
@@ -100,8 +100,13 @@ int main()
                 antiLag->SetEnabled(!enable);
                 WaitForSingleObject(blockEvent, 5000);
 
-                // Remove call back
-                changeHandle->Remove3DSettingsEventListener(call);
+                if (ADLX_SUCCEEDED (addListenerRes))
+                {
+                    // Remove call back
+                    res = changeHandle->Remove3DSettingsEventListener(call);
+                    if (ADLX_FAILED (res))
+                        std::cout << "\nRemove 3DSettings event listener failed" << std::endl;
+                }
 
                 // Delete call back
                 delete call;
@@ -139,9 +144,10 @@ void GPUUniqueName(IADLXGPUPtr gpu, char* uniqueName)
     if (nullptr != gpu && nullptr != uniqueName)
     {
         const char* gpuName = nullptr;
-        gpu->Name(&gpuName);
+        ADLX_RESULT res1 = gpu->Name(&gpuName);
         adlx_int id;
-        gpu->UniqueId(&id);
-        sprintf_s(uniqueName, 128, "name:%s, id:%d", gpuName, id);
+        ADLX_RESULT res2 = gpu->UniqueId(&id);
+        if (ADLX_SUCCEEDED(res1) && ADLX_SUCCEEDED(res2))
+            sprintf_s(uniqueName, 128, "name:%s, id:%d", gpuName, id);
     }
 }

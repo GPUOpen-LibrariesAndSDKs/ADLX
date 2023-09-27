@@ -6,6 +6,7 @@
     <innerpage refid="_d_o_x__i_a_d_l_x3_d_anisotropic_filtering">IADLX3DAnisotropicFiltering</innerpage>
     <innerpage refid="_d_o_x__i_a_d_l_x3_d_anti_aliasing">IADLX3DAntiAliasing</innerpage>
     <innerpage refid="_d_o_x__i_a_d_l_x3_d_anti_lag">IADLX3DAntiLag</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x3_d_anti_lag1">IADLX3DAntiLag1</innerpage>
     <innerpage refid="_d_o_x__i_a_d_l_x3_d_boost">IADLX3DBoost</innerpage>
     <innerpage refid="_d_o_x__i_a_d_l_x3_d_chill">IADLX3DChill</innerpage>
     <innerpage refid="_d_o_x__i_a_d_l_x3_d_enhanced_sync">IADLX3DEnhancedSync</innerpage>
@@ -24,10 +25,12 @@
     </briefdescription>
     <detaileddescription>
 <para>The 3D Graphics domain contains interfaces to control 3D graphics settings of the GPUs in the system that affect 3D content quality and GPU performance. Examples include obtaining 3D graphics settings interfaces, registering for 3D graphics settings notifications, and accessing 3D graphics settings configurations.</para>
+<para><bold>Note:</bold> Many 3D graphic settings when changed will cause the displays connected to this GPU to become blank for a moment.</para>
 <para><itemizedlist>
 <listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_anisotropic_filtering" kindref="compound">IADLX3DAnisotropicFiltering</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_anti_aliasing" kindref="compound">IADLX3DAntiAliasing</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag" kindref="compound">IADLX3DAntiLag</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag1" kindref="compound">IADLX3DAntiLag1</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_boost" kindref="compound">IADLX3DBoost</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_chill" kindref="compound">IADLX3DChill</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_enhanced_sync" kindref="compound">IADLX3DEnhancedSync</ref></para>
@@ -41,11 +44,10 @@
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_settings_changed_listener" kindref="compound">IADLX3DSettingsChangedListener</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_settings_services" kindref="compound">IADLX3DSettingsServices</ref></para>
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_tessellation" kindref="compound">IADLX3DTessellation</ref></para>
-</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_wait_for_vertical_refresh" kindref="compound">IADLX3DWaitForVerticalRefresh</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_wait_for_vertical_refresh" kindref="compound">IADLX3DWaitForVerticalRefresh</ref> </para>
 </listitem></itemizedlist>
 </para>
-<para><bold>Note:</bold> Many 3D graphic settings when changed will cause the displays connected to this GPU to become blank for a moment. </para>
     </detaileddescription>
-    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXDox.h"/>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXDox.h"/>
   </compounddef>
 </doxygen>

@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -121,7 +121,9 @@ static const std::map<ADLX_DISPLAY_CONNECTOR_TYPE, const char*> displayConnector
 // Map with the scan type and associated string
 static const std::map<ADLX_DISPLAY_SCAN_TYPE, const char*> scanTypeMap =
     {
-        {PROGRESSIVE, "PROGRESSIVE"}, {INTERLACED, "INTERLACED"}};
+        {PROGRESSIVE, "PROGRESSIVE"}, 
+        {INTERLACED, "INTERLACED"}
+    };
 
 // Print diplayInfo information
 void ShowDisplayInfo(const IADLXDisplayPtr& display)
@@ -131,19 +133,23 @@ void ShowDisplayInfo(const IADLXDisplayPtr& display)
     std::cout << "\n  === Display info ===" << std::endl;
     const char* dispName;
     res = display->Name(&dispName);
-    std::cout << "\tDisplay name: " << dispName << std::endl;
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tDisplay name: " << dispName << std::endl;
 
     adlx_uint manufacturerID;
     res = display->ManufacturerID(&manufacturerID);
-    std::cout << "\tManufacturer id: " << manufacturerID << std::endl;
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tManufacturer id: " << manufacturerID << std::endl;
 
     ADLX_DISPLAY_TYPE displayType;
     res = display->DisplayType(&displayType);
-    std::cout << "\tDisplay type: " << displayTypeMap.find(displayType)->second << std::endl;
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tDisplay type: " << displayTypeMap.find(displayType)->second << std::endl;
 
     ADLX_DISPLAY_CONNECTOR_TYPE connectType;
     res = display->ConnectorType(&connectType);
-    std::cout << "\tConnector type: " << displayConnectorMap.find(connectType)->second << std::endl;
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tConnector type: " << displayConnectorMap.find(connectType)->second << std::endl;
 
     const char* edid;
     res = display->EDID(&edid);
@@ -154,24 +160,29 @@ void ShowDisplayInfo(const IADLXDisplayPtr& display)
 
     adlx_double refreshRate;
     res = display->RefreshRate(&refreshRate);
-    std::cout << "\tRefresh rate: " << refreshRate << std::endl;
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tRefresh rate: " << refreshRate << std::endl;
 
     adlx_uint pixelClock;
     res = display->PixelClock(&pixelClock);
-    std::cout << "\tPixel clock: " << pixelClock << std::endl;
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tPixel clock: " << pixelClock << std::endl;
 
     adlx_int maxHResolution = 0;
     adlx_int maxVResolution = 0;
     res = display->NativeResolution(&maxHResolution, &maxVResolution);
-    std::cout << "\tNative resolution[h*v]:" << maxHResolution << " " << maxVResolution << std::endl;
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tNative resolution[h*v]:" << maxHResolution << " " << maxVResolution << std::endl;
 
     ADLX_DISPLAY_SCAN_TYPE scanType;
     res = display->ScanType(&scanType);
-    std::cout << "\tScan type: " << scanTypeMap.find(scanType)->second << std::endl;
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tScan type: " << scanTypeMap.find(scanType)->second << std::endl;
 
     adlx_size id;
     res = display->UniqueId(&id);
-    std::cout << "\tUniqueId: " << id << std::endl;
+    if (ADLX_SUCCEEDED(res))
+        std::cout << "\tUniqueId: " << id << std::endl;
 }
 
 // Wait for exit with error message

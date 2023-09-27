@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -131,18 +131,21 @@ static char* getlevelStr(ADLX_ANISOTROPIC_FILTERING_LEVEL level)
 void ShowSupport(IADLX3DAnisotropicFiltering* anisotropicFiltering)
 {
     adlx_bool supported = false;
-    anisotropicFiltering->pVtbl->IsSupported(anisotropicFiltering, &supported);
-    printf("\tIsSupported: %d\n", supported);
+    ADLX_RESULT res = anisotropicFiltering->pVtbl->IsSupported(anisotropicFiltering, &supported);
+    if (ADLX_SUCCEEDED(res))
+        printf("\tIsSupported: %d\n", supported);
 }
 
 void GetState(IADLX3DAnisotropicFiltering* anisotropicFiltering)
 {
     adlx_bool enabled = false;
-    anisotropicFiltering->pVtbl->IsEnabled(anisotropicFiltering, &enabled);
-    printf("\tIsEnabled: %d\n", enabled);
+    ADLX_RESULT res = anisotropicFiltering->pVtbl->IsEnabled(anisotropicFiltering, &enabled);
+    if (ADLX_SUCCEEDED(res))
+        printf("\tIsEnabled: %d\n", enabled);
     ADLX_ANISOTROPIC_FILTERING_LEVEL level;
-    anisotropicFiltering->pVtbl->GetLevel(anisotropicFiltering, &level);
-    printf("\tLevel: %s\n", getlevelStr(level));
+    res = anisotropicFiltering->pVtbl->GetLevel(anisotropicFiltering, &level);
+    if (ADLX_SUCCEEDED(res))
+        printf("\tLevel: %s\n", getlevelStr(level));
 }
 
 void SetState(IADLX3DAnisotropicFiltering* anisotropicFiltering, int index)
@@ -154,10 +157,13 @@ void SetState(IADLX3DAnisotropicFiltering* anisotropicFiltering, int index)
     if (index == 0 && ADLX_SUCCEEDED(res))
     {
         ADLX_ANISOTROPIC_FILTERING_LEVEL level;
-        anisotropicFiltering->pVtbl->GetLevel(anisotropicFiltering, &level);
-        level = (level == AF_LEVEL_X2) ? AF_LEVEL_X4 : AF_LEVEL_X2;
-        anisotropicFiltering->pVtbl->SetLevel(anisotropicFiltering, level);
-        printf("\tSet level: %s  ,return code is: %d (0 means success)\n", getlevelStr(level), res);
+        res = anisotropicFiltering->pVtbl->GetLevel(anisotropicFiltering, &level);
+        if (ADLX_SUCCEEDED (res))
+        {
+            level = (level == AF_LEVEL_X2) ? AF_LEVEL_X4 : AF_LEVEL_X2;
+            res = anisotropicFiltering->pVtbl->SetLevel(anisotropicFiltering, level);
+            printf("\tSet level: %s  ,return code is: %d (0 means success)\n", getlevelStr(level), res);
+        }
     }
 }
 

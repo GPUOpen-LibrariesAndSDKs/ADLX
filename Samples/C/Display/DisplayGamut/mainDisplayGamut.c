@@ -1,5 +1,5 @@
 ﻿//
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -21,29 +21,40 @@ void ShowDisplayGamutSupport(IADLXDisplayServices* displayService, IADLXDisplay*
         adlx_bool supported = false;
         printf("  === Gamut space supported status ===\n");
         res = displayGamut->pVtbl->IsSupportedCCIR709ColorSpace(displayGamut, &supported);
-        printf("\tIsSupportedGamut_CCIR_709: %d\n", supported);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsSupportedGamut_CCIR_709: %d\n", supported);
         res = displayGamut->pVtbl->IsSupportedCCIR601ColorSpace(displayGamut, &supported);
-        printf("\tIsSupportedGamut_CCIR_601: %d\n", supported);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsSupportedGamut_CCIR_601: %d\n", supported);
         res = displayGamut->pVtbl->IsSupportedAdobeRgbColorSpace(displayGamut, &supported);
-        printf("\tIsSupportedGamut_Adobe_RGB: %d\n", supported);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsSupportedGamut_Adobe_RGB: %d\n", supported);
         res = displayGamut->pVtbl->IsSupportedCIERgbColorSpace(displayGamut, &supported);
-        printf("\tIsSupportedGamut_CIE_RGB: %d\n", supported);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsSupportedGamut_CIE_RGB: %d\n", supported);
         res = displayGamut->pVtbl->IsSupportedCCIR2020ColorSpace(displayGamut, &supported);
-        printf("\tIsSupportedCCIR2020ColorSpace: %d\n", supported);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsSupportedCCIR2020ColorSpace: %d\n", supported);
         res = displayGamut->pVtbl->IsSupportedCustomColorSpace(displayGamut, &supported);
-        printf("\tIsSupportedGamut_Custom: %d\n", supported);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsSupportedGamut_Custom: %d\n", supported);
 
         printf("  === White point supported status ===\n");
         res = displayGamut->pVtbl->IsSupported5000kWhitePoint(displayGamut, &supported);
-        printf("\tIsSupportedWhitePoint_5000k: %d\n", supported);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsSupportedWhitePoint_5000k: %d\n", supported);
         res = displayGamut->pVtbl->IsSupported6500kWhitePoint(displayGamut, &supported);
-        printf("\tIsSupportedWhitePoint_6500k: %d\n", supported);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsSupportedWhitePoint_6500k: %d\n", supported);
         res = displayGamut->pVtbl->IsSupported7500kWhitePoint(displayGamut, &supported);
-        printf("\tIsSupportedWhitePoint_7500k: %d\n", supported);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsSupportedWhitePoint_7500k: %d\n", supported);
         res = displayGamut->pVtbl->IsSupported9300kWhitePoint(displayGamut, &supported);
-        printf("\tIsSupportedWhitePoint_9300k: %d\n", supported);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsSupportedWhitePoint_9300k: %d\n", supported);
         res = displayGamut->pVtbl->IsSupportedCustomWhitePoint(displayGamut, &supported);
-        printf("\tIsSupportedWhitePoint_Custom: %d\n", supported);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsSupportedWhitePoint_Custom: %d\n", supported);
     }
 
     // Release the displayGamut interface
@@ -66,38 +77,51 @@ void GetCurrentGamutInfo(IADLXDisplayServices* displayService, IADLXDisplay* dis
         ADLX_RESULT res = ADLX_FAIL;
         printf("  === Current white point status ===\n");
         res = displayGamut->pVtbl->IsCurrent5000kWhitePoint(displayGamut, &applied);
-        printf("\tIsCurrentWhitePoint_5000k: %d\n", applied);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsCurrentWhitePoint_5000k: %d\n", applied);
         res = displayGamut->pVtbl->IsCurrent6500kWhitePoint(displayGamut, &applied);
-        printf("\tIsCurrentWhitePoint_6500k: %d\n", applied);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsCurrentWhitePoint_6500k: %d\n", applied);
         res = displayGamut->pVtbl->IsCurrent7500kWhitePoint(displayGamut, &applied);
-        printf("\tIsCurrentWhitePoint_7500k: %d\n", applied);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsCurrentWhitePoint_7500k: %d\n", applied);
         res = displayGamut->pVtbl->IsCurrent9300kWhitePoint(displayGamut, &applied);
-        printf("\tIsCurrentWhitePoint_9300k: %d\n", applied);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsCurrentWhitePoint_9300k: %d\n", applied);
         res = displayGamut->pVtbl->IsCurrentCustomWhitePoint(displayGamut, &applied);
-        printf("\tIsCurrentWhitePoint_Custom: %d\n", applied);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsCurrentWhitePoint_Custom: %d\n", applied);
         ADLX_Point point = {0};
         res = displayGamut->pVtbl->GetWhitePoint(displayGamut, &point);
-        printf("\tGetWhitePoint: ( %d,  %d)\n", point.x, point.y);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tGetWhitePoint: ( %d,  %d)\n", point.x, point.y);
 
         printf("  === Current gamut space status ===\n");
         res = displayGamut->pVtbl->IsCurrentCCIR709ColorSpace(displayGamut, &applied);
-        printf("\tIsCurrentGamut_CCIR_709: %d\n", applied);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsCurrentGamut_CCIR_709: %d\n", applied);
         res = displayGamut->pVtbl->IsCurrentCCIR601ColorSpace(displayGamut, &applied);
-        printf("\tIsCurrentGamut_CCIR_601: %d\n", applied);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsCurrentGamut_CCIR_601: %d\n", applied);
         res = displayGamut->pVtbl->IsCurrentAdobeRgbColorSpace(displayGamut, &applied);
-        printf("\tIsCurrentGamut_Adobe_RGB: %d\n", applied);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsCurrentGamut_Adobe_RGB: %d\n", applied);
         res = displayGamut->pVtbl->IsCurrentCIERgbColorSpace(displayGamut, &applied);
-        printf("\tIsCurrentGamut_CIE_RGB: %d\n", applied);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsCurrentGamut_CIE_RGB: %d\n", applied);
         res = displayGamut->pVtbl->IsCurrentCCIR2020ColorSpace(displayGamut, &applied);
-        printf("\tIsCurrentCCIR2020ColorSpace: %d\n", applied);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsCurrentCCIR2020ColorSpace: %d\n", applied);
         res = displayGamut->pVtbl->IsCurrentCustomColorSpace(displayGamut, &applied);
-        printf("\tIsCurrentCustomColorSpace: %d\n", applied);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsCurrentCustomColorSpace: %d\n", applied);
         ADLX_GamutColorSpace gamutCoordinates = {0};
         res = displayGamut->pVtbl->GetGamutColorSpace(displayGamut, &gamutCoordinates);
-        printf("\tGetGamutColorSpace: R( %d, %d ), G( %d, %d ), B( %d, %d )\n",
-               gamutCoordinates.red.x, gamutCoordinates.red.y,
-               gamutCoordinates.green.x, gamutCoordinates.green.y,
-               gamutCoordinates.blue.x, gamutCoordinates.blue.y);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tGetGamutColorSpace: R( %d, %d ), G( %d, %d ), B( %d, %d )\n",
+                    gamutCoordinates.red.x, gamutCoordinates.red.y,
+                    gamutCoordinates.green.x, gamutCoordinates.green.y,
+                    gamutCoordinates.blue.x, gamutCoordinates.blue.y);
     }
 
     // Release the displayGamut interface

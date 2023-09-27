@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x3_d_anti_lag1" kind="page">
+    <compoundname>DOX_IADLX3DAntiLag1</compoundname>
+    <title>IADLX3DAntiLag1</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x3_d_anti_lag1__get_level">GetLevel</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x3_d_anti_lag1__set_level">SetLevel</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><bold>IADLX3DAntiLag1</bold> (AMD Radeon™ Anti-Lag Next) is an extension to <ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag" kindref="compound">IADLX3DAntiLag</ref>, and provides an interface to configure the Anti-Lag level of a GPU.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLX3DAntiLag1</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLX3DAntiLag1Ptr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag" kindref="compound">IADLX3DAntiLag</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para>Radeon Anti-Lag Next enables an advanced algorithm in supported DX11 and DX12 games for a more responsive experience. The <bold>IADLX3DAntiLag1</bold> interface is obtained from the <ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag" kindref="compound">IADLX3DAntiLag</ref> interface using <ref refid="_d_o_x__i_a_d_l_x_interface__query_interface" kindref="compound">QueryInterface</ref>. <linebreak/>
+</para>
+<sect2 id="_d_o_x__i_a_d_l_x3_d_anti_lag1_1autotoc_md13">
+<title>Dependent Interfaces</title>
+<para>When AMD Radeon Anti-Lag is enabled, the <ref refid="_d_o_x__i_a_d_l_x3_d_chill" kindref="compound">AMD Radeon Chill</ref> interface is automatically disabled. <linebreak/>
+ <bold>Note:</bold> If the disabled interface is later re-enabled, its previous configuration settings will also be restored.</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="3" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag1__get_level" kindref="compound">GetLevel</ref>   </para>
+</entry><entry thead="no"><para>Gets the AMD Radeon™ Anti-Lag level on a GPU.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag1__set_level" kindref="compound">SetLevel</ref>   </para>
+</entry><entry thead="no"><para>Sets the AMD Radeon™ Anti-Lag level on a GPU.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;I3DSettings.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.1</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To use this interface in a C++ application, refer to the <ref refid="cpp__anti_lag" kindref="compound">AntiLag C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c__anti_lag" kindref="compound">AntiLag C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag1__get_level" kindref="compound">GetLevel</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag1__set_level" kindref="compound">SetLevel</ref> </para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+    </detaileddescription>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLX3DSettingsPage.h"/>
+  </compounddef>
+</doxygen>

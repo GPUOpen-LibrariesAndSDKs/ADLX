@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -108,7 +108,7 @@ void ShowDisplayColorDepthSupport(const IADLXDisplayServicesPtr& displayService,
         std::cout << "  === Get color depth supported status ===" << std::endl;
         adlx_bool supported = false;
         res = displayColorDepth->IsSupported(&supported);
-        std::cout << "\tIsSupported: " << supported << std::endl;
+        std::cout << "\tIsSupported, res " << res << ", supported: " << supported << std::endl;
     }
 }
 void GetSupportStateForEachColorDepth (const IADLXDisplayServicesPtr& displayService, const IADLXDisplayPtr& display)
@@ -120,17 +120,23 @@ void GetSupportStateForEachColorDepth (const IADLXDisplayServicesPtr& displaySer
         std::cout << "  === Get color depth support list ===" << std::endl;
         adlx_bool isSupported = false;
         res = displayColorDepth->IsSupportedBPC_6 (&isSupported);
-        std::cout << "\tIsSupportedBPC_6, result " << res << " BPC_6 support: " << isSupported << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedBPC_6, result " << res << " BPC_6 support: " << isSupported << std::endl;
         res = displayColorDepth->IsSupportedBPC_8 (&isSupported);
-        std::cout << "\tIsSupportedBPC_6, result " << res << " BPC_8 support: " << isSupported << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedBPC_6, result " << res << " BPC_8 support: " << isSupported << std::endl;
         res = displayColorDepth->IsSupportedBPC_10 (&isSupported);
-        std::cout << "\tIsSupportedBPC_10, result " << res << " BPC_10 support: " << isSupported << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedBPC_10, result " << res << " BPC_10 support: " << isSupported << std::endl;
         res = displayColorDepth->IsSupportedBPC_12 (&isSupported);
-        std::cout << "\tIsSupportedBPC_12, result " << res << " BPC_12 support: " << isSupported << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedBPC_12, result " << res << " BPC_12 support: " << isSupported << std::endl;
         res = displayColorDepth->IsSupportedBPC_14 (&isSupported);
-        std::cout << "\tIsSupportedBPC_14, result " << res << " BPC_14 support: " << isSupported << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedBPC_14, result " << res << " BPC_14 support: " << isSupported << std::endl;
         res = displayColorDepth->IsSupportedBPC_16 (&isSupported);
-        std::cout << "\tIsSupportedBPC_16, result " << res << " BPC_16 support: " << isSupported << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedBPC_16, result " << res << " BPC_16 support: " << isSupported << std::endl;
 
         const std::unordered_map<ADLX_COLOR_DEPTH, std::string> colorDepthMap{
             {BPC_6, "BPC_6"},

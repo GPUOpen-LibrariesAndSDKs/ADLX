@@ -6,37 +6,58 @@
     <innerpage refid="page_guide_bindcsharp">Building C# bindings for ADLX</innerpage>
     <innerpage refid="page_guide_bindjava">Building Java bindings for ADLX</innerpage>
     <innerpage refid="page_guide_bindpy">Building Python bindings for ADLX</innerpage>
-    <innerpage refid="page_guide_use__a_d_l_x">Using ADLX in an application</innerpage>
     <innerpage refid="page_guide_init_help">Initializing ADLX with the ADLX Helpers</innerpage>
     <innerpage refid="page_guide_init_pointer">Initializing ADLX with function pointers</innerpage>
+    <innerpage refid="page_guide_use__a_d_l_x">Using ADLX in an application</innerpage>
     <innerpage refid="page_guide_event">Subscribing to Event Notifications using ADLX</innerpage>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>The Quick Start section contains basic set up information to start programming with ADLX in various applications. Native support for C and C++ applications, as well as non-native support for C#, Java, and Python applications is provided with the ADLX library. <heading level="2">Prerequisite(s) </heading>
+<para><heading level="2">In this section </heading>
+</para>
+<para>The Quick Start guide is designed to help developers build applications using the ADLX API in one of the supported programming languages, and covers the basic steps needed to initialize the API, retrieve device information, and access device resources.</para>
+<para><heading level="2">ADLX Quick Start Guide</heading>
+</para>
+<para>Follow these steps to start programming with ADLX.</para>
+<para><heading level="3">Prerequisite(s) </heading>
 </para>
 <para><itemizedlist>
 <listitem><para><bold>ADLX SDK</bold> is installed.</para>
 </listitem></itemizedlist>
 </para>
-<para><heading level="2">Before you start</heading>
+<para><heading level="3">Steps </heading>
 </para>
 <para><orderedlist>
-<listitem><para>If your application is in C#, Java, or Python, develop bindings for ADLX in the desired programming language.</para>
-</listitem><listitem><para>Load the ADLX library code within the application code, and call the desired initialization function as provided in the ADLX SDK.</para>
-</listitem><listitem><para>Use the ADLX System interface provided by the initialization function to access other ADLX features.</para>
-</listitem></orderedlist>
-<itemizedlist>
+<listitem><para>If your application is in C#, Java, or Python, develop bindings for ADLX for the associated programming language. Proceed to Step 2 if your application is in C or C++.<itemizedlist>
 <listitem><para><ref refid="page_guide_bindcsharp" kindref="compound">Building C# bindings for ADLX</ref></para>
 </listitem><listitem><para><ref refid="page_guide_bindjava" kindref="compound">Building Java bindings for ADLX</ref></para>
 </listitem><listitem><para><ref refid="page_guide_bindpy" kindref="compound">Building Python bindings for ADLX</ref></para>
-</listitem><listitem><para><ref refid="page_guide_use__a_d_l_x" kindref="compound">Using ADLX in an application</ref></para>
-</listitem><listitem><para><ref refid="page_guide_init_help" kindref="compound">Initializing ADLX with the ADLX Helpers</ref></para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Load the ADLX library code within the application code, and call the desired initialization function as provided in the ADLX SDK.<itemizedlist>
+<listitem><para><ref refid="page_guide_init_help" kindref="compound">Initializing ADLX with the ADLX Helpers</ref></para>
 </listitem><listitem><para><ref refid="page_guide_init_pointer" kindref="compound">Initializing ADLX with function pointers</ref></para>
-</listitem><listitem><para><ref refid="page_guide_event" kindref="compound">Subscribing to Event Notifications using ADLX</ref> </para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Use the ADLX System interface provided by the initialization function to access other ADLX features.<itemizedlist>
+<listitem><para><ref refid="page_guide_use__a_d_l_x" kindref="compound">Using ADLX in an application</ref></para>
+</listitem><listitem><para><ref refid="page_guide_event" kindref="compound">Subscribing to Event Notifications using ADLX</ref></para>
+</listitem></itemizedlist>
+</para>
+</listitem></orderedlist>
+</para>
+<para><heading level="4">ADLX SDK Installation </heading>
+</para>
+<para>The library is installed with the display driver, and the ADLX SDK consisting of the following is available on <ulink url="https://gpuopen.com/adlx/">AMD GPUOpen</ulink>.<linebreak/>
+ This includes:</para>
+<para><itemizedlist>
+<listitem><para>ADLX headers with definitions of all types, constants, functions, and interfaces required to program with ADLX</para>
+</listitem><listitem><para>ADLX helper code simplifying the ADLX loading and unloading process in C++, C, C#, Java, and Python</para>
+</listitem><listitem><para>ADLX samples demonstrating full ADLX functionality in C++ and in C, as well as select functionality in C#, Java, and Python</para>
+</listitem><listitem><para>SDK developer documentation </para>
 </listitem></itemizedlist>
 </para>
     </detaileddescription>
-    <location file="D:/03_AMDgit/22.40/drivers/ADLX/docs/Config/ADLXDox.h"/>
+    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXDox.h"/>
   </compounddef>
 </doxygen>

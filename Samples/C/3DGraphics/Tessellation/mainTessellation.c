@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -155,17 +155,18 @@ static char* getLevelStr(ADLX_TESSELLATION_LEVEL level)
 void ShowSupport(IADLX3DTessellation* tessellation)
 {
     adlx_bool supported = false;
-    tessellation->pVtbl->IsSupported(tessellation, &supported);
-    printf("\tIsSupported: %d\n", supported);
+    ADLX_RESULT res = tessellation->pVtbl->IsSupported(tessellation, &supported);
+    printf("\tIsSupported: %d, return code is: %d(0 means success)\n", supported, res);
 }
 
 void GetState(IADLX3DTessellation* tessellation)
 {
     ADLX_TESSELLATION_MODE mode;
-    tessellation->pVtbl->GetMode(tessellation, &mode);
+    ADLX_RESULT res = tessellation->pVtbl->GetMode(tessellation, &mode);
+    printf("\tMode: %s, return code is: %d(0 means success)\n", getModeStr(mode), res);
     ADLX_TESSELLATION_LEVEL level;
-    tessellation->pVtbl->GetLevel(tessellation, &level);
-    printf("\tMode: %s\n\tLevel: %s\n", getModeStr(mode), getLevelStr(level));
+    res = tessellation->pVtbl->GetLevel(tessellation, &level);
+    printf("\tLevel: %s, return code is: %d(0 means success)\n", getLevelStr(level), res);
 }
 
 void SetMode(IADLX3DTessellation* tessellation, int index)

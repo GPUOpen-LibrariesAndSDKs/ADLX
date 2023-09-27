@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -95,8 +95,9 @@ int main()
                 displayGamutCallBack->OnDisplayGamutChanged = &OnDisplayGamutChanged;
 
                 // ADD callback to the handl
+                ADLX_RESULT addListenerRes = ADLX_FAIL;
                 {
-                    displayChangeHandl->pVtbl->AddDisplayGamutEventListener(displayChangeHandl, (IADLXDisplayGamutChangedListener*)&displayGamutCallBack);
+                    addListenerRes = displayChangeHandl->pVtbl->AddDisplayGamutEventListener(displayChangeHandl, (IADLXDisplayGamutChangedListener*)&displayGamutCallBack);
                 }
 
                 // Set gamut for the first display
@@ -128,12 +129,17 @@ int main()
                     displays = NULL;
                 }
 
-                // Wait for gamut change
-                WaitForSingleObject(gamutChangedEvent, INFINITE);
-                CloseHandle(thread);
+                if (ADLX_SUCCEEDED (addListenerRes))
+                {
+                    // Wait for gamut change
+                    WaitForSingleObject(gamutChangedEvent, INFINITE);
+                    CloseHandle(thread);
 
-                // Remove and destroy callback
-                displayChangeHandl->pVtbl->RemoveDisplayGamutEventListener(displayChangeHandl, (IADLXDisplayGamutChangedListener*)&displayGamutCallBack);
+                    // Remove and destroy callback
+                    res = displayChangeHandl->pVtbl->RemoveDisplayGamutEventListener(displayChangeHandl, (IADLXDisplayGamutChangedListener*)&displayGamutCallBack);
+                    if (ADLX_FAILED (res))
+                        printf("Remove display gamut event listener failed\n");
+                }
 
                 if (NULL != displayGamutCallBack)
                 {

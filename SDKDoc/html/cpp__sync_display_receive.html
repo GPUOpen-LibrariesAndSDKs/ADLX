@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('cpp__sync_display_receive.html',''); i
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -120,13 +120,14 @@ $(document).ready(function(){initNavTree('cpp__sync_display_receive.html',''); i
 </body>
 </html> <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/Include/IDisplays.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;SDK/Include/IDisplays1.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/Include/IDisplaySettings.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;conio.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
@@ -158,6 +159,12 @@ $(document).ready(function(){initNavTree('cpp__sync_display_receive.html',''); i
 <div class="line">    adlx_bool ADLX_STD_CALL OnDisplaySettingsChanged(IADLXDisplaySettingsChangedEvent* pDisplaySettingsChangedEvent)<span class="keyword"> override</span></div>
 <div class="line"><span class="keyword">    </span>{</div>
 <div class="line">        <a class="code" href="group__enumerations.html#ga7a1e20106faef482c0664c546e04ba00">ADLX_SYNC_ORIGIN</a> origin = pDisplaySettingsChangedEvent-&gt;GetOrigin();</div>
+<div class="line">        IADLXDisplaySettingsChangedEvent1Ptr pDisplaySettingChangedEvent1(pDisplaySettingsChangedEvent);</div>
+<div class="line">        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == pDisplaySettingChangedEvent1)</div>
+<div class="line">        {</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;IADLXDisplaySettingsChangedEvent1 not supported&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        }</div>
+<div class="line">        </div>
 <div class="line">        <span class="keywordflow">if</span> (origin == SYNC_ORIGIN_EXTERNAL)</div>
 <div class="line">        {</div>
 <div class="line">            IADLXDisplayServicesPtr displayServices;</div>
@@ -226,6 +233,15 @@ $(document).ready(function(){initNavTree('cpp__sync_display_receive.html',''); i
 <div class="line">            {</div>
 <div class="line">                std::cout &lt;&lt; <span class="stringliteral">&quot;Display &quot;</span> &lt;&lt; displayName &lt;&lt; <span class="stringliteral">&quot;Get sync event, VSR is changed&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">            }</div>
+<div class="line"> </div>
+<div class="line">            <span class="keywordflow">if</span> (pDisplaySettingChangedEvent1)</div>
+<div class="line">            {</div>
+<div class="line">                <span class="keywordflow">if</span> (pDisplaySettingChangedEvent1-&gt;IsDisplayBlankingChanged())</div>
+<div class="line">                {</div>
+<div class="line">                    std::cout &lt;&lt; <span class="stringliteral">&quot;Display &quot;</span> &lt;&lt; displayName &lt;&lt; <span class="stringliteral">&quot;Get sync event, display blanking is changed&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line"> </div>
 <div class="line">        }</div>
 <div class="line">        SetEvent(displaySettingsEvent);</div>
 <div class="line"> </div>

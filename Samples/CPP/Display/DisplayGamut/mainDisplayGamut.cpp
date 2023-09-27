@@ -1,5 +1,5 @@
 ﻿//
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -104,30 +104,41 @@ void ShowDisplayGamutSupport(const IADLXDisplayServicesPtr& displayService, cons
     {
         adlx_bool supported = false;
         std::cout << "  === Gamut Space supported status ===" << std::endl;
-        displayGamut->IsSupportedCCIR709ColorSpace(&supported);
-        std::cout << "\tIsSupportedGamut_CCIR_709: " << supported << std::endl;
-        displayGamut->IsSupportedCCIR601ColorSpace(&supported);
-        std::cout << "\tIsSupportedGamut_CCIR_601: " << supported << std::endl;
-        displayGamut->IsSupportedAdobeRgbColorSpace(&supported);
-        std::cout << "\tIsSupportedGamut_Adobe_RGB: " << supported << std::endl;
-        displayGamut->IsSupportedCIERgbColorSpace(&supported);
-        std::cout << "\tIsSupportedGamut_CIE_RGB: " << supported << std::endl;
-        displayGamut->IsSupportedCCIR2020ColorSpace(&supported);
-        std::cout << "\tIsSupportedCCIR2020ColorSpace: " << supported << std::endl;
-        displayGamut->IsSupportedCustomColorSpace(&supported);
-        std::cout << "\tIsSupportedGamut_Custom: " << supported << std::endl;
+        res = displayGamut->IsSupportedCCIR709ColorSpace(&supported);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedGamut_CCIR_709: " << supported << std::endl;
+        res = displayGamut->IsSupportedCCIR601ColorSpace(&supported);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedGamut_CCIR_601: " << supported << std::endl;
+        res = displayGamut->IsSupportedAdobeRgbColorSpace(&supported);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedGamut_Adobe_RGB: " << supported << std::endl;
+        res = displayGamut->IsSupportedCIERgbColorSpace(&supported);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedGamut_CIE_RGB: " << supported << std::endl;
+        res = displayGamut->IsSupportedCCIR2020ColorSpace(&supported);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedCCIR2020ColorSpace: " << supported << std::endl;
+        res = displayGamut->IsSupportedCustomColorSpace(&supported);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedGamut_Custom: " << supported << std::endl;
 
         std::cout << "  === White point supported status ===" << std::endl;
-        displayGamut->IsSupported5000kWhitePoint(&supported);
-        std::cout << "\tIsSupportedWhitePoint_5000k: " << supported << std::endl;
-        displayGamut->IsSupported6500kWhitePoint(&supported);
-        std::cout << "\tIsSupportedWhitePoint_6500k: " << supported << std::endl;
-        displayGamut->IsSupported7500kWhitePoint(&supported);
-        std::cout << "\tIsSupportedWhitePoint_7500k: " << supported << std::endl;
-        displayGamut->IsSupported9300kWhitePoint(&supported);
-        std::cout << "\tIsSupportedWhitePoint_9300k: " << supported << std::endl;
-        displayGamut->IsSupportedCustomWhitePoint(&supported);
-        std::cout << "\tIsSupportedWhitePoint_Custom: " << supported << std::endl;
+        res = displayGamut->IsSupported5000kWhitePoint(&supported);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedWhitePoint_5000k: " << supported << std::endl;
+        res = displayGamut->IsSupported6500kWhitePoint(&supported);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedWhitePoint_6500k: " << supported << std::endl;
+        res = displayGamut->IsSupported7500kWhitePoint(&supported);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedWhitePoint_7500k: " << supported << std::endl;
+        res = displayGamut->IsSupported9300kWhitePoint(&supported);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedWhitePoint_9300k: " << supported << std::endl;
+        res = displayGamut->IsSupportedCustomWhitePoint(&supported);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsSupportedWhitePoint_Custom: " << supported << std::endl;
     }
 }
 
@@ -142,38 +153,51 @@ void GetCurrentGamutInfo(const IADLXDisplayServicesPtr& displayService, const IA
         adlx_bool applied = false;
         ADLX_RESULT res = ADLX_FAIL;
         std::cout << "  === Currnt White point status ===" << std::endl;
-        displayGamut->IsCurrent5000kWhitePoint(&applied);
-        std::cout << "\tIsCurrentWhitePoint_5000k: " << applied << std::endl;
-        displayGamut->IsCurrent6500kWhitePoint(&applied);
-        std::cout << "\tIsCurrentWhitePoint_6500k: " << applied << std::endl;
-        displayGamut->IsCurrent7500kWhitePoint(&applied);
-        std::cout << "\tIsCurrentWhitePoint_7500k: " << applied << std::endl;
-        displayGamut->IsCurrent9300kWhitePoint(&applied);
-        std::cout << "\tIsCurrentWhitePoint_9300k: " << applied << std::endl;
-        displayGamut->IsCurrentCustomWhitePoint(&applied);
-        std::cout << "\tIsCurrentWhitePoint_Custom: " << applied << std::endl;
+        res = displayGamut->IsCurrent5000kWhitePoint(&applied);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentWhitePoint_5000k: " << applied << std::endl;
+        res = displayGamut->IsCurrent6500kWhitePoint(&applied);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentWhitePoint_6500k: " << applied << std::endl;
+        res = displayGamut->IsCurrent7500kWhitePoint(&applied);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentWhitePoint_7500k: " << applied << std::endl;
+        res = displayGamut->IsCurrent9300kWhitePoint(&applied);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentWhitePoint_9300k: " << applied << std::endl;
+        res = displayGamut->IsCurrentCustomWhitePoint(&applied);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentWhitePoint_Custom: " << applied << std::endl;
         ADLX_Point point = {0};
         res = displayGamut->GetWhitePoint(&point);
-        std::cout << "\tGetWhitePoint: ( " << point.x << ", " << point.y << " )" << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tGetWhitePoint: ( " << point.x << ", " << point.y << " )" << std::endl;
 
         std::cout << "  === Currnt gamut space status ===" << std::endl;
-        displayGamut->IsCurrentCCIR709ColorSpace(&applied);
-        std::cout << "\tIsCurrentGamut_CCIR_709: " << applied << std::endl;
-        displayGamut->IsCurrentCCIR601ColorSpace(&applied);
-        std::cout << "\tIsCurrentGamut_CCIR_601: " << applied << std::endl;
-        displayGamut->IsCurrentAdobeRgbColorSpace(&applied);
-        std::cout << "\tIsCurrentGamut_Adobe_RGB: " << applied << std::endl;
-        displayGamut->IsCurrentCIERgbColorSpace(&applied);
-        std::cout << "\tIsCurrentGamut_CIE_RGB: " << applied << std::endl;
-        displayGamut->IsCurrentCCIR2020ColorSpace(&applied);
-        std::cout << "\tIsCurrentCCIR2020ColorSpace: " << applied << std::endl;
-        displayGamut->IsCurrentCustomColorSpace(&applied);
-        std::cout << "\tIsCurrentCustomColorSpace: " << applied << std::endl;
+        res = displayGamut->IsCurrentCCIR709ColorSpace(&applied);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentGamut_CCIR_709: " << applied << std::endl;
+        res = displayGamut->IsCurrentCCIR601ColorSpace(&applied);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentGamut_CCIR_601: " << applied << std::endl;
+        res = displayGamut->IsCurrentAdobeRgbColorSpace(&applied);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentGamut_Adobe_RGB: " << applied << std::endl;
+        res = displayGamut->IsCurrentCIERgbColorSpace(&applied);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentGamut_CIE_RGB: " << applied << std::endl;
+        res = displayGamut->IsCurrentCCIR2020ColorSpace(&applied);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentCCIR2020ColorSpace: " << applied << std::endl;
+        res = displayGamut->IsCurrentCustomColorSpace(&applied);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsCurrentCustomColorSpace: " << applied << std::endl;
         ADLX_GamutColorSpace gamutCoordinates = {0};
         res = displayGamut->GetGamutColorSpace(&gamutCoordinates);
-        std::cout << "\tGetGamutColorSpace: R( " << gamutCoordinates.red.x << ", " << gamutCoordinates.red.y << " ) "
-                  << "G(" << gamutCoordinates.green.x << ", " << gamutCoordinates.green.y << ") "
-                  << "B(" << gamutCoordinates.blue.x << ", " << gamutCoordinates.blue.y << ") " << std::endl;
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tGetGamutColorSpace: R( " << gamutCoordinates.red.x << ", " << gamutCoordinates.red.y << " ) "
+                      << "G(" << gamutCoordinates.green.x << ", " << gamutCoordinates.green.y << ") "
+                      << "B(" << gamutCoordinates.blue.x << ", " << gamutCoordinates.blue.y << ") " << std::endl;
     }
 }
 

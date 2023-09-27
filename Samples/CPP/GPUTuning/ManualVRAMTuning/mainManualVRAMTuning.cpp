@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -112,18 +112,19 @@ static std::map<ADLX_MEMORYTIMING_DESCRIPTION, const char*> descMap =
 
 void ShowSupport(IADLXInterfacePtr& vramTuningIfc)
 {
-    adlx_bool supported;
+    adlx_bool supported = false;
     IADLXManualVRAMTuning2Ptr vramTuning2(vramTuningIfc);
     IADLXManualVRAMTuning1Ptr vramTuning1(vramTuningIfc);
+    ADLX_RESULT res = ADLX_FAIL;
     if (vramTuning2)
     {
-        vramTuning2->IsSupportedMemoryTiming(&supported);
+        res = vramTuning2->IsSupportedMemoryTiming(&supported);
     }
     else if (vramTuning1)
     {
-        vramTuning1->IsSupportedMemoryTiming(&supported);
+        res = vramTuning1->IsSupportedMemoryTiming(&supported);
     }
-    std::cout << "\tIsSupported: " << supported << std::endl;
+    std::cout << "\tIsSupported: " << supported << ", return code is: "<< res << "(0 means success)" << std::endl;
 }
 
 void GetState(IADLXInterfacePtr& vramTuningIfc)
@@ -139,11 +140,11 @@ void GetState(IADLXInterfacePtr& vramTuningIfc)
 
         adlx_int freq;
         ADLX_IntRange rang;
-        vramTuning2->GetMaxVRAMFrequency(&freq);
-        vramTuning2->GetMaxVRAMFrequencyRange(&rang);
-
-        std::cout << "\tMax VRAM frequency: " << freq << std::endl;
-        std::cout << "\tMax VRAM frequency range: [" << rang.minValue << " , " << rang.maxValue << " ], step: " << rang.step << std::endl;
+        ADLX_RESULT res = vramTuning2->GetMaxVRAMFrequency(&freq);
+        std::cout << "\tMax VRAM frequency: " << freq << ", return code is: "<< res << "(0 means success)" << std::endl;
+        res = vramTuning2->GetMaxVRAMFrequencyRange(&rang);
+        std::cout << "\tMax VRAM frequency range: [" << rang.minValue << " , " << rang.maxValue << " ], step: " << rang.step 
+                  << ", return code is: "<< res << "(0 means success)" << std::endl;
     }
     else if (vramTuning1)
     {
@@ -167,9 +168,11 @@ void GetState(IADLXInterfacePtr& vramTuningIfc)
 
         ADLX_IntRange frequencyRange;
         ADLX_IntRange voltageRange;
-        vramTuning1->GetVRAMTuningRanges(&frequencyRange, &voltageRange);
-        std::cout << "\tFrequency range: [" << frequencyRange.minValue << " , " << frequencyRange.maxValue << " ], step: " << frequencyRange.step << std::endl;
-        std::cout << "\tVoltage range: [" << voltageRange.minValue << " , " << voltageRange.maxValue << " ], step: " << voltageRange.step << std::endl;
+        ADLX_RESULT res = vramTuning1->GetVRAMTuningRanges(&frequencyRange, &voltageRange);
+        std::cout << "\tFrequency range: [" << frequencyRange.minValue << " , " << frequencyRange.maxValue << " ], step: " << frequencyRange.step 
+                  << ", return code is: "<< res << "(0 means success)" << std::endl;
+        std::cout << "\tVoltage range: [" << voltageRange.minValue << " , " << voltageRange.maxValue << " ], step: " << voltageRange.step 
+                  << ", return code is: "<< res << "(0 means success)" << std::endl;
     }
     if (descList)
     {
@@ -193,52 +196,71 @@ void SetTimingLevel(IADLXInterfacePtr& vramTuningIfc)
     IADLXManualVRAMTuning1Ptr vramTuning1(vramTuningIfc);
     ADLX_MEMORYTIMING_DESCRIPTION desc, currentDesc;
     IADLXMemoryTimingDescriptionListPtr descList;
+    bool supported = false;
     if (vramTuning2)
     {
-        vramTuning2->GetSupportedMemoryTimingDescriptionList(&descList);
-        if (descList)
+        //If MemoryTiming is supported, then only will get the MemoryTimingDescriptionList
+        res = vramTuning2->IsSupportedMemoryTiming(&supported);
+        if (supported)
         {
-            vramTuning2->GetMemoryTimingDescription (&currentDesc);
-            for (adlx_uint s = 0; s != descList->End (); s++)
+            vramTuning2->GetSupportedMemoryTimingDescriptionList(&descList);
+            if (descList)
             {
-                IADLXMemoryTimingDescriptionPtr item;
-                descList->At (s, &item);
-                item->GetDescription (&desc);
-                if (currentDesc != desc)
+                vramTuning2->GetMemoryTimingDescription(&currentDesc);
+                for (adlx_uint s = 0; s != descList->End(); s++)
                 {
-                    res = vramTuning2->SetMemoryTimingDescription (desc);
-                    std::cout << "\tSet Memory Timing description to " << descMap[desc] << ": return code is: " << res << " (0 means success)" << std::endl;
-                    break;
+                    IADLXMemoryTimingDescriptionPtr item;
+                    descList->At(s, &item);
+                    item->GetDescription(&desc);
+                    if (currentDesc != desc)
+                    {
+                        res = vramTuning2->SetMemoryTimingDescription(desc);
+                        std::cout << "\tSet Memory Timing description to " << descMap[desc] << ": return code is: " << res << " (0 means success)" << std::endl;
+                        break;
+                    }
                 }
+            }
+            else
+            {
+                std::cout << "\tFailed to get the Supported Memory Timing Description List." << std::endl;
             }
         }
         else
         {
-            std::cout << "\tFailed to get the Supported Memory Timing Description List." << std::endl;
+            std::cout << "\tMemory Timing Level not Supported, so cannot set Memory Timing Description List." << std::endl;
         }
     }
     else if (vramTuning1)
     {
-        vramTuning1->GetSupportedMemoryTimingDescriptionList(&descList);
-        if (descList)
+        //If MemoryTiming is supported, then only will get the MemoryTimingDescriptionList
+        res = vramTuning1->IsSupportedMemoryTiming(&supported);
+        if (supported)
         {
-            vramTuning1->GetMemoryTimingDescription (&currentDesc);
-            for (adlx_uint s = 0; s != descList->End (); s++)
+            vramTuning1->GetSupportedMemoryTimingDescriptionList(&descList);
+            if (descList)
             {
-                IADLXMemoryTimingDescriptionPtr item;
-                descList->At (s, &item);
-                item->GetDescription (&desc);
-                if (currentDesc != desc)
+                vramTuning1->GetMemoryTimingDescription(&currentDesc);
+                for (adlx_uint s = 0; s != descList->End(); s++)
                 {
-                    res = vramTuning1->SetMemoryTimingDescription (desc);
-                    std::cout << "\tSet Memory Timing description to " << descMap[desc] << ": return code is: " << res << " (0 means success)" << std::endl;
-                    break;
+                    IADLXMemoryTimingDescriptionPtr item;
+                    descList->At(s, &item);
+                    item->GetDescription(&desc);
+                    if (currentDesc != desc)
+                    {
+                        res = vramTuning1->SetMemoryTimingDescription(desc);
+                        std::cout << "\tSet Memory Timing description to " << descMap[desc] << ": return code is: " << res << " (0 means success)" << std::endl;
+                        break;
+                    }
                 }
+            }
+            else
+            {
+                std::cout << "\tFailed to get the Supported Memory Timing Description List." << std::endl;
             }
         }
         else
         {
-            std::cout << "\tFailed to get the Supported Memory Timing Description List." << std::endl;
+            std::cout << "\tMemory Timing Level not Supported, so cannot set Memory Timing Description List." << std::endl;
         }
     }
 }
@@ -248,46 +270,65 @@ void SetState(IADLXInterfacePtr& vramTuningIfc)
     ADLX_RESULT res;
     IADLXManualVRAMTuning2Ptr vramTuning2(vramTuningIfc);
     IADLXManualVRAMTuning1Ptr vramTuning1(vramTuningIfc);
+    bool supported = false;
     if (vramTuning2)
     {
-        adlx_int freq;
-        ADLX_IntRange rang;
-        vramTuning2->GetMaxVRAMFrequency(&freq);
-        vramTuning2->GetMaxVRAMFrequencyRange(&rang);
-        if (freq != rang.minValue)
+        //If MemoryTiming is supported, then only will set the MemoryTimingState
+        res = vramTuning2->IsSupportedMemoryTiming(&supported);
+        if (supported)
         {
-            res = vramTuning2->SetMaxVRAMFrequency(rang.minValue);
-            std::cout << "\tUse min Frequency to set, return code(0 is Success) is: " << res << std::endl;
+            adlx_int freq;
+            ADLX_IntRange rang;
+            vramTuning2->GetMaxVRAMFrequency(&freq);
+            vramTuning2->GetMaxVRAMFrequencyRange(&rang);
+            if (freq != rang.minValue)
+            {
+                res = vramTuning2->SetMaxVRAMFrequency(rang.minValue);
+                std::cout << "\tUse min Frequency to set, return code(0 is Success) is: " << res << std::endl;
+            }
+            else
+            {
+                res = vramTuning2->SetMaxVRAMFrequency(rang.minValue + rang.step * 2);
+                std::cout << "\tUse max Frequency to set, return code(0 is Success) is: " << res << std::endl;
+            }
         }
         else
         {
-            res = vramTuning2->SetMaxVRAMFrequency(rang.minValue + rang.step * 2);
-            std::cout << "\tUse max Frequency to set, return code(0 is Success) is: " << res << std::endl;
+            std::cout << "\tTuning not Supported, so cannot change the State." << std::endl;
         }
     }
     else if (vramTuning1)
     {
-        ADLX_IntRange frequencyRange;
-        ADLX_IntRange voltageRange;
-        vramTuning1->GetVRAMTuningRanges(&frequencyRange, &voltageRange);
-        IADLXManualTuningStateListPtr states;
-        vramTuning1->GetVRAMTuningStates(&states);
-        adlx_uint s = states->Size() - 1;
-        for (; s != states->End(); s++)
+        //If MemoryTiming is supported, then only will set the MemoryTimingState
+        res = vramTuning1->IsSupportedMemoryTiming(&supported);
+        if (supported)
         {
-            IADLXManualTuningStatePtr state;
-            adlx_int frequency;
-            adlx_int voltage;
-            states->At(s, &state);
-            state->GetFrequency(&frequency);
-            state->GetVoltage(&voltage);
-            // Only change the last
-            res = state->SetFrequency(frequencyRange.maxValue - frequencyRange.step * 10);
-            res = state->SetVoltage(voltageRange.maxValue - voltageRange.step * 10);
-            break;
+            ADLX_IntRange frequencyRange;
+            ADLX_IntRange voltageRange;
+            vramTuning1->GetVRAMTuningRanges(&frequencyRange, &voltageRange);
+            IADLXManualTuningStateListPtr states;
+            vramTuning1->GetVRAMTuningStates(&states);
+            adlx_uint s = states->Size() - 1;
+            for (; s != states->End(); s++)
+            {
+                IADLXManualTuningStatePtr state;
+                adlx_int frequency;
+                adlx_int voltage;
+                states->At(s, &state);
+                state->GetFrequency(&frequency);
+                state->GetVoltage(&voltage);
+                // Only change the last
+                res = state->SetFrequency(frequencyRange.maxValue - frequencyRange.step * 10);
+                res = state->SetVoltage(voltageRange.maxValue - voltageRange.step * 10);
+                break;
+            }
+            res = vramTuning1->SetVRAMTuningStates(states);
+            std::cout << "\tChange VRAM tuning states, return code(0 is Success) is: " << res << std::endl;
         }
-        res = vramTuning1->SetVRAMTuningStates(states);
-        std::cout << "\tChange VRAM tuning states, return code(0 is Success) is: " << res << std::endl;
+        else
+        {
+            std::cout << "\tTuning not Supported, so cannot change the State." << std::endl;
+        }
     }
 }
 

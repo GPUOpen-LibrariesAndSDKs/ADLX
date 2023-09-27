@@ -1,5 +1,5 @@
 ﻿//
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -9,6 +9,7 @@
 #include "SDK/ADLXHelper/Windows/C/ADLXHelper.h"
 #include "SDK/Include/IDisplayGamma.h"
 #include "SDK/Include/IDisplays.h"
+#include <math.h>
 
 // Print gamma ramp
 static void ShowGammaRamp(ADLX_GammaRamp gammaRamp)
@@ -27,6 +28,33 @@ static void ShowGammaRamp(ADLX_GammaRamp gammaRamp)
     printf("\n");
 }
 
+// Create regamma ramp
+ADLX_GammaRamp CreateReGammaRamp(const float fGamma)
+{
+    ADLX_GammaRamp ramp;
+    double g_fGammaRemapRGB[3] = { 1,1,0.5 };
+    for (int j = 0; j < 3; j++)
+    {
+        for (int i = 0; i < 256; i++)
+        {
+
+            float nAdj = i / 255.0f;
+            if (nAdj < 0.0031308f)
+            {
+                nAdj = nAdj * 12.92f;
+            }
+            else
+            {
+                nAdj = (1 + 0.055f) * powf(nAdj, 1 / fGamma) - 0.055f;
+                if (nAdj < 0.0f)
+                    nAdj = 0.0f;
+            }
+            ramp.gamma[i + j * 256] = (unsigned short)(1 * g_fGammaRemapRGB[j] * (int)(nAdj * 0xFFFF));
+        }
+    }
+    return ramp;
+}
+
 // Display gamma support
 void ShowDisplayGammaSupport(IADLXDisplayServices* displayService, IADLXDisplay* display)
 {
@@ -38,15 +66,20 @@ void ShowDisplayGammaSupport(IADLXDisplayServices* displayService, IADLXDisplay*
     {
         printf("  === Re-Gamma supported status ===\n");
         res = displayGamma->pVtbl->IsSupportedReGammaSRGB(displayGamma, &support);
-        printf("\tIs sRGB re-gamma supported on this display: %d\n", support);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIs sRGB re-gamma supported on this display: %d\n", support);
         res = displayGamma->pVtbl->IsSupportedReGammaBT709(displayGamma, &support);
-        printf("\tIs BT709 re-gamma supported on this display: %d\n", support);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIs BT709 re-gamma supported on this display: %d\n", support);
         res = displayGamma->pVtbl->IsSupportedReGammaPQ(displayGamma, &support);
-        printf("\tIs PQ re-gamma supported on this display: %d\n", support);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIs PQ re-gamma supported on this display: %d\n", support);
         res = displayGamma->pVtbl->IsSupportedReGammaPQ2084Interim(displayGamma, &support);
-        printf("\tIs PQ2084Interim re-gamma supported on this display: %d\n", support);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIs PQ2084Interim re-gamma supported on this display: %d\n", support);
         res = displayGamma->pVtbl->IsSupportedReGamma36(displayGamma, &support);
-        printf("\tIs 3.6 re-gamma supported on this display:%d\n", support);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIs 3.6 re-gamma supported on this display:%d\n", support);
     }
 
     // Release the displayGamma interface
@@ -72,19 +105,25 @@ void GetCurrentGammaState(IADLXDisplayServices* displayService, IADLXDisplay* di
         ADLX_RegammaCoeff coeff;
 
         res = displayGamma->pVtbl->IsCurrentReGammaSRGB(displayGamma, &applied);
-        printf("\t Is sRGB re-gamma used by this display: %d\n", applied);
+        if (ADLX_SUCCEEDED(res))
+            printf("\t Is sRGB re-gamma used by this display: %d\n", applied);
         res = displayGamma->pVtbl->IsCurrentReGammaBT709(displayGamma, &applied);
-        printf("\tIs BT709 re-gamma used by this display: %d\n", applied);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIs BT709 re-gamma used by this display: %d\n", applied);
         res = displayGamma->pVtbl->IsCurrentReGammaPQ(displayGamma, &applied);
-        printf("\tIs PQ re-gamma used by this display: %d\n", applied);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIs PQ re-gamma used by this display: %d\n", applied);
         res = displayGamma->pVtbl->IsCurrentReGammaPQ2084Interim(displayGamma, &applied);
-        printf("\tIs PQ2084Interim re-gamma used by this display %d\n", applied);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIs PQ2084Interim re-gamma used by this display %d\n", applied);
         res = displayGamma->pVtbl->IsCurrentReGamma36(displayGamma, &applied);
-        printf("\tIs 3.6 re-gamma used by this display %d\n", applied);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIs 3.6 re-gamma used by this display %d\n", applied);
 
         adlx_bool curCoeff;
         res = displayGamma->pVtbl->IsCurrentRegammaCoefficient(displayGamma, &curCoeff);
-        printf("\tIs re-gamma coefficient used by this display %d\n", curCoeff);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIs re-gamma coefficient used by this display %d\n", curCoeff);
 
         adlx_bool reGammaRamp = false;
         adlx_bool deGammaRamp = false;
@@ -189,12 +228,9 @@ void SetGamma(IADLXDisplayServices* displayService, IADLXDisplay* display, int k
         // Use ramp from memory
         case 3:
         {
-            ADLX_GammaRamp gammaRamp;
-            for (unsigned int i = 0; i < 256 * 3; i++)
-            {
-                gammaRamp.gamma[i] = 255;
-            }
-            res = displayGamma->pVtbl->SetReGammaRamp_Memory(displayGamma, gammaRamp);
+            const float reGammaF = 2.4f;
+            ADLX_GammaRamp  ramp = CreateReGammaRamp(reGammaF);
+            res = displayGamma->pVtbl->SetReGammaRamp_Memory(displayGamma, ramp);
         }
         break;
 

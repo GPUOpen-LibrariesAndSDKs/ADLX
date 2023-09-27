@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.0</span>
+   &#160;<span id="projectnumber">v1.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('c_sample_displayinfo.html',''); initRe
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('c_sample_displayinfo.html',''); initRe
 </body>
 </html> <h2>Code </h2>
 <div class="codeHeader"><span class="language">C</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -215,19 +215,23 @@ $(document).ready(function(){initNavTree('c_sample_displayinfo.html',''); initRe
 <div class="line">    printf(<span class="stringliteral">&quot;\n  === Display info ===\n&quot;</span>);</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>* dispName;</div>
 <div class="line">    res = display-&gt;pVtbl-&gt;Name(display, &amp;dispName);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tDisplay name: %s\n&quot;</span>, dispName);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tDisplay name: %s\n&quot;</span>, dispName);</div>
 <div class="line"> </div>
 <div class="line">    adlx_uint manufacturerID;</div>
 <div class="line">    res = display-&gt;pVtbl-&gt;ManufacturerID(display, &amp;manufacturerID);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tManufacturer id: %d\n&quot;</span>, manufacturerID);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tManufacturer id: %d\n&quot;</span>, manufacturerID);</div>
 <div class="line"> </div>
 <div class="line">    <a class="code" href="group__enumerations.html#gae7e516225131af0ff164e9384d8d0a44">ADLX_DISPLAY_TYPE</a> displayType;</div>
 <div class="line">    res = display-&gt;pVtbl-&gt;DisplayType(display, &amp;displayType);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tDisplay type: %s\n&quot;</span>, GetDisplayTypeStr(displayType));</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tDisplay type: %s\n&quot;</span>, GetDisplayTypeStr(displayType));</div>
 <div class="line"> </div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga84edd2809be33537c99fb2ab8d04aa5d">ADLX_DISPLAY_CONNECTOR_TYPE</a> connectType;</div>
 <div class="line">    res = display-&gt;pVtbl-&gt;ConnectorType(display, &amp;connectType);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tConnector type: %s\n&quot;</span>, GetDisplayConnectorStr(connectType));</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tConnector type: %s\n&quot;</span>, GetDisplayConnectorStr(connectType));</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>* edid;</div>
 <div class="line">    res = display-&gt;pVtbl-&gt;EDID(display, &amp;edid);</div>
@@ -238,24 +242,29 @@ $(document).ready(function(){initNavTree('c_sample_displayinfo.html',''); initRe
 <div class="line"> </div>
 <div class="line">    adlx_double refreshRate;</div>
 <div class="line">    res = display-&gt;pVtbl-&gt;RefreshRate(display, &amp;refreshRate);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tRefresh rate: %f\n&quot;</span>, refreshRate);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tRefresh rate: %f\n&quot;</span>, refreshRate);</div>
 <div class="line"> </div>
 <div class="line">    adlx_uint pixelClock;</div>
 <div class="line">    res = display-&gt;pVtbl-&gt;PixelClock(display, &amp;pixelClock);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tPixel clock: %d\n&quot;</span>, pixelClock);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tPixel clock: %d\n&quot;</span>, pixelClock);</div>
 <div class="line"> </div>
 <div class="line">    adlx_int maxHResolution = 0;</div>
 <div class="line">    adlx_int maxVResolution = 0;</div>
 <div class="line">    res = display-&gt;pVtbl-&gt;NativeResolution(display, &amp;maxHResolution, &amp;maxVResolution);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tNative resolution[h*v]: %d  %d\n&quot;</span>, maxHResolution, maxVResolution);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tNative resolution[h*v]: %d  %d\n&quot;</span>, maxHResolution, maxVResolution);</div>
 <div class="line"> </div>
 <div class="line">    <a class="code" href="group__enumerations.html#gae2d0250dc861156a468001600a2ee648">ADLX_DISPLAY_SCAN_TYPE</a> scanType;</div>
 <div class="line">    res = display-&gt;pVtbl-&gt;ScanType(display, &amp;scanType);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tScan type: %s\n&quot;</span>, GetScanTypeStr(scanType));</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tScan type: %s\n&quot;</span>, GetScanTypeStr(scanType));</div>
 <div class="line"> </div>
 <div class="line">    adlx_size id;</div>
 <div class="line">    res = display-&gt;pVtbl-&gt;UniqueId(display, &amp;<span class="keywordtype">id</span>);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tUniqueId: %zu\n&quot;</span>, <span class="keywordtype">id</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tUniqueId: %zu\n&quot;</span>, <span class="keywordtype">id</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Wait for exit with error message</span></div>

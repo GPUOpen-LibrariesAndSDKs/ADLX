@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -117,18 +117,19 @@ static const std::map<ADLX_TESSELLATION_LEVEL, const char*> Levels =
 void ShowSupport(const IADLX3DTessellationPtr& tessellation)
 {
     adlx_bool supported = false;
-    tessellation->IsSupported(&supported);
-    std::cout << "\tIsSupported: " << supported << std::endl;
+    ADLX_RESULT res = tessellation->IsSupported(&supported);
+    std::cout << "\tIsSupported: " << supported << ", return code is: " << res << "(0 means success)" << std::endl;
 }
 
 void GetState(const IADLX3DTessellationPtr& tessellation)
 {
     ADLX_TESSELLATION_MODE mode;
-    tessellation->GetMode(&mode);
+    ADLX_RESULT res = tessellation->GetMode(&mode);
+    std::cout << "\tMode: " << Modes.find(mode)->second << ", return code is: " << res << "(0 means success)" << std::endl;
+
     ADLX_TESSELLATION_LEVEL level;
-    tessellation->GetLevel(&level);
-    std::cout << "\tMode: " << Modes.find(mode)->second << std::endl
-              << "\tLevel: " << Levels.find(level)->second << std::endl;
+    res = tessellation->GetLevel(&level);
+    std::cout << "\tLevel: " << Levels.find(level)->second << ", return code is: " << res << "(0 means success)" << std::endl;
 }
 
 void SetMode(const IADLX3DTessellationPtr& tessellation, int index)
