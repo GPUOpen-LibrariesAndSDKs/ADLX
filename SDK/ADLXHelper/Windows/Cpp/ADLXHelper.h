@@ -1,4 +1,4 @@
-// 
+//
 // Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
@@ -249,7 +249,7 @@ public:
     * @requirements
     * @DetailsTable{#include "ADLXHelper/Windows/Cpp/ADLXHelper.h", @ADLX_First_Ver}
     */
-    const char* QueryVersion();
+    const char* QueryVersion ();
 
     /**
     * @page page_cppHelpGetSystemServices GetSystemServices

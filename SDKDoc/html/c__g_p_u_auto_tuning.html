@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.2</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -572,31 +572,56 @@ $(document).ready(function(){initNavTree('c__g_p_u_auto_tuning.html',''); initRe
 <div class="line">                    <span class="keywordflow">switch</span> (num)</div>
 <div class="line">                    {</div>
 <div class="line">                    <span class="keywordflow">case</span> <span class="charliteral">&#39;0&#39;</span>:</div>
-<div class="line">                        res = autoTuning-&gt;pVtbl-&gt;StartUndervoltGPU(autoTuning, &amp;completeListener);</div>
-<div class="line">                        WaitForSingleObject(g_ADLXEvent, 1000);</div>
-<div class="line">                        ResetEvent(g_ADLXEvent);</div>
-<div class="line">                        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">                            printf(<span class="stringliteral">&quot;\tStart undervolt GPU successfully\n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">                        res = autoTuning-&gt;pVtbl-&gt;IsSupportedUndervoltGPU(autoTuning, &amp;supported);</div>
+<div class="line">                        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res) &amp;&amp; supported)</div>
+<div class="line">                        {</div>
+<div class="line">                            res = autoTuning-&gt;pVtbl-&gt;StartUndervoltGPU(autoTuning, &amp;completeListener);</div>
+<div class="line">                            WaitForSingleObject(g_ADLXEvent, 1000);</div>
+<div class="line">                            ResetEvent(g_ADLXEvent);</div>
+<div class="line">                            <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                                printf(<span class="stringliteral">&quot;\tStart undervolt GPU successfully\n&quot;</span>);</div>
+<div class="line">                            <span class="keywordflow">else</span></div>
+<div class="line">                                printf(<span class="stringliteral">&quot;\tStart undervolt GPU failed\n&quot;</span>);</div>
+<div class="line">                        }</div>
 <div class="line">                        <span class="keywordflow">else</span></div>
-<div class="line">                            printf(<span class="stringliteral">&quot;\tStart undervolt GPU failed\n&quot;</span>);</div>
+<div class="line">                        {</div>
+<div class="line">                            printf(<span class="stringliteral">&quot;\tUndervolt GPU is not supported\n&quot;</span>);</div>
+<div class="line">                        }</div>
 <div class="line">                        <span class="keywordflow">break</span>;</div>
 <div class="line">                    <span class="keywordflow">case</span> <span class="charliteral">&#39;1&#39;</span>:</div>
-<div class="line">                        res = autoTuning-&gt;pVtbl-&gt;StartOverclockGPU(autoTuning, &amp;completeListener);</div>
-<div class="line">                        WaitForSingleObject(g_ADLXEvent, 1000);</div>
-<div class="line">                        ResetEvent(g_ADLXEvent);</div>
-<div class="line">                        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">                            printf(<span class="stringliteral">&quot;\tStart overclock GPU successfully\n&quot;</span>);</div>
+<div class="line">                        res = autoTuning-&gt;pVtbl-&gt;IsSupportedOverclockGPU(autoTuning, &amp;supported);</div>
+<div class="line">                        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res) &amp;&amp; supported)</div>
+<div class="line">                        {</div>
+<div class="line">                            res = autoTuning-&gt;pVtbl-&gt;StartOverclockGPU(autoTuning, &amp;completeListener);</div>
+<div class="line">                            WaitForSingleObject(g_ADLXEvent, 1000);</div>
+<div class="line">                            ResetEvent(g_ADLXEvent);</div>
+<div class="line">                            <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                                printf(<span class="stringliteral">&quot;\tStart overclock GPU successfully\n&quot;</span>);</div>
+<div class="line">                            <span class="keywordflow">else</span></div>
+<div class="line">                                printf(<span class="stringliteral">&quot;\tStart overclock GPU failed\n&quot;</span>);</div>
+<div class="line">                        }</div>
 <div class="line">                        <span class="keywordflow">else</span></div>
-<div class="line">                            printf(<span class="stringliteral">&quot;\tStart overclock GPU failed\n&quot;</span>);</div>
+<div class="line">                        {</div>
+<div class="line">                            printf(<span class="stringliteral">&quot;\tOverclock GPU is not supported\n&quot;</span>);</div>
+<div class="line">                        }</div>
 <div class="line">                        <span class="keywordflow">break</span>;</div>
 <div class="line">                    <span class="keywordflow">case</span> <span class="charliteral">&#39;2&#39;</span>:</div>
-<div class="line">                        res = autoTuning-&gt;pVtbl-&gt;StartOverclockVRAM(autoTuning, &amp;completeListener);</div>
-<div class="line">                        WaitForSingleObject(g_ADLXEvent, 1000);</div>
-<div class="line">                        ResetEvent(g_ADLXEvent);</div>
-<div class="line">                        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">                            printf(<span class="stringliteral">&quot;\tStart overclock VRAM successfully\n&quot;</span>);</div>
+<div class="line">                        res = autoTuning-&gt;pVtbl-&gt;IsSupportedOverclockVRAM(autoTuning, &amp;supported);</div>
+<div class="line">                        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res) &amp;&amp; supported)</div>
+<div class="line">                        {</div>
+<div class="line">                            res = autoTuning-&gt;pVtbl-&gt;StartOverclockVRAM(autoTuning, &amp;completeListener);</div>
+<div class="line">                            WaitForSingleObject(g_ADLXEvent, 1000);</div>
+<div class="line">                            ResetEvent(g_ADLXEvent);</div>
+<div class="line">                            <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                                printf(<span class="stringliteral">&quot;\tStart overclock VRAM successfully\n&quot;</span>);</div>
+<div class="line">                            <span class="keywordflow">else</span></div>
+<div class="line">                                printf(<span class="stringliteral">&quot;\tStart overclock VRAM failed\n&quot;</span>);</div>
+<div class="line">                        }</div>
 <div class="line">                        <span class="keywordflow">else</span></div>
-<div class="line">                            printf(<span class="stringliteral">&quot;\tStart overclock VRAM failed\n&quot;</span>);</div>
+<div class="line">                        {</div>
+<div class="line">                            printf(<span class="stringliteral">&quot;\tOverclock VRAM is not supported\n&quot;</span>);</div>
+<div class="line">                        }</div>
 <div class="line">                        <span class="keywordflow">break</span>;</div>
 <div class="line">                    <span class="keywordflow">default</span>:</div>
 <div class="line">                        <span class="keywordflow">break</span>;</div>

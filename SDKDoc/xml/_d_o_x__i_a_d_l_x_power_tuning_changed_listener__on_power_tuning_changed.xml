@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_power_tuning_changed_listener__on_power_tuning_changed" kind="page">
+    <compoundname>DOX_IADLXPowerTuningChangedListener_OnPowerTuningChanged</compoundname>
+    <title>OnPowerTuningChanged</title>
+    <briefdescription>
+<para><bold>OnPowerTuningChanged</bold> is called by ADLX when power tuning settings change. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><bold>OnPowerTuningChanged</bold> is called by ADLX when power tuning settings change.</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ adlx_bool    OnPowerTuningChanged (<ref refid="_d_o_x__i_a_d_l_x_power_tuning_changed_event" kindref="compound">IADLXPowerTuningChangedEvent</ref>* pPowerTuningChangedEvent)
+ </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para><variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>1.</para>
+</entry><entry thead="no" class="paramdir"><para>[in] </para>
+</entry><entry thead="no" class="paramname"><para>pPowerTuningChangedEvent</para>
+</entry><entry thead="no" class="paramtype"><para><ref refid="_d_o_x__i_a_d_l_x_power_tuning_changed_event" kindref="compound">IADLXPowerTuningChangedEvent</ref>* </para>
+</entry><entry thead="no"><para>The pointer to a power tuning settings change event. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If the application requires ADLX to continue notifying the next listener, <bold>true</bold> must be returned.<linebreak/>
+ If the application requires ADLX to stop notifying the next listener, <bold>false</bold> must be returned.<linebreak/>
+</para>
+<para><heading level="2">Remarks </heading>
+</para>
+<para>Once the application registers to the notifications with <ref refid="_d_o_x__i_a_d_l_x_power_tuning_changed_handling__add_power_tuning_event_listener" kindref="compound">AddPowerTuningEventListener</ref>, ADLX will call this method until the application unregisters from the notifications with <ref refid="_d_o_x__i_a_d_l_x_power_tuning_changed_handling__remove_power_tuning_event_listener" kindref="compound">RemovePowerTuningEventListener</ref>. The method should return quickly to not block the execution path in ADLX. If the method requires a long processing of the event notification, the application must hold onto a reference to the power tuning settings change event with <ref refid="_d_o_x__i_a_d_l_x_interface__acquire" kindref="compound">Acquire</ref> and make it available on an asynchronous thread and return immediately. When the asynchronous thread is done processing it must discard the power tuning settings change event with <ref refid="_d_o_x__i_a_d_l_x_interface__release" kindref="compound">Release</ref>.</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IPowerTuning.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.2</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPowerTuning.h"/>
+  </compounddef>
+</doxygen>

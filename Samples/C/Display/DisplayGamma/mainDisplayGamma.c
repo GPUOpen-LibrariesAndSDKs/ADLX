@@ -220,9 +220,9 @@ void SetGamma(IADLXDisplayServices* displayService, IADLXDisplay* display, int k
             res = SetGammaWithCustomCoeffs(displayService, display);
             break;
 
-        // Use ramp form file, file path: ../output-night-light.txt
+        // Use ramp form file, file path: output-night-light.txt
         case 2:
-            res = displayGamma->pVtbl->SetReGammaRamp_File(displayGamma, "../output-night-light.txt");
+            res = displayGamma->pVtbl->SetReGammaRamp_File(displayGamma, "output-night-light.txt");
             break;
 
         // Use ramp from memory

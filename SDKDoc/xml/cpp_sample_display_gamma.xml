@@ -26,7 +26,7 @@
 		&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt; Display current gamma information.&lt;/td&gt;&lt;/tr&gt;
 		&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt; Set ReGammaSRGB using predefined coefficients.&lt;/td&gt;&lt;/tr&gt;
 		&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt; Set ReGamma using custom coefficients.&lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt; Set ReGamma using ramp from file[file path: ../output-night-light.txt].&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt; Set ReGamma using ramp from file[file path: output-night-light.txt].&lt;/td&gt;&lt;/tr&gt;
 		&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt; ReGamma using ramp from memory.&lt;/td&gt;&lt;/tr&gt;
 		&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt; Reset Gamma ramp.&lt;/td&gt;&lt;/tr&gt;
 		&lt;tr&gt;&lt;td&gt;M/m&lt;/td&gt;&lt;td&gt; Display the command prompt menu.&lt;/td&gt;&lt;/tr&gt;
@@ -323,9 +323,9 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>SetGammaWithCustomCoeffs(displayService,<sp/>display);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>use<sp/>ramp<sp/>form<sp/>file,<sp/>file<sp/>path:<sp/>../output-night-light.txt</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>use<sp/>ramp<sp/>form<sp/>file,<sp/>file<sp/>path:<sp/>output-night-light.txt</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>2:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>displayGamma-&gt;SetReGammaRamp(</highlight><highlight class="stringliteral">&quot;../output-night-light.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>displayGamma-&gt;SetReGammaRamp(</highlight><highlight class="stringliteral">&quot;output-night-light.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Use<sp/>ramp<sp/>from<sp/>memory</highlight><highlight class="normal"></highlight></codeline>
@@ -445,6 +445,6 @@
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> </para>
     </detaileddescription>
-    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXSamplesPage/zADLXSamplePage.h"/>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/docs/Config/ADLXSamplesPage/zADLXSamplePage.h"/>
   </compounddef>
 </doxygen>

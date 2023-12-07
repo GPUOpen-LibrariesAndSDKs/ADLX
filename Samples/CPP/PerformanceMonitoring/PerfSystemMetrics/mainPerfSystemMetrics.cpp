@@ -7,7 +7,7 @@
 /// \brief Demonstrates how to control system metrics when programming with ADLX.
 
 #include "SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
-#include "SDK/Include/IPerformanceMonitoring.h"
+#include "SDK/Include/IPerformanceMonitoring1.h"
 #include <iostream>
 
 // Use ADLX namespace
@@ -232,6 +232,43 @@ void ShowSmartShift(IADLXSystemMetricsSupportPtr systemMetricsSupport, IADLXSyst
     }
 }
 
+// Show SmartShift Max
+void ShowSmartShiftMax(IADLXSystemMetricsSupportPtr systemMetricsSupport, IADLXSystemMetricsPtr systemMetrics)
+{
+    adlx_bool supported = false;
+    IADLXSystemMetricsSupport1Ptr sysMetricsSupport1(systemMetricsSupport);
+    IADLXSystemMetrics1Ptr sysMetrics1(systemMetrics);
+    if (!sysMetricsSupport1)
+    {
+        std::cout << "\tGet IADLXSystemMetricsSupport1Ptr failed" << std::endl;
+        return;
+    }
+    if (!sysMetrics1)
+    {
+        std::cout << "\tGet IADLXSystemMetrics1Ptr failed" << std::endl;
+        return;
+    }
+
+    // Display power distribution support status
+    ADLX_RESULT res = sysMetricsSupport1->IsSupportedPowerDistribution(&supported);
+    if (ADLX_SUCCEEDED(res))
+    {
+        std::cout << "PowerDistribution support status: " << supported << std::endl;
+        if (supported)
+        {
+            int apuShiftValue, gpuShiftValue, apuShiftLimit, gpuShiftLimit, totalShiftLimit;
+            res = sysMetrics1->PowerDistribution(&apuShiftValue, &gpuShiftValue, &apuShiftLimit, &gpuShiftLimit, &totalShiftLimit);
+            if (ADLX_SUCCEEDED(res))
+                std::cout << "The PowerDistribution is:\n"
+                << " apuShiftValue: " << apuShiftValue
+                << " ,gpuShiftValue: " << gpuShiftValue
+                << " ,apuShiftLimit: " << apuShiftLimit
+                << " ,gpuShiftLimit: " << gpuShiftLimit
+                << " ,totalShiftLimit: " << totalShiftLimit << std::endl;
+        }
+    }
+}
+
 // Display current system metrics
 void ShowCurrentSystemMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitoringServices)
 {
@@ -257,6 +294,7 @@ void ShowCurrentSystemMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitori
             ShowCPUUsage(systemMetricsSupport, systemMetrics);
             ShowSystemRAM(systemMetricsSupport, systemMetrics);
             ShowSmartShift(systemMetricsSupport, systemMetrics);
+            ShowSmartShiftMax(systemMetricsSupport, systemMetrics);
             std::cout << std::noboolalpha;
         }
         Sleep(1000);
@@ -352,6 +390,7 @@ void ShowHistoricalSystemMetrics(IADLXPerformanceMonitoringServicesPtr perfMonit
                 ShowCPUUsage(systemMetricsSupport, systemMetrics);
                 ShowSystemRAM(systemMetricsSupport, systemMetrics);
                 ShowSmartShift(systemMetricsSupport, systemMetrics);
+                ShowSmartShiftMax(systemMetricsSupport, systemMetrics);
                 std::cout << std::noboolalpha;
             }
             std::cout << std::endl;

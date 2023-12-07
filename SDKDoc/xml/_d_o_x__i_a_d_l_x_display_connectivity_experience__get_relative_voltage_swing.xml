@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_display_connectivity_experience__get_relative_voltage_swing" kind="page">
+    <compoundname>DOX_IADLXDisplayConnectivityExperience_GetRelativeVoltageSwing</compoundname>
+    <title>GetRelativeVoltageSwing</title>
+    <briefdescription>
+<para>Gets the relative voltage swing on a display. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Gets the relative voltage swing on a display.</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>    GetRelativeVoltageSwing(adlx_uint* relativeVoltageSwing)
+ </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para><variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>1.</para>
+</entry><entry thead="no" class="paramdir"><para>[out]</para>
+</entry><entry thead="no" class="paramname"><para>relativeVoltageSwing</para>
+</entry><entry thead="no" class="paramtype"><para>ADLX_DP_LINK_RATE*</para>
+</entry><entry thead="no"><para>The pointer to the number of current relative voltage swing is returned. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If the relative voltage swing is successfully returned, <bold>ADLX_OK</bold> is returned.<linebreak/>
+ If the relative voltage swing is not successfully returned, an error code is returned.<linebreak/>
+ Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IDisplaySettings.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.2</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h"/>
+  </compounddef>
+</doxygen>

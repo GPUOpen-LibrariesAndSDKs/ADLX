@@ -438,31 +438,56 @@ void StartGPUAutoTuning(IADLXGPUTuningServices* gpuTuningService, IADLXGPUList* 
                     switch (num)
                     {
                     case '0':
-                        res = autoTuning->pVtbl->StartUndervoltGPU(autoTuning, &completeListener);
-                        WaitForSingleObject(g_ADLXEvent, 1000);
-                        ResetEvent(g_ADLXEvent);
-                        if (ADLX_SUCCEEDED(res))
-                            printf("\tStart undervolt GPU successfully\n");
+
+                        res = autoTuning->pVtbl->IsSupportedUndervoltGPU(autoTuning, &supported);
+                        if (ADLX_SUCCEEDED(res) && supported)
+                        {
+                            res = autoTuning->pVtbl->StartUndervoltGPU(autoTuning, &completeListener);
+                            WaitForSingleObject(g_ADLXEvent, 1000);
+                            ResetEvent(g_ADLXEvent);
+                            if (ADLX_SUCCEEDED(res))
+                                printf("\tStart undervolt GPU successfully\n");
+                            else
+                                printf("\tStart undervolt GPU failed\n");
+                        }
                         else
-                            printf("\tStart undervolt GPU failed\n");
+                        {
+                            printf("\tUndervolt GPU is not supported\n");
+                        }
                         break;
                     case '1':
-                        res = autoTuning->pVtbl->StartOverclockGPU(autoTuning, &completeListener);
-                        WaitForSingleObject(g_ADLXEvent, 1000);
-                        ResetEvent(g_ADLXEvent);
-                        if (ADLX_SUCCEEDED(res))
-                            printf("\tStart overclock GPU successfully\n");
+                        res = autoTuning->pVtbl->IsSupportedOverclockGPU(autoTuning, &supported);
+                        if (ADLX_SUCCEEDED(res) && supported)
+                        {
+                            res = autoTuning->pVtbl->StartOverclockGPU(autoTuning, &completeListener);
+                            WaitForSingleObject(g_ADLXEvent, 1000);
+                            ResetEvent(g_ADLXEvent);
+                            if (ADLX_SUCCEEDED(res))
+                                printf("\tStart overclock GPU successfully\n");
+                            else
+                                printf("\tStart overclock GPU failed\n");
+                        }
                         else
-                            printf("\tStart overclock GPU failed\n");
+                        {
+                            printf("\tOverclock GPU is not supported\n");
+                        }
                         break;
                     case '2':
-                        res = autoTuning->pVtbl->StartOverclockVRAM(autoTuning, &completeListener);
-                        WaitForSingleObject(g_ADLXEvent, 1000);
-                        ResetEvent(g_ADLXEvent);
-                        if (ADLX_SUCCEEDED(res))
-                            printf("\tStart overclock VRAM successfully\n");
+                        res = autoTuning->pVtbl->IsSupportedOverclockVRAM(autoTuning, &supported);
+                        if (ADLX_SUCCEEDED(res) && supported)
+                        {
+                            res = autoTuning->pVtbl->StartOverclockVRAM(autoTuning, &completeListener);
+                            WaitForSingleObject(g_ADLXEvent, 1000);
+                            ResetEvent(g_ADLXEvent);
+                            if (ADLX_SUCCEEDED(res))
+                                printf("\tStart overclock VRAM successfully\n");
+                            else
+                                printf("\tStart overclock VRAM failed\n");
+                        }
                         else
-                            printf("\tStart overclock VRAM failed\n");
+                        {
+                            printf("\tOverclock VRAM is not supported\n");
+                        }
                         break;
                     default:
                         break;

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_g_p_u1__multi_g_p_u_mode" kind="page">
+    <compoundname>DOX_IADLXGPU1_MultiGPUMode</compoundname>
+    <title>MultiGPUMode</title>
+    <briefdescription>
+<para>Gets the AMD MGPU mode of a GPU. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Gets the AMD MGPU mode of a GPU.</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>    MultiGPUMode (<ref refid="group__enumerations_1gada547c00826e15266732f874a0f3478d" kindref="member">ADLX_MGPU_MODE</ref>* mode)
+ </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para><variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>1.</para>
+</entry><entry thead="no" class="paramdir"><para>[out]</para>
+</entry><entry thead="no" class="paramname"><para>mode</para>
+</entry><entry thead="no" class="paramtype"><para>ADLX_MGPU_MODE*</para>
+</entry><entry thead="no"><para>The pointer to a variable where the AMD MGPU mode is returned. The variable is <bold>MGPU_NONE</bold> if the GPU is not part of an AMD MGPU configuration. The variable is <bold>MGPU_PRIMARY</bold> if the GPU is the primary GPU in an AMD MGPU configuration. The variable is <bold>MGPU_SECONDARY</bold> if the GPU is the secondary GPU in an AMD MGPU configuration. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If <bold>MultiGPUMode</bold> is successfully returned, <bold>ADLX_OK</bold> is returned.<linebreak/>
+ If <bold>MultiGPUMode</bold> is not successfully returned, an error code is returned.<linebreak/>
+ Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.<linebreak/>
+</para>
+<para><heading level="2">Additional Info </heading>
+</para>
+<para>AMD MGPU technology harnesses the power of two or more discrete graphics cards working in parallel to dramatically improve performance in games and applications.<linebreak/>
+ On systems with AMD MGPU enabled the video output is delivered through the primary GPU and the workload is allocated to all supported GPUs in the setup.<linebreak/>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;ISystem1.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.2</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ISystem1.h"/>
+  </compounddef>
+</doxygen>

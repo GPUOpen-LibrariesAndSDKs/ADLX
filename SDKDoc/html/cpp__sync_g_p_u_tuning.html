@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.2</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('cpp__sync_g_p_u_tuning.html',''); init
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;SDK/Include/IGPUTuning.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;SDK/Include/IGPUTuning1.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"> </div>
@@ -150,6 +150,8 @@ $(document).ready(function(){initNavTree('cpp__sync_g_p_u_tuning.html',''); init
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">    adlx_bool ADLX_STD_CALL OnGPUTuningChanged(IADLXGPUTuningChangedEvent* pGPUTuningChangedEvent)<span class="keyword"> override</span></div>
 <div class="line"><span class="keyword">    </span>{</div>
+<div class="line">        IADLXGPUTuningChangedEvent1* pGPUTuningChangedEvent1 = <span class="keyword">nullptr</span>;</div>
+<div class="line">        pGPUTuningChangedEvent-&gt;QueryInterface(L<span class="stringliteral">&quot;IADLXGPUTuningChangedEvent1&quot;</span>, <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>**<span class="keyword">&gt;</span>(&amp;pGPUTuningChangedEvent1));</div>
 <div class="line">        <a class="code" href="group__enumerations.html#ga7a1e20106faef482c0664c546e04ba00">ADLX_SYNC_ORIGIN</a> origin = pGPUTuningChangedEvent-&gt;GetOrigin();</div>
 <div class="line">        <span class="keywordflow">if</span> (origin == SYNC_ORIGIN_EXTERNAL)</div>
 <div class="line">        {</div>
@@ -183,6 +185,10 @@ $(document).ready(function(){initNavTree('cpp__sync_g_p_u_tuning.html',''); init
 <div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pGPUTuningChangedEvent-&gt;IsManualPowerTuningChanged())</div>
 <div class="line">            {</div>
 <div class="line">                std::cout &lt;&lt; <span class="stringliteral">&quot;\tManualPowerTuningChanged&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pGPUTuningChangedEvent1-&gt;IsSmartAccessMemoryChanged())</div>
+<div class="line">            {</div>
+<div class="line">                std::cout &lt;&lt; <span class="stringliteral">&quot;\tSmartAccessMemoryChanged&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">            }</div>
 <div class="line">        }</div>
 <div class="line">        SetEvent(blockEvent);</div>
@@ -278,10 +284,10 @@ $(document).ready(function(){initNavTree('cpp__sync_g_p_u_tuning.html',''); init
 <div class="line">        sprintf_s(uniqueName, 128, <span class="stringliteral">&quot;name:%s, id:%d&quot;</span>, gpuName, <span class="keywordtype">id</span>);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga7a1e20106faef482c0664c546e04ba00a8f0083602d13ae71103b333d6c9c9d00"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga7a1e20106faef482c0664c546e04ba00a8f0083602d13ae71103b333d6c9c9d00">SYNC_ORIGIN_EXTERNAL</a></div><div class="ttdeci">@ SYNC_ORIGIN_EXTERNAL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:854</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga7a1e20106faef482c0664c546e04ba00a8f0083602d13ae71103b333d6c9c9d00"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga7a1e20106faef482c0664c546e04ba00a8f0083602d13ae71103b333d6c9c9d00">SYNC_ORIGIN_EXTERNAL</a></div><div class="ttdeci">@ SYNC_ORIGIN_EXTERNAL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:899</div></div>
 <div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:282</div></div>
 <div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:305</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga7a1e20106faef482c0664c546e04ba00"><div class="ttname"><a href="group__enumerations.html#ga7a1e20106faef482c0664c546e04ba00">ADLX_SYNC_ORIGIN</a></div><div class="ttdeci">ADLX_SYNC_ORIGIN</div><div class="ttdoc">Indicates the origin of an event.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:851</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga7a1e20106faef482c0664c546e04ba00"><div class="ttname"><a href="group__enumerations.html#ga7a1e20106faef482c0664c546e04ba00">ADLX_SYNC_ORIGIN</a></div><div class="ttdeci">ADLX_SYNC_ORIGIN</div><div class="ttdoc">Indicates the origin of an event.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:896</div></div>
 <div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:278</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->

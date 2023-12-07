@@ -7,7 +7,7 @@
 /// \brief Demonstrates how to control system metrics when programming with ADLX.
 
 #include "SDK/ADLXHelper/Windows/C/ADLXHelper.h"
-#include "SDK/Include/IPerformanceMonitoring.h"
+#include "SDK/Include/IPerformanceMonitoring1.h"
 
 // Main menu
 void MainMenu();
@@ -234,6 +234,50 @@ void ShowSmartShift(IADLXSystemMetricsSupport *systemMetricsSupport, IADLXSystem
     }
 }
 
+// Show SmartShift Max
+void ShowSmartShiftMax(IADLXSystemMetricsSupport* systemMetricsSupport, IADLXSystemMetrics* systemMetrics)
+{
+    IADLXSystemMetricsSupport1* sysMetricsSupport1 = NULL;
+    ADLX_RESULT res = systemMetricsSupport->pVtbl->QueryInterface(systemMetricsSupport, IID_IADLXSystemMetricsSupport1(), (void**)&sysMetricsSupport1);
+    if (ADLX_SUCCEEDED(res))
+    {
+        adlx_bool supported = false;
+        // Display power distribution support status
+        res = sysMetricsSupport1->pVtbl->IsSupportedPowerDistribution(sysMetricsSupport1, &supported);
+        if (ADLX_SUCCEEDED(res))
+        {
+            printf("PowerDistribution support status: %d\n", supported);
+            if (supported)
+            {
+                IADLXSystemMetrics1* sysMetrics1 = NULL;
+                res = systemMetrics->pVtbl->QueryInterface(systemMetrics, IID_IADLXSystemMetrics1(), (void*)&sysMetrics1);
+                if (ADLX_SUCCEEDED(res))
+                {
+                    int apuShiftValue, gpuShiftValue, apuShiftLimit, gpuShiftLimit, totalShiftLimit;
+                    res = sysMetrics1->pVtbl->PowerDistribution(sysMetrics1, &apuShiftValue, &gpuShiftValue, &apuShiftLimit, &gpuShiftLimit, &totalShiftLimit);
+                    if (ADLX_SUCCEEDED(res))
+                        printf("The PowerDistribution is:\n apuShiftValue: %d , gpuShiftValue: %d , apuShiftLimit: %d , gpuShiftLimit: %d , totalShiftLimit: %d\n"
+                            , apuShiftValue, gpuShiftValue, apuShiftLimit, gpuShiftLimit, totalShiftLimit);
+
+                    // Release IADLXSystemMetrics1 interface
+                    sysMetrics1->pVtbl->Release(sysMetrics1);
+                }
+                else
+                {
+                    printf("\tGet IADLXSystemMetrics1Ptr failed\n");
+                }
+            }
+        }
+
+        // Release IADLXSystemMetricsSupport1 interface
+        sysMetricsSupport1->pVtbl->Release(sysMetricsSupport1);
+    }
+    else
+    {
+        printf("\tGet IADLXSystemMetricsSupport1Ptr failed\n");
+    }
+}
+
 // Display current system metrics
 void ShowCurrentSystemMetrics(IADLXPerformanceMonitoringServices *perfMonitoringServices)
 {
@@ -258,6 +302,7 @@ void ShowCurrentSystemMetrics(IADLXPerformanceMonitoringServices *perfMonitoring
             ShowCPUUsage(systemMetricsSupport, systemMetrics);
             ShowSystemRAM(systemMetricsSupport, systemMetrics);
             ShowSmartShift(systemMetricsSupport, systemMetrics);
+            ShowSmartShiftMax(systemMetricsSupport, systemMetrics);
         }
         Sleep(1000);
 
@@ -365,6 +410,7 @@ void ShowHistoricalSystemMetrics(IADLXPerformanceMonitoringServices *perfMonitor
                 ShowCPUUsage(systemMetricsSupport, systemMetrics);
                 ShowSystemRAM(systemMetricsSupport, systemMetrics);
                 ShowSmartShift(systemMetricsSupport, systemMetrics);
+                ShowSmartShiftMax(systemMetricsSupport, systemMetrics);
             }
             printf("\n");
             if (systemMetrics != NULL)

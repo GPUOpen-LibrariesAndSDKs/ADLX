@@ -7,6 +7,7 @@ var page_interfaces =
     [ "GPU Tuning", "gputuning.html", "gputuning" ],
     [ "I2C", "i2c.html", "i2c" ],
     [ "Performance Monitoring", "perfmonitoring.html", "perfmonitoring" ],
+    [ "Power Tuning", "domain_powertuning.html", "domain_powertuning" ],
     [ "System", "system.html", "system" ],
     [ "Miscellaneous", "misc.html", "misc" ]
 ];

@@ -353,6 +353,51 @@ typedef enum
 } ADLX_ASIC_FAMILY_TYPE;
 #pragma endregion ADLX_ASIC_FAMILY_TYPE
 
+#pragma region ADLX_PCI_BUS_TYPE
+/**
+ * @enum ADLX_PCI_BUS_TYPE
+ * @ingroup enumerations
+ * @ENG_START_DOX
+ * @brief Indicates the PCI bus type.
+ * @ENG_END_DOX
+ */
+typedef enum
+{
+    UNDEFINED = 0,              /**< @ENG_START_DOX The PCI bus type is not defined. @ENG_END_DOX */
+    PCI,                        /**< @ENG_START_DOX The PCI bus type is PCI bus. @ENG_END_DOX */
+    AGP,                        /**< @ENG_START_DOX The PCI bus type is AGP bus. @ENG_END_DOX */
+    PCIE,                       /**< @ENG_START_DOX The PCI bus type is PCI Express bus. @ENG_END_DOX */
+    PCIE_2_0,                   /**< @ENG_START_DOX The PCI bus type is PCI Express 2nd generation bus. @ENG_END_DOX */
+    PCIE_3_0,                   /**< @ENG_START_DOX The PCI bus type is PCI Express 3rd generation bus. @ENG_END_DOX */
+    PCIE_4_0                    /**< @ENG_START_DOX The PCI bus type is PCI Express 4th generation bus. @ENG_END_DOX */
+} ADLX_PCI_BUS_TYPE;
+#pragma endregion ADLX_PCI_BUS_TYPE
+
+#pragma region ADLX_DP_LINK_RATE
+/**
+ * @enum ADLX_DP_LINK_RATE
+ * @ingroup enumerations
+ * @ENG_START_DOX
+ * @brief Indicates the DP link rate.
+ * @ENG_END_DOX
+ */
+typedef enum
+{
+    DP_LINK_RATE_UNKNOWN = 0,    /**< @ENG_START_DOX The DP link rate is unknown. @ENG_END_DOX */
+    DP_LINK_RATE_RBR,            /**< @ENG_START_DOX The DP link rate is 1.62 Gbps/Lane. @ENG_END_DOX */
+    DP_LINK_RATE_2_16GBPS,       /**< @ENG_START_DOX The DP link rate is 2.16 Gbps/Lane. @ENG_END_DOX */
+    DP_LINK_RATE_2_43GBPS,       /**< @ENG_START_DOX The DP link rate is 2.43 Gbps/Lane. @ENG_END_DOX */
+    DP_LINK_RATE_HBR,            /**< @ENG_START_DOX The DP link rate is 2.70 Gbps/Lane. @ENG_END_DOX */
+    DP_LINK_RATE_4_32GBPS,       /**< @ENG_START_DOX The DP link rate is 4.32 Gbps/Lane. @ENG_END_DOX */
+    DP_LINK_RATE_HBR2,           /**< @ENG_START_DOX The DP link rate is 5.40 Gbps/Lane. @ENG_END_DOX */
+    DP_LINK_RATE_HBR3,           /**< @ENG_START_DOX The DP link rate is 8.10 Gbps/Lane. @ENG_END_DOX */
+    DP_LINK_RATE_UHBR10,         /**< @ENG_START_DOX The DP link rate is 10 Gbps/Lane. @ENG_END_DOX */
+    DP_LINK_RATE_UHBR13D5,       /**< @ENG_START_DOX The DP link rate is 13.5 Gbps/Lane. @ENG_END_DOX */
+    DP_LINK_RATE_UHBR20          /**< @ENG_START_DOX The DP link rate is 20 Gbps/Lane. @ENG_END_DOX */
+} ADLX_DP_LINK_RATE;
+
+#pragma endregion ADLX_DP_LINK_RATE
+
 #pragma region ADLX_GPU_TYPE
 /**
  * @enum ADLX_GPU_TYPE
@@ -886,6 +931,20 @@ typedef enum
 } ADLX_3DLUT_COLORSPACE;
 #pragma endregion ADLX_3DLUT_COLORSPACE
 
+#pragma region ADLX_SSM_BIAS_MODE
+/** @enum ADLX_SSM_BIAS_MODE
+ *  @ingroup enumerations
+ * @ENG_START_DOX
+ *  @brief AMD SmartShift Max bias mode.
+ * @ENG_END_DOX
+ */
+typedef enum
+{
+    SSM_BIAS_AUTO = 0,       /**< @ENG_START_DOX The bias control type is auto. @ENG_END_DOX */
+    SSM_BIAS_MANUAL          /**< @ENG_START_DOX The bias control type is manual. @ENG_END_DOX */
+}ADLX_SSM_BIAS_MODE;
+#pragma endregion ADLX_SSM_BIAS_MODE
+
 #pragma region ADLX_ANTILAG_STATE
 /**
  * @enum ADLX_ANTILAG_STATE
@@ -900,6 +959,22 @@ typedef enum
     ANTILAGNEXT,                        /**< @ENG_START_DOX The Antilag level is AntiLag Next. @ENG_END_DOX */
 } ADLX_ANTILAG_STATE;
 #pragma endregion ADLX_ANTILAG_STATE
+
+#pragma region ADLX_MGPU_MODE
+/**
+ * @enum ADLX_MGPU_MODE
+ * @ingroup enumerations
+ * @ENG_START_DOX
+ * @brief Indicates the AMD MGPU mode.
+ * @ENG_END_DOX
+ */
+typedef enum
+{
+    MGPU_NONE = 0,                     /**< @ENG_START_DOX The GPU is not part of an AMD MGPU configuration. @ENG_END_DOX */
+    MGPU_PRIMARY,                      /**< @ENG_START_DOX The GPU is the primary GPU in an AMD MGPU configuration. @ENG_END_DOX */
+    MGPU_SECONDARY,                    /**< @ENG_START_DOX The GPU is the secondary GPU in an AMD MGPU configuration. @ENG_END_DOX */
+} ADLX_MGPU_MODE;
+#pragma endregion ADLX_MGPU_MODE
 
 #pragma endregion ADLX data types
 

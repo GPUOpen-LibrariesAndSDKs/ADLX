@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.2</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -192,21 +192,28 @@ $(document).ready(function(){initNavTree('c__manual_v_r_a_m_tuning.html',''); in
 <div class="line">            gpuTuningService-&gt;pVtbl-&gt;IsSupportedManualVRAMTuning(gpuTuningService, gpu, &amp;supported);</div>
 <div class="line">            printf(<span class="stringliteral">&quot;\tThe GPU support for manual VRAM tuning is: %d \n&quot;</span>, supported);</div>
 <div class="line"> </div>
-<div class="line">                    <span class="comment">// Get ManualVRAMTuning interface</span></div>
-<div class="line">            IADLXInterface* vramTuningIfc = NULL;</div>
-<div class="line">            res = gpuTuningService-&gt;pVtbl-&gt;GetManualVRAMTuning(gpuTuningService, gpu, &amp;vramTuningIfc);</div>
-<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            <span class="keywordflow">if</span> (supported)</div>
 <div class="line">            {</div>
-<div class="line">                MainMenu(vramTuningIfc);</div>
-<div class="line">                MenuControl(vramTuningIfc);</div>
+<div class="line">                <span class="comment">// Get ManualVRAMTuning interface</span></div>
+<div class="line">                IADLXInterface* vramTuningIfc = NULL;</div>
+<div class="line">                res = gpuTuningService-&gt;pVtbl-&gt;GetManualVRAMTuning(gpuTuningService, gpu, &amp;vramTuningIfc);</div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                {</div>
+<div class="line">                    MainMenu(vramTuningIfc);</div>
+<div class="line">                    MenuControl(vramTuningIfc);</div>
+<div class="line">                }</div>
+<div class="line">                <span class="comment">// Release the vramTuningIfc interface</span></div>
+<div class="line">                <span class="keywordflow">if</span> (vramTuningIfc != NULL)</div>
+<div class="line">                {</div>
+<div class="line">                    vramTuningIfc-&gt;pVtbl-&gt;Release(vramTuningIfc);</div>
+<div class="line">                    vramTuningIfc = NULL;</div>
+<div class="line">                }</div>
 <div class="line">            }</div>
-<div class="line"> </div>
-<div class="line">            <span class="comment">// Release the vramTuningIfc interface</span></div>
-<div class="line">            <span class="keywordflow">if</span> (vramTuningIfc != NULL)</div>
+<div class="line">            <span class="keywordflow">else</span></div>
 <div class="line">            {</div>
-<div class="line">                vramTuningIfc-&gt;pVtbl-&gt;Release(vramTuningIfc);</div>
-<div class="line">                vramTuningIfc = NULL;</div>
+<div class="line">                printf(<span class="stringliteral">&quot;\tThis GPU Doesn&#39;t support Manual VRAM Tuning \n&quot;</span>);</div>
 <div class="line">            }</div>
+<div class="line">           </div>
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Release the GPU interface</span></div>
 <div class="line">            <span class="keywordflow">if</span> (gpu != NULL)</div>
@@ -669,15 +676,15 @@ $(document).ready(function(){initNavTree('c__manual_v_r_a_m_tuning.html',''); in
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11a2ae2530d0e57e0db3bf2b94f4f3f96d8"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11a2ae2530d0e57e0db3bf2b94f4f3f96d8">MEMORYTIMING_MEMORYTIMING_LEVEL_2</a></div><div class="ttdeci">@ MEMORYTIMING_MEMORYTIMING_LEVEL_2</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:819</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11a36391b593ecff100518944cea6668e74"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11a36391b593ecff100518944cea6668e74">MEMORYTIMING_AUTOMATIC</a></div><div class="ttdeci">@ MEMORYTIMING_AUTOMATIC</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:817</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11a9ec2a8597122dc8cc85e9cff91eede1c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11a9ec2a8597122dc8cc85e9cff91eede1c">MEMORYTIMING_FAST_TIMING_LEVEL_2</a></div><div class="ttdeci">@ MEMORYTIMING_FAST_TIMING_LEVEL_2</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:816</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11ae2165248a4d00fbfe16140ca4afd0e9b"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11ae2165248a4d00fbfe16140ca4afd0e9b">MEMORYTIMING_MEMORYTIMING_LEVEL_1</a></div><div class="ttdeci">@ MEMORYTIMING_MEMORYTIMING_LEVEL_1</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:818</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11ae75d55283f428316b2db4833d54ecf77"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11ae75d55283f428316b2db4833d54ecf77">MEMORYTIMING_FAST_TIMING</a></div><div class="ttdeci">@ MEMORYTIMING_FAST_TIMING</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:815</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11afe3950cab8cd7256574a2d833ae06f26"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11afe3950cab8cd7256574a2d833ae06f26">MEMORYTIMING_DEFAULT</a></div><div class="ttdeci">@ MEMORYTIMING_DEFAULT</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:814</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11a2ae2530d0e57e0db3bf2b94f4f3f96d8"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11a2ae2530d0e57e0db3bf2b94f4f3f96d8">MEMORYTIMING_MEMORYTIMING_LEVEL_2</a></div><div class="ttdeci">@ MEMORYTIMING_MEMORYTIMING_LEVEL_2</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:864</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11a36391b593ecff100518944cea6668e74"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11a36391b593ecff100518944cea6668e74">MEMORYTIMING_AUTOMATIC</a></div><div class="ttdeci">@ MEMORYTIMING_AUTOMATIC</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:862</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11a9ec2a8597122dc8cc85e9cff91eede1c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11a9ec2a8597122dc8cc85e9cff91eede1c">MEMORYTIMING_FAST_TIMING_LEVEL_2</a></div><div class="ttdeci">@ MEMORYTIMING_FAST_TIMING_LEVEL_2</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:861</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11ae2165248a4d00fbfe16140ca4afd0e9b"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11ae2165248a4d00fbfe16140ca4afd0e9b">MEMORYTIMING_MEMORYTIMING_LEVEL_1</a></div><div class="ttdeci">@ MEMORYTIMING_MEMORYTIMING_LEVEL_1</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:863</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11ae75d55283f428316b2db4833d54ecf77"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11ae75d55283f428316b2db4833d54ecf77">MEMORYTIMING_FAST_TIMING</a></div><div class="ttdeci">@ MEMORYTIMING_FAST_TIMING</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:860</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11afe3950cab8cd7256574a2d833ae06f26"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11afe3950cab8cd7256574a2d833ae06f26">MEMORYTIMING_DEFAULT</a></div><div class="ttdeci">@ MEMORYTIMING_DEFAULT</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:859</div></div>
 <div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:305</div></div>
 <div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:278</div></div>
-<div class="ttc" id="agroup__enumerations_html_gaa25f244e38a3502a52167c303abcec11"><div class="ttname"><a href="group__enumerations.html#gaa25f244e38a3502a52167c303abcec11">ADLX_MEMORYTIMING_DESCRIPTION</a></div><div class="ttdeci">ADLX_MEMORYTIMING_DESCRIPTION</div><div class="ttdoc">Indicates the priority of the log entry.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:813</div></div>
+<div class="ttc" id="agroup__enumerations_html_gaa25f244e38a3502a52167c303abcec11"><div class="ttname"><a href="group__enumerations.html#gaa25f244e38a3502a52167c303abcec11">ADLX_MEMORYTIMING_DESCRIPTION</a></div><div class="ttdeci">ADLX_MEMORYTIMING_DESCRIPTION</div><div class="ttdoc">Indicates the priority of the log entry.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:858</div></div>
 <div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:154</div></div>
 <div class="ttc" id="agroup__structures_val_html_ae0e545b501a683c565f08089ed3e8023"><div class="ttname"><a href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">ADLX_IntRange::step</a></div><div class="ttdeci">adlx_int step</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:155</div></div>
 <div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:153</div></div>

@@ -418,7 +418,7 @@ void SetGPUStates2(IADLXManualGraphicsTuning2* manualGFXTuning2)
     res = manualGFXTuning2->pVtbl->GetGPUVoltageRange(manualGFXTuning2, &voltRange);
     res = manualGFXTuning2->pVtbl->SetGPUMinFrequency(manualGFXTuning2, freqRange.minValue);
     printf ("\tSet GPU min frequency %s\n", (ADLX_SUCCEEDED (res) ? "succeeded" : "failed"));
-    res = manualGFXTuning2->pVtbl->SetGPUMaxFrequency(manualGFXTuning2, freqRange.maxValue);
+    res = manualGFXTuning2->pVtbl->SetGPUMaxFrequency(manualGFXTuning2, freqRange.minValue + 100);
     printf ("\tSet GPU max frequency %s\n", (ADLX_SUCCEEDED (res) ? "succeeded" : "failed"));
     res = manualGFXTuning2->pVtbl->SetGPUVoltage(manualGFXTuning2, voltRange.minValue + (voltRange.maxValue - voltRange.minValue) / 2);
     printf ("\tSet GPU voltage %s\n", (ADLX_SUCCEEDED (res) ? "succeeded" : "failed"));

@@ -65,7 +65,7 @@ int main()
             if (ADLX_SUCCEEDED(res))
             {
                 // Get AntiLag1 interface                
-                ADLX_RESULT resALN = d3dAntiLag->pVtbl->QueryInterface(d3dAntiLag, IID_IADLX3DAntiLag1(), (void**)(&d3dAntiLag1));
+                ADLX_RESULT resALN = d3dAntiLag->pVtbl->QueryInterface(d3dAntiLag, IID_IADLX3DAntiLag1, (void**)(&d3dAntiLag1));
 
                 MainMenu(d3dAntiLag1 != NULL ? 1 : 0);
                 MenuControl(d3dAntiLag, d3dAntiLag1);

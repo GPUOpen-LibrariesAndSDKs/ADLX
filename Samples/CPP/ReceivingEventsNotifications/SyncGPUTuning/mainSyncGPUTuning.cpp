@@ -7,7 +7,7 @@
 /// \brief Demonstrates how to receive notifications of changes in GPU tuning settings using ADLX. To receive the event, another application (such as GPUAutoTuning) must be used to change these settings.
 
 #include "SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
-#include "SDK/Include/IGPUTuning.h"
+#include "SDK/Include/IGPUTuning1.h"
 #include <iostream>
 #include <string>
 
@@ -31,6 +31,8 @@ class CallBackGPUTuningChanged : public IADLXGPUTuningChangedListener
 public:
     adlx_bool ADLX_STD_CALL OnGPUTuningChanged(IADLXGPUTuningChangedEvent* pGPUTuningChangedEvent) override
     {
+        IADLXGPUTuningChangedEvent1* pGPUTuningChangedEvent1 = nullptr;
+        pGPUTuningChangedEvent->QueryInterface(L"IADLXGPUTuningChangedEvent1", reinterpret_cast<void**>(&pGPUTuningChangedEvent1));
         ADLX_SYNC_ORIGIN origin = pGPUTuningChangedEvent->GetOrigin();
         if (origin == SYNC_ORIGIN_EXTERNAL)
         {
@@ -64,6 +66,10 @@ public:
             else if (pGPUTuningChangedEvent->IsManualPowerTuningChanged())
             {
                 std::cout << "\tManualPowerTuningChanged" << std::endl;
+            }
+            else if (pGPUTuningChangedEvent1->IsSmartAccessMemoryChanged())
+            {
+                std::cout << "\tSmartAccessMemoryChanged" << std::endl;
             }
         }
         SetEvent(blockEvent);

@@ -6,6 +6,7 @@ var page_sample_c =
     [ "GPU Tuning", "domain_c_sample__g_p_u_tuning.html", "domain_c_sample__g_p_u_tuning" ],
     [ "I2C", "domain_c_sample__i2_c.html", "domain_c_sample__i2_c" ],
     [ "Performance Monitoring", "domain_c_sample__performance_monitoring.html", "domain_c_sample__performance_monitoring" ],
+    [ "Power Tuning", "domain_c_sample_powertuning.html", "domain_c_sample_powertuning" ],
     [ "Receiving Events Notifications", "domain_c_sample_globalsync.html", "domain_c_sample_globalsync" ],
     [ "ServiceCall", "domain_c_sample_servicecall.html", "domain_c_sample_servicecall" ],
     [ "Miscellaneous", "domain_c_sample__generic.html", "domain_c_sample__generic" ]

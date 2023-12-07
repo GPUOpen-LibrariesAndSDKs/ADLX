@@ -7,6 +7,7 @@
 /// \brief Demonstrates how to enumerate GPUs, get GPU information, receive notifications when GPUs are enabled and disabled, and maintain GPU change event when programming with ADLX.
 
 #include "SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
+#include "SDK/Include/ISystem1.h"
 #include <chrono>
 #include <iostream>
 #include <thread>
@@ -143,7 +144,33 @@ void ShowGPUInfo(const IADLXGPUPtr& gpu)
 
     adlx_int id;
     ret = gpu->UniqueId(&id);
-    std::cout << "UniqueId: " << id << ", return code is: "<< ret << "(0 means success)" << std::endl;
+    std::cout << "UniqueId: " << id << std::endl;
+
+    IADLXGPU1Ptr gpu1(gpu);
+    if (gpu1)
+    {
+        const char* productName = nullptr;
+        ret = gpu1->ProductName(&productName);
+        std::cout << "ProductName: " << productName << std::endl;
+
+        ADLX_MGPU_MODE mode = MGPU_NONE;
+        ret = gpu1->MultiGPUMode(&mode);
+        printf("Multi-GPU Mode: ");
+        if (mode == MGPU_PRIMARY)
+            std::cout << "GPU is the primary GPU" << std::endl;
+        else if (mode == MGPU_SECONDARY)
+            std::cout << "GPU is the secondary GPU" << std::endl;
+        else
+            std::cout << "GPU is not in Multi-GPU" << std::endl;
+
+        ADLX_PCI_BUS_TYPE busType = UNDEFINED;
+        ret = gpu1->PCIBusType(&busType);
+        std::cout << "PCIBusType: " << busType << std::endl;
+
+        adlx_uint laneWidth = 0;
+        ret = gpu1->PCIBusLaneWidth(&laneWidth);
+        std::cout << "PCIBusLaneWidth: " << laneWidth << std::endl;
+    }
 }
 
 void ShowHybridGraphicType()

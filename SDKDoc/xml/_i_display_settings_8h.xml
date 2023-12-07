@@ -11,6 +11,12 @@
       <node id="4">
         <label>Windows.h</label>
       </node>
+      <node id="1">
+        <label>D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h</label>
+        <link refid="_i_display_settings_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
       <node id="2">
         <label>ADLXStructures.h</label>
         <link refid="_a_d_l_x_structures_8h"/>
@@ -25,12 +31,6 @@
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h</label>
-        <link refid="_i_display_settings_8h"/>
-        <childnode refid="2" relation="include">
         </childnode>
       </node>
       <node id="5">
@@ -50,6 +50,7 @@
     <innerclass refid="classadlx_1_1_i_a_d_l_x_display_resolution_list" prot="public">adlx::IADLXDisplayResolutionList</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_display_custom_resolution" prot="public">adlx::IADLXDisplayCustomResolution</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_display_vari_bright" prot="public">adlx::IADLXDisplayVariBright</innerclass>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x_display_connectivity_experience" prot="public">adlx::IADLXDisplayConnectivityExperience</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_display_blanking" prot="public">adlx::IADLXDisplayBlanking</innerclass>
     <innernamespace refid="namespaceadlx">adlx</innernamespace>
     <briefdescription>
@@ -58,7 +59,7 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2022<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2023<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
@@ -705,59 +706,118 @@
 <codeline lineno="2450"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2451"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXDisplayVariBright<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2452"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2453"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>IADLXDisplayBlanking<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2453"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>IADLXDisplayConnectivtyExperience<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2454"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2455"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2456"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">adlx</highlight></codeline>
 <codeline lineno="2457"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2458"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLXDisplayBlanking<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLXInterface</highlight></codeline>
+<codeline lineno="2458"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLXDisplayConnectivityExperience<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLXInterface</highlight></codeline>
 <codeline lineno="2459"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="2460"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="2461"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DECLARE_IID(L</highlight><highlight class="stringliteral">&quot;IADLXDisplayBlanking&quot;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="2462"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2463"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="2483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>IsSupported(adlx_bool*<sp/>supported)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="2484"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>IsCurrentBlanked(adlx_bool*<sp/>blanked)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="2506"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2527"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>IsCurrentUnblanked(adlx_bool*<sp/>unBlanked)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="2528"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2549"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>SetBlanked()<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="2550"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2571"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>SetUnblanked()<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="2572"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="2573"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2574"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLXDisplayBlanking&gt;<sp/>IADLXDisplayBlankingPtr;</highlight></codeline>
-<codeline lineno="2575"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2576"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2577"><highlight class="normal">ADLX_DECLARE_IID(IADLXDisplayBlanking,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLXDisplayBlanking&quot;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="2578"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplayBlanking<sp/>IADLXDisplayBlanking;</highlight></codeline>
-<codeline lineno="2579"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2580"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplayBlankingVtbl</highlight></codeline>
-<codeline lineno="2581"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2582"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2583"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Acquire)(IADLXDisplayBlanking*<sp/>pThis);</highlight></codeline>
-<codeline lineno="2584"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Release)(IADLXDisplayBlanking*<sp/>pThis);</highlight></codeline>
-<codeline lineno="2585"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>QueryInterface)(IADLXDisplayBlanking*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
-<codeline lineno="2586"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2587"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//DisplayBlanking<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2588"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>IsSupported)(IADLXDisplayBlanking*<sp/>pThis,<sp/>adlx_bool*<sp/>supported);</highlight></codeline>
-<codeline lineno="2589"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>IsCurrentBlanked)(IADLXDisplayBlanking*<sp/>pThis,<sp/>adlx_bool*<sp/>blanked);</highlight></codeline>
-<codeline lineno="2590"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>IsCurrentUnblanked)(IADLXDisplayBlanking*<sp/>pThis,<sp/>adlx_bool*<sp/>unBlanked);</highlight></codeline>
-<codeline lineno="2591"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>SetBlanked)(IADLXDisplayBlanking*<sp/>pThis);</highlight></codeline>
-<codeline lineno="2592"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>SetUnblanked)(IADLXDisplayBlanking*<sp/>pThis);</highlight></codeline>
-<codeline lineno="2593"><highlight class="normal">}<sp/>IADLXDisplayBlankingVtbl;</highlight></codeline>
-<codeline lineno="2594"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2595"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplayBlanking</highlight></codeline>
-<codeline lineno="2596"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2597"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLXDisplayBlankingVtbl*<sp/>pVtbl;</highlight></codeline>
-<codeline lineno="2598"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="2599"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2600"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2601"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXDisplayBlanking<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2602"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2603"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>ADLX_IDISPLAYSETTING_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2461"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DECLARE_IID(L</highlight><highlight class="stringliteral">&quot;IADLXDisplayConnectivityExperience&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="2481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>IsSupportedHDMIQualityDetection(adlx_bool*<sp/>supported)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>IsSupportedDPLink(adlx_bool*<sp/>supported)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>IsEnabledHDMIQualityDetection(adlx_bool*<sp/>enabled)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2541"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>SetEnabledHDMIQualityDetection(adlx_bool<sp/>enabled)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>GetDPLinkRate(<ref refid="group__enumerations_1gad5b0891b86d362269696ba46e1d4bdee" kindref="member">ADLX_DP_LINK_RATE</ref>*<sp/>linkRate)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2581"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>GetNumberOfActiveLanes(adlx_uint*<sp/>numActiveLanes)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2601"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>GetNumberOfTotalLanes(adlx_uint*<sp/>numTotalLanes)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>GetRelativePreEmphasis(adlx_int*<sp/>relativePreEmphasis)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2646"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>SetRelativePreEmphasis(adlx_int<sp/>relativePreEmphasis)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2666"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>GetRelativeVoltageSwing(adlx_int*<sp/>relativeVoltageSwing)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2691"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>SetRelativeVoltageSwing(adlx_int<sp/>relativeVoltageSwing)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2711"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>IsEnabledLinkProtection(adlx_bool*<sp/>enabled)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2712"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="2713"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2714"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLXDisplayConnectivityExperience&gt;<sp/>IADLXDisplayConnectivityExperiencePtr;</highlight></codeline>
+<codeline lineno="2715"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2716"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2717"><highlight class="normal">ADLX_DECLARE_IID(IADLXDisplayConnectivityExperience,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLXDisplayConnectivityExperience&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="2718"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplayConnectivityExperience<sp/>IADLXDisplayConnectivityExperience;</highlight></codeline>
+<codeline lineno="2719"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2720"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplayConnectivityExperienceVtbl</highlight></codeline>
+<codeline lineno="2721"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2722"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2723"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Acquire)(IADLXDisplayConnectivityExperience*<sp/>pThis);</highlight></codeline>
+<codeline lineno="2724"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Release)(IADLXDisplayConnectivityExperience*<sp/>pThis);</highlight></codeline>
+<codeline lineno="2725"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>QueryInterface)(IADLXDisplayConnectivityExperience*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
+<codeline lineno="2726"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2727"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Display<sp/>Connectivity<sp/>Experience<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2728"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>IsSupportedHDMIQualityDetection)(IADLXDisplayConnectivityExperience*<sp/>pThis,<sp/>adlx_bool*<sp/>supported);</highlight></codeline>
+<codeline lineno="2729"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>IsSupportedDPLink)(IADLXDisplayConnectivityExperience*<sp/>pThis,<sp/>adlx_bool*<sp/>supported);</highlight></codeline>
+<codeline lineno="2730"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>IsEnabledHDMIQualityDetection)(IADLXDisplayConnectivityExperience*<sp/>pThis,<sp/>adlx_bool*<sp/>enabled);</highlight></codeline>
+<codeline lineno="2731"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>SetEnabledHDMIQualityDetection)(IADLXDisplayConnectivityExperience*<sp/>pThis,<sp/>adlx_bool<sp/>enabled);</highlight></codeline>
+<codeline lineno="2732"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetDPLinkRate)(IADLXDisplayConnectivityExperience*<sp/>pThis,<sp/><ref refid="group__enumerations_1gad5b0891b86d362269696ba46e1d4bdee" kindref="member">ADLX_DP_LINK_RATE</ref>*<sp/>linkRate);</highlight></codeline>
+<codeline lineno="2733"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetNumberOfActiveLanes)(IADLXDisplayConnectivityExperience*<sp/>pThis,<sp/>adlx_uint*<sp/>numActiveLanes);</highlight></codeline>
+<codeline lineno="2734"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetNumberOfTotalLanes)(IADLXDisplayConnectivityExperience*<sp/>pThis,<sp/>adlx_uint*<sp/>numTotalLanes);</highlight></codeline>
+<codeline lineno="2735"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetRelativePreEmphasis)(IADLXDisplayConnectivityExperience*<sp/>pThis,<sp/>adlx_int*<sp/>relativePreEmphasis);</highlight></codeline>
+<codeline lineno="2736"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>SetRelativePreEmphasis)(IADLXDisplayConnectivityExperience*<sp/>pThis,<sp/>adlx_int<sp/>relativePreEmphasis);</highlight></codeline>
+<codeline lineno="2737"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetRelativeVoltageSwing)(IADLXDisplayConnectivityExperience*<sp/>pThis,<sp/>adlx_int*<sp/>relativeVoltageSwing);</highlight></codeline>
+<codeline lineno="2738"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>SetRelativeVoltageSwing)(IADLXDisplayConnectivityExperience*<sp/>pThis,<sp/>adlx_int<sp/>relativeVoltageSwing);</highlight></codeline>
+<codeline lineno="2739"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>IsEnabledLinkProtection)(IADLXDisplayConnectivityExperience*<sp/>pThis,<sp/>adlx_bool*<sp/>enabled);</highlight></codeline>
+<codeline lineno="2740"><highlight class="normal">}<sp/>IADLXDisplayConnectivityExperienceVtbl;</highlight></codeline>
+<codeline lineno="2741"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2742"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplayConnectivityExperience</highlight></codeline>
+<codeline lineno="2743"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2744"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLXDisplayConnectivityExperienceVtbl*<sp/>pVtbl;</highlight></codeline>
+<codeline lineno="2745"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="2746"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2747"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2748"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXDisplayConnectivtyExperience<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2749"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2750"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>IADLXDisplayBlanking<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2751"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2752"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2753"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">adlx</highlight></codeline>
+<codeline lineno="2754"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2755"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLXDisplayBlanking<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLXInterface</highlight></codeline>
+<codeline lineno="2756"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="2757"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="2758"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DECLARE_IID(L</highlight><highlight class="stringliteral">&quot;IADLXDisplayBlanking&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="2759"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="2780"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>IsSupported(adlx_bool*<sp/>supported)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2781"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2802"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>IsCurrentBlanked(adlx_bool*<sp/>blanked)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2803"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2824"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>IsCurrentUnblanked(adlx_bool*<sp/>unBlanked)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2825"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2846"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>SetBlanked()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2847"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2868"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>SetUnblanked()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2869"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="2870"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2871"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLXDisplayBlanking&gt;<sp/>IADLXDisplayBlankingPtr;</highlight></codeline>
+<codeline lineno="2872"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2873"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2874"><highlight class="normal">ADLX_DECLARE_IID(IADLXDisplayBlanking,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLXDisplayBlanking&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="2875"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplayBlanking<sp/>IADLXDisplayBlanking;</highlight></codeline>
+<codeline lineno="2876"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2877"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplayBlankingVtbl</highlight></codeline>
+<codeline lineno="2878"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2879"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2880"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Acquire)(IADLXDisplayBlanking*<sp/>pThis);</highlight></codeline>
+<codeline lineno="2881"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Release)(IADLXDisplayBlanking*<sp/>pThis);</highlight></codeline>
+<codeline lineno="2882"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>QueryInterface)(IADLXDisplayBlanking*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
+<codeline lineno="2883"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2884"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//DisplayBlanking<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2885"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>IsSupported)(IADLXDisplayBlanking*<sp/>pThis,<sp/>adlx_bool*<sp/>supported);</highlight></codeline>
+<codeline lineno="2886"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>IsCurrentBlanked)(IADLXDisplayBlanking*<sp/>pThis,<sp/>adlx_bool*<sp/>blanked);</highlight></codeline>
+<codeline lineno="2887"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>IsCurrentUnblanked)(IADLXDisplayBlanking*<sp/>pThis,<sp/>adlx_bool*<sp/>unBlanked);</highlight></codeline>
+<codeline lineno="2888"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>SetBlanked)(IADLXDisplayBlanking*<sp/>pThis);</highlight></codeline>
+<codeline lineno="2889"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>SetUnblanked)(IADLXDisplayBlanking*<sp/>pThis);</highlight></codeline>
+<codeline lineno="2890"><highlight class="normal">}<sp/>IADLXDisplayBlankingVtbl;</highlight></codeline>
+<codeline lineno="2891"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2892"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplayBlanking</highlight></codeline>
+<codeline lineno="2893"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2894"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLXDisplayBlankingVtbl*<sp/>pVtbl;</highlight></codeline>
+<codeline lineno="2895"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="2896"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2897"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2898"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXDisplayBlanking<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2899"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2900"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>ADLX_IDISPLAYSETTING_H</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/IDisplaySettings.h"/>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h"/>
   </compounddef>
 </doxygen>

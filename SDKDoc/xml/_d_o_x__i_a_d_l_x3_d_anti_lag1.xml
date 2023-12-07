@@ -29,10 +29,10 @@
 </para>
 <para>Radeon Anti-Lag Next enables an advanced algorithm in supported DX11 and DX12 games for a more responsive experience. The <bold>IADLX3DAntiLag1</bold> interface is obtained from the <ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag" kindref="compound">IADLX3DAntiLag</ref> interface using <ref refid="_d_o_x__i_a_d_l_x_interface__query_interface" kindref="compound">QueryInterface</ref>. <linebreak/>
 </para>
-<sect2 id="_d_o_x__i_a_d_l_x3_d_anti_lag1_1autotoc_md13">
-<title>Dependent Interfaces</title>
-<para>When AMD Radeon Anti-Lag is enabled, the <ref refid="_d_o_x__i_a_d_l_x3_d_chill" kindref="compound">AMD Radeon Chill</ref> interface is automatically disabled. <linebreak/>
- <bold>Note:</bold> If the disabled interface is later re-enabled, its previous configuration settings will also be restored.</para>
+<para><heading level="2">Dependent Interfaces</heading>
+</para>
+<para>When AMD Radeon Anti-Lag is enabled, <ref refid="_d_o_x__i_a_d_l_x3_d_chill" kindref="compound">AMD Radeon Chill</ref> is automatically disabled. <linebreak/>
+ <bold>Note:</bold> If the disabled setting is later re-enabled, its previous configuration will be restored.</para>
 <para><heading level="2">Methods </heading>
 </para>
 <para><table rows="3" cols="2"><row>
@@ -53,7 +53,7 @@
 </para>
 <para><table rows="2" cols="2"><row>
 <entry thead="no"><para>Header</para>
-</entry><entry thead="no"><para>include &quot;I3DSettings.h&quot;</para>
+</entry><entry thead="no"><para>include &quot;I3DSettings1.h&quot;</para>
 </entry></row>
 <row>
 <entry thead="no"><para>Minimum version</para>
@@ -70,8 +70,7 @@
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag1__set_level" kindref="compound">SetLevel</ref> </para>
 </listitem></itemizedlist>
 </para>
-</sect2>
     </detaileddescription>
-    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLX3DSettingsPage.h"/>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLX3DSettingsPage.h"/>
   </compounddef>
 </doxygen>

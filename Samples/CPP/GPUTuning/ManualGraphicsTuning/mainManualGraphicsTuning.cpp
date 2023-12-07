@@ -336,7 +336,7 @@ void SetGPUStates(IADLXManualGraphicsTuning2Ptr manualGFXTuning2)
     res = manualGFXTuning2->GetGPUVoltageRange(&voltRange);
     res = manualGFXTuning2->SetGPUMinFrequency(freqRange.minValue);
     std::cout << "\tSet GPU min frequency " << (ADLX_SUCCEEDED (res) ? "succeeded" : "failed") << std::endl;
-    res = manualGFXTuning2->SetGPUMaxFrequency(freqRange.maxValue);
+    res = manualGFXTuning2->SetGPUMaxFrequency(freqRange.minValue + 100);
     std::cout << "\tSet GPU max frequency " << (ADLX_SUCCEEDED (res) ? "succeeded" : "failed") << std::endl;
     res = manualGFXTuning2->SetGPUVoltage(voltRange.minValue + (voltRange.maxValue - voltRange.minValue) / 2);
     std::cout << "\tSet GPU voltage " << (ADLX_SUCCEEDED (res) ? "succeeded" : "failed") << std::endl;

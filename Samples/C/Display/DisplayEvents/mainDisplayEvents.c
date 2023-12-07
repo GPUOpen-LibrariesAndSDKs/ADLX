@@ -17,77 +17,7 @@
 adlx_bool ADLX_STD_CALL OnDisplayListChanged(IADLXDisplayListChangedListener* pThis, IADLXDisplayList* pNewDisplays)
 {
     printf("Display list has been changed\n");
-
-    // Get system services
-    IADLXSystem* sys = ADLXHelper_GetSystemServices();
-    // Get display service
-    IADLXDisplayServices* displayService = NULL;
-    ADLX_RESULT res = sys->pVtbl->GetDisplaysServices(sys, &displayService);
-    if (ADLX_SUCCEEDED(res))
-    {
-        // Trigger gamut change, gamma change, 3DLUT change for the first display
-        adlx_uint it = 0;
-        IADLXDisplay* display = NULL;
-        res = pNewDisplays->pVtbl->At_DisplayList(pNewDisplays, it, &display);
-        if (ADLX_SUCCEEDED(res))
-        {
-            // Trigger gamut change
-            IADLXDisplayGamut* pDispGamut = NULL;
-            res = displayService->pVtbl->GetGamut(displayService, display, &pDispGamut);
-            if (ADLX_SUCCEEDED(res))
-            {
-                pDispGamut->pVtbl->SetGamut_PW_PG(pDispGamut, WHITE_POINT_5000K, GAMUT_SPACE_CIE_RGB);
-            }
-            if (NULL != pDispGamut)
-            {
-                pDispGamut->pVtbl->Release(pDispGamut);
-                pDispGamut = NULL;
-            }
-
-            // Trigger gamma change
-            IADLXDisplayGamma* pDispGamma = NULL;
-            res = displayService->pVtbl->GetGamma(displayService, display, &pDispGamma);
-            if (ADLX_SUCCEEDED(res))
-            {
-                ADLX_RegammaCoeff coeff;
-                coeff.coefficientA0 = 31308;
-                coeff.coefficientA1 = 12920;
-                coeff.coefficientA2 = 55;
-                coeff.coefficientA3 = 55;
-                coeff.gamma = 2400;
-                pDispGamma->pVtbl->SetReGammaCoefficient(pDispGamma, coeff);
-            }
-            if (NULL != pDispGamma)
-            {
-                pDispGamma->pVtbl->Release(pDispGamma);
-                pDispGamma = NULL;
-            }
-
-            // Trigger 3DLUT change
-            IADLXDisplay3DLUT* pDisp3DLUT = NULL;
-            res = displayService->pVtbl->Get3DLUT(displayService, display, &pDisp3DLUT);
-            if (ADLX_SUCCEEDED(res))
-            {
-                pDisp3DLUT->pVtbl->SetSCEDisabled(pDisp3DLUT);
-            }
-            if (NULL != pDisp3DLUT)
-            {
-                pDisp3DLUT->pVtbl->Release(pDisp3DLUT);
-                pDisp3DLUT = NULL;
-            }
-        }
-        if (NULL != display)
-        {
-            display->pVtbl->Release(display);
-            display = NULL;
-        }
-    }
-    if (NULL != displayService)
-    {
-        displayService->pVtbl->Release(displayService);
-        displayService = NULL;
-    }
-
+    
     // If true is returned ADLX continues to notify next listener else if false is retuned ADLX stops the notification.
     return true;
 }

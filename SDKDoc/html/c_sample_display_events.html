@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.2</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -134,77 +134,7 @@ $(document).ready(function(){initNavTree('c_sample_display_events.html',''); ini
 <div class="line">adlx_bool ADLX_STD_CALL OnDisplayListChanged(IADLXDisplayListChangedListener* pThis, IADLXDisplayList* pNewDisplays)</div>
 <div class="line">{</div>
 <div class="line">    printf(<span class="stringliteral">&quot;Display list has been changed\n&quot;</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// Get system services</span></div>
-<div class="line">    IADLXSystem* sys = ADLXHelper_GetSystemServices();</div>
-<div class="line">    <span class="comment">// Get display service</span></div>
-<div class="line">    IADLXDisplayServices* displayService = NULL;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = sys-&gt;pVtbl-&gt;GetDisplaysServices(sys, &amp;displayService);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">    {</div>
-<div class="line">        <span class="comment">// Trigger gamut change, gamma change, 3DLUT change for the first display</span></div>
-<div class="line">        adlx_uint it = 0;</div>
-<div class="line">        IADLXDisplay* display = NULL;</div>
-<div class="line">        res = pNewDisplays-&gt;pVtbl-&gt;At_DisplayList(pNewDisplays, it, &amp;display);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">        {</div>
-<div class="line">            <span class="comment">// Trigger gamut change</span></div>
-<div class="line">            IADLXDisplayGamut* pDispGamut = NULL;</div>
-<div class="line">            res = displayService-&gt;pVtbl-&gt;GetGamut(displayService, display, &amp;pDispGamut);</div>
-<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            {</div>
-<div class="line">                pDispGamut-&gt;pVtbl-&gt;SetGamut_PW_PG(pDispGamut, WHITE_POINT_5000K, GAMUT_SPACE_CIE_RGB);</div>
-<div class="line">            }</div>
-<div class="line">            <span class="keywordflow">if</span> (NULL != pDispGamut)</div>
-<div class="line">            {</div>
-<div class="line">                pDispGamut-&gt;pVtbl-&gt;Release(pDispGamut);</div>
-<div class="line">                pDispGamut = NULL;</div>
-<div class="line">            }</div>
-<div class="line"> </div>
-<div class="line">            <span class="comment">// Trigger gamma change</span></div>
-<div class="line">            IADLXDisplayGamma* pDispGamma = NULL;</div>
-<div class="line">            res = displayService-&gt;pVtbl-&gt;GetGamma(displayService, display, &amp;pDispGamma);</div>
-<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            {</div>
-<div class="line">                <a class="code" href="group__structures_val.html#struct_a_d_l_x___regamma_coeff">ADLX_RegammaCoeff</a> coeff;</div>
-<div class="line">                coeff.<a class="code" href="group__structures_val.html#a82a0c072f26cc842b3a8323826142d66">coefficientA0</a> = 31308;</div>
-<div class="line">                coeff.<a class="code" href="group__structures_val.html#a843c3fa65f49561ff7c057e63a7b678f">coefficientA1</a> = 12920;</div>
-<div class="line">                coeff.<a class="code" href="group__structures_val.html#a9059213377ccbe262625666bdf6ce8a1">coefficientA2</a> = 55;</div>
-<div class="line">                coeff.<a class="code" href="group__structures_val.html#aaab4f232db08f8c41eeed3530737ece2">coefficientA3</a> = 55;</div>
-<div class="line">                coeff.<a class="code" href="group__structures_val.html#a3a743f1e79a8a4850642c819a1fae248">gamma</a> = 2400;</div>
-<div class="line">                pDispGamma-&gt;pVtbl-&gt;SetReGammaCoefficient(pDispGamma, coeff);</div>
-<div class="line">            }</div>
-<div class="line">            <span class="keywordflow">if</span> (NULL != pDispGamma)</div>
-<div class="line">            {</div>
-<div class="line">                pDispGamma-&gt;pVtbl-&gt;Release(pDispGamma);</div>
-<div class="line">                pDispGamma = NULL;</div>
-<div class="line">            }</div>
-<div class="line"> </div>
-<div class="line">            <span class="comment">// Trigger 3DLUT change</span></div>
-<div class="line">            IADLXDisplay3DLUT* pDisp3DLUT = NULL;</div>
-<div class="line">            res = displayService-&gt;pVtbl-&gt;Get3DLUT(displayService, display, &amp;pDisp3DLUT);</div>
-<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">            {</div>
-<div class="line">                pDisp3DLUT-&gt;pVtbl-&gt;SetSCEDisabled(pDisp3DLUT);</div>
-<div class="line">            }</div>
-<div class="line">            <span class="keywordflow">if</span> (NULL != pDisp3DLUT)</div>
-<div class="line">            {</div>
-<div class="line">                pDisp3DLUT-&gt;pVtbl-&gt;Release(pDisp3DLUT);</div>
-<div class="line">                pDisp3DLUT = NULL;</div>
-<div class="line">            }</div>
-<div class="line">        }</div>
-<div class="line">        <span class="keywordflow">if</span> (NULL != display)</div>
-<div class="line">        {</div>
-<div class="line">            display-&gt;pVtbl-&gt;Release(display);</div>
-<div class="line">            display = NULL;</div>
-<div class="line">        }</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">if</span> (NULL != displayService)</div>
-<div class="line">    {</div>
-<div class="line">        displayService-&gt;pVtbl-&gt;Release(displayService);</div>
-<div class="line">        displayService = NULL;</div>
-<div class="line">    }</div>
-<div class="line"> </div>
+<div class="line">    </div>
 <div class="line">    <span class="comment">// If true is returned ADLX continues to notify next listener else if false is retuned ADLX stops the notification.</span></div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
@@ -400,17 +330,9 @@ $(document).ready(function(){initNavTree('c_sample_display_events.html',''); ini
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga46dff86075115b139c1c72f447e94e14a5d7ae134656c91cc92e397e996fadd58"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga46dff86075115b139c1c72f447e94e14a5d7ae134656c91cc92e397e996fadd58">GAMUT_SPACE_CIE_RGB</a></div><div class="ttdeci">@ GAMUT_SPACE_CIE_RGB</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:502</div></div>
 <div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gafb56c4b91425c281009c447ccb1feeabafda8bf3f312e8533c6aaaf0e44b5701d"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gafb56c4b91425c281009c447ccb1feeabafda8bf3f312e8533c6aaaf0e44b5701d">WHITE_POINT_5000K</a></div><div class="ttdeci">@ WHITE_POINT_5000K</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:518</div></div>
 <div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:305</div></div>
 <div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:278</div></div>
-<div class="ttc" id="agroup__structures_val_html_a3a743f1e79a8a4850642c819a1fae248"><div class="ttname"><a href="group__structures_val.html#a3a743f1e79a8a4850642c819a1fae248">ADLX_RegammaCoeff::gamma</a></div><div class="ttdeci">adlx_int gamma</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:89</div></div>
-<div class="ttc" id="agroup__structures_val_html_a82a0c072f26cc842b3a8323826142d66"><div class="ttname"><a href="group__structures_val.html#a82a0c072f26cc842b3a8323826142d66">ADLX_RegammaCoeff::coefficientA0</a></div><div class="ttdeci">adlx_int coefficientA0</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:85</div></div>
-<div class="ttc" id="agroup__structures_val_html_a843c3fa65f49561ff7c057e63a7b678f"><div class="ttname"><a href="group__structures_val.html#a843c3fa65f49561ff7c057e63a7b678f">ADLX_RegammaCoeff::coefficientA1</a></div><div class="ttdeci">adlx_int coefficientA1</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:86</div></div>
-<div class="ttc" id="agroup__structures_val_html_a9059213377ccbe262625666bdf6ce8a1"><div class="ttname"><a href="group__structures_val.html#a9059213377ccbe262625666bdf6ce8a1">ADLX_RegammaCoeff::coefficientA2</a></div><div class="ttdeci">adlx_int coefficientA2</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:87</div></div>
-<div class="ttc" id="agroup__structures_val_html_aaab4f232db08f8c41eeed3530737ece2"><div class="ttname"><a href="group__structures_val.html#aaab4f232db08f8c41eeed3530737ece2">ADLX_RegammaCoeff::coefficientA3</a></div><div class="ttdeci">adlx_int coefficientA3</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:88</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___regamma_coeff"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___regamma_coeff">ADLX_RegammaCoeff</a></div><div class="ttdoc">This structure contains information on driver-supported re-gamma coefficients used to build the re-ga...</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:84</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

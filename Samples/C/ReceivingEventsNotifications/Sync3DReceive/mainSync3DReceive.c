@@ -8,6 +8,7 @@
 
 #include "SDK/ADLXHelper/Windows/C/ADLXHelper.h"
 #include "SDK/Include/I3DSettings.h"
+#include "SDK/Include/I3DSettings1.h"
 #include "conio.h"
 
 // Block event to verify call back
@@ -23,7 +24,14 @@ adlx_bool ADLX_STD_CALL On3DSettingsChanged(IADLX3DSettingsChangedListener *pThi
     // Get the GPU interface
     IADLXGPU* gpu = NULL;
     p3DSettingsChangedEvent->pVtbl->GetGPU(p3DSettingsChangedEvent, &gpu);
-
+	
+	IADLX3DSettingsChangedEvent1* p3DSettingsChangedEvent1 = NULL;
+    p3DSettingsChangedEvent->pVtbl->QueryInterface(p3DSettingsChangedEvent, IID_IADLX3DSettingsChangedEvent1(), &p3DSettingsChangedEvent1);
+    if (p3DSettingsChangedEvent1 == NULL)
+    {
+        printf("3DSettingsChangedEvent1 not supported\n");
+    }
+	
     //RadeonSuperResolution is a global feature (the GPU interface is NULL); skip printing its name
     if (!p3DSettingsChangedEvent->pVtbl->IsRadeonSuperResolutionChanged(p3DSettingsChangedEvent))
     {
@@ -56,7 +64,7 @@ adlx_bool ADLX_STD_CALL On3DSettingsChanged(IADLX3DSettingsChangedListener *pThi
         }
         else if (p3DSettingsChangedEvent->pVtbl->IsWaitForVerticalRefreshChanged(p3DSettingsChangedEvent))
         {
-            printf("\tWait For Vertical Refresh (VRAM) is changed\n");
+            printf("\tWait For Vertical Refresh is changed\n");
         }
         else if (p3DSettingsChangedEvent->pVtbl->IsFrameRateTargetControlChanged(p3DSettingsChangedEvent))
         {

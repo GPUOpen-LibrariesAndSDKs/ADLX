@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2022 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -2449,6 +2449,303 @@ struct IADLXDisplayVariBright
 #endif
 
 #pragma endregion IADLXDisplayVariBright interface
+
+#pragma region IADLXDisplayConnectivtyExperience interface
+
+#if defined (__cplusplus)
+namespace adlx
+{
+    class ADLX_NO_VTABLE IADLXDisplayConnectivityExperience : public IADLXInterface
+    {
+    public:
+        ADLX_DECLARE_IID(L"IADLXDisplayConnectivityExperience")
+        /**
+        *@page DOX_IADLXDisplayConnectivityExperience_IsSupportedHDMIQualityDetection IsSupportedHDMIQualityDetection
+        *@ENG_START_DOX @brief Checks if HDMI quality detection is supported on a display. @ENG_END_DOX
+        *
+        *@syntax
+        *@codeStart
+        * @ref ADLX_RESULT    IsSupportedHDMIQualityDetection (adlx_bool* supported)
+        *@codeEnd
+        *
+        *@params
+        * @paramrow{1.,[out],supported,adlx_bool*,@ENG_START_DOX The pointer to a variable where the state of HDMI quality detection is returned. The variable is __true__ if HDMI quality detection is supported. The variable is __false__ if HDMI quality detection is not supported. @ENG_END_DOX}
+        *
+        *@retvalues
+        *@ENG_START_DOX  If the state of HDMI quality detection is successfully returned, __ADLX_OK__ is returned. <br>
+        * If the state of HDMI quality detection is not successfully returned, an error code is returned. <br>
+        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
+        *
+        *@copydoc IADLXDisplayConnectivityExperience_REQ_TABLE
+        */
+        virtual ADLX_RESULT ADLX_STD_CALL IsSupportedHDMIQualityDetection(adlx_bool* supported) = 0;
+        /**
+        *@page DOX_IADLXDisplayConnectivityExperience_IsSupportedDPLink IsSupportedDPLink
+        *@ENG_START_DOX @brief Checks if DP link is supported on a display. @ENG_END_DOX
+        *
+        *@syntax
+        *@codeStart
+        * @ref ADLX_RESULT    IsSupportedDPLink (adlx_bool* supported)
+        *@codeEnd
+        *
+        *@params
+        * @paramrow{1.,[out],supported,adlx_bool*,@ENG_START_DOX The pointer to a variable where the DP link state is returned. The variable is __true__ if DP link is supported. The variable is __false__ if DP link is not supported. @ENG_END_DOX}
+        *
+        *@retvalues
+        *@ENG_START_DOX  If the DP link state is successfully returned, __ADLX_OK__ is returned. <br>
+        * If the DP link state is not successfully returned, an error code is returned. <br>
+        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
+        *
+        *@copydoc IADLXDisplayConnectivityExperience_REQ_TABLE
+        */
+        virtual ADLX_RESULT ADLX_STD_CALL IsSupportedDPLink(adlx_bool* supported) = 0;
+        /**
+        *@page DOX_IADLXDisplayConnectivityExperience_IsEnabledHDMIQualityDetection IsEnabledHDMIQualityDetection
+        *@ENG_START_DOX @brief Checks if HDMI quality detection is enabled on a display. @ENG_END_DOX
+        *
+        *@syntax
+        *@codeStart
+        * @ref ADLX_RESULT    IsEnabledHDMIQualityDetection (adlx_bool* enabled)
+        *@codeEnd
+        *
+        *@params
+        * @paramrow{1.,[out],enabled,adlx_bool*,@ENG_START_DOX The pointer to a variable where the state of HDMI quality detection is returned. The variable is __true__ if HDMI quality detection is enabled. The variable is __false__ if HDMI quality detection is not enabled. @ENG_END_DOX}
+        *
+        *@retvalues
+        *@ENG_START_DOX  If the state of HDMI quality detection is successfully returned, __ADLX_OK__ is returned. <br>
+        * If the state of HDMI quality detection is not successfully returned, an error code is returned. <br>
+        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
+        *
+        *@copydoc IADLXDisplayConnectivityExperience_REQ_TABLE
+        */
+        virtual ADLX_RESULT ADLX_STD_CALL IsEnabledHDMIQualityDetection(adlx_bool* enabled) = 0;
+        /**
+        *@page DOX_IADLXDisplayConnectivityExperience_SetEnabledHDMIQualityDetection SetEnabledHDMIQualityDetection
+        *@ENG_START_DOX @brief Sets the enabled or disabled status for HDMI quality detection on a display. @ENG_END_DOX
+        *
+        *@syntax
+        *@codeStart
+        * @ref ADLX_RESULT    SetEnabledHDMIQualityDetection (adlx_bool* enabled)
+        *@codeEnd
+        *
+        *@params
+        * @paramrow{1.,[in],enable,adlx_bool,@ENG_START_DOX The new HDMI quality detection state. Set __true__ to enable HDMI quality detection. Set __false__ to disable HDMI quality detection. @ENG_END_DOX}
+        *
+        *@retvalues
+        *@ENG_START_DOX  If the state of HDMI quality detection is successfully set, __ADLX_OK__ is returned. <br>
+        * If the state of HDMI quality detection is not successfully set, an error code is returned. <br>
+        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
+        *
+        *@copydoc IADLXDisplayConnectivityExperience_REQ_TABLE
+        */
+        virtual ADLX_RESULT ADLX_STD_CALL SetEnabledHDMIQualityDetection(adlx_bool enabled) = 0;
+        /**
+        *@page DOX_IADLXDisplayConnectivityExperience_GetDPLinkRate GetDPLinkRate
+        *@ENG_START_DOX @brief Gets the Display Port (DP) link rate on a display. @ENG_END_DOX
+        *
+        *@syntax
+        *@codeStart
+        * @ref ADLX_RESULT    GetDPLinkRate(@ref ADLX_DP_LINK_RATE* linkRate)
+        *@codeEnd
+        *
+        *@params
+        * @paramrow{1.,[out],linkRate,@ref ADLX_DP_LINK_RATE*,@ENG_START_DOX The pointer to a type where the current DP link rate is returned. @ENG_END_DOX}
+        *
+        *@retvalues
+        *@ENG_START_DOX  If the type of DP link rate is successfully returned, __ADLX_OK__ is returned.<br/>
+        * If the type of DP link rate is not successfully returned, an error code is returned.<br/>
+        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
+        *
+        *@copydoc IADLXDisplayConnectivityExperience_REQ_TABLE
+        */
+        virtual ADLX_RESULT ADLX_STD_CALL GetDPLinkRate(ADLX_DP_LINK_RATE* linkRate) = 0;
+        /**
+        *@page DOX_IADLXDisplayConnectivityExperience_GetNumberOfActiveLanes GetNumberOfActiveLanes
+        *@ENG_START_DOX @brief Gets the number of active lanes on a display. @ENG_END_DOX
+        *
+        *@syntax
+        *@codeStart
+        * @ref ADLX_RESULT    GetNumberOfActiveLanes(adlx_uint* numActiveLanes)
+        *@codeEnd
+        *
+        *@params
+        * @paramrow{1.,[out],numActiveLanes,ADLX_DP_LINK_RATE*,@ENG_START_DOX The pointer to the number of current active lanes is returned. @ENG_END_DOX}
+        *
+        *@retvalues
+        *@ENG_START_DOX  If the number of active lanes is successfully returned, __ADLX_OK__ is returned.<br/>
+        * If the number of active lanes is not successfully returned, an error code is returned.<br/>
+        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
+        *
+        *@copydoc IADLXDisplayConnectivityExperience_REQ_TABLE
+        */
+        virtual ADLX_RESULT ADLX_STD_CALL GetNumberOfActiveLanes(adlx_uint* numActiveLanes) = 0;
+        /**
+        *@page DOX_IADLXDisplayConnectivityExperience_GetNumberOfTotalLanes GetNumberOfTotalLanes
+        *@ENG_START_DOX @brief Gets the total number of lanes on a display. @ENG_END_DOX
+        *
+        *@syntax
+        *@codeStart
+        * @ref ADLX_RESULT    GetNumberOfTotalLanes(adlx_uint* numTotalLanes)
+        *@codeEnd
+        *
+        *@params
+        * @paramrow{1.,[out],numTotalLanes,ADLX_DP_LINK_RATE*,@ENG_START_DOX The pointer to the number of current total lanes is returned. @ENG_END_DOX}
+        *
+        *@retvalues
+        *@ENG_START_DOX  If the number of total lanes is successfully returned, __ADLX_OK__ is returned.<br/>
+        * If the number of total lanes is not successfully returned, an error code is returned.<br/>
+        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
+        *
+        *@copydoc IADLXDisplayConnectivityExperience_REQ_TABLE
+        */
+        virtual ADLX_RESULT ADLX_STD_CALL GetNumberOfTotalLanes(adlx_uint* numTotalLanes) = 0;
+        /**
+        *@page DOX_IADLXDisplayConnectivityExperience_GetRelativePreEmphasis GetRelativePreEmphasis
+        *@ENG_START_DOX @brief Gets the relative preset emphasis on a display. @ENG_END_DOX
+        *
+        *@syntax
+        *@codeStart
+        * @ref ADLX_RESULT    GetRelativePreEmphasis(adlx_uint* relativePreEmphasis)
+        *@codeEnd
+        *
+        *@params
+        * @paramrow{1.,[out],relativePreEmphasis,ADLX_DP_LINK_RATE*,@ENG_START_DOX The pointer to the number of current relative preset emphasis is returned. @ENG_END_DOX}
+        *
+        *@retvalues
+        *@ENG_START_DOX  If the relative preset emphasis is successfully returned, __ADLX_OK__ is returned.<br/>
+        * If the relative preset emphasis is not successfully returned, an error code is returned.<br/>
+        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
+        *
+        *@copydoc IADLXDisplayConnectivityExperience_REQ_TABLE
+        */
+        virtual ADLX_RESULT ADLX_STD_CALL GetRelativePreEmphasis(adlx_int* relativePreEmphasis) = 0;
+        /**
+        *@page DOX_IADLXDisplayConnectivityExperience_SetRelativePreEmphasis SetRelativePreEmphasis
+        *@ENG_START_DOX @brief Sets the relative preset emphasis on a display. @ENG_END_DOX
+        *
+        *@syntax
+        *@codeStart
+        * @ref ADLX_RESULT    SetRelativePreEmphasis(adlx_uint relativePreEmphasis)
+        *@codeEnd
+        *
+        *@params
+        * @paramrow{1.,[in],relativePreEmphasis,ADLX_DP_LINK_RATE*,@ENG_START_DOX The new relative preset emphasis. @ENG_END_DOX}
+        *
+        *@retvalues
+        *@ENG_START_DOX  If the relative preset emphasis is successfully set, __ADLX_OK__ is returned.<br/>
+        * If the relative preset emphasis is not successfully set, an error code is returned.<br/>
+        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
+        *
+        * @addinfo
+        * @ENG_START_DOX
+        * Note that relative preset emphasis allowed values range between -2 to +2.
+        * @ENG_END_DOX
+        *
+        *@copydoc IADLXDisplayConnectivityExperience_REQ_TABLE
+        */
+        virtual ADLX_RESULT ADLX_STD_CALL SetRelativePreEmphasis(adlx_int relativePreEmphasis) = 0;
+        /**
+        *@page DOX_IADLXDisplayConnectivityExperience_GetRelativeVoltageSwing GetRelativeVoltageSwing
+        *@ENG_START_DOX @brief Gets the relative voltage swing on a display. @ENG_END_DOX
+        *
+        *@syntax
+        *@codeStart
+        * @ref ADLX_RESULT    GetRelativeVoltageSwing(adlx_uint* relativeVoltageSwing)
+        *@codeEnd
+        *
+        *@params
+        * @paramrow{1.,[out],relativeVoltageSwing,ADLX_DP_LINK_RATE*,@ENG_START_DOX The pointer to the number of current relative voltage swing is returned. @ENG_END_DOX}
+        *
+        *@retvalues
+        *@ENG_START_DOX  If the relative voltage swing is successfully returned, __ADLX_OK__ is returned.<br/>
+        * If the relative voltage swing is not successfully returned, an error code is returned.<br/>
+        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
+        *
+        *@copydoc IADLXDisplayConnectivityExperience_REQ_TABLE
+        */
+        virtual ADLX_RESULT ADLX_STD_CALL GetRelativeVoltageSwing(adlx_int* relativeVoltageSwing) = 0;
+        /**
+        *@page DOX_IADLXDisplayConnectivityExperience_SetRelativeVoltageSwing SetRelativeVoltageSwing
+        *@ENG_START_DOX @brief Sets the relative voltage swing on a display. @ENG_END_DOX
+        *
+        *@syntax
+        *@codeStart
+        * @ref ADLX_RESULT    SetRelativeVoltageSwing(adlx_uint relativeVoltageSwing)
+        *@codeEnd
+        *
+        *@params
+        * @paramrow{1.,[in],relativeVoltageSwing,ADLX_DP_LINK_RATE*,@ENG_START_DOX The new relative voltage swing. @ENG_END_DOX}
+        *
+        *@retvalues
+        *@ENG_START_DOX  If the relative voltage swing is successfully set, __ADLX_OK__ is returned.<br/>
+        * If the relative voltage swing is not successfully set, an error code is returned.<br/>
+        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
+        *
+        * @addinfo
+        * @ENG_START_DOX
+        * Note that relative voltage swing allowed values range between -2 to +2.
+        * @ENG_END_DOX
+        *
+        *@copydoc IADLXDisplayConnectivityExperience_REQ_TABLE
+        */
+        virtual ADLX_RESULT ADLX_STD_CALL SetRelativeVoltageSwing(adlx_int relativeVoltageSwing) = 0;
+        /**
+        *@page DOX_IADLXDisplayConnectivityExperience_IsEnabledLinkProtection IsEnabledLinkProtection
+        *@ENG_START_DOX @brief Checks if link protection is enabled on a display. @ENG_END_DOX
+        *
+        *@syntax
+        *@codeStart
+        * @ref ADLX_RESULT    IsEnabledLinkProtection (adlx_bool* enabled)
+        *@codeEnd
+        *
+        *@params
+        * @paramrow{1.,[out],enabled,adlx_bool*,@ENG_START_DOX The pointer to a variable where the state of link protection is returned. The variable is __true__ if link protection is enabled. The variable is __false__ if link protection is not enabled. @ENG_END_DOX}
+        *
+        *@retvalues
+        *@ENG_START_DOX  If the state of link protection is successfully returned, __ADLX_OK__ is returned. <br>
+        * If the state of link protection is not successfully returned, an error code is returned. <br>
+        * Refer to @ref ADLX_RESULT for success codes and error codes. @ENG_END_DOX
+        *
+        *@copydoc IADLXDisplayConnectivityExperience_REQ_TABLE
+        */
+        virtual ADLX_RESULT ADLX_STD_CALL IsEnabledLinkProtection(adlx_bool* enabled) = 0;
+    };
+
+    typedef IADLXInterfacePtr_T<IADLXDisplayConnectivityExperience> IADLXDisplayConnectivityExperiencePtr;
+}
+#else
+ADLX_DECLARE_IID(IADLXDisplayConnectivityExperience, L"IADLXDisplayConnectivityExperience")
+typedef struct IADLXDisplayConnectivityExperience IADLXDisplayConnectivityExperience;
+
+typedef struct IADLXDisplayConnectivityExperienceVtbl
+{
+    //IADLXInterface
+    adlx_long(ADLX_STD_CALL* Acquire)(IADLXDisplayConnectivityExperience* pThis);
+    adlx_long(ADLX_STD_CALL* Release)(IADLXDisplayConnectivityExperience* pThis);
+    ADLX_RESULT(ADLX_STD_CALL* QueryInterface)(IADLXDisplayConnectivityExperience* pThis, const wchar_t* interfaceId, void** ppInterface);
+
+    // Display Connectivity Experience interface
+    ADLX_RESULT(ADLX_STD_CALL* IsSupportedHDMIQualityDetection)(IADLXDisplayConnectivityExperience* pThis, adlx_bool* supported);
+    ADLX_RESULT(ADLX_STD_CALL* IsSupportedDPLink)(IADLXDisplayConnectivityExperience* pThis, adlx_bool* supported);
+    ADLX_RESULT(ADLX_STD_CALL* IsEnabledHDMIQualityDetection)(IADLXDisplayConnectivityExperience* pThis, adlx_bool* enabled);
+    ADLX_RESULT(ADLX_STD_CALL* SetEnabledHDMIQualityDetection)(IADLXDisplayConnectivityExperience* pThis, adlx_bool enabled);
+    ADLX_RESULT(ADLX_STD_CALL* GetDPLinkRate)(IADLXDisplayConnectivityExperience* pThis, ADLX_DP_LINK_RATE* linkRate);
+    ADLX_RESULT(ADLX_STD_CALL* GetNumberOfActiveLanes)(IADLXDisplayConnectivityExperience* pThis, adlx_uint* numActiveLanes);
+    ADLX_RESULT(ADLX_STD_CALL* GetNumberOfTotalLanes)(IADLXDisplayConnectivityExperience* pThis, adlx_uint* numTotalLanes);
+    ADLX_RESULT(ADLX_STD_CALL* GetRelativePreEmphasis)(IADLXDisplayConnectivityExperience* pThis, adlx_int* relativePreEmphasis);
+    ADLX_RESULT(ADLX_STD_CALL* SetRelativePreEmphasis)(IADLXDisplayConnectivityExperience* pThis, adlx_int relativePreEmphasis);
+    ADLX_RESULT(ADLX_STD_CALL* GetRelativeVoltageSwing)(IADLXDisplayConnectivityExperience* pThis, adlx_int* relativeVoltageSwing);
+    ADLX_RESULT(ADLX_STD_CALL* SetRelativeVoltageSwing)(IADLXDisplayConnectivityExperience* pThis, adlx_int relativeVoltageSwing);
+    ADLX_RESULT(ADLX_STD_CALL* IsEnabledLinkProtection)(IADLXDisplayConnectivityExperience* pThis, adlx_bool* enabled);
+} IADLXDisplayConnectivityExperienceVtbl;
+
+struct IADLXDisplayConnectivityExperience
+{
+    const IADLXDisplayConnectivityExperienceVtbl* pVtbl;
+};
+#endif
+
+#pragma endregion IADLXDisplayConnectivtyExperience interface
 
 #pragma region IADLXDisplayBlanking interface
 

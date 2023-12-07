@@ -7,7 +7,7 @@
 /// \brief Demonstrates how to receive notifications of changes in GPU tuning settings using ADLX. To receive the event, another application (such as GPUAutoTuning) must be used to change these settings.
 
 #include "SDK/ADLXHelper/Windows/C/ADLXHelper.h"
-#include "SDK/Include/IGPUTuning.h"
+#include "SDK/Include/IGPUTuning1.h"
 
 // Block event to verify call back
 HANDLE blockEvent = NULL;
@@ -21,6 +21,8 @@ adlx_bool ADLX_STD_CALL OnGPUTuningChanged(IADLXGPUTuningChangedListener* pthis,
     ADLX_SYNC_ORIGIN origin = pGPUTuningChangedEvent->pVtbl->GetOrigin(pGPUTuningChangedEvent);
     if (origin == SYNC_ORIGIN_EXTERNAL)
     {
+        IADLXGPUTuningChangedEvent1* pGPUTuningChangedEvent1 = NULL;
+        pGPUTuningChangedEvent->pVtbl->QueryInterface(pGPUTuningChangedEvent, IID_IADLXGPUTuningChangedEvent1(), (void**)(&pGPUTuningChangedEvent1));
         // Get the GPU interface
         IADLXGPU* gpu = NULL;
         pGPUTuningChangedEvent->pVtbl->GetGPU(pGPUTuningChangedEvent, &gpu);
@@ -51,6 +53,10 @@ adlx_bool ADLX_STD_CALL OnGPUTuningChanged(IADLXGPUTuningChangedListener* pthis,
         else if (pGPUTuningChangedEvent->pVtbl->IsManualPowerTuningChanged(pGPUTuningChangedEvent))
         {
             printf("\tManualPowerTuningChanged\n");
+        }
+        else if (pGPUTuningChangedEvent1->pVtbl->IsSmartAccessMemoryChanged(pGPUTuningChangedEvent1))
+        {
+            printf("\tSmartAccessMemoryChanged\n");
         }
 
         // Release the GPU interface

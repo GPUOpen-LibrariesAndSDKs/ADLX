@@ -285,9 +285,9 @@ void SetGamma(const IADLXDisplayServicesPtr& displayService, const IADLXDisplayP
             res = SetGammaWithCustomCoeffs(displayService, display);
             break;
 
-        // use ramp form file, file path: ../output-night-light.txt
+        // use ramp form file, file path: output-night-light.txt
         case 2:
-            res = displayGamma->SetReGammaRamp("../output-night-light.txt");
+            res = displayGamma->SetReGammaRamp("output-night-light.txt");
             break;
 
         // Use ramp from memory

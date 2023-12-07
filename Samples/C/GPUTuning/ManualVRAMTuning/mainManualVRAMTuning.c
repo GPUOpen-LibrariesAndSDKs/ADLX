@@ -61,21 +61,28 @@ int main()
             gpuTuningService->pVtbl->IsSupportedManualVRAMTuning(gpuTuningService, gpu, &supported);
             printf("\tThe GPU support for manual VRAM tuning is: %d \n", supported);
 
-                    // Get ManualVRAMTuning interface
-            IADLXInterface* vramTuningIfc = NULL;
-            res = gpuTuningService->pVtbl->GetManualVRAMTuning(gpuTuningService, gpu, &vramTuningIfc);
-            if (ADLX_SUCCEEDED(res))
+            if (supported)
             {
-                MainMenu(vramTuningIfc);
-                MenuControl(vramTuningIfc);
+                // Get ManualVRAMTuning interface
+                IADLXInterface* vramTuningIfc = NULL;
+                res = gpuTuningService->pVtbl->GetManualVRAMTuning(gpuTuningService, gpu, &vramTuningIfc);
+                if (ADLX_SUCCEEDED(res))
+                {
+                    MainMenu(vramTuningIfc);
+                    MenuControl(vramTuningIfc);
+                }
+                // Release the vramTuningIfc interface
+                if (vramTuningIfc != NULL)
+                {
+                    vramTuningIfc->pVtbl->Release(vramTuningIfc);
+                    vramTuningIfc = NULL;
+                }
             }
-
-            // Release the vramTuningIfc interface
-            if (vramTuningIfc != NULL)
+            else
             {
-                vramTuningIfc->pVtbl->Release(vramTuningIfc);
-                vramTuningIfc = NULL;
+                printf("\tThis GPU Doesn't support Manual VRAM Tuning \n");
             }
+           
 
             // Release the GPU interface
             if (gpu != NULL)

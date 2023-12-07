@@ -5,5 +5,6 @@ var domain_cpp_sample__g_p_u_tuning =
     [ "ManualFanTuning", "cpp__manual_fan_tuning.html", null ],
     [ "ManualGraphicsTuning", "cpp__manual_graphics_tuning.html", null ],
     [ "ManualPowerTuning", "cpp__manual_power_tuning.html", null ],
-    [ "ManualVRAMTuning", "cpp__manual_v_r_a_m_tuning.html", null ]
+    [ "ManualVRAMTuning", "cpp__manual_v_r_a_m_tuning.html", null ],
+    [ "SmartAccessMemory", "cpp_sam.html", null ]
 ];

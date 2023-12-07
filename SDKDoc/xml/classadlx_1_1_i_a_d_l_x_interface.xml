@@ -27,6 +27,7 @@
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display_blanking" prot="public" virt="non-virtual">adlx::IADLXDisplayBlanking</derivedcompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display_changed_handling" prot="public" virt="non-virtual">adlx::IADLXDisplayChangedHandling</derivedcompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display_color_depth" prot="public" virt="non-virtual">adlx::IADLXDisplayColorDepth</derivedcompoundref>
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display_connectivity_experience" prot="public" virt="non-virtual">adlx::IADLXDisplayConnectivityExperience</derivedcompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display_custom_color" prot="public" virt="non-virtual">adlx::IADLXDisplayCustomColor</derivedcompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display_custom_resolution" prot="public" virt="non-virtual">adlx::IADLXDisplayCustomResolution</derivedcompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display_free_sync" prot="public" virt="non-virtual">adlx::IADLXDisplayFreeSync</derivedcompoundref>
@@ -64,7 +65,12 @@
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_manual_v_r_a_m_tuning2" prot="public" virt="non-virtual">adlx::IADLXManualVRAMTuning2</derivedcompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_memory_timing_description" prot="public" virt="non-virtual">adlx::IADLXMemoryTimingDescription</derivedcompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services" prot="public" virt="non-virtual">adlx::IADLXPerformanceMonitoringServices</derivedcompoundref>
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_power_tuning_changed_handling" prot="public" virt="non-virtual">adlx::IADLXPowerTuningChangedHandling</derivedcompoundref>
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_power_tuning_services" prot="public" virt="non-virtual">adlx::IADLXPowerTuningServices</derivedcompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_simple_eyefinity" prot="public" virt="non-virtual">adlx::IADLXSimpleEyefinity</derivedcompoundref>
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_smart_access_memory" prot="public" virt="non-virtual">adlx::IADLXSmartAccessMemory</derivedcompoundref>
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_smart_shift_max" prot="public" virt="non-virtual">adlx::IADLXSmartShiftMax</derivedcompoundref>
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_system1" prot="public" virt="non-virtual">adlx::IADLXSystem1</derivedcompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_system_metrics" prot="public" virt="non-virtual">adlx::IADLXSystemMetrics</derivedcompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_system_metrics_support" prot="public" virt="non-virtual">adlx::IADLXSystemMetricsSupport</derivedcompoundref>
       <sectiondef kind="public-func">
@@ -79,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ADLXDefines.h" line="966" column="49"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ADLXDefines.h" line="1041" column="49"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>adlx_long ADLX_STD_CALL</type>
@@ -92,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ADLXDefines.h" line="1000" column="42"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ADLXDefines.h" line="1075" column="42"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
@@ -113,14 +119,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ADLXDefines.h" line="1042" column="49"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ADLXDefines.h" line="1117" column="49"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ADLXDefines.h" line="930" column="5" bodyfile="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/ADLXDefines.h" bodystart="931" bodyend="1043"/>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ADLXDefines.h" line="1005" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ADLXDefines.h" bodystart="1006" bodyend="1118"/>
     <listofallmembers>
       <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXInterface</scope><name>Acquire</name></member>
       <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXInterface</scope><name>QueryInterface</name></member>

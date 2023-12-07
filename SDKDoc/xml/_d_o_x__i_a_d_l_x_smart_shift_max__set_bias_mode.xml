@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_smart_shift_max__set_bias_mode" kind="page">
+    <compoundname>DOX_IADLXSmartShiftMax_SetBiasMode</compoundname>
+    <title>SetBiasMode</title>
+    <briefdescription>
+<para>Sets AMD SmartShift Max bias mode. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Sets AMD SmartShift Max bias mode.</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>    SetBiasMode (<ref refid="group__enumerations_1gae2895828b9a8b0345e1fb8bf416ff1b4" kindref="member">ADLX_SSM_BIAS_MODE</ref> mode)
+ </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para><variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>1.</para>
+</entry><entry thead="no" class="paramdir"><para>[in]</para>
+</entry><entry thead="no" class="paramname"><para>mode</para>
+</entry><entry thead="no" class="paramtype"><para><ref refid="group__enumerations_1gae2895828b9a8b0345e1fb8bf416ff1b4" kindref="member">ADLX_SSM_BIAS_MODE</ref></para>
+</entry><entry thead="no"><para>The new AMD SmartShift Max bias mode. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If the bias mode is successfully set, <bold>ADLX_OK</bold> is returned.<linebreak/>
+ If the bias mode is not successfully set, an error code is returned.<linebreak/>
+ Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.<linebreak/>
+</para>
+<para><heading level="2">Additional Info </heading>
+</para>
+<para>AMD SmartShift Max dynamically shifts power between CPU and GPU to boost performance, depending on workload.</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IPowerTuning.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.2</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPowerTuning.h"/>
+  </compounddef>
+</doxygen>

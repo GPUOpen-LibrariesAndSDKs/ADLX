@@ -7,6 +7,7 @@ var display =
     [ "IADLXDisplayBlanking", "_d_o_x__i_a_d_l_x_display_blanking.html", "_d_o_x__i_a_d_l_x_display_blanking" ],
     [ "IADLXDisplayChangedHandling", "_d_o_x__i_a_d_l_x_display_changed_handling.html", "_d_o_x__i_a_d_l_x_display_changed_handling" ],
     [ "IADLXDisplayColorDepth", "_d_o_x__i_a_d_l_x_display_color_depth.html", "_d_o_x__i_a_d_l_x_display_color_depth" ],
+    [ "IADLXDisplayConnectivityExperience", "_d_o_x__i_a_d_l_x_display_connectivity_experience.html", "_d_o_x__i_a_d_l_x_display_connectivity_experience" ],
     [ "IADLXDisplayCustomColor", "_d_o_x__i_a_d_l_x_display_custom_color.html", "_d_o_x__i_a_d_l_x_display_custom_color" ],
     [ "IADLXDisplayCustomResolution", "_d_o_x__i_a_d_l_x_display_custom_resolution.html", "_d_o_x__i_a_d_l_x_display_custom_resolution" ],
     [ "IADLXDisplayFreeSync", "_d_o_x__i_a_d_l_x_display_free_sync.html", "_d_o_x__i_a_d_l_x_display_free_sync" ],
@@ -27,8 +28,10 @@ var display =
     [ "IADLXDisplayScalingMode", "_d_o_x__i_a_d_l_x_display_scaling_mode.html", "_d_o_x__i_a_d_l_x_display_scaling_mode" ],
     [ "IADLXDisplayServices", "_d_o_x__i_a_d_l_x_display_services.html", "_d_o_x__i_a_d_l_x_display_services" ],
     [ "IADLXDisplayServices1", "_d_o_x__i_a_d_l_x_display_services1.html", "_d_o_x__i_a_d_l_x_display_services1" ],
+    [ "IADLXDisplayServices2", "_d_o_x__i_a_d_l_x_display_services2.html", "_d_o_x__i_a_d_l_x_display_services2" ],
     [ "IADLXDisplaySettingsChangedEvent", "_d_o_x__i_a_d_l_x_display_settings_changed_event.html", "_d_o_x__i_a_d_l_x_display_settings_changed_event" ],
     [ "IADLXDisplaySettingsChangedEvent1", "_d_o_x__i_a_d_l_x_display_settings_changed_event1.html", "_d_o_x__i_a_d_l_x_display_settings_changed_event1" ],
+    [ "IADLXDisplaySettingsChangedEvent2", "_d_o_x__i_a_d_l_x_display_settings_changed_event2.html", "_d_o_x__i_a_d_l_x_display_settings_changed_event2" ],
     [ "IADLXDisplaySettingsChangedListener", "_d_o_x__i_a_d_l_x_display_settings_changed_listener.html", "_d_o_x__i_a_d_l_x_display_settings_changed_listener" ],
     [ "IADLXDisplayVSR", "_d_o_x__i_a_d_l_x_display_v_s_r.html", "_d_o_x__i_a_d_l_x_display_v_s_r" ],
     [ "IADLXDisplayVariBright", "_d_o_x__i_a_d_l_x_display_vari_bright.html", "_d_o_x__i_a_d_l_x_display_vari_bright" ]

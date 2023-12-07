@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.2</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -127,6 +127,7 @@ $(document).ready(function(){initNavTree('c__sync3_d_receive.html',''); initResi
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/ADLXHelper/Windows/C/ADLXHelper.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/Include/I3DSettings.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;SDK/Include/I3DSettings1.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;conio.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Block event to verify call back</span></div>
@@ -142,7 +143,14 @@ $(document).ready(function(){initNavTree('c__sync3_d_receive.html',''); initResi
 <div class="line">    <span class="comment">// Get the GPU interface</span></div>
 <div class="line">    IADLXGPU* gpu = NULL;</div>
 <div class="line">    p3DSettingsChangedEvent-&gt;pVtbl-&gt;GetGPU(p3DSettingsChangedEvent, &amp;gpu);</div>
-<div class="line"> </div>
+<div class="line">    </div>
+<div class="line">    IADLX3DSettingsChangedEvent1* p3DSettingsChangedEvent1 = NULL;</div>
+<div class="line">    p3DSettingsChangedEvent-&gt;pVtbl-&gt;QueryInterface(p3DSettingsChangedEvent, IID_IADLX3DSettingsChangedEvent1(), &amp;p3DSettingsChangedEvent1);</div>
+<div class="line">    <span class="keywordflow">if</span> (p3DSettingsChangedEvent1 == NULL)</div>
+<div class="line">    {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;3DSettingsChangedEvent1 not supported\n&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">    </div>
 <div class="line">    <span class="comment">//RadeonSuperResolution is a global feature (the GPU interface is NULL); skip printing its name</span></div>
 <div class="line">    <span class="keywordflow">if</span> (!p3DSettingsChangedEvent-&gt;pVtbl-&gt;IsRadeonSuperResolutionChanged(p3DSettingsChangedEvent))</div>
 <div class="line">    {</div>
@@ -175,7 +183,7 @@ $(document).ready(function(){initNavTree('c__sync3_d_receive.html',''); initResi
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p3DSettingsChangedEvent-&gt;pVtbl-&gt;IsWaitForVerticalRefreshChanged(p3DSettingsChangedEvent))</div>
 <div class="line">        {</div>
-<div class="line">            printf(<span class="stringliteral">&quot;\tWait For Vertical Refresh (VRAM) is changed\n&quot;</span>);</div>
+<div class="line">            printf(<span class="stringliteral">&quot;\tWait For Vertical Refresh is changed\n&quot;</span>);</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p3DSettingsChangedEvent-&gt;pVtbl-&gt;IsFrameRateTargetControlChanged(p3DSettingsChangedEvent))</div>
 <div class="line">        {</div>
@@ -354,11 +362,11 @@ $(document).ready(function(){initNavTree('c__sync3_d_receive.html',''); initResi
 <div class="line">        sprintf_s(uniqueName, 128, <span class="stringliteral">&quot;name:%s, id:%d&quot;</span>, gpuName, <span class="keywordtype">id</span>);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga7a1e20106faef482c0664c546e04ba00a4ba8600162d2d062803b6ff6bc43d8e9"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga7a1e20106faef482c0664c546e04ba00a4ba8600162d2d062803b6ff6bc43d8e9">SYNC_ORIGIN_UNKNOWN</a></div><div class="ttdeci">@ SYNC_ORIGIN_UNKNOWN</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:852</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga7a1e20106faef482c0664c546e04ba00a8f0083602d13ae71103b333d6c9c9d00"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga7a1e20106faef482c0664c546e04ba00a8f0083602d13ae71103b333d6c9c9d00">SYNC_ORIGIN_EXTERNAL</a></div><div class="ttdeci">@ SYNC_ORIGIN_EXTERNAL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:854</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga7a1e20106faef482c0664c546e04ba00a4ba8600162d2d062803b6ff6bc43d8e9"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga7a1e20106faef482c0664c546e04ba00a4ba8600162d2d062803b6ff6bc43d8e9">SYNC_ORIGIN_UNKNOWN</a></div><div class="ttdeci">@ SYNC_ORIGIN_UNKNOWN</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:897</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga7a1e20106faef482c0664c546e04ba00a8f0083602d13ae71103b333d6c9c9d00"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga7a1e20106faef482c0664c546e04ba00a8f0083602d13ae71103b333d6c9c9d00">SYNC_ORIGIN_EXTERNAL</a></div><div class="ttdeci">@ SYNC_ORIGIN_EXTERNAL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:899</div></div>
 <div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:282</div></div>
 <div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:305</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga7a1e20106faef482c0664c546e04ba00"><div class="ttname"><a href="group__enumerations.html#ga7a1e20106faef482c0664c546e04ba00">ADLX_SYNC_ORIGIN</a></div><div class="ttdeci">ADLX_SYNC_ORIGIN</div><div class="ttdoc">Indicates the origin of an event.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:851</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga7a1e20106faef482c0664c546e04ba00"><div class="ttname"><a href="group__enumerations.html#ga7a1e20106faef482c0664c546e04ba00">ADLX_SYNC_ORIGIN</a></div><div class="ttdeci">ADLX_SYNC_ORIGIN</div><div class="ttdoc">Indicates the origin of an event.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:896</div></div>
 <div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:278</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->

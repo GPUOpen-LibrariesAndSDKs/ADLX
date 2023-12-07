@@ -9,6 +9,7 @@
 #include "SDK/ADLXHelper/Windows/C/ADLXHelper.h"
 #include "SDK/Include/IDisplays.h"
 #include "SDK/Include/IDisplays1.h"
+#include "SDK/Include/IDisplays2.h"
 #include "SDK/Include/IDisplaySettings.h"
 #include "conio.h"
 
@@ -24,12 +25,6 @@ void DisplayUniqueName(IADLXDisplay* display, char* uniqueName);
 // Call back to handle changed events
 adlx_bool ADLX_STD_CALL OnDisplaySettingsChanged(IADLXDisplaySettingsChangedListener* pThis, IADLXDisplaySettingsChangedEvent* pDisplaySettingsChangedEvent)
 {
-    IADLXDisplaySettingsChangedEvent1* pDisplaySettingChangedEvent1 = NULL;
-    ADLX_RESULT res = pDisplaySettingsChangedEvent->pVtbl->QueryInterface(pDisplaySettingsChangedEvent, IID_IADLXDisplaySettingsChangedEvent1(), &pDisplaySettingChangedEvent1);
-    if (!ADLX_SUCCEEDED(res) || NULL == pDisplaySettingChangedEvent1)
-    {
-        printf("IID_IADLXDisplaySettingsChangedEvent1 not supported");
-    }
     ADLX_SYNC_ORIGIN origin = pDisplaySettingsChangedEvent->pVtbl->GetOrigin(pDisplaySettingsChangedEvent);
 
     if (origin == SYNC_ORIGIN_EXTERNAL)
@@ -98,15 +93,51 @@ adlx_bool ADLX_STD_CALL OnDisplaySettingsChanged(IADLXDisplaySettingsChangedList
         {
             printf("Display %s get sync event, VSR is changed\n", displayName);
         }
-        
-        if (pDisplaySettingChangedEvent1)
+
+        // Get IADLXDisplaySettingsChangedEvent1 interface
+        IADLXDisplaySettingsChangedEvent1* pDisplaySettingChangedEvent1 = NULL;
+        ADLX_RESULT res = pDisplaySettingsChangedEvent->pVtbl->QueryInterface(pDisplaySettingsChangedEvent, IID_IADLXDisplaySettingsChangedEvent1(), &pDisplaySettingChangedEvent1);
+        if (!ADLX_SUCCEEDED(res) || NULL == pDisplaySettingChangedEvent1)
+        {
+            printf("IID_IADLXDisplaySettingsChangedEvent1 not supported");
+        }
+        else
         {
             if (pDisplaySettingChangedEvent1->pVtbl->IsDisplayBlankingChanged(pDisplaySettingChangedEvent1))
             {
-                printf("Display %s get sync event, display blanking is changed\n", displayName);
+                printf("Display %s get sync event, Display blanking is changed\n", displayName);
             }
         }
 
+        // Release the IADLXDisplaySettingsChangedEvent1 interface
+        if (pDisplaySettingChangedEvent1 != NULL)
+        {
+            pDisplaySettingChangedEvent1->pVtbl->Release(pDisplaySettingChangedEvent1);
+            pDisplaySettingChangedEvent1 = NULL;
+        }
+
+        // Get IADLXDisplaySettingsChangedEvent2 interface
+        IADLXDisplaySettingsChangedEvent2* pDisplaySettingChangedEvent2 = NULL;
+        res = pDisplaySettingsChangedEvent->pVtbl->QueryInterface(pDisplaySettingsChangedEvent, IID_IADLXDisplaySettingsChangedEvent2(), &pDisplaySettingChangedEvent2);
+        if (!ADLX_SUCCEEDED(res) || NULL == pDisplaySettingChangedEvent2)
+        {
+            printf("IID_IADLXDisplaySettingsChangedEvent2 not supported");
+        }
+        else
+        {
+            if (pDisplaySettingChangedEvent2->pVtbl->IsDisplayConnectivityExperienceChanged(pDisplaySettingChangedEvent2))
+            {
+                printf("Display %s get sync event, Display connectivity experience is changed\n", displayName);
+            }
+        }
+
+        // Release the IADLXDisplaySettingsChangedEvent2 interface
+        if (pDisplaySettingChangedEvent2 != NULL)
+        {
+            pDisplaySettingChangedEvent2->pVtbl->Release(pDisplaySettingChangedEvent2);
+            pDisplaySettingChangedEvent2 = NULL;
+        }
+         
         // Release the Display interface
         if (display != NULL)
         {

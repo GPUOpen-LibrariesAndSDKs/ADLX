@@ -636,7 +636,7 @@ void ShowHistoricalGPUMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitori
                 ShowGPUVRAM(gpuMetricsSupport, gpuMetrics);
                 ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);
                 ShowGPUTotalBoardPower(gpuMetricsSupport, gpuMetrics);
-                ShowGPUIntakeTemperature (gpuMetricsSupport, gpuMetrics);
+                ShowGPUIntakeTemperature(gpuMetricsSupport, gpuMetrics);
                 std::cout << std::noboolalpha;
             }
             std::cout << std::endl;

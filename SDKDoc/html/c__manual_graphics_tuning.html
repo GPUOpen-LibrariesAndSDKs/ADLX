@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.2</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -548,7 +548,7 @@ $(document).ready(function(){initNavTree('c__manual_graphics_tuning.html',''); i
 <div class="line">    res = manualGFXTuning2-&gt;pVtbl-&gt;GetGPUVoltageRange(manualGFXTuning2, &amp;voltRange);</div>
 <div class="line">    res = manualGFXTuning2-&gt;pVtbl-&gt;SetGPUMinFrequency(manualGFXTuning2, freqRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>);</div>
 <div class="line">    printf (<span class="stringliteral">&quot;\tSet GPU min frequency %s\n&quot;</span>, (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>));</div>
-<div class="line">    res = manualGFXTuning2-&gt;pVtbl-&gt;SetGPUMaxFrequency(manualGFXTuning2, freqRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>);</div>
+<div class="line">    res = manualGFXTuning2-&gt;pVtbl-&gt;SetGPUMaxFrequency(manualGFXTuning2, freqRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + 100);</div>
 <div class="line">    printf (<span class="stringliteral">&quot;\tSet GPU max frequency %s\n&quot;</span>, (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>));</div>
 <div class="line">    res = manualGFXTuning2-&gt;pVtbl-&gt;SetGPUVoltage(manualGFXTuning2, voltRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + (voltRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - voltRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / 2);</div>
 <div class="line">    printf (<span class="stringliteral">&quot;\tSet GPU voltage %s\n&quot;</span>, (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>));</div>

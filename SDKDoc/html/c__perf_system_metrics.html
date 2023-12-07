@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.2</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('c__perf_system_metrics.html',''); init
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/ADLXHelper/Windows/C/ADLXHelper.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;SDK/Include/IPerformanceMonitoring.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;SDK/Include/IPerformanceMonitoring1.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Main menu</span></div>
 <div class="line"><span class="keywordtype">void</span> MainMenu();</div>
@@ -363,6 +363,50 @@ $(document).ready(function(){initNavTree('c__perf_system_metrics.html',''); init
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
+<div class="line"><span class="comment">// Show SmartShift Max</span></div>
+<div class="line"><span class="keywordtype">void</span> ShowSmartShiftMax(IADLXSystemMetricsSupport* systemMetricsSupport, IADLXSystemMetrics* systemMetrics)</div>
+<div class="line">{</div>
+<div class="line">    IADLXSystemMetricsSupport1* sysMetricsSupport1 = NULL;</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = systemMetricsSupport-&gt;pVtbl-&gt;QueryInterface(systemMetricsSupport, IID_IADLXSystemMetricsSupport1(), (<span class="keywordtype">void</span>**)&amp;sysMetricsSupport1);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">    {</div>
+<div class="line">        adlx_bool supported = <span class="keyword">false</span>;</div>
+<div class="line">        <span class="comment">// Display power distribution support status</span></div>
+<div class="line">        res = sysMetricsSupport1-&gt;pVtbl-&gt;IsSupportedPowerDistribution(sysMetricsSupport1, &amp;supported);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        {</div>
+<div class="line">            printf(<span class="stringliteral">&quot;PowerDistribution support status: %d\n&quot;</span>, supported);</div>
+<div class="line">            <span class="keywordflow">if</span> (supported)</div>
+<div class="line">            {</div>
+<div class="line">                IADLXSystemMetrics1* sysMetrics1 = NULL;</div>
+<div class="line">                res = systemMetrics-&gt;pVtbl-&gt;QueryInterface(systemMetrics, IID_IADLXSystemMetrics1(), (<span class="keywordtype">void</span>*)&amp;sysMetrics1);</div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                {</div>
+<div class="line">                    <span class="keywordtype">int</span> apuShiftValue, gpuShiftValue, apuShiftLimit, gpuShiftLimit, totalShiftLimit;</div>
+<div class="line">                    res = sysMetrics1-&gt;pVtbl-&gt;PowerDistribution(sysMetrics1, &amp;apuShiftValue, &amp;gpuShiftValue, &amp;apuShiftLimit, &amp;gpuShiftLimit, &amp;totalShiftLimit);</div>
+<div class="line">                    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                        printf(<span class="stringliteral">&quot;The PowerDistribution is:\n apuShiftValue: %d , gpuShiftValue: %d , apuShiftLimit: %d , gpuShiftLimit: %d , totalShiftLimit: %d\n&quot;</span></div>
+<div class="line">                            , apuShiftValue, gpuShiftValue, apuShiftLimit, gpuShiftLimit, totalShiftLimit);</div>
+<div class="line"> </div>
+<div class="line">                    <span class="comment">// Release IADLXSystemMetrics1 interface</span></div>
+<div class="line">                    sysMetrics1-&gt;pVtbl-&gt;Release(sysMetrics1);</div>
+<div class="line">                }</div>
+<div class="line">                <span class="keywordflow">else</span></div>
+<div class="line">                {</div>
+<div class="line">                    printf(<span class="stringliteral">&quot;\tGet IADLXSystemMetrics1Ptr failed\n&quot;</span>);</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Release IADLXSystemMetricsSupport1 interface</span></div>
+<div class="line">        sysMetricsSupport1-&gt;pVtbl-&gt;Release(sysMetricsSupport1);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tGet IADLXSystemMetricsSupport1Ptr failed\n&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// Display current system metrics</span></div>
 <div class="line"><span class="keywordtype">void</span> ShowCurrentSystemMetrics(IADLXPerformanceMonitoringServices *perfMonitoringServices)</div>
 <div class="line">{</div>
@@ -387,6 +431,7 @@ $(document).ready(function(){initNavTree('c__perf_system_metrics.html',''); init
 <div class="line">            ShowCPUUsage(systemMetricsSupport, systemMetrics);</div>
 <div class="line">            ShowSystemRAM(systemMetricsSupport, systemMetrics);</div>
 <div class="line">            ShowSmartShift(systemMetricsSupport, systemMetrics);</div>
+<div class="line">            ShowSmartShiftMax(systemMetricsSupport, systemMetrics);</div>
 <div class="line">        }</div>
 <div class="line">        Sleep(1000);</div>
 <div class="line"> </div>
@@ -494,6 +539,7 @@ $(document).ready(function(){initNavTree('c__perf_system_metrics.html',''); init
 <div class="line">                ShowCPUUsage(systemMetricsSupport, systemMetrics);</div>
 <div class="line">                ShowSystemRAM(systemMetricsSupport, systemMetrics);</div>
 <div class="line">                ShowSmartShift(systemMetricsSupport, systemMetrics);</div>
+<div class="line">                ShowSmartShiftMax(systemMetricsSupport, systemMetrics);</div>
 <div class="line">            }</div>
 <div class="line">            printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">if</span> (systemMetrics != NULL)</div>

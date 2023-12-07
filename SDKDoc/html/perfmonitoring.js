@@ -9,6 +9,8 @@ var perfmonitoring =
     [ "IADLXGPUMetricsSupport", "_d_o_x__i_a_d_l_x_g_p_u_metrics_support.html", "_d_o_x__i_a_d_l_x_g_p_u_metrics_support" ],
     [ "IADLXPerformanceMonitoringServices", "_d_o_x__i_a_d_l_x_performance_monitoring_services.html", "_d_o_x__i_a_d_l_x_performance_monitoring_services" ],
     [ "IADLXSystemMetrics", "_d_o_x__i_a_d_l_x_system_metrics.html", "_d_o_x__i_a_d_l_x_system_metrics" ],
+    [ "IADLXSystemMetrics1", "_d_o_x__i_a_d_l_x_system_metrics1.html", "_d_o_x__i_a_d_l_x_system_metrics1" ],
     [ "IADLXSystemMetricsList", "_d_o_x__i_a_d_l_x_system_metrics_list.html", "_d_o_x__i_a_d_l_x_system_metrics_list" ],
-    [ "IADLXSystemMetricsSupport", "_d_o_x__i_a_d_l_x_system_metrics_support.html", "_d_o_x__i_a_d_l_x_system_metrics_support" ]
+    [ "IADLXSystemMetricsSupport", "_d_o_x__i_a_d_l_x_system_metrics_support.html", "_d_o_x__i_a_d_l_x_system_metrics_support" ],
+    [ "IADLXSystemMetricsSupport1", "_d_o_x__i_a_d_l_x_system_metrics_support1.html", "_d_o_x__i_a_d_l_x_system_metrics_support1" ]
 ];

@@ -37,9 +37,11 @@
 </para>
 <para><heading level="2">Additional Info </heading>
 </para>
-<para>AMD Radeon Chill conserves GPU power and reduces heat by adjusting the FPS based on the intensity of in-game movement. <linebreak/>
- <bold>Note:</bold> AMD Radeon Chill, <ref refid="_d_o_x__i_a_d_l_x3_d_boost" kindref="compound">AMD Radeon Boost</ref>, and <ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag" kindref="compound">AMD Radeon Anti-Lag</ref> features cannot be enabled simultaneously. If AMD Radeon Chill is enabled, AMD Radeon Anti-Lag and AMD Radeon Boost are automatically disabled. However, the configurations of the disabled feature is preserved.<linebreak/>
- On some AMD GPUs, AMD Radeon Chill and <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref> cannot be enabled simultaneously. If AMD Radeon Chill is enabled, Radeon Super Resolution is automatically disabled.</para>
+<para>AMD Radeon Chill conserves GPU power and reduces heat by adjusting the FPS based on the intensity of in-game movement.<linebreak/>
+ AMD Radeon Chill cannot be enabled simultaneously with <ref refid="_d_o_x__i_a_d_l_x3_d_boost" kindref="compound">AMD Radeon Boost</ref>, <ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag" kindref="compound">AMD Radeon Anti-Lag</ref>, and <ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag1" kindref="compound">AMD Radeon Anti-Lag Next</ref>.<linebreak/>
+ On some AMD GPUs, AMD Radeon Chill cannot be enabled simultaneously with <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref>.<linebreak/>
+ When AMD Radeon Chill is enabled, the mutually exclusive features are automatically disabled.<linebreak/>
+ <bold>Note:</bold> If the disabled feature is later re-enabled, its previous configuration settings will be restored.</para>
 <para><heading level="2">Requirements </heading>
 </para>
 <para><table rows="2" cols="2"><row>
@@ -53,6 +55,6 @@
 </table>
 </para>
     </detaileddescription>
-    <location file="D:/AMD_Git/engbranch/drivers/ADLX/SDK/Include/I3DSettings.h"/>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h"/>
   </compounddef>
 </doxygen>

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event1" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXGPUTuningChangedEvent1</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXGPUTuningChangedEvent</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event1_1ae33a3a8e2a5a1aadf48194e4d67345a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>adlx_bool ADLX_STD_CALL</type>
+        <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXGPUTuningChangedEvent1::IsSmartAccessMemoryChanged</definition>
+        <argsstring>()=0</argsstring>
+        <name>IsSmartAccessMemoryChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUTuning1.h" line="131" column="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event1_1a72899ffd1222f41c75331761096c36c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUTuningChangedEvent1::GetSmartAccessMemoryStatus</definition>
+        <argsstring>(adlx_bool *pEnabled, adlx_bool *pCompleted)=0</argsstring>
+        <name>GetSmartAccessMemoryStatus</name>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>pEnabled</declname>
+        </param>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>pCompleted</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUTuning1.h" line="159" column="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUTuning1.h" line="102" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUTuning1.h" bodystart="103" bodyend="160"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent1</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1a86153ef95c6e977019f529e9a986455d" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent1</scope><name>GetGPU</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_changed_event_1aabba9d15598621fe88ce7ed8712b2380" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent1</scope><name>GetOrigin</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event1_1a72899ffd1222f41c75331761096c36c7" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent1</scope><name>GetSmartAccessMemoryStatus</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1a232295dde2c08a4e3026b6f4bdec2543" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent1</scope><name>IsAutomaticTuningChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1aa4ade12d041c34b018220dbd5825ea09" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent1</scope><name>IsManualFanTuningChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1aa8efe221604838fbf15883786a710531" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent1</scope><name>IsManualGPUCLKTuningChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1adb1f042f80f0c8145bd440906e55b995" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent1</scope><name>IsManualPowerTuningChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1acf162c9d2c04fb4c1137243270ea0dcc" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent1</scope><name>IsManualVRAMTuningChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1a5669a1156795a491b70ae4ee2d9af7c7" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent1</scope><name>IsPresetTuningChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event1_1ae33a3a8e2a5a1aadf48194e4d67345a2" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent1</scope><name>IsSmartAccessMemoryChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent1</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUTuningChangedEvent1</scope><name>Release</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

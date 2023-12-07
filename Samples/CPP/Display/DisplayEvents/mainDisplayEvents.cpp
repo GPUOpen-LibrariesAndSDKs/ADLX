@@ -30,49 +30,7 @@ public:
     adlx_bool ADLX_STD_CALL OnDisplayListChanged(IADLXDisplayList* pNewDisplays) override
     {
         std::cout << "Display list has been changed" << std::endl;
-        // Get display service
-        IADLXDisplayServicesPtr displayService;
-        ADLX_RESULT res = g_ADLXHelp.GetSystemServices()->GetDisplaysServices(&displayService);
-        if (ADLX_SUCCEEDED(res))
-        {
-            // Trigger gamut change, gamma change, 3D LUT change for the first display
-            adlx_uint it = 0;
-            IADLXDisplayPtr display;
-            res = pNewDisplays->At(it, &display);
-            if (ADLX_SUCCEEDED(res))
-            {
-                // Trigger gamut change
-                IADLXDisplayGamutPtr dispGamut;
-                res = displayService->GetGamut(display, &dispGamut);
-                if (ADLX_SUCCEEDED(res))
-                {
-                    dispGamut->SetGamut(WHITE_POINT_5000K, GAMUT_SPACE_CIE_RGB);
-                }
-
-                // Trigger gamma change
-                IADLXDisplayGammaPtr dispGamma;
-                res = displayService->GetGamma(display, &dispGamma);
-                if (ADLX_SUCCEEDED(res))
-                {
-                    ADLX_RegammaCoeff coeff;
-                    coeff.coefficientA0 = 31308;
-                    coeff.coefficientA1 = 12920;
-                    coeff.coefficientA2 = 55;
-                    coeff.coefficientA3 = 55;
-                    coeff.gamma = 2400;
-                    dispGamma->SetReGammaCoefficient(coeff);
-                }
-
-                // Trigger 3D LUT change
-                IADLXDisplay3DLUTPtr disp3DLUT;
-                res = displayService->Get3DLUT(display, &disp3DLUT);
-                if (ADLX_SUCCEEDED(res))
-                {
-                    disp3DLUT->SetSCEDisabled();
-                }
-            }
-        }
-
+        
         // If true is returned ADLX continues to notify next listener else if false is retuned ADLX stops the notification.
         return true;
     }

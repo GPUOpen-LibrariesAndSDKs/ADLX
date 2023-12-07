@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.2</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('cpp__perf_system_metrics.html',''); in
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;SDK/Include/IPerformanceMonitoring.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;SDK/Include/IPerformanceMonitoring1.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Use ADLX namespace</span></div>
@@ -361,6 +361,43 @@ $(document).ready(function(){initNavTree('cpp__perf_system_metrics.html',''); in
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
+<div class="line"><span class="comment">// Show SmartShift Max</span></div>
+<div class="line"><span class="keywordtype">void</span> ShowSmartShiftMax(IADLXSystemMetricsSupportPtr systemMetricsSupport, IADLXSystemMetricsPtr systemMetrics)</div>
+<div class="line">{</div>
+<div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
+<div class="line">    IADLXSystemMetricsSupport1Ptr sysMetricsSupport1(systemMetricsSupport);</div>
+<div class="line">    IADLXSystemMetrics1Ptr sysMetrics1(systemMetrics);</div>
+<div class="line">    <span class="keywordflow">if</span> (!sysMetricsSupport1)</div>
+<div class="line">    {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tGet IADLXSystemMetricsSupport1Ptr failed&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (!sysMetrics1)</div>
+<div class="line">    {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tGet IADLXSystemMetrics1Ptr failed&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Display power distribution support status</span></div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = sysMetricsSupport1-&gt;IsSupportedPowerDistribution(&amp;supported);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">    {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;PowerDistribution support status: &quot;</span> &lt;&lt; supported &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">if</span> (supported)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordtype">int</span> apuShiftValue, gpuShiftValue, apuShiftLimit, gpuShiftLimit, totalShiftLimit;</div>
+<div class="line">            res = sysMetrics1-&gt;PowerDistribution(&amp;apuShiftValue, &amp;gpuShiftValue, &amp;apuShiftLimit, &amp;gpuShiftLimit, &amp;totalShiftLimit);</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                std::cout &lt;&lt; <span class="stringliteral">&quot;The PowerDistribution is:\n&quot;</span></div>
+<div class="line">                &lt;&lt; <span class="stringliteral">&quot; apuShiftValue: &quot;</span> &lt;&lt; apuShiftValue</div>
+<div class="line">                &lt;&lt; <span class="stringliteral">&quot; ,gpuShiftValue: &quot;</span> &lt;&lt; gpuShiftValue</div>
+<div class="line">                &lt;&lt; <span class="stringliteral">&quot; ,apuShiftLimit: &quot;</span> &lt;&lt; apuShiftLimit</div>
+<div class="line">                &lt;&lt; <span class="stringliteral">&quot; ,gpuShiftLimit: &quot;</span> &lt;&lt; gpuShiftLimit</div>
+<div class="line">                &lt;&lt; <span class="stringliteral">&quot; ,totalShiftLimit: &quot;</span> &lt;&lt; totalShiftLimit &lt;&lt; std::endl;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// Display current system metrics</span></div>
 <div class="line"><span class="keywordtype">void</span> ShowCurrentSystemMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitoringServices)</div>
 <div class="line">{</div>
@@ -386,6 +423,7 @@ $(document).ready(function(){initNavTree('cpp__perf_system_metrics.html',''); in
 <div class="line">            ShowCPUUsage(systemMetricsSupport, systemMetrics);</div>
 <div class="line">            ShowSystemRAM(systemMetricsSupport, systemMetrics);</div>
 <div class="line">            ShowSmartShift(systemMetricsSupport, systemMetrics);</div>
+<div class="line">            ShowSmartShiftMax(systemMetricsSupport, systemMetrics);</div>
 <div class="line">            std::cout &lt;&lt; std::noboolalpha;</div>
 <div class="line">        }</div>
 <div class="line">        Sleep(1000);</div>
@@ -481,6 +519,7 @@ $(document).ready(function(){initNavTree('cpp__perf_system_metrics.html',''); in
 <div class="line">                ShowCPUUsage(systemMetricsSupport, systemMetrics);</div>
 <div class="line">                ShowSystemRAM(systemMetricsSupport, systemMetrics);</div>
 <div class="line">                ShowSmartShift(systemMetricsSupport, systemMetrics);</div>
+<div class="line">                ShowSmartShiftMax(systemMetricsSupport, systemMetrics);</div>
 <div class="line">                std::cout &lt;&lt; std::noboolalpha;</div>
 <div class="line">            }</div>
 <div class="line">            std::cout &lt;&lt; std::endl;</div>

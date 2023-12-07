@@ -31,10 +31,11 @@
 <para>AMD Radeon Enhanced Sync synchronizes the transition to a new frame of animation with the display refresh rate at a low latency, so no tearing is visible between frames.<linebreak/>
  Does not limit the frame rate at the display’s refresh rate.<linebreak/>
 </para>
-<sect2 id="_d_o_x__i_a_d_l_x3_d_enhanced_sync_1autotoc_md16">
-<title>Dependent Interfaces</title>
-<para>When AMD Radeon Enhanced Sync is enabled, the <ref refid="_d_o_x__i_a_d_l_x3_d_wait_for_vertical_refresh" kindref="compound">VSync</ref> interface is automatically disabled. However, the state of VSync will not affect Enhanced Sync.<linebreak/>
- <bold>Note:</bold> If the disabled interface is later re-enabled, its previous configuration settings will also be restored.</para>
+<para><heading level="2">Dependent Interfaces</heading>
+</para>
+<para><bold>Note</bold>: AMD Radeon Enhanced Sync configuration is dependent on the state of <ref refid="_d_o_x__i_a_d_l_x3_d_wait_for_vertical_refresh" kindref="compound">VSync</ref>.<linebreak/>
+ If VSync is enabled, AMD Radeon Enhanced Sync is automatically disabled.<linebreak/>
+ If VSync is disabled, AMD Radeon Enhanced Sync is automatically enabled.</para>
 <para><heading level="2">Methods </heading>
 </para>
 <para><table rows="4" cols="2"><row>
@@ -77,8 +78,7 @@
 </listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_enhanced_sync__set_enabled" kindref="compound">SetEnabled</ref> </para>
 </listitem></itemizedlist>
 </para>
-</sect2>
     </detaileddescription>
-    <location file="D:/AMD_Git/engbranch/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLX3DSettingsPage.h"/>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLX3DSettingsPage.h"/>
   </compounddef>
 </doxygen>

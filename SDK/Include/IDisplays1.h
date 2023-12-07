@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2023 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -17,6 +17,7 @@
 #if defined (__cplusplus)
 namespace adlx
 {
+    class ADLX_NO_VTABLE IADLXDisplayConnectivityExperience;
     class ADLX_NO_VTABLE IADLXDisplayBlanking;
     class ADLX_NO_VTABLE IADLXDisplayServices1 : public IADLXDisplayServices
     {
@@ -54,7 +55,7 @@ namespace adlx
         */
         virtual ADLX_RESULT ADLX_STD_CALL GetDisplayBlanking(IADLXDisplay* pDisplay, IADLXDisplayBlanking** ppDisplayBlanking) = 0;
 
-        };  //IADLXDisplayServices1
+    };  //IADLXDisplayServices1
     //----------------------------------------------------------------------------------------------
     typedef IADLXInterfacePtr_T<IADLXDisplayServices1> IADLXDisplayServices1Ptr;
 } // namespace adlx
@@ -74,6 +75,7 @@ typedef struct IADLXDisplayHDCP IADLXDisplayHDCP;
 typedef struct IADLXDisplayCustomResolution IADLXDisplayCustomResolution;
 typedef struct IADLXDisplayChangedHandling IADLXDisplayChangedHandling;
 typedef struct IADLXDisplayVariBright IADLXDisplayVariBright;
+typedef struct IADLXDisplayConnectivityExperience IADLXDisplayConnectivityExperience;
 typedef struct IADLXDisplayBlanking IADLXDisplayBlanking;
 
 typedef struct IADLXDisplayServices1Vtbl
@@ -141,7 +143,6 @@ namespace adlx
         *
         */
         virtual adlx_bool ADLX_STD_CALL IsDisplayBlankingChanged() = 0;
-        
     }; //IADLXDisplaySettingsChangedEvent1
     //----------------------------------------------------------------------------------------------
     typedef IADLXInterfacePtr_T<IADLXDisplaySettingsChangedEvent1> IADLXDisplaySettingsChangedEvent1Ptr;
@@ -180,6 +181,7 @@ typedef struct IADLXDisplaySettingsChangedEvent1Vtbl
 
     // IADLXDisplaySettingsChangedEvent1 interface
     adlx_bool(ADLX_STD_CALL* IsDisplayBlankingChanged)(IADLXDisplaySettingsChangedEvent1* pThis);
+
 } IADLXDisplaySettingsChangedEvent1Vtbl;
 
 struct IADLXDisplaySettingsChangedEvent1 { const IADLXDisplaySettingsChangedEvent1Vtbl* pVtbl; };

@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.2</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -118,10 +118,10 @@ $(document).ready(function(){initNavTree('_d_o_x__i_a_d_l_x3_d_wait_for_vertical
 <p>VSync synchronizes the transition to a new frame of animation with the display update so no tearing is visible between frames.<br  />
  Limits the frame rate at the display’s refresh rate.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md18"></a>
-Dependent Interfaces</h2>
-<p>When AMD Radeon Enhanced Sync is enabled, the <a class="el" href="_d_o_x__i_a_d_l_x3_d_wait_for_vertical_refresh.html">VSync</a> interface is automatically disabled. However, the state of VSync will not affect Enhanced Sync.<br  />
- <b>Note:</b> If the disabled interface is later re-enabled, its previous configuration settings will be restored.</p>
+<h2>Dependent Interfaces</h2>
+<p><b>Note</b>: <a class="el" href="_d_o_x__i_a_d_l_x3_d_wait_for_vertical_refresh.html">VSync</a> configuration is dependent on the state of AMD Radeon™ Enhanced Sync.<br  />
+ If AMD Radeon Enhanced Sync is enabled, VSync is automatically disabled.<br  />
+ If AMD Radeon Enhanced Sync is disabled, VSync is automatically enabled.</p>
 <h2>Methods </h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">

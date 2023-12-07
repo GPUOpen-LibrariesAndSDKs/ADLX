@@ -6,6 +6,7 @@
 /// \file mainGPUs.c
 /// \brief Demonstrates how to enumerate GPUs, get GPU information, receive notifications when GPUs are enabled and disabled, and maintain GPU change event when programming with ADLX.
 #include "SDK/ADLXHelper/Windows/C/ADLXHelper.h"
+#include "SDK/Include/ISystem1.h"
 #include <stdio.h>
 
 // Callback for GPU change event
@@ -135,6 +136,36 @@ void ShowGPUInfo(IADLXGPU* gpu)
         adlx_int id;
         ret = gpu->pVtbl->UniqueId(gpu, &id);
         printf("UniqueId: %d, return code is: %d(0 means success)\n", id, ret);
+
+        IADLXGPU1* gpu1 = NULL;
+        ret = gpu->pVtbl->QueryInterface(gpu, IID_IADLXGPU1(), &gpu1);
+        if (ADLX_SUCCEEDED(ret))
+        {
+            const char* productName = NULL;
+            ret = gpu1->pVtbl->ProductName(gpu1, &productName);
+            printf("ProductName: %s\n", productName);
+
+            ADLX_MGPU_MODE mode = MGPU_NONE;
+            ret = gpu1->pVtbl->MultiGPUMode(gpu1, &mode);
+            printf("Multi-GPU Mode: ");
+            if (mode == MGPU_PRIMARY)
+                printf("GPU is the primary GPU\n");
+            else if (mode == MGPU_SECONDARY)
+                printf("GPU is the secondary GPU\n");
+            else
+                printf("GPU is not in Multi-GPU\n");
+
+            ADLX_PCI_BUS_TYPE busType = UNDEFINED;
+            ret = gpu1->pVtbl->PCIBusType(gpu1, &busType);
+            printf("PCIBusType: %d\n", busType);
+
+            adlx_uint laneWidth = 0;
+            ret = gpu1->pVtbl->PCIBusLaneWidth(gpu1, &laneWidth);
+            printf("PCIBusLaneWidth: %d\n", laneWidth);
+
+            gpu1->pVtbl->Release(gpu1);
+            gpu1 = NULL;
+        }
 
         gpu->pVtbl->Release(gpu);
         gpu = NULL;

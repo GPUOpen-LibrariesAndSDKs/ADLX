@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.2</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -123,9 +123,11 @@ $(document).ready(function(){initNavTree('_d_o_x__i_a_d_l_x3_d_chill__set_enable
  Refer to <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> for success codes and error codes.<br  />
 </p>
 <h2>Additional Info </h2>
-<p>AMD Radeon Chill conserves GPU power and reduces heat by adjusting the FPS based on the intensity of in-game movement. <br  />
- <b>Note:</b> AMD Radeon Chill, <a class="el" href="_d_o_x__i_a_d_l_x3_d_boost.html">AMD Radeon Boost</a>, and <a class="el" href="_d_o_x__i_a_d_l_x3_d_anti_lag.html">AMD Radeon Anti-Lag</a> features cannot be enabled simultaneously. If AMD Radeon Chill is enabled, AMD Radeon Anti-Lag and AMD Radeon Boost are automatically disabled. However, the configurations of the disabled feature is preserved.<br  />
- On some AMD GPUs, AMD Radeon Chill and <a class="el" href="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution.html">Radeon Super Resolution</a> cannot be enabled simultaneously. If AMD Radeon Chill is enabled, Radeon Super Resolution is automatically disabled.</p>
+<p>AMD Radeon Chill conserves GPU power and reduces heat by adjusting the FPS based on the intensity of in-game movement.<br  />
+ AMD Radeon Chill cannot be enabled simultaneously with <a class="el" href="_d_o_x__i_a_d_l_x3_d_boost.html">AMD Radeon Boost</a>, <a class="el" href="_d_o_x__i_a_d_l_x3_d_anti_lag.html">AMD Radeon Anti-Lag</a>, and <a class="el" href="_d_o_x__i_a_d_l_x3_d_anti_lag1.html">AMD Radeon Anti-Lag Next</a>.<br  />
+ On some AMD GPUs, AMD Radeon Chill cannot be enabled simultaneously with <a class="el" href="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution.html">Radeon Super Resolution</a>.<br  />
+ When AMD Radeon Chill is enabled, the mutually exclusive features are automatically disabled.<br  />
+ <b>Note:</b> If the disabled feature is later re-enabled, its previous configuration settings will be restored.</p>
 <h2>Requirements </h2>
 <table class="doxtable">
 <tr style="height=40px">

@@ -71,14 +71,20 @@ int main()
                     res = gpuTuningService->IsSupportedManualVRAMTuning(gpu, &supported);
                     if (ADLX_SUCCEEDED(res))
                         std::cout << "\tGPU manual VRAM tuning support status: " << supported << std::endl;
-
-                    // Get manual VRAM tuning interface
-                    IADLXInterfacePtr vramTuningIfc;
-                    res = gpuTuningService->GetManualVRAMTuning(gpu, &vramTuningIfc);
-                    if (ADLX_SUCCEEDED(res))
+                    if (supported)
                     {
-                        MainMenu(vramTuningIfc);
-                        MenuControl(vramTuningIfc);
+                        // Get manual VRAM tuning interface
+                        IADLXInterfacePtr vramTuningIfc;
+                        res = gpuTuningService->GetManualVRAMTuning(gpu, &vramTuningIfc);
+                        if (ADLX_SUCCEEDED(res))
+                        {
+                            MainMenu(vramTuningIfc);
+                            MenuControl(vramTuningIfc);
+                        }
+                    }
+                    else
+                    {
+                        return WaitAndExit("\nThis GPU Doesn't support Manual VRAM Tuning", 0);
                     }
                 }
             }

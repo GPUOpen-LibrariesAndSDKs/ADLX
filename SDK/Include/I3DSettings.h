@@ -282,8 +282,10 @@ namespace adlx
         * @addinfo
         * @ENG_START_DOX
         * AMD Radeon Chill conserves GPU power and reduces heat by adjusting the FPS based on the intensity of in-game movement.<br>
-        * __Note:__ AMD Radeon Chill, @ref DOX_IADLX3DBoost "AMD Radeon Boost", and @ref DOX_IADLX3DAntiLag "AMD Radeon Anti-Lag" features cannot be enabled simultaneously. If AMD Radeon Boost or AMD Radeon Anti-Lag is enabled, AMD Radeon Chill is automatically disabled.<br>
-        * On some AMD GPUs, AMD Radeon Chill and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If Radeon Super Resolution is enabled, AMD Radeon Chill is automatically disabled.
+        * AMD Radeon Chill cannot be enabled simultaneously with @ref DOX_IADLX3DBoost "AMD Radeon Boost", @ref DOX_IADLX3DAntiLag "AMD Radeon Anti-Lag", and @ref DOX_IADLX3DAntiLag1 "AMD Radeon Anti-Lag Next".<br>
+        * On some AMD GPUs, AMD Radeon Chill cannot be enabled simultaneously with @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution".<br>
+        * When a mutually exclusive feature is enabled, AMD Radeon Chill is automatically disabled.<br>
+        * __Note:__ If AMD Radeon Chill is later re-enabled, its previous configuration settings will be restored.
         * @ENG_END_DOX
         *
         *@copydoc IADLX3DChill_REQ_TABLE
@@ -402,10 +404,11 @@ namespace adlx
         *
         * @addinfo
         * @ENG_START_DOX
-        * AMD Radeon Chill conserves GPU power and reduces heat by adjusting the FPS based on the intensity of in-game movement. <br>
-        * __Note:__ AMD Radeon Chill, @ref DOX_IADLX3DBoost "AMD Radeon Boost", and @ref DOX_IADLX3DAntiLag "AMD Radeon Anti-Lag" features cannot be enabled simultaneously. If AMD Radeon Chill is enabled, AMD Radeon Anti-Lag and AMD Radeon Boost are automatically disabled. However, the configurations of the disabled feature is preserved.<br>
-        * On some AMD GPUs, AMD Radeon Chill and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If AMD Radeon Chill is enabled, Radeon Super Resolution is automatically disabled.
-
+        * AMD Radeon Chill conserves GPU power and reduces heat by adjusting the FPS based on the intensity of in-game movement.<br>
+        * AMD Radeon Chill cannot be enabled simultaneously with @ref DOX_IADLX3DBoost "AMD Radeon Boost", @ref DOX_IADLX3DAntiLag "AMD Radeon Anti-Lag", and @ref DOX_IADLX3DAntiLag1 "AMD Radeon Anti-Lag Next".<br>
+        * On some AMD GPUs, AMD Radeon Chill cannot be enabled simultaneously with @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution".<br>
+        * When AMD Radeon Chill is enabled, the mutually exclusive features are automatically disabled.<br>
+        * __Note:__ If the disabled feature is later re-enabled, its previous configuration settings will be restored.
         * @ENG_END_DOX
         *
         *@copydoc IADLX3DChill_REQ_TABLE

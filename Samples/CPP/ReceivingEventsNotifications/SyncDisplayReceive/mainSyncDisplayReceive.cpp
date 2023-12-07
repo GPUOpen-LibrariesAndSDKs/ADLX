@@ -9,6 +9,7 @@
 #include "SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
 #include "SDK/Include/IDisplays.h"
 #include "SDK/Include/IDisplays1.h"
+#include "SDK/Include/IDisplays2.h"
 #include "SDK/Include/IDisplaySettings.h"
 #include "conio.h"
 #include <iostream>
@@ -40,12 +41,6 @@ public:
     adlx_bool ADLX_STD_CALL OnDisplaySettingsChanged(IADLXDisplaySettingsChangedEvent* pDisplaySettingsChangedEvent) override
     {
         ADLX_SYNC_ORIGIN origin = pDisplaySettingsChangedEvent->GetOrigin();
-        IADLXDisplaySettingsChangedEvent1Ptr pDisplaySettingChangedEvent1(pDisplaySettingsChangedEvent);
-        if (nullptr == pDisplaySettingChangedEvent1)
-        {
-            std::cout << "IADLXDisplaySettingsChangedEvent1 not supported" << std::endl;
-        }
-        
         if (origin == SYNC_ORIGIN_EXTERNAL)
         {
             IADLXDisplayServicesPtr displayServices;
@@ -115,14 +110,33 @@ public:
                 std::cout << "Display " << displayName << "Get sync event, VSR is changed" << std::endl;
             }
 
-            if (pDisplaySettingChangedEvent1)
+            // Get IADLXDisplaySettingsChangedEvent1 interface
+            IADLXDisplaySettingsChangedEvent1Ptr pDisplaySettingChangedEvent1(pDisplaySettingsChangedEvent);
+            if (nullptr == pDisplaySettingChangedEvent1)
+            {
+                std::cout << "IADLXDisplaySettingsChangedEvent1 not supported" << std::endl;
+            }
+            else
             {
                 if (pDisplaySettingChangedEvent1->IsDisplayBlankingChanged())
                 {
-                    std::cout << "Display " << displayName << "Get sync event, display blanking is changed" << std::endl;
+                    std::cout << "Display " << displayName << "Get sync event, Display blanking is changed" << std::endl;
                 }
             }
 
+            // Get IADLXDisplaySettingsChangedEvent2 interface
+            IADLXDisplaySettingsChangedEvent2Ptr pDisplaySettingChangedEvent2(pDisplaySettingsChangedEvent);
+            if (nullptr == pDisplaySettingChangedEvent2)
+            {
+                std::cout << "IADLXDisplaySettingsChangedEvent2 not supported" << std::endl;
+            }
+            else
+            {
+                if (pDisplaySettingChangedEvent2->IsDisplayConnectivityExperienceChanged())
+                {
+                    std::cout << "Display " << displayName << "Get sync event, Display connectivity experience is changed" << std::endl;
+                }
+            }
         }
         SetEvent(displaySettingsEvent);
 

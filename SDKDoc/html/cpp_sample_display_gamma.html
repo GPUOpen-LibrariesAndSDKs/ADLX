@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.1</span>
+   &#160;<span id="projectnumber">v1.2</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('cpp_sample_display_gamma.html',''); in
 		<tr><td>2</td><td> Display current gamma information.</td></tr>
 		<tr><td>3</td><td> Set ReGammaSRGB using predefined coefficients.</td></tr>
 		<tr><td>4</td><td> Set ReGamma using custom coefficients.</td></tr>
-		<tr><td>5</td><td> Set ReGamma using ramp from file[file path: ../output-night-light.txt].</td></tr>
+		<tr><td>5</td><td> Set ReGamma using ramp from file[file path: output-night-light.txt].</td></tr>
 		<tr><td>6</td><td> ReGamma using ramp from memory.</td></tr>
 		<tr><td>7</td><td> Reset Gamma ramp.</td></tr>
 		<tr><td>M/m</td><td> Display the command prompt menu.</td></tr>
@@ -420,9 +420,9 @@ $(document).ready(function(){initNavTree('cpp_sample_display_gamma.html',''); in
 <div class="line">            res = SetGammaWithCustomCoeffs(displayService, display);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
-<div class="line">        <span class="comment">// use ramp form file, file path: ../output-night-light.txt</span></div>
+<div class="line">        <span class="comment">// use ramp form file, file path: output-night-light.txt</span></div>
 <div class="line">        <span class="keywordflow">case</span> 2:</div>
-<div class="line">            res = displayGamma-&gt;SetReGammaRamp(<span class="stringliteral">&quot;../output-night-light.txt&quot;</span>);</div>
+<div class="line">            res = displayGamma-&gt;SetReGammaRamp(<span class="stringliteral">&quot;output-night-light.txt&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
 <div class="line">        <span class="comment">// Use ramp from memory</span></div>

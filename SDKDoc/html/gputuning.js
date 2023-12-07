@@ -5,9 +5,11 @@ var gputuning =
     [ "IADLXGPUAutoTuningCompleteListener", "_d_o_x__i_a_d_l_x_g_p_u_auto_tuning_complete_listener.html", "_d_o_x__i_a_d_l_x_g_p_u_auto_tuning_complete_listener" ],
     [ "IADLXGPUPresetTuning", "_d_o_x__i_a_d_l_x_g_p_u_preset_tuning.html", "_d_o_x__i_a_d_l_x_g_p_u_preset_tuning" ],
     [ "IADLXGPUTuningChangedEvent", "_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event.html", "_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event" ],
+    [ "IADLXGPUTuningChangedEvent1", "_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event1.html", "_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event1" ],
     [ "IADLXGPUTuningChangedHandling", "_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_handling.html", "_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_handling" ],
     [ "IADLXGPUTuningChangedListener", "_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_listener.html", "_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_listener" ],
     [ "IADLXGPUTuningServices", "_d_o_x__i_a_d_l_x_g_p_u_tuning_services.html", "_d_o_x__i_a_d_l_x_g_p_u_tuning_services" ],
+    [ "IADLXGPUTuningServices1", "_d_o_x__i_a_d_l_x_g_p_u_tuning_services1.html", "_d_o_x__i_a_d_l_x_g_p_u_tuning_services1" ],
     [ "IADLXManualFanTuning", "_d_o_x__i_a_d_l_x_manual_fan_tuning.html", "_d_o_x__i_a_d_l_x_manual_fan_tuning" ],
     [ "IADLXManualFanTuningState", "_d_o_x__i_a_d_l_x_manual_fan_tuning_state.html", "_d_o_x__i_a_d_l_x_manual_fan_tuning_state" ],
     [ "IADLXManualFanTuningStateList", "_d_o_x__i_a_d_l_x_manual_fan_tuning_state_list.html", "_d_o_x__i_a_d_l_x_manual_fan_tuning_state_list" ],
@@ -19,5 +21,6 @@ var gputuning =
     [ "IADLXManualVRAMTuning1", "_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1.html", "_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1" ],
     [ "IADLXManualVRAMTuning2", "_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning2.html", "_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning2" ],
     [ "IADLXMemoryTimingDescription", "_d_o_x__i_a_d_l_x_memory_timing_description.html", "_d_o_x__i_a_d_l_x_memory_timing_description" ],
-    [ "IADLXMemoryTimingDescriptionList", "_d_o_x__i_a_d_l_x_memory_timing_description_list.html", "_d_o_x__i_a_d_l_x_memory_timing_description_list" ]
+    [ "IADLXMemoryTimingDescriptionList", "_d_o_x__i_a_d_l_x_memory_timing_description_list.html", "_d_o_x__i_a_d_l_x_memory_timing_description_list" ],
+    [ "IADLXSmartAccessMemory", "_d_o_x__i_a_d_l_x_smart_access_memory.html", "_d_o_x__i_a_d_l_x_smart_access_memory" ]
 ];

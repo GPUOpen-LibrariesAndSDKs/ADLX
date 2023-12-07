@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_smart_shift_max" kind="page">
+    <compoundname>DOX_IADLXSmartShiftMax</compoundname>
+    <title>IADLXSmartShiftMax</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_smart_shift_max__get_bias">GetBias</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_smart_shift_max__get_bias_mode">GetBiasMode</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_smart_shift_max__get_bias_range">GetBiasRange</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_smart_shift_max__is_supported">IsSupported</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_smart_shift_max__set_bias">SetBias</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_smart_shift_max__set_bias_mode">SetBiasMode</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXSmartShiftMax</bold> interface configures the AMD SmartShift Max settings. AMD SmartShift Max boosts performance by dynamically shifting power between the CPU and the GPU.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLXSmartShiftMax</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLXSmartShiftMaxPtr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_interface" kindref="compound">IADLXInterface</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="7" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_smart_shift_max__get_bias" kindref="compound">GetBias</ref>   </para>
+</entry><entry thead="no"><para>Gets the AMD SmartShift Max current bias.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_smart_shift_max__get_bias_mode" kindref="compound">GetBiasMode</ref>   </para>
+</entry><entry thead="no"><para>Gets the AMD SmartShift Max current bias mode.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_smart_shift_max__get_bias_range" kindref="compound">GetBiasRange</ref>   </para>
+</entry><entry thead="no"><para>Gets maximum bias, minimum bias, and step bias of AMD SmartShift Max.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_smart_shift_max__is_supported" kindref="compound">IsSupported</ref>   </para>
+</entry><entry thead="no"><para>Checks if AMD SmartShift Max is supported.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_smart_shift_max__set_bias" kindref="compound">SetBias</ref>   </para>
+</entry><entry thead="no"><para>Sets the bias of AMD SmartShift Max.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_smart_shift_max__set_bias_mode" kindref="compound">SetBiasMode</ref>   </para>
+</entry><entry thead="no"><para>Sets AMD SmartShift Max bias mode.   </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IPowerTuning.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.2</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp_ssm" kindref="compound">SmartShiftMax C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c_ssm" kindref="compound">SmartShiftMax C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_smart_shift_max__get_bias" kindref="compound">GetBias</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_smart_shift_max__get_bias_mode" kindref="compound">GetBiasMode</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_smart_shift_max__get_bias_range" kindref="compound">GetBiasRange</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_smart_shift_max__is_supported" kindref="compound">IsSupported</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_smart_shift_max__set_bias" kindref="compound">SetBias</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_smart_shift_max__set_bias_mode" kindref="compound">SetBiasMode</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXPowerTuningPage.h"/>
+  </compounddef>
+</doxygen>

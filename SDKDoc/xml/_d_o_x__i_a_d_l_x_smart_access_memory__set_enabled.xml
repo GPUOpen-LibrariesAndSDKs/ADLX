@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_smart_access_memory__set_enabled" kind="page">
+    <compoundname>DOX_IADLXSmartAccessMemory_SetEnabled</compoundname>
+    <title>SetEnabled</title>
+    <briefdescription>
+<para>Enable or disable the state of AMD SmartAccess Memory on a GPU. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Enable or disable the state of AMD SmartAccess Memory on a GPU.</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>    SetEnabled (adlx_bool enable)
+ </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para><variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>1.</para>
+</entry><entry thead="no" class="paramdir"><para>[in]</para>
+</entry><entry thead="no" class="paramname"><para>enable</para>
+</entry><entry thead="no" class="paramtype"><para>adlx_bool</para>
+</entry><entry thead="no"><para>The new AMD SmartAccess Memory state. Set <bold>true</bold> to enable AMD SmartAccess Memory. Set <bold>false</bold> to disable AMD SmartAccess Memory. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If the state of AMD SmartAccess Memory is successfully set, <bold>ADLX_OK</bold> is returned.<linebreak/>
+ If the state of AMD SmartAccess Memory is not successfully set, an error code is returned.<linebreak/>
+ Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.<linebreak/>
+</para>
+<para><heading level="2">Remarks </heading>
+</para>
+<para>The <bold>SetEnabled</bold> method triggers an asynchronous operation that results in changing the maximum size of VRAM of a GPU that the CPU can address.<linebreak/>
+ While this operation is in progress, the applications that run in the context of the GPU or make calls in the driver for the GPU will behave unexpectedly. Before making this call, ensure that these applications release the GPU context, such as by closing their user interfaces, and that they will not make calls into the GPU driver during this operation. This procedure will allow those applications to continue to function correctly during and after the operation is completed.<linebreak/>
+ To learn when the operation is completed, register an event listener interface using <ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_services__get_g_p_u_tuning_changed_handling" kindref="compound">GetGPUTuningChangedHandling</ref> before calling <bold>SetEnabled</bold>. ADLX will call <ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_listener__on_g_p_u_tuning_changed" kindref="compound">OnGPUTuningChanged</ref> into the event listener interface twice during the asynchronous execution of <bold>SetEnabled</bold>: once before the operation is started, and the second time, after the operation is completed. Use <ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event1__is_smart_access_memory_changed" kindref="compound">IsSmartAccessMemoryChanged</ref> and <ref refid="_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_event1__get_smart_access_memory_status" kindref="compound">GetSmartAccessMemoryStatus</ref> to discover the state of this operation.</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;ISmartAccessMemory.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.2</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ISmartAccessMemory.h"/>
+  </compounddef>
+</doxygen>
