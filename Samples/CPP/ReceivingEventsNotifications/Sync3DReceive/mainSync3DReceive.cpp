@@ -8,7 +8,6 @@
 
 #include "SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
 #include "SDK/Include/I3DSettings.h"
-#include "SDK/Include/I3DSettings1.h"
 #include "conio.h"
 #include <iostream>
 #include <string>
@@ -100,13 +99,6 @@ public:
         // Get 3DSettings service
         IADLX3DSettingsServicesPtr d3dSettingSrv;
         g_ADLXHelp.GetSystemServices()->Get3DSettingsServices(&d3dSettingSrv);
-        IADLX3DSettingsServices1Ptr d3dSettingSrv1 (d3dSettingSrv);
-
-        IADLX3DSettingsChangedEvent1Ptr p3DSettingsChangedEvent1(p3DSettingsChangedEvent);
-        if (p3DSettingsChangedEvent1 == nullptr)
-        {
-            std::cout << "3DSettingsChangedEvent1 not supported" << std::endl;
-        }
 
         // Get the GPU interface
         IADLXGPUPtr gpu;
