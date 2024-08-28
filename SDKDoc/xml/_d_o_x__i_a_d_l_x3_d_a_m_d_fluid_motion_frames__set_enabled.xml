@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x3_d_a_m_d_fluid_motion_frames__set_enabled" kind="page">
+    <compoundname>DOX_IADLX3DAMDFluidMotionFrames_SetEnabled</compoundname>
+    <title>SetEnabled</title>
+    <briefdescription>
+<para>Sets the activation status of AMD Fluid Motion Frames. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Sets the activation status of AMD Fluid Motion Frames.</para>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>    SetEnabled (adlx_bool enable)
+ </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para><variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>1.</para>
+</entry><entry thead="no" class="paramdir"><para>[in]</para>
+</entry><entry thead="no" class="paramname"><para>enable</para>
+</entry><entry thead="no" class="paramtype"><para>adlx_bool</para>
+</entry><entry thead="no"><para>The new AMD Fluid Motion Frames state. Set <bold>true</bold> to enable AMD Fluid Motion Frames. Set <bold>false</bold> to disable AMD Fluid Motion Frames. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If the state of AMD Fluid Motion Frames is successfully set, <bold>ADLX_OK</bold> is returned.<linebreak/>
+ If the state of AMD Fluid Motion Frames is not successfully set, an error code is returned.<linebreak/>
+ Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.<linebreak/>
+</para>
+<para><heading level="2">Additional Info </heading>
+</para>
+<para>AMD Fluid Motion Frames is a frame generating feature to achieve higher in-game frame rates. <linebreak/>
+</para>
+<para><heading level="2">Dependent Interfaces </heading>
+</para>
+<para>AMD Fluid Motion Frames cannot be simultaneously enabled with <ref refid="_d_o_x__i_a_d_l_x3_d_chill" kindref="compound">AMD Radeon Chill</ref>.<linebreak/>
+</para>
+<para>If AMD Fluid Motion Frames is enabled, the mutually exclusive features are automatically disabled. When a mutually exclusive feature is re-enabled, its previous configuration settings are restored.<linebreak/>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;I3DSettings1.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.3</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h"/>
+  </compounddef>
+</doxygen>

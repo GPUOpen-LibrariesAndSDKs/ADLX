@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.2</span>
+   &#160;<span id="projectnumber">v1.3</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('c__perf_g_p_u_metrics.html',''); initR
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -132,13 +132,14 @@ $(document).ready(function(){initNavTree('c__perf_g_p_u_metrics.html',''); initR
 </body>
 </html> <h2>Code </h2>
 <div class="codeHeader"><span class="language">C</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/ADLXHelper/Windows/C/ADLXHelper.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/Include/IPerformanceMonitoring.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;SDK/Include/IPerformanceMonitoring2.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Main menu</span></div>
 <div class="line"><span class="keywordtype">void</span> MainMenu();</div>
@@ -383,7 +384,40 @@ $(document).ready(function(){initNavTree('c__perf_g_p_u_metrics.html',''); initR
 <div class="line">            printf (<span class="stringliteral">&quot;The GPU intake temperature range between %dW and %dW\n&quot;</span>, minValue, maxValue);</div>
 <div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (res == ADLX_NOT_SUPPORTED)</div>
 <div class="line">            printf (<span class="stringliteral">&quot;GPU intake temperature range not supported\n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">        IADLXGPUMetricsSupport1* gpuMetricsSupport1 = NULL;</div>
+<div class="line">        res = gpuMetricsSupport-&gt;pVtbl-&gt;QueryInterface(gpuMetricsSupport, IID_IADLXGPUMetricsSupport1(), &amp;gpuMetricsSupport1);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">// Get GPU memory temperature range</span></div>
+<div class="line">            res = gpuMetricsSupport1-&gt;pVtbl-&gt;GetGPUMemoryTemperatureRange(gpuMetricsSupport1, &amp;minValue, &amp;maxValue);</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                printf(<span class="stringliteral">&quot;The GPU memory temperature range between %d%cC and %d%cC\n&quot;</span>, minValue, g_degree, maxValue, g_degree);</div>
+<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (res == ADLX_NOT_SUPPORTED)</div>
+<div class="line">                printf(<span class="stringliteral">&quot;GPU memory temperature range not supported\n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// Get NPU activity level range</span></div>
+<div class="line">            res = gpuMetricsSupport1-&gt;pVtbl-&gt;GetNPUActivityLevelRange(gpuMetricsSupport1, &amp;minValue, &amp;maxValue);</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                printf(<span class="stringliteral">&quot;The NPU activity level range between %d%% and %d%%\n&quot;</span>, minValue, maxValue);</div>
+<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (res == ADLX_NOT_SUPPORTED)</div>
+<div class="line">                printf(<span class="stringliteral">&quot;NPU activity level range not supported\n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// Get NPU frequency range</span></div>
+<div class="line">            res = gpuMetricsSupport1-&gt;pVtbl-&gt;GetNPUFrequencyRange(gpuMetricsSupport1, &amp;minValue, &amp;maxValue);</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                printf(<span class="stringliteral">&quot;The NPU frequency range between %dMHz and %dMHz\n&quot;</span>, minValue, maxValue);</div>
+<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (res == ADLX_NOT_SUPPORTED)</div>
+<div class="line">                printf(<span class="stringliteral">&quot;NPU frequency range not supported\n&quot;</span>);</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span> (gpuMetricsSupport1)</div>
+<div class="line">        {</div>
+<div class="line">            gpuMetricsSupport1-&gt;pVtbl-&gt;Release(gpuMetricsSupport1);</div>
+<div class="line">            gpuMetricsSupport1 = NULL;</div>
+<div class="line">        }</div>
 <div class="line">    }</div>
+<div class="line"> </div>
 <div class="line">    <span class="keywordflow">if</span> (gpuMetricsSupport != NULL)</div>
 <div class="line">    {</div>
 <div class="line">        gpuMetricsSupport-&gt;pVtbl-&gt;Release(gpuMetricsSupport);</div>
@@ -609,6 +643,126 @@ $(document).ready(function(){initNavTree('c__perf_g_p_u_metrics.html',''); initR
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
+<div class="line"><span class="comment">// Display GPU memory temperature(in °C)</span></div>
+<div class="line"><span class="keywordtype">void</span> ShowGPUMemoryTemperature(IADLXGPUMetricsSupport* gpuMetricsSupport, IADLXGPUMetrics* gpuMetrics)</div>
+<div class="line">{</div>
+<div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
+<div class="line"> </div>
+<div class="line">    IADLXGPUMetricsSupport1* gpuMetricsSupport1 = NULL;</div>
+<div class="line">    IADLXGPUMetrics1* gpuMetrics1 = NULL;</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> supportRes = gpuMetricsSupport-&gt;pVtbl-&gt;QueryInterface(gpuMetricsSupport, IID_IADLXGPUMetricsSupport1(), &amp;gpuMetricsSupport1);</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> metricsRes = gpuMetrics-&gt;pVtbl-&gt;QueryInterface(gpuMetrics, IID_IADLXGPUMetrics1(), &amp;gpuMetrics1);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(supportRes) &amp;&amp; <a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(metricsRes))</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// Display the GPU memory temperature support status</span></div>
+<div class="line">        <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = gpuMetricsSupport1-&gt;pVtbl-&gt;IsSupportedGPUMemoryTemperature(gpuMetricsSupport1, &amp;supported);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        {</div>
+<div class="line">            printf(<span class="stringliteral">&quot;GPU memory temperature support status: %d\n&quot;</span>, supported);</div>
+<div class="line">            <span class="keywordflow">if</span> (supported)</div>
+<div class="line">            {</div>
+<div class="line">                adlx_double temperature = 0;</div>
+<div class="line">                res = gpuMetrics1-&gt;pVtbl-&gt;GPUMemoryTemperature(gpuMetrics1, &amp;temperature);</div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                    printf(<span class="stringliteral">&quot;The GPU memory temperature is: %f%cC\n&quot;</span>, temperature, g_degree);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (gpuMetricsSupport1)</div>
+<div class="line">    {</div>
+<div class="line">        gpuMetricsSupport1-&gt;pVtbl-&gt;Release(gpuMetricsSupport1);</div>
+<div class="line">        gpuMetricsSupport1 = NULL;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (gpuMetrics1)</div>
+<div class="line">    {</div>
+<div class="line">        gpuMetrics1-&gt;pVtbl-&gt;Release(gpuMetrics1);</div>
+<div class="line">        gpuMetrics1 = NULL;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Display the NPU activity level(in %)</span></div>
+<div class="line"><span class="keywordtype">void</span> ShowNPUActivityLevel(IADLXGPUMetricsSupport* gpuMetricsSupport, IADLXGPUMetrics* gpuMetrics)</div>
+<div class="line">{</div>
+<div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
+<div class="line"> </div>
+<div class="line">    IADLXGPUMetricsSupport1* gpuMetricsSupport1 = NULL;</div>
+<div class="line">    IADLXGPUMetrics1* gpuMetrics1 = NULL;</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> supportRes = gpuMetricsSupport-&gt;pVtbl-&gt;QueryInterface(gpuMetricsSupport, IID_IADLXGPUMetricsSupport1(), &amp;gpuMetricsSupport1);</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> metricsRes = gpuMetrics-&gt;pVtbl-&gt;QueryInterface(gpuMetrics, IID_IADLXGPUMetrics1(), &amp;gpuMetrics1);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(supportRes) &amp;&amp; <a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(metricsRes))</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// Display the NPU activity level support status</span></div>
+<div class="line">        <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = gpuMetricsSupport1-&gt;pVtbl-&gt;IsSupportedNPUActivityLevel(gpuMetricsSupport1, &amp;supported);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        {</div>
+<div class="line">            printf(<span class="stringliteral">&quot;NPU activity level support status: %d\n&quot;</span>, supported);</div>
+<div class="line">            <span class="keywordflow">if</span> (supported)</div>
+<div class="line">            {</div>
+<div class="line">                adlx_int level = 0;</div>
+<div class="line">                res = gpuMetrics1-&gt;pVtbl-&gt;NPUActivityLevel(gpuMetrics1, &amp;level);</div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                    printf(<span class="stringliteral">&quot;The NPU activity level is: %d%%\n&quot;</span>, level);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (gpuMetricsSupport1)</div>
+<div class="line">    {</div>
+<div class="line">        gpuMetricsSupport1-&gt;pVtbl-&gt;Release(gpuMetricsSupport1);</div>
+<div class="line">        gpuMetricsSupport1 = NULL;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (gpuMetrics1)</div>
+<div class="line">    {</div>
+<div class="line">        gpuMetrics1-&gt;pVtbl-&gt;Release(gpuMetrics1);</div>
+<div class="line">        gpuMetrics1 = NULL;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Display the NPU frequency(in MHz)</span></div>
+<div class="line"><span class="keywordtype">void</span> ShowNPUFrequency(IADLXGPUMetricsSupport* gpuMetricsSupport, IADLXGPUMetrics* gpuMetrics)</div>
+<div class="line">{</div>
+<div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
+<div class="line"> </div>
+<div class="line">    IADLXGPUMetricsSupport1* gpuMetricsSupport1 = NULL;</div>
+<div class="line">    IADLXGPUMetrics1* gpuMetrics1 = NULL;</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> supportRes = gpuMetricsSupport-&gt;pVtbl-&gt;QueryInterface(gpuMetricsSupport, IID_IADLXGPUMetricsSupport1(), &amp;gpuMetricsSupport1);</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> metricsRes = gpuMetrics-&gt;pVtbl-&gt;QueryInterface(gpuMetrics, IID_IADLXGPUMetrics1(), &amp;gpuMetrics1);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(supportRes) &amp;&amp; <a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(metricsRes))</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// Display the NPU frequency support status</span></div>
+<div class="line">        <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = gpuMetricsSupport1-&gt;pVtbl-&gt;IsSupportedNPUFrequency(gpuMetricsSupport1, &amp;supported);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        {</div>
+<div class="line">            printf(<span class="stringliteral">&quot;NPU frequency support status: %d\n&quot;</span>, supported);</div>
+<div class="line">            <span class="keywordflow">if</span> (supported)</div>
+<div class="line">            {</div>
+<div class="line">                adlx_int frequency = 0;</div>
+<div class="line">                res = gpuMetrics1-&gt;pVtbl-&gt;NPUFrequency(gpuMetrics1, &amp;frequency);</div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                    printf(<span class="stringliteral">&quot;The NPU frequency is: %dMHz\n&quot;</span>, frequency);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (gpuMetricsSupport1)</div>
+<div class="line">    {</div>
+<div class="line">        gpuMetricsSupport1-&gt;pVtbl-&gt;Release(gpuMetricsSupport1);</div>
+<div class="line">        gpuMetricsSupport1 = NULL;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (gpuMetrics1)</div>
+<div class="line">    {</div>
+<div class="line">        gpuMetrics1-&gt;pVtbl-&gt;Release(gpuMetrics1);</div>
+<div class="line">        gpuMetrics1 = NULL;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// Display current GPU metrics</span></div>
 <div class="line"><span class="keywordtype">void</span> ShowCurrentGPUMetrics(IADLXPerformanceMonitoringServices *perfMonitoringServices, IADLXGPU *oneGPU)</div>
 <div class="line">{</div>
@@ -641,6 +795,9 @@ $(document).ready(function(){initNavTree('c__perf_g_p_u_metrics.html',''); initR
 <div class="line">            ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);</div>
 <div class="line">            ShowGPUTotalBoardPower(gpuMetricsSupport, gpuMetrics);</div>
 <div class="line">            ShowGPUIntakeTemperature (gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">            ShowGPUMemoryTemperature(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">            ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">            ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);</div>
 <div class="line">        }</div>
 <div class="line">        Sleep(1000);</div>
 <div class="line"> </div>
@@ -717,6 +874,9 @@ $(document).ready(function(){initNavTree('c__perf_g_p_u_metrics.html',''); initR
 <div class="line">                    ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);</div>
 <div class="line">                    ShowGPUTotalBoardPower(gpuMetricsSupport, gpuMetrics);</div>
 <div class="line">                    ShowGPUIntakeTemperature(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                    ShowGPUMemoryTemperature(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                    ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                    ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);</div>
 <div class="line">                }</div>
 <div class="line"> </div>
 <div class="line">                <span class="comment">// Release IADLXGPUMetrics interface</span></div>
@@ -808,6 +968,9 @@ $(document).ready(function(){initNavTree('c__perf_g_p_u_metrics.html',''); initR
 <div class="line">                ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);</div>
 <div class="line">                ShowGPUTotalBoardPower(gpuMetricsSupport, gpuMetrics);</div>
 <div class="line">                ShowGPUIntakeTemperature (gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                ShowGPUMemoryTemperature(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);</div>
+<div class="line">                ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);</div>
 <div class="line">            }</div>
 <div class="line">            printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">if</span> (gpuMetrics != NULL)</div>
@@ -838,14 +1001,14 @@ $(document).ready(function(){initNavTree('c__perf_g_p_u_metrics.html',''); initR
 <div class="line">}</div>
 <div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0a351c7e8c74ef3cfbee06213c43884589"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0a351c7e8c74ef3cfbee06213c43884589">ADLX_NOT_SUPPORTED</a></div><div class="ttdeci">@ ADLX_NOT_SUPPORTED</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:291</div></div>
 <div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_ga6ea0e7f02e40768a1e47cb60e0e6f482"><div class="ttname"><a href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a></div><div class="ttdeci">#define ADLX_FAILED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:316</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:305</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_ga6ea0e7f02e40768a1e47cb60e0e6f482"><div class="ttname"><a href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a></div><div class="ttdeci">#define ADLX_FAILED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:318</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:307</div></div>
 <div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:278</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!--
-# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -853,7 +1016,7 @@ $(document).ready(function(){initNavTree('c__perf_g_p_u_metrics.html',''); initR
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2023 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
+    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2024 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
   </ul>
 </div>
 </body>

@@ -1,6 +1,6 @@
 @page page_sample_cs C# Samples
 <!--
-# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->

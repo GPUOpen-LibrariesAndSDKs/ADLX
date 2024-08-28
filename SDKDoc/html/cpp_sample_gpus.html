@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.2</span>
+   &#160;<span id="projectnumber">v1.3</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('cpp_sample_gpus.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('cpp_sample_gpus.html',''); initResizab
 </body>
 </html> <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -142,6 +142,9 @@ $(document).ready(function(){initNavTree('cpp_sample_gpus.html',''); initResizab
 <div class="line"> </div>
 <div class="line"><span class="comment">// Display GPU hybrid graphic type</span></div>
 <div class="line"><span class="keywordtype">void</span> ShowHybridGraphicType();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Display Driver Version</span></div>
+<div class="line"><span class="keywordtype">void</span> ShowDriverInfo(<span class="keyword">const</span> IADLXGPUPtr&amp; gpu);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Add GPU change event listener</span></div>
 <div class="line"><span class="keywordtype">void</span> AddGPUEventListener(<span class="keyword">const</span> IADLXGPUPtr&amp; gpu);</div>
@@ -225,11 +228,11 @@ $(document).ready(function(){initNavTree('cpp_sample_gpus.html',''); initResizab
 <div class="line">    <span class="comment">// Display GPU info</span></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>* vendorId = <span class="keyword">nullptr</span>;</div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> ret = gpu-&gt;VendorId(&amp;vendorId);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;VendorId: &quot;</span> &lt;&lt; vendorId &lt;&lt; <span class="stringliteral">&quot;return code is: &quot;</span>&lt;&lt; ret &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;VendorId: &quot;</span> &lt;&lt; vendorId &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; ret &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    <a class="code" href="group__enumerations.html#gaf4fd628e799e6a74201290ff40418d77">ADLX_ASIC_FAMILY_TYPE</a> asicFamilyType = ASIC_UNDEFINED;</div>
 <div class="line">    ret = gpu-&gt;ASICFamilyType(&amp;asicFamilyType);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;ASICFamilyType: &quot;</span> &lt;&lt; asicFamilyType &lt;&lt; <span class="stringliteral">&quot;return code is: &quot;</span>&lt;&lt; ret &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;ASICFamilyType: &quot;</span> &lt;&lt; asicFamilyType &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; ret &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    <a class="code" href="group__enumerations.html#ga6fb3c9944d5c8aa79f7dbd0f675fac34">ADLX_GPU_TYPE</a> gpuType = GPUTYPE_UNDEFINED;</div>
 <div class="line">    ret = gpu-&gt;Type(&amp;gpuType);</div>
@@ -263,6 +266,8 @@ $(document).ready(function(){initNavTree('cpp_sample_gpus.html',''); initResizab
 <div class="line">    ret = gpu-&gt;UniqueId(&amp;<span class="keywordtype">id</span>);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;UniqueId: &quot;</span> &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; std::endl;</div>
 <div class="line"> </div>
+<div class="line">    ShowDriverInfo(gpu);</div>
+<div class="line"> </div>
 <div class="line">    IADLXGPU1Ptr gpu1(gpu);</div>
 <div class="line">    <span class="keywordflow">if</span> (gpu1)</div>
 <div class="line">    {</div>
@@ -287,6 +292,100 @@ $(document).ready(function(){initNavTree('cpp_sample_gpus.html',''); initResizab
 <div class="line">        adlx_uint laneWidth = 0;</div>
 <div class="line">        ret = gpu1-&gt;PCIBusLaneWidth(&amp;laneWidth);</div>
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;PCIBusLaneWidth: &quot;</span> &lt;&lt; laneWidth &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">bool</span> GetStringFromLocalMachine(<span class="keyword">const</span> <span class="keywordtype">wchar_t</span>* szKeyPath_, <span class="keyword">const</span> <span class="keywordtype">wchar_t</span>* szValueName_, <span class="keywordtype">wchar_t</span>* szValue_, DWORD dwSize_)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> ((szKeyPath_ == NULL) || (szValueName_ == NULL))</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">bool</span> bRetVal = <span class="keyword">false</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> bKeyOpenStatus = <span class="keyword">false</span>;</div>
+<div class="line">    DWORD dwValueType = REG_SZ;</div>
+<div class="line">    HKEY hKeyRes;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">//Opens the specified key, returning a handle object.</span></div>
+<div class="line">    <span class="keywordflow">if</span> (RegOpenKeyEx(HKEY_LOCAL_MACHINE, szKeyPath_, 0, KEY_QUERY_VALUE, &amp;hKeyRes) == ERROR_SUCCESS)</div>
+<div class="line">        bKeyOpenStatus = <span class="keyword">true</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (bKeyOpenStatus)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">//Retrieves the type and data for a specified value name associated with an open registry key</span></div>
+<div class="line">        <span class="keywordflow">if</span> (RegQueryValueEx(hKeyRes, szValueName_, 0, &amp;dwValueType, (LPBYTE)szValue_, &amp;dwSize_) == ERROR_SUCCESS)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">//If the value type is string return true otherwise false</span></div>
+<div class="line">            <span class="keywordflow">if</span> (dwValueType == REG_SZ || dwValueType == REG_EXPAND_SZ)</div>
+<div class="line">                bRetVal = <span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        RegCloseKey(hKeyRes);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span>  bRetVal;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> Char2WChar(<span class="keyword">const</span> <span class="keywordtype">char</span>* pStr, <span class="keywordtype">wchar_t</span>* pWStr)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (pStr == <span class="keyword">nullptr</span> || pWStr == <span class="keyword">nullptr</span>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> 0;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordtype">int</span> len = MultiByteToWideChar(CP_ACP, 0, pStr, strlen(pStr), NULL, 0);</div>
+<div class="line">    MultiByteToWideChar(CP_ACP, 0, pStr, strlen(pStr), pWStr, len);</div>
+<div class="line">    pWStr[len] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line">    <span class="keywordflow">return</span> len;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> ShowDriverInfo(<span class="keyword">const</span> IADLXGPUPtr&amp; gpu)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code" href="group__enumerations.html#gaf4fd628e799e6a74201290ff40418d77">ADLX_ASIC_FAMILY_TYPE</a> asicFamilyType = ASIC_UNDEFINED;</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> ret = gpu-&gt;ASICFamilyType(&amp;asicFamilyType);</div>
+<div class="line">    <span class="keywordtype">wchar_t</span> RSVersion[MAX_PATH] = L<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">    <span class="keywordtype">wchar_t</span> RSEdition[MAX_PATH] = L<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">    <span class="keywordflow">switch</span> (asicFamilyType)</div>
+<div class="line">    {</div>
+<div class="line">    <span class="keywordflow">case</span> ASIC_RADEON:</div>
+<div class="line">        wcscpy_s(RSVersion, MAX_PATH, L<span class="stringliteral">&quot;RadeonSoftwareVersion&quot;</span>);</div>
+<div class="line">        wcscpy_s(RSEdition, MAX_PATH, L<span class="stringliteral">&quot;RadeonSoftwareEdition&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> ASIC_FIREPRO:</div>
+<div class="line">    <span class="keywordflow">case</span> ASIC_FIREMV:</div>
+<div class="line">    <span class="keywordflow">case</span> ASIC_FIRESTREAM:</div>
+<div class="line">        wcscpy_s(RSVersion, MAX_PATH, L<span class="stringliteral">&quot;FireproSoftwareVersion&quot;</span>);</div>
+<div class="line">        wcscpy_s(RSEdition, MAX_PATH, L<span class="stringliteral">&quot;FireproSoftwareEdition&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">default</span>:</div>
+<div class="line">        wcscpy_s(RSVersion, MAX_PATH, L<span class="stringliteral">&quot;RadeonSoftwareVersion&quot;</span>);</div>
+<div class="line">        wcscpy_s(RSEdition, MAX_PATH, L<span class="stringliteral">&quot;RadeonSoftwareEdition&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>* driverPath = <span class="keyword">nullptr</span>;</div>
+<div class="line">    ret = gpu-&gt;DriverPath(&amp;driverPath);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(ret))</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordtype">wchar_t</span> driverPathW[MAX_PATH] = { 0 };</div>
+<div class="line">        Char2WChar(driverPath, driverPathW);</div>
+<div class="line">        <span class="comment">// The full path of driver reg</span></div>
+<div class="line">        <span class="keywordtype">wchar_t</span> driverRegistryPath[MAX_PATH] = { 0 };</div>
+<div class="line">        swprintf_s(driverRegistryPath, L<span class="stringliteral">&quot;SYSTEM\\CurrentControlSet\\Control\\Class\\%s&quot;</span>, driverPathW);</div>
+<div class="line">        <span class="keywordtype">wchar_t</span>  value[MAX_PATH] = L<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">        <span class="comment">// Get AMD Software Version from the registry</span></div>
+<div class="line">        GetStringFromLocalMachine(driverRegistryPath, RSVersion, value, <span class="keyword">sizeof</span>(value));</div>
+<div class="line">        std::wcout &lt;&lt; <span class="stringliteral">&quot;AMD Software version: &quot;</span> &lt;&lt; value &lt;&lt; std::endl;</div>
+<div class="line">        <span class="comment">// Get AMD Software Edition from the registry</span></div>
+<div class="line">        GetStringFromLocalMachine(driverRegistryPath, RSEdition, value, <span class="keyword">sizeof</span>(value));</div>
+<div class="line">        std::wcout &lt;&lt; value &lt;&lt; std::endl;</div>
+<div class="line">        <span class="comment">// Get AMD Software Release Date from the registry</span></div>
+<div class="line">        GetStringFromLocalMachine(driverRegistryPath, L<span class="stringliteral">&quot;DriverDate&quot;</span>, value, <span class="keyword">sizeof</span>(value));</div>
+<div class="line">        std::wcout &lt;&lt; <span class="stringliteral">&quot;AMD Software Release Date: &quot;</span> &lt;&lt; value &lt;&lt; std::endl;</div>
+<div class="line">        <span class="comment">// Get Driver Version from the registry</span></div>
+<div class="line">        GetStringFromLocalMachine(driverRegistryPath, L<span class="stringliteral">&quot;DriverVersion&quot;</span>, value, <span class="keyword">sizeof</span>(value));</div>
+<div class="line">        std::wcout &lt;&lt; <span class="stringliteral">&quot;Driver Version: &quot;</span> &lt;&lt; value &lt;&lt; std::endl;</div>
+<div class="line">        <span class="comment">// Get AMD Windows Driver Version from the registry</span></div>
+<div class="line">        GetStringFromLocalMachine(driverRegistryPath, L<span class="stringliteral">&quot;ReleaseVersion&quot;</span>, value, <span class="keyword">sizeof</span>(value));</div>
+<div class="line">        std::wcout &lt;&lt; <span class="stringliteral">&quot;AMD Windows Driver Version: &quot;</span> &lt;&lt; value &lt;&lt; std::endl;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -394,28 +493,32 @@ $(document).ready(function(){initNavTree('cpp_sample_gpus.html',''); initResizab
 <div class="line">    system(<span class="stringliteral">&quot;pause&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">return</span> retCode;</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga260f926e27eef013ca1eacd0ff7b3ba7ac157bdf0b85a40d2619cbc8bc1ae5fe2"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga260f926e27eef013ca1eacd0ff7b3ba7ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:330</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga260f926e27eef013ca1eacd0ff7b3ba7ac1f5c308ff9610759dbc1415b20df568"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga260f926e27eef013ca1eacd0ff7b3ba7ac1f5c308ff9610759dbc1415b20df568">AMD</a></div><div class="ttdeci">@ AMD</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:331</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga260f926e27eef013ca1eacd0ff7b3ba7adbf1dee1b8cd7ea3c82661943c7b74f4"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga260f926e27eef013ca1eacd0ff7b3ba7adbf1dee1b8cd7ea3c82661943c7b74f4">OTHER</a></div><div class="ttdeci">@ OTHER</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:332</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga6fb3c9944d5c8aa79f7dbd0f675fac34ace1bf6380e6eb87aec4f7879f4d117c9"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga6fb3c9944d5c8aa79f7dbd0f675fac34ace1bf6380e6eb87aec4f7879f4d117c9">GPUTYPE_UNDEFINED</a></div><div class="ttdeci">@ GPUTYPE_UNDEFINED</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:411</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga260f926e27eef013ca1eacd0ff7b3ba7ac157bdf0b85a40d2619cbc8bc1ae5fe2"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga260f926e27eef013ca1eacd0ff7b3ba7ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:332</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga260f926e27eef013ca1eacd0ff7b3ba7ac1f5c308ff9610759dbc1415b20df568"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga260f926e27eef013ca1eacd0ff7b3ba7ac1f5c308ff9610759dbc1415b20df568">AMD</a></div><div class="ttdeci">@ AMD</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:333</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga260f926e27eef013ca1eacd0ff7b3ba7adbf1dee1b8cd7ea3c82661943c7b74f4"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga260f926e27eef013ca1eacd0ff7b3ba7adbf1dee1b8cd7ea3c82661943c7b74f4">OTHER</a></div><div class="ttdeci">@ OTHER</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:334</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga6fb3c9944d5c8aa79f7dbd0f675fac34ace1bf6380e6eb87aec4f7879f4d117c9"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga6fb3c9944d5c8aa79f7dbd0f675fac34ace1bf6380e6eb87aec4f7879f4d117c9">GPUTYPE_UNDEFINED</a></div><div class="ttdeci">@ GPUTYPE_UNDEFINED</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:413</div></div>
 <div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gada547c00826e15266732f874a0f3478da9100baedfaa6e08d64fa900cd7685cef"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gada547c00826e15266732f874a0f3478da9100baedfaa6e08d64fa900cd7685cef">MGPU_SECONDARY</a></div><div class="ttdeci">@ MGPU_SECONDARY</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:975</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gada547c00826e15266732f874a0f3478daa8e7af64a7da10bed79c2e5de97b7cb8"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gada547c00826e15266732f874a0f3478daa8e7af64a7da10bed79c2e5de97b7cb8">MGPU_PRIMARY</a></div><div class="ttdeci">@ MGPU_PRIMARY</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:974</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gada547c00826e15266732f874a0f3478daf2165ffea80d451f834d3a5d2994b3c8"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gada547c00826e15266732f874a0f3478daf2165ffea80d451f834d3a5d2994b3c8">MGPU_NONE</a></div><div class="ttdeci">@ MGPU_NONE</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:973</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaf4fd628e799e6a74201290ff40418d77a3545ff1a23cd34b9adbc8c665a5951be"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaf4fd628e799e6a74201290ff40418d77a3545ff1a23cd34b9adbc8c665a5951be">ASIC_UNDEFINED</a></div><div class="ttdeci">@ ASIC_UNDEFINED</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:346</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gafcbeca41c0df518ccf5556e8e6e83f62a605159e8a4c32319fd69b5d151369d93"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gafcbeca41c0df518ccf5556e8e6e83f62a605159e8a4c32319fd69b5d151369d93">UNDEFINED</a></div><div class="ttdeci">@ UNDEFINED</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:366</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:305</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga260f926e27eef013ca1eacd0ff7b3ba7"><div class="ttname"><a href="group__enumerations.html#ga260f926e27eef013ca1eacd0ff7b3ba7">ADLX_HG_TYPE</a></div><div class="ttdeci">ADLX_HG_TYPE</div><div class="ttdoc">Indicates the type of Hybrid Graphic.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:329</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga6fb3c9944d5c8aa79f7dbd0f675fac34"><div class="ttname"><a href="group__enumerations.html#ga6fb3c9944d5c8aa79f7dbd0f675fac34">ADLX_GPU_TYPE</a></div><div class="ttdeci">ADLX_GPU_TYPE</div><div class="ttdoc">Indicates the GPU type.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:410</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gada547c00826e15266732f874a0f3478da9100baedfaa6e08d64fa900cd7685cef"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gada547c00826e15266732f874a0f3478da9100baedfaa6e08d64fa900cd7685cef">MGPU_SECONDARY</a></div><div class="ttdeci">@ MGPU_SECONDARY</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:977</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gada547c00826e15266732f874a0f3478daa8e7af64a7da10bed79c2e5de97b7cb8"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gada547c00826e15266732f874a0f3478daa8e7af64a7da10bed79c2e5de97b7cb8">MGPU_PRIMARY</a></div><div class="ttdeci">@ MGPU_PRIMARY</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:976</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gada547c00826e15266732f874a0f3478daf2165ffea80d451f834d3a5d2994b3c8"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gada547c00826e15266732f874a0f3478daf2165ffea80d451f834d3a5d2994b3c8">MGPU_NONE</a></div><div class="ttdeci">@ MGPU_NONE</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:975</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaf4fd628e799e6a74201290ff40418d77a0ad611b8d03595461b2e81edb4ca5195"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaf4fd628e799e6a74201290ff40418d77a0ad611b8d03595461b2e81edb4ca5195">ASIC_FIREMV</a></div><div class="ttdeci">@ ASIC_FIREMV</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:351</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaf4fd628e799e6a74201290ff40418d77a0dc8ed090699f28b662b7c765274cf9e"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaf4fd628e799e6a74201290ff40418d77a0dc8ed090699f28b662b7c765274cf9e">ASIC_RADEON</a></div><div class="ttdeci">@ ASIC_RADEON</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:349</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaf4fd628e799e6a74201290ff40418d77a3545ff1a23cd34b9adbc8c665a5951be"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaf4fd628e799e6a74201290ff40418d77a3545ff1a23cd34b9adbc8c665a5951be">ASIC_UNDEFINED</a></div><div class="ttdeci">@ ASIC_UNDEFINED</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:348</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaf4fd628e799e6a74201290ff40418d77a80725f02993ea38bb16b978d9226fd0b"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaf4fd628e799e6a74201290ff40418d77a80725f02993ea38bb16b978d9226fd0b">ASIC_FIREPRO</a></div><div class="ttdeci">@ ASIC_FIREPRO</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:350</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaf4fd628e799e6a74201290ff40418d77adbd861ee855957a3422ae76d20b71d7c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaf4fd628e799e6a74201290ff40418d77adbd861ee855957a3422ae76d20b71d7c">ASIC_FIRESTREAM</a></div><div class="ttdeci">@ ASIC_FIRESTREAM</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:352</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gafcbeca41c0df518ccf5556e8e6e83f62a605159e8a4c32319fd69b5d151369d93"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gafcbeca41c0df518ccf5556e8e6e83f62a605159e8a4c32319fd69b5d151369d93">UNDEFINED</a></div><div class="ttdeci">@ UNDEFINED</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:368</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:307</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga260f926e27eef013ca1eacd0ff7b3ba7"><div class="ttname"><a href="group__enumerations.html#ga260f926e27eef013ca1eacd0ff7b3ba7">ADLX_HG_TYPE</a></div><div class="ttdeci">ADLX_HG_TYPE</div><div class="ttdoc">Indicates the type of Hybrid Graphic.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:331</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga6fb3c9944d5c8aa79f7dbd0f675fac34"><div class="ttname"><a href="group__enumerations.html#ga6fb3c9944d5c8aa79f7dbd0f675fac34">ADLX_GPU_TYPE</a></div><div class="ttdeci">ADLX_GPU_TYPE</div><div class="ttdoc">Indicates the GPU type.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:412</div></div>
 <div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:278</div></div>
-<div class="ttc" id="agroup__enumerations_html_gada547c00826e15266732f874a0f3478d"><div class="ttname"><a href="group__enumerations.html#gada547c00826e15266732f874a0f3478d">ADLX_MGPU_MODE</a></div><div class="ttdeci">ADLX_MGPU_MODE</div><div class="ttdoc">Indicates the AMD MGPU mode.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:972</div></div>
-<div class="ttc" id="agroup__enumerations_html_gaf4fd628e799e6a74201290ff40418d77"><div class="ttname"><a href="group__enumerations.html#gaf4fd628e799e6a74201290ff40418d77">ADLX_ASIC_FAMILY_TYPE</a></div><div class="ttdeci">ADLX_ASIC_FAMILY_TYPE</div><div class="ttdoc">Indicates the ASIC family type.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:345</div></div>
-<div class="ttc" id="agroup__enumerations_html_gafcbeca41c0df518ccf5556e8e6e83f62"><div class="ttname"><a href="group__enumerations.html#gafcbeca41c0df518ccf5556e8e6e83f62">ADLX_PCI_BUS_TYPE</a></div><div class="ttdeci">ADLX_PCI_BUS_TYPE</div><div class="ttdoc">Indicates the PCI bus type.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:365</div></div>
+<div class="ttc" id="agroup__enumerations_html_gada547c00826e15266732f874a0f3478d"><div class="ttname"><a href="group__enumerations.html#gada547c00826e15266732f874a0f3478d">ADLX_MGPU_MODE</a></div><div class="ttdeci">ADLX_MGPU_MODE</div><div class="ttdoc">Indicates the AMD MGPU mode.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:974</div></div>
+<div class="ttc" id="agroup__enumerations_html_gaf4fd628e799e6a74201290ff40418d77"><div class="ttname"><a href="group__enumerations.html#gaf4fd628e799e6a74201290ff40418d77">ADLX_ASIC_FAMILY_TYPE</a></div><div class="ttdeci">ADLX_ASIC_FAMILY_TYPE</div><div class="ttdoc">Indicates the ASIC family type.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:347</div></div>
+<div class="ttc" id="agroup__enumerations_html_gafcbeca41c0df518ccf5556e8e6e83f62"><div class="ttname"><a href="group__enumerations.html#gafcbeca41c0df518ccf5556e8e6e83f62">ADLX_PCI_BUS_TYPE</a></div><div class="ttdeci">ADLX_PCI_BUS_TYPE</div><div class="ttdoc">Indicates the PCI bus type.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:367</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!--
-# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -423,7 +526,7 @@ $(document).ready(function(){initNavTree('cpp_sample_gpus.html',''); initResizab
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2023 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
+    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2024 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
   </ul>
 </div>
 </body>

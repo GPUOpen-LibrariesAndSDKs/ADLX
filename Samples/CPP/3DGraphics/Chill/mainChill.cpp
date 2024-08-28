@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -104,21 +104,30 @@ void ShowChillSupport(const IADLX3DChillPtr& d3dChill)
 
 void GetChillState(const IADLX3DChillPtr& d3dChill)
 {
-    adlx_bool enabled = false;
-    ADLX_RESULT res = d3dChill->IsEnabled(&enabled);
-    if (ADLX_SUCCEEDED(res))
-        std::cout << "\tIsEnabled: " << enabled << std::endl;
-    adlx_int minFPS, maxFPS;
-    ADLX_IntRange fpsRange;
-    res = d3dChill->GetMinFPS(&minFPS);
-    if (ADLX_SUCCEEDED (res))
-        std::cout << "\tCurrent MinFPS: " << minFPS << std::endl;
-    res = d3dChill->GetMaxFPS(&maxFPS);
-    if (ADLX_SUCCEEDED (res))
-        std::cout << "\tCurrent MaxFPS: " << maxFPS << std::endl;
-    res = d3dChill->GetFPSRange(&fpsRange);
-    if (ADLX_SUCCEEDED(res))
-        std::cout << "\tFPSSet limit [ " << fpsRange.minValue << " ," << fpsRange.maxValue << " ], step: " << fpsRange.step << std::endl;
+    adlx_bool supported = false;
+    ADLX_RESULT res = d3dChill->IsSupported(&supported);
+    if (supported)
+    {
+        adlx_bool enabled = false;
+        ADLX_RESULT res = d3dChill->IsEnabled(&enabled);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tIsEnabled: " << enabled << std::endl;
+        adlx_int minFPS, maxFPS;
+        ADLX_IntRange fpsRange;
+        res = d3dChill->GetMinFPS(&minFPS);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tCurrent MinFPS: " << minFPS << std::endl;
+        res = d3dChill->GetMaxFPS(&maxFPS);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tCurrent MaxFPS: " << maxFPS << std::endl;
+        res = d3dChill->GetFPSRange(&fpsRange);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tFPSSet limit [ " << fpsRange.minValue << " ," << fpsRange.maxValue << " ], step: " << fpsRange.step << std::endl;
+    }
+    else
+    {
+        std::cout << "\tChill feature is not supported " << std::endl;
+    }
 }
 
 void SetChillState(const IADLX3DChillPtr& d3dChill, int index)

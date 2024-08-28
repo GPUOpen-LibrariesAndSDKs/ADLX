@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2023 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2023 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -420,7 +420,12 @@ namespace adlx
         *
         *@addinfo
         *@ENG_START_DOX  GPU scaling determines the method used to stretch and position images to fit the display.<br>
-        * __Note:__ On some AMD GPUs, center scaling and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If Radeon Super Resolution is enabled when the scaling mode is __CENTERED__, the scaling mode is automatically set to __FULL_PANEL__.@ENG_END_DOX
+        * @depifc
+        * On some AMD GPUs, Display Scaling Mode is mutually exclusive with @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution".<br>
+        *
+        * When Display Scaling Mode is enabled, the mutually exclusive features are automatically disabled. If a mutually exclusive feature is re-enabled, its previous configuration settings are restored.<br>
+        *
+        * If Radeon Super Resolution is enabled when the scaling mode is __CENTERED__, the scaling mode is automatically set to __FULL_PANEL__.@ENG_END_DOX
         *
         *
         *@copydoc IADLXDisplayScalingMode_REQ_TABLE
@@ -446,7 +451,12 @@ namespace adlx
         *
         *@addinfo
         *@ENG_START_DOX  GPU scaling determines the method used to stretch and position images to fit the display.<br>
-        * __Note:__ On some AMD GPUs, center scaling and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If the scaling mode is set to __CENTERED__, Radeon Super Resolution is automatically disabled.@ENG_END_DOX
+        * @depifc
+        * On some AMD GPUs, Display Scaling Mode is mutually exclusive with @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution".<br>
+        *
+        * When Display Scaling Mode is enabled, the mutually exclusive features are automatically disabled. If a mutually exclusive feature is re-enabled, its previous configuration settings are restored.<br>
+        *
+        * If Radeon Super Resolution is enabled when the scaling mode is __CENTERED__, the scaling mode is automatically set to __FULL_PANEL__.@ENG_END_DOX
         *
         *
         *@copydoc IADLXDisplayScalingMode_REQ_TABLE
@@ -537,7 +547,11 @@ namespace adlx
         *
         *@addinfo
         *@ENG_START_DOX  Integer Display Scaling gives a sharp, pixelated look to images scaled up to fit the display. Images that can't be scaled to match the display's exact size and shape will be centered on screen. Integer Display Scaling enhances visuals in old games to revive vintage gaming experiences on a modern display.<br>
-        * __Note:__ On some AMD GPUs, Integer Display Scaling and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If Radeon Super Resolution is enabled, Integer Display Scaling is automatically disabled.@ENG_END_DOX
+        *@depifc
+        * On some AMD GPUs, Integer Display Scaling is mutually exclusive with @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution".<br>
+        *
+        * When a mutually exclusive feature is enabled, Integer Display Scaling is automatically disabled. If Integer Display Scaling is later re-enabled, its previous configuration settings will be restored.<br>
+        * .@ENG_END_DOX
         *
         *
         *@copydoc IADLXDisplayIntegerScaling_REQ_TABLE
@@ -563,7 +577,11 @@ namespace adlx
         *
         *@addinfo
         *@ENG_START_DOX  Integer Display Scaling gives a sharp, pixelated look to images scaled up to fit the display. Images that can't be scaled to match the display's exact size and shape will be centered on screen. Integer Display Scaling enhances visuals in old games to revive vintage gaming experiences on a modern display.<br>
-        * __Note:__ On some AMD GPUs, Integer Display Scaling and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If Integer Display Scaling is enabled, Radeon Super Resolution is automatically disabled.@ENG_END_DOX
+        *@depifc
+        * On some AMD GPUs, Integer Display Scaling is mutually exclusive with @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution".<br>
+        *
+        * When Integer Display Scaling is enabled, the mutually exclusive features are automatically disabled. If a mutually exclusive feature is re-enabled, its previous configuration settings are restored.<br>
+        * .@ENG_END_DOX
         *
         *
         *@copydoc IADLXDisplayIntegerScaling_REQ_TABLE

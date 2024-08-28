@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -8,6 +8,7 @@
 
 #include "SDK/ADLXHelper/Windows/C/ADLXHelper.h"
 #include "SDK/Include/IPerformanceMonitoring.h"
+#include "SDK/Include/IPerformanceMonitoring2.h"
 
 // Main menu
 void MainMenu();
@@ -252,7 +253,40 @@ void ShowGPUMetricsRange(IADLXPerformanceMonitoringServices* perfMonitoringServi
             printf ("The GPU intake temperature range between %dW and %dW\n", minValue, maxValue);
         else if (res == ADLX_NOT_SUPPORTED)
             printf ("GPU intake temperature range not supported\n");
+
+        IADLXGPUMetricsSupport1* gpuMetricsSupport1 = NULL;
+        res = gpuMetricsSupport->pVtbl->QueryInterface(gpuMetricsSupport, IID_IADLXGPUMetricsSupport1(), &gpuMetricsSupport1);
+        if (ADLX_SUCCEEDED(res))
+        {
+            // Get GPU memory temperature range
+            res = gpuMetricsSupport1->pVtbl->GetGPUMemoryTemperatureRange(gpuMetricsSupport1, &minValue, &maxValue);
+            if (ADLX_SUCCEEDED(res))
+                printf("The GPU memory temperature range between %d%cC and %d%cC\n", minValue, g_degree, maxValue, g_degree);
+            else if (res == ADLX_NOT_SUPPORTED)
+                printf("GPU memory temperature range not supported\n");
+
+            // Get NPU activity level range
+            res = gpuMetricsSupport1->pVtbl->GetNPUActivityLevelRange(gpuMetricsSupport1, &minValue, &maxValue);
+            if (ADLX_SUCCEEDED(res))
+                printf("The NPU activity level range between %d%% and %d%%\n", minValue, maxValue);
+            else if (res == ADLX_NOT_SUPPORTED)
+                printf("NPU activity level range not supported\n");
+
+            // Get NPU frequency range
+            res = gpuMetricsSupport1->pVtbl->GetNPUFrequencyRange(gpuMetricsSupport1, &minValue, &maxValue);
+            if (ADLX_SUCCEEDED(res))
+                printf("The NPU frequency range between %dMHz and %dMHz\n", minValue, maxValue);
+            else if (res == ADLX_NOT_SUPPORTED)
+                printf("NPU frequency range not supported\n");
+        }
+
+        if (gpuMetricsSupport1)
+        {
+            gpuMetricsSupport1->pVtbl->Release(gpuMetricsSupport1);
+            gpuMetricsSupport1 = NULL;
+        }
     }
+
     if (gpuMetricsSupport != NULL)
     {
         gpuMetricsSupport->pVtbl->Release(gpuMetricsSupport);
@@ -478,6 +512,126 @@ void ShowGPUVoltage(IADLXGPUMetricsSupport* gpuMetricsSupport, IADLXGPUMetrics* 
     }
 }
 
+// Display GPU memory temperature(in °C)
+void ShowGPUMemoryTemperature(IADLXGPUMetricsSupport* gpuMetricsSupport, IADLXGPUMetrics* gpuMetrics)
+{
+    adlx_bool supported = false;
+
+    IADLXGPUMetricsSupport1* gpuMetricsSupport1 = NULL;
+    IADLXGPUMetrics1* gpuMetrics1 = NULL;
+    ADLX_RESULT supportRes = gpuMetricsSupport->pVtbl->QueryInterface(gpuMetricsSupport, IID_IADLXGPUMetricsSupport1(), &gpuMetricsSupport1);
+    ADLX_RESULT metricsRes = gpuMetrics->pVtbl->QueryInterface(gpuMetrics, IID_IADLXGPUMetrics1(), &gpuMetrics1);
+
+    if (ADLX_SUCCEEDED(supportRes) && ADLX_SUCCEEDED(metricsRes))
+    {
+        // Display the GPU memory temperature support status
+        ADLX_RESULT res = gpuMetricsSupport1->pVtbl->IsSupportedGPUMemoryTemperature(gpuMetricsSupport1, &supported);
+        if (ADLX_SUCCEEDED(res))
+        {
+            printf("GPU memory temperature support status: %d\n", supported);
+            if (supported)
+            {
+                adlx_double temperature = 0;
+                res = gpuMetrics1->pVtbl->GPUMemoryTemperature(gpuMetrics1, &temperature);
+                if (ADLX_SUCCEEDED(res))
+                    printf("The GPU memory temperature is: %f%cC\n", temperature, g_degree);
+            }
+        }
+    }
+
+    if (gpuMetricsSupport1)
+    {
+        gpuMetricsSupport1->pVtbl->Release(gpuMetricsSupport1);
+        gpuMetricsSupport1 = NULL;
+    }
+
+    if (gpuMetrics1)
+    {
+        gpuMetrics1->pVtbl->Release(gpuMetrics1);
+        gpuMetrics1 = NULL;
+    }
+}
+
+// Display the NPU activity level(in %)
+void ShowNPUActivityLevel(IADLXGPUMetricsSupport* gpuMetricsSupport, IADLXGPUMetrics* gpuMetrics)
+{
+    adlx_bool supported = false;
+
+    IADLXGPUMetricsSupport1* gpuMetricsSupport1 = NULL;
+    IADLXGPUMetrics1* gpuMetrics1 = NULL;
+    ADLX_RESULT supportRes = gpuMetricsSupport->pVtbl->QueryInterface(gpuMetricsSupport, IID_IADLXGPUMetricsSupport1(), &gpuMetricsSupport1);
+    ADLX_RESULT metricsRes = gpuMetrics->pVtbl->QueryInterface(gpuMetrics, IID_IADLXGPUMetrics1(), &gpuMetrics1);
+
+    if (ADLX_SUCCEEDED(supportRes) && ADLX_SUCCEEDED(metricsRes))
+    {
+        // Display the NPU activity level support status
+        ADLX_RESULT res = gpuMetricsSupport1->pVtbl->IsSupportedNPUActivityLevel(gpuMetricsSupport1, &supported);
+        if (ADLX_SUCCEEDED(res))
+        {
+            printf("NPU activity level support status: %d\n", supported);
+            if (supported)
+            {
+                adlx_int level = 0;
+                res = gpuMetrics1->pVtbl->NPUActivityLevel(gpuMetrics1, &level);
+                if (ADLX_SUCCEEDED(res))
+                    printf("The NPU activity level is: %d%%\n", level);
+            }
+        }
+    }
+
+    if (gpuMetricsSupport1)
+    {
+        gpuMetricsSupport1->pVtbl->Release(gpuMetricsSupport1);
+        gpuMetricsSupport1 = NULL;
+    }
+
+    if (gpuMetrics1)
+    {
+        gpuMetrics1->pVtbl->Release(gpuMetrics1);
+        gpuMetrics1 = NULL;
+    }
+}
+
+// Display the NPU frequency(in MHz)
+void ShowNPUFrequency(IADLXGPUMetricsSupport* gpuMetricsSupport, IADLXGPUMetrics* gpuMetrics)
+{
+    adlx_bool supported = false;
+
+    IADLXGPUMetricsSupport1* gpuMetricsSupport1 = NULL;
+    IADLXGPUMetrics1* gpuMetrics1 = NULL;
+    ADLX_RESULT supportRes = gpuMetricsSupport->pVtbl->QueryInterface(gpuMetricsSupport, IID_IADLXGPUMetricsSupport1(), &gpuMetricsSupport1);
+    ADLX_RESULT metricsRes = gpuMetrics->pVtbl->QueryInterface(gpuMetrics, IID_IADLXGPUMetrics1(), &gpuMetrics1);
+
+    if (ADLX_SUCCEEDED(supportRes) && ADLX_SUCCEEDED(metricsRes))
+    {
+        // Display the NPU frequency support status
+        ADLX_RESULT res = gpuMetricsSupport1->pVtbl->IsSupportedNPUFrequency(gpuMetricsSupport1, &supported);
+        if (ADLX_SUCCEEDED(res))
+        {
+            printf("NPU frequency support status: %d\n", supported);
+            if (supported)
+            {
+                adlx_int frequency = 0;
+                res = gpuMetrics1->pVtbl->NPUFrequency(gpuMetrics1, &frequency);
+                if (ADLX_SUCCEEDED(res))
+                    printf("The NPU frequency is: %dMHz\n", frequency);
+            }
+        }
+    }
+
+    if (gpuMetricsSupport1)
+    {
+        gpuMetricsSupport1->pVtbl->Release(gpuMetricsSupport1);
+        gpuMetricsSupport1 = NULL;
+    }
+
+    if (gpuMetrics1)
+    {
+        gpuMetrics1->pVtbl->Release(gpuMetrics1);
+        gpuMetrics1 = NULL;
+    }
+}
+
 // Display current GPU metrics
 void ShowCurrentGPUMetrics(IADLXPerformanceMonitoringServices *perfMonitoringServices, IADLXGPU *oneGPU)
 {
@@ -510,6 +664,9 @@ void ShowCurrentGPUMetrics(IADLXPerformanceMonitoringServices *perfMonitoringSer
             ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);
             ShowGPUTotalBoardPower(gpuMetricsSupport, gpuMetrics);
             ShowGPUIntakeTemperature (gpuMetricsSupport, gpuMetrics);
+            ShowGPUMemoryTemperature(gpuMetricsSupport, gpuMetrics);
+            ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
+            ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
         }
         Sleep(1000);
 
@@ -586,6 +743,9 @@ void ShowCurrentGPUMetricsFromHistorical(IADLXPerformanceMonitoringServices* per
                     ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);
                     ShowGPUTotalBoardPower(gpuMetricsSupport, gpuMetrics);
                     ShowGPUIntakeTemperature(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUMemoryTemperature(gpuMetricsSupport, gpuMetrics);
+                    ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
+                    ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
                 }
 
                 // Release IADLXGPUMetrics interface
@@ -677,6 +837,9 @@ void ShowHistoricalGPUMetrics(IADLXPerformanceMonitoringServices *perfMonitoring
                 ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);
                 ShowGPUTotalBoardPower(gpuMetricsSupport, gpuMetrics);
                 ShowGPUIntakeTemperature (gpuMetricsSupport, gpuMetrics);
+                ShowGPUMemoryTemperature(gpuMetricsSupport, gpuMetrics);
+                ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
+                ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
             }
             printf("\n");
             if (gpuMetrics != NULL)

@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -8,6 +8,7 @@
 
 #include "SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
 #include "SDK/Include/IPerformanceMonitoring.h"
+#include "SDK/Include/IPerformanceMonitoring2.h"
 #include <iostream>
 
 // Use ADLX namespace
@@ -389,6 +390,81 @@ void ShowGPUVoltage(IADLXGPUMetricsSupportPtr gpuMetricsSupport, IADLXGPUMetrics
     }
 }
 
+// Display GPU memory temperature(in °C)
+void ShowGPUMemoryTemperature(IADLXGPUMetricsSupportPtr gpuMetricsSupport, IADLXGPUMetricsPtr gpuMetrics)
+{
+    adlx_bool supported = false;
+
+    IADLXGPUMetricsSupport1Ptr gpuMetricsSupport1(gpuMetricsSupport);
+    IADLXGPUMetrics1Ptr gpuMetrics1(gpuMetrics);
+    if (gpuMetricsSupport1 && gpuMetrics1)
+    {
+        // Display the GPU memory support status
+        ADLX_RESULT res = gpuMetricsSupport1->IsSupportedGPUMemoryTemperature(&supported);
+        if (ADLX_SUCCEEDED(res))
+        {
+            std::cout << "GPU memory temperature support status: " << supported << std::endl;
+            if (supported)
+            {
+                adlx_double temperature = 0;
+                res = gpuMetrics1->GPUMemoryTemperature(&temperature);
+                if (ADLX_SUCCEEDED(res))
+                    std::cout << "The GPU memory temperature is: " << temperature << g_degree << "C" << std::endl;
+            }
+        }
+    }
+}
+
+// Display the NPU activity level(in %)
+void ShowNPUActivityLevel(IADLXGPUMetricsSupportPtr gpuMetricsSupport, IADLXGPUMetricsPtr gpuMetrics)
+{
+    adlx_bool supported = false;
+
+    IADLXGPUMetricsSupport1Ptr gpuMetricsSupport1(gpuMetricsSupport);
+    IADLXGPUMetrics1Ptr gpuMetrics1(gpuMetrics);
+    if (gpuMetricsSupport1 && gpuMetrics1)
+    {
+        // Display the NPU activity level support status
+        ADLX_RESULT res = gpuMetricsSupport1->IsSupportedNPUActivityLevel(&supported);
+        if (ADLX_SUCCEEDED(res))
+        {
+            std::cout << "NPU activity level support status: " << supported << std::endl;
+            if (supported)
+            {
+                adlx_int level = 0;
+                res = gpuMetrics1->NPUActivityLevel(&level);
+                if (ADLX_SUCCEEDED(res))
+                    std::cout << "The NPU activity level is: " << level << "%" << std::endl;
+            }
+        }
+    }
+}
+
+// Display the NPU frequency(in MHz)
+void ShowNPUFrequency(IADLXGPUMetricsSupportPtr gpuMetricsSupport, IADLXGPUMetricsPtr gpuMetrics)
+{
+    adlx_bool supported = false;
+
+    IADLXGPUMetricsSupport1Ptr gpuMetricsSupport1(gpuMetricsSupport);
+    IADLXGPUMetrics1Ptr gpuMetrics1(gpuMetrics);
+    if (gpuMetricsSupport1 && gpuMetrics1)
+    {
+        // Display the NPU frequency support status
+        ADLX_RESULT res = gpuMetricsSupport1->IsSupportedNPUFrequency(&supported);
+        if (ADLX_SUCCEEDED(res))
+        {
+            std::cout << "NPU frequency support status: " << supported << std::endl;
+            if (supported)
+            {
+                adlx_int frequency = 0;
+                res = gpuMetrics1->NPUFrequency(&frequency);
+                if (ADLX_SUCCEEDED(res))
+                    std::cout << "The NPU frequency is: " << frequency << "MHz" << std::endl;
+            }
+        }
+    }
+}
+
 // Show current all metrics
 void ShowCurrentAllMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitoringServices, IADLXGPUPtr oneGPU)
 {
@@ -441,6 +517,9 @@ void ShowCurrentAllMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitoringS
                 ShowGPUFanSpeed(gpuMetricsSupport, gpuMetrics);
                 ShowGPUVRAM(gpuMetricsSupport, gpuMetrics);
                 ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);
+                ShowGPUMemoryTemperature(gpuMetricsSupport, gpuMetrics);
+                ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
+                ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
                 std::cout << std::noboolalpha;
             }
             // Get current FPS metrics
@@ -538,6 +617,9 @@ void ShowHistoricalAllMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitori
                     ShowGPUFanSpeed(gpuMetricsSupport, gpuMetrics);
                     ShowGPUVRAM(gpuMetricsSupport, gpuMetrics);
                     ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUMemoryTemperature(gpuMetricsSupport, gpuMetrics);
+                    ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
+                    ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
                     std::cout << std::noboolalpha;
                 }
                 res = allMetrics->GetFPS(&oneFPS);

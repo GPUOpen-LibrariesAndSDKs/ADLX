@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -25,6 +25,9 @@ void ShowGPUInfo(const IADLXGPUPtr& gpu);
 
 // Display GPU hybrid graphic type
 void ShowHybridGraphicType();
+
+// Display Driver Version
+void ShowDriverInfo(const IADLXGPUPtr& gpu);
 
 // Add GPU change event listener
 void AddGPUEventListener(const IADLXGPUPtr& gpu);
@@ -108,11 +111,11 @@ void ShowGPUInfo(const IADLXGPUPtr& gpu)
     // Display GPU info
     const char* vendorId = nullptr;
     ADLX_RESULT ret = gpu->VendorId(&vendorId);
-    std::cout << "VendorId: " << vendorId << "return code is: "<< ret << "(0 means success)" << std::endl;
+    std::cout << "VendorId: " << vendorId << ", return code is: "<< ret << "(0 means success)" << std::endl;
 
     ADLX_ASIC_FAMILY_TYPE asicFamilyType = ASIC_UNDEFINED;
     ret = gpu->ASICFamilyType(&asicFamilyType);
-    std::cout << "ASICFamilyType: " << asicFamilyType << "return code is: "<< ret << "(0 means success)" << std::endl;
+    std::cout << "ASICFamilyType: " << asicFamilyType << ", return code is: "<< ret << "(0 means success)" << std::endl;
 
     ADLX_GPU_TYPE gpuType = GPUTYPE_UNDEFINED;
     ret = gpu->Type(&gpuType);
@@ -146,6 +149,8 @@ void ShowGPUInfo(const IADLXGPUPtr& gpu)
     ret = gpu->UniqueId(&id);
     std::cout << "UniqueId: " << id << std::endl;
 
+    ShowDriverInfo(gpu);
+
     IADLXGPU1Ptr gpu1(gpu);
     if (gpu1)
     {
@@ -170,6 +175,100 @@ void ShowGPUInfo(const IADLXGPUPtr& gpu)
         adlx_uint laneWidth = 0;
         ret = gpu1->PCIBusLaneWidth(&laneWidth);
         std::cout << "PCIBusLaneWidth: " << laneWidth << std::endl;
+    }
+}
+
+bool GetStringFromLocalMachine(const wchar_t* szKeyPath_, const wchar_t* szValueName_, wchar_t* szValue_, DWORD dwSize_)
+{
+    if ((szKeyPath_ == NULL) || (szValueName_ == NULL))
+        return false;
+
+    bool bRetVal = false;
+    bool bKeyOpenStatus = false;
+    DWORD dwValueType = REG_SZ;
+    HKEY hKeyRes;
+
+    //Opens the specified key, returning a handle object.
+    if (RegOpenKeyEx(HKEY_LOCAL_MACHINE, szKeyPath_, 0, KEY_QUERY_VALUE, &hKeyRes) == ERROR_SUCCESS)
+        bKeyOpenStatus = true;
+
+    if (bKeyOpenStatus)
+    {
+        //Retrieves the type and data for a specified value name associated with an open registry key
+        if (RegQueryValueEx(hKeyRes, szValueName_, 0, &dwValueType, (LPBYTE)szValue_, &dwSize_) == ERROR_SUCCESS)
+        {
+            //If the value type is string return true otherwise false
+            if (dwValueType == REG_SZ || dwValueType == REG_EXPAND_SZ)
+                bRetVal = true;
+        }
+
+        RegCloseKey(hKeyRes);
+    }
+
+    return  bRetVal;
+}
+
+int Char2WChar(const char* pStr, wchar_t* pWStr)
+{
+    if (pStr == nullptr || pWStr == nullptr)
+    {
+        return 0;
+    }
+    int len = MultiByteToWideChar(CP_ACP, 0, pStr, strlen(pStr), NULL, 0);
+    MultiByteToWideChar(CP_ACP, 0, pStr, strlen(pStr), pWStr, len);
+    pWStr[len] = '\0';
+    return len;
+}
+
+void ShowDriverInfo(const IADLXGPUPtr& gpu)
+{
+    ADLX_ASIC_FAMILY_TYPE asicFamilyType = ASIC_UNDEFINED;
+    ADLX_RESULT ret = gpu->ASICFamilyType(&asicFamilyType);
+    wchar_t RSVersion[MAX_PATH] = L"";
+    wchar_t RSEdition[MAX_PATH] = L"";
+    switch (asicFamilyType)
+    {
+    case ASIC_RADEON:
+        wcscpy_s(RSVersion, MAX_PATH, L"RadeonSoftwareVersion");
+        wcscpy_s(RSEdition, MAX_PATH, L"RadeonSoftwareEdition");
+        break;
+    case ASIC_FIREPRO:
+    case ASIC_FIREMV:
+    case ASIC_FIRESTREAM:
+        wcscpy_s(RSVersion, MAX_PATH, L"FireproSoftwareVersion");
+        wcscpy_s(RSEdition, MAX_PATH, L"FireproSoftwareEdition");
+        break;
+    default:
+        wcscpy_s(RSVersion, MAX_PATH, L"RadeonSoftwareVersion");
+        wcscpy_s(RSEdition, MAX_PATH, L"RadeonSoftwareEdition");
+        break;
+    }
+
+    const char* driverPath = nullptr;
+    ret = gpu->DriverPath(&driverPath);
+    if (ADLX_SUCCEEDED(ret))
+    {
+        wchar_t driverPathW[MAX_PATH] = { 0 };
+        Char2WChar(driverPath, driverPathW);
+        // The full path of driver reg
+        wchar_t driverRegistryPath[MAX_PATH] = { 0 };
+        swprintf_s(driverRegistryPath, L"SYSTEM\\CurrentControlSet\\Control\\Class\\%s", driverPathW);
+        wchar_t  value[MAX_PATH] = L"";
+        // Get AMD Software Version from the registry
+        GetStringFromLocalMachine(driverRegistryPath, RSVersion, value, sizeof(value));
+        std::wcout << "AMD Software version: " << value << std::endl;
+        // Get AMD Software Edition from the registry
+        GetStringFromLocalMachine(driverRegistryPath, RSEdition, value, sizeof(value));
+        std::wcout << value << std::endl;
+        // Get AMD Software Release Date from the registry
+        GetStringFromLocalMachine(driverRegistryPath, L"DriverDate", value, sizeof(value));
+        std::wcout << "AMD Software Release Date: " << value << std::endl;
+        // Get Driver Version from the registry
+        GetStringFromLocalMachine(driverRegistryPath, L"DriverVersion", value, sizeof(value));
+        std::wcout << "Driver Version: " << value << std::endl;
+        // Get AMD Windows Driver Version from the registry
+        GetStringFromLocalMachine(driverRegistryPath, L"ReleaseVersion", value, sizeof(value));
+        std::wcout << "AMD Windows Driver Version: " << value << std::endl;
     }
 }
 

@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -290,7 +290,9 @@ typedef enum
     ADLX_ORPHAN_OBJECTS,            /**< @ENG_START_DOX This result indicates that ADLX was terminated with outstanding ADLX objects. Any interface obtained from ADLX points to invalid memory and calls in their methods will result in unexpected behavior. @ENG_END_DOX */
     ADLX_NOT_SUPPORTED,             /**< @ENG_START_DOX This result indicates that the asked feature is not supported. @ENG_END_DOX */
     ADLX_PENDING_OPERATION,         /**< @ENG_START_DOX This result indicates a failure due to an operation currently in progress. @ENG_END_DOX */
-    ADLX_GPU_INACTIVE               /**< @ENG_START_DOX This result indicates that the GPU is inactive. @ENG_END_DOX */
+    ADLX_GPU_INACTIVE,              /**< @ENG_START_DOX This result indicates that the GPU is inactive. @ENG_END_DOX */
+    ADLX_GPU_IN_USE,                /**< @ENG_START_DOX This result indicates that the GPU is in used by applications. @ENG_END_DOX */
+    ADLX_TIMEOUT_OPERATION          /**< @ENG_START_DOX This result indicates that the operation is timeout. @ENG_END_DOX */
 } ADLX_RESULT;
 
 /**
@@ -851,7 +853,7 @@ typedef enum
  *  @enum ADLX_MEMORYTIMING_DESCRIPTION
  *  @ingroup enumerations
  *  @ENG_START_DOX
- *  @brief Indicates the priority of the log entry.
+ *  @brief Indicates the memory timing description.
  *  @ENG_END_DOX
  */
 typedef enum
@@ -975,6 +977,23 @@ typedef enum
     MGPU_SECONDARY,                    /**< @ENG_START_DOX The GPU is the secondary GPU in an AMD MGPU configuration. @ENG_END_DOX */
 } ADLX_MGPU_MODE;
 #pragma endregion ADLX_MGPU_MODE
+
+#pragma region ADLX_APP_GPU_DEPENDENCY
+/**
+ * @enum ADLX_APP_GPU_DEPENDENCY
+ * @ingroup enumerations
+ * @ENG_START_DOX
+ * @brief Indicates the type of dependence of an application on the GPU on which it runs.
+ * @ENG_END_DOX
+ */
+typedef enum
+{
+    APP_GPU_UNKNOWN = 0,        /**< @ENG_START_DOX It is unknown if the application is bound to the GPU on which it runs. The application might behave unexpectedly if the GPU is powered off or disabled. @ENG_END_DOX */
+    APP_GPU_BOUND,              /**< @ENG_START_DOX The application is bound to the GPU on which it runs and will behave unexpectedly if the GPU is powered off or disabled. @ENG_END_DOX */
+    APP_GPU_NOT_BOUND,          /**< @ENG_START_DOX The application is not bound to this GPU on which it runs and will continue to run properly if the GPU is powered off or disabled. @ENG_END_DOX */
+} ADLX_APP_GPU_DEPENDENCY;
+
+#pragma endregion ADLX_APP_GPU_DEPENDENCY
 
 #pragma endregion ADLX data types
 

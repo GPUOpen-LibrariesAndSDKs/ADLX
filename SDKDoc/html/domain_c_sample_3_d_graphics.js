@@ -1,6 +1,7 @@
 var domain_c_sample_3_d_graphics =
 [
     [ "3DSettingsEvent", "c_3_d_settings_event.html", null ],
+    [ "AFMF", "c__a_f_m_f.html", null ],
     [ "AnisotropicFiltering", "c__anisotropic_filtering.html", null ],
     [ "AntiAliasing", "c__anti_aliasing.html", null ],
     [ "AntiLag", "c__anti_lag.html", null ],

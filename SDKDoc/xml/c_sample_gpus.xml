@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
 <para><htmlonly>&lt;!--
-# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 --&gt;
@@ -21,7 +21,7 @@
 &lt;/html&gt;</htmlonly> <heading level="2">Code </heading>
 </para>
 <para>C <programlisting filename="./C/Generic/GPUs/mainGPUs.c"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2023<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2024<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -49,6 +49,9 @@
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Show<sp/>GPU<sp/>hybrid<sp/>graphic<sp/>type</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowHybridGraphicType();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Display<sp/>Driver<sp/>Version</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowDriverInfo(IADLXGPU*<sp/>gpu);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Add<sp/>event<sp/>lister<sp/>for<sp/>GPU<sp/>change</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddGPUEventListener();</highlight></codeline>
@@ -157,6 +160,8 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>gpu-&gt;pVtbl-&gt;UniqueId(gpu,<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;UniqueId:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>ret);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShowDriverInfo(gpu);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXGPU1*<sp/>gpu1<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>gpu-&gt;pVtbl-&gt;QueryInterface(gpu,<sp/>IID_IADLXGPU1(),<sp/>&amp;gpu1);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(ret))</highlight></codeline>
@@ -189,6 +194,86 @@
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpu-&gt;pVtbl-&gt;Release(gpu);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpu<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">BOOL<sp/>GetStringFromLocalMachine(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TCHAR*<sp/>szKeyPath_,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TCHAR*<sp/>szValueName_,<sp/>TCHAR*<sp/>szValue_,<sp/>DWORD<sp/>dwSize_)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((szKeyPath_<sp/>==<sp/>NULL)<sp/>||<sp/>(szValueName_<sp/>==<sp/>NULL))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>BOOL<sp/>bRetVal<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>BOOL<sp/>bKeyOpenStatus<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>DWORD<sp/>dwValueType<sp/>=<sp/>REG_SZ;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>HKEY<sp/>hKeyRes;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Opens<sp/>the<sp/>specified<sp/>key,<sp/>returning<sp/>a<sp/>handle<sp/>object.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(RegOpenKeyEx(HKEY_LOCAL_MACHINE,<sp/>szKeyPath_,<sp/>0,<sp/>KEY_QUERY_VALUE,<sp/>&amp;hKeyRes)<sp/>==<sp/>ERROR_SUCCESS)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bKeyOpenStatus<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bKeyOpenStatus)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Retrieves<sp/>the<sp/>type<sp/>and<sp/>data<sp/>for<sp/>a<sp/>specified<sp/>value<sp/>name<sp/>associated<sp/>with<sp/>an<sp/>open<sp/>registry<sp/>key</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(RegQueryValueEx(hKeyRes,<sp/>szValueName_,<sp/>0,<sp/>&amp;dwValueType,<sp/>(LPBYTE)szValue_,<sp/>&amp;dwSize_)<sp/>==<sp/>ERROR_SUCCESS)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>the<sp/>value<sp/>type<sp/>is<sp/>string<sp/>return<sp/>true<sp/>otherwise<sp/>false</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dwValueType<sp/>==<sp/>REG_SZ<sp/>||<sp/>dwValueType<sp/>==<sp/>REG_EXPAND_SZ)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bRetVal<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RegCloseKey(hKeyRes);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><sp/>bRetVal;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowDriverInfo(IADLXGPU*<sp/>gpu)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1gaf4fd628e799e6a74201290ff40418d77" kindref="member">ADLX_ASIC_FAMILY_TYPE</ref><sp/>asicFamilyType<sp/>=<sp/><ref refid="_a_d_l_x_defines_8h_1gaf4fd628e799e6a74201290ff40418d77a3545ff1a23cd34b9adbc8c665a5951be" kindref="member">ASIC_UNDEFINED</ref>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ret<sp/>=<sp/>gpu-&gt;pVtbl-&gt;ASICFamilyType(gpu,<sp/>&amp;asicFamilyType);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TCHAR<sp/>RSVersion[MAX_PATH]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TCHAR<sp/>RSEdition[MAX_PATH]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(asicFamilyType)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_a_d_l_x_defines_8h_1gaf4fd628e799e6a74201290ff40418d77a0dc8ed090699f28b662b7c765274cf9e" kindref="member">ASIC_RADEON</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy_s(RSVersion,<sp/>MAX_PATH,<sp/></highlight><highlight class="stringliteral">&quot;RadeonSoftwareVersion&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy_s(RSEdition,<sp/>MAX_PATH,<sp/></highlight><highlight class="stringliteral">&quot;RadeonSoftwareEdition&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_a_d_l_x_defines_8h_1gaf4fd628e799e6a74201290ff40418d77a80725f02993ea38bb16b978d9226fd0b" kindref="member">ASIC_FIREPRO</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_a_d_l_x_defines_8h_1gaf4fd628e799e6a74201290ff40418d77a0ad611b8d03595461b2e81edb4ca5195" kindref="member">ASIC_FIREMV</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_a_d_l_x_defines_8h_1gaf4fd628e799e6a74201290ff40418d77adbd861ee855957a3422ae76d20b71d7c" kindref="member">ASIC_FIRESTREAM</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy_s(RSVersion,<sp/>MAX_PATH,<sp/></highlight><highlight class="stringliteral">&quot;FireproSoftwareVersion&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy_s(RSEdition,<sp/>MAX_PATH,<sp/></highlight><highlight class="stringliteral">&quot;FireproSoftwareEdition&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy_s(RSVersion,<sp/>MAX_PATH,<sp/></highlight><highlight class="stringliteral">&quot;RadeonSoftwareVersion&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy_s(RSEdition,<sp/>MAX_PATH,<sp/></highlight><highlight class="stringliteral">&quot;RadeonSoftwareEdition&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>driverPath<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>gpu-&gt;pVtbl-&gt;DriverPath(gpu,<sp/>&amp;driverPath);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(ret))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>full<sp/>path<sp/>of<sp/>driver<sp/>registry</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TCHAR<sp/>driverRegistryPath[MAX_PATH]<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf_s(driverRegistryPath,<sp/>MAX_PATH,<sp/></highlight><highlight class="stringliteral">&quot;SYSTEM\\CurrentControlSet\\Control\\Class\\%s&quot;</highlight><highlight class="normal">,<sp/>driverPath);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TCHAR<sp/><sp/>value[MAX_PATH]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>AMD<sp/>Software<sp/>version<sp/>from<sp/>the<sp/>registry</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetStringFromLocalMachine(driverRegistryPath,<sp/>RSVersion,<sp/>value,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(value));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;AMD<sp/>Software<sp/>version:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>value);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>AMD<sp/>Software<sp/>Edition<sp/>from<sp/>the<sp/>registry</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetStringFromLocalMachine(driverRegistryPath,<sp/>RSEdition,<sp/>value,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(value));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s\n&quot;</highlight><highlight class="normal">,<sp/>value);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>AMD<sp/>Software<sp/>Release<sp/>Date<sp/>from<sp/>the<sp/>registry</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetStringFromLocalMachine(driverRegistryPath,<sp/></highlight><highlight class="stringliteral">&quot;DriverDate&quot;</highlight><highlight class="normal">,<sp/>value,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(value));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;AMD<sp/>Software<sp/>Release<sp/>Date:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>value);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>Driver<sp/>Version<sp/>from<sp/>the<sp/>registry</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetStringFromLocalMachine(driverRegistryPath,<sp/></highlight><highlight class="stringliteral">&quot;DriverVersion&quot;</highlight><highlight class="normal">,<sp/>value,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(value));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Driver<sp/>Version:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>value);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>AMD<sp/>Windows<sp/>Driver<sp/>Version<sp/>from<sp/>the<sp/>registry</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetStringFromLocalMachine(driverRegistryPath,<sp/></highlight><highlight class="stringliteral">&quot;ReleaseVersion&quot;</highlight><highlight class="normal">,<sp/>value,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(value));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;AMD<sp/>Windows<sp/>Driver<sp/>Version:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>value);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>

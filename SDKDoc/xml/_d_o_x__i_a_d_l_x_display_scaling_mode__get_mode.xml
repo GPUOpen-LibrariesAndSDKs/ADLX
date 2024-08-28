@@ -37,7 +37,13 @@
 <para><heading level="2">Additional Info </heading>
 </para>
 <para>GPU scaling determines the method used to stretch and position images to fit the display.<linebreak/>
- <bold>Note:</bold> On some AMD GPUs, center scaling and <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref> cannot be enabled simultaneously. If Radeon Super Resolution is enabled when the scaling mode is <bold>CENTERED</bold>, the scaling mode is automatically set to <bold>FULL_PANEL</bold>.</para>
+ <heading level="2">Dependent Interfaces </heading>
+</para>
+<para>On some AMD GPUs, Display Scaling Mode is mutually exclusive with <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref>.<linebreak/>
+</para>
+<para>When Display Scaling Mode is enabled, the mutually exclusive features are automatically disabled. If a mutually exclusive feature is re-enabled, its previous configuration settings are restored.<linebreak/>
+</para>
+<para>If Radeon Super Resolution is enabled when the scaling mode is <bold>CENTERED</bold>, the scaling mode is automatically set to <bold>FULL_PANEL</bold>.</para>
 <para><heading level="2">Requirements </heading>
 </para>
 <para><table rows="2" cols="2"><row>

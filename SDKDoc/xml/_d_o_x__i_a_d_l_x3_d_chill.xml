@@ -35,10 +35,13 @@
 </para>
 <para>AMD Radeon Chill conserves GPU power and reduces heat by adjusting the FPS based on the intensity of in-game movement.<linebreak/>
 </para>
-<para><heading level="2">Dependent Interfaces</heading>
+<para><heading level="2">Dependent Interfaces </heading>
 </para>
-<para>When AMD Radeon Chill is enabled, <ref refid="_d_o_x__i_a_d_l_x3_d_boost" kindref="compound">AMD Radeon Boost</ref>, <ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag" kindref="compound">AMD Radeon Anti-Lag</ref>, <ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag1" kindref="compound">AMD Radeon™ Anti-Lag Next</ref>, and <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref> are automatically disabled. <linebreak/>
- <bold>Note:</bold> If the disabled setting is later re-enabled, its previous configuration settings will be restored.</para>
+<para>AMD Radeon Chill cannot be simultaneously enabled with <ref refid="_d_o_x__i_a_d_l_x3_d_boost" kindref="compound">AMD Radeon Boost</ref>, <ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag" kindref="compound">AMD Radeon Anti-Lag</ref>, or <ref refid="_d_o_x__i_a_d_l_x3_d_anti_lag1" kindref="compound">AMD Radeon™ Anti-Lag Next</ref>.<linebreak/>
+</para>
+<para>On some AMD GPUs, AMD Radeon Chill cannot be simultaneously enabled with <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref>, or <ref refid="_d_o_x__i_a_d_l_x3_d_a_m_d_fluid_motion_frames" kindref="compound">AMD Fluid Motion Frames</ref>.<linebreak/>
+</para>
+<para>When AMD Radeon Chill is enabled, the mutually exclusive features are automatically disabled. If a mutually exclusive feature is re-enabled, its previous configuration settings are restored.</para>
 <para><heading level="2">Methods </heading>
 </para>
 <para><table rows="9" cols="2"><row>

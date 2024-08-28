@@ -33,10 +33,13 @@
 </para>
 <para>AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality. Only works in supported games.<linebreak/>
 </para>
-<para><heading level="2">Dependent Interfaces</heading>
+<para><heading level="2">Dependent Interfaces </heading>
 </para>
-<para>When AMD Radeon Boost is enabled, <ref refid="_d_o_x__i_a_d_l_x3_d_chill" kindref="compound">AMD Radeon Chill</ref> is automatically disabled. <linebreak/>
- <bold>Note:</bold> If the disabled setting is later re-enabled, its previous configuration will be restored.</para>
+<para>AMD Radeon Boost cannot be simultaneously enabled with <ref refid="_d_o_x__i_a_d_l_x3_d_chill" kindref="compound">AMD Radeon Chill</ref>.<linebreak/>
+</para>
+<para>On some AMD GPUs, AMD Radeon Boost cannot be simultaneously enabled with <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref>.<linebreak/>
+</para>
+<para>When AMD Radeon Chill is enabled, the mutually exclusive features are automatically disabled. If a mutually exclusive feature is re-enabled, its previous configuration settings are restored.</para>
 <para><heading level="2">Methods </heading>
 </para>
 <para><table rows="7" cols="2"><row>

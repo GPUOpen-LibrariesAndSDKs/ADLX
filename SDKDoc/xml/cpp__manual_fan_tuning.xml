@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
 <para><htmlonly>&lt;!--
-# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 --&gt;
@@ -36,7 +36,7 @@
 &lt;/html&gt;</htmlonly> <heading level="2">Code </heading>
 </para>
 <para>C++ <programlisting filename="./GPUTuning/ManualFanTuning/mainManualFanTuning.cpp"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2023<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2024<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -359,7 +359,7 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning-&gt;GetMinFanSpeed<sp/>(&amp;minFanSpeed);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tDisplay<sp/>current<sp/>MinFanSpeed:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>minFanSpeed<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>return<sp/>code<sp/>is:<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;<sp/>res<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(0<sp/>means<sp/>success)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning-&gt;SetMinAcousticLimit<sp/>(tuningRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref><sp/>+<sp/>(tuningRange.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref><sp/>-<sp/>tuningRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>)<sp/>/<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning-&gt;SetMinFanSpeed(tuningRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref><sp/>+<sp/>(tuningRange.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref><sp/>-<sp/>tuningRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>)<sp/>/<sp/>2);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning-&gt;GetMinFanSpeed<sp/>(&amp;minFanSpeed);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tSet<sp/>current<sp/>MinFanSpeed<sp/>to:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>minFanSpeed<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>return<sp/>code<sp/>is:<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;<sp/>res<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(0<sp/>means<sp/>success)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>

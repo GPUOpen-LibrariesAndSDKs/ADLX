@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.2</span>
+   &#160;<span id="projectnumber">v1.3</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -124,7 +124,12 @@ $(document).ready(function(){initNavTree('_d_o_x__i_a_d_l_x3_d_image_sharpening_
 </p>
 <h2>Additional Info </h2>
 <p>AMD Radeon Image Sharpening restores clarity softened by other effects to in-game visuals, and select productivity and media applications.<br  />
- <b>Note:</b> On some AMD GPUs, AMD Radeon Image Sharpening and <a class="el" href="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution.html">Radeon Super Resolution</a> cannot be enabled simultaneously. If Radeon Super Resolution is enabled, AMD Radeon Image Sharpening is automatically disabled.</p>
+</p>
+<h2>Dependent Interfaces </h2>
+<p>On some AMD GPUs, AMD Radeon 3D Image Sharpening is mutually exclusive with <a class="el" href="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution.html">Radeon Super Resolution</a>.<br  />
+</p>
+<p>When a mutually exclusive feature is enabled, AMD Radeon 3D Image Sharpening is automatically disabled. If AMD Radeon 3D Image Sharpening is later re-enabled, its previous configuration settings will be restored.<br  />
+</p>
 <h2>Requirements </h2>
 <table class="doxtable">
 <tr style="height=40px">
@@ -136,7 +141,7 @@ $(document).ready(function(){initNavTree('_d_o_x__i_a_d_l_x3_d_image_sharpening_
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!--
-# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -144,7 +149,7 @@ $(document).ready(function(){initNavTree('_d_o_x__i_a_d_l_x3_d_image_sharpening_
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2023 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
+    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2024 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
   </ul>
 </div>
 </body>

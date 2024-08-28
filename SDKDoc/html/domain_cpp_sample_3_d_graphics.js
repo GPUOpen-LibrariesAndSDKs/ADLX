@@ -1,6 +1,7 @@
 var domain_cpp_sample_3_d_graphics =
 [
     [ "3DSettingsEvent", "cpp_3_d_settings_event.html", null ],
+    [ "AFMF", "cpp__a_f_m_f.html", null ],
     [ "AnisotropicFiltering", "cpp__anisotropic_filtering.html", null ],
     [ "AntiAliasing", "cpp__anti_aliasing.html", null ],
     [ "AntiLag", "cpp__anti_lag.html", null ],

@@ -37,7 +37,12 @@
 <para><heading level="2">Additional Info </heading>
 </para>
 <para>Integer Display Scaling gives a sharp, pixelated look to images scaled up to fit the display. Images that can&apos;t be scaled to match the display&apos;s exact size and shape will be centered on screen. Integer Display Scaling enhances visuals in old games to revive vintage gaming experiences on a modern display.<linebreak/>
- <bold>Note:</bold> On some AMD GPUs, Integer Display Scaling and <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref> cannot be enabled simultaneously. If Radeon Super Resolution is enabled, Integer Display Scaling is automatically disabled.</para>
+ <heading level="2">Dependent Interfaces </heading>
+</para>
+<para>On some AMD GPUs, Integer Display Scaling is mutually exclusive with <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref>.<linebreak/>
+</para>
+<para>When a mutually exclusive feature is enabled, Integer Display Scaling is automatically disabled. If Integer Display Scaling is later re-enabled, its previous configuration settings will be restored.<linebreak/>
+</para>
 <para><heading level="2">Requirements </heading>
 </para>
 <para><table rows="2" cols="2"><row>

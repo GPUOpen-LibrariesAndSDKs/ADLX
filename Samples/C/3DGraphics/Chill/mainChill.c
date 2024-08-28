@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -119,21 +119,30 @@ void ShowChillSupport(IADLX3DChill* d3dChill)
 
 void GetChillState(IADLX3DChill* d3dChill)
 {
-    adlx_bool enabled = false;
-    ADLX_RESULT res = d3dChill->pVtbl->IsEnabled(d3dChill, &enabled);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tIsEnabled: %d\n", enabled);
-    adlx_int minFPS, maxFPS;
-    ADLX_IntRange fpsRange;
-    res = d3dChill->pVtbl->GetMinFPS(d3dChill, &minFPS);
-    if (ADLX_SUCCEEDED (res))
-        printf ("\tCurrent MinFPS: %d\n", minFPS);
-    res = d3dChill->pVtbl->GetMaxFPS(d3dChill, &maxFPS);
-    if (ADLX_SUCCEEDED (res))
-        printf ("\tCurrent MaxFPS: %d\n", maxFPS);
-    res = d3dChill->pVtbl->GetFPSRange(d3dChill, &fpsRange);
-    if (ADLX_SUCCEEDED (res))
-        printf("\tFPSSet limit [ %d, %d ], step: %d\n", fpsRange.minValue, fpsRange.maxValue, fpsRange.step);
+    adlx_bool supported = false;
+    ADLX_RESULT res = d3dChill->pVtbl->IsSupported(d3dChill, &supported);
+    if (supported)
+    {
+        adlx_bool enabled = false;
+        ADLX_RESULT res = d3dChill->pVtbl->IsEnabled(d3dChill, &enabled);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsEnabled: %d\n", enabled);
+        adlx_int minFPS, maxFPS;
+        ADLX_IntRange fpsRange;
+        res = d3dChill->pVtbl->GetMinFPS(d3dChill, &minFPS);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tCurrent MinFPS: %d\n", minFPS);
+        res = d3dChill->pVtbl->GetMaxFPS(d3dChill, &maxFPS);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tCurrent MaxFPS: %d\n", maxFPS);
+        res = d3dChill->pVtbl->GetFPSRange(d3dChill, &fpsRange);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tFPSSet limit [ %d, %d ], step: %d\n", fpsRange.minValue, fpsRange.maxValue, fpsRange.step);
+    }
+    else
+    {
+        printf("\t Chill feature is not Supported\n");
+    }
 }
 
 void SetChillState(IADLX3DChill* d3dChill, int index)

@@ -39,8 +39,13 @@
 </para>
 <para>Radeon Super Resolution is an upscaling feature for faster game frame rates. <linebreak/>
 </para>
-<para><bold>Note:</bold> <ref refid="_d_o_x__i_a_d_l_x_display_g_p_u_scaling" kindref="compound">GPU scaling</ref> is a requirement for Radeon Super Resolution. When Radeon Super Resolution is enabled, GPU scaling is automatically enabled. If GPU scaling is disabled while Radeon Super Resolution is enabled, Radeon Super Resolution is automatically disabled.</para>
-<para>On some AMD GPUs, Radeon Super Resolution is mutually exclusive with <ref refid="_d_o_x__i_a_d_l_x3_d_chill" kindref="compound">AMD Radeon Chill</ref>, <ref refid="_d_o_x__i_a_d_l_x3_d_boost" kindref="compound">AMD Radeon Boost</ref>, <ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpening" kindref="compound">AMD Radeon Image Sharpening</ref>, <ref refid="_d_o_x__i_a_d_l_x_display_integer_scaling" kindref="compound">Integer Display Scaling</ref>, and <ref refid="_d_o_x__i_a_d_l_x_display_scaling_mode__get_mode" kindref="compound">Center Scaling</ref>. When Radeon Super Resolution is enabled, the mutually exclusive features are automatically disabled.<linebreak/>
+<para><heading level="2">Dependent Interfaces </heading>
+</para>
+<para>Radeon Super Resolution requires <ref refid="_d_o_x__i_a_d_l_x_display_g_p_u_scaling" kindref="compound">GPU scaling</ref>. When Radeon Super Resolution is enabled, GPU scaling is automatically enabled. If GPU scaling is disabled while Radeon Super Resolution is enabled, Radeon Super Resolution is automatically disabled.<linebreak/>
+</para>
+<para>On some AMD GPUs, Radeon Super Resolution is mutually exclusive with <ref refid="_d_o_x__i_a_d_l_x3_d_chill" kindref="compound">AMD Radeon Chill</ref>, <ref refid="_d_o_x__i_a_d_l_x3_d_boost" kindref="compound">AMD Radeon Boost</ref>, <ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpening" kindref="compound">AMD Radeon Image Sharpening</ref>, <ref refid="_d_o_x__i_a_d_l_x_display_integer_scaling" kindref="compound">Integer Display Scaling</ref>, or <ref refid="_d_o_x__i_a_d_l_x_display_scaling_mode__get_mode" kindref="compound">Center Scaling</ref>.<linebreak/>
+</para>
+<para>When a mutually exclusive feature is enabled, Radeon Super Resolution is automatically disabled. If Radeon Super Resolution is later re-enabled, its previous configuration settings will be restored.<linebreak/>
 </para>
 <para><heading level="2">Requirements </heading>
 </para>

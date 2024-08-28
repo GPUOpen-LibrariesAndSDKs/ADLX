@@ -9,7 +9,8 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>The <bold>IADLXDisplayintegerScaling</bold> interface configures Integer Display Scaling settings on a display.</para>
+<para>The <bold>IADLXDisplayintegerScaling</bold> interface configures Integer Display Scaling settings on a display.<linebreak/>
+</para>
 <para><table rows="4" cols="2"><row>
 <entry thead="no"><para>InterfaceId:</para>
 </entry><entry thead="no"><para>IADLXDisplayIntegerScaling</para>
@@ -28,7 +29,12 @@
 </entry></row>
 </table>
 </para>
-<para><bold>Note</bold>: Integer Display Scaling is not supported when <ref refid="_d_o_x__i_a_d_l_x_display_g_p_u_scaling" kindref="compound">GPU scaling</ref> is disabled.</para>
+<para><bold>Note</bold>: Integer Display Scaling is not supported when <ref refid="_d_o_x__i_a_d_l_x_display_g_p_u_scaling" kindref="compound">GPU scaling</ref> is disabled. <heading level="2">Dependent Interfaces </heading>
+</para>
+<para>On some AMD GPUs, Integer Display Scaling is mutually exclusive with <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref>.<linebreak/>
+</para>
+<para>When Integer Display Scaling is enabled, the mutually exclusive features are automatically disabled. If a mutually exclusive feature is re-enabled, its previous configuration settings are restored.<linebreak/>
+</para>
 <para><heading level="2">Methods </heading>
 </para>
 <para><table rows="4" cols="2"><row>

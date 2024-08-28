@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -100,18 +100,27 @@ void ShowRadeonSuperResolutionSupport(IADLX3DRadeonSuperResolution* rsr)
 
 void GetRadeonSuperResolutionState(IADLX3DRadeonSuperResolution* rsr)
 {
-    adlx_bool enabled = false;
-    ADLX_RESULT res = rsr->pVtbl->IsEnabled(rsr, &enabled);
-    if (ADLX_SUCCEEDED(res))
-        printf("\tIsEnabled: %d\n", enabled);
-    adlx_int sharpness;
-    ADLX_IntRange sharpnessRange;
-    res = rsr->pVtbl->GetSharpness(rsr, &sharpness);
-    if (ADLX_SUCCEEDED (res))
-        printf("\tCurrent sharpness: %d\n", sharpness);
-    res = rsr->pVtbl->GetSharpnessRange(rsr, &sharpnessRange);
-    if (ADLX_SUCCEEDED (res))
-        printf("\tSharpness limit [ %d , %d ], step: %d\n", sharpnessRange.minValue, sharpnessRange.maxValue, sharpnessRange.step);
+    adlx_bool supported = false;
+    ADLX_RESULT res = rsr->pVtbl->IsSupported(rsr, &supported);
+    if (supported)
+    {
+        adlx_bool enabled = false;
+        ADLX_RESULT res = rsr->pVtbl->IsEnabled(rsr, &enabled);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tIsEnabled: %d\n", enabled);
+        adlx_int sharpness;
+        ADLX_IntRange sharpnessRange;
+        res = rsr->pVtbl->GetSharpness(rsr, &sharpness);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tCurrent sharpness: %d\n", sharpness);
+        res = rsr->pVtbl->GetSharpnessRange(rsr, &sharpnessRange);
+        if (ADLX_SUCCEEDED(res))
+            printf("\tSharpness limit [ %d , %d ], step: %d\n", sharpnessRange.minValue, sharpnessRange.maxValue, sharpnessRange.step);
+    }
+    else
+    {
+        printf("\tRSR feature is not supported\n");
+    }
 }
 
 void SetRadeonSuperResolutionState(IADLX3DRadeonSuperResolution* rsr, int index)

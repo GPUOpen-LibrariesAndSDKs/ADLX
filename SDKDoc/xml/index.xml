@@ -96,6 +96,11 @@
     <member refid="classadlx_1_1_i_a_d_l_mapping_1a9835bc9caf1280694dfe5e7665f3572d" kind="function"><name>GetADLXDesktopFromADLIds</name></member>
     <member refid="classadlx_1_1_i_a_d_l_mapping_1ac9678737ab24f974bbb875ab3224f91d" kind="function"><name>ADLIdsFromADLXDesktop</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x3_d_a_m_d_fluid_motion_frames" kind="class"><name>adlx::IADLX3DAMDFluidMotionFrames</name>
+    <member refid="classadlx_1_1_i_a_d_l_x3_d_a_m_d_fluid_motion_frames_1a664c4ec439ba2a76da0b77eadb688eee" kind="function"><name>IsSupported</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x3_d_a_m_d_fluid_motion_frames_1a875be6e1f0ad5d62b4792ef20a50e833" kind="function"><name>IsEnabled</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x3_d_a_m_d_fluid_motion_frames_1ab44e6774eb96a32fea661373c6ff40df" kind="function"><name>SetEnabled</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x3_d_anisotropic_filtering" kind="class"><name>adlx::IADLX3DAnisotropicFiltering</name>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_anisotropic_filtering_1a0f8bb4f5bd223f913a3f1e5b4adb4819" kind="function"><name>IsSupported</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_anisotropic_filtering_1a5b68873bb0a8aeda4fa86b86830dd3cd" kind="function"><name>IsEnabled</name></member>
@@ -193,6 +198,9 @@
     <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_event_1ad33b5f26376660d713a61e89fb88a28b" kind="function"><name>IsRadeonSuperResolutionChanged</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_event_1a400610dfef9d0f2fc9b1cb35ae1186de" kind="function"><name>IsResetShaderCache</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_event1" kind="class"><name>adlx::IADLX3DSettingsChangedEvent1</name>
+    <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_event1_1a6850c8542512e90e4f6d66b8a85e011e" kind="function"><name>IsAMDFluidMotionFramesChanged</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_handling" kind="class"><name>adlx::IADLX3DSettingsChangedHandling</name>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_handling_1a0de0314b80f28fe6b29aca4dbbd8d00f" kind="function"><name>Add3DSettingsEventListener</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_handling_1adcbf068288876bec333bdcd22bc8f34f" kind="function"><name>Remove3DSettingsEventListener</name></member>
@@ -215,6 +223,9 @@
     <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_services_1ade82ae6acbb9cb7007dadb1a6322bdeb" kind="function"><name>GetRadeonSuperResolution</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_services_1a3c511c060dd7c7269aa9b05429269865" kind="function"><name>GetResetShaderCache</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_services_1a4d9cc32accc7a0bdc6167392418daf7e" kind="function"><name>Get3DSettingsChangedHandling</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x3_d_settings_services1" kind="class"><name>adlx::IADLX3DSettingsServices1</name>
+    <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_services1_1a2be52a8fcd3455df4403ed4d82f77f45" kind="function"><name>GetAMDFluidMotionFrames</name></member>
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x3_d_tessellation" kind="class"><name>adlx::IADLX3DTessellation</name>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_tessellation_1a62a173a06f5856f0a9b87ddaffc655ec" kind="function"><name>IsSupported</name></member>
@@ -659,6 +670,11 @@
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_1a73d65b5e240921615bc1e785c17585b0" kind="function"><name>GPUVoltage</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_1a41ae99dd83fa49c433e2b8b8dc08a906" kind="function"><name>GPUIntakeTemperature</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics1" kind="class"><name>adlx::IADLXGPUMetrics1</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics1_1a074a0a357656c60f2587c78ac93b918c" kind="function"><name>GPUMemoryTemperature</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics1_1a7ba897a6e287971f480213800ee9d4e7" kind="function"><name>NPUFrequency</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics1_1aae3a361eae8aa595faa63572515202a1" kind="function"><name>NPUActivityLevel</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_list" kind="class"><name>adlx::IADLXGPUMetricsList</name>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_list_1a885a3e2fc4a4cbbcef0fad017e0a9ec8" kind="function"><name>At</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_list_1afe0c437a42c6aea688ed43e5f9709c95" kind="function"><name>Add_Back</name></member>
@@ -686,6 +702,14 @@
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1abb4e76d75a0f9bba3690c373cb71bfea" kind="function"><name>GetGPUTotalBoardPowerRange</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ac492a2121c5469db09211b0dc828d35d" kind="function"><name>GetGPUIntakeTemperatureRange</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ac312c3f496fce8aa7518998777f88b69" kind="function"><name>IsSupportedGPUIntakeTemperature</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1" kind="class"><name>adlx::IADLXGPUMetricsSupport1</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1_1a0be84cd9220df79d431ec5b7714787b7" kind="function"><name>IsSupportedGPUMemoryTemperature</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1_1ad02660245aa46525bfe10e320fc51db5" kind="function"><name>GetGPUMemoryTemperatureRange</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1_1ae7bbd25a9ef94771ee8392f0a55e9fbb" kind="function"><name>IsSupportedNPUFrequency</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1_1adbc7a8cd27dd258691213780fcb50cc2" kind="function"><name>GetNPUFrequencyRange</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1_1a1224a500dafa65990518e298dd364123" kind="function"><name>IsSupportedNPUActivityLevel</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1_1a21eb1c37f54a056b3b26d5d67e1e11c5" kind="function"><name>GetNPUActivityLevelRange</name></member>
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u_preset_tuning" kind="class"><name>adlx::IADLXGPUPresetTuning</name>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_preset_tuning_1a92a64a2b906cde19f69ee15752dfe11b" kind="function"><name>IsSupportedPowerSaver</name></member>
@@ -1013,6 +1037,9 @@
     <member refid="_i3_d_settings_8h_1a58bd68cd3be86e66af411167cd847f9d" kind="typedef"><name>IADLX3DSettingsChangedEventPtr</name></member>
     <member refid="_i3_d_settings_8h_1a3f8174f6d4fd4d0255ca3608b8bd0f49" kind="typedef"><name>IADLX3DSettingsChangedHandlingPtr</name></member>
     <member refid="_i3_d_settings_8h_1ac2b48e33bc31f4cdcc05c5cfd7d0e3de" kind="typedef"><name>IADLX3DSettingsServicesPtr</name></member>
+    <member refid="_i3_d_settings1_8h_1a0300155fa926ae2fddb8717282d19b3f" kind="typedef"><name>IADLX3DAMDFluidMotionFramesPtr</name></member>
+    <member refid="_i3_d_settings1_8h_1a4482dc219d6932812215a5577c0c1e2a" kind="typedef"><name>IADLX3DSettingsServices1Ptr</name></member>
+    <member refid="_i3_d_settings1_8h_1a6d2c2a69cb3a58601303fad44cf746da" kind="typedef"><name>IADLX3DSettingsChangedEvent1Ptr</name></member>
     <member refid="_i_changed_event_8h_1ad191c2004ec35a4fbe51f91155b678db" kind="typedef"><name>IADLXChangedEventPtr</name></member>
     <member refid="_i_collections_8h_1ac394bd62b6480eb12102a1e4aa93f752" kind="typedef"><name>IADLXListPtr</name></member>
     <member refid="_i_desktops_8h_1ab10ce8506bd1dd3a8695fc8f7d1d0d78" kind="typedef"><name>IADLXDesktopPtr</name></member>
@@ -1085,6 +1112,8 @@
     <member refid="_i_performance_monitoring_8h_1a7d3793d3ddb0952da553fde3126ba232" kind="typedef"><name>IADLXPerformanceMonitoringServicesPtr</name></member>
     <member refid="_i_performance_monitoring1_8h_1af7748fd7bb5907a3625a56fd850a3a3c" kind="typedef"><name>IADLXSystemMetricsSupport1Ptr</name></member>
     <member refid="_i_performance_monitoring1_8h_1a7a39d4f435f28b8624e23471c8181592" kind="typedef"><name>IADLXSystemMetrics1Ptr</name></member>
+    <member refid="_i_performance_monitoring2_8h_1a3737797872049ddd653c001e744f2782" kind="typedef"><name>IADLXGPUMetricsSupport1Ptr</name></member>
+    <member refid="_i_performance_monitoring2_8h_1ad158dfc4314cf5b874c7476b78134293" kind="typedef"><name>IADLXGPUMetrics1Ptr</name></member>
     <member refid="_i_power_tuning_8h_1ab9b3730a2489e99b0ffd030a6fb40af4" kind="typedef"><name>IADLXSmartShiftMaxPtr</name></member>
     <member refid="_i_power_tuning_8h_1a4a9f26f24a8a7415f9a01967adbbc858" kind="typedef"><name>IADLXPowerTuningChangedEventPtr</name></member>
     <member refid="_i_power_tuning_8h_1a36ad009e2f931a0a89da114f586f927a" kind="typedef"><name>IADLXPowerTuningChangedHandlingPtr</name></member>
@@ -1096,6 +1125,7 @@
     <member refid="_i_system1_8h_1a293a0aa3f3d2897ecf311ccb35a5ffd2" kind="typedef"><name>IADLXGPU1Ptr</name></member>
     <member refid="_i_system1_8h_1aec2da36bf0baeebda433a34ef2060af3" kind="typedef"><name>IADLXSystem1Ptr</name></member>
     <member refid="_i3_d_settings_8h_1a45d9a6440dace0ac605724961abcee6b" kind="variable"><name>IADLXGPU</name></member>
+    <member refid="_i3_d_settings1_8h_1a698c03b0f0ac47dea759d11f04822f10" kind="variable"><name>IADLX3DAMDFluidMotionFrames</name></member>
     <member refid="_i_desktops_8h_1a5e0189f42408653036b0ad71960d5f0c" kind="variable"><name>IADLXDisplayList</name></member>
     <member refid="_i_desktops_8h_1ab74c9ab9636492510206915ee0ca5171" kind="variable"><name>IADLXDisplay</name></member>
     <member refid="_i_displays_8h_1a831b0bab65be7e6e5dab8d372ab28e7f" kind="variable"><name>IADLXDisplayGamut</name></member>
@@ -1320,6 +1350,8 @@
     <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a351c7e8c74ef3cfbee06213c43884589" kind="enumvalue"><name>ADLX_NOT_SUPPORTED</name></member>
     <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0ad2c2b132ffcd5ef80752f2fc2b38811f" kind="enumvalue"><name>ADLX_PENDING_OPERATION</name></member>
     <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a7ecc8145f60057fa833a86fb605f83f2" kind="enumvalue"><name>ADLX_GPU_INACTIVE</name></member>
+    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a2431684033e55e857a3f9b2d55d318f0" kind="enumvalue"><name>ADLX_GPU_IN_USE</name></member>
+    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a600700f1d71935ca0ff5836a41dd8edb" kind="enumvalue"><name>ADLX_TIMEOUT_OPERATION</name></member>
     <member refid="group__enumerations_1ga260f926e27eef013ca1eacd0ff7b3ba7" kind="enum"><name>ADLX_HG_TYPE</name></member>
     <member refid="group__enumerations_1ga260f926e27eef013ca1eacd0ff7b3ba7ac157bdf0b85a40d2619cbc8bc1ae5fe2" kind="enumvalue"><name>NONE</name></member>
     <member refid="group__enumerations_1ga260f926e27eef013ca1eacd0ff7b3ba7ac1f5c308ff9610759dbc1415b20df568" kind="enumvalue"><name>AMD</name></member>
@@ -1535,6 +1567,10 @@
     <member refid="group__enumerations_1gada547c00826e15266732f874a0f3478daf2165ffea80d451f834d3a5d2994b3c8" kind="enumvalue"><name>MGPU_NONE</name></member>
     <member refid="group__enumerations_1gada547c00826e15266732f874a0f3478daa8e7af64a7da10bed79c2e5de97b7cb8" kind="enumvalue"><name>MGPU_PRIMARY</name></member>
     <member refid="group__enumerations_1gada547c00826e15266732f874a0f3478da9100baedfaa6e08d64fa900cd7685cef" kind="enumvalue"><name>MGPU_SECONDARY</name></member>
+    <member refid="group__enumerations_1gaf6c76078b265ef8526edd967e45ce15a" kind="enum"><name>ADLX_APP_GPU_DEPENDENCY</name></member>
+    <member refid="group__enumerations_1gaf6c76078b265ef8526edd967e45ce15aa80dd6f151c30b332eb37cca8622b055a" kind="enumvalue"><name>APP_GPU_UNKNOWN</name></member>
+    <member refid="group__enumerations_1gaf6c76078b265ef8526edd967e45ce15aa1f5af5fca78d751cd74a7cf808cd1b96" kind="enumvalue"><name>APP_GPU_BOUND</name></member>
+    <member refid="group__enumerations_1gaf6c76078b265ef8526edd967e45ce15aacb2e2326ad22a9565d9fda356bcab599" kind="enumvalue"><name>APP_GPU_NOT_BOUND</name></member>
     <member refid="_a_d_l_x_defines_8h_1a460278d9913c4386415ed4a7ef39afd7" kind="typedef"><name>adlx_int64</name></member>
     <member refid="_a_d_l_x_defines_8h_1abd92771e6d61812965634c05dbe8fca4" kind="typedef"><name>adlx_int32</name></member>
     <member refid="_a_d_l_x_defines_8h_1ada96c7e9db50fae4e3f93a35f08be2c2" kind="typedef"><name>adlx_int16</name></member>
@@ -1573,6 +1609,8 @@
     <member refid="_a_d_l_x_version_8h_1aed69a0ecd85effaee62857b0a3a4af45" kind="define"><name>STRING_EXPAND</name></member>
   </compound>
   <compound refid="_i3_d_settings_8h" kind="file"><name>I3DSettings.h</name>
+  </compound>
+  <compound refid="_i3_d_settings1_8h" kind="file"><name>I3DSettings1.h</name>
   </compound>
   <compound refid="_i_changed_event_8h" kind="file"><name>IChangedEvent.h</name>
   </compound>
@@ -1618,6 +1656,8 @@
   </compound>
   <compound refid="_i_performance_monitoring1_8h" kind="file"><name>IPerformanceMonitoring1.h</name>
   </compound>
+  <compound refid="_i_performance_monitoring2_8h" kind="file"><name>IPerformanceMonitoring2.h</name>
+  </compound>
   <compound refid="_i_power_tuning_8h" kind="file"><name>IPowerTuning.h</name>
   </compound>
   <compound refid="_i_smart_access_memory_8h" kind="file"><name>ISmartAccessMemory.h</name>
@@ -1643,6 +1683,8 @@
     <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a351c7e8c74ef3cfbee06213c43884589" kind="enumvalue"><name>ADLX_NOT_SUPPORTED</name></member>
     <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0ad2c2b132ffcd5ef80752f2fc2b38811f" kind="enumvalue"><name>ADLX_PENDING_OPERATION</name></member>
     <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a7ecc8145f60057fa833a86fb605f83f2" kind="enumvalue"><name>ADLX_GPU_INACTIVE</name></member>
+    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a2431684033e55e857a3f9b2d55d318f0" kind="enumvalue"><name>ADLX_GPU_IN_USE</name></member>
+    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a600700f1d71935ca0ff5836a41dd8edb" kind="enumvalue"><name>ADLX_TIMEOUT_OPERATION</name></member>
     <member refid="group__enumerations_1ga260f926e27eef013ca1eacd0ff7b3ba7" kind="enum"><name>ADLX_HG_TYPE</name></member>
     <member refid="group__enumerations_1ga260f926e27eef013ca1eacd0ff7b3ba7ac157bdf0b85a40d2619cbc8bc1ae5fe2" kind="enumvalue"><name>NONE</name></member>
     <member refid="group__enumerations_1ga260f926e27eef013ca1eacd0ff7b3ba7ac1f5c308ff9610759dbc1415b20df568" kind="enumvalue"><name>AMD</name></member>
@@ -1858,6 +1900,10 @@
     <member refid="group__enumerations_1gada547c00826e15266732f874a0f3478daf2165ffea80d451f834d3a5d2994b3c8" kind="enumvalue"><name>MGPU_NONE</name></member>
     <member refid="group__enumerations_1gada547c00826e15266732f874a0f3478daa8e7af64a7da10bed79c2e5de97b7cb8" kind="enumvalue"><name>MGPU_PRIMARY</name></member>
     <member refid="group__enumerations_1gada547c00826e15266732f874a0f3478da9100baedfaa6e08d64fa900cd7685cef" kind="enumvalue"><name>MGPU_SECONDARY</name></member>
+    <member refid="group__enumerations_1gaf6c76078b265ef8526edd967e45ce15a" kind="enum"><name>ADLX_APP_GPU_DEPENDENCY</name></member>
+    <member refid="group__enumerations_1gaf6c76078b265ef8526edd967e45ce15aa80dd6f151c30b332eb37cca8622b055a" kind="enumvalue"><name>APP_GPU_UNKNOWN</name></member>
+    <member refid="group__enumerations_1gaf6c76078b265ef8526edd967e45ce15aa1f5af5fca78d751cd74a7cf808cd1b96" kind="enumvalue"><name>APP_GPU_BOUND</name></member>
+    <member refid="group__enumerations_1gaf6c76078b265ef8526edd967e45ce15aacb2e2326ad22a9565d9fda356bcab599" kind="enumvalue"><name>APP_GPU_NOT_BOUND</name></member>
   </compound>
   <compound refid="group__structures_val" kind="group"><name>structuresVal</name>
   </compound>
@@ -2173,6 +2219,16 @@
   <compound refid="_d_o_x__i_a_d_l_x3_d_settings_services__get_reset_shader_cache" kind="page"><name>DOX_IADLX3DSettingsServices_GetResetShaderCache</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x3_d_settings_services__get3_d_settings_changed_handling" kind="page"><name>DOX_IADLX3DSettingsServices_Get3DSettingsChangedHandling</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_a_m_d_fluid_motion_frames__is_supported" kind="page"><name>DOX_IADLX3DAMDFluidMotionFrames_IsSupported</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_a_m_d_fluid_motion_frames__is_enabled" kind="page"><name>DOX_IADLX3DAMDFluidMotionFrames_IsEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_a_m_d_fluid_motion_frames__set_enabled" kind="page"><name>DOX_IADLX3DAMDFluidMotionFrames_SetEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_settings_services1__get_a_m_d_fluid_motion_frames" kind="page"><name>DOX_IADLX3DSettingsServices1_GetAMDFluidMotionFrames</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_settings_changed_event1__is_a_m_d_fluid_motion_frames_changed" kind="page"><name>DOX_IADLX3DSettingsChangedEvent1_IsAMDFluidMotionFramesChanged</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_changed_event__get_origin" kind="page"><name>DOX_IADLXChangedEvent_GetOrigin</name>
   </compound>
@@ -3160,6 +3216,24 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_system_metrics1__power_distribution" kind="page"><name>DOX_IADLXSystemMetrics1_PowerDistribution</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support1__is_supported_g_p_u_memory_temperature" kind="page"><name>DOX_IADLXGPUMetricsSupport1_IsSupportedGPUMemoryTemperature</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support1__get_g_p_u_memory_temperature_range" kind="page"><name>DOX_IADLXGPUMetricsSupport1_GetGPUMemoryTemperatureRange</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support1__is_supported_n_p_u_frequency" kind="page"><name>DOX_IADLXGPUMetricsSupport1_IsSupportedNPUFrequency</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support1__get_n_p_u_frequency_range" kind="page"><name>DOX_IADLXGPUMetricsSupport1_GetNPUFrequencyRange</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support1__is_supported_n_p_u_activity_level" kind="page"><name>DOX_IADLXGPUMetricsSupport1_IsSupportedNPUActivityLevel</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support1__get_n_p_u_activity_level_range" kind="page"><name>DOX_IADLXGPUMetricsSupport1_GetNPUActivityLevelRange</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics1__g_p_u_memory_temperature" kind="page"><name>DOX_IADLXGPUMetrics1_GPUMemoryTemperature</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics1__n_p_u_frequency" kind="page"><name>DOX_IADLXGPUMetrics1_NPUFrequency</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics1__n_p_u_activity_level" kind="page"><name>DOX_IADLXGPUMetrics1_NPUActivityLevel</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x_smart_shift_max__is_supported" kind="page"><name>DOX_IADLXSmartShiftMax_IsSupported</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_smart_shift_max__get_bias_mode" kind="page"><name>DOX_IADLXSmartShiftMax_GetBiasMode</name>
@@ -3317,6 +3391,12 @@
   <compound refid="_d_o_x__i_a_d_l_x3_d_settings_changed_handling" kind="page"><name>DOX_IADLX3DSettingsChangedHandling</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x3_d_settings_services" kind="page"><name>DOX_IADLX3DSettingsServices</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_a_m_d_fluid_motion_frames" kind="page"><name>DOX_IADLX3DAMDFluidMotionFrames</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_settings_changed_event1" kind="page"><name>DOX_IADLX3DSettingsChangedEvent1</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_settings_services1" kind="page"><name>DOX_IADLX3DSettingsServices1</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_desktop" kind="page"><name>DOX_IADLXDesktop</name>
   </compound>
@@ -3496,6 +3576,10 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_system_metrics_support1" kind="page"><name>DOX_IADLXSystemMetricsSupport1</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support1" kind="page"><name>DOX_IADLXGPUMetricsSupport1</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics1" kind="page"><name>DOX_IADLXGPUMetrics1</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x_power_tuning_services" kind="page"><name>DOX_IADLXPowerTuningServices</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_power_tuning_changed_handling" kind="page"><name>DOX_IADLXPowerTuningChangedHandling</name>
@@ -3613,6 +3697,8 @@
   <compound refid="cpp_display__v_s_r" kind="page"><name>cpp_display_VSR</name>
   </compound>
   <compound refid="cpp_display__display_vari_bright" kind="page"><name>cpp_display_DisplayVariBright</name>
+  </compound>
+  <compound refid="cpp__a_f_m_f" kind="page"><name>cpp_AFMF</name>
   </compound>
   <compound refid="cpp__anisotropic_filtering" kind="page"><name>cpp_AnisotropicFiltering</name>
   </compound>
@@ -3733,6 +3819,8 @@
   <compound refid="c_display__v_s_r" kind="page"><name>c_display_VSR</name>
   </compound>
   <compound refid="c_display__display_vari_bright" kind="page"><name>c_display_DisplayVariBright</name>
+  </compound>
+  <compound refid="c__a_f_m_f" kind="page"><name>c_AFMF</name>
   </compound>
   <compound refid="c__anisotropic_filtering" kind="page"><name>c_AnisotropicFiltering</name>
   </compound>

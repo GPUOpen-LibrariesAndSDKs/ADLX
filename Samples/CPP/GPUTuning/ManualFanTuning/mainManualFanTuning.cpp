@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -324,7 +324,7 @@ void ShowGetAndSetMinFanSpeed (IADLXManualFanTuningPtr manualFanTuning)
     res = manualFanTuning->GetMinFanSpeed (&minFanSpeed);
     std::cout << "\tDisplay current MinFanSpeed: " << minFanSpeed << ", return code is: "<< res << "(0 means success)" << std::endl;
 
-    res = manualFanTuning->SetMinAcousticLimit (tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
+    res = manualFanTuning->SetMinFanSpeed(tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
     res = manualFanTuning->GetMinFanSpeed (&minFanSpeed);
     std::cout << "\tSet current MinFanSpeed to: " << minFanSpeed << ", return code is: "<< res << "(0 means success)" << std::endl;
 }

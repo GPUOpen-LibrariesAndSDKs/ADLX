@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.2</span>
+   &#160;<span id="projectnumber">v1.3</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -128,6 +128,9 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0a351c7e8c74ef3cfbee06213c43884589">ADLX_NOT_SUPPORTED</a>
 , <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0ad2c2b132ffcd5ef80752f2fc2b38811f">ADLX_PENDING_OPERATION</a>
 , <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0a7ecc8145f60057fa833a86fb605f83f2">ADLX_GPU_INACTIVE</a>
+, <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0a2431684033e55e857a3f9b2d55d318f0">ADLX_GPU_IN_USE</a>
+, <br />
+&#160;&#160;<a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0a600700f1d71935ca0ff5836a41dd8edb">ADLX_TIMEOUT_OPERATION</a>
 <br />
  }</td></tr>
 <tr class="memdesc:ga9306b05f15578edbf79b649dd612b8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the result returned from an ADLX function or from an ADLX method.  <a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">More...</a><br /></td></tr>
@@ -415,7 +418,7 @@ Enumerations</h2></td></tr>
 , <a class="el" href="group__enumerations.html#gaa25f244e38a3502a52167c303abcec11a2ae2530d0e57e0db3bf2b94f4f3f96d8">MEMORYTIMING_MEMORYTIMING_LEVEL_2</a>
 <br />
  }</td></tr>
-<tr class="memdesc:gaa25f244e38a3502a52167c303abcec11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the priority of the log entry.  <a href="group__enumerations.html#gaa25f244e38a3502a52167c303abcec11">More...</a><br /></td></tr>
+<tr class="memdesc:gaa25f244e38a3502a52167c303abcec11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the memory timing description.  <a href="group__enumerations.html#gaa25f244e38a3502a52167c303abcec11">More...</a><br /></td></tr>
 <tr class="separator:gaa25f244e38a3502a52167c303abcec11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga75eb2c93942ff81ff1cbeef647c2cf67"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerations.html#ga75eb2c93942ff81ff1cbeef647c2cf67">ADLX_I2C_LINE</a> { <br />
 &#160;&#160;<a class="el" href="group__enumerations.html#ga75eb2c93942ff81ff1cbeef647c2cf67ab041e1bec4cf6e632b086e0bd32d845b">I2C_LINE_OEM</a> = 1
@@ -465,6 +468,12 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:gada547c00826e15266732f874a0f3478d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the AMD MGPU mode.  <a href="group__enumerations.html#gada547c00826e15266732f874a0f3478d">More...</a><br /></td></tr>
 <tr class="separator:gada547c00826e15266732f874a0f3478d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf6c76078b265ef8526edd967e45ce15a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerations.html#gaf6c76078b265ef8526edd967e45ce15a">ADLX_APP_GPU_DEPENDENCY</a> { <a class="el" href="group__enumerations.html#gaf6c76078b265ef8526edd967e45ce15aa80dd6f151c30b332eb37cca8622b055a">APP_GPU_UNKNOWN</a> = 0
+, <a class="el" href="group__enumerations.html#gaf6c76078b265ef8526edd967e45ce15aa1f5af5fca78d751cd74a7cf808cd1b96">APP_GPU_BOUND</a>
+, <a class="el" href="group__enumerations.html#gaf6c76078b265ef8526edd967e45ce15aacb2e2326ad22a9565d9fda356bcab599">APP_GPU_NOT_BOUND</a>
+ }</td></tr>
+<tr class="memdesc:gaf6c76078b265ef8526edd967e45ce15a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the type of dependence of an application on the GPU on which it runs.  <a href="group__enumerations.html#gaf6c76078b265ef8526edd967e45ce15a">More...</a><br /></td></tr>
+<tr class="separator:gaf6c76078b265ef8526edd967e45ce15a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This section indicates the enumerator values for various ADLX functionalities.</p>
@@ -677,6 +686,33 @@ Enumerations</h2></td></tr>
  </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ga67d22cfa2969510afada5140a157df62a86bd1f9314544ffffd7a1a374a807e9f"></a>ANTILAGNEXT&#160;</td><td class="fielddoc"><p>The Antilag level is AntiLag Next. <br  />
+ </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="gaf6c76078b265ef8526edd967e45ce15a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf6c76078b265ef8526edd967e45ce15a">&#9670;&nbsp;</a></span>ADLX_APP_GPU_DEPENDENCY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__enumerations.html#gaf6c76078b265ef8526edd967e45ce15a">ADLX_APP_GPU_DEPENDENCY</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates the type of dependence of an application on the GPU on which it runs. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gaf6c76078b265ef8526edd967e45ce15aa80dd6f151c30b332eb37cca8622b055a"></a>APP_GPU_UNKNOWN&#160;</td><td class="fielddoc"><p>It is unknown if the application is bound to the GPU on which it runs. The application might behave unexpectedly if the GPU is powered off or disabled. <br  />
+ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gaf6c76078b265ef8526edd967e45ce15aa1f5af5fca78d751cd74a7cf808cd1b96"></a>APP_GPU_BOUND&#160;</td><td class="fielddoc"><p>The application is bound to the GPU on which it runs and will behave unexpectedly if the GPU is powered off or disabled. <br  />
+ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gaf6c76078b265ef8526edd967e45ce15aacb2e2326ad22a9565d9fda356bcab599"></a>APP_GPU_NOT_BOUND&#160;</td><td class="fielddoc"><p>The application is not bound to this GPU on which it runs and will continue to run properly if the GPU is powered off or disabled. <br  />
  </p>
 </td></tr>
 </table>
@@ -1259,7 +1295,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Indicates the priority of the log entry. </p>
+<p>Indicates the memory timing description. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gaa25f244e38a3502a52167c303abcec11afe3950cab8cd7256574a2d833ae06f26"></a>MEMORYTIMING_DEFAULT&#160;</td><td class="fielddoc"><p>The memory timing is default. <br  />
  </p>
@@ -1472,6 +1508,12 @@ Enumerations</h2></td></tr>
  </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ga9306b05f15578edbf79b649dd612b8c0a7ecc8145f60057fa833a86fb605f83f2"></a>ADLX_GPU_INACTIVE&#160;</td><td class="fielddoc"><p>This result indicates that the GPU is inactive. <br  />
+ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ga9306b05f15578edbf79b649dd612b8c0a2431684033e55e857a3f9b2d55d318f0"></a>ADLX_GPU_IN_USE&#160;</td><td class="fielddoc"><p>This result indicates that the GPU is in used by applications. <br  />
+ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ga9306b05f15578edbf79b649dd612b8c0a600700f1d71935ca0ff5836a41dd8edb"></a>ADLX_TIMEOUT_OPERATION&#160;</td><td class="fielddoc"><p>This result indicates that the operation is timeout. <br  />
  </p>
 </td></tr>
 </table>
@@ -1724,7 +1766,7 @@ Enumerations</h2></td></tr>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!--
-# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -1732,7 +1774,7 @@ Enumerations</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2023 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
+    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2024 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
   </ul>
 </div>
 </body>

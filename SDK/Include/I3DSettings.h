@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -70,7 +70,11 @@ namespace adlx
         * @addinfo
         * @ENG_START_DOX
         * Radeon Anti-Lag helps reduce input lag in GPU-limited cases by controlling the pace of the CPU work to ensure it doesn't get too far ahead of the GPU. <br>
-        * __Note:__ @ref DOX_IADLX3DChill "AMD Radeon Chill", and AMD Radeon Anti-Lag features cannot be enabled simultaneously. If AMD Radeon Chill is enabled, AMD Radeon Anti-Lag is automatically disabled.
+        *
+        * @depifc
+        * AMD Radeon Anti-Lag cannot be simultaneously enabled with @ref DOX_IADLX3DChill "AMD Radeon Chill".<br>
+        *
+        * When a mutually exclusive feature is enabled, AMD Radeon Anti-Lag is automatically disabled.
         * @ENG_END_DOX
         *
         *@copydoc IADLX3DAntiLag_REQ_TABLE
@@ -98,7 +102,11 @@ namespace adlx
         * @addinfo
         * @ENG_START_DOX
         * Radeon Anti-Lag helps reduce input lag in GPU-limited cases by controlling the pace of the CPU work to ensure it doesn't get too far ahead of the GPU. <br>
-        * __Note:__ @ref DOX_IADLX3DChill "AMD Radeon Chill", and AMD Radeon Anti-Lag features cannot be enabled simultaneously. If AMD Radeon Anti-Lag is enabled, AMD Radeon Chill is automatically disabled. However, the configuration of the disabled feature is preserved.
+        *
+        * @depifc
+        * AMD Radeon Anti-Lag cannot be simultaneously enabled with @ref DOX_IADLX3DChill "AMD Radeon Chill".<br>
+        *
+        * When AMD Radeon Anti-Lag is enabled, the mutually exclusive features are automatically disabled. If a mutually exclusive feature is re-enabled, its previous configuration settings are restored.
         * @ENG_END_DOX
         *
         *@copydoc IADLX3DAntiLag_REQ_TABLE
@@ -282,10 +290,13 @@ namespace adlx
         * @addinfo
         * @ENG_START_DOX
         * AMD Radeon Chill conserves GPU power and reduces heat by adjusting the FPS based on the intensity of in-game movement.<br>
-        * AMD Radeon Chill cannot be enabled simultaneously with @ref DOX_IADLX3DBoost "AMD Radeon Boost", @ref DOX_IADLX3DAntiLag "AMD Radeon Anti-Lag", and @ref DOX_IADLX3DAntiLag1 "AMD Radeon Anti-Lag Next".<br>
-        * On some AMD GPUs, AMD Radeon Chill cannot be enabled simultaneously with @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution".<br>
-        * When a mutually exclusive feature is enabled, AMD Radeon Chill is automatically disabled.<br>
-        * __Note:__ If AMD Radeon Chill is later re-enabled, its previous configuration settings will be restored.
+        *
+        * @depifc
+        * AMD Radeon Chill cannot be simultaneously enabled with @ref DOX_IADLX3DBoost "AMD Radeon Boost", @ref DOX_IADLX3DAntiLag "AMD Radeon Anti-Lag" @ref DOX_IADLX3DAntiLag1 "AMD Radeon Anti-Lag Next", or @ref DOX_IADLX3DAMDFluidMotionFrames "AMD Fluid Motion Frames".<br>
+        *
+        * On some AMD GPUs, AMD Radeon Chill cannot be simultaneously enabled with @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution".<br>
+        *
+        * If a mutually exclusive feature is enabled, AMD Radeon Chill is automatically disabled. When AMD Radeon Chill is re-enabled, its previous configuration settings are restored.<br>
         * @ENG_END_DOX
         *
         *@copydoc IADLX3DChill_REQ_TABLE
@@ -405,10 +416,13 @@ namespace adlx
         * @addinfo
         * @ENG_START_DOX
         * AMD Radeon Chill conserves GPU power and reduces heat by adjusting the FPS based on the intensity of in-game movement.<br>
-        * AMD Radeon Chill cannot be enabled simultaneously with @ref DOX_IADLX3DBoost "AMD Radeon Boost", @ref DOX_IADLX3DAntiLag "AMD Radeon Anti-Lag", and @ref DOX_IADLX3DAntiLag1 "AMD Radeon Anti-Lag Next".<br>
-        * On some AMD GPUs, AMD Radeon Chill cannot be enabled simultaneously with @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution".<br>
-        * When AMD Radeon Chill is enabled, the mutually exclusive features are automatically disabled.<br>
-        * __Note:__ If the disabled feature is later re-enabled, its previous configuration settings will be restored.
+        *
+        * @depifc
+        * AMD Radeon Chill cannot be simultaneously enabled with @ref DOX_IADLX3DBoost "AMD Radeon Boost", @ref DOX_IADLX3DAntiLag "AMD Radeon Anti-Lag" @ref DOX_IADLX3DAntiLag1 "AMD Radeon Anti-Lag Next", and @ref DOX_IADLX3DAMDFluidMotionFrames "AMD Fluid Motion Frames".<br>
+        *
+        * On some AMD GPUs, AMD Radeon Chill cannot simultaneously enabled with @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution".<br>
+        *
+        * When AMD Radeon Chill is enabled, the mutually exclusive features are automatically disabled. If a mutually exclusive feature is re-enabled, its previous configuration settings are restored.<br>
         * @ENG_END_DOX
         *
         *@copydoc IADLX3DChill_REQ_TABLE
@@ -560,9 +574,15 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        *@ENG_START_DOX AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality. Only works in supported games.<br>
-        * __Note:__ @ref DOX_IADLX3DChill "AMD Radeon Chill", AMD Radeon Boost features cannot be enabled simultaneously. If AMD Radeon Chill is enabled, AMD Radeon Boost is automatically disabled.<br>
-        * On some AMD GPUs, AMD Radeon Boost and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If Radeon Super Resolution is enabled, AMD Radeon Boost is automatically disabled.
+        *@ENG_START_DOX AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality.<br>
+        * __Note:__ Only works in supported games.<br>
+        *
+        * @depifc
+        * AMD Radeon Boost cannot be simultaneously enabled with @ref DOX_IADLX3DChill "AMD Radeon Chill".<br>
+        *
+        * On some AMD GPUs, AMD Radeon Boost cannot be simultaneously enabled with @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution".<br>
+        *
+        * When a mutually exclusive feature is enabled, AMD Radeon Boost is automatically disabled. If AMD Radeon Boost is later re-enabled, its previous configuration settings will be restored.
         * @ENG_END_DOX
         *
         *@copydoc IADLX3DBoost_REQ_TABLE
@@ -645,9 +665,15 @@ namespace adlx
         * Refer to @ref ADLX_RESULT for success codes and error codes.<br> @ENG_END_DOX
         *
         * @addinfo
-        *@ENG_START_DOX AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality. Only works in supported games. <br>
-        * __Note:__ @ref DOX_IADLX3DChill "AMD Radeon Chill", AMD Radeon Boost features cannot be enabled simultaneously. If AMD Radeon Boost is enabled, AMD Radeon Chill are automatically disabled. However, the configuration of the disabled feature is preserved.<br>
-        * On some AMD GPUs, AMD Radeon Boost and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If AMD Radeon Boost is enabled, Radeon Super Resolution is automatically disabled.
+        *@ENG_START_DOX AMD Radeon Boost dynamically reduces resolution during motion to improve performance with little perceptible impact on image quality.<br>
+        * __Note:__ Only works in supported games.<br>
+        *
+        * @depifc
+        * AMD Radeon Boost cannot be simultaneously enabled with @ref DOX_IADLX3DChill "AMD Radeon Chill".<br>
+        *
+        * On some AMD GPUs, AMD Radeon Boost cannot be simultaneously enabled with @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution".<br>
+        *
+        * When AMD Radeon Boost is enabled, the mutually exclusive features are automatically disabled. If a mutually exclusive feature is re-enabled, its previous configuration settings are restored.
         * @ENG_END_DOX
         *
         *@copydoc IADLX3DBoost_REQ_TABLE
@@ -766,7 +792,12 @@ namespace adlx
         *
         * @addinfo
         *@ENG_START_DOX AMD Radeon Image Sharpening restores clarity softened by other effects to in-game visuals, and select productivity and media applications.<br>
-        * __Note:__ On some AMD GPUs, AMD Radeon Image Sharpening and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If Radeon Super Resolution is enabled, AMD Radeon Image Sharpening is automatically disabled.
+
+
+        * @depifc
+        * On some AMD GPUs, AMD Radeon 3D Image Sharpening is mutually exclusive with @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution".<br>
+        *
+        * When a mutually exclusive feature is enabled, AMD Radeon 3D Image Sharpening is automatically disabled. If AMD Radeon 3D Image Sharpening is later re-enabled, its previous configuration settings will be restored.<br>
         * @ENG_END_DOX
         *
         *@copydoc IADLX3DImageSharpening_REQ_TABLE
@@ -848,7 +879,11 @@ namespace adlx
         *
         * @addinfo
         *@ENG_START_DOX AMD Radeon Image Sharpening restores clarity softened by other effects to in-game visuals, and select productivity and media applications.<br>
-        * __Note:__ On some AMD GPUs, AMD Radeon Image Sharpening and @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution" cannot be enabled simultaneously. If Radeon Image Sharpening is enabled, AMD Radeon Super Resolution is automatically disabled.
+        *
+        * @depifc
+        * On some AMD GPUs, AMD Radeon 3D Image Sharpening is mutually exclusive with @ref DOX_IADLX3DRadeonSuperResolution "Radeon Super Resolution".<br>
+        *
+        * When AMD Radeon 3D Image Sharpening is enabled, the mutually exclusive features are automatically disabled. If a mutually exclusive feature is re-enabled, its previous configuration settings are restored.<br>
         * @ENG_END_DOX
         *
         *@copydoc IADLX3DImageSharpening_REQ_TABLE
@@ -2149,9 +2184,12 @@ namespace adlx
         * @ENG_START_DOX
         * Radeon Super Resolution is an upscaling feature for faster game frame rates. <br>
         *
-        * __Note:__ @ref DOX_IADLXDisplayGPUScaling "GPU scaling" is a requirement for Radeon Super Resolution. When Radeon Super Resolution is enabled, GPU scaling is automatically enabled. If GPU scaling is disabled while Radeon Super Resolution is enabled, Radeon Super Resolution is automatically disabled.
+        * @depifc
+        * Radeon Super Resolution requires @ref DOX_IADLXDisplayGPUScaling "GPU scaling". When Radeon Super Resolution is enabled, GPU scaling is automatically enabled. If GPU scaling is disabled while Radeon Super Resolution is enabled, Radeon Super Resolution is automatically disabled.<br>
         *
-        * On some AMD GPUs, Radeon Super Resolution is mutually exclusive with @ref DOX_IADLX3DChill "AMD Radeon Chill", @ref DOX_IADLX3DBoost "AMD Radeon Boost", @ref DOX_IADLX3DImageSharpening "AMD Radeon Image Sharpening", @ref DOX_IADLXDisplayIntegerScaling "Integer Display Scaling", and @ref DOX_IADLXDisplayScalingMode_GetMode "Center Scaling". When Radeon Super Resolution is enabled, the mutually exclusive features are automatically disabled.<br>
+        * On some AMD GPUs, Radeon Super Resolution is mutually exclusive with @ref DOX_IADLX3DChill "AMD Radeon Chill", @ref DOX_IADLX3DBoost "AMD Radeon Boost", @ref DOX_IADLX3DImageSharpening "AMD Radeon Image Sharpening", @ref DOX_IADLXDisplayIntegerScaling "Integer Display Scaling", or @ref DOX_IADLXDisplayScalingMode_GetMode "Center Scaling".<br>
+        *
+        * When a mutually exclusive feature is enabled, Radeon Super Resolution is automatically disabled. If Radeon Super Resolution is later re-enabled, its previous configuration settings will be restored.<br>
         * @ENG_END_DOX
         *
         *@copydoc IADLX3DRadeonSuperResolution_REQ_TABLE
@@ -2180,10 +2218,14 @@ namespace adlx
         * @ENG_START_DOX
         * Radeon Super Resolution is an upscaling feature for faster game frame rates. <br>
         *
-        * __Note:__ @ref DOX_IADLXDisplayGPUScaling "GPU scaling" is a requirement for Radeon Super Resolution. When Radeon Super Resolution is enabled, GPU scaling is automatically enabled. If GPU scaling is disabled while Radeon Super Resolution is enabled, Radeon Super Resolution is automatically disabled.
+        * @depifc
+        * Radeon Super Resolution requires @ref DOX_IADLXDisplayGPUScaling "GPU scaling". When Radeon Super Resolution is enabled, GPU scaling is automatically enabled. If GPU scaling is disabled while Radeon Super Resolution is enabled, Radeon Super Resolution is automatically disabled.<br>
         *
-        * On some AMD GPUs, Radeon Super Resolution is mutually exclusive with @ref DOX_IADLX3DChill "AMD Radeon Chill", @ref DOX_IADLX3DBoost "AMD Radeon Boost", @ref DOX_IADLX3DImageSharpening "AMD Radeon Image Sharpening", @ref DOX_IADLXDisplayIntegerScaling "Integer Display Scaling", and @ref DOX_IADLXDisplayScalingMode_GetMode "Center Scaling". When Radeon Super Resolution is enabled, the mutually exclusive features are automatically disabled.<br>
-
+        * On some AMD GPUs, Radeon Super Resolution is mutually exclusive with @ref DOX_IADLX3DChill "AMD Radeon Chill", @ref DOX_IADLX3DBoost "AMD Radeon Boost", @ref DOX_IADLX3DImageSharpening "AMD Radeon Image Sharpening", @ref DOX_IADLXDisplayIntegerScaling "Integer Display Scaling", or @ref DOX_IADLXDisplayScalingMode_GetMode "Center Scaling".<br>
+		*
+		* When Radeon Super Resolution is enabled, the mutually exclusive features are automatically disabled.<br>
+        *
+        * If a mutually exclusive feature is re-enabled, its previous configuration settings are restored.<br>
         * @ENG_END_DOX
         *
         *@copydoc IADLX3DRadeonSuperResolution_REQ_TABLE

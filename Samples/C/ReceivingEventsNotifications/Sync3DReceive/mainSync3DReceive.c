@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -8,6 +8,7 @@
 
 #include "SDK/ADLXHelper/Windows/C/ADLXHelper.h"
 #include "SDK/Include/I3DSettings.h"
+#include "SDK/Include/I3DSettings1.h"
 #include "conio.h"
 
 // Block event to verify call back
@@ -23,7 +24,14 @@ adlx_bool ADLX_STD_CALL On3DSettingsChanged(IADLX3DSettingsChangedListener *pThi
     // Get the GPU interface
     IADLXGPU* gpu = NULL;
     p3DSettingsChangedEvent->pVtbl->GetGPU(p3DSettingsChangedEvent, &gpu);
-
+	
+	IADLX3DSettingsChangedEvent1* p3DSettingsChangedEvent1 = NULL;
+    p3DSettingsChangedEvent->pVtbl->QueryInterface(p3DSettingsChangedEvent, IID_IADLX3DSettingsChangedEvent1(), &p3DSettingsChangedEvent1);
+    if (p3DSettingsChangedEvent1 == NULL)
+    {
+        printf("3DSettingsChangedEvent1 not supported\n");
+    }
+	
     //RadeonSuperResolution is a global feature (the GPU interface is NULL); skip printing its name
     if (!p3DSettingsChangedEvent->pVtbl->IsRadeonSuperResolutionChanged(p3DSettingsChangedEvent))
     {
@@ -90,6 +98,10 @@ adlx_bool ADLX_STD_CALL On3DSettingsChanged(IADLX3DSettingsChangedListener *pThi
         {
             printf("\tget sync event, RSR changed\n");
         }
+        else if (p3DSettingsChangedEvent1->pVtbl->IsAMDFluidMotionFramesChanged(p3DSettingsChangedEvent1))
+        {
+            printf("\tAMDFluidMotionFrames changed\n");
+        }
     }
     
     // Release the GPU interface
@@ -97,6 +109,12 @@ adlx_bool ADLX_STD_CALL On3DSettingsChanged(IADLX3DSettingsChangedListener *pThi
     {
         gpu->pVtbl->Release(gpu);
         gpu = NULL;
+    }
+    // Release the IADLX3DSettingsChangedEvent1 interface
+    if (p3DSettingsChangedEvent1 != NULL)
+    {
+        p3DSettingsChangedEvent1->pVtbl->Release(p3DSettingsChangedEvent1);
+        p3DSettingsChangedEvent1 = NULL;
     }
 
     SetEvent(blockEvent);

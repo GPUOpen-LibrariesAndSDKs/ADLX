@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -39,7 +39,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.2</span>
+   &#160;<span id="projectnumber">v1.3</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('cpp__chill.html',''); initResizable();
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -132,7 +132,7 @@ $(document).ready(function(){initNavTree('cpp__chill.html',''); initResizable();
 </body>
 </html> <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -235,21 +235,30 @@ $(document).ready(function(){initNavTree('cpp__chill.html',''); initResizable();
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> GetChillState(<span class="keyword">const</span> IADLX3DChillPtr&amp; d3dChill)</div>
 <div class="line">{</div>
-<div class="line">    adlx_bool enabled = <span class="keyword">false</span>;</div>
-<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dChill-&gt;IsEnabled(&amp;enabled);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsEnabled: &quot;</span> &lt;&lt; enabled &lt;&lt; std::endl;</div>
-<div class="line">    adlx_int minFPS, maxFPS;</div>
-<div class="line">    <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> fpsRange;</div>
-<div class="line">    res = d3dChill-&gt;GetMinFPS(&amp;minFPS);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tCurrent MinFPS: &quot;</span> &lt;&lt; minFPS &lt;&lt; std::endl;</div>
-<div class="line">    res = d3dChill-&gt;GetMaxFPS(&amp;maxFPS);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tCurrent MaxFPS: &quot;</span> &lt;&lt; maxFPS &lt;&lt; std::endl;</div>
-<div class="line">    res = d3dChill-&gt;GetFPSRange(&amp;fpsRange);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tFPSSet limit [ &quot;</span> &lt;&lt; fpsRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> &lt;&lt; <span class="stringliteral">&quot; ,&quot;</span> &lt;&lt; fpsRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> &lt;&lt; <span class="stringliteral">&quot; ], step: &quot;</span> &lt;&lt; fpsRange.<a class="code" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a> &lt;&lt; std::endl;</div>
+<div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dChill-&gt;IsSupported(&amp;supported);</div>
+<div class="line">    <span class="keywordflow">if</span> (supported)</div>
+<div class="line">    {</div>
+<div class="line">        adlx_bool enabled = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dChill-&gt;IsEnabled(&amp;enabled);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsEnabled: &quot;</span> &lt;&lt; enabled &lt;&lt; std::endl;</div>
+<div class="line">        adlx_int minFPS, maxFPS;</div>
+<div class="line">        <a class="code" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> fpsRange;</div>
+<div class="line">        res = d3dChill-&gt;GetMinFPS(&amp;minFPS);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tCurrent MinFPS: &quot;</span> &lt;&lt; minFPS &lt;&lt; std::endl;</div>
+<div class="line">        res = d3dChill-&gt;GetMaxFPS(&amp;maxFPS);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tCurrent MaxFPS: &quot;</span> &lt;&lt; maxFPS &lt;&lt; std::endl;</div>
+<div class="line">        res = d3dChill-&gt;GetFPSRange(&amp;fpsRange);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tFPSSet limit [ &quot;</span> &lt;&lt; fpsRange.<a class="code" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> &lt;&lt; <span class="stringliteral">&quot; ,&quot;</span> &lt;&lt; fpsRange.<a class="code" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> &lt;&lt; <span class="stringliteral">&quot; ], step: &quot;</span> &lt;&lt; fpsRange.<a class="code" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tChill feature is not supported &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetChillState(<span class="keyword">const</span> IADLX3DChillPtr&amp; d3dChill, <span class="keywordtype">int</span> index)</div>
@@ -351,7 +360,7 @@ $(document).ready(function(){initNavTree('cpp__chill.html',''); initResizable();
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:305</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:307</div></div>
 <div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition:</b> ADLXDefines.h:278</div></div>
 <div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:154</div></div>
 <div class="ttc" id="agroup__structures_val_html_ae0e545b501a683c565f08089ed3e8023"><div class="ttname"><a href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">ADLX_IntRange::step</a></div><div class="ttdeci">adlx_int step</div><div class="ttdef"><b>Definition:</b> ADLXStructures.h:155</div></div>
@@ -361,7 +370,7 @@ $(document).ready(function(){initNavTree('cpp__chill.html',''); initResizable();
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!--
-# Copyright (c) 2021 - 2023 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -369,7 +378,7 @@ $(document).ready(function(){initNavTree('cpp__chill.html',''); initResizable();
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2023 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
+    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2024 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
   </ul>
 </div>
 </body>
