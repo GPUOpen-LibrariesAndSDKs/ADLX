@@ -8,6 +8,10 @@
 #pragma once
 #include "ADLXDefines.h"
 
+#if defined (__cplusplus)
+using namespace adlx;
+#endif
+
 /**   @file */
 //-------------------------------------------------------------------------------------------------
 #pragma region ADLX_RGB

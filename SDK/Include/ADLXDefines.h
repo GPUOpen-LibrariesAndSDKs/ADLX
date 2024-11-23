@@ -319,6 +319,11 @@ typedef enum
 
 #pragma endregion ADLX_RESULT
 
+#if defined (__cplusplus)
+namespace adlx
+{
+#endif
+
 #pragma region ADLX_HG_TYPE
 /**
  * @enum ADLX_HG_TYPE
@@ -996,7 +1001,9 @@ typedef enum
 #pragma endregion ADLX_APP_GPU_DEPENDENCY
 
 #pragma endregion ADLX data types
-
+#if defined (__cplusplus)
+} //namespace adlx
+#endif
 //-------------------------------------------------------------------------------------------------
 //definitions for IADLXInterface
 #pragma region ADLX_DECLARE_IID
