@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_display_services" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXDisplayServices</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display_services1" prot="public" virt="non-virtual">adlx::IADLXDisplayServices1</derivedcompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_services_1a3bccfafd35725c20f72d42819e5ebc60" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::GetNumberOfDisplays</definition>
         <argsstring>(adlx_uint *numDisplays)=0</argsstring>
         <name>GetNumberOfDisplays</name>
+        <qualifiedname>adlx::IADLXDisplayServices::GetNumberOfDisplays</qualifiedname>
         <param>
           <type>adlx_uint *</type>
           <declname>numDisplays</declname>
@@ -27,6 +28,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::GetDisplays</definition>
         <argsstring>(IADLXDisplayList **ppDisplay)=0</argsstring>
         <name>GetDisplays</name>
+        <qualifiedname>adlx::IADLXDisplayServices::GetDisplays</qualifiedname>
         <param>
           <type>IADLXDisplayList **</type>
           <declname>ppDisplay</declname>
@@ -44,6 +46,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::Get3DLUT</definition>
         <argsstring>(IADLXDisplay *pDisplay, IADLXDisplay3DLUT **ppDisp3DLUT)=0</argsstring>
         <name>Get3DLUT</name>
+        <qualifiedname>adlx::IADLXDisplayServices::Get3DLUT</qualifiedname>
         <param>
           <type>IADLXDisplay *</type>
           <declname>pDisplay</declname>
@@ -65,6 +68,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::GetGamut</definition>
         <argsstring>(IADLXDisplay *pDisplay, IADLXDisplayGamut **ppDispGamut)=0</argsstring>
         <name>GetGamut</name>
+        <qualifiedname>adlx::IADLXDisplayServices::GetGamut</qualifiedname>
         <param>
           <type>IADLXDisplay *</type>
           <declname>pDisplay</declname>
@@ -86,6 +90,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::GetGamma</definition>
         <argsstring>(IADLXDisplay *pDisplay, IADLXDisplayGamma **ppDispGamma)=0</argsstring>
         <name>GetGamma</name>
+        <qualifiedname>adlx::IADLXDisplayServices::GetGamma</qualifiedname>
         <param>
           <type>IADLXDisplay *</type>
           <declname>pDisplay</declname>
@@ -107,6 +112,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::GetDisplayChangedHandling</definition>
         <argsstring>(IADLXDisplayChangedHandling **ppDisplayChangedHandling)=0</argsstring>
         <name>GetDisplayChangedHandling</name>
+        <qualifiedname>adlx::IADLXDisplayServices::GetDisplayChangedHandling</qualifiedname>
         <param>
           <type>IADLXDisplayChangedHandling **</type>
           <declname>ppDisplayChangedHandling</declname>
@@ -124,6 +130,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::GetFreeSync</definition>
         <argsstring>(IADLXDisplay *pDisplay, IADLXDisplayFreeSync **ppFreeSync)=0</argsstring>
         <name>GetFreeSync</name>
+        <qualifiedname>adlx::IADLXDisplayServices::GetFreeSync</qualifiedname>
         <param>
           <type>IADLXDisplay *</type>
           <declname>pDisplay</declname>
@@ -145,6 +152,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::GetVirtualSuperResolution</definition>
         <argsstring>(IADLXDisplay *pDisplay, IADLXDisplayVSR **ppVSR)=0</argsstring>
         <name>GetVirtualSuperResolution</name>
+        <qualifiedname>adlx::IADLXDisplayServices::GetVirtualSuperResolution</qualifiedname>
         <param>
           <type>IADLXDisplay *</type>
           <declname>pDisplay</declname>
@@ -166,6 +174,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::GetGPUScaling</definition>
         <argsstring>(IADLXDisplay *pDisplay, IADLXDisplayGPUScaling **ppGPUScaling)=0</argsstring>
         <name>GetGPUScaling</name>
+        <qualifiedname>adlx::IADLXDisplayServices::GetGPUScaling</qualifiedname>
         <param>
           <type>IADLXDisplay *</type>
           <declname>pDisplay</declname>
@@ -187,6 +196,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::GetScalingMode</definition>
         <argsstring>(IADLXDisplay *pDisplay, IADLXDisplayScalingMode **ppScalingMode)=0</argsstring>
         <name>GetScalingMode</name>
+        <qualifiedname>adlx::IADLXDisplayServices::GetScalingMode</qualifiedname>
         <param>
           <type>IADLXDisplay *</type>
           <declname>pDisplay</declname>
@@ -208,6 +218,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::GetIntegerScaling</definition>
         <argsstring>(IADLXDisplay *pDisplay, IADLXDisplayIntegerScaling **ppIntegerScaling)=0</argsstring>
         <name>GetIntegerScaling</name>
+        <qualifiedname>adlx::IADLXDisplayServices::GetIntegerScaling</qualifiedname>
         <param>
           <type>IADLXDisplay *</type>
           <declname>pDisplay</declname>
@@ -229,6 +240,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::GetColorDepth</definition>
         <argsstring>(IADLXDisplay *pDisplay, IADLXDisplayColorDepth **ppColorDepth)=0</argsstring>
         <name>GetColorDepth</name>
+        <qualifiedname>adlx::IADLXDisplayServices::GetColorDepth</qualifiedname>
         <param>
           <type>IADLXDisplay *</type>
           <declname>pDisplay</declname>
@@ -250,6 +262,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::GetPixelFormat</definition>
         <argsstring>(IADLXDisplay *pDisplay, IADLXDisplayPixelFormat **ppPixelFormat)=0</argsstring>
         <name>GetPixelFormat</name>
+        <qualifiedname>adlx::IADLXDisplayServices::GetPixelFormat</qualifiedname>
         <param>
           <type>IADLXDisplay *</type>
           <declname>pDisplay</declname>
@@ -271,6 +284,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::GetCustomColor</definition>
         <argsstring>(IADLXDisplay *pDisplay, IADLXDisplayCustomColor **ppCustomColor)=0</argsstring>
         <name>GetCustomColor</name>
+        <qualifiedname>adlx::IADLXDisplayServices::GetCustomColor</qualifiedname>
         <param>
           <type>IADLXDisplay *</type>
           <declname>pDisplay</declname>
@@ -292,6 +306,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::GetHDCP</definition>
         <argsstring>(IADLXDisplay *pDisplay, IADLXDisplayHDCP **ppHDCP)=0</argsstring>
         <name>GetHDCP</name>
+        <qualifiedname>adlx::IADLXDisplayServices::GetHDCP</qualifiedname>
         <param>
           <type>IADLXDisplay *</type>
           <declname>pDisplay</declname>
@@ -313,6 +328,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::GetCustomResolution</definition>
         <argsstring>(IADLXDisplay *pDisplay, IADLXDisplayCustomResolution **ppCustomResolution)=0</argsstring>
         <name>GetCustomResolution</name>
+        <qualifiedname>adlx::IADLXDisplayServices::GetCustomResolution</qualifiedname>
         <param>
           <type>IADLXDisplay *</type>
           <declname>pDisplay</declname>
@@ -334,6 +350,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices::GetVariBright</definition>
         <argsstring>(IADLXDisplay *pDisplay, IADLXDisplayVariBright **ppVariBright)=0</argsstring>
         <name>GetVariBright</name>
+        <qualifiedname>adlx::IADLXDisplayServices::GetVariBright</qualifiedname>
         <param>
           <type>IADLXDisplay *</type>
           <declname>pDisplay</declname>
@@ -350,7 +367,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplays.h" line="2623" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

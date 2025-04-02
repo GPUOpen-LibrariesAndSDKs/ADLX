@@ -1,27 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="_i_g_p_u_manual_power_tuning_8h" kind="file" language="C++">
     <compoundname>IGPUManualPowerTuning.h</compoundname>
     <includes refid="_a_d_l_x_structures_8h" local="yes">ADLXStructures.h</includes>
     <incdepgraph>
-      <node id="1">
-        <label>D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualPowerTuning.h</label>
-        <link refid="_i_g_p_u_manual_power_tuning_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>stdint.h</label>
-      </node>
-      <node id="4">
-        <label>Windows.h</label>
-      </node>
-      <node id="2">
-        <label>ADLXStructures.h</label>
-        <link refid="_a_d_l_x_structures_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="3">
         <label>ADLXDefines.h</label>
         <link refid="_a_d_l_x_defines_8h"/>
@@ -32,11 +14,30 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
+      <node id="2">
+        <label>ADLXStructures.h</label>
+        <link refid="_a_d_l_x_structures_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualPowerTuning.h</label>
+        <link refid="_i_g_p_u_manual_power_tuning_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Windows.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
       <node id="5">
         <label>stdio.h</label>
       </node>
     </incdepgraph>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_manual_power_tuning" prot="public">adlx::IADLXManualPowerTuning</innerclass>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x_manual_power_tuning1" prot="public">adlx::IADLXManualPowerTuning1</innerclass>
     <innernamespace refid="namespaceadlx">adlx</innernamespace>
     <briefdescription>
     </briefdescription>
@@ -44,7 +45,7 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2024<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2025<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
@@ -110,7 +111,56 @@
 <codeline lineno="249"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="250"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXManualPowerTuning</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="251"><highlight class="normal"></highlight></codeline>
-<codeline lineno="252"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="comment">//ADLX_IGPUMANUALPOWERTUNING_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>IADLXManualPowerTuning1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">adlx</highlight></codeline>
+<codeline lineno="256"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLXManualPowerTuning1<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLXManualPowerTuning</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DECLARE_IID(L</highlight><highlight class="stringliteral">&quot;IADLXManualPowerTuning1&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>GetPowerLimitDefault(adlx_int*<sp/>defaultVal)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>GetTDCLimitDefault(adlx_int*<sp/>defaultVal)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLXManualPowerTuning1&gt;<sp/>IADLXManualPowerTuning1Ptr;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal">ADLX_DECLARE_IID(IADLXManualPowerTuning1,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLXManualPowerTuning1&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXManualPowerTuning1<sp/>IADLXManualPowerTuning1;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXManualPowerTuning1Vtbl</highlight></codeline>
+<codeline lineno="315"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Acquire)(IADLXManualPowerTuning1*<sp/>pThis);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Release)(IADLXManualPowerTuning1*<sp/>pThis);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>QueryInterface)(IADLXManualPowerTuning1*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXManualPowerTuning</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetPowerLimitRange)(IADLXManualPowerTuning1*<sp/>pThis,<sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref>*<sp/>tuningRange);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetPowerLimit)(IADLXManualPowerTuning1*<sp/>pThis,<sp/>adlx_int*<sp/>curVal);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>SetPowerLimit)(IADLXManualPowerTuning1*<sp/>pThis,<sp/>adlx_int<sp/>curVal);</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>IsSupportedTDCLimit)(IADLXManualPowerTuning1*<sp/>pThis,<sp/>adlx_bool*<sp/>supported);</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetTDCLimitRange)(IADLXManualPowerTuning1*<sp/>pThis,<sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref>*<sp/>tuningRange);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetTDCLimit)(IADLXManualPowerTuning1*<sp/>pThis,<sp/>adlx_int*<sp/>curVal);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>SetTDCLimit)(IADLXManualPowerTuning1*<sp/>pThis,<sp/>adlx_int<sp/>curVal);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXManualPowerTuning1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetPowerLimitDefault)(IADLXManualPowerTuning1*<sp/>pThis,<sp/>adlx_int*<sp/>defaultVal);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetTDCLimitDefault)(IADLXManualPowerTuning1*<sp/>pThis,<sp/>adlx_int*<sp/>defaultVal);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal">}IADLXManualPowerTuning1Vtbl;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXManualPowerTuning1<sp/>{<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLXManualPowerTuning1Vtbl*<sp/>pVtbl;<sp/>};</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXManualPowerTuning1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="comment">//ADLX_IGPUMANUALPOWERTUNING_H</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualPowerTuning.h"/>
   </compounddef>

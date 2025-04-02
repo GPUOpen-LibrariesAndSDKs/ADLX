@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="page_guide__compatibility" kind="page">
     <compoundname>page_guide_Compatibility</compoundname>
     <title>Compatibility</title>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>ADLX features forward and backward compatibility for ADLX dependent applications, including compatibility for system installed AMD drivers. An application using ADLX will run as expected when installed on a system with a newer AMD driver version. If the application is installed on a system with an older AMD driver version, the application will run with reduced functionality and support for some interfaces.</para>
+<para>ADLX provides forward and backward compatibility for ADLX dependent applications, including compatibility for system installed AMD drivers. An application using ADLX will run as expected when installed on a system with a newer AMD driver version. If the application is installed on a system with an older AMD driver version, the application will run with reduced functionality, supporting only the interfaces from the ADLX version installed with the older AMD driver.</para>
 <para>When new functionalities are introduced, they are provided in new interfaces. ADLX interfaces are locked and do not change; all in-application ADLX code will continue to compile throughout future versions of the ADLX SDK.<linebreak/>
 </para>
 <para><bold>Note</bold>: ADLX SDK documentation demonstrates how to code a third-party application for unsupported interfaces.</para>

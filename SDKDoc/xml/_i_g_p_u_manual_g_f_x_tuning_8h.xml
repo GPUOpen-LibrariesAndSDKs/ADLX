@@ -1,27 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="_i_g_p_u_manual_g_f_x_tuning_8h" kind="file" language="C++">
     <compoundname>IGPUManualGFXTuning.h</compoundname>
     <includes refid="_a_d_l_x_structures_8h" local="yes">ADLXStructures.h</includes>
     <incdepgraph>
-      <node id="6">
-        <label>stdint.h</label>
-      </node>
-      <node id="4">
-        <label>Windows.h</label>
-      </node>
-      <node id="1">
-        <label>D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h</label>
-        <link refid="_i_g_p_u_manual_g_f_x_tuning_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>ADLXStructures.h</label>
-        <link refid="_a_d_l_x_structures_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="3">
         <label>ADLXDefines.h</label>
         <link refid="_a_d_l_x_defines_8h"/>
@@ -32,12 +14,31 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
+      <node id="2">
+        <label>ADLXStructures.h</label>
+        <link refid="_a_d_l_x_structures_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h</label>
+        <link refid="_i_g_p_u_manual_g_f_x_tuning_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Windows.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
       <node id="5">
         <label>stdio.h</label>
       </node>
     </incdepgraph>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning1" prot="public">adlx::IADLXManualGraphicsTuning1</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2" prot="public">adlx::IADLXManualGraphicsTuning2</innerclass>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2__1" prot="public">adlx::IADLXManualGraphicsTuning2_1</innerclass>
     <innernamespace refid="namespaceadlx">adlx</innernamespace>
     <briefdescription>
     </briefdescription>
@@ -45,7 +46,7 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2024<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2025<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ADLX_IGPUMANUALGFXTUNING_H</highlight><highlight class="normal"></highlight></codeline>
@@ -123,51 +124,105 @@
 <codeline lineno="267"><highlight class="normal"></highlight></codeline>
 <codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>SetGPUMinFrequency<sp/>(adlx_int<sp/>minFreq)<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="294"><highlight class="normal"></highlight></codeline>
-<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>GetGPUMaxFrequencyRange<sp/>(<ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref>*<sp/>tuningRange)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="321"><highlight class="normal"></highlight></codeline>
-<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>GetGPUMaxFrequency<sp/>(adlx_int*<sp/>maxFreq)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="348"><highlight class="normal"></highlight></codeline>
-<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>SetGPUMaxFrequency<sp/>(adlx_int<sp/>maxFreq)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="375"><highlight class="normal"></highlight></codeline>
-<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>GetGPUVoltageRange<sp/>(<ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref>*<sp/>tuningRange)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="402"><highlight class="normal"></highlight></codeline>
-<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>GetGPUVoltage<sp/>(adlx_int*<sp/>volt)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="429"><highlight class="normal"></highlight></codeline>
-<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>SetGPUVoltage<sp/>(adlx_int<sp/>volt)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLXManualGraphicsTuning2&gt;<sp/>IADLXManualGraphicsTuning2Ptr;</highlight></codeline>
-<codeline lineno="459"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="460"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="461"><highlight class="normal">ADLX_DECLARE_IID<sp/>(IADLXManualGraphicsTuning2,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLXManualGraphicsTuning2&quot;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="462"><highlight class="normal"></highlight></codeline>
-<codeline lineno="463"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXManualGraphicsTuning2<sp/>IADLXManualGraphicsTuning2;</highlight></codeline>
-<codeline lineno="464"><highlight class="normal"></highlight></codeline>
-<codeline lineno="465"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXManualGraphicsTuning2Vtbl</highlight></codeline>
-<codeline lineno="466"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long<sp/>(ADLX_STD_CALL<sp/>*Acquire)(IADLXManualGraphicsTuning2*<sp/>pThis);</highlight></codeline>
-<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long<sp/>(ADLX_STD_CALL<sp/>*Release)(IADLXManualGraphicsTuning2*<sp/>pThis);</highlight></codeline>
-<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*QueryInterface)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
-<codeline lineno="471"><highlight class="normal"></highlight></codeline>
-<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXManualGraphicsTuning2</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetGPUMinFrequencyRange)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref>*<sp/>tuningRange);</highlight></codeline>
-<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetGPUMinFrequency)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/>adlx_int*<sp/>minFreq);</highlight></codeline>
-<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*SetGPUMinFrequency)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/>adlx_int<sp/>minFreq);</highlight></codeline>
-<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetGPUMaxFrequencyRange)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref>*<sp/>tuningRange);</highlight></codeline>
-<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetGPUMaxFrequency)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/>adlx_int*<sp/>maxFreq);</highlight></codeline>
-<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*SetGPUMaxFrequency)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/>adlx_int<sp/>maxFreq);</highlight></codeline>
-<codeline lineno="479"><highlight class="normal"></highlight></codeline>
-<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetGPUVoltageRange)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref>*<sp/>tuningRange);</highlight></codeline>
-<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetGPUVoltage)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/>adlx_int*<sp/>volt);</highlight></codeline>
-<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*SetGPUVoltage)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/>adlx_int<sp/>volt);</highlight></codeline>
-<codeline lineno="483"><highlight class="normal">}IADLXManualGraphicsTuning2Vtbl;</highlight></codeline>
-<codeline lineno="484"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXManualGraphicsTuning2<sp/>{<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLXManualGraphicsTuning2Vtbl<sp/>*pVtbl;<sp/>};</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>GetGPUMaxFrequencyRange<sp/>(<ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref>*<sp/>tuningRange)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>GetGPUMaxFrequency<sp/>(adlx_int*<sp/>maxFreq)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>SetGPUMaxFrequency<sp/>(adlx_int<sp/>maxFreq)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>GetGPUVoltageRange<sp/>(<ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref>*<sp/>tuningRange)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"></highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>GetGPUVoltage<sp/>(adlx_int*<sp/>volt)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"></highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>SetGPUVoltage<sp/>(adlx_int<sp/>volt)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLXManualGraphicsTuning2&gt;<sp/>IADLXManualGraphicsTuning2Ptr;</highlight></codeline>
+<codeline lineno="465"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="466"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="467"><highlight class="normal">ADLX_DECLARE_IID<sp/>(IADLXManualGraphicsTuning2,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLXManualGraphicsTuning2&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"></highlight></codeline>
+<codeline lineno="469"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXManualGraphicsTuning2<sp/>IADLXManualGraphicsTuning2;</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"></highlight></codeline>
+<codeline lineno="471"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXManualGraphicsTuning2Vtbl</highlight></codeline>
+<codeline lineno="472"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long<sp/>(ADLX_STD_CALL<sp/>*Acquire)(IADLXManualGraphicsTuning2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long<sp/>(ADLX_STD_CALL<sp/>*Release)(IADLXManualGraphicsTuning2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*QueryInterface)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"></highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXManualGraphicsTuning2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetGPUMinFrequencyRange)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref>*<sp/>tuningRange);</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetGPUMinFrequency)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/>adlx_int*<sp/>minFreq);</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*SetGPUMinFrequency)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/>adlx_int<sp/>minFreq);</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetGPUMaxFrequencyRange)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref>*<sp/>tuningRange);</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetGPUMaxFrequency)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/>adlx_int*<sp/>maxFreq);</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*SetGPUMaxFrequency)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/>adlx_int<sp/>maxFreq);</highlight></codeline>
 <codeline lineno="485"><highlight class="normal"></highlight></codeline>
-<codeline lineno="486"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="487"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXManualGraphicsTuning2</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="488"><highlight class="normal"></highlight></codeline>
-<codeline lineno="489"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="comment">//ADLX_IGPUMANUALGFXTUNING_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetGPUVoltageRange)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref>*<sp/>tuningRange);</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetGPUVoltage)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/>adlx_int*<sp/>volt);</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*SetGPUVoltage)(IADLXManualGraphicsTuning2*<sp/>pThis,<sp/>adlx_int<sp/>volt);</highlight></codeline>
+<codeline lineno="489"><highlight class="normal">}IADLXManualGraphicsTuning2Vtbl;</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXManualGraphicsTuning2<sp/>{<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLXManualGraphicsTuning2Vtbl<sp/>*pVtbl;<sp/>};</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"></highlight></codeline>
+<codeline lineno="492"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="493"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXManualGraphicsTuning2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="494"><highlight class="normal"></highlight></codeline>
+<codeline lineno="495"><highlight class="normal"></highlight></codeline>
+<codeline lineno="496"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>IADLXManualGraphicsTuning2_1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="497"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="498"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">adlx</highlight></codeline>
+<codeline lineno="499"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLXManualGraphicsTuning2_1<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLXManualGraphicsTuning2</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DECLARE_IID(L</highlight><highlight class="stringliteral">&quot;IADLXManualGraphicsTuning2_1&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"></highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>GetGPUMinFrequencyDefault(adlx_int*<sp/>defaultVal)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"></highlight></codeline>
+<codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>GetGPUMaxFrequencyDefault(adlx_int*<sp/>defaultVal)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"></highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>GetGPUVoltageDefault(adlx_int*<sp/>defaultVal)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLXManualGraphicsTuning2_1&gt;<sp/>IADLXManualGraphicsTuning2_1Ptr;</highlight></codeline>
+<codeline lineno="572"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="573"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="574"><highlight class="normal">ADLX_DECLARE_IID(IADLXManualGraphicsTuning2_1,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLXManualGraphicsTuning2_1&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="575"><highlight class="normal"></highlight></codeline>
+<codeline lineno="576"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXManualGraphicsTuning2_1<sp/>IADLXManualGraphicsTuning2_1;</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"></highlight></codeline>
+<codeline lineno="578"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXManualGraphicsTuning2_1Vtbl</highlight></codeline>
+<codeline lineno="579"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Acquire)(IADLXManualGraphicsTuning2_1*<sp/>pThis);</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Release)(IADLXManualGraphicsTuning2_1*<sp/>pThis);</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>QueryInterface)(IADLXManualGraphicsTuning2_1*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"></highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXManualGraphicsTuning2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetGPUMinFrequencyRange)(IADLXManualGraphicsTuning2_1*<sp/>pThis,<sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref>*<sp/>tuningRange);</highlight></codeline>
+<codeline lineno="587"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetGPUMinFrequency)(IADLXManualGraphicsTuning2_1*<sp/>pThis,<sp/>adlx_int*<sp/>minFreq);</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>SetGPUMinFrequency)(IADLXManualGraphicsTuning2_1*<sp/>pThis,<sp/>adlx_int<sp/>minFreq);</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetGPUMaxFrequencyRange)(IADLXManualGraphicsTuning2_1*<sp/>pThis,<sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref>*<sp/>tuningRange);</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetGPUMaxFrequency)(IADLXManualGraphicsTuning2_1*<sp/>pThis,<sp/>adlx_int*<sp/>maxFreq);</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>SetGPUMaxFrequency)(IADLXManualGraphicsTuning2_1*<sp/>pThis,<sp/>adlx_int<sp/>maxFreq);</highlight></codeline>
+<codeline lineno="592"><highlight class="normal"></highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetGPUVoltageRange)(IADLXManualGraphicsTuning2_1*<sp/>pThis,<sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref>*<sp/>tuningRange);</highlight></codeline>
+<codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetGPUVoltage)(IADLXManualGraphicsTuning2_1*<sp/>pThis,<sp/>adlx_int*<sp/>volt);</highlight></codeline>
+<codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>SetGPUVoltage)(IADLXManualGraphicsTuning2_1*<sp/>pThis,<sp/>adlx_int<sp/>volt);</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"></highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXManualGraphicsTuning2_1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetGPUMinFrequencyDefault)(IADLXManualGraphicsTuning2_1*<sp/>pThis,<sp/>adlx_int*<sp/>defaultVal);</highlight></codeline>
+<codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetGPUMaxFrequencyDefault)(IADLXManualGraphicsTuning2_1*<sp/>pThis,<sp/>adlx_int*<sp/>defaultVal);</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetGPUVoltageDefault)(IADLXManualGraphicsTuning2_1*<sp/>pThis,<sp/>adlx_int*<sp/>defaultVal);</highlight></codeline>
+<codeline lineno="601"><highlight class="normal">}IADLXManualGraphicsTuning2_1Vtbl;</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXManualGraphicsTuning2_1<sp/>{<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLXManualGraphicsTuning2_1Vtbl*<sp/>pVtbl;<sp/>};</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"></highlight></codeline>
+<codeline lineno="604"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="605"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXManualGraphicsTuning2_1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="606"><highlight class="normal"></highlight></codeline>
+<codeline lineno="607"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="comment">//ADLX_IGPUMANUALGFXTUNING_H</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h"/>
   </compounddef>

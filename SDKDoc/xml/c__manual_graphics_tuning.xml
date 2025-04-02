@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="c__manual_graphics_tuning" kind="page">
     <compoundname>c_ManualGraphicsTuning</compoundname>
     <title>ManualGraphicsTuning</title>
@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
 <para><htmlonly>&lt;!--
-# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 --&gt;
@@ -24,6 +24,7 @@
 		&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt; Get GPU frequency and voltage.&lt;/td&gt;&lt;/tr&gt;
 		&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt; Get current GPU states.&lt;/td&gt;&lt;/tr&gt;
 		&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt; Set GPU states.&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt; Get default GPU states.&lt;/td&gt;&lt;/tr&gt;
 		&lt;tr&gt;&lt;td&gt;M/m&lt;/td&gt;&lt;td&gt; Show this menu.&lt;/td&gt;&lt;/tr&gt;
 		&lt;tr&gt;&lt;td&gt;Q/q&lt;/td&gt;&lt;td&gt; Quit.&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
@@ -31,10 +32,11 @@
     &lt;h2&gt;Sample Path&lt;/h2&gt;
     &lt;p&gt;/Samples/C/GPUTuning/ManualGraphicsTuning&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</htmlonly> <heading level="2">Code </heading>
+&lt;/html&gt;
+</htmlonly> <heading level="2">Code </heading>
 </para>
 <para>C <programlisting filename="./C/GPUTuning/ManualGraphicsTuning/mainManualGraphicsTuning.c"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2024<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2025<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -65,6 +67,8 @@
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Display<sp/>current<sp/>GPU<sp/>tuning<sp/>states</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetCurrentStates1(IADLXManualGraphicsTuning1*<sp/>manualGFXTuning1);</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetCurrentStates2(IADLXManualGraphicsTuning2*<sp/>manualGFXTuning2);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Display<sp/>default<sp/>GPU<sp/>tuning<sp/>states</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetDefaultStates2(IADLXManualGraphicsTuning2*<sp/>manualGFXTuning2);</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Set<sp/>GPU<sp/>states</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetGPUStates1(IADLXManualGraphicsTuning1*<sp/>manualGFXTuning1);</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetGPUStates2(IADLXManualGraphicsTuning2*<sp/>manualGFXTuning2);</highlight></codeline>
@@ -185,6 +189,7 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>1<sp/>to<sp/>display<sp/>GPU<sp/>frequency<sp/>and<sp/>voltage\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>2<sp/>to<sp/>display<sp/>current<sp/>GPU<sp/>states\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>3<sp/>to<sp/>set<sp/>GPU<sp/>states\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>4<sp/>to<sp/>display<sp/>default<sp/>GPU<sp/>states\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>Q/q<sp/>to<sp/>terminate<sp/>the<sp/>application\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>M/m<sp/>to<sp/>display<sp/>main<sp/>menu<sp/>options\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
@@ -241,6 +246,11 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>GPU<sp/>states</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;3&apos;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetGPUStates2(manualGFXTuning2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Display<sp/>default<sp/>GPU<sp/>tuning<sp/>states</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;4&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetDefaultStates2(manualGFXTuning2);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Display<sp/>menu<sp/>options</highlight><highlight class="normal"></highlight></codeline>
@@ -426,9 +436,9 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res=<sp/>manualGFXTuning2-&gt;pVtbl-&gt;GetGPUMinFrequencyRange(manualGFXTuning2,<sp/>&amp;freqRange);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tGPU<sp/>minimum<sp/>frequency<sp/>range:<sp/>(%d,<sp/>%d),<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>freqRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>,<sp/>freqRange.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref>,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualGFXTuning2-&gt;pVtbl-&gt;GetGPUMaxFrequencyRange(manualGFXTuning2,<sp/>&amp;freqRange);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tGPU<sp/>maximum<sp/>frequency<sp/>range:<sp/>(%d,<sp/>%d),<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>freqRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>,<sp/>freqRange.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref>,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tGPU<sp/>maximum<sp/>frequency<sp/>(offset)<sp/>range:<sp/>(%d,<sp/>%d),<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>freqRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>,<sp/>freqRange.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref>,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualGFXTuning2-&gt;pVtbl-&gt;GetGPUVoltageRange(manualGFXTuning2,<sp/>&amp;voltRange);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tVoltage<sp/>range:<sp/>(%d,<sp/>%d),<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>voltRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>,<sp/>voltRange.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref>,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tVoltage<sp/>(offset)<sp/>range:<sp/>(%d,<sp/>%d),<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>voltRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>,<sp/>voltRange.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref>,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Display<sp/>current<sp/>GPU<sp/>tuning<sp/>states</highlight><highlight class="normal"></highlight></codeline>
@@ -438,11 +448,30 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>manualGFXTuning2-&gt;pVtbl-&gt;GetGPUMinFrequency(manualGFXTuning2,<sp/>&amp;minFreq);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tCurrent<sp/>GPU<sp/>minimum<sp/>frequency:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>minFreq,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualGFXTuning2-&gt;pVtbl-&gt;GetGPUMaxFrequency(manualGFXTuning2,<sp/>&amp;maxFreq);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tCurrent<sp/>GPU<sp/>maximum<sp/>frequency:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>maxFreq,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tCurrent<sp/>GPU<sp/>maximum<sp/>frequency<sp/>(offset):<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>maxFreq,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualGFXTuning2-&gt;pVtbl-&gt;GetGPUVoltage(manualGFXTuning2,<sp/>&amp;volt);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tCurrent<sp/>GPU<sp/>clock<sp/>voltage:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>volt,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tCurrent<sp/>GPU<sp/>clock<sp/>voltage<sp/>(offset):<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>volt,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetDefaultStates2(IADLXManualGraphicsTuning2*<sp/>manualGFXTuning2)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>IADLXManualGraphicsTuning2_1*<sp/>manualFanTuning2_1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manualGFXTuning2-&gt;pVtbl-&gt;QueryInterface(manualGFXTuning2,<sp/>IID_IADLXManualGraphicsTuning2_1(),<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**)&amp;manualFanTuning2_1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manualFanTuning2_1)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_int<sp/>minFreq<sp/>=<sp/>0,<sp/>maxFreq<sp/>=<sp/>0,<sp/>volt<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>manualFanTuning2_1-&gt;pVtbl-&gt;GetGPUMinFrequencyDefault(manualFanTuning2_1,<sp/>&amp;minFreq);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tDefault<sp/>GPU<sp/>minimum<sp/>frequency:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>minFreq,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning2_1-&gt;pVtbl-&gt;GetGPUMaxFrequencyDefault(manualFanTuning2_1,<sp/>&amp;maxFreq);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tDefault<sp/>GPU<sp/>maximum<sp/>frequency<sp/>(offset):<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>maxFreq,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning2_1-&gt;pVtbl-&gt;GetGPUVoltageDefault(manualFanTuning2_1,<sp/>&amp;volt);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tDefault<sp/>GPU<sp/>clock<sp/>voltage<sp/>(offset):<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>volt,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>release<sp/>manualFanTuning2_1</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manualFanTuning2_1-&gt;pVtbl-&gt;Release(manualFanTuning2_1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manualFanTuning2_1<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Set<sp/>GPU<sp/>states</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetGPUStates2(IADLXManualGraphicsTuning2*<sp/>manualGFXTuning2)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
@@ -452,17 +481,17 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualGFXTuning2-&gt;pVtbl-&gt;SetGPUMinFrequency(manualGFXTuning2,<sp/>freqRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>GPU<sp/>min<sp/>frequency<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res)<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;succeeded&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;failed&quot;</highlight><highlight class="normal">));</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualGFXTuning2-&gt;pVtbl-&gt;SetGPUMaxFrequency(manualGFXTuning2,<sp/>freqRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref><sp/>+<sp/>100);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>GPU<sp/>max<sp/>frequency<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res)<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;succeeded&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;failed&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>GPU<sp/>max<sp/>frequency<sp/>(offset)<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res)<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;succeeded&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;failed&quot;</highlight><highlight class="normal">));</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualGFXTuning2-&gt;pVtbl-&gt;SetGPUVoltage(manualGFXTuning2,<sp/>voltRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref><sp/>+<sp/>(voltRange.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref><sp/>-<sp/>voltRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>)<sp/>/<sp/>2);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>GPU<sp/>voltage<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res)<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;succeeded&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;failed&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>GPU<sp/>voltage<sp/>(offset)<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref><sp/>(res)<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;succeeded&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;failed&quot;</highlight><highlight class="normal">));</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tAfter<sp/>setting:\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_int<sp/>minFreq<sp/>=<sp/>0,<sp/>maxFreq<sp/>=<sp/>0,<sp/>volt<sp/>=<sp/>0;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualGFXTuning2-&gt;pVtbl-&gt;GetGPUMinFrequency(manualGFXTuning2,<sp/>&amp;minFreq);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tCurrent<sp/>GPU<sp/>min<sp/>frequency:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>minFreq,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualGFXTuning2-&gt;pVtbl-&gt;GetGPUMaxFrequency(manualGFXTuning2,<sp/>&amp;maxFreq);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tCurrent<sp/>GPU<sp/>max<sp/>frequency:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>maxFreq,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tCurrent<sp/>GPU<sp/>max<sp/>frequency<sp/>(offset):<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>maxFreq,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualGFXTuning2-&gt;pVtbl-&gt;GetGPUVoltage(manualGFXTuning2,<sp/>&amp;volt);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tCurrent<sp/>GPU<sp/>clock<sp/>voltage:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>volt,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tCurrent<sp/>GPU<sp/>clock<sp/>voltage<sp/>(offset):<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>volt,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> </para>
     </detaileddescription>

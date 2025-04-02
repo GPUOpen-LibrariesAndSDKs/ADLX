@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="en-US">
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.12.0" xml:lang="en-US">
   <compound refid="struct_a_d_l_x__3_d_l_u_t___data" kind="struct"><name>ADLX_3DLUT_Data</name>
     <member refid="struct_a_d_l_x__3_d_l_u_t___data_1a6c9de079cb901629ad01e9b90df8d501" kind="variable"><name>data</name></member>
   </compound>
@@ -24,6 +24,10 @@
     <member refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kind="variable"><name>minValue</name></member>
     <member refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kind="variable"><name>maxValue</name></member>
     <member refid="struct_a_d_l_x___int_range_1ae0e545b501a683c565f08089ed3e8023" kind="variable"><name>step</name></member>
+  </compound>
+  <compound refid="struct_a_d_l_x___l_u_i_d" kind="struct"><name>ADLX_LUID</name>
+    <member refid="struct_a_d_l_x___l_u_i_d_1a735831818db6d449f6719c25eb3c06fc" kind="variable"><name>lowPart</name></member>
+    <member refid="struct_a_d_l_x___l_u_i_d_1a4a23efaf6a763f558daee94e10ca1001" kind="variable"><name>highPart</name></member>
   </compound>
   <compound refid="struct_a_d_l_x___point" kind="struct"><name>ADLX_Point</name>
     <member refid="struct_a_d_l_x___point_1aa22bab0bfe9e1a768530aa8cab94662e" kind="variable"><name>x</name></member>
@@ -157,6 +161,11 @@
     <member refid="classadlx_1_1_i_a_d_l_x3_d_frame_rate_target_control_1a13cffdc4835b542db893010bdee3d66f" kind="function"><name>SetEnabled</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_frame_rate_target_control_1a783bfc872adf179ea1d17d36af676a47" kind="function"><name>SetFPS</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x3_d_image_sharpen_desktop" kind="class"><name>adlx::IADLX3DImageSharpenDesktop</name>
+    <member refid="classadlx_1_1_i_a_d_l_x3_d_image_sharpen_desktop_1a3f31d665e1911c6a7b69e7ad6e8104ac" kind="function"><name>IsSupported</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x3_d_image_sharpen_desktop_1a1bac37c3d1b2923660d085a5140359bf" kind="function"><name>IsEnabled</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x3_d_image_sharpen_desktop_1aeea9b59759e5f1da59e99ffc5ea80bb1" kind="function"><name>SetEnabled</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x3_d_image_sharpening" kind="class"><name>adlx::IADLX3DImageSharpening</name>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_image_sharpening_1ad5bd898c33ecb7e6e71d179f1d5082b8" kind="function"><name>IsSupported</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_image_sharpening_1a4dd30e840cc69d4f30953f061d8aa503" kind="function"><name>IsEnabled</name></member>
@@ -201,6 +210,9 @@
   <compound refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_event1" kind="class"><name>adlx::IADLX3DSettingsChangedEvent1</name>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_event1_1a6850c8542512e90e4f6d66b8a85e011e" kind="function"><name>IsAMDFluidMotionFramesChanged</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_event2" kind="class"><name>adlx::IADLX3DSettingsChangedEvent2</name>
+    <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_event2_1a9afa585d48d8425f3b4bb74efb5de6ad" kind="function"><name>IsImageSharpenDesktopChanged</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_handling" kind="class"><name>adlx::IADLX3DSettingsChangedHandling</name>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_handling_1a0de0314b80f28fe6b29aca4dbbd8d00f" kind="function"><name>Add3DSettingsEventListener</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_handling_1adcbf068288876bec333bdcd22bc8f34f" kind="function"><name>Remove3DSettingsEventListener</name></member>
@@ -227,6 +239,9 @@
   <compound refid="classadlx_1_1_i_a_d_l_x3_d_settings_services1" kind="class"><name>adlx::IADLX3DSettingsServices1</name>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_services1_1a2be52a8fcd3455df4403ed4d82f77f45" kind="function"><name>GetAMDFluidMotionFrames</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x3_d_settings_services2" kind="class"><name>adlx::IADLX3DSettingsServices2</name>
+    <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_services2_1a794991939c0e63500cfa14767f2a4191" kind="function"><name>GetImageSharpenDesktop</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x3_d_tessellation" kind="class"><name>adlx::IADLX3DTessellation</name>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_tessellation_1a62a173a06f5856f0a9b87ddaffc655ec" kind="function"><name>IsSupported</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x3_d_tessellation_1a1bd0ffaa681d95c334284b008e553706" kind="function"><name>GetMode</name></member>
@@ -249,6 +264,16 @@
   <compound refid="classadlx_1_1_i_a_d_l_x_all_metrics_list" kind="class"><name>adlx::IADLXAllMetricsList</name>
     <member refid="classadlx_1_1_i_a_d_l_x_all_metrics_list_1aaa6116f9fec60938627a8428d5b42a5b" kind="function"><name>At</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_all_metrics_list_1af49050f09d652b569cb5debbf7baa4cf" kind="function"><name>Add_Back</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_application" kind="class"><name>adlx::IADLXApplication</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_application_1a154204be430d2dcd106477ace3567bbe" kind="function"><name>ProcessID</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_application_1a435a30b88ad8e34c65d6b0a6a1296acb" kind="function"><name>Name</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_application_1a1b34098d001c49511d68440c12ec674b" kind="function"><name>FullPath</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_application_1afb3ce01b3e8a85a8bdea249544e15acb" kind="function"><name>GPUDependencyType</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_application_list" kind="class"><name>adlx::IADLXApplicationList</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_application_list_1a3793fde8270f9794a206b4edaec64420" kind="function"><name>At</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_application_list_1a6e761acd4932c968370b62cb4776002f" kind="function"><name>Add_Back</name></member>
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_changed_event" kind="class"><name>adlx::IADLXChangedEvent</name>
     <member refid="classadlx_1_1_i_a_d_l_x_changed_event_1aabba9d15598621fe88ce7ed8712b2380" kind="function"><name>GetOrigin</name></member>
@@ -395,10 +420,20 @@
     <member refid="classadlx_1_1_i_a_d_l_x_display_custom_resolution_1a5162d3ec2eb5319622bbf4a095c9572b" kind="function"><name>CreateNewResolution</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_display_custom_resolution_1a2b8857e332f69cbd1b13fbec300212b0" kind="function"><name>DeleteResolution</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_display_dynamic_refresh_rate_control" kind="class"><name>adlx::IADLXDisplayDynamicRefreshRateControl</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_dynamic_refresh_rate_control_1a1cbdc663e23ba5231fb044e26f6d97fc" kind="function"><name>IsSupported</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_dynamic_refresh_rate_control_1aea168536f252befda549dc81c24ab21f" kind="function"><name>IsEnabled</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_dynamic_refresh_rate_control_1a405a7793e9dc85389517cb4a148e9f17" kind="function"><name>SetEnabled</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_display_free_sync" kind="class"><name>adlx::IADLXDisplayFreeSync</name>
     <member refid="classadlx_1_1_i_a_d_l_x_display_free_sync_1a8e36f79b05e22607651011a806ecb3b0" kind="function"><name>IsSupported</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_display_free_sync_1a840348b08e59b2f6b3056ffde7b84ac8" kind="function"><name>IsEnabled</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_display_free_sync_1a7528242d1242c0bd8cde8059079f92a5" kind="function"><name>SetEnabled</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_display_free_sync_color_accuracy" kind="class"><name>adlx::IADLXDisplayFreeSyncColorAccuracy</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_free_sync_color_accuracy_1a83357dee5f7d74f9e810556392dc4683" kind="function"><name>IsSupported</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_free_sync_color_accuracy_1a5e95a9cc0b4ccd38017e53d7e87ba241" kind="function"><name>IsEnabled</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_free_sync_color_accuracy_1a7592c6322bca692ef04388c5ecbbdc00" kind="function"><name>SetEnabled</name></member>
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_display_gamma" kind="class"><name>adlx::IADLXDisplayGamma</name>
     <member refid="classadlx_1_1_i_a_d_l_x_display_gamma_1ab7fde183bcf5787f46df19b86462e314" kind="function"><name>IsCurrentReGammaRamp</name></member>
@@ -547,6 +582,10 @@
   <compound refid="classadlx_1_1_i_a_d_l_x_display_services2" kind="class"><name>adlx::IADLXDisplayServices2</name>
     <member refid="classadlx_1_1_i_a_d_l_x_display_services2_1a1508368f3fb6e3ff21b4bf4b6fbc6b13" kind="function"><name>GetDisplayConnectivityExperience</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_display_services3" kind="class"><name>adlx::IADLXDisplayServices3</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_services3_1ac2e0489d8706bed6198b70bdcee0a8d5" kind="function"><name>GetDynamicRefreshRateControl</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_services3_1a4ca088095b9da87ca0355512a717cfb4" kind="function"><name>GetFreeSyncColorAccuracy</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event" kind="class"><name>adlx::IADLXDisplaySettingsChangedEvent</name>
     <member refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event_1a5e10b7495e626d48dd01cd25b63da3b4" kind="function"><name>GetDisplay</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event_1a87a494e4809ef67aa06683f4f2fd068c" kind="function"><name>IsFreeSyncChanged</name></member>
@@ -571,6 +610,10 @@
   <compound refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event2" kind="class"><name>adlx::IADLXDisplaySettingsChangedEvent2</name>
     <member refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event2_1aa00a5124d790556d1383b45e2a45a70f" kind="function"><name>IsDisplayConnectivityExperienceChanged</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event3" kind="class"><name>adlx::IADLXDisplaySettingsChangedEvent3</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event3_1a4fc43a24e2d886aa20bacf4d11877c9e" kind="function"><name>IsDisplayDynamicRefreshRateControlChanged</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event3_1aff6031eb3e22ca43a92e92e53613c4da" kind="function"><name>IsFreeSyncColorAccuracyChanged</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_listener" kind="class"><name>adlx::IADLXDisplaySettingsChangedListener</name>
     <member refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_listener_1af5c440cafb215635ac05c392a445901b" kind="function"><name>OnDisplaySettingsChanged</name></member>
   </compound>
@@ -588,6 +631,20 @@
     <member refid="classadlx_1_1_i_a_d_l_x_display_vari_bright_1a8f0c2a71c73e1f247f2abbe81c892139" kind="function"><name>SetBalanced</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_display_vari_bright_1a5bc679344f68b51d8b3572acf0916174" kind="function"><name>SetOptimizeBattery</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_display_vari_bright_1a6588a78271b589ead2476521e7572041" kind="function"><name>SetMaximizeBattery</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_display_vari_bright1" kind="class"><name>adlx::IADLXDisplayVariBright1</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_vari_bright1_1ab6d60eb9986a5255a191964df11cf85b" kind="function"><name>IsBacklightAdaptiveSupported</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_vari_bright1_1af74fda7313fc25b567668a21e9397728" kind="function"><name>IsBacklightAdaptiveEnabled</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_vari_bright1_1af9e3b10ad38a2389f3d51b481dc69d5f" kind="function"><name>SetBacklightAdaptiveEnabled</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_vari_bright1_1a09e41562f87bfe7ee07768d3f5f56526" kind="function"><name>IsBatteryLifeSupported</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_vari_bright1_1a185f0d7859a977a407901c32e22bbbf2" kind="function"><name>IsBatteryLifeEnabled</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_vari_bright1_1ac939b4e2296109cfaf84c40abc04ae32" kind="function"><name>SetBatteryLifeEnabled</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_vari_bright1_1adca90fdf9039cec4f9c8bed151bcdf7c" kind="function"><name>IsWindowsPowerModeSupported</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_vari_bright1_1a13d0b1cf40a514f5526a477a27b01a48" kind="function"><name>IsWindowsPowerModeEnabled</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_vari_bright1_1a2d0fb19d41215ce87ba96e8c0908b44f" kind="function"><name>SetWindowsPowerModeEnabled</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_vari_bright1_1a87f8ec8f128e9cedd842696bf76a9a16" kind="function"><name>IsFullScreenVideoSupported</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_vari_bright1_1a10ec478c61e19557a7cae6d6bedf5f7c" kind="function"><name>IsFullScreenVideoEnabled</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_display_vari_bright1_1ae5531b912c2593d82ec87f26af3dc597" kind="function"><name>SetFullScreenVideoEnabled</name></member>
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_display_v_s_r" kind="class"><name>adlx::IADLXDisplayVSR</name>
     <member refid="classadlx_1_1_i_a_d_l_x_display_v_s_r_1aa2352e5ea552f8a5c8fd7729c7221fe7" kind="function"><name>IsSupported</name></member>
@@ -633,6 +690,31 @@
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u1_1abec73dd88d2c5a36e8f0e54ce2abb54b" kind="function"><name>MultiGPUMode</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u1_1a18469665f0040f8a2a830fa6df3cf52b" kind="function"><name>ProductName</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u2" kind="class"><name>adlx::IADLXGPU2</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u2_1ac8516aaa37f06132b50accdf9cb02909" kind="function"><name>IsPowerOff</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u2_1a9e3d6503bd5013dc2faf081ccd4b3c32" kind="function"><name>PowerOn</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u2_1a06ad0c397b69d3c65651576e9ad920e6" kind="function"><name>StartPowerOff</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u2_1a229017f20211ed57404c663e69aef874" kind="function"><name>AbortPowerOff</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u2_1a55a78ad83bd88ad37724c26c6927b5aa" kind="function"><name>IsSupportedApplicationList</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u2_1ad7b4bd1eb2b92716a68107387c0dc9eb" kind="function"><name>GetApplications</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u2_1a321b90f8327a67ac7df4971345c4e96c" kind="function"><name>AMDSoftwareReleaseDate</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u2_1a2f4d7e14125a12a3879f3cd3e39f382a" kind="function"><name>AMDSoftwareEdition</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u2_1a1a01a68583784684f8f373e9ce0e4961" kind="function"><name>AMDSoftwareVersion</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u2_1a16ea5ae81b1d8a208ae0b2cf38f71011" kind="function"><name>DriverVersion</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u2_1afc556a590c3619c803aa2ac07f8b142d" kind="function"><name>AMDWindowsDriverVersion</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u2_1a0588df52584c2aef42dab4a42c2ef2f4" kind="function"><name>LUID</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u2_list" kind="class"><name>adlx::IADLXGPU2List</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u2_list_1abb7eeb443cbcf159222697011da77919" kind="function"><name>At</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u2_list_1a9a15de02606b7509fd724e8897dac311" kind="function"><name>Add_Back</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u_apps_list_changed_handling" kind="class"><name>adlx::IADLXGPUAppsListChangedHandling</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_apps_list_changed_handling_1a0753ea4026394088dc5c3d1dc347d4a0" kind="function"><name>AddGPUAppsListEventListener</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_apps_list_changed_handling_1a309d1a1b9b2704f72d760670b15af971" kind="function"><name>RemoveGPUAppsListEventListener</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u_apps_list_event_listener" kind="class"><name>adlx::IADLXGPUAppsListEventListener</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_apps_list_event_listener_1a8fd7fb7f5fb2829ae0455f761bdbec48" kind="function"><name>OnGPUAppsListChanged</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning" kind="class"><name>adlx::IADLXGPUAutoTuning</name>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1a8a94af9bbd70fb75d6ad5b9a409a8545" kind="function"><name>IsSupportedUndervoltGPU</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1ad0d815d0224aeb57fa08cb1c4cfa3b8b" kind="function"><name>IsSupportedOverclockGPU</name></member>
@@ -651,6 +733,15 @@
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_complete_listener" kind="class"><name>adlx::IADLXGPUAutoTuningCompleteListener</name>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_complete_listener_1ad39a3614e454954c786d8952bd8a098b" kind="function"><name>OnGPUAutoTuningComplete</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_event" kind="class"><name>adlx::IADLXGPUConnectChangedEvent</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_event_1a53021cb67224bba8ad9d7b1285dc110b" kind="function"><name>GetGPU</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_event_1a4c68b52a35b19f12f3d397b87d3e9398" kind="function"><name>IsGPUAppsListChanged</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_event_1a943fd4c31c6674786146a3511c09a950" kind="function"><name>IsGPUPowerChanged</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_event_1a10de609fbab3513e51f5c6116c566696" kind="function"><name>IsGPUPowerChangeError</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_listener" kind="class"><name>adlx::IADLXGPUConnectChangedListener</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_listener_1a09275b57e710c89c5065aa4de1be6731" kind="function"><name>OnGPUConnectChanged</name></member>
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u_list" kind="class"><name>adlx::IADLXGPUList</name>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_list_1aa299fd280d43392f69713569752b12c3" kind="function"><name>At</name></member>
@@ -674,6 +765,9 @@
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics1_1a074a0a357656c60f2587c78ac93b918c" kind="function"><name>GPUMemoryTemperature</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics1_1a7ba897a6e287971f480213800ee9d4e7" kind="function"><name>NPUFrequency</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics1_1aae3a361eae8aa595faa63572515202a1" kind="function"><name>NPUActivityLevel</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics2" kind="class"><name>adlx::IADLXGPUMetrics2</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics2_1ac59063e27f36ae2780564abb5f619632" kind="function"><name>GPUSharedMemory</name></member>
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_list" kind="class"><name>adlx::IADLXGPUMetricsList</name>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_list_1a885a3e2fc4a4cbbcef0fad017e0a9ec8" kind="function"><name>At</name></member>
@@ -710,6 +804,10 @@
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1_1adbc7a8cd27dd258691213780fcb50cc2" kind="function"><name>GetNPUFrequencyRange</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1_1a1224a500dafa65990518e298dd364123" kind="function"><name>IsSupportedNPUActivityLevel</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1_1a21eb1c37f54a056b3b26d5d67e1e11c5" kind="function"><name>GetNPUActivityLevelRange</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support2" kind="class"><name>adlx::IADLXGPUMetricsSupport2</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support2_1af8c44b0c4c7b072ad607e6f97994c35a" kind="function"><name>IsSupportedGPUSharedMemory</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support2_1a11711cefa9ddc6d4b3a7feab49f4f56b" kind="function"><name>GetGPUSharedMemoryRange</name></member>
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_g_p_u_preset_tuning" kind="class"><name>adlx::IADLXGPUPresetTuning</name>
     <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_preset_tuning_1a92a64a2b906cde19f69ee15752dfe11b" kind="function"><name>IsSupportedPowerSaver</name></member>
@@ -797,21 +895,21 @@
     <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1aa5ea8c7258cc40b3951cf5f61f6a9a46" kind="function"><name>IADLXInterfacePtr_T</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a7b0fa9358f3a2ef62d5536c7f7c72b67" kind="function"><name>IADLXInterfacePtr_T</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a08b64a9f271594d33d13e2e9324040fc" kind="function"><name>~IADLXInterfacePtr_T</name></member>
-    <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a9ef1e1c6609c80ce9d3df99d2004b893" kind="function"><name>operator=</name></member>
-    <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a9fe94d028a721750fd315e1bb4d77865" kind="function"><name>operator=</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a365feac1bcd0c04a8ccd602537d03f98" kind="function"><name>operator=</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1ae8c3c407e4daac8966b4ea66bb617fa8" kind="function"><name>operator=</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1aa956f1f359f36f0f7ad806a0fb066b09" kind="function"><name>Attach</name></member>
-    <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a72ea92232a06e4475304ac6d2d845e8d" kind="function"><name>Detach</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a20b06cee301bfc004f6a77ad0d03c36e" kind="function"><name>Detach</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a54cee81606e3bd4b53a488341e69271a" kind="function"><name>Release</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a18589d52e786875eae7066886af70513" kind="function"><name>operator _Interf *</name></member>
-    <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a42e748ea212a3ec9d9fbf28b179140a9" kind="function"><name>operator*</name></member>
-    <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a4de3bd5014eff66945decad9d0d1e027" kind="function"><name>operator&amp;</name></member>
-    <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1aff9ce608faa488ebe39cc9dade26b6d1" kind="function"><name>operator-&gt;</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1ac3f010fc847ff4e83b5ba4557dce2405" kind="function"><name>operator*</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a9c051a0d44e5a8cc32baecb1ecae1c31" kind="function"><name>operator&amp;</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a520d0c55a9f56a136c60b3cc469e7566" kind="function"><name>operator-&gt;</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a3087bd6b927d47adf877acd0361cefcf" kind="function"><name>operator==</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1ac3eba21679dd9e6f84a7893a2e909135" kind="function"><name>operator==</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1ab6972ca12cf94c8093691cd985d9a3ef" kind="function"><name>operator!=</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1ab46900e730041407359df4915efd2b9c" kind="function"><name>operator!=</name></member>
-    <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a5536cc867464fb10886da8cda271463c" kind="function"><name>GetPtr</name></member>
-    <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a1efc30f8e9e005a788314479830c1230" kind="function"><name>GetPtr</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1a253923acf796d4634ecbde5eed591b02" kind="function"><name>GetPtr</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_interface_ptr___t_1ae14d7201d7f1bb6a1d660ec318c98091" kind="function"><name>GetPtr</name></member>
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_list" kind="class"><name>adlx::IADLXList</name>
     <member refid="classadlx_1_1_i_a_d_l_x_list_1acad51980369442d460bcef7ba20e651f" kind="function"><name>Size</name></member>
@@ -848,6 +946,13 @@
     <member refid="classadlx_1_1_i_a_d_l_x_manual_fan_tuning_1ad3f6ab3b0dc6fc8dd7375acb1937c650" kind="function"><name>GetTargetFanSpeed</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_manual_fan_tuning_1ad06b8fc3c2a8bf5611da71629ddaa2a6" kind="function"><name>SetTargetFanSpeed</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_manual_fan_tuning1" kind="class"><name>adlx::IADLXManualFanTuning1</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_manual_fan_tuning1_1ab1ce4ccb5605ca34a3d9e52d4e1cf069" kind="function"><name>GetDefaultFanTuningStates</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_manual_fan_tuning1_1af03125a757c2e5d2a981643390e94820" kind="function"><name>GetMinAcousticLimitDefault</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_manual_fan_tuning1_1ab38b1dba892e4dfee4c5a57b36672401" kind="function"><name>GetMinFanSpeedDefault</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_manual_fan_tuning1_1ae36c05ab272c38cf036fdcdaeafcf5c1" kind="function"><name>GetTargetFanSpeedDefault</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_manual_fan_tuning1_1abd0202e8007ed340b2dfdcd47562d54b" kind="function"><name>GetDefaultZeroRPMState</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_manual_fan_tuning_state" kind="class"><name>adlx::IADLXManualFanTuningState</name>
     <member refid="classadlx_1_1_i_a_d_l_x_manual_fan_tuning_state_1a947a8ddb42e9cd58fb9e91c6be2169f2" kind="function"><name>GetFanSpeed</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_manual_fan_tuning_state_1a455d5284135aa79ff275059cb485ef10" kind="function"><name>SetFanSpeed</name></member>
@@ -876,6 +981,11 @@
     <member refid="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2_1a109cba49781131b5cc8a17555ce5384b" kind="function"><name>GetGPUVoltage</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2_1ac84d2dc6fdeafba66fd08917b06ba7c3" kind="function"><name>SetGPUVoltage</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2__1" kind="class"><name>adlx::IADLXManualGraphicsTuning2_1</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2__1_1aae3bcb0198998869609f8c27a4dfeec3" kind="function"><name>GetGPUMinFrequencyDefault</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2__1_1abe24cde46e7821cb8657926e96812ed7" kind="function"><name>GetGPUMaxFrequencyDefault</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2__1_1a57108a4c05230e7d4d462a3c5ac1b724" kind="function"><name>GetGPUVoltageDefault</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_manual_power_tuning" kind="class"><name>adlx::IADLXManualPowerTuning</name>
     <member refid="classadlx_1_1_i_a_d_l_x_manual_power_tuning_1a9753cff5a3aae4f22901288ffaad407b" kind="function"><name>GetPowerLimitRange</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_manual_power_tuning_1a53a76a2d90076cca467b7d22ada47601" kind="function"><name>GetPowerLimit</name></member>
@@ -884,6 +994,10 @@
     <member refid="classadlx_1_1_i_a_d_l_x_manual_power_tuning_1a59af97a7f8419321713531d48e70e37c" kind="function"><name>GetTDCLimitRange</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_manual_power_tuning_1ada80329b5a636047a175fbe480253c81" kind="function"><name>GetTDCLimit</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_manual_power_tuning_1ae75f0fe506bace384fb69f79223dca2f" kind="function"><name>SetTDCLimit</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_manual_power_tuning1" kind="class"><name>adlx::IADLXManualPowerTuning1</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_manual_power_tuning1_1aceae17be1c976f135bb11cae9f952403" kind="function"><name>GetPowerLimitDefault</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_manual_power_tuning1_1ad9bb29b1eae8a10722e7fbd391ffec61" kind="function"><name>GetTDCLimitDefault</name></member>
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_manual_tuning_state" kind="class"><name>adlx::IADLXManualTuningState</name>
     <member refid="classadlx_1_1_i_a_d_l_x_manual_tuning_state_1aeedb31c0085ad1d899b5094513f49036" kind="function"><name>GetFrequency</name></member>
@@ -915,12 +1029,32 @@
     <member refid="classadlx_1_1_i_a_d_l_x_manual_v_r_a_m_tuning2_1aa4c5520f34fc1d8faa816ca21ffaeadb" kind="function"><name>GetMaxVRAMFrequency</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_manual_v_r_a_m_tuning2_1aaee3c4872121c96ec835acefae177a04" kind="function"><name>SetMaxVRAMFrequency</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_manual_v_r_a_m_tuning2__1" kind="class"><name>adlx::IADLXManualVRAMTuning2_1</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_manual_v_r_a_m_tuning2__1_1a6f94cd31fdf254cf2b1f94b4bdde94e2" kind="function"><name>GetMaxVRAMFrequencyDefault</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_memory_timing_description" kind="class"><name>adlx::IADLXMemoryTimingDescription</name>
     <member refid="classadlx_1_1_i_a_d_l_x_memory_timing_description_1a4679ad3918edeed2a8e017f530898836" kind="function"><name>GetDescription</name></member>
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_memory_timing_description_list" kind="class"><name>adlx::IADLXMemoryTimingDescriptionList</name>
     <member refid="classadlx_1_1_i_a_d_l_x_memory_timing_description_list_1a1f7c0c95cce31e48e5fee6193593b5d7" kind="function"><name>At</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_memory_timing_description_list_1a464b48a649902b41c49d04c7e89098b3" kind="function"><name>Add_Back</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_multimedia_changed_event" kind="class"><name>adlx::IADLXMultimediaChangedEvent</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_multimedia_changed_event_1a07378085c6292639a421135fc35c264b" kind="function"><name>GetGPU</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_multimedia_changed_event_1a24357863a2747b92ebd52b2e87bc4295" kind="function"><name>IsVideoUpscaleChanged</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_multimedia_changed_event_1ada2b3a85ea4e96bc87c3bf3746e8c917" kind="function"><name>IsVideoSuperResolutionChanged</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_multimedia_changed_event_listener" kind="class"><name>adlx::IADLXMultimediaChangedEventListener</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_multimedia_changed_event_listener_1a32502484a6220caf52ebed49371f28b6" kind="function"><name>OnMultimediaChanged</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_multimedia_changed_handling" kind="class"><name>adlx::IADLXMultimediaChangedHandling</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_multimedia_changed_handling_1a439ee95b2401593e83b7ca9d0f205c8d" kind="function"><name>AddMultimediaEventListener</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_multimedia_changed_handling_1aaf085572c0236f06a9d4517a5fd8ce34" kind="function"><name>RemoveMultimediaEventListener</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_multimedia_services" kind="class"><name>adlx::IADLXMultimediaServices</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_multimedia_services_1a52a73e2d12641ec0d7f3793302d967d2" kind="function"><name>GetMultimediaChangedHandling</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_multimedia_services_1a9353d4584213682d79108ff022b217e4" kind="function"><name>GetVideoUpscale</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_multimedia_services_1a1cfe0fb42a3763cbe10e2199eef14f33" kind="function"><name>GetVideoSuperResolution</name></member>
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services" kind="class"><name>adlx::IADLXPerformanceMonitoringServices</name>
     <member refid="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1ad4d3b37d0d9707824f75993ab028097a" kind="function"><name>GetSamplingIntervalRange</name></member>
@@ -947,6 +1081,9 @@
   <compound refid="classadlx_1_1_i_a_d_l_x_power_tuning_changed_event" kind="class"><name>adlx::IADLXPowerTuningChangedEvent</name>
     <member refid="classadlx_1_1_i_a_d_l_x_power_tuning_changed_event_1aa280b66047bab83fbaea823d8c72fc2d" kind="function"><name>IsSmartShiftMaxChanged</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_power_tuning_changed_event1" kind="class"><name>adlx::IADLXPowerTuningChangedEvent1</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_power_tuning_changed_event1_1ade98a779e563371d70fd57d9b01a7a3b" kind="function"><name>IsSmartShiftEcoChanged</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_power_tuning_changed_handling" kind="class"><name>adlx::IADLXPowerTuningChangedHandling</name>
     <member refid="classadlx_1_1_i_a_d_l_x_power_tuning_changed_handling_1a438f592a7833e9c523b270330255a26f" kind="function"><name>AddPowerTuningEventListener</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_power_tuning_changed_handling_1a4cf9020f8138fedef31b2d4c199ff97a" kind="function"><name>RemovePowerTuningEventListener</name></member>
@@ -958,6 +1095,11 @@
     <member refid="classadlx_1_1_i_a_d_l_x_power_tuning_services_1a1b4d3baf792c622f2343a662da538cae" kind="function"><name>GetPowerTuningChangedHandling</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_power_tuning_services_1a742bf8813a3005ce77dae7459dad0415" kind="function"><name>GetSmartShiftMax</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_power_tuning_services1" kind="class"><name>adlx::IADLXPowerTuningServices1</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_power_tuning_services1_1a308862ebe91cf21b237a7632e92860ad" kind="function"><name>GetSmartShiftEco</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_power_tuning_services1_1ad9f4ee63614a395e6014473c4b82a56c" kind="function"><name>IsGPUConnectSupported</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_power_tuning_services1_1aa6f49b408bff5a61c76bc7bca8a26dc5" kind="function"><name>GetGPUConnectGPUs</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_simple_eyefinity" kind="class"><name>adlx::IADLXSimpleEyefinity</name>
     <member refid="classadlx_1_1_i_a_d_l_x_simple_eyefinity_1ad48a3e5a662989491b8b91cb05f4d6c6" kind="function"><name>IsSupported</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_simple_eyefinity_1a5ca39513aaf431ce54e1b8ff84bae810" kind="function"><name>Create</name></member>
@@ -968,6 +1110,13 @@
     <member refid="classadlx_1_1_i_a_d_l_x_smart_access_memory_1a2cce0cd17d1f2232c0809b3365a9aaef" kind="function"><name>IsSupported</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_smart_access_memory_1ac9c4c95ca97505ed8ff283d40edc5653" kind="function"><name>IsEnabled</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_smart_access_memory_1ab0ebec5f4f323d99bdab7e5e57fc2d09" kind="function"><name>SetEnabled</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_smart_shift_eco" kind="class"><name>adlx::IADLXSmartShiftEco</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_smart_shift_eco_1a5c19cdf5d7318b55ab98d0a059261d4c" kind="function"><name>IsSupported</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_smart_shift_eco_1aa623e70ba8e4369c22a7207cf3c33184" kind="function"><name>IsEnabled</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_smart_shift_eco_1ac5df28935c6dc4907ed1b26f197799da" kind="function"><name>SetEnabled</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_smart_shift_eco_1accd8622b00ec5d89b597820732db2613" kind="function"><name>IsInactive</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_smart_shift_eco_1aed34e9bd6820d150d4de439a3a96fb19" kind="function"><name>GetInactiveReason</name></member>
   </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_smart_shift_max" kind="class"><name>adlx::IADLXSmartShiftMax</name>
     <member refid="classadlx_1_1_i_a_d_l_x_smart_shift_max_1a2bae088adf98c24e8dce3aed2841bfde" kind="function"><name>IsSupported</name></member>
@@ -994,6 +1143,10 @@
   <compound refid="classadlx_1_1_i_a_d_l_x_system1" kind="class"><name>adlx::IADLXSystem1</name>
     <member refid="classadlx_1_1_i_a_d_l_x_system1_1ad88e1cab0944d6585621d9a5de232bb8" kind="function"><name>GetPowerTuningServices</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_system2" kind="class"><name>adlx::IADLXSystem2</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_system2_1aaba3bbf9ecd3bbf9429814a9455fc6f8" kind="function"><name>GetMultimediaServices</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_system2_1aa8c2f0593b415f39f5544aa2078be750" kind="function"><name>GetGPUAppsListChangedHandling</name></member>
+  </compound>
   <compound refid="classadlx_1_1_i_a_d_l_x_system_metrics" kind="class"><name>adlx::IADLXSystemMetrics</name>
     <member refid="classadlx_1_1_i_a_d_l_x_system_metrics_1ae614661269e99875a852eadace490d4d" kind="function"><name>TimeStamp</name></member>
     <member refid="classadlx_1_1_i_a_d_l_x_system_metrics_1a2979019a3d3b018c7e7c9c4bf158c2af" kind="function"><name>CPUUsage</name></member>
@@ -1018,6 +1171,19 @@
   <compound refid="classadlx_1_1_i_a_d_l_x_system_metrics_support1" kind="class"><name>adlx::IADLXSystemMetricsSupport1</name>
     <member refid="classadlx_1_1_i_a_d_l_x_system_metrics_support1_1acac2e0748677e974d612f97cd7b3a04b" kind="function"><name>IsSupportedPowerDistribution</name></member>
   </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_video_super_resolution" kind="class"><name>adlx::IADLXVideoSuperResolution</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_video_super_resolution_1a92a807dafeaaf0c7af31f912b2a05abf" kind="function"><name>IsSupported</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_video_super_resolution_1a6107ad419fa3642ff450ff10dc1a80b9" kind="function"><name>IsEnabled</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_video_super_resolution_1a271ea8b315c913510eaa32981a960ccf" kind="function"><name>SetEnabled</name></member>
+  </compound>
+  <compound refid="classadlx_1_1_i_a_d_l_x_video_upscale" kind="class"><name>adlx::IADLXVideoUpscale</name>
+    <member refid="classadlx_1_1_i_a_d_l_x_video_upscale_1a20ded86416030dd36743cb5299f63634" kind="function"><name>IsSupported</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_video_upscale_1a2bdaf90e059ea5d956f0ec1b9eee230f" kind="function"><name>IsEnabled</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_video_upscale_1a860ea9fc34c685bf0125fdcafe004d76" kind="function"><name>GetSharpnessRange</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_video_upscale_1a8f8786c4ea998da65a3a869f07c992e4" kind="function"><name>GetSharpness</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_video_upscale_1abde98a6dc91e0b949a8dff137e87b39a" kind="function"><name>SetEnabled</name></member>
+    <member refid="classadlx_1_1_i_a_d_l_x_video_upscale_1a73743f4390d482b80085f83e14b5aeac" kind="function"><name>SetSharpness</name></member>
+  </compound>
   <compound refid="namespaceadlx" kind="namespace"><name>adlx</name>
     <member refid="_a_d_l_x_defines_8h_1a1bab3fefaeca83e25dceb93bb9fd182f" kind="typedef"><name>IADLXInterfacePtr</name></member>
     <member refid="_i3_d_settings_8h_1a133af6f210a67cfd674eb232bebae4c4" kind="typedef"><name>IADLX3DAntiLagPtr</name></member>
@@ -1040,6 +1206,12 @@
     <member refid="_i3_d_settings1_8h_1a0300155fa926ae2fddb8717282d19b3f" kind="typedef"><name>IADLX3DAMDFluidMotionFramesPtr</name></member>
     <member refid="_i3_d_settings1_8h_1a4482dc219d6932812215a5577c0c1e2a" kind="typedef"><name>IADLX3DSettingsServices1Ptr</name></member>
     <member refid="_i3_d_settings1_8h_1a6d2c2a69cb3a58601303fad44cf746da" kind="typedef"><name>IADLX3DSettingsChangedEvent1Ptr</name></member>
+    <member refid="_i3_d_settings2_8h_1ace5ab8d84618d5c6c61441efb9eb5bf7" kind="typedef"><name>IADLX3DImageSharpenDesktopPtr</name></member>
+    <member refid="_i3_d_settings2_8h_1a97bbc0caa6db35ddd694d4fadf054e95" kind="typedef"><name>IADLX3DSettingsServices2Ptr</name></member>
+    <member refid="_i3_d_settings2_8h_1ad5bef1f6ada4825a2e0d099cae7f0a7e" kind="typedef"><name>IADLX3DSettingsChangedEvent2Ptr</name></member>
+    <member refid="_i_applications_8h_1afa3e865cce9ea06cb41494d27c3f4b31" kind="typedef"><name>IADLXApplicationPtr</name></member>
+    <member refid="_i_applications_8h_1af171ff4478d6d79a781f652d0892f427" kind="typedef"><name>IADLXApplicationListPtr</name></member>
+    <member refid="_i_applications_8h_1a2780a8cb7454e96ce45ac51754bef1c0" kind="typedef"><name>IADLXGPUAppsListChangedHandlingPtr</name></member>
     <member refid="_i_changed_event_8h_1ad191c2004ec35a4fbe51f91155b678db" kind="typedef"><name>IADLXChangedEventPtr</name></member>
     <member refid="_i_collections_8h_1ac394bd62b6480eb12102a1e4aa93f752" kind="typedef"><name>IADLXListPtr</name></member>
     <member refid="_i_desktops_8h_1ab10ce8506bd1dd3a8695fc8f7d1d0d78" kind="typedef"><name>IADLXDesktopPtr</name></member>
@@ -1063,6 +1235,8 @@
     <member refid="_i_displays1_8h_1ac98eecb49247e7d032d4a037d81f8c83" kind="typedef"><name>IADLXDisplaySettingsChangedEvent1Ptr</name></member>
     <member refid="_i_displays2_8h_1abc3240c12413b9ff1d85fe843cbe8310" kind="typedef"><name>IADLXDisplayServices2Ptr</name></member>
     <member refid="_i_displays2_8h_1a46729520260e73c25fd8353faa346d67" kind="typedef"><name>IADLXDisplaySettingsChangedEvent2Ptr</name></member>
+    <member refid="_i_displays3_8h_1ac090f08d5be9ff6837d7aa1b2168ce51" kind="typedef"><name>IADLXDisplayServices3Ptr</name></member>
+    <member refid="_i_displays3_8h_1ade68209de3cf84f3dbc274343abb074c" kind="typedef"><name>IADLXDisplaySettingsChangedEvent3Ptr</name></member>
     <member refid="_i_display_settings_8h_1abdba048ed21032402bd13a091a6548ed" kind="typedef"><name>IADLXDisplayFreeSyncPtr</name></member>
     <member refid="_i_display_settings_8h_1a9384670df44322b41520cebffbca23eb" kind="typedef"><name>IADLXDisplayVSRPtr</name></member>
     <member refid="_i_display_settings_8h_1ae1a4fa0fb7df656b1f03f73228a391b3" kind="typedef"><name>IADLXDisplayGPUScalingPtr</name></member>
@@ -1076,18 +1250,25 @@
     <member refid="_i_display_settings_8h_1a664fd818994e7748b838068749ac55bd" kind="typedef"><name>IADLXDisplayResolutionListPtr</name></member>
     <member refid="_i_display_settings_8h_1ac715a0ea0eb974e848aeb7e42cc450ce" kind="typedef"><name>IADLXDisplayCustomResolutionPtr</name></member>
     <member refid="_i_display_settings_8h_1a30158c9ae40dce74b8320a7550faf510" kind="typedef"><name>IADLXDisplayVariBrightPtr</name></member>
+    <member refid="_i_display_settings_8h_1a77ee101330ccfedcc63ba04faa085f82" kind="typedef"><name>IADLXDisplayVariBright1Ptr</name></member>
     <member refid="_i_display_settings_8h_1aa91b79ff5cace971bc9cde47e7990b0d" kind="typedef"><name>IADLXDisplayConnectivityExperiencePtr</name></member>
     <member refid="_i_display_settings_8h_1a9bf65fe16717da40f34d7159f57e3d49" kind="typedef"><name>IADLXDisplayBlankingPtr</name></member>
+    <member refid="_i_display_settings_8h_1a60523e80a1b7315fddb7ef60e2a75b2b" kind="typedef"><name>IADLXDisplayDynamicRefreshRateControlPtr</name></member>
+    <member refid="_i_display_settings_8h_1a342ff11a33e467fa358263cd1ac950fe" kind="typedef"><name>IADLXDisplayFreeSyncColorAccuracyPtr</name></member>
     <member refid="_i_g_p_u_auto_tuning_8h_1a666e230a668e39fecb3f1936e473de92" kind="typedef"><name>IADLXGPUAutoTuningCompleteEventPtr</name></member>
     <member refid="_i_g_p_u_auto_tuning_8h_1a2cc8a05998a895c679c89ed93b9daa1c" kind="typedef"><name>IADLXGPUAutoTuningPtr</name></member>
     <member refid="_i_g_p_u_manual_fan_tuning_8h_1a9d0f53b18a09fe846023b97c71b4a57e" kind="typedef"><name>IADLXManualFanTuningStatePtr</name></member>
     <member refid="_i_g_p_u_manual_fan_tuning_8h_1af17600f8667e97783b369335a33040d5" kind="typedef"><name>IADLXManualFanTuningStateListPtr</name></member>
     <member refid="_i_g_p_u_manual_fan_tuning_8h_1ab794277ab94e9e4f8937a792c9c66e20" kind="typedef"><name>IADLXManualFanTuningPtr</name></member>
+    <member refid="_i_g_p_u_manual_fan_tuning_8h_1ad528e6faaf002205401b98b9c9850442" kind="typedef"><name>IADLXManualFanTuning1Ptr</name></member>
     <member refid="_i_g_p_u_manual_g_f_x_tuning_8h_1aba9d49863a239ade74b3c2978ca7a9cd" kind="typedef"><name>IADLXManualGraphicsTuning1Ptr</name></member>
     <member refid="_i_g_p_u_manual_g_f_x_tuning_8h_1ab9623bce2f13b6a35651298b90b08248" kind="typedef"><name>IADLXManualGraphicsTuning2Ptr</name></member>
+    <member refid="_i_g_p_u_manual_g_f_x_tuning_8h_1adc973f264eb0dfab7d600ccdc2cd982e" kind="typedef"><name>IADLXManualGraphicsTuning2_1Ptr</name></member>
     <member refid="_i_g_p_u_manual_power_tuning_8h_1afa10076f98ac539a2d96065de3cce32d" kind="typedef"><name>IADLXManualPowerTuningPtr</name></member>
+    <member refid="_i_g_p_u_manual_power_tuning_8h_1ac25ab01c7ccfd1f7110e5ab4e497ec54" kind="typedef"><name>IADLXManualPowerTuning1Ptr</name></member>
     <member refid="_i_g_p_u_manual_v_r_a_m_tuning_8h_1a5e06aaf1f10b586a3ccfb1f346d61dac" kind="typedef"><name>IADLXManualVRAMTuning1Ptr</name></member>
     <member refid="_i_g_p_u_manual_v_r_a_m_tuning_8h_1a9dc9b700a9e0104d12179dd4aa9b2e53" kind="typedef"><name>IADLXManualVRAMTuning2Ptr</name></member>
+    <member refid="_i_g_p_u_manual_v_r_a_m_tuning_8h_1ab6df28b0acb09da494ddf66d19554601" kind="typedef"><name>IADLXManualVRAMTuning2_1Ptr</name></member>
     <member refid="_i_g_p_u_preset_tuning_8h_1a28a4dd668888c5d1bf57636bb0a2f9b2" kind="typedef"><name>IADLXGPUPresetTuningPtr</name></member>
     <member refid="_i_g_p_u_tuning_8h_1a03cad6a5a6b3595203d6349fad449d33" kind="typedef"><name>IADLXManualTuningStatePtr</name></member>
     <member refid="_i_g_p_u_tuning_8h_1a7f10185b5de52926707142c5b8604503" kind="typedef"><name>IADLXMemoryTimingDescriptionPtr</name></member>
@@ -1099,6 +1280,11 @@
     <member refid="_i_g_p_u_tuning1_8h_1a5bd4b38ab94148bfbafa5e28d31349c1" kind="typedef"><name>IADLXGPUTuningServices1Ptr</name></member>
     <member refid="_i_g_p_u_tuning1_8h_1a0ed4eeb8cec257b4cd229742d3de48ec" kind="typedef"><name>IADLXGPUTuningChangedEvent1Ptr</name></member>
     <member refid="_i_i2_c_8h_1a4182193070ccc015756a9ccb5cda30ea" kind="typedef"><name>IADLXI2CPtr</name></member>
+    <member refid="_i_multi_media_8h_1a082add7ec82a19be31b5e4c634cfeb3b" kind="typedef"><name>IADLXVideoUpscalePtr</name></member>
+    <member refid="_i_multi_media_8h_1ab9e2071ffb46c2f691472a9a687a4abd" kind="typedef"><name>IADLXVideoSuperResolutionPtr</name></member>
+    <member refid="_i_multi_media_8h_1a6d5a2bf259c7633760c789fdabe2842f" kind="typedef"><name>IADLXMultimediaChangedEventPtr</name></member>
+    <member refid="_i_multi_media_8h_1a7ab55a13a3bc4f8e503bbd3d6e085bd9" kind="typedef"><name>IADLXMultimediaChangedHandlingPtr</name></member>
+    <member refid="_i_multi_media_8h_1a498420ab29fb072abb40d0b52e8f2502" kind="typedef"><name>IADLXMultimediaServicesPtr</name></member>
     <member refid="_i_performance_monitoring_8h_1afeef552aeb0732fbd2dc9abe2ed96010" kind="typedef"><name>IADLXGPUMetricsSupportPtr</name></member>
     <member refid="_i_performance_monitoring_8h_1a773d62980c82e49e256ae6faf213f8dc" kind="typedef"><name>IADLXSystemMetricsSupportPtr</name></member>
     <member refid="_i_performance_monitoring_8h_1a62288f1ee131efae0f75a6ad2769733e" kind="typedef"><name>IADLXGPUMetricsPtr</name></member>
@@ -1114,18 +1300,28 @@
     <member refid="_i_performance_monitoring1_8h_1a7a39d4f435f28b8624e23471c8181592" kind="typedef"><name>IADLXSystemMetrics1Ptr</name></member>
     <member refid="_i_performance_monitoring2_8h_1a3737797872049ddd653c001e744f2782" kind="typedef"><name>IADLXGPUMetricsSupport1Ptr</name></member>
     <member refid="_i_performance_monitoring2_8h_1ad158dfc4314cf5b874c7476b78134293" kind="typedef"><name>IADLXGPUMetrics1Ptr</name></member>
+    <member refid="_i_performance_monitoring3_8h_1a5dc27d041f37eb6a3142127a800f23bc" kind="typedef"><name>IADLXGPUMetricsSupport2Ptr</name></member>
+    <member refid="_i_performance_monitoring3_8h_1a0a2908b11a9db2ffb5a0242d5c2041a2" kind="typedef"><name>IADLXGPUMetrics2Ptr</name></member>
     <member refid="_i_power_tuning_8h_1ab9b3730a2489e99b0ffd030a6fb40af4" kind="typedef"><name>IADLXSmartShiftMaxPtr</name></member>
     <member refid="_i_power_tuning_8h_1a4a9f26f24a8a7415f9a01967adbbc858" kind="typedef"><name>IADLXPowerTuningChangedEventPtr</name></member>
     <member refid="_i_power_tuning_8h_1a36ad009e2f931a0a89da114f586f927a" kind="typedef"><name>IADLXPowerTuningChangedHandlingPtr</name></member>
     <member refid="_i_power_tuning_8h_1a8b4bd4dd4aaa630a6dca3027a6652b15" kind="typedef"><name>IADLXPowerTuningServicesPtr</name></member>
+    <member refid="_i_power_tuning1_8h_1a92b8465c1c954c91f6f0fa39071d81c2" kind="typedef"><name>IADLXSmartShiftEcoPtr</name></member>
+    <member refid="_i_power_tuning1_8h_1a055e1725fbdeb3a39669829b64f9363f" kind="typedef"><name>IADLXGPUConnectChangedEventPtr</name></member>
+    <member refid="_i_power_tuning1_8h_1af90325e4e736536cfe9a3130d5737eab" kind="typedef"><name>IADLXPowerTuningChangedEvent1Ptr</name></member>
+    <member refid="_i_power_tuning1_8h_1a47a6ff7c1f2afc46be4f46eeb97a25d1" kind="typedef"><name>IADLXPowerTuningServices1Ptr</name></member>
     <member refid="_i_smart_access_memory_8h_1ad45bdb9ecbe0e3968990396e166a6254" kind="typedef"><name>IADLXSmartAccessMemoryPtr</name></member>
     <member refid="_i_system_8h_1a7ccb994ad9cf40ecac4d7accf39f7ec6" kind="typedef"><name>IADLXGPUPtr</name></member>
     <member refid="_i_system_8h_1a2c020d9f8765d8ac4383b3ef31971857" kind="typedef"><name>IADLXGPUListPtr</name></member>
     <member refid="_i_system_8h_1a92406c172e2cbca0f3f78a49dc7f56c9" kind="typedef"><name>IADLXGPUsChangedHandlingPtr</name></member>
     <member refid="_i_system1_8h_1a293a0aa3f3d2897ecf311ccb35a5ffd2" kind="typedef"><name>IADLXGPU1Ptr</name></member>
     <member refid="_i_system1_8h_1aec2da36bf0baeebda433a34ef2060af3" kind="typedef"><name>IADLXSystem1Ptr</name></member>
+    <member refid="_i_system2_8h_1ae6357c397e4bc68f8b21cd23a80ef314" kind="typedef"><name>IADLXGPU2Ptr</name></member>
+    <member refid="_i_system2_8h_1a7177bb489b32d9ef14c11c1c34ed9d37" kind="typedef"><name>IADLXGPU2ListPtr</name></member>
+    <member refid="_i_system2_8h_1a73b5d91c6b30a403a77e8f7badbd346d" kind="typedef"><name>IADLXSystem2Ptr</name></member>
     <member refid="_i3_d_settings_8h_1a45d9a6440dace0ac605724961abcee6b" kind="variable"><name>IADLXGPU</name></member>
     <member refid="_i3_d_settings1_8h_1a698c03b0f0ac47dea759d11f04822f10" kind="variable"><name>IADLX3DAMDFluidMotionFrames</name></member>
+    <member refid="_i_applications_8h_1a4eda33c6c4741bf5bdc2ccba88e9a418" kind="variable"><name>IADLXGPU2</name></member>
     <member refid="_i_desktops_8h_1a5e0189f42408653036b0ad71960d5f0c" kind="variable"><name>IADLXDisplayList</name></member>
     <member refid="_i_desktops_8h_1ab74c9ab9636492510206915ee0ca5171" kind="variable"><name>IADLXDisplay</name></member>
     <member refid="_i_displays_8h_1a831b0bab65be7e6e5dab8d372ab28e7f" kind="variable"><name>IADLXDisplayGamut</name></member>
@@ -1144,9 +1340,12 @@
     <member refid="_i_displays_8h_1a4c846daf0fa86bf16617e5c0e7b9fc9d" kind="variable"><name>IADLXDisplayVariBright</name></member>
     <member refid="_i_displays1_8h_1a10ae56563d06b61c9a8644c7a77d5fb4" kind="variable"><name>IADLXDisplayConnectivityExperience</name></member>
     <member refid="_i_displays1_8h_1a27804818e7a53b0202cf352968ccf2e1" kind="variable"><name>IADLXDisplayBlanking</name></member>
+    <member refid="_i_displays3_8h_1a7c0baaf743b3c37dcb8e279b3f4fea01" kind="variable"><name>IADLXDisplayDynamicRefreshRateControl</name></member>
+    <member refid="_i_displays3_8h_1ae2a284ee03ed6539adf0f131ff7504d4" kind="variable"><name>IADLXDisplayFreeSyncColorAccuracy</name></member>
     <member refid="_i_g_p_u_manual_g_f_x_tuning_8h_1a9bf0af970e80e3ab6115b5f7e598723f" kind="variable"><name>IADLXManualTuningStateList</name></member>
     <member refid="_i_g_p_u_manual_v_r_a_m_tuning_8h_1a714987b15fc446c93375ef5145f880c6" kind="variable"><name>IADLXMemoryTimingDescriptionList</name></member>
     <member refid="_i_g_p_u_tuning1_8h_1ab62beea927ef724f3a4ea1764490046f" kind="variable"><name>IADLXSmartAccessMemory</name></member>
+    <member refid="_i_power_tuning1_8h_1a9b71cf13da11e7f214e01aebacc1e6a4" kind="variable"><name>IADLXGPU2List</name></member>
     <member refid="_i_system_8h_1ab4277ec9523d6b0012de2d2ce686352c" kind="variable"><name>IADLXDesktopServices</name></member>
     <member refid="_i_system_8h_1aa4c693feb2aa13ce16caa71196eb4062" kind="variable"><name>IADLXDisplayServices</name></member>
     <member refid="_i_system_8h_1ac59a826e3661a40c813505a09dc0e116" kind="variable"><name>IADLXLog</name></member>
@@ -1156,6 +1355,10 @@
     <member refid="_i_system_8h_1af86ccb39b4237bf79c94e01120d780b1" kind="variable"><name>IADLXI2C</name></member>
     <member refid="_i_system_8h_1a4b013e7b15eaee0bc09bee87a0744cfa" kind="variable"><name>IADLXDesktop</name></member>
     <member refid="_i_system1_8h_1a2ea2b1c071d1245214a03e2516b7c72f" kind="variable"><name>IADLXPowerTuningServices</name></member>
+    <member refid="_i_system2_8h_1ab0dd48b9b564bd537a5a3196bdf87c71" kind="variable"><name>IADLXGPUConnectChangedListener</name></member>
+    <member refid="_i_system2_8h_1a828e3e273e1a0b183b9c8b1eaed192ec" kind="variable"><name>IADLXApplicationList</name></member>
+    <member refid="_i_system2_8h_1a85f9eec847eaa5cbc8d8d3e877ba7972" kind="variable"><name>IADLXMultimediaServices</name></member>
+    <member refid="_i_system2_8h_1a49060df66d3623d3c3540305e414ba63" kind="variable"><name>IADLXGPUAppsListChangedHandling</name></member>
   </compound>
   <compound refid="_a_d_l_x_dox_8h" kind="file"><name>ADLXDox.h</name>
   </compound>
@@ -1173,6 +1376,8 @@
   </compound>
   <compound refid="_a_d_l_x_miscellaneous_page_8h" kind="file"><name>ADLXMiscellaneousPage.h</name>
   </compound>
+  <compound refid="_a_d_l_x_multimedia_8h" kind="file"><name>ADLXMultimedia.h</name>
+  </compound>
   <compound refid="_a_d_l_x_page_8h" kind="file"><name>ADLXPage.h</name>
     <member refid="group___a_d_l_x_macro_1ga230859c12673173fe14d5fa5bf3c2438" kind="define"><name>ADLX_DLL_NAMEW</name></member>
     <member refid="group___a_d_l_x_macro_1gae6717665e58771830fb95333b9af6b35" kind="define"><name>ADLX_DLL_NAMEA</name></member>
@@ -1180,9 +1385,13 @@
   </compound>
   <compound refid="_a_d_l_x_performance_page_8h" kind="file"><name>ADLXPerformancePage.h</name>
   </compound>
+  <compound refid="_a_d_l_x_power_tuning1_page_8h" kind="file"><name>ADLXPowerTuning1Page.h</name>
+  </compound>
   <compound refid="_a_d_l_x_power_tuning_page_8h" kind="file"><name>ADLXPowerTuningPage.h</name>
   </compound>
   <compound refid="_a_d_l_x_system1_page_8h" kind="file"><name>ADLXSystem1Page.h</name>
+  </compound>
+  <compound refid="_a_d_l_x_system2_page_8h" kind="file"><name>ADLXSystem2Page.h</name>
   </compound>
   <compound refid="_a_d_l_x_system_page_8h" kind="file"><name>ADLXSystemPage.h</name>
   </compound>
@@ -1228,6 +1437,8 @@
   </compound>
   <compound refid="ci2c_8md" kind="file"><name>ci2c.md</name>
   </compound>
+  <compound refid="cmultimedia_8md" kind="file"><name>cmultimedia.md</name>
+  </compound>
   <compound refid="cperformance_8md" kind="file"><name>cperformance.md</name>
   </compound>
   <compound refid="cpowertuning_8md" kind="file"><name>cpowertuning.md</name>
@@ -1243,6 +1454,8 @@
   <compound refid="cppgputuning_8md" kind="file"><name>cppgputuning.md</name>
   </compound>
   <compound refid="cppi2c_8md" kind="file"><name>cppi2c.md</name>
+  </compound>
+  <compound refid="cppmultimedia_8md" kind="file"><name>cppmultimedia.md</name>
   </compound>
   <compound refid="cppperformance_8md" kind="file"><name>cppperformance.md</name>
   </compound>
@@ -1260,15 +1473,15 @@
   </compound>
   <compound refid="interfacereqtable_8h" kind="file"><name>interfacereqtable.h</name>
   </compound>
-  <compound refid="_c_p_p_2_read_me_8md" kind="file"><name>ReadMe.md</name>
-  </compound>
   <compound refid="_c_2_read_me_8md" kind="file"><name>ReadMe.md</name>
   </compound>
-  <compound refid="python_2_read_me_8md" kind="file"><name>ReadMe.md</name>
+  <compound refid="_c_p_p_2_read_me_8md" kind="file"><name>ReadMe.md</name>
   </compound>
   <compound refid="csharp_2_read_me_8md" kind="file"><name>ReadMe.md</name>
   </compound>
   <compound refid="java_2_read_me_8md" kind="file"><name>ReadMe.md</name>
+  </compound>
+  <compound refid="python_2_read_me_8md" kind="file"><name>ReadMe.md</name>
   </compound>
   <compound refid="_a_d_l_x_helper_8c" kind="file"><name>ADLXHelper.c</name>
     <member refid="_a_d_l_x_helper_8c_1a4b5f752f073565eca737b312db8d1c76" kind="typedef"><name>ADLXHelper</name></member>
@@ -1279,9 +1492,9 @@
     <member refid="_a_d_l_x_helper_8c_1a86263a4803422d63b5e145d6a4204558" kind="function"><name>ADLXHelper_InitializeWithCallerAdl</name></member>
     <member refid="_a_d_l_x_helper_8c_1a55df5466b099074177b0621dccb45f20" kind="function"><name>ADLXHelper_Terminate</name></member>
     <member refid="_a_d_l_x_helper_8c_1a9c515a9b7d1329abc7465d116b51fbf1" kind="function"><name>ADLXHelper_QueryFullVersion</name></member>
-    <member refid="_a_d_l_x_helper_8c_1a547b5ef69568e3df8636760351d67f6e" kind="function"><name>ADLXHelper_QueryVersion</name></member>
-    <member refid="_a_d_l_x_helper_8c_1abacbb3503981d2f276e11611c237d2af" kind="function"><name>ADLXHelper_GetSystemServices</name></member>
-    <member refid="_a_d_l_x_helper_8c_1a1d820176a9d17b02630a39227857c8d9" kind="function"><name>ADLXHelper_GetAdlMapping</name></member>
+    <member refid="_a_d_l_x_helper_8c_1a4f09e99e9ddc54fcdb2ebe4cf8fcea5f" kind="function"><name>ADLXHelper_QueryVersion</name></member>
+    <member refid="_a_d_l_x_helper_8c_1ad62040e5aea1d568e8263be11493c3dc" kind="function"><name>ADLXHelper_GetSystemServices</name></member>
+    <member refid="_a_d_l_x_helper_8c_1a9a131cb40017df360fe014dff545edbe" kind="function"><name>ADLXHelper_GetAdlMapping</name></member>
     <member refid="_a_d_l_x_helper_8c_1ab093dbdbf88ecadc5693033a01991c73" kind="function"><name>LoadADLXDll</name></member>
   </compound>
   <compound refid="_c_2_a_d_l_x_helper_8h" kind="file"><name>ADLXHelper.h</name>
@@ -1289,13 +1502,13 @@
     <member refid="_c_2_a_d_l_x_helper_8h_1a38a7ecf51d26a1d78ce3652d6ee2eb14" kind="function"><name>ADLXHelper_InitializeWithIncompatibleDriver</name></member>
     <member refid="_c_2_a_d_l_x_helper_8h_1a86263a4803422d63b5e145d6a4204558" kind="function"><name>ADLXHelper_InitializeWithCallerAdl</name></member>
     <member refid="_c_2_a_d_l_x_helper_8h_1a55df5466b099074177b0621dccb45f20" kind="function"><name>ADLXHelper_Terminate</name></member>
-    <member refid="_c_2_a_d_l_x_helper_8h_1abacbb3503981d2f276e11611c237d2af" kind="function"><name>ADLXHelper_GetSystemServices</name></member>
-    <member refid="_c_2_a_d_l_x_helper_8h_1a1d820176a9d17b02630a39227857c8d9" kind="function"><name>ADLXHelper_GetAdlMapping</name></member>
+    <member refid="_c_2_a_d_l_x_helper_8h_1ad62040e5aea1d568e8263be11493c3dc" kind="function"><name>ADLXHelper_GetSystemServices</name></member>
+    <member refid="_c_2_a_d_l_x_helper_8h_1a9a131cb40017df360fe014dff545edbe" kind="function"><name>ADLXHelper_GetAdlMapping</name></member>
     <member refid="_c_2_a_d_l_x_helper_8h_1a9c515a9b7d1329abc7465d116b51fbf1" kind="function"><name>ADLXHelper_QueryFullVersion</name></member>
-    <member refid="_c_2_a_d_l_x_helper_8h_1a547b5ef69568e3df8636760351d67f6e" kind="function"><name>ADLXHelper_QueryVersion</name></member>
+    <member refid="_c_2_a_d_l_x_helper_8h_1a4f09e99e9ddc54fcdb2ebe4cf8fcea5f" kind="function"><name>ADLXHelper_QueryVersion</name></member>
   </compound>
   <compound refid="_cpp_2_a_d_l_x_helper_8h" kind="file"><name>ADLXHelper.h</name>
-    <member refid="_cpp_2_a_d_l_x_helper_8h_1a48f4b4774bbdfbc128a0b6e83110087c" kind="variable"><name>g_ADLX</name></member>
+    <member refid="_cpp_2_a_d_l_x_helper_8h_1adca0c68fcc022ec603fe34d5b7995243" kind="variable"><name>g_ADLX</name></member>
   </compound>
   <compound refid="_a_d_l_x_helper_8cpp" kind="file"><name>ADLXHelper.cpp</name>
     <member refid="_a_d_l_x_helper_8cpp_1aaf5a7a6471f73aabc17f71941bd6515e" kind="variable"><name>g_ADLX</name></member>
@@ -1310,12 +1523,12 @@
     <member refid="group___a_d_l_x_macro_1ga6219bdf1844b1f9bbb4fde96630442e4" kind="define"><name>ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME</name></member>
     <member refid="group___a_d_l_x_macro_1gad4b30c181751a349fccd865550dbc709" kind="define"><name>ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME</name></member>
     <member refid="group___a_d_l_x_macro_1ga4eb1fd9b5d55b0699d498535f29c4634" kind="define"><name>ADLX_TERMINATE_FUNCTION_NAME</name></member>
-    <member refid="group___a_d_l_x_defs_1ga6adc3b43ac10780441c675a07a0fa4ae" kind="typedef"><name>ADLXQueryFullVersion_Fn</name></member>
-    <member refid="group___a_d_l_x_defs_1gacc89675ee4e79ce8f3a2d729bc48fc0b" kind="typedef"><name>ADLXQueryVersion_Fn</name></member>
-    <member refid="group___a_d_l_x_defs_1ga7301579b153c3612dca5c442e5f2dd45" kind="typedef"><name>ADLX_ADL_Main_Memory_Free</name></member>
-    <member refid="group___a_d_l_x_defs_1gac5f7f97490516e7be3e62c3be1383c66" kind="typedef"><name>ADLXInitialize_Fn</name></member>
-    <member refid="group___a_d_l_x_defs_1gadb90c5a66bc15b34f864d5883158ed44" kind="typedef"><name>ADLXInitializeWithCallerAdl_Fn</name></member>
-    <member refid="group___a_d_l_x_defs_1ga8c0d01f62522f27bdb72ece0c7c89ded" kind="typedef"><name>ADLXTerminate_Fn</name></member>
+    <member refid="group___a_d_l_x_defs_1ga977d52d7192498cf99383797c5fc44a5" kind="typedef"><name>ADLXQueryFullVersion_Fn</name></member>
+    <member refid="group___a_d_l_x_defs_1gab6bea1ad7226aaefe89c0cbcc0e72def" kind="typedef"><name>ADLXQueryVersion_Fn</name></member>
+    <member refid="group___a_d_l_x_defs_1gabdc3ae7e3b002ff843e7aaa8f055ae77" kind="typedef"><name>ADLX_ADL_Main_Memory_Free</name></member>
+    <member refid="group___a_d_l_x_defs_1gac1ba04c408146afccbfcfe2878ca3a3f" kind="typedef"><name>ADLXInitialize_Fn</name></member>
+    <member refid="group___a_d_l_x_defs_1ga549c1dd974464d1cf9de5e5900e0aa1c" kind="typedef"><name>ADLXInitializeWithCallerAdl_Fn</name></member>
+    <member refid="group___a_d_l_x_defs_1ga286c8f710923eb9205239ca3b8b6cd05" kind="typedef"><name>ADLXTerminate_Fn</name></member>
   </compound>
   <compound refid="_a_d_l_x_defines_8h" kind="file"><name>ADLXDefines.h</name>
     <member refid="_a_d_l_x_defines_8h_1acbf896f8442c1b98285723ef70df2dc2" kind="define"><name>ADLX_MAKE_FULL_VER</name></member>
@@ -1335,242 +1548,44 @@
     <member refid="_a_d_l_x_defines_8h_1a930574b15ad76647f7d55cb0273cf397" kind="define"><name>ADLX_IS_IID</name></member>
     <member refid="_a_d_l_x_defines_8h_1aede8a40979edc05b036d618792c64151" kind="define"><name>ADLX_DECLARE_ITEM_IID</name></member>
     <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kind="enum"><name>ADLX_RESULT</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a72597a9998fa21f37bfcaddd9cafaed5" kind="enumvalue"><name>ADLX_OK</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a85feb7c16bb0c565f3aab9892afe5fd5" kind="enumvalue"><name>ADLX_ALREADY_ENABLED</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0ab8b50ab5ce732abd04769f06bf5c47f7" kind="enumvalue"><name>ADLX_ALREADY_INITIALIZED</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c" kind="enumvalue"><name>ADLX_FAIL</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0af44fabfdb08be14d11a6d2f732c856b7" kind="enumvalue"><name>ADLX_INVALID_ARGS</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0ac571770e655e2cf695827fb4a15e35c0" kind="enumvalue"><name>ADLX_BAD_VER</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a8fc7732baab75a3c05f77d1bf4a70d20" kind="enumvalue"><name>ADLX_UNKNOWN_INTERFACE</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0ae5f780950728a255730b0280499acb72" kind="enumvalue"><name>ADLX_TERMINATED</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0ab8dc0553a4e73b3f60bec76a9191f281" kind="enumvalue"><name>ADLX_ADL_INIT_ERROR</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a407e7fb76cdc6900948ba09adbc55a99" kind="enumvalue"><name>ADLX_NOT_FOUND</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a447f8d425a70ea68f944e0678206e74e" kind="enumvalue"><name>ADLX_INVALID_OBJECT</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a0f2aa9a92254cd0fe4b705b0f77ca314" kind="enumvalue"><name>ADLX_ORPHAN_OBJECTS</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a351c7e8c74ef3cfbee06213c43884589" kind="enumvalue"><name>ADLX_NOT_SUPPORTED</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0ad2c2b132ffcd5ef80752f2fc2b38811f" kind="enumvalue"><name>ADLX_PENDING_OPERATION</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a7ecc8145f60057fa833a86fb605f83f2" kind="enumvalue"><name>ADLX_GPU_INACTIVE</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a2431684033e55e857a3f9b2d55d318f0" kind="enumvalue"><name>ADLX_GPU_IN_USE</name></member>
-    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a600700f1d71935ca0ff5836a41dd8edb" kind="enumvalue"><name>ADLX_TIMEOUT_OPERATION</name></member>
     <member refid="group__enumerations_1ga260f926e27eef013ca1eacd0ff7b3ba7" kind="enum"><name>ADLX_HG_TYPE</name></member>
-    <member refid="group__enumerations_1ga260f926e27eef013ca1eacd0ff7b3ba7ac157bdf0b85a40d2619cbc8bc1ae5fe2" kind="enumvalue"><name>NONE</name></member>
-    <member refid="group__enumerations_1ga260f926e27eef013ca1eacd0ff7b3ba7ac1f5c308ff9610759dbc1415b20df568" kind="enumvalue"><name>AMD</name></member>
-    <member refid="group__enumerations_1ga260f926e27eef013ca1eacd0ff7b3ba7adbf1dee1b8cd7ea3c82661943c7b74f4" kind="enumvalue"><name>OTHER</name></member>
     <member refid="group__enumerations_1gaf4fd628e799e6a74201290ff40418d77" kind="enum"><name>ADLX_ASIC_FAMILY_TYPE</name></member>
-    <member refid="group__enumerations_1gaf4fd628e799e6a74201290ff40418d77a3545ff1a23cd34b9adbc8c665a5951be" kind="enumvalue"><name>ASIC_UNDEFINED</name></member>
-    <member refid="group__enumerations_1gaf4fd628e799e6a74201290ff40418d77a0dc8ed090699f28b662b7c765274cf9e" kind="enumvalue"><name>ASIC_RADEON</name></member>
-    <member refid="group__enumerations_1gaf4fd628e799e6a74201290ff40418d77a80725f02993ea38bb16b978d9226fd0b" kind="enumvalue"><name>ASIC_FIREPRO</name></member>
-    <member refid="group__enumerations_1gaf4fd628e799e6a74201290ff40418d77a0ad611b8d03595461b2e81edb4ca5195" kind="enumvalue"><name>ASIC_FIREMV</name></member>
-    <member refid="group__enumerations_1gaf4fd628e799e6a74201290ff40418d77adbd861ee855957a3422ae76d20b71d7c" kind="enumvalue"><name>ASIC_FIRESTREAM</name></member>
-    <member refid="group__enumerations_1gaf4fd628e799e6a74201290ff40418d77a96ee7dab50a7cdb839879acb9a4e64e3" kind="enumvalue"><name>ASIC_FUSION</name></member>
-    <member refid="group__enumerations_1gaf4fd628e799e6a74201290ff40418d77ac6b09b34c87726a358773f7fad37ffc8" kind="enumvalue"><name>ASIC_EMBEDDED</name></member>
     <member refid="group__enumerations_1gafcbeca41c0df518ccf5556e8e6e83f62" kind="enum"><name>ADLX_PCI_BUS_TYPE</name></member>
-    <member refid="group__enumerations_1gafcbeca41c0df518ccf5556e8e6e83f62a605159e8a4c32319fd69b5d151369d93" kind="enumvalue"><name>UNDEFINED</name></member>
-    <member refid="group__enumerations_1gafcbeca41c0df518ccf5556e8e6e83f62adfeeebd622756e33b1bbf14d0b8821ee" kind="enumvalue"><name>PCI</name></member>
-    <member refid="group__enumerations_1gafcbeca41c0df518ccf5556e8e6e83f62a3a56bf1c6f4aab3bdae90cca3aac176c" kind="enumvalue"><name>AGP</name></member>
-    <member refid="group__enumerations_1gafcbeca41c0df518ccf5556e8e6e83f62aae1e997bb446fea257f4b0313566a2d2" kind="enumvalue"><name>PCIE</name></member>
-    <member refid="group__enumerations_1gafcbeca41c0df518ccf5556e8e6e83f62aa36631de27912207e50cacf93573d0f6" kind="enumvalue"><name>PCIE_2_0</name></member>
-    <member refid="group__enumerations_1gafcbeca41c0df518ccf5556e8e6e83f62a057afcee3226d5df8609f7b055bbf274" kind="enumvalue"><name>PCIE_3_0</name></member>
-    <member refid="group__enumerations_1gafcbeca41c0df518ccf5556e8e6e83f62a5e365dcf6d45b0ea04e3e60b0eb8079c" kind="enumvalue"><name>PCIE_4_0</name></member>
     <member refid="group__enumerations_1gad5b0891b86d362269696ba46e1d4bdee" kind="enum"><name>ADLX_DP_LINK_RATE</name></member>
-    <member refid="group__enumerations_1gad5b0891b86d362269696ba46e1d4bdeea04bc6767a7efdf5d1a743582793bf719" kind="enumvalue"><name>DP_LINK_RATE_UNKNOWN</name></member>
-    <member refid="group__enumerations_1gad5b0891b86d362269696ba46e1d4bdeea63d5dd3686f86a0119d1cf331f1edca2" kind="enumvalue"><name>DP_LINK_RATE_RBR</name></member>
-    <member refid="group__enumerations_1gad5b0891b86d362269696ba46e1d4bdeeae87c9d32213824676ec6543f5a3c61b7" kind="enumvalue"><name>DP_LINK_RATE_2_16GBPS</name></member>
-    <member refid="group__enumerations_1gad5b0891b86d362269696ba46e1d4bdeea4a9e8270d9b68125a6110a27656b8997" kind="enumvalue"><name>DP_LINK_RATE_2_43GBPS</name></member>
-    <member refid="group__enumerations_1gad5b0891b86d362269696ba46e1d4bdeea35645d5d751c605c68d7510626b83c56" kind="enumvalue"><name>DP_LINK_RATE_HBR</name></member>
-    <member refid="group__enumerations_1gad5b0891b86d362269696ba46e1d4bdeea3372eca0cefeed18988085434d499e3a" kind="enumvalue"><name>DP_LINK_RATE_4_32GBPS</name></member>
-    <member refid="group__enumerations_1gad5b0891b86d362269696ba46e1d4bdeea77934704361a860998a76317c52f8b03" kind="enumvalue"><name>DP_LINK_RATE_HBR2</name></member>
-    <member refid="group__enumerations_1gad5b0891b86d362269696ba46e1d4bdeea109f634075691572ff18a40be6158252" kind="enumvalue"><name>DP_LINK_RATE_HBR3</name></member>
-    <member refid="group__enumerations_1gad5b0891b86d362269696ba46e1d4bdeeac78010f42a30fe04e7306d302a3d1245" kind="enumvalue"><name>DP_LINK_RATE_UHBR10</name></member>
-    <member refid="group__enumerations_1gad5b0891b86d362269696ba46e1d4bdeead12cd6f6bb23b34a3f7878586a0fc730" kind="enumvalue"><name>DP_LINK_RATE_UHBR13D5</name></member>
-    <member refid="group__enumerations_1gad5b0891b86d362269696ba46e1d4bdeeaf2289ad0d49b5e1b667619a2c90fb5f4" kind="enumvalue"><name>DP_LINK_RATE_UHBR20</name></member>
     <member refid="group__enumerations_1ga6fb3c9944d5c8aa79f7dbd0f675fac34" kind="enum"><name>ADLX_GPU_TYPE</name></member>
-    <member refid="group__enumerations_1ga6fb3c9944d5c8aa79f7dbd0f675fac34ace1bf6380e6eb87aec4f7879f4d117c9" kind="enumvalue"><name>GPUTYPE_UNDEFINED</name></member>
-    <member refid="group__enumerations_1ga6fb3c9944d5c8aa79f7dbd0f675fac34af54e5303fc76110709462383628c0d5b" kind="enumvalue"><name>GPUTYPE_INTEGRATED</name></member>
-    <member refid="group__enumerations_1ga6fb3c9944d5c8aa79f7dbd0f675fac34a5aa5ebc90d45840cfadec5bd25e50423" kind="enumvalue"><name>GPUTYPE_DISCRETE</name></member>
     <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5d" kind="enum"><name>ADLX_DISPLAY_CONNECTOR_TYPE</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5da294e0c1bbb3ca9ccd0b4c9872f697f66" kind="enumvalue"><name>DISPLAY_CONTYPE_UNKNOWN</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5dafb7606e80d94f991f4adf02a785de52e" kind="enumvalue"><name>DISPLAY_CONTYPE_VGA</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5da66e9c3dc1143b21d451f1eeeda928922" kind="enumvalue"><name>DISPLAY_CONTYPE_DVI_D</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5da976f94a4c526e32729689885d12b4974" kind="enumvalue"><name>DISPLAY_CONTYPE_DVI_I</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5da6ef67f9c7005bf44c7c9e09ba771a6d1" kind="enumvalue"><name>DISPLAY_CONTYPE_CVDONGLE_NTSC</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5dab31eb7b3e4b0af7a9c94c3c25ea96037" kind="enumvalue"><name>DISPLAY_CONTYPE_CVDONGLE_JPN</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5da88efbc7121b0b8605d514253aee67b71" kind="enumvalue"><name>DISPLAY_CONTYPE_CVDONGLE_NONI2C_JPN</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5da2d72a829a2749a5b73870051aa9ea532" kind="enumvalue"><name>DISPLAY_CONTYPE_CVDONGLE_NONI2C_NTSC</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5da34fc9104608a5827f65b4966c53a215e" kind="enumvalue"><name>DISPLAY_CONTYPE_PROPRIETARY</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5da0ea53d6c677500162804e524be36389e" kind="enumvalue"><name>DISPLAY_CONTYPE_HDMI_TYPE_A</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5da0f343261982b3c21d374c522e94dbf99" kind="enumvalue"><name>DISPLAY_CONTYPE_HDMI_TYPE_B</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5dab0d21daf08250dd0addd6d38c6bde568" kind="enumvalue"><name>DISPLAY_CONTYPE_SVIDEO</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5dadb930735bf83ac951478cfe1e48e988b" kind="enumvalue"><name>DISPLAY_CONTYPE_COMPOSITE</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5da6115b6cde3b24f5c0f1f30a551c6f302" kind="enumvalue"><name>DISPLAY_CONTYPE_RCA_3COMPONENT</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5da8b7f2b83c5165a353b89c8ee30f00926" kind="enumvalue"><name>DISPLAY_CONTYPE_DISPLAYPORT</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5da6e95611aba096c0c4e9fc4d39fa5b1aa" kind="enumvalue"><name>DISPLAY_CONTYPE_EDP</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5da0dcdd2ed087cd3a4dd1deaa4be25e20c" kind="enumvalue"><name>DISPLAY_CONTYPE_WIRELESSDISPLAY</name></member>
-    <member refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5dabcdfb70a8ce8756085bc779863d633cb" kind="enumvalue"><name>DISPLAY_CONTYPE_USB_TYPE_C</name></member>
     <member refid="group__enumerations_1gae7e516225131af0ff164e9384d8d0a44" kind="enum"><name>ADLX_DISPLAY_TYPE</name></member>
-    <member refid="group__enumerations_1gae7e516225131af0ff164e9384d8d0a44a4a0fe4e9feb3a06c58be5aca25d8c218" kind="enumvalue"><name>DISPLAY_TYPE_UNKOWN</name></member>
-    <member refid="group__enumerations_1gae7e516225131af0ff164e9384d8d0a44aa2fa6d64ccb655bb744838972531f814" kind="enumvalue"><name>DISPLAY_TYPE_MONITOR</name></member>
-    <member refid="group__enumerations_1gae7e516225131af0ff164e9384d8d0a44a8b6bf038d0bc3fa0407ec57552fb6c3a" kind="enumvalue"><name>DISPLAY_TYPE_TELEVISION</name></member>
-    <member refid="group__enumerations_1gae7e516225131af0ff164e9384d8d0a44a95122594fce234a2f413fa5bacfbb0b8" kind="enumvalue"><name>DISPLAY_TYPE_LCD_PANEL</name></member>
-    <member refid="group__enumerations_1gae7e516225131af0ff164e9384d8d0a44a2e71d866e8fc16c2142042a063cf5c14" kind="enumvalue"><name>DISPLAY_TYPE_DIGITAL_FLAT_PANEL</name></member>
-    <member refid="group__enumerations_1gae7e516225131af0ff164e9384d8d0a44ad1962a730c65ae86adf85285b5e3fe5c" kind="enumvalue"><name>DISPLAY_TYPE_COMPONENT_VIDEO</name></member>
-    <member refid="group__enumerations_1gae7e516225131af0ff164e9384d8d0a44aecf18dcce9017bc96ad10dda0c5f5d37" kind="enumvalue"><name>DISPLAY_TYPE_PROJECTOR</name></member>
     <member refid="group__enumerations_1gae2d0250dc861156a468001600a2ee648" kind="enum"><name>ADLX_DISPLAY_SCAN_TYPE</name></member>
-    <member refid="group__enumerations_1gae2d0250dc861156a468001600a2ee648aa26e5d6a224712b2542b07280bdab8e9" kind="enumvalue"><name>PROGRESSIVE</name></member>
-    <member refid="group__enumerations_1gae2d0250dc861156a468001600a2ee648a855562021fc14e40c67913a5bb4701f7" kind="enumvalue"><name>INTERLACED</name></member>
     <member refid="group__enumerations_1gacabd271b1699333d9664b8e6320aad3b" kind="enum"><name>ADLX_DISPLAY_TIMING_POLARITY</name></member>
-    <member refid="group__enumerations_1gacabd271b1699333d9664b8e6320aad3ba03d440bbbfb042afc85347f994b44fb5" kind="enumvalue"><name>POSITIVE</name></member>
-    <member refid="group__enumerations_1gacabd271b1699333d9664b8e6320aad3ba62d66a51fa7574c652597716f7709865" kind="enumvalue"><name>NEGATIVE</name></member>
     <member refid="group__enumerations_1ga6a4bf151ffad0146661c2c8612382af0" kind="enum"><name>ADLX_DISPLAY_TIMING_LIMITATION</name></member>
-    <member refid="group__enumerations_1ga6a4bf151ffad0146661c2c8612382af0abe8eaf29508bfdb43618cca61c441128" kind="enumvalue"><name>PIXEL_CLOCK_MAX</name></member>
-    <member refid="group__enumerations_1ga6a4bf151ffad0146661c2c8612382af0a458a7aa8afac5aa503ad749178f35c9d" kind="enumvalue"><name>PIXEL_CLOCK_MIN</name></member>
-    <member refid="group__enumerations_1ga6a4bf151ffad0146661c2c8612382af0af8650ed5f9e81724ebdf3e4b596900fa" kind="enumvalue"><name>REFRESH_RATE_MAX</name></member>
-    <member refid="group__enumerations_1ga6a4bf151ffad0146661c2c8612382af0a2458b9ca110c53eadab4bd2cb39fb1e1" kind="enumvalue"><name>REFRESH_RATE_MIN</name></member>
-    <member refid="group__enumerations_1ga6a4bf151ffad0146661c2c8612382af0ae0fdf7b7e8824ac59378edda3a2710a5" kind="enumvalue"><name>RESOLUTION_MAX</name></member>
-    <member refid="group__enumerations_1ga6a4bf151ffad0146661c2c8612382af0a74a5fec7d3d4963e094c0c6072e020c0" kind="enumvalue"><name>RESOLUTION_MIN</name></member>
     <member refid="group__enumerations_1ga46dff86075115b139c1c72f447e94e14" kind="enum"><name>ADLX_GAMUT_SPACE</name></member>
-    <member refid="group__enumerations_1ga46dff86075115b139c1c72f447e94e14a6d2c65316d5efd3aee2454740657b8be" kind="enumvalue"><name>GAMUT_SPACE_CCIR_709</name></member>
-    <member refid="group__enumerations_1ga46dff86075115b139c1c72f447e94e14ab1622dfde8daae9398a0a245c4798935" kind="enumvalue"><name>GAMUT_SPACE_CCIR_601</name></member>
-    <member refid="group__enumerations_1ga46dff86075115b139c1c72f447e94e14a81ccdc7e5afcb1abd12340eb5fa47301" kind="enumvalue"><name>GAMUT_SPACE_ADOBE_RGB</name></member>
-    <member refid="group__enumerations_1ga46dff86075115b139c1c72f447e94e14a5d7ae134656c91cc92e397e996fadd58" kind="enumvalue"><name>GAMUT_SPACE_CIE_RGB</name></member>
-    <member refid="group__enumerations_1ga46dff86075115b139c1c72f447e94e14adff8da50fc2428d3274deb186a9e363d" kind="enumvalue"><name>GAMUT_SPACE_CCIR_2020</name></member>
-    <member refid="group__enumerations_1ga46dff86075115b139c1c72f447e94e14a74d331b6c316667fc652ce6bf76daf49" kind="enumvalue"><name>GAMUT_SPACE_CUSTOM</name></member>
     <member refid="group__enumerations_1gafb56c4b91425c281009c447ccb1feeab" kind="enum"><name>ADLX_WHITE_POINT</name></member>
-    <member refid="group__enumerations_1gafb56c4b91425c281009c447ccb1feeabafda8bf3f312e8533c6aaaf0e44b5701d" kind="enumvalue"><name>WHITE_POINT_5000K</name></member>
-    <member refid="group__enumerations_1gafb56c4b91425c281009c447ccb1feeaba0a2e69d2af462123badbcc91a067112d" kind="enumvalue"><name>WHITE_POINT_6500K</name></member>
-    <member refid="group__enumerations_1gafb56c4b91425c281009c447ccb1feeaba585f24c3732b31a2ad036afeff29f6f7" kind="enumvalue"><name>WHITE_POINT_7500K</name></member>
-    <member refid="group__enumerations_1gafb56c4b91425c281009c447ccb1feeabab5870509771cc459d778cabc1dafa86c" kind="enumvalue"><name>WHITE_POINT_9300K</name></member>
-    <member refid="group__enumerations_1gafb56c4b91425c281009c447ccb1feeaba69d26e715baf519132af949a693f443c" kind="enumvalue"><name>WHITE_POINT_CUSTOM</name></member>
     <member refid="group__enumerations_1ga87f8763d8496a4e5ec84964e149144fd" kind="enum"><name>ADLX_GAMMA_TYPE</name></member>
-    <member refid="group__enumerations_1ga87f8763d8496a4e5ec84964e149144fda09b024ff449662360c66ce18d20096fa" kind="enumvalue"><name>UNKNOW</name></member>
-    <member refid="group__enumerations_1ga87f8763d8496a4e5ec84964e149144fdab58305a50c2081e5495293490cfa036c" kind="enumvalue"><name>DEGAMMA_RAMP</name></member>
-    <member refid="group__enumerations_1ga87f8763d8496a4e5ec84964e149144fda54f1acbc9507d4d16b8ded68349bf02d" kind="enumvalue"><name>REGAMMA_RAMP</name></member>
-    <member refid="group__enumerations_1ga87f8763d8496a4e5ec84964e149144fda0cd33109106da8ea0637ff89a488c0e4" kind="enumvalue"><name>DEGAMMA_COEFFICIENTS</name></member>
-    <member refid="group__enumerations_1ga87f8763d8496a4e5ec84964e149144fda9768d1761a8c17484394fe76f01d6c06" kind="enumvalue"><name>REGAMMA_COEFFICIENTS</name></member>
     <member refid="group__enumerations_1gae896c86f4fc55efe4e866450e33465b1" kind="enum"><name>ADLX_ORIENTATION</name></member>
-    <member refid="group__enumerations_1gae896c86f4fc55efe4e866450e33465b1aeffaa8f11bafc4c40b434f3b941eb1bf" kind="enumvalue"><name>ORIENTATION_LANDSCAPE</name></member>
-    <member refid="group__enumerations_1gae896c86f4fc55efe4e866450e33465b1acd00a965397a558275015a84f2f22dd5" kind="enumvalue"><name>ORIENTATION_PORTRAIT</name></member>
-    <member refid="group__enumerations_1gae896c86f4fc55efe4e866450e33465b1a29f5d104339a45621bab90f391ed3c84" kind="enumvalue"><name>ORIENTATION_LANDSCAPE_FLIPPED</name></member>
-    <member refid="group__enumerations_1gae896c86f4fc55efe4e866450e33465b1a0c4dc7635db48ef031605d4411ab4513" kind="enumvalue"><name>ORIENTATION_PORTRAIT_FLIPPED</name></member>
     <member refid="group__enumerations_1ga83322f63ada9c973559376760f141b89" kind="enum"><name>ADLX_DESKTOP_TYPE</name></member>
-    <member refid="group__enumerations_1ga83322f63ada9c973559376760f141b89a03058f4b63d7d11fe6a5aa47154590a4" kind="enumvalue"><name>DESKTOP_SINGLE</name></member>
-    <member refid="group__enumerations_1ga83322f63ada9c973559376760f141b89ac96f7ed618b411fc68b0e1fe21f2e62c" kind="enumvalue"><name>DESKTOP_DUPLCATE</name></member>
-    <member refid="group__enumerations_1ga83322f63ada9c973559376760f141b89ac483eaf5310613780a7901e317b9b2a2" kind="enumvalue"><name>DESKTOP_EYEFINITY</name></member>
     <member refid="group__enumerations_1gaadfaa61953d62bced2b6c516f8bebccd" kind="enum"><name>ADLX_LOG_SEVERITY</name></member>
-    <member refid="group__enumerations_1gaadfaa61953d62bced2b6c516f8bebccda99a9c50ae812fdb9418bb4d04e55521e" kind="enumvalue"><name>LDEBUG</name></member>
-    <member refid="group__enumerations_1gaadfaa61953d62bced2b6c516f8bebccdab27a3dae713258bd0dfa794aeb9ac44f" kind="enumvalue"><name>LWARNING</name></member>
-    <member refid="group__enumerations_1gaadfaa61953d62bced2b6c516f8bebccda83ce64538cb7824877b3e5f9161eeb14" kind="enumvalue"><name>LERROR</name></member>
     <member refid="group__enumerations_1gae308b7ad24806dce3fe087e9a780be67" kind="enum"><name>ADLX_LOG_DESTINATION</name></member>
-    <member refid="group__enumerations_1gae308b7ad24806dce3fe087e9a780be67ab247590fcecf66f9a58d7c3beebd22c8" kind="enumvalue"><name>LOCALFILE</name></member>
-    <member refid="group__enumerations_1gae308b7ad24806dce3fe087e9a780be67a212223605a82f278e4a43166f7ea5e55" kind="enumvalue"><name>DBGVIEW</name></member>
-    <member refid="group__enumerations_1gae308b7ad24806dce3fe087e9a780be67a241e8ba97c5a6b68b13a60bb16235b85" kind="enumvalue"><name>APPLICATION</name></member>
     <member refid="group__enumerations_1ga0ec0640b97efee73b589bf0b1c07a8fe" kind="enum"><name>ADLX_SCALE_MODE</name></member>
-    <member refid="group__enumerations_1ga0ec0640b97efee73b589bf0b1c07a8feaed414c2ae5181749af0aee3b30c647d1" kind="enumvalue"><name>PRESERVE_ASPECT_RATIO</name></member>
-    <member refid="group__enumerations_1ga0ec0640b97efee73b589bf0b1c07a8fea52e5d81a538ca03d28c5d3d0dd33662c" kind="enumvalue"><name>FULL_PANEL</name></member>
-    <member refid="group__enumerations_1ga0ec0640b97efee73b589bf0b1c07a8fea53f811bc46dd28493ccb7260b2cc8f38" kind="enumvalue"><name>CENTERED</name></member>
     <member refid="group__enumerations_1ga75858347333129a462cee4fdf4729d6b" kind="enum"><name>ADLX_COLOR_DEPTH</name></member>
-    <member refid="group__enumerations_1ga75858347333129a462cee4fdf4729d6bae6b49d4d724fafa7e65deae69f906c35" kind="enumvalue"><name>BPC_UNKNOWN</name></member>
-    <member refid="group__enumerations_1ga75858347333129a462cee4fdf4729d6ba2979beb1814574eb6d8a2d8bf7adca5c" kind="enumvalue"><name>BPC_6</name></member>
-    <member refid="group__enumerations_1ga75858347333129a462cee4fdf4729d6ba156db294ea7f1db8499f7c059343a5b4" kind="enumvalue"><name>BPC_8</name></member>
-    <member refid="group__enumerations_1ga75858347333129a462cee4fdf4729d6baaf8c112f48f64b58156bcbd3368fee1e" kind="enumvalue"><name>BPC_10</name></member>
-    <member refid="group__enumerations_1ga75858347333129a462cee4fdf4729d6baba8a9bc6354201651acc2dfed9bce5be" kind="enumvalue"><name>BPC_12</name></member>
-    <member refid="group__enumerations_1ga75858347333129a462cee4fdf4729d6bae6150c4c30145fa7b316577e56dfecf0" kind="enumvalue"><name>BPC_14</name></member>
-    <member refid="group__enumerations_1ga75858347333129a462cee4fdf4729d6bab3d477dbdc1ade25a89485357b8ee0ca" kind="enumvalue"><name>BPC_16</name></member>
     <member refid="group__enumerations_1gaa0e9deb1567713f1044419070f2949ab" kind="enum"><name>ADLX_PIXEL_FORMAT</name></member>
-    <member refid="group__enumerations_1gaa0e9deb1567713f1044419070f2949aba0b0be2c946e4690b69fc97b9aabc262f" kind="enumvalue"><name>FORMAT_UNKNOWN</name></member>
-    <member refid="group__enumerations_1gaa0e9deb1567713f1044419070f2949aba584ee215854f2d23ec8e10be27e14fba" kind="enumvalue"><name>RGB_444_FULL</name></member>
-    <member refid="group__enumerations_1gaa0e9deb1567713f1044419070f2949aba85751e7c89b56b44e78fe89bfad9e652" kind="enumvalue"><name>YCBCR_444</name></member>
-    <member refid="group__enumerations_1gaa0e9deb1567713f1044419070f2949abad4d31dab8d82da2918cffe7665065001" kind="enumvalue"><name>YCBCR_422</name></member>
-    <member refid="group__enumerations_1gaa0e9deb1567713f1044419070f2949abac5e41241065884bcc7ade21756538ab4" kind="enumvalue"><name>RGB_444_LIMITED</name></member>
-    <member refid="group__enumerations_1gaa0e9deb1567713f1044419070f2949aba0287302d7ddd58f71f513f1b992d81ce" kind="enumvalue"><name>YCBCR_420</name></member>
     <member refid="group__enumerations_1ga5f02fa0b6e26f22606a85221393f8ae2" kind="enum"><name>ADLX_TIMING_STANDARD</name></member>
-    <member refid="group__enumerations_1ga5f02fa0b6e26f22606a85221393f8ae2aa91863e8a8dc6a9708359251cb58da67" kind="enumvalue"><name>CVT</name></member>
-    <member refid="group__enumerations_1ga5f02fa0b6e26f22606a85221393f8ae2aa289f79dd3346e3b76f10622218ad88d" kind="enumvalue"><name>CVT_RB</name></member>
-    <member refid="group__enumerations_1ga5f02fa0b6e26f22606a85221393f8ae2ab1b85071af6cee6911203f8f850eb2bd" kind="enumvalue"><name>GTF</name></member>
-    <member refid="group__enumerations_1ga5f02fa0b6e26f22606a85221393f8ae2a051eae001856e3b72c6d5f9acf8cadf8" kind="enumvalue"><name>DMT</name></member>
-    <member refid="group__enumerations_1ga5f02fa0b6e26f22606a85221393f8ae2a506e8dd29460ea318b68d035f679b01b" kind="enumvalue"><name>MANUAL</name></member>
     <member refid="group__enumerations_1ga169a825952eda7e83b949176a9a81028" kind="enum"><name>ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE</name></member>
-    <member refid="group__enumerations_1ga169a825952eda7e83b949176a9a81028a5c956c1e3c8b9261a07df15adbc10347" kind="enumvalue"><name>WFVR_ALWAYS_OFF</name></member>
-    <member refid="group__enumerations_1ga169a825952eda7e83b949176a9a81028a91e122d0f7ee258bb27a5c43d5c8c675" kind="enumvalue"><name>WFVR_OFF_UNLESS_APP_SPECIFIES</name></member>
-    <member refid="group__enumerations_1ga169a825952eda7e83b949176a9a81028aa8ff57a67a337b615187f25ae341bc54" kind="enumvalue"><name>WFVR_ON_UNLESS_APP_SPECIFIES</name></member>
-    <member refid="group__enumerations_1ga169a825952eda7e83b949176a9a81028a384b1aaeefe96b779cb597fcc6cb2353" kind="enumvalue"><name>WFVR_ALWAYS_ON</name></member>
     <member refid="group__enumerations_1ga4d154a77789a08d19a8d0a8ba809b64a" kind="enum"><name>ADLX_ANTI_ALIASING_MODE</name></member>
-    <member refid="group__enumerations_1ga4d154a77789a08d19a8d0a8ba809b64aafcdbcd9e36a12cf8a058ce18a76a4e87" kind="enumvalue"><name>AA_MODE_USE_APP_SETTINGS</name></member>
-    <member refid="group__enumerations_1ga4d154a77789a08d19a8d0a8ba809b64aabfcb1c017509f128c0078105cbc1390d" kind="enumvalue"><name>AA_MODE_ENHANCE_APP_SETTINGS</name></member>
-    <member refid="group__enumerations_1ga4d154a77789a08d19a8d0a8ba809b64aac675f198bfd0017b5301fbd033d6cd7b" kind="enumvalue"><name>AA_MODE_OVERRIDE_APP_SETTINGS</name></member>
     <member refid="group__enumerations_1ga8c2e57a18318ffeb5e36de7717ff953e" kind="enum"><name>ADLX_ANTI_ALIASING_LEVEL</name></member>
-    <member refid="group__enumerations_1ga8c2e57a18318ffeb5e36de7717ff953eac9ed1aab71b7cc44b46126ae15bca500" kind="enumvalue"><name>AA_LEVEL_INVALID</name></member>
-    <member refid="group__enumerations_1ga8c2e57a18318ffeb5e36de7717ff953eaeb58238bdb8609c4c2e0a388e294db2f" kind="enumvalue"><name>AA_LEVEL_2X</name></member>
-    <member refid="group__enumerations_1ga8c2e57a18318ffeb5e36de7717ff953ea844d2a1f7154e478afe7a624fd9048f0" kind="enumvalue"><name>AA_LEVEL_2XEQ</name></member>
-    <member refid="group__enumerations_1ga8c2e57a18318ffeb5e36de7717ff953ea701fd055b77bc3bbf3abb1d4f739f04c" kind="enumvalue"><name>AA_LEVEL_4X</name></member>
-    <member refid="group__enumerations_1ga8c2e57a18318ffeb5e36de7717ff953ea3ca65ee6828959bdfb2c13135f31f229" kind="enumvalue"><name>AA_LEVEL_4XEQ</name></member>
-    <member refid="group__enumerations_1ga8c2e57a18318ffeb5e36de7717ff953eacbd5f629935c94c89e40d1ff42b4c9ce" kind="enumvalue"><name>AA_LEVEL_8X</name></member>
-    <member refid="group__enumerations_1ga8c2e57a18318ffeb5e36de7717ff953ea44792bd9c8b04fec8a1636030e16295f" kind="enumvalue"><name>AA_LEVEL_8XEQ</name></member>
     <member refid="group__enumerations_1gad99bac74ba876c14fa2d42c094641b44" kind="enum"><name>ADLX_ANTI_ALIASING_METHOD</name></member>
-    <member refid="group__enumerations_1gad99bac74ba876c14fa2d42c094641b44aa4eb7e0a05f331b28effb11f1a81396d" kind="enumvalue"><name>AA_METHOD_MULTISAMPLING</name></member>
-    <member refid="group__enumerations_1gad99bac74ba876c14fa2d42c094641b44adab6ce43f0c5a84fc1e73e9c8332bbdf" kind="enumvalue"><name>AA_METHOD_ADAPTIVE_MULTISAMPLING</name></member>
-    <member refid="group__enumerations_1gad99bac74ba876c14fa2d42c094641b44a3f2065b92560638f8ede3205cd4f954f" kind="enumvalue"><name>AA_METHOD_SUPERSAMPLING</name></member>
     <member refid="group__enumerations_1gac99ad138a55f9242874a960af8e64579" kind="enum"><name>ADLX_ANISOTROPIC_FILTERING_LEVEL</name></member>
-    <member refid="group__enumerations_1gac99ad138a55f9242874a960af8e64579ab9c2bf449ef8c6244eba69add4c7a615" kind="enumvalue"><name>AF_LEVEL_INVALID</name></member>
-    <member refid="group__enumerations_1gac99ad138a55f9242874a960af8e64579a7c3092ac1cb5e292fa3492cc3d61ebbe" kind="enumvalue"><name>AF_LEVEL_X2</name></member>
-    <member refid="group__enumerations_1gac99ad138a55f9242874a960af8e64579a66e217a4423ff7bc5b548f3f0be82b00" kind="enumvalue"><name>AF_LEVEL_X4</name></member>
-    <member refid="group__enumerations_1gac99ad138a55f9242874a960af8e64579abed44da66d97a3904e1048c2fd8ae669" kind="enumvalue"><name>AF_LEVEL_X8</name></member>
-    <member refid="group__enumerations_1gac99ad138a55f9242874a960af8e64579a0ce2f7011e5a76d552aae639bcadef8d" kind="enumvalue"><name>AF_LEVEL_X16</name></member>
     <member refid="group__enumerations_1ga7899078325beddfbe0f4e63dca8ce8ca" kind="enum"><name>ADLX_TESSELLATION_MODE</name></member>
-    <member refid="group__enumerations_1ga7899078325beddfbe0f4e63dca8ce8caa73ae5eb0bacfbde56077eea258648325" kind="enumvalue"><name>T_MODE_AMD_OPTIMIZED</name></member>
-    <member refid="group__enumerations_1ga7899078325beddfbe0f4e63dca8ce8caa908c4c2fcd9ca251f77201ac62002b7e" kind="enumvalue"><name>T_MODE_USE_APP_SETTINGS</name></member>
-    <member refid="group__enumerations_1ga7899078325beddfbe0f4e63dca8ce8caa457aa8bc48fb10ec6b107b28e56a56b5" kind="enumvalue"><name>T_MODE_OVERRIDE_APP_SETTINGS</name></member>
     <member refid="group__enumerations_1ga5967c593434c0cba5891c996d64cff5c" kind="enum"><name>ADLX_TESSELLATION_LEVEL</name></member>
-    <member refid="group__enumerations_1ga5967c593434c0cba5891c996d64cff5ca07fb2f890b90b7ad6cbcf07cfbcae36c" kind="enumvalue"><name>T_LEVEL_OFF</name></member>
-    <member refid="group__enumerations_1ga5967c593434c0cba5891c996d64cff5ca1ab9133a629987f8ca508e3d4031b4df" kind="enumvalue"><name>T_LEVEL_2X</name></member>
-    <member refid="group__enumerations_1ga5967c593434c0cba5891c996d64cff5ca2abb616e9496d3cfd550ac2f92c9e3ee" kind="enumvalue"><name>T_LEVEL_4X</name></member>
-    <member refid="group__enumerations_1ga5967c593434c0cba5891c996d64cff5ca4f8d9cec3c1ff901e46ed1e9156c7420" kind="enumvalue"><name>T_LEVEL_6X</name></member>
-    <member refid="group__enumerations_1ga5967c593434c0cba5891c996d64cff5cad61c7030ea4f89ca43af8d9087fafd45" kind="enumvalue"><name>T_LEVEL_8X</name></member>
-    <member refid="group__enumerations_1ga5967c593434c0cba5891c996d64cff5ca81da4c659b7805407bec0d0ad595bb69" kind="enumvalue"><name>T_LEVEL_16X</name></member>
-    <member refid="group__enumerations_1ga5967c593434c0cba5891c996d64cff5ca4e5b2fc5d494fd9a30109f7f7038ac03" kind="enumvalue"><name>T_LEVEL_32X</name></member>
-    <member refid="group__enumerations_1ga5967c593434c0cba5891c996d64cff5cafc6e09b3c44597e193bedd8a592474c0" kind="enumvalue"><name>T_LEVEL_64X</name></member>
     <member refid="group__enumerations_1gaa25f244e38a3502a52167c303abcec11" kind="enum"><name>ADLX_MEMORYTIMING_DESCRIPTION</name></member>
-    <member refid="group__enumerations_1gaa25f244e38a3502a52167c303abcec11afe3950cab8cd7256574a2d833ae06f26" kind="enumvalue"><name>MEMORYTIMING_DEFAULT</name></member>
-    <member refid="group__enumerations_1gaa25f244e38a3502a52167c303abcec11ae75d55283f428316b2db4833d54ecf77" kind="enumvalue"><name>MEMORYTIMING_FAST_TIMING</name></member>
-    <member refid="group__enumerations_1gaa25f244e38a3502a52167c303abcec11a9ec2a8597122dc8cc85e9cff91eede1c" kind="enumvalue"><name>MEMORYTIMING_FAST_TIMING_LEVEL_2</name></member>
-    <member refid="group__enumerations_1gaa25f244e38a3502a52167c303abcec11a36391b593ecff100518944cea6668e74" kind="enumvalue"><name>MEMORYTIMING_AUTOMATIC</name></member>
-    <member refid="group__enumerations_1gaa25f244e38a3502a52167c303abcec11ae2165248a4d00fbfe16140ca4afd0e9b" kind="enumvalue"><name>MEMORYTIMING_MEMORYTIMING_LEVEL_1</name></member>
-    <member refid="group__enumerations_1gaa25f244e38a3502a52167c303abcec11a2ae2530d0e57e0db3bf2b94f4f3f96d8" kind="enumvalue"><name>MEMORYTIMING_MEMORYTIMING_LEVEL_2</name></member>
     <member refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67" kind="enum"><name>ADLX_I2C_LINE</name></member>
-    <member refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67ab041e1bec4cf6e632b086e0bd32d845b" kind="enumvalue"><name>I2C_LINE_OEM</name></member>
-    <member refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67a15d9e2ca15e335f0b8551dfc9c78a9fd" kind="enumvalue"><name>I2C_LINE_OD_CONTROL</name></member>
-    <member refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67a397ea3400420f6a75ec671eec8318bd9" kind="enumvalue"><name>I2C_LINE_OEM2</name></member>
-    <member refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67ad8562c2a23b5240016bec9febd7e5534" kind="enumvalue"><name>I2C_LINE_OEM3</name></member>
-    <member refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67a3bfe8c54790986904c38ed63660d4467" kind="enumvalue"><name>I2C_LINE_OEM4</name></member>
-    <member refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67a59f3010d90dd125a1d137cab702b5058" kind="enumvalue"><name>I2C_LINE_OEM5</name></member>
-    <member refid="group__enumerations_1ga75eb2c93942ff81ff1cbeef647c2cf67afe60e6b9655ad805099288bf89647a1e" kind="enumvalue"><name>I2C_LINE_OEM6</name></member>
     <member refid="group__enumerations_1ga7a1e20106faef482c0664c546e04ba00" kind="enum"><name>ADLX_SYNC_ORIGIN</name></member>
-    <member refid="group__enumerations_1ga7a1e20106faef482c0664c546e04ba00a4ba8600162d2d062803b6ff6bc43d8e9" kind="enumvalue"><name>SYNC_ORIGIN_UNKNOWN</name></member>
-    <member refid="group__enumerations_1ga7a1e20106faef482c0664c546e04ba00a9675678b0b44b0e114901d2e49441eeb" kind="enumvalue"><name>SYNC_ORIGIN_INTERNAL</name></member>
-    <member refid="group__enumerations_1ga7a1e20106faef482c0664c546e04ba00a8f0083602d13ae71103b333d6c9c9d00" kind="enumvalue"><name>SYNC_ORIGIN_EXTERNAL</name></member>
     <member refid="group__enumerations_1ga7ebbfe051a5113c2c1521af3426b7955" kind="enum"><name>ADLX_3DLUT_TRANSFER_FUNCTION</name></member>
-    <member refid="group__enumerations_1ga7ebbfe051a5113c2c1521af3426b7955a0a4fa9ac7814d34d0d9da291b0496208" kind="enumvalue"><name>TF_SRGB</name></member>
-    <member refid="group__enumerations_1ga7ebbfe051a5113c2c1521af3426b7955ab7e789edc19856a34fe8b6e0c23ded66" kind="enumvalue"><name>TF_PQ</name></member>
-    <member refid="group__enumerations_1ga7ebbfe051a5113c2c1521af3426b7955a13489b5b70dc2920b2a39b0617a1674d" kind="enumvalue"><name>TF_G22</name></member>
     <member refid="group__enumerations_1gabe8d6f1562d0472d97c5edbf55c6d8cc" kind="enum"><name>ADLX_3DLUT_COLORSPACE</name></member>
-    <member refid="group__enumerations_1gabe8d6f1562d0472d97c5edbf55c6d8cca8eb37dfb98408e99d29c5c0290b03be8" kind="enumvalue"><name>CS_SRGB</name></member>
-    <member refid="group__enumerations_1gabe8d6f1562d0472d97c5edbf55c6d8cca39dc38d674d4dbbc54dde4383bb8c842" kind="enumvalue"><name>CS_BT2020</name></member>
-    <member refid="group__enumerations_1gabe8d6f1562d0472d97c5edbf55c6d8ccaef18171467fde57447ed94e29d9b4ebb" kind="enumvalue"><name>CS_DCIP3</name></member>
-    <member refid="group__enumerations_1gabe8d6f1562d0472d97c5edbf55c6d8cca9e90a1fb63e1904946eb400980364fdc" kind="enumvalue"><name>CS_NATIVE</name></member>
     <member refid="group__enumerations_1gae2895828b9a8b0345e1fb8bf416ff1b4" kind="enum"><name>ADLX_SSM_BIAS_MODE</name></member>
-    <member refid="group__enumerations_1gae2895828b9a8b0345e1fb8bf416ff1b4aa01f2492c707f2d545a726a70bfe4885" kind="enumvalue"><name>SSM_BIAS_AUTO</name></member>
-    <member refid="group__enumerations_1gae2895828b9a8b0345e1fb8bf416ff1b4af35e1bfcb1955e0e0c900876c1c67746" kind="enumvalue"><name>SSM_BIAS_MANUAL</name></member>
+    <member refid="group__enumerations_1ga2bf5d9b0977f2d6f0091088a797953a0" kind="enum"><name>ADLX_SMARTSHIFT_ECO_INACTIVE_REASON</name></member>
     <member refid="group__enumerations_1ga67d22cfa2969510afada5140a157df62" kind="enum"><name>ADLX_ANTILAG_STATE</name></member>
-    <member refid="group__enumerations_1ga67d22cfa2969510afada5140a157df62ad52630a26f9490c28cc16b38e0205ce9" kind="enumvalue"><name>ANTILAG</name></member>
-    <member refid="group__enumerations_1ga67d22cfa2969510afada5140a157df62a86bd1f9314544ffffd7a1a374a807e9f" kind="enumvalue"><name>ANTILAGNEXT</name></member>
     <member refid="group__enumerations_1gada547c00826e15266732f874a0f3478d" kind="enum"><name>ADLX_MGPU_MODE</name></member>
-    <member refid="group__enumerations_1gada547c00826e15266732f874a0f3478daf2165ffea80d451f834d3a5d2994b3c8" kind="enumvalue"><name>MGPU_NONE</name></member>
-    <member refid="group__enumerations_1gada547c00826e15266732f874a0f3478daa8e7af64a7da10bed79c2e5de97b7cb8" kind="enumvalue"><name>MGPU_PRIMARY</name></member>
-    <member refid="group__enumerations_1gada547c00826e15266732f874a0f3478da9100baedfaa6e08d64fa900cd7685cef" kind="enumvalue"><name>MGPU_SECONDARY</name></member>
     <member refid="group__enumerations_1gaf6c76078b265ef8526edd967e45ce15a" kind="enum"><name>ADLX_APP_GPU_DEPENDENCY</name></member>
-    <member refid="group__enumerations_1gaf6c76078b265ef8526edd967e45ce15aa80dd6f151c30b332eb37cca8622b055a" kind="enumvalue"><name>APP_GPU_UNKNOWN</name></member>
-    <member refid="group__enumerations_1gaf6c76078b265ef8526edd967e45ce15aa1f5af5fca78d751cd74a7cf808cd1b96" kind="enumvalue"><name>APP_GPU_BOUND</name></member>
-    <member refid="group__enumerations_1gaf6c76078b265ef8526edd967e45ce15aacb2e2326ad22a9565d9fda356bcab599" kind="enumvalue"><name>APP_GPU_NOT_BOUND</name></member>
     <member refid="_a_d_l_x_defines_8h_1a460278d9913c4386415ed4a7ef39afd7" kind="typedef"><name>adlx_int64</name></member>
     <member refid="_a_d_l_x_defines_8h_1abd92771e6d61812965634c05dbe8fca4" kind="typedef"><name>adlx_int32</name></member>
     <member refid="_a_d_l_x_defines_8h_1ada96c7e9db50fae4e3f93a35f08be2c2" kind="typedef"><name>adlx_int16</name></member>
@@ -1594,11 +1609,12 @@
     <member refid="_a_d_l_x_defines_8h_1ac1b00736fb99c5a34d17b2011cfe5197" kind="function"><name>adlx_atomic_dec</name></member>
     <member refid="_a_d_l_x_defines_8h_1ac1afd8bdd1ccbcf72adb3af0dfdcfee1" kind="function"><name>adlx_load_library</name></member>
     <member refid="_a_d_l_x_defines_8h_1a7115be07847f9fdce1cd7ca7151cc697" kind="function"><name>adlx_free_library</name></member>
-    <member refid="_a_d_l_x_defines_8h_1a8d54c008c70230f755c111ef3f17e290" kind="function"><name>adlx_get_proc_address</name></member>
+    <member refid="_a_d_l_x_defines_8h_1a8262bb9d529297a4506659ab4c57acb4" kind="function"><name>adlx_get_proc_address</name></member>
   </compound>
   <compound refid="_a_d_l_x_structures_8h" kind="file"><name>ADLXStructures.h</name>
     <member refid="_a_d_l_x_structures_8h_1a2de79053fff310ed409e1df246f83df7" kind="typedef"><name>ADLX_UINT16_RGB</name></member>
     <member refid="_a_d_l_x_structures_8h_1a7ba6f6aa442f149f2f6b144f1a3175ad" kind="typedef"><name>ADLX_3DLUT_Data</name></member>
+    <member refid="_a_d_l_x_structures_8h_1af1d1fa82ba197d4a4ab4bddab1304e32" kind="typedef"><name>ADLX_LUID</name></member>
   </compound>
   <compound refid="_a_d_l_x_version_8h" kind="file"><name>ADLXVersion.h</name>
     <member refid="_a_d_l_x_version_8h_1ab69830799ad6b447904567f7a1a777d8" kind="define"><name>ADLX_VER_MAJOR</name></member>
@@ -1611,6 +1627,10 @@
   <compound refid="_i3_d_settings_8h" kind="file"><name>I3DSettings.h</name>
   </compound>
   <compound refid="_i3_d_settings1_8h" kind="file"><name>I3DSettings1.h</name>
+  </compound>
+  <compound refid="_i3_d_settings2_8h" kind="file"><name>I3DSettings2.h</name>
+  </compound>
+  <compound refid="_i_applications_8h" kind="file"><name>IApplications.h</name>
   </compound>
   <compound refid="_i_changed_event_8h" kind="file"><name>IChangedEvent.h</name>
   </compound>
@@ -1629,6 +1649,8 @@
   <compound refid="_i_displays1_8h" kind="file"><name>IDisplays1.h</name>
   </compound>
   <compound refid="_i_displays2_8h" kind="file"><name>IDisplays2.h</name>
+  </compound>
+  <compound refid="_i_displays3_8h" kind="file"><name>IDisplays3.h</name>
   </compound>
   <compound refid="_i_display_settings_8h" kind="file"><name>IDisplaySettings.h</name>
   </compound>
@@ -1652,19 +1674,27 @@
   </compound>
   <compound refid="_i_log_8h" kind="file"><name>ILog.h</name>
   </compound>
+  <compound refid="_i_multi_media_8h" kind="file"><name>IMultiMedia.h</name>
+  </compound>
   <compound refid="_i_performance_monitoring_8h" kind="file"><name>IPerformanceMonitoring.h</name>
   </compound>
   <compound refid="_i_performance_monitoring1_8h" kind="file"><name>IPerformanceMonitoring1.h</name>
   </compound>
   <compound refid="_i_performance_monitoring2_8h" kind="file"><name>IPerformanceMonitoring2.h</name>
   </compound>
+  <compound refid="_i_performance_monitoring3_8h" kind="file"><name>IPerformanceMonitoring3.h</name>
+  </compound>
   <compound refid="_i_power_tuning_8h" kind="file"><name>IPowerTuning.h</name>
+  </compound>
+  <compound refid="_i_power_tuning1_8h" kind="file"><name>IPowerTuning1.h</name>
   </compound>
   <compound refid="_i_smart_access_memory_8h" kind="file"><name>ISmartAccessMemory.h</name>
   </compound>
   <compound refid="_i_system_8h" kind="file"><name>ISystem.h</name>
   </compound>
   <compound refid="_i_system1_8h" kind="file"><name>ISystem1.h</name>
+  </compound>
+  <compound refid="_i_system2_8h" kind="file"><name>ISystem2.h</name>
   </compound>
   <compound refid="group__enumerations" kind="group"><name>enumerations</name>
     <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kind="enum"><name>ADLX_RESULT</name></member>
@@ -1685,6 +1715,7 @@
     <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a7ecc8145f60057fa833a86fb605f83f2" kind="enumvalue"><name>ADLX_GPU_INACTIVE</name></member>
     <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a2431684033e55e857a3f9b2d55d318f0" kind="enumvalue"><name>ADLX_GPU_IN_USE</name></member>
     <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a600700f1d71935ca0ff5836a41dd8edb" kind="enumvalue"><name>ADLX_TIMEOUT_OPERATION</name></member>
+    <member refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0a37c65ee6c6de58682c75839e19ff1712" kind="enumvalue"><name>ADLX_NOT_ACTIVE</name></member>
     <member refid="group__enumerations_1ga260f926e27eef013ca1eacd0ff7b3ba7" kind="enum"><name>ADLX_HG_TYPE</name></member>
     <member refid="group__enumerations_1ga260f926e27eef013ca1eacd0ff7b3ba7ac157bdf0b85a40d2619cbc8bc1ae5fe2" kind="enumvalue"><name>NONE</name></member>
     <member refid="group__enumerations_1ga260f926e27eef013ca1eacd0ff7b3ba7ac1f5c308ff9610759dbc1415b20df568" kind="enumvalue"><name>AMD</name></member>
@@ -1893,6 +1924,12 @@
     <member refid="group__enumerations_1gae2895828b9a8b0345e1fb8bf416ff1b4" kind="enum"><name>ADLX_SSM_BIAS_MODE</name></member>
     <member refid="group__enumerations_1gae2895828b9a8b0345e1fb8bf416ff1b4aa01f2492c707f2d545a726a70bfe4885" kind="enumvalue"><name>SSM_BIAS_AUTO</name></member>
     <member refid="group__enumerations_1gae2895828b9a8b0345e1fb8bf416ff1b4af35e1bfcb1955e0e0c900876c1c67746" kind="enumvalue"><name>SSM_BIAS_MANUAL</name></member>
+    <member refid="group__enumerations_1ga2bf5d9b0977f2d6f0091088a797953a0" kind="enum"><name>ADLX_SMARTSHIFT_ECO_INACTIVE_REASON</name></member>
+    <member refid="group__enumerations_1ga2bf5d9b0977f2d6f0091088a797953a0acec10650f1569643539398c3d1e48b2e" kind="enumvalue"><name>INACTIVE_REASON_UNKNOWN</name></member>
+    <member refid="group__enumerations_1ga2bf5d9b0977f2d6f0091088a797953a0a09d64ef798358b11fad128d40e42aeee" kind="enumvalue"><name>INACTIVE_REASON_PRIMARY_DISPLAY_CONNECTED_TO_DGPU</name></member>
+    <member refid="group__enumerations_1ga2bf5d9b0977f2d6f0091088a797953a0a66019da665055771fce2cacaa98fa54a" kind="enumvalue"><name>INACTIVE_REASON_DETACHABLE_GPU_CONNECTED</name></member>
+    <member refid="group__enumerations_1ga2bf5d9b0977f2d6f0091088a797953a0a3bff331fa5736aed5a3e2a7aa62881c3" kind="enumvalue"><name>INACTIVE_REASON_SESSION_INACTIVE</name></member>
+    <member refid="group__enumerations_1ga2bf5d9b0977f2d6f0091088a797953a0ae5022d56314485e99786e01ea26beb89" kind="enumvalue"><name>INACTIVE_REASON_MULTIPLE_SESSION_ACTIVE</name></member>
     <member refid="group__enumerations_1ga67d22cfa2969510afada5140a157df62" kind="enum"><name>ADLX_ANTILAG_STATE</name></member>
     <member refid="group__enumerations_1ga67d22cfa2969510afada5140a157df62ad52630a26f9490c28cc16b38e0205ce9" kind="enumvalue"><name>ANTILAG</name></member>
     <member refid="group__enumerations_1ga67d22cfa2969510afada5140a157df62a86bd1f9314544ffffd7a1a374a807e9f" kind="enumvalue"><name>ANTILAGNEXT</name></member>
@@ -1925,12 +1962,12 @@
     <member refid="group___a_d_l_x_macro_1ga01e03ede548cb4521e0895f77feacdc4" kind="define"><name>ADLX_DLL_NAME</name></member>
   </compound>
   <compound refid="group___a_d_l_x_defs" kind="group"><name>ADLXDefs</name>
-    <member refid="group___a_d_l_x_defs_1ga7301579b153c3612dca5c442e5f2dd45" kind="typedef"><name>ADLX_ADL_Main_Memory_Free</name></member>
-    <member refid="group___a_d_l_x_defs_1ga6adc3b43ac10780441c675a07a0fa4ae" kind="typedef"><name>ADLXQueryFullVersion_Fn</name></member>
-    <member refid="group___a_d_l_x_defs_1gacc89675ee4e79ce8f3a2d729bc48fc0b" kind="typedef"><name>ADLXQueryVersion_Fn</name></member>
-    <member refid="group___a_d_l_x_defs_1gac5f7f97490516e7be3e62c3be1383c66" kind="typedef"><name>ADLXInitialize_Fn</name></member>
-    <member refid="group___a_d_l_x_defs_1gadb90c5a66bc15b34f864d5883158ed44" kind="typedef"><name>ADLXInitializeWithCallerAdl_Fn</name></member>
-    <member refid="group___a_d_l_x_defs_1ga8c0d01f62522f27bdb72ece0c7c89ded" kind="typedef"><name>ADLXTerminate_Fn</name></member>
+    <member refid="group___a_d_l_x_defs_1gabdc3ae7e3b002ff843e7aaa8f055ae77" kind="typedef"><name>ADLX_ADL_Main_Memory_Free</name></member>
+    <member refid="group___a_d_l_x_defs_1ga977d52d7192498cf99383797c5fc44a5" kind="typedef"><name>ADLXQueryFullVersion_Fn</name></member>
+    <member refid="group___a_d_l_x_defs_1gab6bea1ad7226aaefe89c0cbcc0e72def" kind="typedef"><name>ADLXQueryVersion_Fn</name></member>
+    <member refid="group___a_d_l_x_defs_1gac1ba04c408146afccbfcfe2878ca3a3f" kind="typedef"><name>ADLXInitialize_Fn</name></member>
+    <member refid="group___a_d_l_x_defs_1ga549c1dd974464d1cf9de5e5900e0aa1c" kind="typedef"><name>ADLXInitializeWithCallerAdl_Fn</name></member>
+    <member refid="group___a_d_l_x_defs_1ga286c8f710923eb9205239ca3b8b6cd05" kind="typedef"><name>ADLXTerminate_Fn</name></member>
   </compound>
   <compound refid="group__typedefs" kind="group"><name>typedefs</name>
   </compound>
@@ -1973,6 +2010,8 @@
   <compound refid="perfmonitoring" kind="page"><name>perfmonitoring</name>
   </compound>
   <compound refid="domain_powertuning" kind="page"><name>domain_powertuning</name>
+  </compound>
+  <compound refid="domain__multimedia" kind="page"><name>domain_Multimedia</name>
   </compound>
   <compound refid="i2c" kind="page"><name>i2c</name>
   </compound>
@@ -2229,6 +2268,34 @@
   <compound refid="_d_o_x__i_a_d_l_x3_d_settings_services1__get_a_m_d_fluid_motion_frames" kind="page"><name>DOX_IADLX3DSettingsServices1_GetAMDFluidMotionFrames</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x3_d_settings_changed_event1__is_a_m_d_fluid_motion_frames_changed" kind="page"><name>DOX_IADLX3DSettingsChangedEvent1_IsAMDFluidMotionFramesChanged</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_image_sharpen_desktop__is_supported" kind="page"><name>DOX_IADLX3DImageSharpenDesktop_IsSupported</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_image_sharpen_desktop__is_enabled" kind="page"><name>DOX_IADLX3DImageSharpenDesktop_IsEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_image_sharpen_desktop__set_enabled" kind="page"><name>DOX_IADLX3DImageSharpenDesktop_SetEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_settings_services2__get_image_sharpen_desktop" kind="page"><name>DOX_IADLX3DSettingsServices2_GetImageSharpenDesktop</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_settings_changed_event2__is_image_sharpen_desktop_changed" kind="page"><name>DOX_IADLX3DSettingsChangedEvent2_IsImageSharpenDesktopChanged</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_application__process_i_d" kind="page"><name>DOX_IADLXApplication_ProcessID</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_application__name" kind="page"><name>DOX_IADLXApplication_Name</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_application__full_path" kind="page"><name>DOX_IADLXApplication_FullPath</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_application__g_p_u_dependency_type" kind="page"><name>DOX_IADLXApplication_GPUDependencyType</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_application_list__at" kind="page"><name>DOX_IADLXApplicationList_At</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_application_list__add__back" kind="page"><name>DOX_IADLXApplicationList_Add_Back</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_apps_list_event_listener__on_g_p_u_apps_list_changed" kind="page"><name>DOX_IADLXGPUAppsListEventListener_OnGPUAppsListChanged</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_apps_list_changed_handling__add_g_p_u_apps_list_event_listener" kind="page"><name>DOX_IADLXGPUAppsListChangedHandling_AddGPUAppsListEventListener</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_apps_list_changed_handling__remove_g_p_u_apps_list_event_listener" kind="page"><name>DOX_IADLXGPUAppsListChangedHandling_RemoveGPUAppsListEventListener</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_changed_event__get_origin" kind="page"><name>DOX_IADLXChangedEvent_GetOrigin</name>
   </compound>
@@ -2596,6 +2663,14 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_settings_changed_event2__is_connectivity_experience_changed" kind="page"><name>DOX_IADLXDisplaySettingsChangedEvent2_IsConnectivityExperienceChanged</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_services3__get_dynamic_refresh_rate_control" kind="page"><name>DOX_IADLXDisplayServices3_GetDynamicRefreshRateControl</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_services3__get_free_sync_color_accuracy" kind="page"><name>DOX_IADLXDisplayServices3_GetFreeSyncColorAccuracy</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_settings_changed_event3__is_display_dynamic_refresh_rate_control_changed" kind="page"><name>DOX_IADLXDisplaySettingsChangedEvent3_IsDisplayDynamicRefreshRateControlChanged</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_settings_changed_event3__is_free_sync_color_accuracy_changed" kind="page"><name>DOX_IADLXDisplaySettingsChangedEvent3_IsFreeSyncColorAccuracyChanged</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_free_sync__is_supported" kind="page"><name>DOX_IADLXDisplayFreeSync_IsSupported</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_free_sync__is_enabled" kind="page"><name>DOX_IADLXDisplayFreeSync_IsEnabled</name>
@@ -2754,6 +2829,30 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright__set_maximize_battery" kind="page"><name>DOX_IADLXDisplayVariBright_SetMaximizeBattery</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright1__is_backlight_adaptive_supported" kind="page"><name>DOX_IADLXDisplayVariBright1_IsBacklightAdaptiveSupported</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright1__is_backlight_adaptive_enabled" kind="page"><name>DOX_IADLXDisplayVariBright1_IsBacklightAdaptiveEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright1__set_backlight_adaptive_enabled" kind="page"><name>DOX_IADLXDisplayVariBright1_SetBacklightAdaptiveEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright1__is_battery_life_supported" kind="page"><name>DOX_IADLXDisplayVariBright1_IsBatteryLifeSupported</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright1__is_battery_life_enabled" kind="page"><name>DOX_IADLXDisplayVariBright1_IsBatteryLifeEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright1__set_battery_life_enabled" kind="page"><name>DOX_IADLXDisplayVariBright1_SetBatteryLifeEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright1__is_windows_power_mode_supported" kind="page"><name>DOX_IADLXDisplayVariBright1_IsWindowsPowerModeSupported</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright1__is_windows_power_mode_enabled" kind="page"><name>DOX_IADLXDisplayVariBright1_IsWindowsPowerModeEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright1__set_windows_power_mode_enabled" kind="page"><name>DOX_IADLXDisplayVariBright1_SetWindowsPowerModeEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright1__is_full_screen_video_supported" kind="page"><name>DOX_IADLXDisplayVariBright1_IsFullScreenVideoSupported</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright1__is_full_screen_video_enabled" kind="page"><name>DOX_IADLXDisplayVariBright1_IsFullScreenVideoEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright1__set_full_screen_video_enabled" kind="page"><name>DOX_IADLXDisplayVariBright1_SetFullScreenVideoEnabled</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_connectivity_experience__is_supported_h_d_m_i_quality_detection" kind="page"><name>DOX_IADLXDisplayConnectivityExperience_IsSupportedHDMIQualityDetection</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_connectivity_experience__is_supported_d_p_link" kind="page"><name>DOX_IADLXDisplayConnectivityExperience_IsSupportedDPLink</name>
@@ -2787,6 +2886,18 @@
   <compound refid="_d_o_x__i_a_d_l_x_display_blanking__set_blanked" kind="page"><name>DOX_IADLXDisplayBlanking_SetBlanked</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_blanking__set_unblanked" kind="page"><name>DOX_IADLXDisplayBlanking_SetUnblanked</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_dynamic_refresh_rate_control__is_supported" kind="page"><name>DOX_IADLXDisplayDynamicRefreshRateControl_IsSupported</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_dynamic_refresh_rate_control__is_enabled" kind="page"><name>DOX_IADLXDisplayDynamicRefreshRateControl_IsEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_dynamic_refresh_rate_control__set_enabled" kind="page"><name>DOX_IADLXDisplayDynamicRefreshRateControl_SetEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_free_sync_color_accuracy__is_supported" kind="page"><name>DOX_IADLXDisplayFreeSyncColorAccuracy_IsSupported</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_free_sync_color_accuracy__is_enabled" kind="page"><name>DOX_IADLXDisplayFreeSyncColorAccuracy_IsEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_free_sync_color_accuracy__set_enabled" kind="page"><name>DOX_IADLXDisplayFreeSyncColorAccuracy_SetEnabled</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_g_p_u_auto_tuning_complete_event__is_undervolt_g_p_u_completed" kind="page"><name>DOX_IADLXGPUAutoTuningCompleteEvent_IsUndervoltGPUCompleted</name>
   </compound>
@@ -2866,6 +2977,16 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_manual_fan_tuning__set_target_fan_speed" kind="page"><name>DOX_IADLXManualFanTuning_SetTargetFanSpeed</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_default_fan_tuning_states" kind="page"><name>DOX_IADLXManualFanTuning1_GetDefaultFanTuningStates</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_min_acoustic_limit_default" kind="page"><name>DOX_IADLXManualFanTuning1_GetMinAcousticLimitDefault</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_min_fan_speed_default" kind="page"><name>DOX_IADLXManualFanTuning1_GetMinFanSpeedDefault</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_target_fan_speed_default" kind="page"><name>DOX_IADLXManualFanTuning1_GetTargetFanSpeedDefault</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_default_zero_r_p_m_state" kind="page"><name>DOX_IADLXManualFanTuning1_GetDefaultZeroRPMState</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__get_g_p_u_tuning_ranges" kind="page"><name>DOX_IADLXManualGraphicsTuning1_GetGPUTuningRanges</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1__get_g_p_u_tuning_states" kind="page"><name>DOX_IADLXManualGraphicsTuning1_GetGPUTuningStates</name>
@@ -2894,6 +3015,12 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning2__set_g_p_u_voltage" kind="page"><name>DOX_IADLXManualGraphicsTuning2_SetGPUVoltage</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning2_1__get_g_p_u_min_frequency_default" kind="page"><name>DOX_IADLXManualGraphicsTuning2_1_GetGPUMinFrequencyDefault</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning2_1__get_g_p_u_max_frequency_default" kind="page"><name>DOX_IADLXManualGraphicsTuning2_1_GetGPUMaxFrequencyDefault</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning2_1__get_g_p_u_voltage_default" kind="page"><name>DOX_IADLXManualGraphicsTuning2_1_GetGPUVoltageDefault</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x_manual_power_tuning__get_power_limit_range" kind="page"><name>DOX_IADLXManualPowerTuning_GetPowerLimitRange</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_manual_power_tuning__get_power_limit" kind="page"><name>DOX_IADLXManualPowerTuning_GetPowerLimit</name>
@@ -2907,6 +3034,10 @@
   <compound refid="_d_o_x__i_a_d_l_x_manual_power_tuning__get_t_d_c_limit" kind="page"><name>DOX_IADLXManualPowerTuning_GetTDCLimit</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_manual_power_tuning__set_t_d_c_limit" kind="page"><name>DOX_IADLXManualPowerTuning_SetTDCLimit</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_manual_power_tuning1__get_power_limit_default" kind="page"><name>DOX_IADLXManualPowerTuning1_GetPowerLimitDefault</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_manual_power_tuning1__get_t_d_c_limit_default" kind="page"><name>DOX_IADLXManualPowerTuning1_GetTDCLimitDefault</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning1__is_supported_memory_timing" kind="page"><name>DOX_IADLXManualVRAMTuning1_IsSupportedMemoryTiming</name>
   </compound>
@@ -2939,6 +3070,8 @@
   <compound refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning2__get_max_v_r_a_m_frequency" kind="page"><name>DOX_IADLXManualVRAMTuning2_GetMaxVRAMFrequency</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning2__set_max_v_r_a_m_frequency" kind="page"><name>DOX_IADLXManualVRAMTuning2_SetMaxVRAMFrequency</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning2_1__get_max_v_r_a_m_frequency_default" kind="page"><name>DOX_IADLXManualVRAMTuning2_1_GetMaxVRAMFrequencyDefault</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_g_p_u_preset_tuning__is_supported_power_saver" kind="page"><name>DOX_IADLXGPUPresetTuning_IsSupportedPowerSaver</name>
   </compound>
@@ -3055,6 +3188,32 @@
   <compound refid="_d_o_x__i_a_d_l_x_i2_c__write" kind="page"><name>DOX_IADLXI2C_Write</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_log__write_log" kind="page"><name>DOX_IADLXLog_WriteLog</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_video_upscale__is_supported" kind="page"><name>DOX_IADLXVideoUpscale_IsSupported</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_video_upscale__is_enabled" kind="page"><name>DOX_IADLXVideoUpscale_IsEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_video_upscale__get_sharpness_range" kind="page"><name>DOX_IADLXVideoUpscale_GetSharpnessRange</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_video_upscale__get_sharpness" kind="page"><name>DOX_IADLXVideoUpscale_GetSharpness</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_video_upscale__set_enabled" kind="page"><name>DOX_IADLXVideoUpscale_SetEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_video_upscale__set_sharpness" kind="page"><name>DOX_IADLXVideoUpscale_SetSharpness</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_multimedia_changed_event__get_g_p_u" kind="page"><name>DOX_IADLXMultimediaChangedEvent_GetGPU</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_multimedia_changed_event__is_video_upscale_changed" kind="page"><name>DOX_IADLXMultimediaChangedEvent_IsVideoUpscaleChanged</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_multimedia_changed_event_listener__on_multimedia_changed" kind="page"><name>DOX_IADLXMultimediaChangedEventListener_OnMultimediaChanged</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_multimedia_changed_handling__add_multimedia_event_listener" kind="page"><name>DOX_IADLXMultimediaChangedHandling_AddMultimediaEventListener</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_multimedia_changed_handling__remove_multimedia_event_listener" kind="page"><name>DOX_IADLXMultimediaChangedHandling_RemoveMultimediaEventListener</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_multimedia_services__get_multimedia_changed_handling" kind="page"><name>DOX_IADLXMultimediaServices_GetMultimediaChangedHandling</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_multimedia_services__get_video_upscale" kind="page"><name>DOX_IADLXMultimediaServices_GetVideoUpscale</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support__is_supported_g_p_u_usage" kind="page"><name>DOX_IADLXGPUMetricsSupport_IsSupportedGPUUsage</name>
   </compound>
@@ -3234,6 +3393,12 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics1__n_p_u_activity_level" kind="page"><name>DOX_IADLXGPUMetrics1_NPUActivityLevel</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support2__is_supported_g_p_u_shared_memory" kind="page"><name>DOX_IADLXGPUMetricsSupport2_IsSupportedGPUSharedMemory</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support2__get_g_p_u_shared_memory_range" kind="page"><name>DOX_IADLXGPUMetricsSupport2_GetGPUSharedMemoryRange</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics2__g_p_u_shared_memory" kind="page"><name>DOX_IADLXGPUMetrics2_GPUSharedMemory</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x_smart_shift_max__is_supported" kind="page"><name>DOX_IADLXSmartShiftMax_IsSupported</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_smart_shift_max__get_bias_mode" kind="page"><name>DOX_IADLXSmartShiftMax_GetBiasMode</name>
@@ -3257,6 +3422,34 @@
   <compound refid="_d_o_x__i_a_d_l_x_power_tuning_services__get_power_tuning_changed_handling" kind="page"><name>DOX_IADLXPowerTuningServices_GetPowerTuningChangedHandling</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_power_tuning_services__get_smart_shift_max" kind="page"><name>DOX_IADLXPowerTuningServices_GetSmartShiftMax</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_smart_shift_eco__is_supported" kind="page"><name>DOX_IADLXSmartShiftEco_IsSupported</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_smart_shift_eco__is_enabled" kind="page"><name>DOX_IADLXSmartShiftEco_IsEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_smart_shift_eco__set_enabled" kind="page"><name>DOX_IADLXSmartShiftEco_SetEnabled</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_smart_shift_eco__is_inactive" kind="page"><name>DOX_IADLXSmartShiftEco_IsInactive</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_smart_shift_eco__get_inactive_reason" kind="page"><name>DOX_IADLXSmartShiftEco_GetInactiveReason</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_connect_changed_event__get_g_p_u" kind="page"><name>DOX_IADLXGPUConnectChangedEvent_GetGPU</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_connect_changed_event__is_g_p_u_apps_list_changed" kind="page"><name>DOX_IADLXGPUConnectChangedEvent_IsGPUAppsListChanged</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_connect_changed_event__is_g_p_u_power_changed" kind="page"><name>DOX_IADLXGPUConnectChangedEvent_IsGPUPowerChanged</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_connect_changed_event__is_g_p_u_power_change_error" kind="page"><name>DOX_IADLXGPUConnectChangedEvent_IsGPUPowerChangeError</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_connect_changed_listener__on_g_p_u_connect_changed" kind="page"><name>DOX_IADLXGPUConnectChangedListener_OnGPUConnectChanged</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_power_tuning_changed_event1__is_smart_shift_eco_changed" kind="page"><name>DOX_IADLXPowerTuningChangedEvent1_IsSmartShiftEcoChanged</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_power_tuning_services1__get_smart_shift_eco" kind="page"><name>DOX_IADLXPowerTuningServices1_GetSmartShiftEco</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_power_tuning_services1__is_g_p_u_connect_supported" kind="page"><name>DOX_IADLXPowerTuningServices1_IsGPUConnectSupported</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_power_tuning_services1__get_g_p_u_connect_g_p_us" kind="page"><name>DOX_IADLXPowerTuningServices1_GetGPUConnectGPUs</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_smart_access_memory__is_supported" kind="page"><name>DOX_IADLXSmartAccessMemory_IsSupported</name>
   </compound>
@@ -3356,6 +3549,38 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_system1__get_power_tuning_services" kind="page"><name>DOX_IADLXSystem1_GetPowerTuningServices</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u2__is_power_off" kind="page"><name>DOX_IADLXGPU2_IsPowerOff</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u2__power_on" kind="page"><name>DOX_IADLXGPU2_PowerOn</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u2__start_power_off" kind="page"><name>DOX_IADLXGPU2_StartPowerOff</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u2__abort_power_off" kind="page"><name>DOX_IADLXGPU2_AbortPowerOff</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u2__is_supported_application_list" kind="page"><name>DOX_IADLXGPU2_IsSupportedApplicationList</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u2__get_applications" kind="page"><name>DOX_IADLXGPU2_GetApplications</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u2__a_m_d_software_release_date" kind="page"><name>DOX_IADLXGPU2_AMDSoftwareReleaseDate</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u2__a_m_d_software_edition" kind="page"><name>DOX_IADLXGPU2_AMDSoftwareEdition</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u2__a_m_d_software_version" kind="page"><name>DOX_IADLXGPU2_AMDSoftwareVersion</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u2__driver_version" kind="page"><name>DOX_IADLXGPU2_DriverVersion</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u2__a_m_d_windows_driver_version" kind="page"><name>DOX_IADLXGPU2_AMDWindowsDriverVersion</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u2__l_u_i_d" kind="page"><name>DOX_IADLXGPU2_LUID</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u2_list__at" kind="page"><name>DOX_IADLXGPU2List_At</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u2_list__add__back" kind="page"><name>DOX_IADLXGPU2List_Add_Back</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_system2__get_multimedia_services" kind="page"><name>DOX_IADLXSystem2_GetMultimediaServices</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_system2__get_g_p_u_apps_list_changed_handling" kind="page"><name>DOX_IADLXSystem2_GetGPUAppsListChangedHandling</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x3_d_anti_lag" kind="page"><name>DOX_IADLX3DAntiLag</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x3_d_anti_lag1" kind="page"><name>DOX_IADLX3DAntiLag1</name>
@@ -3398,6 +3623,12 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x3_d_settings_services1" kind="page"><name>DOX_IADLX3DSettingsServices1</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_image_sharpen_desktop" kind="page"><name>DOX_IADLX3DImageSharpenDesktop</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_settings_changed_event2" kind="page"><name>DOX_IADLX3DSettingsChangedEvent2</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x3_d_settings_services2" kind="page"><name>DOX_IADLX3DSettingsServices2</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x_desktop" kind="page"><name>DOX_IADLXDesktop</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_eyefinity_desktop" kind="page"><name>DOX_IADLXEyefinityDesktop</name>
@@ -3436,6 +3667,8 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_settings_changed_event2" kind="page"><name>DOX_IADLXDisplaySettingsChangedEvent2</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_settings_changed_event3" kind="page"><name>DOX_IADLXDisplaySettingsChangedEvent3</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_settings_changed_listener" kind="page"><name>DOX_IADLXDisplaySettingsChangedListener</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_changed_handling" kind="page"><name>DOX_IADLXDisplayChangedHandling</name>
@@ -3446,7 +3679,11 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_services2" kind="page"><name>DOX_IADLXDisplayServices2</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_services3" kind="page"><name>DOX_IADLXDisplayServices3</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_free_sync" kind="page"><name>DOX_IADLXDisplayFreeSync</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_free_sync_color_accuracy" kind="page"><name>DOX_IADLXDisplayFreeSyncColorAccuracy</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_v_s_r" kind="page"><name>DOX_IADLXDisplayVSR</name>
   </compound>
@@ -3472,7 +3709,11 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright" kind="page"><name>DOX_IADLXDisplayVariBright</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_vari_bright1" kind="page"><name>DOX_IADLXDisplayVariBright1</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_connectivity_experience" kind="page"><name>DOX_IADLXDisplayConnectivityExperience</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_display_dynamic_refresh_rate_control" kind="page"><name>DOX_IADLXDisplayDynamicRefreshRateControl</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_display_gamut" kind="page"><name>DOX_IADLXDisplayGamut</name>
   </compound>
@@ -3491,6 +3732,14 @@
   <compound refid="_d_o_x__i_a_d_l_x_g_p_us_changed_handling" kind="page"><name>DOX_IADLXGPUsChangedHandling</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_g_p_u1" kind="page"><name>DOX_IADLXGPU1</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u2" kind="page"><name>DOX_IADLXGPU2</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u2_list" kind="page"><name>DOX_IADLXGPU2List</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_apps_list_event_listener" kind="page"><name>DOX_IADLXGPUAppsListEventListener</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_apps_list_changed_handling" kind="page"><name>DOX_IADLXGPUAppsListChangedHandling</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_smart_access_memory" kind="page"><name>DOX_IADLXSmartAccessMemory</name>
   </compound>
@@ -3520,17 +3769,25 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning2" kind="page"><name>DOX_IADLXManualVRAMTuning2</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_manual_v_r_a_m_tuning2_1" kind="page"><name>DOX_IADLXManualVRAMTuning2_1</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x_manual_power_tuning" kind="page"><name>DOX_IADLXManualPowerTuning</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_manual_power_tuning1" kind="page"><name>DOX_IADLXManualPowerTuning1</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning1" kind="page"><name>DOX_IADLXManualGraphicsTuning1</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning2" kind="page"><name>DOX_IADLXManualGraphicsTuning2</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_manual_graphics_tuning2_1" kind="page"><name>DOX_IADLXManualGraphicsTuning2_1</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_manual_fan_tuning_state" kind="page"><name>DOX_IADLXManualFanTuningState</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_manual_fan_tuning_state_list" kind="page"><name>DOX_IADLXManualFanTuningStateList</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_manual_fan_tuning" kind="page"><name>DOX_IADLXManualFanTuning</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1" kind="page"><name>DOX_IADLXManualFanTuning1</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_g_p_u_auto_tuning_complete_event" kind="page"><name>DOX_IADLXGPUAutoTuningCompleteEvent</name>
   </compound>
@@ -3542,6 +3799,10 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_mapping" kind="page"><name>DOX_IADLMapping</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_application" kind="page"><name>DOX_IADLXApplication</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_application_list" kind="page"><name>DOX_IADLXApplicationList</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x_log" kind="page"><name>DOX_IADLXLog</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_list" kind="page"><name>DOX_IADLXList</name>
@@ -3549,6 +3810,16 @@
   <compound refid="_d_o_x__i_a_d_l_x_changed_event" kind="page"><name>DOX_IADLXChangedEvent</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_interface" kind="page"><name>DOX_IADLXInterface</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_multimedia_services" kind="page"><name>DOX_IADLXMultimediaServices</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_multimedia_changed_handling" kind="page"><name>DOX_IADLXMultimediaChangedHandling</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_multimedia_changed_event_listener" kind="page"><name>DOX_IADLXMultimediaChangedEventListener</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_multimedia_changed_event" kind="page"><name>DOX_IADLXMultimediaChangedEvent</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_video_upscale" kind="page"><name>DOX_IADLXVideoUpscale</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support" kind="page"><name>DOX_IADLXGPUMetricsSupport</name>
   </compound>
@@ -3580,6 +3851,20 @@
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics1" kind="page"><name>DOX_IADLXGPUMetrics1</name>
   </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics_support2" kind="page"><name>DOX_IADLXGPUMetricsSupport2</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_metrics2" kind="page"><name>DOX_IADLXGPUMetrics2</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_power_tuning_services1" kind="page"><name>DOX_IADLXPowerTuningServices1</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_power_tuning_changed_event1" kind="page"><name>DOX_IADLXPowerTuningChangedEvent1</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_smart_shift_eco" kind="page"><name>DOX_IADLXSmartShiftEco</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_connect_changed_event" kind="page"><name>DOX_IADLXGPUConnectChangedEvent</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_g_p_u_connect_changed_listener" kind="page"><name>DOX_IADLXGPUConnectChangedListener</name>
+  </compound>
   <compound refid="_d_o_x__i_a_d_l_x_power_tuning_services" kind="page"><name>DOX_IADLXPowerTuningServices</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_power_tuning_changed_handling" kind="page"><name>DOX_IADLXPowerTuningChangedHandling</name>
@@ -3591,6 +3876,8 @@
   <compound refid="_d_o_x__i_a_d_l_x_smart_shift_max" kind="page"><name>DOX_IADLXSmartShiftMax</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_system1" kind="page"><name>DOX_IADLXSystem1</name>
+  </compound>
+  <compound refid="_d_o_x__i_a_d_l_x_system2" kind="page"><name>DOX_IADLXSystem2</name>
   </compound>
   <compound refid="_d_o_x__i_a_d_l_x_system" kind="page"><name>DOX_IADLXSystem</name>
   </compound>
@@ -3616,6 +3903,8 @@
   </compound>
   <compound refid="domain_c_sample__i2_c" kind="page"><name>domain_c_sample_I2C</name>
   </compound>
+  <compound refid="domain_c_sample_multimedia" kind="page"><name>domain_c_sample_multimedia</name>
+  </compound>
   <compound refid="domain_c_sample__performance_monitoring" kind="page"><name>domain_c_sample_PerformanceMonitoring</name>
   </compound>
   <compound refid="domain_c_sample_powertuning" kind="page"><name>domain_c_sample_powertuning</name>
@@ -3631,6 +3920,8 @@
   <compound refid="domain_cpp_sample__g_p_u_tuning" kind="page"><name>domain_cpp_sample_GPUTuning</name>
   </compound>
   <compound refid="domain_cpp_sample__i2_c" kind="page"><name>domain_cpp_sample_I2C</name>
+  </compound>
+  <compound refid="domain_cpp_sample_multimedia" kind="page"><name>domain_cpp_sample_multimedia</name>
   </compound>
   <compound refid="domain_cpp_sample__performance_monitoring" kind="page"><name>domain_cpp_sample_PerformanceMonitoring</name>
   </compound>
@@ -3696,7 +3987,11 @@
   </compound>
   <compound refid="cpp_display__v_s_r" kind="page"><name>cpp_display_VSR</name>
   </compound>
+  <compound refid="cpp_display__dynamic_refresh_rate_control" kind="page"><name>cpp_display_DynamicRefreshRateControl</name>
+  </compound>
   <compound refid="cpp_display__display_vari_bright" kind="page"><name>cpp_display_DisplayVariBright</name>
+  </compound>
+  <compound refid="cpp_display__free_sync_color_accuracy" kind="page"><name>cpp_display_FreeSyncColorAccuracy</name>
   </compound>
   <compound refid="cpp__a_f_m_f" kind="page"><name>cpp_AFMF</name>
   </compound>
@@ -3752,6 +4047,10 @@
   </compound>
   <compound refid="cpp_ssm" kind="page"><name>cpp_ssm</name>
   </compound>
+  <compound refid="cpp_sseco" kind="page"><name>cpp_sseco</name>
+  </compound>
+  <compound refid="cpp_videoupscale" kind="page"><name>cpp_videoupscale</name>
+  </compound>
   <compound refid="cpp__i2_c" kind="page"><name>cpp_I2C</name>
   </compound>
   <compound refid="cpp__sync3_d_receive" kind="page"><name>cpp_Sync3DReceive</name>
@@ -3761,6 +4060,10 @@
   <compound refid="cpp__sync_g_p_u_tuning" kind="page"><name>cpp_SyncGPUTuning</name>
   </compound>
   <compound refid="cpp__sync_power_tuning" kind="page"><name>cpp_SyncPowerTuning</name>
+  </compound>
+  <compound refid="cpp__sync_multimedia" kind="page"><name>cpp_SyncMultimedia</name>
+  </compound>
+  <compound refid="cpp_sample__g_p_u_service_direct" kind="page"><name>cpp_sample_GPUServiceDirect</name>
   </compound>
   <compound refid="cpp_sample__g_p_u_service_call" kind="page"><name>cpp_sample_GPUServiceCall</name>
   </compound>
@@ -3800,6 +4103,8 @@
   </compound>
   <compound refid="c_display__display_connectivity_experience" kind="page"><name>c_display_DisplayConnectivityExperience</name>
   </compound>
+  <compound refid="c_display__dynamic_refresh_rate_control" kind="page"><name>c_display_DynamicRefreshRateControl</name>
+  </compound>
   <compound refid="c_display__custom_color" kind="page"><name>c_display_CustomColor</name>
   </compound>
   <compound refid="c_display__custom_resolution" kind="page"><name>c_display_CustomResolution</name>
@@ -3819,6 +4124,8 @@
   <compound refid="c_display__v_s_r" kind="page"><name>c_display_VSR</name>
   </compound>
   <compound refid="c_display__display_vari_bright" kind="page"><name>c_display_DisplayVariBright</name>
+  </compound>
+  <compound refid="c_display__free_sync_color_accuracy" kind="page"><name>c_display_FreeSyncColorAccuracy</name>
   </compound>
   <compound refid="c__a_f_m_f" kind="page"><name>c_AFMF</name>
   </compound>
@@ -3874,6 +4181,10 @@
   </compound>
   <compound refid="c_ssm" kind="page"><name>c_ssm</name>
   </compound>
+  <compound refid="c_sseco" kind="page"><name>c_sseco</name>
+  </compound>
+  <compound refid="c_videoupscale" kind="page"><name>c_videoupscale</name>
+  </compound>
   <compound refid="c__i2_c" kind="page"><name>c_I2C</name>
   </compound>
   <compound refid="c__sync3_d_receive" kind="page"><name>c_Sync3DReceive</name>
@@ -3883,6 +4194,10 @@
   <compound refid="c__sync_g_p_u_tuning" kind="page"><name>c_SyncGPUTuning</name>
   </compound>
   <compound refid="c__sync_power_tuning" kind="page"><name>c_SyncPowerTuning</name>
+  </compound>
+  <compound refid="c__sync_multimedia" kind="page"><name>c_SyncMultimedia</name>
+  </compound>
+  <compound refid="c_sample__g_p_u_service_direct" kind="page"><name>c_sample_GPUServiceDirect</name>
   </compound>
   <compound refid="c_sample__g_p_u_service_call" kind="page"><name>c_sample_GPUServiceCall</name>
   </compound>

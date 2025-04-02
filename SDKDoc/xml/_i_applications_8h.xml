@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_i_applications_8h" kind="file" language="C++">
+    <compoundname>IApplications.h</compoundname>
+    <includes refid="_a_d_l_x_structures_8h" local="yes">ADLXStructures.h</includes>
+    <includes refid="_i_collections_8h" local="yes">ICollections.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>ADLXDefines.h</label>
+        <link refid="_a_d_l_x_defines_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ADLXStructures.h</label>
+        <link refid="_a_d_l_x_structures_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IApplications.h</label>
+        <link refid="_i_applications_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Windows.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="5">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x_application" prot="public">adlx::IADLXApplication</innerclass>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x_application_list" prot="public">adlx::IADLXApplicationList</innerclass>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x_g_p_u_apps_list_event_listener" prot="public">adlx::IADLXGPUAppsListEventListener</innerclass>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x_g_p_u_apps_list_changed_handling" prot="public">adlx::IADLXGPUAppsListChangedHandling</innerclass>
+    <innernamespace refid="namespaceadlx">adlx</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2023<sp/>-<sp/>2025<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ADLX_IAPPLICATIONS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADLX_IAPPLICATIONS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_d_l_x_structures_8h" kindref="compound">ADLXStructures.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ICollections.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//IDesktops.h<sp/>-<sp/>Interfaces<sp/>for<sp/>ADLX<sp/>Applications<sp/>functionality</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>IADLXApplication</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">adlx</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLXApplication<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLXInterface</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DECLARE_IID(L</highlight><highlight class="stringliteral">&quot;IADLXApplication&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>ProcessID(adlx_ulong*<sp/>pid)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>Name(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">**<sp/>ppAppName)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>FullPath(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">**<sp/>ppAppPath)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>GPUDependencyType(<ref refid="group__enumerations_1gaf6c76078b265ef8526edd967e45ce15a" kindref="member">ADLX_APP_GPU_DEPENDENCY</ref>*<sp/>gpuDependency)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>};<sp/></highlight><highlight class="comment">//<sp/>IADLXApplication<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLXApplication&gt;<sp/>IADLXApplicationPtr;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal">ADLX_DECLARE_IID(IADLXApplication,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLXApplication&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXApplication<sp/>IADLXApplication;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXApplicationVtbl</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Acquire)(IADLXApplication*<sp/>pThis);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Release)(IADLXApplication*<sp/>pThis);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>QueryInterface)(IADLXApplication*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>IADLXApplication</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>ProcessID)(IADLXApplication*<sp/>pThis,<sp/>adlx_ulong*<sp/>pid);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>Name)(IADLXApplication*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">**<sp/>ppAppName);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>FullPath)(IADLXApplication*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">**<sp/>ppAppPath);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GPUDependencyType)(IADLXApplication*<sp/>pThis,<sp/><ref refid="group__enumerations_1gaf6c76078b265ef8526edd967e45ce15a" kindref="member">ADLX_APP_GPU_DEPENDENCY</ref>*<sp/>gpuDependency);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}<sp/>IADLXApplicationVtbl;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXApplication<sp/>{<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLXApplicationVtbl*<sp/>pVtbl;<sp/>};</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXApplication</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>IADLXApplicationList</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">adlx</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLXApplicationList<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLXList</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DECLARE_IID(L</highlight><highlight class="stringliteral">&quot;IADLXApplicationList&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Lists<sp/>must<sp/>declare<sp/>the<sp/>type<sp/>of<sp/>items<sp/>it<sp/>holds<sp/>-<sp/>what<sp/>was<sp/>passed<sp/>as<sp/>ADLX_DECLARE_IID()<sp/>in<sp/>that<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DECLARE_ITEM_IID(IADLXApplication::IID())</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>virtual<sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>At(const<sp/>adlx_uint<sp/>location,<sp/>IADLXApplication**<sp/>ppItem)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>virtual<sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>Add_Back(IADLXApplication*<sp/>pItem)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>};<sp/><sp/></highlight><highlight class="comment">//IADLXApplicationList</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>typedef<sp/>IADLXInterfacePtr_T&lt;IADLXApplicationList&gt;<sp/>IADLXApplicationListPtr;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal">}<sp/><sp/><sp/></highlight><highlight class="comment">//namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal">ADLX_DECLARE_IID(IADLXApplicationList,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLXApplicationList&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">ADLX_DECLARE_ITEM_IID(IADLXApplication,<sp/>IID_IADLXApplication())</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal">typedef<sp/>struct<sp/>IADLXApplicationList<sp/>IADLXApplicationList;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal">typedef<sp/>struct<sp/>IADLXApplicationListVtbl</highlight></codeline>
+<codeline lineno="240"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Acquire)(IADLXApplicationList*<sp/>pThis);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Release)(IADLXApplicationList*<sp/>pThis);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>QueryInterface)(IADLXApplicationList*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXList</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_uint(ADLX_STD_CALL*<sp/>Size)(IADLXApplicationList*<sp/>pThis);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_uint8(ADLX_STD_CALL*<sp/>Empty)(IADLXApplicationList*<sp/>pThis);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_uint(ADLX_STD_CALL*<sp/>Begin)(IADLXApplicationList*<sp/>pThis);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_uint(ADLX_STD_CALL*<sp/>End)(IADLXApplicationList*<sp/>pThis);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>At)(IADLXApplicationList*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>adlx_uint<sp/>location,<sp/>IADLXInterface**<sp/>ppItem);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>Clear)(IADLXApplicationList*<sp/>pThis);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>Remove_Back)(IADLXApplicationList*<sp/>pThis);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>Add_Back)(IADLXApplicationList*<sp/>pThis,<sp/>IADLXInterface*<sp/>pItem);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXApplicationList</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>At_ApplicationList)(IADLXApplicationList*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>adlx_uint<sp/>location,<sp/>IADLXApplication**<sp/>ppItem);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>Add_Back_ApplicationList)(IADLXApplicationList*<sp/>pThis,<sp/>IADLXApplication*<sp/>pItem);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal">}<sp/>IADLXApplicationListVtbl;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXApplicationList<sp/>{<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLXApplicationListVtbl*<sp/>pVtbl;<sp/>};</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXApplicationList</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>IADLXGPUAppsListEventListener</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">adlx</highlight></codeline>
+<codeline lineno="269"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLXGPU2;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLXGPUAppsListEventListener</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>adlx_bool<sp/>ADLX_STD_CALL<sp/>OnGPUAppsListChanged<sp/>(IADLXGPU2*<sp/>pGPU,<sp/>IADLXApplicationList*<sp/>pApplications)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>};<sp/></highlight><highlight class="comment">//IADLXGPUAppsListEventListener</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXGPUAppsListEventListener<sp/>IADLXGPUAppsListEventListener;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXGPUAppsListEventListenerVtbl</highlight></codeline>
+<codeline lineno="307"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool<sp/>(ADLX_STD_CALL*<sp/>OnGPUAppsListChanged)(IADLXGPUAppsListEventListener*<sp/>pThis,<sp/>IADLXGPU2*<sp/>pGPU,<sp/>IADLXApplicationList*<sp/>pApplications);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal">}<sp/>IADLXGPUAppsListEventListenerVtbl;</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXGPUAppsListEventListener<sp/>{<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLXGPUAppsListEventListenerVtbl*<sp/>pVtbl;<sp/>};</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXGPUAppsListEventListener</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>IADLXGPUAppsListChangedHandling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">adlx</highlight></codeline>
+<codeline lineno="317"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLXGPUAppsListChangedHandling<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLXInterface</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DECLARE_IID(L</highlight><highlight class="stringliteral">&quot;IADLXGPUAppsListChangedHandling&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>AddGPUAppsListEventListener<sp/>(IADLXGPUAppsListEventListener*<sp/>pGPUAppsListEventListener)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>RemoveGPUAppsListEventListener<sp/>(IADLXGPUAppsListEventListener*<sp/>pGPUAppsListEventListener)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/>};<sp/></highlight><highlight class="comment">//IADLXGPUAppsListChangedHandling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLXGPUAppsListChangedHandling&gt;<sp/>IADLXGPUAppsListChangedHandlingPtr;</highlight></codeline>
+<codeline lineno="378"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal">ADLX_DECLARE_IID(IADLXGPUAppsListChangedHandling,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLXGPUAppsListChangedHandling&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXGPUAppsListChangedHandling<sp/>IADLXGPUAppsListChangedHandling;</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXGPUAppsListChangedHandlingVtbl</highlight></codeline>
+<codeline lineno="383"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Acquire)(IADLXGPUAppsListChangedHandling*<sp/>pThis);</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Release)(IADLXGPUAppsListChangedHandling*<sp/>pThis);</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>QueryInterface)(IADLXGPUAppsListChangedHandling*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXGPUAppsListChangedHandling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>AddGPUAppsListEventListener)(IADLXGPUAppsListChangedHandling*<sp/>pThis,<sp/>IADLXGPUAppsListEventListener*<sp/>pGPUAppsListEventListener);</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>RemoveGPUAppsListEventListener)(IADLXGPUAppsListChangedHandling*<sp/>pThis,<sp/>IADLXGPUAppsListEventListener*<sp/>pGPUAppsListEventListener);</highlight></codeline>
+<codeline lineno="392"><highlight class="normal">}<sp/>IADLXGPUAppsListChangedHandlingVtbl;</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXGPUAppsListChangedHandling<sp/>{<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLXGPUAppsListChangedHandlingVtbl*<sp/>pVtbl;<sp/>};</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXGPUAppsListChangedHandling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IApplications.h"/>
+  </compounddef>
+</doxygen>

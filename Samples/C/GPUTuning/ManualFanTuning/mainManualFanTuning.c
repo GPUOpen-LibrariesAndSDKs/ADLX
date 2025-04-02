@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -270,7 +270,36 @@ void ShowGetAndSetFan (IADLXManualFanTuning* manualFanTuning)
             states = NULL;
         }
     }
-    
+    // Display default fan tuning states
+    IADLXManualFanTuning1* manualFanTuning1;
+    manualFanTuning->pVtbl->QueryInterface(manualFanTuning, IID_IADLXManualFanTuning1(), (void**)&manualFanTuning1);
+    if (manualFanTuning1)
+    {
+        res = manualFanTuning1->pVtbl->GetDefaultFanTuningStates(manualFanTuning1, &states);
+        if (ADLX_SUCCEEDED(res))
+        {
+            for (adlx_uint crt = states->pVtbl->Begin(states); crt != states->pVtbl->End(states); ++crt)
+            {
+                res = states->pVtbl->At_ManualFanTuningStateList(states, crt, &oneState);
+                adlx_int speed = 0, temperature = 0;
+                oneState->pVtbl->GetFanSpeed(oneState, &speed);
+                oneState->pVtbl->GetTemperature(oneState, &temperature);
+                printf("\tThe default %d state: speed is %d temperature is %d\n", crt, speed, temperature);
+                if (oneState != NULL)
+                {
+                    oneState->pVtbl->Release(oneState);
+                    oneState = NULL;
+                }
+            }
+            if (states != NULL)
+            {
+                states->pVtbl->Release(states);
+                states = NULL;
+            }
+        }
+        manualFanTuning1->pVtbl->Release(manualFanTuning1);
+        manualFanTuning1 = NULL;
+    }
 
     // Set empty fan tuning states
     res = manualFanTuning->pVtbl->GetEmptyFanTuningStates (manualFanTuning, &states);
@@ -350,6 +379,16 @@ void ShowGetAndSetZeroRPM (IADLXManualFanTuning* manualFanTuning)
     printf ("\tReset ZeroRPM state, return code is: %d(0 means success)\n", res);
     res = manualFanTuning->pVtbl->GetZeroRPMState (manualFanTuning, &isZeroRPMStateSet);
     printf ("\tIs ZeroRPM state set: %d, return code is: %d(0 means success)\n", isZeroRPMStateSet, res);
+    IADLXManualFanTuning1* manualFanTuning1;
+    manualFanTuning->pVtbl->QueryInterface(manualFanTuning, IID_IADLXManualFanTuning1(), (void**)&manualFanTuning1);
+    if (manualFanTuning1)
+    {
+        res = manualFanTuning1->pVtbl->GetDefaultZeroRPMState(manualFanTuning1, &isZeroRPMStateSet);
+        printf("\tDefault ZeroRPM state is: %d, return code is: %d(0 means success)\n", isZeroRPMStateSet, res);
+        // release manualFanTuning1
+        manualFanTuning1->pVtbl->Release(manualFanTuning1);
+        manualFanTuning1 = NULL;
+    }
 }
 
 // Display and set MinAcoustic settings
@@ -371,6 +410,17 @@ void ShowGetAndSetMinAcoustic (IADLXManualFanTuning* manualFanTuning)
     res = manualFanTuning->pVtbl->SetMinAcousticLimit (manualFanTuning, tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
     res = manualFanTuning->pVtbl->GetMinAcousticLimit (manualFanTuning, &minAcousticLimit);
     printf ("\tSet current min acoustic limit to: %d, return code is: %d(0 means success)\n", minAcousticLimit, res);
+
+    IADLXManualFanTuning1* manualFanTuning1;
+    manualFanTuning->pVtbl->QueryInterface(manualFanTuning, IID_IADLXManualFanTuning1(), (void**)&manualFanTuning1);
+    if (manualFanTuning1)
+    {
+        res = manualFanTuning1->pVtbl->GetMinAcousticLimitDefault(manualFanTuning1, &minAcousticLimit);
+        printf("\tDefault min acoustic limit is: %d, return code is: %d(0 means success)\n", minAcousticLimit, res);
+        // release manualFanTuning1
+        manualFanTuning1->pVtbl->Release(manualFanTuning1);
+        manualFanTuning1 = NULL;
+    }
 }
 
 // Display and set MinFanSpeed settings
@@ -392,6 +442,17 @@ void ShowGetAndSetMinFanSpeed (IADLXManualFanTuning* manualFanTuning)
     res = manualFanTuning->pVtbl->SetMinFanSpeed (manualFanTuning, tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
     res = manualFanTuning->pVtbl->GetMinFanSpeed (manualFanTuning, &minFanSpeed);
     printf ("\tSet current MinFanSpeed to: %d, return code is: %d(0 means success)\n", minFanSpeed, res);
+
+    IADLXManualFanTuning1* manualFanTuning1;
+    manualFanTuning->pVtbl->QueryInterface(manualFanTuning, IID_IADLXManualFanTuning1(), (void**)&manualFanTuning1);
+    if (manualFanTuning1)
+    {
+        res = manualFanTuning1->pVtbl->GetMinFanSpeedDefault(manualFanTuning1, &minFanSpeed);
+        printf("\tDefault MinFanSpeed is: %d, return code is: %d(0 means success)\n", minFanSpeed, res);
+        // release manualFanTuning1
+        manualFanTuning1->pVtbl->Release(manualFanTuning1);
+        manualFanTuning1 = NULL;
+    }
 }
 
 // Display and set TargetFanSpeed settings
@@ -407,10 +468,22 @@ void ShowGetAndSetTargetFanSpeed (IADLXManualFanTuning* manualFanTuning)
     res = manualFanTuning->pVtbl->GetTargetFanSpeedRange (manualFanTuning, &tuningRange);
     printf ("\tTargetFanSpeed range: (%d, %d), return code is: %d(0 means success)\n", tuningRange.minValue, tuningRange.maxValue, res);
 
-    adlx_int minAcousticLimit;
-    res = manualFanTuning->pVtbl->GetTargetFanSpeed (manualFanTuning, &minAcousticLimit);
-    printf ("\tCurrent TargetFanSpeed: %d, return code is: %d(0 means success)\n", minAcousticLimit, res);
+    adlx_int targetFanSpeed;
+    res = manualFanTuning->pVtbl->GetTargetFanSpeed (manualFanTuning, &targetFanSpeed);
+    printf ("\tCurrent TargetFanSpeed: %d, return code is: %d(0 means success)\n", targetFanSpeed, res);
     res = manualFanTuning->pVtbl->SetTargetFanSpeed (manualFanTuning, tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
-    res = manualFanTuning->pVtbl->GetTargetFanSpeed (manualFanTuning, &minAcousticLimit);
-    printf ("\tSet current TargetFanSpeed to: %d, return code is: %d(0 means success)\n", minAcousticLimit, res);
+    res = manualFanTuning->pVtbl->GetTargetFanSpeed (manualFanTuning, &targetFanSpeed);
+    printf ("\tSet current TargetFanSpeed to: %d, return code is: %d(0 means success)\n", targetFanSpeed, res);
+
+    IADLXManualFanTuning1* manualFanTuning1;
+    manualFanTuning->pVtbl->QueryInterface(manualFanTuning, IID_IADLXManualFanTuning1(), (void**)&manualFanTuning1);
+    if (manualFanTuning1)
+    {
+        res = manualFanTuning1->pVtbl->GetTargetFanSpeedDefault(manualFanTuning1, &targetFanSpeed);
+        printf("\Default TargetFanSpeed: %d, return code is: %d(0 means success)\n", targetFanSpeed, res);
+        // release manualFanTuning1
+        manualFanTuning1->pVtbl->Release(manualFanTuning1);
+        manualFanTuning1 = NULL;
+    }
+
 }

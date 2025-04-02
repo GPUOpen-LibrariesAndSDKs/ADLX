@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_display" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXDisplay</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_1a79e422d2b7f1b75f2999d6e8819d5a1e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::ManufacturerID</definition>
         <argsstring>(adlx_uint *manufacturerID) const =0</argsstring>
         <name>ManufacturerID</name>
+        <qualifiedname>adlx::IADLXDisplay::ManufacturerID</qualifiedname>
         <param>
           <type>adlx_uint *</type>
           <declname>manufacturerID</declname>
@@ -26,6 +27,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::DisplayType</definition>
         <argsstring>(ADLX_DISPLAY_TYPE *displayType) const =0</argsstring>
         <name>DisplayType</name>
+        <qualifiedname>adlx::IADLXDisplay::DisplayType</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1gae7e516225131af0ff164e9384d8d0a44" kindref="member">ADLX_DISPLAY_TYPE</ref> *</type>
           <declname>displayType</declname>
@@ -43,6 +45,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::ConnectorType</definition>
         <argsstring>(ADLX_DISPLAY_CONNECTOR_TYPE *connectType) const =0</argsstring>
         <name>ConnectorType</name>
+        <qualifiedname>adlx::IADLXDisplay::ConnectorType</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5d" kindref="member">ADLX_DISPLAY_CONNECTOR_TYPE</ref> *</type>
           <declname>connectType</declname>
@@ -60,6 +63,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::Name</definition>
         <argsstring>(const char **displayName) const =0</argsstring>
         <name>Name</name>
+        <qualifiedname>adlx::IADLXDisplay::Name</qualifiedname>
         <param>
           <type>const char **</type>
           <declname>displayName</declname>
@@ -77,6 +81,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::EDID</definition>
         <argsstring>(const char **edid) const =0</argsstring>
         <name>EDID</name>
+        <qualifiedname>adlx::IADLXDisplay::EDID</qualifiedname>
         <param>
           <type>const char **</type>
           <declname>edid</declname>
@@ -94,6 +99,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::NativeResolution</definition>
         <argsstring>(adlx_int *maxHResolution, adlx_int *maxVResolution) const =0</argsstring>
         <name>NativeResolution</name>
+        <qualifiedname>adlx::IADLXDisplay::NativeResolution</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>maxHResolution</declname>
@@ -115,6 +121,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::RefreshRate</definition>
         <argsstring>(adlx_double *refreshRate) const =0</argsstring>
         <name>RefreshRate</name>
+        <qualifiedname>adlx::IADLXDisplay::RefreshRate</qualifiedname>
         <param>
           <type>adlx_double *</type>
           <declname>refreshRate</declname>
@@ -132,6 +139,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::PixelClock</definition>
         <argsstring>(adlx_uint *pixelClock) const =0</argsstring>
         <name>PixelClock</name>
+        <qualifiedname>adlx::IADLXDisplay::PixelClock</qualifiedname>
         <param>
           <type>adlx_uint *</type>
           <declname>pixelClock</declname>
@@ -149,6 +157,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::ScanType</definition>
         <argsstring>(ADLX_DISPLAY_SCAN_TYPE *scanType) const =0</argsstring>
         <name>ScanType</name>
+        <qualifiedname>adlx::IADLXDisplay::ScanType</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1gae2d0250dc861156a468001600a2ee648" kindref="member">ADLX_DISPLAY_SCAN_TYPE</ref> *</type>
           <declname>scanType</declname>
@@ -166,6 +175,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::GetGPU</definition>
         <argsstring>(IADLXGPU **ppGPU)=0</argsstring>
         <name>GetGPU</name>
+        <qualifiedname>adlx::IADLXDisplay::GetGPU</qualifiedname>
         <param>
           <type>IADLXGPU **</type>
           <declname>ppGPU</declname>
@@ -183,6 +193,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplay::UniqueId</definition>
         <argsstring>(adlx_size *uniqueId)=0</argsstring>
         <name>UniqueId</name>
+        <qualifiedname>adlx::IADLXDisplay::UniqueId</qualifiedname>
         <param>
           <type>adlx_size *</type>
           <declname>uniqueId</declname>
@@ -195,7 +206,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplays.h" line="386" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

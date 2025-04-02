@@ -1,12 +1,12 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
 /// \file mainGPUs.c
 /// \brief Demonstrates how to enumerate GPUs, get GPU information, receive notifications when GPUs are enabled and disabled, and maintain GPU change event when programming with ADLX.
 #include "SDK/ADLXHelper/Windows/C/ADLXHelper.h"
-#include "SDK/Include/ISystem1.h"
+#include "SDK/Include/ISystem2.h"
 #include <stdio.h>
 
 // Callback for GPU change event
@@ -29,9 +29,6 @@ void ShowGPUInfo(IADLXGPU* gpu);
 
 // Show GPU hybrid graphic type
 void ShowHybridGraphicType();
-
-// Display Driver Version
-void ShowDriverInfo(IADLXGPU* gpu);
 
 // Add event lister for GPU change
 void AddGPUEventListener();
@@ -140,8 +137,6 @@ void ShowGPUInfo(IADLXGPU* gpu)
         ret = gpu->pVtbl->UniqueId(gpu, &id);
         printf("UniqueId: %d, return code is: %d(0 means success)\n", id, ret);
 
-        ShowDriverInfo(gpu);
-
         IADLXGPU1* gpu1 = NULL;
         ret = gpu->pVtbl->QueryInterface(gpu, IID_IADLXGPU1(), &gpu1);
         if (ADLX_SUCCEEDED(ret))
@@ -172,88 +167,35 @@ void ShowGPUInfo(IADLXGPU* gpu)
             gpu1 = NULL;
         }
 
-        gpu->pVtbl->Release(gpu);
-        gpu = NULL;
-    }
-}
-
-BOOL GetStringFromLocalMachine(const TCHAR* szKeyPath_, const TCHAR* szValueName_, TCHAR* szValue_, DWORD dwSize_)
-{
-    if ((szKeyPath_ == NULL) || (szValueName_ == NULL))
-        return false;
-
-    BOOL bRetVal = false;
-    BOOL bKeyOpenStatus = false;
-    DWORD dwValueType = REG_SZ;
-    HKEY hKeyRes;
-
-    //Opens the specified key, returning a handle object.
-    if (RegOpenKeyEx(HKEY_LOCAL_MACHINE, szKeyPath_, 0, KEY_QUERY_VALUE, &hKeyRes) == ERROR_SUCCESS)
-        bKeyOpenStatus = true;
-
-    if (bKeyOpenStatus)
-    {
-        //Retrieves the type and data for a specified value name associated with an open registry key
-        if (RegQueryValueEx(hKeyRes, szValueName_, 0, &dwValueType, (LPBYTE)szValue_, &dwSize_) == ERROR_SUCCESS)
+        IADLXGPU2* gpu2 = NULL;
+        ret = gpu->pVtbl->QueryInterface(gpu, IID_IADLXGPU2(), &gpu2);
+        if (ADLX_SUCCEEDED(ret))
         {
-            //If the value type is string return true otherwise false
-            if (dwValueType == REG_SZ || dwValueType == REG_EXPAND_SZ)
-                bRetVal = true;
+            const char* driverInfo = NULL;
+            ret = gpu2->pVtbl->AMDSoftwareEdition(gpu2, &driverInfo);
+            printf("AMD software edition: %s\n", driverInfo);
+            ret = gpu2->pVtbl->AMDSoftwareVersion(gpu2, &driverInfo);
+            printf("AMD software version: %s\n", driverInfo);
+            ret = gpu2->pVtbl->DriverVersion(gpu2, &driverInfo);
+            printf("driver version: %s\n", driverInfo);
+            ret = gpu2->pVtbl->AMDWindowsDriverVersion(gpu2, &driverInfo);
+            printf("AMD Windows driver version: %s\n", driverInfo);
+            adlx_uint year, month, day;
+            ret = gpu2->pVtbl->AMDSoftwareReleaseDate(gpu2, &year, &month, &day);
+            printf("AMD software release date: %d-%d-%d\n", year, month, day);
+
+            ADLX_LUID luid;
+            luid.lowPart = 0;
+            luid.highPart = 0;
+            ret = gpu2->pVtbl->LUID(gpu2, &luid);
+            printf("LUID: lowPart: %lu , highPart: %ld\n", luid.lowPart, luid.highPart);
+
+            gpu2->pVtbl->Release(gpu2);
+            gpu2 = NULL;
         }
 
-        RegCloseKey(hKeyRes);
-    }
-
-    return  bRetVal;
-}
-
-void ShowDriverInfo(IADLXGPU* gpu)
-{
-    ADLX_ASIC_FAMILY_TYPE asicFamilyType = ASIC_UNDEFINED;
-    ADLX_RESULT ret = gpu->pVtbl->ASICFamilyType(gpu, &asicFamilyType);
-    TCHAR RSVersion[MAX_PATH] = "";
-    TCHAR RSEdition[MAX_PATH] = "";
-    switch (asicFamilyType)
-    {
-    case ASIC_RADEON:
-        strcpy_s(RSVersion, MAX_PATH, "RadeonSoftwareVersion");
-        strcpy_s(RSEdition, MAX_PATH, "RadeonSoftwareEdition");
-        break;
-    case ASIC_FIREPRO:
-    case ASIC_FIREMV:
-    case ASIC_FIRESTREAM:
-        strcpy_s(RSVersion, MAX_PATH, "FireproSoftwareVersion");
-        strcpy_s(RSEdition, MAX_PATH, "FireproSoftwareEdition");
-        break;
-    default:
-        strcpy_s(RSVersion, MAX_PATH, "RadeonSoftwareVersion");
-        strcpy_s(RSEdition, MAX_PATH, "RadeonSoftwareEdition");
-        break;
-    }
-
-    const char* driverPath = NULL;
-    ret = gpu->pVtbl->DriverPath(gpu, &driverPath);
-    if (ADLX_SUCCEEDED(ret))
-    {
-        // The full path of driver registry
-        TCHAR driverRegistryPath[MAX_PATH] = { 0 };
-        sprintf_s(driverRegistryPath, MAX_PATH, "SYSTEM\\CurrentControlSet\\Control\\Class\\%s", driverPath);
-        TCHAR  value[MAX_PATH] = "";
-        // Get AMD Software version from the registry
-        GetStringFromLocalMachine(driverRegistryPath, RSVersion, value, sizeof(value));
-        printf("AMD Software version: %s\n", value);
-        // Get AMD Software Edition from the registry
-        GetStringFromLocalMachine(driverRegistryPath, RSEdition, value, sizeof(value));
-        printf("%s\n", value);
-        // Get AMD Software Release Date from the registry
-        GetStringFromLocalMachine(driverRegistryPath, "DriverDate", value, sizeof(value));
-        printf("AMD Software Release Date: %s\n", value);
-        // Get Driver Version from the registry
-        GetStringFromLocalMachine(driverRegistryPath, "DriverVersion", value, sizeof(value));
-        printf("Driver Version: %s\n", value);
-        // Get AMD Windows Driver Version from the registry
-        GetStringFromLocalMachine(driverRegistryPath, "ReleaseVersion", value, sizeof(value));
-        printf("AMD Windows Driver Version: %s\n", value);
+        gpu->pVtbl->Release(gpu);
+        gpu = NULL;
     }
 }
 

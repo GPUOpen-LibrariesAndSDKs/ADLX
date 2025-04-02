@@ -1,14 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXManualGraphicsTuning2</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2__1" prot="public" virt="non-virtual">adlx::IADLXManualGraphicsTuning2_1</derivedcompoundref>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2_1aaea0d68adc727db61dbdd793366322e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualGraphicsTuning2::GetGPUMinFrequencyRange</definition>
         <argsstring>(ADLX_IntRange *tuningRange)=0</argsstring>
         <name>GetGPUMinFrequencyRange</name>
+        <qualifiedname>adlx::IADLXManualGraphicsTuning2::GetGPUMinFrequencyRange</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
           <declname>tuningRange</declname>
@@ -26,6 +28,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualGraphicsTuning2::GetGPUMinFrequency</definition>
         <argsstring>(adlx_int *minFreq)=0</argsstring>
         <name>GetGPUMinFrequency</name>
+        <qualifiedname>adlx::IADLXManualGraphicsTuning2::GetGPUMinFrequency</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minFreq</declname>
@@ -43,6 +46,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualGraphicsTuning2::SetGPUMinFrequency</definition>
         <argsstring>(adlx_int minFreq)=0</argsstring>
         <name>SetGPUMinFrequency</name>
+        <qualifiedname>adlx::IADLXManualGraphicsTuning2::SetGPUMinFrequency</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>minFreq</declname>
@@ -60,6 +64,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualGraphicsTuning2::GetGPUMaxFrequencyRange</definition>
         <argsstring>(ADLX_IntRange *tuningRange)=0</argsstring>
         <name>GetGPUMaxFrequencyRange</name>
+        <qualifiedname>adlx::IADLXManualGraphicsTuning2::GetGPUMaxFrequencyRange</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
           <declname>tuningRange</declname>
@@ -70,13 +75,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="320" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="321" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2_1a13fc091cc3496ff8ae00b427931aca79" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualGraphicsTuning2::GetGPUMaxFrequency</definition>
         <argsstring>(adlx_int *maxFreq)=0</argsstring>
         <name>GetGPUMaxFrequency</name>
+        <qualifiedname>adlx::IADLXManualGraphicsTuning2::GetGPUMaxFrequency</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>maxFreq</declname>
@@ -87,13 +93,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="347" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="349" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2_1aba8a8023d4ff14852bd9c1718d4aa673" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualGraphicsTuning2::SetGPUMaxFrequency</definition>
         <argsstring>(adlx_int maxFreq)=0</argsstring>
         <name>SetGPUMaxFrequency</name>
+        <qualifiedname>adlx::IADLXManualGraphicsTuning2::SetGPUMaxFrequency</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>maxFreq</declname>
@@ -104,13 +111,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="374" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="377" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2_1ac42d30529892a8df1a116a7a1f78492b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualGraphicsTuning2::GetGPUVoltageRange</definition>
         <argsstring>(ADLX_IntRange *tuningRange)=0</argsstring>
         <name>GetGPUVoltageRange</name>
+        <qualifiedname>adlx::IADLXManualGraphicsTuning2::GetGPUVoltageRange</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
           <declname>tuningRange</declname>
@@ -121,13 +129,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="401" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="405" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2_1a109cba49781131b5cc8a17555ce5384b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualGraphicsTuning2::GetGPUVoltage</definition>
         <argsstring>(adlx_int *volt)=0</argsstring>
         <name>GetGPUVoltage</name>
+        <qualifiedname>adlx::IADLXManualGraphicsTuning2::GetGPUVoltage</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>volt</declname>
@@ -138,13 +147,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="428" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="433" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2_1ac84d2dc6fdeafba66fd08917b06ba7c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualGraphicsTuning2::SetGPUVoltage</definition>
         <argsstring>(adlx_int volt)=0</argsstring>
         <name>SetGPUVoltage</name>
+        <qualifiedname>adlx::IADLXManualGraphicsTuning2::SetGPUVoltage</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>volt</declname>
@@ -155,14 +165,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="455" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="461" column="51"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="209" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" bodystart="210" bodyend="456"/>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="209" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" bodystart="210" bodyend="462"/>
     <listofallmembers>
       <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXManualGraphicsTuning2</scope><name>Acquire</name></member>
       <member refid="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning2_1a13fc091cc3496ff8ae00b427931aca79" prot="public" virt="pure-virtual"><scope>adlx::IADLXManualGraphicsTuning2</scope><name>GetGPUMaxFrequency</name></member>

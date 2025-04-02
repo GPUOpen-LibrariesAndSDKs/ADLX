@@ -1,14 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXGPUMetricsSupport1</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXGPUMetricsSupport</basecompoundref>
-      <sectiondef kind="public-func">
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support2" prot="public" virt="non-virtual">adlx::IADLXGPUMetricsSupport2</derivedcompoundref>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1_1a0be84cd9220df79d431ec5b7714787b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport1::IsSupportedGPUMemoryTemperature</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedGPUMemoryTemperature</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport1::IsSupportedGPUMemoryTemperature</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -26,6 +28,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport1::GetGPUMemoryTemperatureRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetGPUMemoryTemperatureRange</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport1::GetGPUMemoryTemperatureRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -47,6 +50,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport1::IsSupportedNPUFrequency</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedNPUFrequency</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport1::IsSupportedNPUFrequency</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -64,6 +68,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport1::GetNPUFrequencyRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetNPUFrequencyRange</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport1::GetNPUFrequencyRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -85,6 +90,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport1::IsSupportedNPUActivityLevel</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedNPUActivityLevel</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport1::IsSupportedNPUActivityLevel</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -102,6 +108,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport1::GetNPUActivityLevelRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetNPUActivityLevelRange</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport1::GetNPUActivityLevelRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -118,7 +125,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPerformanceMonitoring2.h" line="169" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

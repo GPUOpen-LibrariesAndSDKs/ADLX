@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="_d_o_x__i_a_d_l_x3_d_wait_for_vertical_refresh" kind="page">
     <compoundname>DOX_IADLX3DWaitForVerticalRefresh</compoundname>
     <title>IADLX3DWaitForVerticalRefresh</title>
@@ -34,9 +34,10 @@
 </para>
 <para><heading level="2">Dependent Interfaces </heading>
 </para>
-<para><bold>Note</bold>: <ref refid="_d_o_x__i_a_d_l_x3_d_wait_for_vertical_refresh" kindref="compound">VSync</ref> configuration is dependent on the state of AMD Radeon™ Enhanced Sync.<linebreak/>
- If AMD Radeon Enhanced Sync is enabled, VSync is automatically disabled.<linebreak/>
- If AMD Radeon Enhanced Sync is disabled, VSync is automatically enabled.</para>
+<para>VSync cannot be simultaneously enabled with <ref refid="_d_o_x__i_a_d_l_x3_d_enhanced_sync" kindref="compound">AMD Radeon™ Enhanced Sync</ref>.<linebreak/>
+</para>
+<para>If VSync is enabled, the mutually exclusive features are automatically disabled.<linebreak/>
+ When a mutually exclusive feature is re-enabled, its previous configuration settings are restored.</para>
 <para><heading level="2">Methods </heading>
 </para>
 <para><table rows="5" cols="2"><row>
@@ -45,19 +46,19 @@
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_wait_for_vertical_refresh__get_mode" kindref="compound">GetMode</ref>   </para>
-</entry><entry thead="no"><para>Gets the current VSync mode on a GPU.    </para>
+</entry><entry thead="no"><para>Gets the current VSync mode on a GPU.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_wait_for_vertical_refresh__is_enabled" kindref="compound">IsEnabled</ref>   </para>
-</entry><entry thead="no"><para>Checks if VSync is enabled on a GPU.    </para>
+</entry><entry thead="no"><para>Checks if VSync is enabled on a GPU.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_wait_for_vertical_refresh__is_supported" kindref="compound">IsSupported</ref>   </para>
-</entry><entry thead="no"><para>Checks if VSync is supported on a GPU.    </para>
+</entry><entry thead="no"><para>Checks if VSync is supported on a GPU.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_wait_for_vertical_refresh__set_mode" kindref="compound">SetMode</ref>   </para>
-</entry><entry thead="no"><para>Sets the VSync mode on a GPU.   </para>
+</entry><entry thead="no"><para>Sets the VSync mode on a GPU.      </para>
 </entry></row>
 </table>
 </para>

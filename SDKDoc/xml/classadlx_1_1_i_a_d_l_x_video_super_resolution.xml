@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_video_super_resolution" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXVideoSuperResolution</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_video_super_resolution_1a92a807dafeaaf0c7af31f912b2a05abf" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXVideoSuperResolution::IsSupported</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupported</name>
+        <qualifiedname>adlx::IADLXVideoSuperResolution::IsSupported</qualifiedname>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IMultiMedia.h" line="225" column="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_video_super_resolution_1a6107ad419fa3642ff450ff10dc1a80b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXVideoSuperResolution::IsEnabled</definition>
+        <argsstring>(adlx_bool *isEnabled)=0</argsstring>
+        <name>IsEnabled</name>
+        <qualifiedname>adlx::IADLXVideoSuperResolution::IsEnabled</qualifiedname>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>isEnabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IMultiMedia.h" line="226" column="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_video_super_resolution_1a271ea8b315c913510eaa32981a960ccf" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXVideoSuperResolution::SetEnabled</definition>
+        <argsstring>(adlx_bool enable)=0</argsstring>
+        <name>SetEnabled</name>
+        <qualifiedname>adlx::IADLXVideoSuperResolution::SetEnabled</qualifiedname>
+        <param>
+          <type>adlx_bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IMultiMedia.h" line="227" column="55"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IMultiMedia.h" line="219" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IMultiMedia.h" bodystart="220" bodyend="229"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXVideoSuperResolution</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_video_super_resolution_1a6107ad419fa3642ff450ff10dc1a80b9" prot="public" virt="pure-virtual"><scope>adlx::IADLXVideoSuperResolution</scope><name>IsEnabled</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_video_super_resolution_1a92a807dafeaaf0c7af31f912b2a05abf" prot="public" virt="pure-virtual"><scope>adlx::IADLXVideoSuperResolution</scope><name>IsSupported</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXVideoSuperResolution</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXVideoSuperResolution</scope><name>Release</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_video_super_resolution_1a271ea8b315c913510eaa32981a960ccf" prot="public" virt="pure-virtual"><scope>adlx::IADLXVideoSuperResolution</scope><name>SetEnabled</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

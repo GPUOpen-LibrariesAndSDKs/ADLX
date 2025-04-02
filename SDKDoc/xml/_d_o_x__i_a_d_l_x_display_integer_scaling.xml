@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="_d_o_x__i_a_d_l_x_display_integer_scaling" kind="page">
     <compoundname>DOX_IADLXDisplayIntegerScaling</compoundname>
     <title>IADLXDisplayIntegerScaling</title>
@@ -29,12 +29,13 @@
 </entry></row>
 </table>
 </para>
-<para><bold>Note</bold>: Integer Display Scaling is not supported when <ref refid="_d_o_x__i_a_d_l_x_display_g_p_u_scaling" kindref="compound">GPU scaling</ref> is disabled. <heading level="2">Dependent Interfaces </heading>
+<para><heading level="2">Dependent Interfaces </heading>
 </para>
-<para>On some AMD GPUs, Integer Display Scaling is mutually exclusive with <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref>.<linebreak/>
+<para>On some AMD GPUs, Integer Display Scaling cannot be simultaneously enabled with <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref>.<linebreak/>
 </para>
 <para>When Integer Display Scaling is enabled, the mutually exclusive features are automatically disabled. If a mutually exclusive feature is re-enabled, its previous configuration settings are restored.<linebreak/>
 </para>
+<para>Integer Display Scaling is not supported when <ref refid="_d_o_x__i_a_d_l_x_display_g_p_u_scaling" kindref="compound">GPU Scaling</ref> is disabled.</para>
 <para><heading level="2">Methods </heading>
 </para>
 <para><table rows="4" cols="2"><row>
@@ -43,15 +44,15 @@
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_integer_scaling__is_enabled" kindref="compound">IsEnabled</ref>   </para>
-</entry><entry thead="no"><para>Checks if the Integer Display Scaling is enabled on a display.    </para>
+</entry><entry thead="no"><para>Checks if the Integer Display Scaling is enabled on a display.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_integer_scaling__is_supported" kindref="compound">IsSupported</ref>   </para>
-</entry><entry thead="no"><para>Checks if the Integer Display Scaling is supported on a display.    </para>
+</entry><entry thead="no"><para>Checks if the Integer Display Scaling is supported on a display.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_display_integer_scaling__set_enabled" kindref="compound">SetEnabled</ref>   </para>
-</entry><entry thead="no"><para>Sets the AMD integer scaling to enabled or disabled state on a display.   </para>
+</entry><entry thead="no"><para>Sets the AMD integer scaling to enabled or disabled state on a display.      </para>
 </entry></row>
 </table>
 </para>

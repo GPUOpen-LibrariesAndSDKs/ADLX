@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="cpp__manual_v_r_a_m_tuning" kind="page">
     <compoundname>cpp_ManualVRAMTuning</compoundname>
     <title>ManualVRAMTuning</title>
@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
 <para><htmlonly>&lt;!--
-# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 --&gt;
@@ -32,10 +32,11 @@
     &lt;h2&gt;Sample Path&lt;/h2&gt;
     &lt;p&gt;/Samples/CPP/GPUTuning/ManualVRAMTuning&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</htmlonly> <heading level="2">Code </heading>
+&lt;/html&gt;
+</htmlonly> <heading level="2">Code </heading>
 </para>
 <para>C++ <programlisting filename="./GPUTuning/ManualVRAMTuning/mainManualVRAMTuning.cpp"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2024<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2025<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -185,6 +186,14 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>vramTuning2-&gt;GetMaxVRAMFrequencyRange(&amp;rang);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tMax<sp/>VRAM<sp/>frequency<sp/>range:<sp/>[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>rang.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>rang.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>],<sp/>step:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>rang.<ref refid="struct_a_d_l_x___int_range_1ae0e545b501a683c565f08089ed3e8023" kindref="member">step</ref><sp/></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>return<sp/>code<sp/>is:<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;<sp/>res<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(0<sp/>means<sp/>success)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXManualVRAMTuning2_1Ptr<sp/>vramTuning2_1(vramTuning2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(vramTuning2_1)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>vramTuning2_1-&gt;GetMaxVRAMFrequencyDefault(&amp;freq);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tDefault<sp/>Max<sp/>VRAM<sp/>frequency:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>freq<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>return<sp/>code<sp/>is:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>res<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(0<sp/>means<sp/>success)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(vramTuning1)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>

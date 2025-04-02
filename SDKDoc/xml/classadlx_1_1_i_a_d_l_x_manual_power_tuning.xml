@@ -1,14 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_manual_power_tuning" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXManualPowerTuning</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_manual_power_tuning1" prot="public" virt="non-virtual">adlx::IADLXManualPowerTuning1</derivedcompoundref>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_manual_power_tuning_1a9753cff5a3aae4f22901288ffaad407b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualPowerTuning::GetPowerLimitRange</definition>
         <argsstring>(ADLX_IntRange *tuningRange)=0</argsstring>
         <name>GetPowerLimitRange</name>
+        <qualifiedname>adlx::IADLXManualPowerTuning::GetPowerLimitRange</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
           <declname>tuningRange</declname>
@@ -26,6 +28,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualPowerTuning::GetPowerLimit</definition>
         <argsstring>(adlx_int *curVal)=0</argsstring>
         <name>GetPowerLimit</name>
+        <qualifiedname>adlx::IADLXManualPowerTuning::GetPowerLimit</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>curVal</declname>
@@ -43,6 +46,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualPowerTuning::SetPowerLimit</definition>
         <argsstring>(adlx_int curVal)=0</argsstring>
         <name>SetPowerLimit</name>
+        <qualifiedname>adlx::IADLXManualPowerTuning::SetPowerLimit</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>curVal</declname>
@@ -60,6 +64,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualPowerTuning::IsSupportedTDCLimit</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedTDCLimit</name>
+        <qualifiedname>adlx::IADLXManualPowerTuning::IsSupportedTDCLimit</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -77,6 +82,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualPowerTuning::GetTDCLimitRange</definition>
         <argsstring>(ADLX_IntRange *tuningRange)=0</argsstring>
         <name>GetTDCLimitRange</name>
+        <qualifiedname>adlx::IADLXManualPowerTuning::GetTDCLimitRange</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
           <declname>tuningRange</declname>
@@ -94,6 +100,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualPowerTuning::GetTDCLimit</definition>
         <argsstring>(adlx_int *curVal)=0</argsstring>
         <name>GetTDCLimit</name>
+        <qualifiedname>adlx::IADLXManualPowerTuning::GetTDCLimit</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>curVal</declname>
@@ -111,6 +118,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualPowerTuning::SetTDCLimit</definition>
         <argsstring>(adlx_int curVal)=0</argsstring>
         <name>SetTDCLimit</name>
+        <qualifiedname>adlx::IADLXManualPowerTuning::SetTDCLimit</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>curVal</declname>
@@ -123,7 +131,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualPowerTuning.h" line="221" column="51"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

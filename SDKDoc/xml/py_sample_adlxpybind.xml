@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="py_sample_adlxpybind" kind="page">
     <compoundname>py_sample_adlxpybind</compoundname>
     <title>ADLXPybind</title>
@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
 <para><htmlonly>&lt;!--
-# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 --&gt;
@@ -18,10 +18,11 @@
     &lt;h2&gt;Sample Path&lt;/h2&gt;
     &lt;p&gt;/Samples/python/ADLXPybind&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</htmlonly> <heading level="2">Code </heading>
+&lt;/html&gt;
+</htmlonly> <heading level="2">Code </heading>
 </para>
 <para>C++ <programlisting filename="./python/ADLXPybind/ADLXPybind/bind.cpp"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2024<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2025<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -55,7 +56,7 @@
 <codeline><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">PySystem<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLXSystem</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>IADLXSystem::IADLXSystem;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">IADLXSystem::IADLXSystem;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/>HybridGraphicsType(<ref refid="group__enumerations_1ga260f926e27eef013ca1eacd0ff7b3ba7" kindref="member">ADLX_HG_TYPE</ref>*<sp/>hgType)</highlight><highlight class="keyword">override<sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PYBIND11_OVERRIDE_PURE(</highlight></codeline>
@@ -157,7 +158,7 @@
 <codeline><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">PyDisplayService<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLXDisplayServices</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>IADLXDisplayServices::IADLXDisplayServices;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">IADLXDisplayServices::IADLXDisplayServices;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long<sp/><sp/>Acquire()</highlight><highlight class="keyword"><sp/>override<sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PYBIND11_OVERRIDE_PURE(adlx_long,<sp/>IADLXInterface,<sp/>Acquire);</highlight></codeline>
@@ -243,7 +244,7 @@
 <codeline><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">PyDisplay<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLXDisplay</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>IADLXDisplay::IADLXDisplay;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">IADLXDisplay::IADLXDisplay;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long<sp/><sp/>Acquire()</highlight><highlight class="keyword"><sp/>override<sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PYBIND11_OVERRIDE_PURE(adlx_long,<sp/>IADLXInterface,<sp/>Acquire);</highlight></codeline>
@@ -305,7 +306,7 @@
 <codeline><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">PyDisplayChangeHandler<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLXDisplayChangedHandling</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>IADLXDisplayChangedHandling::IADLXDisplayChangedHandling;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">IADLXDisplayChangedHandling::IADLXDisplayChangedHandling;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long<sp/><sp/>Acquire()</highlight><highlight class="keyword"><sp/>override<sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PYBIND11_OVERRIDE_PURE(adlx_long,<sp/>IADLXInterface,<sp/>Acquire);</highlight></codeline>
@@ -455,8 +456,8 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>System</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>py::class_&lt;IADLXSystem,<sp/>PySystem&gt;(m,<sp/></highlight><highlight class="stringliteral">&quot;IADLXSystem&quot;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(py::init&lt;&gt;())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;GetDisplaysServices&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXSystem<sp/>*sys<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">.cast&lt;IADLXSystem*&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;GetDisplaysServices&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/>self)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXSystem<sp/>*sys<sp/>=<sp/>self.cast&lt;IADLXSystem*&gt;();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplayServicesPtr<sp/>displayService<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sys-&gt;GetDisplaysServices(&amp;displayService);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>displayService;</highlight></codeline>
@@ -465,14 +466,14 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>displayService</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>py::class_&lt;IADLXDisplayServices,<sp/>PyDisplayService,<sp/>IADLXInterfacePtr_T&lt;IADLXDisplayServices&gt;&gt;(m,<sp/></highlight><highlight class="stringliteral">&quot;IADLXDisplayServices&quot;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(py::init&lt;&gt;())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;GetNumberOfDisplays&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplayServices*<sp/>disService<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">.cast&lt;IADLXDisplayServices*&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;GetNumberOfDisplays&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/>self)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplayServices*<sp/>disService<sp/>=<sp/>self.cast&lt;IADLXDisplayServices*&gt;();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_uint<sp/>num;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disService-&gt;GetNumberOfDisplays(&amp;num);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>num;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>})</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;GetDisplays&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplayServices*<sp/>disService<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">.cast&lt;IADLXDisplayServices*&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;GetDisplays&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/>self)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplayServices*<sp/>disService<sp/>=<sp/>self.cast&lt;IADLXDisplayServices*&gt;();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplayListPtr<sp/>displayList<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disService-&gt;GetDisplays(&amp;displayList);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;IADLXDisplayPtr&gt;<sp/>list;</highlight></codeline>
@@ -483,8 +484,8 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>list;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>},<sp/>py::return_value_policy::move)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;GetDisplayChangedHandling&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplayServices*<sp/>disService<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">.cast&lt;IADLXDisplayServices*&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;GetDisplayChangedHandling&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/>self)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplayServices*<sp/>disService<sp/>=<sp/>self.cast&lt;IADLXDisplayServices*&gt;();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplayChangedHandlingPtr<sp/>handler<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disService-&gt;GetDisplayChangedHandling(&amp;handler);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>handler;</highlight></codeline>
@@ -493,62 +494,62 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Display</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>py::class_&lt;IADLXDisplay,<sp/>PyDisplay,<sp/>IADLXInterfacePtr_T&lt;IADLXDisplay&gt;&gt;(m,<sp/></highlight><highlight class="stringliteral">&quot;IADLXDisplay&quot;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(py::init&lt;&gt;())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/>self)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/>self.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>display-&gt;Name(&amp;name);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>py::str(name);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>})</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;type&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;type&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/>self)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/>self.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1gae7e516225131af0ff164e9384d8d0a44" kindref="member">ADLX_DISPLAY_TYPE</ref><sp/>type;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>display-&gt;DisplayType(&amp;type);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>type;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>})</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;connectType&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;connectType&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/>self)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/>self.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga84edd2809be33537c99fb2ab8d04aa5d" kindref="member">ADLX_DISPLAY_CONNECTOR_TYPE</ref><sp/>type;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>display-&gt;ConnectorType(&amp;type);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>type;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>})</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;ManufacturerID&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;ManufacturerID&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/>self)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/>self.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_uint<sp/>id;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>display-&gt;ManufacturerID(&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>id;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>})</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;EDID&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;EDID&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/>self)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/>self.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>display-&gt;EDID(&amp;str);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::string(str);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>})</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;resolution&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;resolution&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/>self)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/>self.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_int<sp/>h,<sp/>v;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>display-&gt;NativeResolution(&amp;h,<sp/>&amp;v);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::tuple&lt;adlx_int,<sp/>adlx_int&gt;(h,v);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>})</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;RefreshRate&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;RefreshRate&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/>self)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/>self.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_double<sp/>value;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>display-&gt;RefreshRate(&amp;value);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>})</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;PixelClock&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;PixelClock&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/>self)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/>self.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_uint<sp/>value;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>display-&gt;PixelClock(&amp;value);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>})</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;ScanType&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;ScanType&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/>self)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/>self.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1gae2d0250dc861156a468001600a2ee648" kindref="member">ADLX_DISPLAY_SCAN_TYPE</ref><sp/>type;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>display-&gt;ScanType(&amp;type);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>type;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>})</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;UniqueId&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;UniqueId&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/>self)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplay<sp/>*display<sp/>=<sp/>self.cast&lt;IADLXDisplay*&gt;();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_size<sp/>id;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>display-&gt;UniqueId(&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>id;</highlight></codeline>
@@ -557,12 +558,12 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Display<sp/>change<sp/>handler</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>py::class_&lt;IADLXDisplayChangedHandling,<sp/>PyDisplayChangeHandler,<sp/>IADLXInterfacePtr_T&lt;IADLXDisplayChangedHandling&gt;&gt;(m,<sp/></highlight><highlight class="stringliteral">&quot;IADLXDisplayChangedHandling&quot;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(py::init&lt;&gt;())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;AddDisplayListEventListener&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">,<sp/>DisplayListCallBack*<sp/>call)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplayChangedHandling<sp/>*handler<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">.cast&lt;IADLXDisplayChangedHandling*&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;AddDisplayListEventListener&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/>self,<sp/>DisplayListCallBack*<sp/>call)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplayChangedHandling<sp/>*handler<sp/>=<sp/>self.cast&lt;IADLXDisplayChangedHandling*&gt;();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>handler-&gt;AddDisplayListEventListener(call);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>})</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;RemoveDisplayListEventListener&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">,<sp/>DisplayListCallBack*<sp/>call)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplayChangedHandling<sp/>*handler<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">.cast&lt;IADLXDisplayChangedHandling*&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.def(</highlight><highlight class="stringliteral">&quot;RemoveDisplayListEventListener&quot;</highlight><highlight class="normal">,<sp/>[](py::object<sp/>self,<sp/>DisplayListCallBack*<sp/>call)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXDisplayChangedHandling<sp/>*handler<sp/>=<sp/>self.cast&lt;IADLXDisplayChangedHandling*&gt;();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>handler-&gt;RemoveDisplayListEventListener(call);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>

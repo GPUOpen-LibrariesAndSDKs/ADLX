@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_eyefinity_desktop" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXEyefinityDesktop</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_eyefinity_desktop_1a23a1b8f0cf08423a450510d7eb5a0c4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXEyefinityDesktop::GridSize</definition>
         <argsstring>(adlx_uint *rows, adlx_uint *cols)=0</argsstring>
         <name>GridSize</name>
+        <qualifiedname>adlx::IADLXEyefinityDesktop::GridSize</qualifiedname>
         <param>
           <type>adlx_uint *</type>
           <declname>rows</declname>
@@ -30,6 +31,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXEyefinityDesktop::GetDisplay</definition>
         <argsstring>(adlx_uint row, adlx_uint col, IADLXDisplay **ppDisplay)=0</argsstring>
         <name>GetDisplay</name>
+        <qualifiedname>adlx::IADLXEyefinityDesktop::GetDisplay</qualifiedname>
         <param>
           <type>adlx_uint</type>
           <declname>row</declname>
@@ -55,6 +57,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXEyefinityDesktop::DisplayOrientation</definition>
         <argsstring>(adlx_uint row, adlx_uint col, ADLX_ORIENTATION *displayOrientation)=0</argsstring>
         <name>DisplayOrientation</name>
+        <qualifiedname>adlx::IADLXEyefinityDesktop::DisplayOrientation</qualifiedname>
         <param>
           <type>adlx_uint</type>
           <declname>row</declname>
@@ -80,6 +83,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXEyefinityDesktop::DisplaySize</definition>
         <argsstring>(adlx_uint row, adlx_uint col, adlx_int *displayWidth, adlx_int *displayHeight)=0</argsstring>
         <name>DisplaySize</name>
+        <qualifiedname>adlx::IADLXEyefinityDesktop::DisplaySize</qualifiedname>
         <param>
           <type>adlx_uint</type>
           <declname>row</declname>
@@ -109,6 +113,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXEyefinityDesktop::DisplayTopLeft</definition>
         <argsstring>(adlx_uint row, adlx_uint col, ADLX_Point *displayLocationTopLeft)=0</argsstring>
         <name>DisplayTopLeft</name>
+        <qualifiedname>adlx::IADLXEyefinityDesktop::DisplayTopLeft</qualifiedname>
         <param>
           <type>adlx_uint</type>
           <declname>row</declname>
@@ -129,7 +134,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDesktops.h" line="351" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

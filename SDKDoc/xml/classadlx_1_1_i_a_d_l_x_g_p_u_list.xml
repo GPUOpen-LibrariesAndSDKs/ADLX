@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_u_list" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXGPUList</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXList</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_list_1aa299fd280d43392f69713569752b12c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUList::At</definition>
         <argsstring>(const adlx_uint location, IADLXGPU **ppItem)=0</argsstring>
         <name>At</name>
+        <qualifiedname>adlx::IADLXGPUList::At</qualifiedname>
         <param>
           <type>const adlx_uint</type>
           <declname>location</declname>
@@ -30,6 +31,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUList::Add_Back</definition>
         <argsstring>(IADLXGPU *pItem)=0</argsstring>
         <name>Add_Back</name>
+        <qualifiedname>adlx::IADLXGPUList::Add_Back</qualifiedname>
         <param>
           <type>IADLXGPU *</type>
           <declname>pItem</declname>
@@ -42,7 +44,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ISystem.h" line="594" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

@@ -1,6 +1,6 @@
 
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 

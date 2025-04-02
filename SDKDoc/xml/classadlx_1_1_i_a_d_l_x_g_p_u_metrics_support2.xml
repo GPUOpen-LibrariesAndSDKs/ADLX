@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support2" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXGPUMetricsSupport2</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXGPUMetricsSupport1</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support2_1af8c44b0c4c7b072ad607e6f97994c35a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport2::IsSupportedGPUSharedMemory</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupportedGPUSharedMemory</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport2::IsSupportedGPUSharedMemory</qualifiedname>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPerformanceMonitoring3.h" line="42" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support2_1a11711cefa9ddc6d4b3a7feab49f4f56b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport2::GetGPUSharedMemoryRange</definition>
+        <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
+        <name>GetGPUSharedMemoryRange</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport2::GetGPUSharedMemoryRange</qualifiedname>
+        <param>
+          <type>adlx_int *</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>adlx_int *</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPerformanceMonitoring3.h" line="69" column="43"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPerformanceMonitoring3.h" line="16" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPerformanceMonitoring3.h" bodystart="17" bodyend="70"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a690a62a3fbe930155747fc8279fd4c49" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>GetGPUClockSpeedRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1aff31ad52400db271bf326c539e947343" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>GetGPUFanSpeedRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a2ca2d6f58f6a0907b9f4f4be78046941" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>GetGPUHotspotTemperatureRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ac492a2121c5469db09211b0dc828d35d" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>GetGPUIntakeTemperatureRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1_1ad02660245aa46525bfe10e320fc51db5" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>GetGPUMemoryTemperatureRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a935b8301afe861fcc19fbfefe27b4185" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>GetGPUPowerRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support2_1a11711cefa9ddc6d4b3a7feab49f4f56b" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>GetGPUSharedMemoryRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a7202b4e549c54d12a6795dbae75d2839" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>GetGPUTemperatureRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1abb4e76d75a0f9bba3690c373cb71bfea" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>GetGPUTotalBoardPowerRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a6748607c41c2a2521dc17cc1c4b2d40f" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>GetGPUUsageRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a50d60cd14d202de95902c02abb9eaa13" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>GetGPUVoltageRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a29b00afe517cc52d3af75c03c6d1c9a0" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>GetGPUVRAMClockSpeedRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ab73fefe7a960ff9d0f65d0db0ebf73fd" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>GetGPUVRAMRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1_1a21eb1c37f54a056b3b26d5d67e1e11c5" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>GetNPUActivityLevelRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1_1adbc7a8cd27dd258691213780fcb50cc2" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>GetNPUFrequencyRange</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ac05ea67b0f56d2a7118267575106d251" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>IsSupportedGPUClockSpeed</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1adfbad2091351ed6fcf2dc03c34f60717" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>IsSupportedGPUFanSpeed</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1aa2b0fbb728836287a074321cee494879" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>IsSupportedGPUHotspotTemperature</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ac312c3f496fce8aa7518998777f88b69" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>IsSupportedGPUIntakeTemperature</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1_1a0be84cd9220df79d431ec5b7714787b7" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>IsSupportedGPUMemoryTemperature</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1ae9e8ebb1c604407c412e4a5dd57ca05d" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>IsSupportedGPUPower</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support2_1af8c44b0c4c7b072ad607e6f97994c35a" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>IsSupportedGPUSharedMemory</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a497ed2e595c37a7809e6851542e6515d" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>IsSupportedGPUTemperature</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1afca64d0c8051fe76662830cedc898a8c" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>IsSupportedGPUTotalBoardPower</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1adf2f330babc700040074e7bb52ae4f2f" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>IsSupportedGPUUsage</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a1b64265b057f3aaa9d6202c1a3ccf0af" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>IsSupportedGPUVoltage</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1a73382c43b17ae4a433e914f4b16a642f" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>IsSupportedGPUVRAM</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1aaf544fc581b87130697fda0a34ba297e" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>IsSupportedGPUVRAMClockSpeed</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1_1a1224a500dafa65990518e298dd364123" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>IsSupportedNPUActivityLevel</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1_1ae7bbd25a9ef94771ee8392f0a55e9fbb" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>IsSupportedNPUFrequency</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUMetricsSupport2</scope><name>Release</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

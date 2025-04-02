@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -10,6 +10,7 @@
 #include "SDK/Include/IDisplays.h"
 #include "SDK/Include/IDisplays1.h"
 #include "SDK/Include/IDisplays2.h"
+#include "SDK/Include/IDisplays3.h"
 #include "SDK/Include/IDisplaySettings.h"
 #include "conio.h"
 #include <iostream>
@@ -135,6 +136,20 @@ public:
                 if (pDisplaySettingChangedEvent2->IsDisplayConnectivityExperienceChanged())
                 {
                     std::cout << "Display " << displayName << "Get sync event, Display connectivity experience is changed" << std::endl;
+                }
+            }
+
+            // Get IADLXDisplaySettingsChangedEvent3 interface
+            IADLXDisplaySettingsChangedEvent3Ptr pDisplaySettingChangedEvent3(pDisplaySettingsChangedEvent);
+            if (nullptr == pDisplaySettingChangedEvent3)
+            {
+                std::cout << "IADLXDisplaySettingsChangedEvent3 not supported" << std::endl;
+            }
+            else
+            {
+                if (pDisplaySettingChangedEvent3->IsFreeSyncColorAccuracyChanged())
+                {
+                    std::cout << "Display " << displayName << "Get sync event, FreeSync color accuracy is changed" << std::endl;
                 }
             }
         }

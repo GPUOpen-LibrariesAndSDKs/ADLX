@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_mapping" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLMapping</compoundname>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_mapping_1a4dac3ae6500c5b81ec8dc8b81f5c72c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLMapping::GetADLXGPUFromBdf</definition>
         <argsstring>(adlx_int bus, adlx_int device, adlx_int function, IADLXGPU **ppGPU)=0</argsstring>
         <name>GetADLXGPUFromBdf</name>
+        <qualifiedname>adlx::IADLMapping::GetADLXGPUFromBdf</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>bus</declname>
@@ -37,6 +38,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLMapping::GetADLXGPUFromAdlAdapterIndex</definition>
         <argsstring>(adlx_int adlAdapterIndex, IADLXGPU **ppGPU)=0</argsstring>
         <name>GetADLXGPUFromAdlAdapterIndex</name>
+        <qualifiedname>adlx::IADLMapping::GetADLXGPUFromAdlAdapterIndex</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>adlAdapterIndex</declname>
@@ -58,6 +60,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLMapping::BdfFromADLXGPU</definition>
         <argsstring>(IADLXGPU *pGPU, adlx_int *bus, adlx_int *device, adlx_int *function)=0</argsstring>
         <name>BdfFromADLXGPU</name>
+        <qualifiedname>adlx::IADLMapping::BdfFromADLXGPU</qualifiedname>
         <param>
           <type>IADLXGPU *</type>
           <declname>pGPU</declname>
@@ -87,6 +90,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLMapping::AdlAdapterIndexFromADLXGPU</definition>
         <argsstring>(IADLXGPU *pGPU, adlx_int *adlAdapterIndex)=0</argsstring>
         <name>AdlAdapterIndexFromADLXGPU</name>
+        <qualifiedname>adlx::IADLMapping::AdlAdapterIndexFromADLXGPU</qualifiedname>
         <param>
           <type>IADLXGPU *</type>
           <declname>pGPU</declname>
@@ -108,6 +112,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLMapping::GetADLXDisplayFromADLIds</definition>
         <argsstring>(adlx_int adapterIndex, adlx_int displayIndex, adlx_int bus, adlx_int device, adlx_int function, IADLXDisplay **ppDisplay)=0</argsstring>
         <name>GetADLXDisplayFromADLIds</name>
+        <qualifiedname>adlx::IADLMapping::GetADLXDisplayFromADLIds</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>adapterIndex</declname>
@@ -145,6 +150,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLMapping::ADLIdsFromADLXDisplay</definition>
         <argsstring>(IADLXDisplay *pDisplay, adlx_int *adapterIndex, adlx_int *displayIndex, adlx_int *bus, adlx_int *device, adlx_int *function)=0</argsstring>
         <name>ADLIdsFromADLXDisplay</name>
+        <qualifiedname>adlx::IADLMapping::ADLIdsFromADLXDisplay</qualifiedname>
         <param>
           <type>IADLXDisplay *</type>
           <declname>pDisplay</declname>
@@ -182,6 +188,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLMapping::GetADLXDesktopFromADLIds</definition>
         <argsstring>(adlx_int adapterIndex, adlx_int VidPnSourceId, adlx_int bus, adlx_int device, adlx_int function, IADLXDesktop **ppDesktop)=0</argsstring>
         <name>GetADLXDesktopFromADLIds</name>
+        <qualifiedname>adlx::IADLMapping::GetADLXDesktopFromADLIds</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>adapterIndex</declname>
@@ -219,6 +226,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLMapping::ADLIdsFromADLXDesktop</definition>
         <argsstring>(IADLXDesktop *pDesktop, adlx_int *adapterIndex, adlx_int *VidPnSourceId, adlx_int *bus, adlx_int *device, adlx_int *function)=0</argsstring>
         <name>ADLIdsFromADLXDesktop</name>
+        <qualifiedname>adlx::IADLMapping::ADLIdsFromADLXDesktop</qualifiedname>
         <param>
           <type>IADLXDesktop *</type>
           <declname>pDesktop</declname>
@@ -251,7 +259,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ISystem.h" line="1521" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

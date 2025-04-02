@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="c__image_sharpening" kind="page">
     <compoundname>c_ImageSharpening</compoundname>
     <title>ImageSharpening</title>
@@ -7,24 +7,25 @@
     </briefdescription>
     <detaileddescription>
 <para><htmlonly>&lt;!--
-# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;body&gt;
-    &lt;p&gt; Demonstrates how to access AMD Radeon™ Image Sharpening options, and perform related testing when programming with ADLX.&lt;/p&gt;
+    &lt;p&gt; Demonstrates how to access AMD Radeon™ Image Sharpening and Sharpen Desktop options, perform related testing when programming with ADLX.&lt;/p&gt;
 	&lt;h2&gt;Command Prompts&lt;/h2&gt;
 	&lt;table class=&quot;doxtable docTable&quot;&gt;
         &lt;thead&gt;
         &lt;tr style=&quot;height:40px&quot;&gt;&lt;th&gt;Command Prompt&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;
         &lt;/thead&gt;
         &lt;tbody&gt;
-		&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt; Display Radeon Image Sharpening support&lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt; Get current Radeon Image Sharpening state and additional information&lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt; Enable and configure Radeon Image Sharpening&lt;/td&gt;&lt;/tr&gt;
-		&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt; Disable Radeon Image Sharpening&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt; Display Radeon Image Sharpening and Sharpen Desktop support&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt; Get current Radeon Image Sharpening and Sharpen Desktop state &amp; additional information&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt; Enable Radeon Image Sharpening and disable Sharpen Desktop&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt; Enable Radeon Image Sharpening and enable Sharpen Desktop&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt; Disable Radeon Image Sharpening&lt;/td&gt;&lt;/tr&gt;
 		&lt;tr&gt;&lt;td&gt;M/m&lt;/td&gt;&lt;td&gt; Display the main menu&lt;/td&gt;&lt;/tr&gt;
 		&lt;tr&gt;&lt;td&gt;Q/q&lt;/td&gt;&lt;td&gt; Quit the application&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
@@ -32,31 +33,36 @@
     &lt;h2&gt;Sample Path&lt;/h2&gt;
     &lt;p&gt;/Samples/C/3DGraphics/ImageSharpening&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</htmlonly> <heading level="2">Code </heading>
+&lt;/html&gt;
+</htmlonly> <heading level="2">Code </heading>
 </para>
 <para>C <programlisting filename="./C/3DGraphics/ImageSharpening/mainImageSharpening.c"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2024<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2025<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SDK/ADLXHelper/Windows/C/ADLXHelper.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SDK/Include/I3DSettings.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SDK/Include/I3DSettings2.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Display<sp/>Image<sp/>Sharpening<sp/>support</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowImageSharpenSupport(IADLX3DImageSharpening*<sp/>d3dImageSharpen);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Display<sp/>Image<sp/>Sharpening<sp/>and<sp/>Image<sp/>Sharpen<sp/>Desktop<sp/>support</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowImageSharpenSupport(IADLX3DImageSharpening*<sp/>d3dImageSharpen,<sp/>IADLX3DImageSharpenDesktop*<sp/>d3dImageSharpenDesktop);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Get<sp/>current<sp/>Image<sp/>Sharpening<sp/>state<sp/>and<sp/>additional<sp/>information</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetImageSharpenState(IADLX3DImageSharpening*<sp/>d3dImageSharpen);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Get<sp/>current<sp/>Image<sp/>Sharpening<sp/>and<sp/>Image<sp/>Sharpen<sp/>Desktop<sp/>state<sp/>&amp;<sp/>additional<sp/>information</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetImageSharpenState(IADLX3DImageSharpening*<sp/>d3dImageSharpen,<sp/>IADLX3DImageSharpenDesktop*<sp/>d3dImageSharpenDesktop);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Set<sp/>Image<sp/>Sharpening<sp/>state</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetImageSharpenState(IADLX3DImageSharpening*<sp/>d3dImageSharpen,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Set<sp/>Image<sp/>Sharpening<sp/>and<sp/>Image<sp/>Sharpen<sp/>Desktop<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetImageSharpenState(IADLX3DImageSharpening*<sp/>d3dImageSharpen,<sp/>IADLX3DImageSharpenDesktop*<sp/>d3dImageSharpenDesktop,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>imageSharpeningIndex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>imageSharpenDesktopIndex);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Disable<sp/>Image<sp/>Sharpening</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>DisableImageSharpenState(IADLX3DImageSharpening*<sp/>d3dImageSharpen,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Menu</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MainMenu();</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Menu<sp/>control</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MenuControl(IADLX3DImageSharpening*<sp/>d3dImageSharpen);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MenuControl(IADLX3DImageSharpening*<sp/>d3dImageSharpen,<sp/>IADLX3DImageSharpenDesktop*<sp/>d3dImageSharpenDesktop);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
@@ -78,6 +84,9 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLX3DSettingsServices*<sp/>d3dSettingSrv<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>sys-&gt;pVtbl-&gt;Get3DSettingsServices(sys,<sp/>&amp;d3dSettingSrv);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLX3DSettingsServices2*<sp/>d3dSettingSrv2<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res=d3dSettingSrv-&gt;pVtbl-&gt;QueryInterface(d3dSettingSrv,<sp/>IID_IADLX3DSettingsServices2(),<sp/>(&amp;d3dSettingSrv2));</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>GPU<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
@@ -88,16 +97,28 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>Image<sp/>Sharpening<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLX3DImageSharpening*<sp/>d3dImageSharpen<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>d3dSettingSrv-&gt;pVtbl-&gt;GetImageSharpening(d3dSettingSrv,<sp/>gpu,<sp/>&amp;d3dImageSharpen);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>Image<sp/>Sharpen<sp/>Desktop<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLX3DImageSharpenDesktop*<sp/>d3dImageSharpenDesktop<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>d3dSettingSrv2-&gt;pVtbl-&gt;GetImageSharpenDesktop(d3dSettingSrv2,<sp/>gpu,<sp/>&amp;d3dImageSharpenDesktop);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MainMenu();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MenuControl(d3dImageSharpen);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MainMenu();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MenuControl(d3dImageSharpen,<sp/>d3dImageSharpenDesktop);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Release<sp/>the<sp/>Image<sp/>Sharpening<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d3dImageSharpen<sp/>!=<sp/>NULL)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d3dImageSharpen-&gt;pVtbl-&gt;Release(d3dImageSharpen);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d3dImageSharpen<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Release<sp/>the<sp/>Image<sp/>Sharpen<sp/>Desktop<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d3dImageSharpenDesktop<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d3dImageSharpenDesktop-&gt;pVtbl-&gt;Release(d3dImageSharpenDesktop);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d3dImageSharpen<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -112,6 +133,14 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>get<sp/>3DSettings<sp/>services\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Release<sp/>the<sp/>3DSettingsService2<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d3dSettingSrv2<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d3dSettingSrv2-&gt;pVtbl-&gt;Release(d3dSettingSrv2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d3dSettingSrv2<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Release<sp/>the<sp/>3DSettingsService<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d3dSettingSrv<sp/>!=<sp/>NULL)</highlight></codeline>
@@ -143,18 +172,25 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowImageSharpenSupport(IADLX3DImageSharpening*<sp/>d3dImageSharpen)</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowImageSharpenSupport(IADLX3DImageSharpening*<sp/>d3dImageSharpen,<sp/>IADLX3DImageSharpenDesktop*<sp/>d3dImageSharpenDesktop)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool<sp/>supported<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>d3dImageSharpen-&gt;pVtbl-&gt;IsSupported(d3dImageSharpen,<sp/>&amp;supported);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsSupported:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>supported,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tImage<sp/>Sharpening<sp/>IsSupported:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>supported,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>supported<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>d3dImageSharpenDesktop-&gt;pVtbl-&gt;IsSupported(d3dImageSharpenDesktop,<sp/>&amp;supported);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tImage<sp/>Sharpen<sp/>Desktop<sp/>IsSupported:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>supported,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetImageSharpenState(IADLX3DImageSharpening*<sp/>d3dImageSharpen)</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetImageSharpenState(IADLX3DImageSharpening*<sp/>d3dImageSharpen,<sp/>IADLX3DImageSharpenDesktop*<sp/>d3dImageSharpenDesktop)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool<sp/>enabled<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>d3dImageSharpen-&gt;pVtbl-&gt;IsEnabled(d3dImageSharpen,<sp/>&amp;enabled);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tIsEnabled:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>enabled,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tImage<sp/>Sharpening<sp/>IsEnabled:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>enabled,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>enabled<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>d3dImageSharpenDesktop-&gt;pVtbl-&gt;IsEnabled(d3dImageSharpenDesktop,<sp/>&amp;enabled);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tImage<sp/>Sharpen<sp/>Desktop<sp/>IsEnabled:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>enabled,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_int<sp/>min;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref><sp/>range<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>d3dImageSharpen-&gt;pVtbl-&gt;GetSharpness(d3dImageSharpen,<sp/>&amp;min);</highlight></codeline>
@@ -163,13 +199,16 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tSharpness<sp/>limit<sp/>[<sp/>%d<sp/>,<sp/>%d<sp/>],<sp/>step:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>range.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>,<sp/>range.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref>,<sp/>range.<ref refid="struct_a_d_l_x___int_range_1ae0e545b501a683c565f08089ed3e8023" kindref="member">step</ref>,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetImageSharpenState(IADLX3DImageSharpening*<sp/>d3dImageSharpen,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetImageSharpenState(IADLX3DImageSharpening*<sp/>d3dImageSharpen,<sp/>IADLX3DImageSharpenDesktop*<sp/>d3dImageSharpenDesktop,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>imageSharpeningIndex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>imageSharpenDesktopIndex)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>d3dImageSharpen-&gt;pVtbl-&gt;SetEnabled(d3dImageSharpen,<sp/>index<sp/>==<sp/>0);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tReturn<sp/>code<sp/>is:<sp/>%d<sp/>(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>d3dImageSharpen-&gt;pVtbl-&gt;SetEnabled(d3dImageSharpen,<sp/>imageSharpeningIndex);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tImage<sp/>Sharpening<sp/>Return<sp/>code<sp/>is:<sp/>%d<sp/>(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index<sp/>==<sp/>0<sp/>&amp;&amp;<sp/><ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(imageSharpeningIndex<sp/>&amp;&amp;<sp/><ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>d3dImageSharpenDesktop-&gt;pVtbl-&gt;SetEnabled(d3dImageSharpenDesktop,<sp/>imageSharpenDesktopIndex);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tImage<sp/>Sharpen<sp/>Desktop<sp/>Return<sp/>code<sp/>is:<sp/>%d<sp/>(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_int<sp/>min;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref><sp/>range<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d3dImageSharpen-&gt;pVtbl-&gt;GetSharpness(d3dImageSharpen,<sp/>&amp;min);</highlight></codeline>
@@ -187,40 +226,56 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>DisableImageSharpenState(IADLX3DImageSharpening*<sp/>d3dImageSharpen,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>d3dImageSharpen-&gt;pVtbl-&gt;SetEnabled(d3dImageSharpen,<sp/>index);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tReturn<sp/>code<sp/>is:<sp/>%d<sp/>(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MainMenu()</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tChoose<sp/>from<sp/>the<sp/>following<sp/>options:\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>1<sp/>to<sp/>display<sp/>Image<sp/>Sharpening<sp/>support\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>2<sp/>to<sp/>get<sp/>current<sp/>Image<sp/>Sharpening<sp/>state<sp/>and<sp/>additional<sp/>information\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>3<sp/>to<sp/>enable<sp/>and<sp/>configure<sp/>Image<sp/>Sharpening\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>4<sp/>to<sp/>disable<sp/>Image<sp/>Sharpening\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>1<sp/>to<sp/>display<sp/>Image<sp/>Sharpening<sp/>and<sp/>Image<sp/>Sharpen<sp/>Desktop<sp/>support\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>2<sp/>to<sp/>get<sp/>current<sp/>Image<sp/>Sharpening<sp/>and<sp/>Image<sp/>Sharpen<sp/>Desktop<sp/>state<sp/>&amp;<sp/>additional<sp/>information\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>3<sp/>to<sp/>enable<sp/>Image<sp/>Sharpening<sp/>and<sp/>disable<sp/>Image<sp/>Sharpen<sp/>Desktop\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>4<sp/>to<sp/>enable<sp/>Image<sp/>Sharpening<sp/>and<sp/>Image<sp/>Sharpen<sp/>Desktop\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>5<sp/>to<sp/>disable<sp/>Image<sp/>Sharpening\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>Q/q<sp/>to<sp/>quit<sp/>the<sp/>application\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>M/m<sp/>to<sp/>display<sp/>menu<sp/>options\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MenuControl(IADLX3DImageSharpening*<sp/>d3dImageSharpen)</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MenuControl(IADLX3DImageSharpening*<sp/>d3dImageSharpen,<sp/>IADLX3DImageSharpenDesktop*<sp/>d3dImageSharpenDesktop)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num<sp/>=<sp/>0;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>((num<sp/>=<sp/>getchar())<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;q&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>num<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;Q&apos;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(num)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Display<sp/>Image<sp/>Sharpening<sp/>support</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Display<sp/>Image<sp/>Sharpening<sp/>and<sp/>Image<sp/>Sharpen<sp/>Desktop<sp/>support</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;1&apos;</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShowImageSharpenSupport(d3dImageSharpen);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShowImageSharpenSupport(d3dImageSharpen,<sp/>d3dImageSharpenDesktop);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>current<sp/>Image<sp/>Sharpening<sp/>state<sp/>and<sp/>additional<sp/>information</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>current<sp/>Image<sp/>Sharpening<sp/>and<sp/>Image<sp/>Sharpen<sp/>Desktop<sp/>state<sp/>&amp;<sp/>additional<sp/>information</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;2&apos;</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetImageSharpenState(d3dImageSharpen);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetImageSharpenState(d3dImageSharpen,<sp/>d3dImageSharpenDesktop);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>Image<sp/>Sharpening<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>Image<sp/>Sharpening<sp/>and<sp/>disable<sp/>Image<sp/>Sharpen<sp/>Desktop</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;3&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetImageSharpenState(d3dImageSharpen,<sp/>d3dImageSharpenDesktop,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//enable<sp/>Image<sp/>Sharpening<sp/>and<sp/>Image<sp/>Sharpen<sp/>Desktop</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;4&apos;</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetImageSharpenState(d3dImageSharpen,<sp/>num<sp/>-<sp/></highlight><highlight class="charliteral">&apos;3&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetImageSharpenState(d3dImageSharpen,<sp/>d3dImageSharpenDesktop,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//disable<sp/>Image<sp/>Sharpening</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;5&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DisableImageSharpenState(d3dImageSharpen,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Display<sp/>menu<sp/>options</highlight><highlight class="normal"></highlight></codeline>

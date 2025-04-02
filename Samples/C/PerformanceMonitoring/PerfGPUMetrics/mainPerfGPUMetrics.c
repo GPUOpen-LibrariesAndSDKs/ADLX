@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -7,8 +7,7 @@
 /// \brief Demonstrates how to control GPU metrics when programming with ADLX.
 
 #include "SDK/ADLXHelper/Windows/C/ADLXHelper.h"
-#include "SDK/Include/IPerformanceMonitoring.h"
-#include "SDK/Include/IPerformanceMonitoring2.h"
+#include "SDK/Include/IPerformanceMonitoring3.h"
 
 // Main menu
 void MainMenu();
@@ -285,6 +284,24 @@ void ShowGPUMetricsRange(IADLXPerformanceMonitoringServices* perfMonitoringServi
             gpuMetricsSupport1->pVtbl->Release(gpuMetricsSupport1);
             gpuMetricsSupport1 = NULL;
         }
+
+        IADLXGPUMetricsSupport2* gpuMetricsSupport2 = NULL;
+        res = gpuMetricsSupport->pVtbl->QueryInterface(gpuMetricsSupport, IID_IADLXGPUMetricsSupport2(), &gpuMetricsSupport2);
+        if (ADLX_SUCCEEDED(res))
+        {
+            // Get shared GPU memory range
+            res = gpuMetricsSupport2->pVtbl->GetGPUSharedMemoryRange(gpuMetricsSupport2, &minValue, &maxValue);
+            if (ADLX_SUCCEEDED(res))
+                printf("The shared GPU memory range between %dMB and %dMB\n", minValue, maxValue);
+            else if (res == ADLX_NOT_SUPPORTED)
+                printf("shared GPU memory range not supported\n");
+        }
+
+        if (gpuMetricsSupport2)
+        {
+            gpuMetricsSupport2->pVtbl->Release(gpuMetricsSupport2);
+            gpuMetricsSupport2 = NULL;
+        }
     }
 
     if (gpuMetricsSupport != NULL)
@@ -493,6 +510,45 @@ void ShowGPUVRAM(IADLXGPUMetricsSupport *gpuMetricsSupport, IADLXGPUMetrics *gpu
     }
 }
 
+// Display shared GPU memory (in MB)
+void ShowSharedGPUMemory(IADLXGPUMetricsSupport* gpuMetricsSupport, IADLXGPUMetrics* gpuMetrics)
+{
+    adlx_bool supported = false;
+    // Display shared GPU memory status
+    IADLXGPUMetricsSupport2* gpuMetricsSupport2 = NULL;
+    IADLXGPUMetrics2* gpuMetrics2 = NULL;
+    ADLX_RESULT supportRes = gpuMetricsSupport->pVtbl->QueryInterface(gpuMetricsSupport, IID_IADLXGPUMetricsSupport2(), &gpuMetricsSupport2);
+    ADLX_RESULT metricsRes = gpuMetrics->pVtbl->QueryInterface(gpuMetrics, IID_IADLXGPUMetrics2(), &gpuMetrics2);
+    if (ADLX_SUCCEEDED(supportRes) && ADLX_SUCCEEDED(metricsRes))
+    {
+        // Display the shared GPU memory support status
+        ADLX_RESULT res = gpuMetricsSupport2->pVtbl->IsSupportedGPUSharedMemory(gpuMetricsSupport2, &supported);
+        if (ADLX_SUCCEEDED(res))
+        {
+            printf("shared GPU memory status: %d\n", supported);
+            if (supported)
+            {
+                adlx_int memory = 0;
+                res = gpuMetrics2->pVtbl->GPUSharedMemory(gpuMetrics2, &memory);
+                if (ADLX_SUCCEEDED(res))
+                    printf("The shared GPU memory usage is: %d MB\n", memory);
+            }
+        }
+    }
+
+    if (gpuMetricsSupport2)
+    {
+        gpuMetricsSupport2->pVtbl->Release(gpuMetricsSupport2);
+        gpuMetricsSupport2 = NULL;
+    }
+
+    if (gpuMetrics2)
+    {
+        gpuMetrics2->pVtbl->Release(gpuMetrics2);
+        gpuMetrics2 = NULL;
+    }
+}
+
 // Display GPU Voltage (in mV)
 void ShowGPUVoltage(IADLXGPUMetricsSupport* gpuMetricsSupport, IADLXGPUMetrics* gpuMetrics)
 {
@@ -667,6 +723,7 @@ void ShowCurrentGPUMetrics(IADLXPerformanceMonitoringServices *perfMonitoringSer
             ShowGPUMemoryTemperature(gpuMetricsSupport, gpuMetrics);
             ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
             ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
+            ShowSharedGPUMemory(gpuMetricsSupport, gpuMetrics);
         }
         Sleep(1000);
 
@@ -746,6 +803,7 @@ void ShowCurrentGPUMetricsFromHistorical(IADLXPerformanceMonitoringServices* per
                     ShowGPUMemoryTemperature(gpuMetricsSupport, gpuMetrics);
                     ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
                     ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
+                    ShowSharedGPUMemory(gpuMetricsSupport, gpuMetrics);
                 }
 
                 // Release IADLXGPUMetrics interface
@@ -840,6 +898,7 @@ void ShowHistoricalGPUMetrics(IADLXPerformanceMonitoringServices *perfMonitoring
                 ShowGPUMemoryTemperature(gpuMetricsSupport, gpuMetrics);
                 ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
                 ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
+                ShowSharedGPUMemory(gpuMetricsSupport, gpuMetrics);
             }
             printf("\n");
             if (gpuMetrics != NULL)

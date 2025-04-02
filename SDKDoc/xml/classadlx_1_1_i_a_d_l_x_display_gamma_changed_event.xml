@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_display_gamma_changed_event" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXDisplayGammaChangedEvent</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXChangedEvent</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_changed_event_1a8dde770ca023debde8d461879de29811" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGammaChangedEvent::GetDisplay</definition>
         <argsstring>(IADLXDisplay **ppDisplay)=0</argsstring>
         <name>GetDisplay</name>
+        <qualifiedname>adlx::IADLXDisplayGammaChangedEvent::GetDisplay</qualifiedname>
         <param>
           <type>IADLXDisplay **</type>
           <declname>ppDisplay</declname>
@@ -26,6 +27,7 @@
         <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXDisplayGammaChangedEvent::IsGammaRampChanged</definition>
         <argsstring>()=0</argsstring>
         <name>IsGammaRampChanged</name>
+        <qualifiedname>adlx::IADLXDisplayGammaChangedEvent::IsGammaRampChanged</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -39,6 +41,7 @@
         <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXDisplayGammaChangedEvent::IsGammaCoefficientChanged</definition>
         <argsstring>()=0</argsstring>
         <name>IsGammaCoefficientChanged</name>
+        <qualifiedname>adlx::IADLXDisplayGammaChangedEvent::IsGammaCoefficientChanged</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -52,6 +55,7 @@
         <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXDisplayGammaChangedEvent::IsReGammaChanged</definition>
         <argsstring>()=0</argsstring>
         <name>IsReGammaChanged</name>
+        <qualifiedname>adlx::IADLXDisplayGammaChangedEvent::IsReGammaChanged</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -65,6 +69,7 @@
         <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXDisplayGammaChangedEvent::IsDeGammaChanged</definition>
         <argsstring>()=0</argsstring>
         <name>IsDeGammaChanged</name>
+        <qualifiedname>adlx::IADLXDisplayGammaChangedEvent::IsDeGammaChanged</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -73,7 +78,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplays.h" line="924" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

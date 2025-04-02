@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXGPUMetricsSupport</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support1" prot="public" virt="non-virtual">adlx::IADLXGPUMetricsSupport1</derivedcompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_support_1adf2f330babc700040074e7bb52ae4f2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUUsage</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedGPUUsage</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::IsSupportedGPUUsage</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -27,6 +28,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUClockSpeed</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedGPUClockSpeed</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::IsSupportedGPUClockSpeed</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -44,6 +46,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUVRAMClockSpeed</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedGPUVRAMClockSpeed</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::IsSupportedGPUVRAMClockSpeed</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -61,6 +64,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUTemperature</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedGPUTemperature</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::IsSupportedGPUTemperature</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -78,6 +82,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUHotspotTemperature</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedGPUHotspotTemperature</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::IsSupportedGPUHotspotTemperature</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -95,6 +100,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUPower</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedGPUPower</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::IsSupportedGPUPower</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -112,6 +118,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUTotalBoardPower</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedGPUTotalBoardPower</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::IsSupportedGPUTotalBoardPower</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -129,6 +136,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUFanSpeed</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedGPUFanSpeed</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::IsSupportedGPUFanSpeed</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -146,6 +154,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUVRAM</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedGPUVRAM</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::IsSupportedGPUVRAM</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -163,6 +172,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUVoltage</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedGPUVoltage</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::IsSupportedGPUVoltage</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -180,6 +190,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUUsageRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetGPUUsageRange</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::GetGPUUsageRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -201,6 +212,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUClockSpeedRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetGPUClockSpeedRange</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::GetGPUClockSpeedRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -222,6 +234,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUVRAMClockSpeedRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetGPUVRAMClockSpeedRange</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::GetGPUVRAMClockSpeedRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -243,6 +256,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUTemperatureRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetGPUTemperatureRange</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::GetGPUTemperatureRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -264,6 +278,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUHotspotTemperatureRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetGPUHotspotTemperatureRange</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::GetGPUHotspotTemperatureRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -285,6 +300,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUPowerRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetGPUPowerRange</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::GetGPUPowerRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -306,6 +322,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUFanSpeedRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetGPUFanSpeedRange</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::GetGPUFanSpeedRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -327,6 +344,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUVRAMRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetGPUVRAMRange</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::GetGPUVRAMRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -348,6 +366,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUVoltageRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetGPUVoltageRange</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::GetGPUVoltageRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -369,6 +388,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUTotalBoardPowerRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetGPUTotalBoardPowerRange</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::GetGPUTotalBoardPowerRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -390,6 +410,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::GetGPUIntakeTemperatureRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetGPUIntakeTemperatureRange</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::GetGPUIntakeTemperatureRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -411,6 +432,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetricsSupport::IsSupportedGPUIntakeTemperature</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedGPUIntakeTemperature</name>
+        <qualifiedname>adlx::IADLXGPUMetricsSupport::IsSupportedGPUIntakeTemperature</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -423,7 +445,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="552" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="_d_o_x__i_a_d_l_x3_d_image_sharpening" kind="page">
     <compoundname>DOX_IADLX3DImageSharpening</compoundname>
     <title>IADLX3DImageSharpening</title>
@@ -35,11 +35,19 @@
 </para>
 <para><heading level="2">Dependent Interfaces </heading>
 </para>
-<para>If AMD Radeon Image Sharpening is enabled in the GPU used by a video application, the video upscale settings will be ignored.<linebreak/>
+<para>If AMD Radeon Image Sharpening is enabled in the GPU used by a video application, the <ref refid="_d_o_x__i_a_d_l_x_video_upscale" kindref="compound">video upscale</ref> settings will be ignored.<linebreak/>
 </para>
-<para>On some AMD GPUs, AMD Radeon 3D Image Sharpening is mutually exclusive with <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref>.<linebreak/>
+<para>On some AMD GPUs, AMD Radeon 3D Image Sharpening cannot be simultaneously enabled with <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref>.<linebreak/>
 </para>
 <para>When AMD Radeon 3D Image Sharpening is enabled, the mutually exclusive features are automatically disabled. If a mutually exclusive feature is re-enabled, its previous configuration settings are restored.<linebreak/>
+</para>
+<para><ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpen_desktop" kindref="compound">Sharpen Desktop</ref> requires AMD Radeon™ Image Sharpening.<linebreak/>
+</para>
+<para>When AMD Radeon Image sharpening is enabled and Sharpen Desktop is enabled, the sharpening is applied for both windowed applications and for applications that run in fullscreen exclusive mode.<linebreak/>
+</para>
+<para>When AMD Radeon Image sharpening is enabled and Sharpen Desktop is disabled, the sharpening is only applied to applications that run in fullscreen exclusive mode.<linebreak/>
+</para>
+<para>When AMD Radeon™ Image sharpening is disabled and Sharpen Desktop is enabled, Sharpen Desktop remains in enabled state, but the value is ignored.<linebreak/>
 </para>
 <para><heading level="2">Methods </heading>
 </para>
@@ -49,27 +57,27 @@
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpening__get_sharpness" kindref="compound">GetSharpness</ref>   </para>
-</entry><entry thead="no"><para>Gets the current sharpness of AMD Radeon™ Image Sharpening on a GPU.    </para>
+</entry><entry thead="no"><para>Gets the current sharpness of AMD Radeon™ Image Sharpening on a GPU.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpening__get_sharpness_range" kindref="compound">GetSharpnessRange</ref>   </para>
-</entry><entry thead="no"><para>Gets the AMD Radeon™ Image Sharpening maximum sharpness, minimum sharpness, and step sharpness on a GPU.    </para>
+</entry><entry thead="no"><para>Gets the AMD Radeon™ Image Sharpening maximum sharpness, minimum sharpness, and step sharpness on a GPU.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpening__is_enabled" kindref="compound">IsEnabled</ref>   </para>
-</entry><entry thead="no"><para>Checks if AMD Radeon™ Image Sharpening is enabled on a GPU.    </para>
+</entry><entry thead="no"><para>Checks if AMD Radeon™ Image Sharpening is enabled on a GPU.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpening__is_supported" kindref="compound">IsSupported</ref>   </para>
-</entry><entry thead="no"><para>Checks if AMD Radeon™ Image Sharpening is supported on a GPU.    </para>
+</entry><entry thead="no"><para>Checks if AMD Radeon™ Image Sharpening is supported on a GPU.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpening__set_enabled" kindref="compound">SetEnabled</ref>   </para>
-</entry><entry thead="no"><para>Sets AMD Radeon™ Image Sharpening to enabled or disabled on a GPU.    </para>
+</entry><entry thead="no"><para>Sets AMD Radeon™ Image Sharpening to enabled or disabled on a GPU.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpening__set_sharpness" kindref="compound">SetSharpness</ref>   </para>
-</entry><entry thead="no"><para>Sets the sharpness of AMD Radeon™ Image Sharpening on a GPU.   </para>
+</entry><entry thead="no"><para>Sets the sharpness of AMD Radeon™ Image Sharpening on a GPU.      </para>
 </entry></row>
 </table>
 </para>

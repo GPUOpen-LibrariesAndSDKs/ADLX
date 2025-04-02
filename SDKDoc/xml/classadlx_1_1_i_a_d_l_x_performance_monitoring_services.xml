@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXPerformanceMonitoringServices</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_performance_monitoring_services_1ad4d3b37d0d9707824f75993ab028097a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetSamplingIntervalRange</definition>
         <argsstring>(ADLX_IntRange *range)=0</argsstring>
         <name>GetSamplingIntervalRange</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::GetSamplingIntervalRange</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
           <declname>range</declname>
@@ -26,6 +27,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::SetSamplingInterval</definition>
         <argsstring>(adlx_int askedIntervalMs)=0</argsstring>
         <name>SetSamplingInterval</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::SetSamplingInterval</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>askedIntervalMs</declname>
@@ -43,6 +45,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetSamplingInterval</definition>
         <argsstring>(adlx_int *intervalMs)=0</argsstring>
         <name>GetSamplingInterval</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::GetSamplingInterval</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>intervalMs</declname>
@@ -60,6 +63,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetMaxPerformanceMetricsHistorySizeRange</definition>
         <argsstring>(ADLX_IntRange *range)=0</argsstring>
         <name>GetMaxPerformanceMetricsHistorySizeRange</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::GetMaxPerformanceMetricsHistorySizeRange</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
           <declname>range</declname>
@@ -77,6 +81,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::SetMaxPerformanceMetricsHistorySize</definition>
         <argsstring>(adlx_int sizeSec)=0</argsstring>
         <name>SetMaxPerformanceMetricsHistorySize</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::SetMaxPerformanceMetricsHistorySize</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>sizeSec</declname>
@@ -94,6 +99,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetMaxPerformanceMetricsHistorySize</definition>
         <argsstring>(adlx_int *sizeSec)=0</argsstring>
         <name>GetMaxPerformanceMetricsHistorySize</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::GetMaxPerformanceMetricsHistorySize</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>sizeSec</declname>
@@ -111,6 +117,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::ClearPerformanceMetricsHistory</definition>
         <argsstring>()=0</argsstring>
         <name>ClearPerformanceMetricsHistory</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::ClearPerformanceMetricsHistory</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -124,6 +131,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetCurrentPerformanceMetricsHistorySize</definition>
         <argsstring>(adlx_int *sizeSec)=0</argsstring>
         <name>GetCurrentPerformanceMetricsHistorySize</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::GetCurrentPerformanceMetricsHistorySize</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>sizeSec</declname>
@@ -141,6 +149,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::StartPerformanceMetricsTracking</definition>
         <argsstring>()=0</argsstring>
         <name>StartPerformanceMetricsTracking</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::StartPerformanceMetricsTracking</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -154,6 +163,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::StopPerformanceMetricsTracking</definition>
         <argsstring>()=0</argsstring>
         <name>StopPerformanceMetricsTracking</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::StopPerformanceMetricsTracking</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -167,6 +177,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetAllMetricsHistory</definition>
         <argsstring>(adlx_int startMs, adlx_int stopMs, IADLXAllMetricsList **ppMetricsList)=0</argsstring>
         <name>GetAllMetricsHistory</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::GetAllMetricsHistory</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>startMs</declname>
@@ -192,6 +203,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetGPUMetricsHistory</definition>
         <argsstring>(IADLXGPU *pGPU, adlx_int startMs, adlx_int stopMs, IADLXGPUMetricsList **ppMetricsList)=0</argsstring>
         <name>GetGPUMetricsHistory</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::GetGPUMetricsHistory</qualifiedname>
         <param>
           <type>IADLXGPU *</type>
           <declname>pGPU</declname>
@@ -221,6 +233,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetSystemMetricsHistory</definition>
         <argsstring>(adlx_int startMs, adlx_int stopMs, IADLXSystemMetricsList **ppMetricsList)=0</argsstring>
         <name>GetSystemMetricsHistory</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::GetSystemMetricsHistory</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>startMs</declname>
@@ -246,6 +259,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetFPSHistory</definition>
         <argsstring>(adlx_int startMs, adlx_int stopMs, IADLXFPSList **ppMetricsList)=0</argsstring>
         <name>GetFPSHistory</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::GetFPSHistory</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>startMs</declname>
@@ -271,6 +285,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetCurrentAllMetrics</definition>
         <argsstring>(IADLXAllMetrics **ppMetrics)=0</argsstring>
         <name>GetCurrentAllMetrics</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::GetCurrentAllMetrics</qualifiedname>
         <param>
           <type>IADLXAllMetrics **</type>
           <declname>ppMetrics</declname>
@@ -288,6 +303,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetCurrentGPUMetrics</definition>
         <argsstring>(IADLXGPU *pGPU, IADLXGPUMetrics **ppMetrics)=0</argsstring>
         <name>GetCurrentGPUMetrics</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::GetCurrentGPUMetrics</qualifiedname>
         <param>
           <type>IADLXGPU *</type>
           <declname>pGPU</declname>
@@ -309,6 +325,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetCurrentSystemMetrics</definition>
         <argsstring>(IADLXSystemMetrics **ppMetrics)=0</argsstring>
         <name>GetCurrentSystemMetrics</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::GetCurrentSystemMetrics</qualifiedname>
         <param>
           <type>IADLXSystemMetrics **</type>
           <declname>ppMetrics</declname>
@@ -326,6 +343,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetCurrentFPS</definition>
         <argsstring>(IADLXFPS **ppMetrics)=0</argsstring>
         <name>GetCurrentFPS</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::GetCurrentFPS</qualifiedname>
         <param>
           <type>IADLXFPS **</type>
           <declname>ppMetrics</declname>
@@ -343,6 +361,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetSupportedGPUMetrics</definition>
         <argsstring>(IADLXGPU *pGPU, IADLXGPUMetricsSupport **ppMetricsSupported)=0</argsstring>
         <name>GetSupportedGPUMetrics</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::GetSupportedGPUMetrics</qualifiedname>
         <param>
           <type>IADLXGPU *</type>
           <declname>pGPU</declname>
@@ -364,6 +383,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPerformanceMonitoringServices::GetSupportedSystemMetrics</definition>
         <argsstring>(IADLXSystemMetricsSupport **ppMetricsSupported)=0</argsstring>
         <name>GetSupportedSystemMetrics</name>
+        <qualifiedname>adlx::IADLXPerformanceMonitoringServices::GetSupportedSystemMetrics</qualifiedname>
         <param>
           <type>IADLXSystemMetricsSupport **</type>
           <declname>ppMetricsSupported</declname>
@@ -376,7 +396,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="2476" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

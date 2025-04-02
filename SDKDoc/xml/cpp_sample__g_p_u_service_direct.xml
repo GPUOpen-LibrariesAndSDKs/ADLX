@@ -1,0 +1,428 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="cpp_sample__g_p_u_service_direct" kind="page">
+    <compoundname>cpp_sample_GPUServiceDirect</compoundname>
+    <title>GPUServiceDirect</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><htmlonly>&lt;!--
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
+#
+#-------------------------------------------------------------------------------------------------
+--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+    &lt;p&gt; Demonstrates how to use ADLX into a system service application for ADLX v1.4 and above.&lt;/p&gt;
+	&lt;h2&gt;Command Prompts&lt;/h2&gt;
+	&lt;table class=&quot;doxtable docTable&quot;&gt;
+        &lt;thead&gt;
+        &lt;tr style=&quot;height:40px&quot;&gt;&lt;th&gt;Command Prompt&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+		&lt;tr&gt;&lt;td&gt;-install&lt;/td&gt;&lt;td&gt; Install &quot;ADLX GPU Service&quot; into services.&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt;-remove&lt;/td&gt;&lt;td&gt; Remove &quot;ADLX GPU Service&quot; from services.&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;h2&gt;Sample Path&lt;/h2&gt;
+    &lt;p&gt;/Samples/CPP/ServiceCall/GPUServiceDirect&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</htmlonly> <heading level="2">Code </heading>
+</para>
+<para>C++ <programlisting filename="./ServiceCall/GPUServiceDirect/mainGPUServiceDirect.cpp"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>warning(suppress:<sp/>6248)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;TlHelp32.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tchar.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SDK/Include/ISystem.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SDK/Include/IPerformanceMonitoring3.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_DEBUG_STR_LEN<sp/>1024</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>XTrace<sp/>(</highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>lpszFormat,<sp/>...)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>va_list<sp/>args;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>va_start<sp/>(args,<sp/>lpszFormat);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nBuf;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>WCHAR<sp/>szBuffer[MAX_DEBUG_STR_LEN];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>nBuf<sp/>=<sp/>_vsnwprintf_s<sp/>(szBuffer,<sp/>MAX_DEBUG_STR_LEN,<sp/>_TRUNCATE,<sp/>lpszFormat,<sp/>args);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>::OutputDebugStringW<sp/>(szBuffer);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>va_end<sp/>(args);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Use<sp/>adlx<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">adlx;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>ADLXHelper<sp/>instance.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>No<sp/>outstanding<sp/>interfaces<sp/>from<sp/>ADLX<sp/>must<sp/>exist<sp/>when<sp/>ADLX<sp/>destory.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>So<sp/>we<sp/>use<sp/>global<sp/>variables<sp/>to<sp/>ensure<sp/>the<sp/>valid<sp/>of<sp/>the<sp/>interface.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>ADLXHelper<sp/>g_ADLXHelp;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Service<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADLX_SERVICE_NAME<sp/><sp/>L&quot;ADLX<sp/>GPU<sp/>Service&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Global<sp/>variables<sp/>for<sp/>service<sp/>routine</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">SERVICE_STATUS_HANDLE<sp/>g_StatusHandle<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal">SERVICE_STATUS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_ServiceStatus<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
+<codeline><highlight class="normal">HANDLE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_ServiceStopEvent<sp/>=<sp/>INVALID_HANDLE_VALUE;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Service<sp/>routine</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">VOID<sp/>WINAPI<sp/><sp/>ServiceMain<sp/>(DWORD<sp/>argc,<sp/>LPTSTR*<sp/>argv);</highlight></codeline>
+<codeline><highlight class="normal">VOID<sp/>WINAPI<sp/><sp/>ServiceCtrlHandler<sp/>(DWORD);</highlight></codeline>
+<codeline><highlight class="normal">DWORD<sp/>WINAPI<sp/>ServiceWorkerThread<sp/>(LPVOID<sp/>lpParam);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Install/unistall<sp/>this<sp/>service</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>N.B:<sp/>Need<sp/>admin<sp/>permission</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>User<sp/>can<sp/>also<sp/>install/unistall<sp/>this<sp/>service<sp/>by<sp/>windows<sp/>command<sp/>line</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Usage:<sp/>SC<sp/>CREATE<sp/>&quot;ADLX<sp/>GPU<sp/>Service&quot;<sp/>&quot;GPUService.exe&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SC<sp/>DELETE<sp/>&quot;ADLX<sp/>GPU<sp/>Service&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>InstallService<sp/>();</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RemoveService<sp/>();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Usage</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Usage<sp/>()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tThis<sp/>exe<sp/>is<sp/>a<sp/>service<sp/>executable,<sp/>you<sp/>can<sp/>install/unistall<sp/>it<sp/>with:&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t<sp/><sp/><sp/><sp/>SC<sp/>CREATE<sp/>&apos;ADLX<sp/>GPU<sp/>Service&apos;<sp/>&apos;GPUService.exe&apos;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t<sp/><sp/><sp/><sp/>SC<sp/>DELETE<sp/>&apos;ADLX<sp/>GPU<sp/>Service&apos;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tOr<sp/>use<sp/>the<sp/>executable<sp/>itself<sp/>to<sp/>install/uninstall:&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t<sp/><sp/><sp/><sp/>GPUService.exe<sp/>-install<sp/>or<sp/>GPUService.exe<sp/>/install&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t<sp/><sp/><sp/><sp/>GPUService.exe<sp/>-remove<sp/>or<sp/>GPUService.exe<sp/>/remove&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t<sp/><sp/><sp/><sp/>Use<sp/>GPUService.exe<sp/>-help,<sp/>GPUService.exe<sp/>/help<sp/>to<sp/>show<sp/>this<sp/>usage,<sp/>or<sp/>GPUService.exe<sp/>?&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>wmain<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>argv[])</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>Main:<sp/>Entry&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>Main:<sp/>Args:%s&quot;</highlight><highlight class="normal">,<sp/>GetCommandLineW<sp/>());</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((argc<sp/>&gt;<sp/>1))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(((*argv[1]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal">)<sp/>||<sp/>(*argv[1]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">)))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_wcsicmp<sp/>(L</highlight><highlight class="stringliteral">&quot;install&quot;</highlight><highlight class="normal">,<sp/>argv[1]<sp/>+<sp/>1)<sp/>==<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InstallService<sp/>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_wcsicmp<sp/>(L</highlight><highlight class="stringliteral">&quot;remove&quot;</highlight><highlight class="normal">,<sp/>argv[1]<sp/>+<sp/>1)<sp/>==<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RemoveService<sp/>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_wcsicmp<sp/>(L</highlight><highlight class="stringliteral">&quot;help&quot;</highlight><highlight class="normal">,<sp/>argv[1]<sp/>+<sp/>1)<sp/>==<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Usage<sp/>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_wcsicmp<sp/>(L</highlight><highlight class="stringliteral">&quot;?&quot;</highlight><highlight class="normal">,<sp/>argv[1])<sp/>==<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Usage<sp/>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SERVICE_TABLE_ENTRYW<sp/>ServiceTable[]<sp/>=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>ADLX_SERVICE_NAME,<sp/>(LPSERVICE_MAIN_FUNCTIONW)ServiceMain<sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>NULL,<sp/>NULL<sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(StartServiceCtrlDispatcherW<sp/>(ServiceTable)<sp/>==<sp/>FALSE)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>Main:<sp/>StartServiceCtrlDispatcher<sp/>returned<sp/>error.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetLastError<sp/>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>Main:<sp/>Exit&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">VOID<sp/>WINAPI<sp/>ServiceMain<sp/>(DWORD<sp/>argc,<sp/>LPTSTR*<sp/>argv)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>DWORD<sp/>Status<sp/>=<sp/>E_FAIL;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceMain:<sp/>Entry&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_StatusHandle<sp/>=<sp/>RegisterServiceCtrlHandlerW<sp/>(ADLX_SERVICE_NAME,<sp/>ServiceCtrlHandler);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(g_StatusHandle<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceMain:<sp/>RegisterServiceCtrlHandler<sp/>returned<sp/>error&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>EXIT;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Tell<sp/>the<sp/>service<sp/>controller<sp/>we<sp/>are<sp/>starting</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ZeroMemory<sp/>(&amp;g_ServiceStatus,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(g_ServiceStatus));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_ServiceStatus.dwServiceType<sp/>=<sp/>SERVICE_WIN32_OWN_PROCESS;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_ServiceStatus.dwControlsAccepted<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_ServiceStatus.dwCurrentState<sp/>=<sp/>SERVICE_START_PENDING;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_ServiceStatus.dwWin32ExitCode<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_ServiceStatus.dwServiceSpecificExitCode<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_ServiceStatus.dwCheckPoint<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(SetServiceStatus<sp/>(g_StatusHandle,<sp/>&amp;g_ServiceStatus)<sp/>==<sp/>FALSE)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceMain:<sp/>SetServiceStatus<sp/>returned<sp/>error&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Perform<sp/>tasks<sp/>neccesary<sp/>to<sp/>start<sp/>the<sp/>service<sp/>here</highlight></codeline>
+<codeline><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceMain:<sp/>Performing<sp/>Service<sp/>Start<sp/>Operations&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Create<sp/>stop<sp/>event<sp/>to<sp/>wait<sp/>on<sp/>later.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_ServiceStopEvent<sp/>=<sp/>CreateEvent<sp/>(NULL,<sp/>TRUE,<sp/>FALSE,<sp/>NULL);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(g_ServiceStopEvent<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceMain:<sp/>CreateEvent(g_ServiceStopEvent)<sp/>returned<sp/>error&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_ServiceStatus.dwControlsAccepted<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_ServiceStatus.dwCurrentState<sp/>=<sp/>SERVICE_STOPPED;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_ServiceStatus.dwWin32ExitCode<sp/>=<sp/>GetLastError<sp/>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_ServiceStatus.dwCheckPoint<sp/>=<sp/>1;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(SetServiceStatus<sp/>(g_StatusHandle,<sp/>&amp;g_ServiceStatus)<sp/>==<sp/>FALSE)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceMain:<sp/>SetServiceStatus<sp/>returned<sp/>error&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>EXIT;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Tell<sp/>the<sp/>service<sp/>controller<sp/>we<sp/>are<sp/>started</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_ServiceStatus.dwControlsAccepted<sp/>=<sp/>SERVICE_ACCEPT_STOP;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_ServiceStatus.dwCurrentState<sp/>=<sp/>SERVICE_RUNNING;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_ServiceStatus.dwWin32ExitCode<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_ServiceStatus.dwCheckPoint<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(SetServiceStatus<sp/>(g_StatusHandle,<sp/>&amp;g_ServiceStatus)<sp/>==<sp/>FALSE)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceMain:<sp/>SetServiceStatus<sp/>returned<sp/>error&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>when<sp/>Debug</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Sleep(20000);</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Start<sp/>the<sp/>thread<sp/>that<sp/>will<sp/>perform<sp/>the<sp/>main<sp/>task<sp/>of<sp/>the<sp/>service</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>HANDLE<sp/>hThread<sp/>=<sp/>CreateThread<sp/>(NULL,<sp/>0,<sp/>ServiceWorkerThread,<sp/>NULL,<sp/>0,<sp/>NULL);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceMain:<sp/>Waiting<sp/>for<sp/>Worker<sp/>Thread<sp/>to<sp/>complete&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Wait<sp/>until<sp/>our<sp/>worker<sp/>thread<sp/>exits<sp/>effectively<sp/>signaling<sp/>that<sp/>the<sp/>service<sp/>needs<sp/>to<sp/>stop</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hThread)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Wait<sp/>until<sp/>our<sp/>worker<sp/>thread<sp/>exits<sp/>effectively<sp/>signaling<sp/>that<sp/>the<sp/>service<sp/>needs<sp/>to<sp/>stop</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>WaitForSingleObject(hThread,<sp/>INFINITE);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceMain:<sp/>Worker<sp/>Thread<sp/>Stop<sp/>Event<sp/>signaled&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Perform<sp/>any<sp/>cleanup<sp/>tasks</highlight></codeline>
+<codeline><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceMain:<sp/>Performing<sp/>Cleanup<sp/>Operations&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CloseHandle<sp/>(g_ServiceStopEvent);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_ServiceStatus.dwControlsAccepted<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_ServiceStatus.dwCurrentState<sp/>=<sp/>SERVICE_STOPPED;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_ServiceStatus.dwWin32ExitCode<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_ServiceStatus.dwCheckPoint<sp/>=<sp/>3;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(SetServiceStatus<sp/>(g_StatusHandle,<sp/>&amp;g_ServiceStatus)<sp/>==<sp/>FALSE)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceMain:<sp/>SetServiceStatus<sp/>returned<sp/>error&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">EXIT:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceMain:<sp/>Exit&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">VOID<sp/>WINAPI<sp/>ServiceCtrlHandler<sp/>(DWORD<sp/>CtrlCode)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceCtrlHandler:<sp/>Entry&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(CtrlCode)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>SERVICE_CONTROL_STOP:</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceCtrlHandler:<sp/>SERVICE_CONTROL_STOP<sp/>Request&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(g_ServiceStatus.dwCurrentState<sp/>!=<sp/>SERVICE_RUNNING)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Perform<sp/>tasks<sp/>neccesary<sp/>to<sp/>stop<sp/>the<sp/>service<sp/>here</highlight></codeline>
+<codeline><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_ServiceStatus.dwControlsAccepted<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_ServiceStatus.dwCurrentState<sp/>=<sp/>SERVICE_STOP_PENDING;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_ServiceStatus.dwWin32ExitCode<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_ServiceStatus.dwCheckPoint<sp/>=<sp/>4;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(SetServiceStatus<sp/>(g_StatusHandle,<sp/>&amp;g_ServiceStatus)<sp/>==<sp/>FALSE)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceCtrlHandler:<sp/>SetServiceStatus<sp/>returned<sp/>error&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>will<sp/>signal<sp/>the<sp/>worker<sp/>thread<sp/>to<sp/>shut<sp/>down</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetEvent<sp/>(g_ServiceStopEvent);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceCtrlHandler:<sp/>Exit&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">DWORD<sp/>WINAPI<sp/>ServiceWorkerThread<sp/>(LPVOID<sp/>lpParam)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceWorkerThread:<sp/>Entry&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>g_ADLXHelp.Initialize();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>XTrace(L</highlight><highlight class="stringliteral">&quot;--Initialize:<sp/><sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>iloop<sp/>=<sp/>20;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(iloop--<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>GPU<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXGPUListPtr<sp/>gpus;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>g_ADLXHelp.GetSystemServices()-&gt;GetGPUs(&amp;gpus);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res)<sp/>&amp;&amp;<sp/>!gpus-&gt;Empty())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXGPUPtr<sp/>gpuInfo;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_uint<sp/>index<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpus-&gt;At(index,<sp/>&amp;gpuInfo);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>vendorId<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuInfo-&gt;VendorId(&amp;vendorId);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace(L</highlight><highlight class="stringliteral">&quot;--VenderId=%hs\n&quot;</highlight><highlight class="normal">,<sp/>vendorId);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>gpuName<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>gpuInfo-&gt;Name(&amp;gpuName);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace(L</highlight><highlight class="stringliteral">&quot;--GpuName=%hs\n&quot;</highlight><highlight class="normal">,<sp/>gpuName);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>performance<sp/>monitoring<sp/>service</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IADLXPerformanceMonitoringServicesPtr<sp/>perfMonitorServ;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>g_ADLXHelp.GetSystemServices()-&gt;GetPerformanceMonitoringServices(&amp;perfMonitorServ);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace(L</highlight><highlight class="stringliteral">&quot;--GetPerformanceMonitoringServices:<sp/><sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref><sp/>range;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>perfMonitorServ-&gt;GetSamplingIntervalRange(&amp;range);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace(L</highlight><highlight class="stringliteral">&quot;--GetSamplingIntervalRange:<sp/><sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace(L</highlight><highlight class="stringliteral">&quot;range.minValue:<sp/>%d,<sp/>range.maxValue:<sp/>%d,<sp/>range.step:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>range.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>,<sp/>range.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref>,<sp/>range.<ref refid="struct_a_d_l_x___int_range_1ae0e545b501a683c565f08089ed3e8023" kindref="member">step</ref>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sleep(3000);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Sleep(3000);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_ADLXHelp.Terminate();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>ServiceWorkerThread:<sp/>Exit&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ERROR_SUCCESS;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>InstallService<sp/>()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>WCHAR<sp/>path[512]<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(GetModuleFileNameW<sp/>(NULL,<sp/>path,<sp/>512)<sp/>==<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>InstallService:<sp/>Cannot<sp/>get<sp/>file<sp/>path.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SC_HANDLE<sp/>serviceManager<sp/>=<sp/>OpenSCManager<sp/>(NULL,<sp/>NULL,<sp/>SC_MANAGER_CONNECT<sp/>|<sp/>SC_MANAGER_CREATE_SERVICE);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(serviceManager)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SC_HANDLE<sp/>serviceHandle<sp/>=<sp/>CreateServiceW<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>serviceManager,<sp/>ADLX_SERVICE_NAME,<sp/>ADLX_SERVICE_NAME,<sp/>SERVICE_QUERY_STATUS,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SERVICE_WIN32_OWN_PROCESS<sp/>|<sp/>SERVICE_INTERACTIVE_PROCESS,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SERVICE_AUTO_START,<sp/>SERVICE_ERROR_NORMAL,<sp/>path,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NULL,<sp/>NULL,<sp/>L</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/>NULL,<sp/>NULL);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(serviceHandle)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CloseServiceHandle<sp/>(serviceHandle);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>InstallService:<sp/>Cannot<sp/>create<sp/>service.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CloseServiceHandle<sp/>(serviceManager);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>InstallService:<sp/>Cannot<sp/>open<sp/>service.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RemoveService<sp/>()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SC_HANDLE<sp/>serviceManager<sp/>=<sp/>OpenSCManager<sp/>(NULL,<sp/>NULL,<sp/>SC_MANAGER_CONNECT);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!serviceManager)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>RemoveService:<sp/>Cannot<sp/>open<sp/>service<sp/>manager.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SC_HANDLE<sp/>serviceHandle<sp/>=<sp/>OpenServiceW<sp/>(serviceManager,<sp/>ADLX_SERVICE_NAME,<sp/>DELETE<sp/>|<sp/>SERVICE_STOP);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!serviceHandle)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CloseServiceHandle<sp/>(serviceManager);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>RemoveService:<sp/>Cannot<sp/>open<sp/>service.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!DeleteService<sp/>(serviceHandle))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CloseServiceHandle<sp/>(serviceHandle);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CloseServiceHandle<sp/>(serviceManager);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>RemoveService:<sp/>Delete<sp/>service<sp/>failed.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>XTrace<sp/>(L</highlight><highlight class="stringliteral">&quot;ADLX<sp/>Call<sp/>Service:<sp/>RemoveService:<sp/>Deleted<sp/>service.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SERVICE_STATUS<sp/>serviceStatus<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ControlService<sp/>(serviceHandle,<sp/>SERVICE_CONTROL_STOP,<sp/>(LPSERVICE_STATUS)&amp;serviceStatus);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CloseServiceHandle<sp/>(serviceHandle);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CloseServiceHandle<sp/>(serviceManager);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/docs/Config/ADLXSamplesPage/zADLXSamplePage.h"/>
+  </compounddef>
+</doxygen>

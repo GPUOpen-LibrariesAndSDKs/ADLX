@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_display_services3" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXDisplayServices3</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXDisplayServices2</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_services3_1ac2e0489d8706bed6198b70bdcee0a8d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices3::GetDynamicRefreshRateControl</definition>
+        <argsstring>(IADLXDisplay *pDisplay, IADLXDisplayDynamicRefreshRateControl **ppDRRC)=0</argsstring>
+        <name>GetDynamicRefreshRateControl</name>
+        <qualifiedname>adlx::IADLXDisplayServices3::GetDynamicRefreshRateControl</qualifiedname>
+        <param>
+          <type>IADLXDisplay *</type>
+          <declname>pDisplay</declname>
+        </param>
+        <param>
+          <type>IADLXDisplayDynamicRefreshRateControl **</type>
+          <declname>ppDRRC</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplays3.h" line="56" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_services3_1a4ca088095b9da87ca0355512a717cfb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices3::GetFreeSyncColorAccuracy</definition>
+        <argsstring>(IADLXDisplay *pDisplay, IADLXDisplayFreeSyncColorAccuracy **ppFSCA)=0</argsstring>
+        <name>GetFreeSyncColorAccuracy</name>
+        <qualifiedname>adlx::IADLXDisplayServices3::GetFreeSyncColorAccuracy</qualifiedname>
+        <param>
+          <type>IADLXDisplay *</type>
+          <declname>pDisplay</declname>
+        </param>
+        <param>
+          <type>IADLXDisplayFreeSyncColorAccuracy **</type>
+          <declname>ppFSCA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplays3.h" line="87" column="43"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplays3.h" line="22" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplays3.h" bodystart="23" bodyend="88"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1ac5ad510e7605d8b467edf845f840597e" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>Get3DLUT</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1a667d1a9be8c50c56e8d3fd2d7e17a5dd" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetColorDepth</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1a5203755c262969910999c9e7309887a2" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetCustomColor</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1a0c1db6c20e08e6a796eea73929f94579" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetCustomResolution</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services1_1acf6744c63d24a8cffa07ac8d774172d4" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetDisplayBlanking</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1a7e55fb1c448abf864658fd03858e2d7f" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetDisplayChangedHandling</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services2_1a1508368f3fb6e3ff21b4bf4b6fbc6b13" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetDisplayConnectivityExperience</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1ade0dbf447d72572ffe6a60f50fbb2cfa" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetDisplays</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services3_1ac2e0489d8706bed6198b70bdcee0a8d5" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetDynamicRefreshRateControl</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1accd58b7dd833cb756dd834c44c8decdd" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetFreeSync</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services3_1a4ca088095b9da87ca0355512a717cfb4" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetFreeSyncColorAccuracy</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1a05b11ebe2c8228c7f083fc0fc11763d4" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetGamma</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1a5ef935e3c08d7f31a6d326f4ef1b0253" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetGamut</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1a60b5bfb8a2e2ada20a3ad3077ad26a50" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetGPUScaling</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1a890300f1a2d4f09c8e451c508b6b7a5c" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetHDCP</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1a3474f923d10391a7432a86b117a8f67e" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetIntegerScaling</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1a3bccfafd35725c20f72d42819e5ebc60" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetNumberOfDisplays</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1abe9cbb585f3fcf8aacf1e79efd7cf85f" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetPixelFormat</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1a3782b5eb840c60e226fafa66a8a2bdab" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetScalingMode</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1a7f803aa86a7a2bcf57fcef4e9a90132d" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetVariBright</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_services_1a17a9d3a2b4cb8729c9807e2238a933b7" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>GetVirtualSuperResolution</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayServices3</scope><name>Release</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

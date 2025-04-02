@@ -8,6 +8,7 @@ var page_interfaces =
     [ "I2C", "i2c.html", "i2c" ],
     [ "Performance Monitoring", "perfmonitoring.html", "perfmonitoring" ],
     [ "Power Tuning", "domain_powertuning.html", "domain_powertuning" ],
+    [ "Multimedia", "domain__multimedia.html", "domain__multimedia" ],
     [ "System", "system.html", "system" ],
     [ "Miscellaneous", "misc.html", "misc" ]
 ];

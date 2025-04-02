@@ -4,6 +4,7 @@ var domain_c_sample__display =
     [ "DisplayBlanking", "c_sample_display_blanking.html", null ],
     [ "DisplayColorDepth", "c_display__color_depth.html", null ],
     [ "DisplayConnectivityExperience", "c_display__display_connectivity_experience.html", null ],
+    [ "DisplayDynamicRefreshRateControl", "c_display__dynamic_refresh_rate_control.html", null ],
     [ "DisplayCustomColor", "c_display__custom_color.html", null ],
     [ "DisplayCustomResolution", "c_display__custom_resolution.html", null ],
     [ "DisplayEvents", "c_sample_display_events.html", null ],
@@ -17,5 +18,6 @@ var domain_c_sample__display =
     [ "DisplayPixelFormat", "c_display__pixel_format.html", null ],
     [ "DisplayScalingMode", "c_display__scaling_mode.html", null ],
     [ "DisplayVariBright", "c_display__display_vari_bright.html", null ],
-    [ "DisplayVSR", "c_display__v_s_r.html", null ]
+    [ "DisplayVSR", "c_display__v_s_r.html", null ],
+    [ "DisplayFreeSyncColorAccuracy", "c_display__free_sync_color_accuracy.html", null ]
 ];

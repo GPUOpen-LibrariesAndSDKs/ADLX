@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="struct_a_d_l_x___custom_resolution" kind="struct" language="C++" prot="public">
     <compoundname>ADLX_CustomResolution</compoundname>
     <includes local="no">ADLXStructures.h</includes>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="struct_a_d_l_x___custom_resolution_1a299cbff4bdd201f3e2ef51a261571695" prot="public" static="no" mutable="no">
         <type>adlx_int</type>
         <definition>adlx_int ADLX_CustomResolution::resWidth</definition>
         <argsstring></argsstring>
         <name>resWidth</name>
+        <qualifiedname>ADLX_CustomResolution::resWidth</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -24,6 +25,7 @@
         <definition>adlx_int ADLX_CustomResolution::resHeight</definition>
         <argsstring></argsstring>
         <name>resHeight</name>
+        <qualifiedname>ADLX_CustomResolution::resHeight</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -39,6 +41,7 @@
         <definition>adlx_int ADLX_CustomResolution::refreshRate</definition>
         <argsstring></argsstring>
         <name>refreshRate</name>
+        <qualifiedname>ADLX_CustomResolution::refreshRate</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -54,6 +57,7 @@
         <definition>ADLX_DISPLAY_SCAN_TYPE ADLX_CustomResolution::presentation</definition>
         <argsstring></argsstring>
         <name>presentation</name>
+        <qualifiedname>ADLX_CustomResolution::presentation</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -69,6 +73,7 @@
         <definition>ADLX_TIMING_STANDARD ADLX_CustomResolution::timingStandard</definition>
         <argsstring></argsstring>
         <name>timingStandard</name>
+        <qualifiedname>ADLX_CustomResolution::timingStandard</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -84,6 +89,7 @@
         <definition>adlx_long ADLX_CustomResolution::GPixelClock</definition>
         <argsstring></argsstring>
         <name>GPixelClock</name>
+        <qualifiedname>ADLX_CustomResolution::GPixelClock</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -99,6 +105,7 @@
         <definition>ADLX_TimingInfo ADLX_CustomResolution::detailedTiming</definition>
         <argsstring></argsstring>
         <name>detailedTiming</name>
+        <qualifiedname>ADLX_CustomResolution::detailedTiming</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -109,23 +116,23 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ADLXStructures.h" line="138" column="21" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ADLXStructures.h" bodystart="138" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>This structure contains information for custom resolution parameters on a given display. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="2">
-        <label>ADLX_TimingInfo</label>
-        <link refid="struct_a_d_l_x___timing_info"/>
-      </node>
       <node id="1">
         <label>ADLX_CustomResolution</label>
         <link refid="struct_a_d_l_x___custom_resolution"/>
         <childnode refid="2" relation="usage">
           <edgelabel>detailedTiming</edgelabel>
         </childnode>
+      </node>
+      <node id="2">
+        <label>ADLX_TimingInfo</label>
+        <link refid="struct_a_d_l_x___timing_info"/>
       </node>
     </collaborationgraph>
     <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ADLXStructures.h" line="130" column="1" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ADLXStructures.h" bodystart="131" bodyend="139"/>

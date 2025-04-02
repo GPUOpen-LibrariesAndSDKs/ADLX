@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -151,6 +151,14 @@ void GetState(IADLXInterfacePtr& vramTuningIfc)
         res = vramTuning2->GetMaxVRAMFrequencyRange(&rang);
         std::cout << "\tMax VRAM frequency range: [" << rang.minValue << " , " << rang.maxValue << " ], step: " << rang.step 
                   << ", return code is: "<< res << "(0 means success)" << std::endl;
+        IADLXManualVRAMTuning2_1Ptr vramTuning2_1(vramTuning2);
+        if (vramTuning2_1)
+        {
+            res = vramTuning2_1->GetMaxVRAMFrequencyDefault(&freq);
+            std::cout << "\tDefault Max VRAM frequency: " << freq << ", return code is: " << res << "(0 means success)" << std::endl;
+
+        }
+
     }
     else if (vramTuning1)
     {

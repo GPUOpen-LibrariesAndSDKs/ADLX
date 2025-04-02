@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x3_d_morphological_anti_aliasing" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLX3DMorphologicalAntiAliasing</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_morphological_anti_aliasing_1afc2eedf9d43312256666ab74c974b925" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DMorphologicalAntiAliasing::IsSupported</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupported</name>
+        <qualifiedname>adlx::IADLX3DMorphologicalAntiAliasing::IsSupported</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -19,13 +20,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="1701" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="1717" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_morphological_anti_aliasing_1a8ae330a1db718e3e56b1ae2f9d26a53c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DMorphologicalAntiAliasing::IsEnabled</definition>
         <argsstring>(adlx_bool *isEnabled)=0</argsstring>
         <name>IsEnabled</name>
+        <qualifiedname>adlx::IADLX3DMorphologicalAntiAliasing::IsEnabled</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isEnabled</declname>
@@ -36,13 +38,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="1731" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="1747" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_morphological_anti_aliasing_1a3b6892d33f9582abdb2c47311d4b51a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DMorphologicalAntiAliasing::SetEnabled</definition>
         <argsstring>(adlx_bool enable)=0</argsstring>
         <name>SetEnabled</name>
+        <qualifiedname>adlx::IADLX3DMorphologicalAntiAliasing::SetEnabled</qualifiedname>
         <param>
           <type>adlx_bool</type>
           <declname>enable</declname>
@@ -53,14 +56,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="1761" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="1777" column="51"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="1668" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="1669" bodyend="1762"/>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="1684" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="1685" bodyend="1778"/>
     <listofallmembers>
       <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DMorphologicalAntiAliasing</scope><name>Acquire</name></member>
       <member refid="classadlx_1_1_i_a_d_l_x3_d_morphological_anti_aliasing_1a8ae330a1db718e3e56b1ae2f9d26a53c" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DMorphologicalAntiAliasing</scope><name>IsEnabled</name></member>

@@ -31,6 +31,7 @@ var group__enumerations =
     [ "ADLX_PIXEL_FORMAT", "group__enumerations.html#gaa0e9deb1567713f1044419070f2949ab"],
     [ "ADLX_RESULT", "group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0"],
     [ "ADLX_SCALE_MODE", "group__enumerations.html#ga0ec0640b97efee73b589bf0b1c07a8fe"],
+    [ "ADLX_SMARTSHIFT_ECO_INACTIVE_REASON", "group__enumerations.html#ga2bf5d9b0977f2d6f0091088a797953a0"],
     [ "ADLX_SSM_BIAS_MODE", "group__enumerations.html#gae2895828b9a8b0345e1fb8bf416ff1b4"],
     [ "ADLX_SYNC_ORIGIN", "group__enumerations.html#ga7a1e20106faef482c0664c546e04ba00"],
     [ "ADLX_TESSELLATION_LEVEL", "group__enumerations.html#ga5967c593434c0cba5891c996d64cff5c"],

@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXGPUMetrics</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_g_p_u_metrics1" prot="public" virt="non-virtual">adlx::IADLXGPUMetrics1</derivedcompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_metrics_1a9bebbe299414aae709d8dd49c20beb86" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetrics::TimeStamp</definition>
         <argsstring>(adlx_int64 *ms)=0</argsstring>
         <name>TimeStamp</name>
+        <qualifiedname>adlx::IADLXGPUMetrics::TimeStamp</qualifiedname>
         <param>
           <type>adlx_int64 *</type>
           <declname>ms</declname>
@@ -27,6 +28,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetrics::GPUUsage</definition>
         <argsstring>(adlx_double *data)=0</argsstring>
         <name>GPUUsage</name>
+        <qualifiedname>adlx::IADLXGPUMetrics::GPUUsage</qualifiedname>
         <param>
           <type>adlx_double *</type>
           <declname>data</declname>
@@ -44,6 +46,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetrics::GPUClockSpeed</definition>
         <argsstring>(adlx_int *data)=0</argsstring>
         <name>GPUClockSpeed</name>
+        <qualifiedname>adlx::IADLXGPUMetrics::GPUClockSpeed</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>data</declname>
@@ -61,6 +64,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetrics::GPUVRAMClockSpeed</definition>
         <argsstring>(adlx_int *data)=0</argsstring>
         <name>GPUVRAMClockSpeed</name>
+        <qualifiedname>adlx::IADLXGPUMetrics::GPUVRAMClockSpeed</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>data</declname>
@@ -78,6 +82,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetrics::GPUTemperature</definition>
         <argsstring>(adlx_double *data)=0</argsstring>
         <name>GPUTemperature</name>
+        <qualifiedname>adlx::IADLXGPUMetrics::GPUTemperature</qualifiedname>
         <param>
           <type>adlx_double *</type>
           <declname>data</declname>
@@ -95,6 +100,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetrics::GPUHotspotTemperature</definition>
         <argsstring>(adlx_double *data)=0</argsstring>
         <name>GPUHotspotTemperature</name>
+        <qualifiedname>adlx::IADLXGPUMetrics::GPUHotspotTemperature</qualifiedname>
         <param>
           <type>adlx_double *</type>
           <declname>data</declname>
@@ -112,6 +118,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetrics::GPUPower</definition>
         <argsstring>(adlx_double *data)=0</argsstring>
         <name>GPUPower</name>
+        <qualifiedname>adlx::IADLXGPUMetrics::GPUPower</qualifiedname>
         <param>
           <type>adlx_double *</type>
           <declname>data</declname>
@@ -129,6 +136,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetrics::GPUTotalBoardPower</definition>
         <argsstring>(adlx_double *data)=0</argsstring>
         <name>GPUTotalBoardPower</name>
+        <qualifiedname>adlx::IADLXGPUMetrics::GPUTotalBoardPower</qualifiedname>
         <param>
           <type>adlx_double *</type>
           <declname>data</declname>
@@ -146,6 +154,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetrics::GPUFanSpeed</definition>
         <argsstring>(adlx_int *data)=0</argsstring>
         <name>GPUFanSpeed</name>
+        <qualifiedname>adlx::IADLXGPUMetrics::GPUFanSpeed</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>data</declname>
@@ -163,6 +172,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetrics::GPUVRAM</definition>
         <argsstring>(adlx_int *data)=0</argsstring>
         <name>GPUVRAM</name>
+        <qualifiedname>adlx::IADLXGPUMetrics::GPUVRAM</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>data</declname>
@@ -180,6 +190,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetrics::GPUVoltage</definition>
         <argsstring>(adlx_int *data)=0</argsstring>
         <name>GPUVoltage</name>
+        <qualifiedname>adlx::IADLXGPUMetrics::GPUVoltage</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>data</declname>
@@ -197,6 +208,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUMetrics::GPUIntakeTemperature</definition>
         <argsstring>(adlx_double *data)=0</argsstring>
         <name>GPUIntakeTemperature</name>
+        <qualifiedname>adlx::IADLXGPUMetrics::GPUIntakeTemperature</qualifiedname>
         <param>
           <type>adlx_double *</type>
           <declname>data</declname>
@@ -209,7 +221,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1074" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

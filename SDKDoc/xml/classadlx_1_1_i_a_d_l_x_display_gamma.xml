@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_display_gamma" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXDisplayGamma</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_gamma_1ab7fde183bcf5787f46df19b86462e314" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsCurrentReGammaRamp</definition>
         <argsstring>(adlx_bool *isReGammaRamp)=0</argsstring>
         <name>IsCurrentReGammaRamp</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::IsCurrentReGammaRamp</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isReGammaRamp</declname>
@@ -26,6 +27,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsCurrentDeGammaRamp</definition>
         <argsstring>(adlx_bool *isDeGammaRamp)=0</argsstring>
         <name>IsCurrentDeGammaRamp</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::IsCurrentDeGammaRamp</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isDeGammaRamp</declname>
@@ -43,6 +45,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsCurrentRegammaCoefficient</definition>
         <argsstring>(adlx_bool *isRegammaCoeff)=0</argsstring>
         <name>IsCurrentRegammaCoefficient</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::IsCurrentRegammaCoefficient</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isRegammaCoeff</declname>
@@ -60,6 +63,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::GetGammaRamp</definition>
         <argsstring>(ADLX_GammaRamp *lut)=0</argsstring>
         <name>GetGammaRamp</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::GetGammaRamp</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___gamma_ramp" kindref="compound">ADLX_GammaRamp</ref> *</type>
           <declname>lut</declname>
@@ -77,6 +81,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::GetGammaCoefficient</definition>
         <argsstring>(ADLX_RegammaCoeff *coeff)=0</argsstring>
         <name>GetGammaCoefficient</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::GetGammaCoefficient</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___regamma_coeff" kindref="compound">ADLX_RegammaCoeff</ref> *</type>
           <declname>coeff</declname>
@@ -94,6 +99,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsSupportedReGammaSRGB</definition>
         <argsstring>(adlx_bool *isSupportedRegammaSRGB)=0</argsstring>
         <name>IsSupportedReGammaSRGB</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::IsSupportedReGammaSRGB</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isSupportedRegammaSRGB</declname>
@@ -111,6 +117,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsSupportedReGammaBT709</definition>
         <argsstring>(adlx_bool *isSupportedReGammaBT709)=0</argsstring>
         <name>IsSupportedReGammaBT709</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::IsSupportedReGammaBT709</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isSupportedReGammaBT709</declname>
@@ -128,6 +135,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsSupportedReGammaPQ</definition>
         <argsstring>(adlx_bool *isSupportedReGammaPQ)=0</argsstring>
         <name>IsSupportedReGammaPQ</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::IsSupportedReGammaPQ</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isSupportedReGammaPQ</declname>
@@ -145,6 +153,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsSupportedReGammaPQ2084Interim</definition>
         <argsstring>(adlx_bool *isSupportedReGammaPQ2084Interim)=0</argsstring>
         <name>IsSupportedReGammaPQ2084Interim</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::IsSupportedReGammaPQ2084Interim</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isSupportedReGammaPQ2084Interim</declname>
@@ -162,6 +171,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsSupportedReGamma36</definition>
         <argsstring>(adlx_bool *isSupportedReGamma36)=0</argsstring>
         <name>IsSupportedReGamma36</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::IsSupportedReGamma36</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isSupportedReGamma36</declname>
@@ -179,6 +189,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsCurrentReGammaSRGB</definition>
         <argsstring>(adlx_bool *isCurrentReGammaSRGB)=0</argsstring>
         <name>IsCurrentReGammaSRGB</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::IsCurrentReGammaSRGB</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isCurrentReGammaSRGB</declname>
@@ -196,6 +207,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsCurrentReGammaBT709</definition>
         <argsstring>(adlx_bool *isCurrentReGammaBT709)=0</argsstring>
         <name>IsCurrentReGammaBT709</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::IsCurrentReGammaBT709</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isCurrentReGammaBT709</declname>
@@ -213,6 +225,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsCurrentReGammaPQ</definition>
         <argsstring>(adlx_bool *isCurrentReGammaPQ)=0</argsstring>
         <name>IsCurrentReGammaPQ</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::IsCurrentReGammaPQ</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isCurrentReGammaPQ</declname>
@@ -230,6 +243,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsCurrentReGammaPQ2084Interim</definition>
         <argsstring>(adlx_bool *isCurrentReGammaPQ2084Interim)=0</argsstring>
         <name>IsCurrentReGammaPQ2084Interim</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::IsCurrentReGammaPQ2084Interim</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isCurrentReGammaPQ2084Interim</declname>
@@ -247,6 +261,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::IsCurrentReGamma36</definition>
         <argsstring>(adlx_bool *isCurrentReGamma36)=0</argsstring>
         <name>IsCurrentReGamma36</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::IsCurrentReGamma36</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isCurrentReGamma36</declname>
@@ -264,6 +279,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetReGammaSRGB</definition>
         <argsstring>()=0</argsstring>
         <name>SetReGammaSRGB</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::SetReGammaSRGB</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -277,6 +293,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetReGammaBT709</definition>
         <argsstring>()=0</argsstring>
         <name>SetReGammaBT709</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::SetReGammaBT709</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -290,6 +307,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetReGammaPQ</definition>
         <argsstring>()=0</argsstring>
         <name>SetReGammaPQ</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::SetReGammaPQ</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -303,6 +321,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetReGammaPQ2084Interim</definition>
         <argsstring>()=0</argsstring>
         <name>SetReGammaPQ2084Interim</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::SetReGammaPQ2084Interim</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -316,6 +335,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetReGamma36</definition>
         <argsstring>()=0</argsstring>
         <name>SetReGamma36</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::SetReGamma36</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -329,6 +349,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetReGammaCoefficient</definition>
         <argsstring>(ADLX_RegammaCoeff coeff)=0</argsstring>
         <name>SetReGammaCoefficient</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::SetReGammaCoefficient</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___regamma_coeff" kindref="compound">ADLX_RegammaCoeff</ref></type>
           <declname>coeff</declname>
@@ -346,6 +367,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetDeGammaRamp</definition>
         <argsstring>(const char *path)=0</argsstring>
         <name>SetDeGammaRamp</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::SetDeGammaRamp</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>path</declname>
@@ -363,6 +385,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetDeGammaRamp</definition>
         <argsstring>(ADLX_GammaRamp gammaRamp)=0</argsstring>
         <name>SetDeGammaRamp</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::SetDeGammaRamp</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___gamma_ramp" kindref="compound">ADLX_GammaRamp</ref></type>
           <declname>gammaRamp</declname>
@@ -380,6 +403,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetReGammaRamp</definition>
         <argsstring>(const char *path)=0</argsstring>
         <name>SetReGammaRamp</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::SetReGammaRamp</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>path</declname>
@@ -397,6 +421,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::SetReGammaRamp</definition>
         <argsstring>(ADLX_GammaRamp gammaRamp)=0</argsstring>
         <name>SetReGammaRamp</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::SetReGammaRamp</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___gamma_ramp" kindref="compound">ADLX_GammaRamp</ref></type>
           <declname>gammaRamp</declname>
@@ -414,6 +439,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayGamma::ResetGammaRamp</definition>
         <argsstring>()=0</argsstring>
         <name>ResetGammaRamp</name>
+        <qualifiedname>adlx::IADLXDisplayGamma::ResetGammaRamp</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -422,7 +448,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplayGamma.h" line="629" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

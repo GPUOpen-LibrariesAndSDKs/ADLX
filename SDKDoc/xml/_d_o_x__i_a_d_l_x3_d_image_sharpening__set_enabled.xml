@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="_d_o_x__i_a_d_l_x3_d_image_sharpening__set_enabled" kind="page">
     <compoundname>DOX_IADLX3DImageSharpening_SetEnabled</compoundname>
     <title>SetEnabled</title>
@@ -7,7 +7,6 @@
 <para>Sets AMD Radeon™ Image Sharpening to enabled or disabled on a GPU. </para>
     </briefdescription>
     <detaileddescription>
-<para>Sets AMD Radeon™ Image Sharpening to enabled or disabled on a GPU.</para>
 <para><heading level="2">Syntax </heading>
 </para>
 <para><preformatted>
@@ -41,7 +40,9 @@
 </para>
 <para><heading level="2">Dependent Interfaces </heading>
 </para>
-<para>On some AMD GPUs, AMD Radeon 3D Image Sharpening is mutually exclusive with <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref>.<linebreak/>
+<para>If AMD Radeon Image Sharpening is enabled in the GPU used by a video application, the <ref refid="_d_o_x__i_a_d_l_x_video_upscale" kindref="compound">video upscale</ref> settings will be ignored.<linebreak/>
+</para>
+<para>On some AMD GPUs, AMD Radeon 3D Image Sharpening cannot be simultaneously enabled with <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon Super Resolution</ref>.<linebreak/>
 </para>
 <para>When AMD Radeon 3D Image Sharpening is enabled, the mutually exclusive features are automatically disabled. If a mutually exclusive feature is re-enabled, its previous configuration settings are restored.<linebreak/>
 </para>

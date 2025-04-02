@@ -1,14 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_display_services2" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXDisplayServices2</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXDisplayServices1</basecompoundref>
-      <sectiondef kind="public-func">
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display_services3" prot="public" virt="non-virtual">adlx::IADLXDisplayServices3</derivedcompoundref>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_services2_1a1508368f3fb6e3ff21b4bf4b6fbc6b13" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayServices2::GetDisplayConnectivityExperience</definition>
         <argsstring>(IADLXDisplay *pDisplay, IADLXDisplayConnectivityExperience **ppDisplayConnectivityExperience)=0</argsstring>
         <name>GetDisplayConnectivityExperience</name>
+        <qualifiedname>adlx::IADLXDisplayServices2::GetDisplayConnectivityExperience</qualifiedname>
         <param>
           <type>IADLXDisplay *</type>
           <declname>pDisplay</declname>
@@ -25,7 +27,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplays2.h" line="55" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

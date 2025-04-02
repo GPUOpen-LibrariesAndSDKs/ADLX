@@ -1,20 +1,48 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="page_guide_usingservice" kind="page">
     <compoundname>page_guide_usingservice</compoundname>
-    <title>Using ADLX in a system service application</title>
+    <title>Using ADLX in a Windows system service application</title>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>While ADLX cannot be used directly in a system service application, its functionality can be accessed in a system service application through a user mode process. A communication mechanism between the user mode process and the system service, such as shared memory, will provide the ADLX functionality to the system service.</para>
-<para>To use ADLX in a system service,<orderedlist>
-<listitem><para>Create a system service application.</para>
-<para><bold>Note:</bold> For more information on how to create a system service in C++, see <ref refid="domain_cpp_sample_servicecall" kindref="compound">ServiceCall C++ sample</ref>. For more information on how to create a system service in C, see <ref refid="domain_c_sample_servicecall" kindref="compound">ServiceCall C sample</ref>.</para>
-</listitem><listitem><para>In the system service, start a thread to complete the service work, such as ServiceWorkerThread.</para>
-</listitem><listitem><para>On the ServiceWorkerThread, get the token of the current process to create a user process using CreateProcessAsUserW.</para>
-<para><bold>Note:</bold> For more information on how to create a user process into a service application in C++, see <ref refid="cpp_sample_userprocess" kindref="compound">UserProcess C++ sample</ref>. For more information on how to create a user process into a service application in C, see <ref refid="c_sample_userprocess" kindref="compound">UserProcess C sample</ref>.</para>
-</listitem><listitem><para>In user mode, process load ADLX and implement the desired functionality.</para>
-</listitem><listitem><para>In user mode, process implement a communication mechanism suitable for communicating with the system service – such as shared memory – and tie the ADLX data with the communication mechanism.</para>
+<para>ADLX v1.4 and above can be used directly in a Windows system service application, providing access to limited ADLX functionality.</para>
+<para>Refer to <ulink url="#v13">ADLX v1.3 and below</ulink> if the Windows system service application requires ADLX functionality that is not available when ADLX runs in Session 0.</para>
+<para><heading level="2">ADLX v1.4 and above</heading>
+</para>
+<para>When ADLX v1.4 and above runs in a Windows system service application, the following functionality is available:<itemizedlist>
+<listitem><para><ref refid="page__a_d_l_x_helps" kindref="compound">ADLX Helpers</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system" kindref="compound">IADLXSystem</ref></para>
+</listitem><listitem><para><ref refid="gpu" kindref="compound">GPU information</ref></para>
+</listitem><listitem><para><ref refid="gputuning" kindref="compound">GPU Tuning functionality</ref></para>
+</listitem><listitem><para><ref refid="perfmonitoring" kindref="compound">Performance Monitoring functionality</ref></para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Note:</bold> When running in Session 0, ADLX cannot be initialized with an ADL context.<linebreak/>
+ See <ref refid="page_guide_use__a_d_l_x" kindref="compound">Using ADLX in an ADL application</ref> for more information for initializing ADLX with an ADL context.</para>
+<para><heading level="2"><anchor id="_1v13"/>ADLX v1.3 and below</heading>
+</para>
+<para>ADLX v1.3 and below cannot be used directly in a Windows system service application. However, ADLX functionality can be accessed in a system service application through a user mode process.<linebreak/>
+</para>
+<para>The functions are provided through a communication mechanism between the user mode process and the system service (such as shared memory).<linebreak/>
+</para>
+<para>To use ADLX v1.3 and below in a system service application,<orderedlist>
+<listitem><para>Create a system service application.<linebreak/>
+<itemizedlist>
+<listitem><para>For more information on how to create a system service application in C++, see <ref refid="domain_cpp_sample_servicecall" kindref="compound">ServiceCall C++ sample</ref>.<linebreak/>
+</para>
+</listitem><listitem><para>For more information on how to create a system service application in C, see <ref refid="domain_c_sample_servicecall" kindref="compound">ServiceCall C sample</ref>.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>In the system service application, start a thread to complete the service work, such as <computeroutput>ServiceWorkerThread</computeroutput>.</para>
+</listitem><listitem><para>On the <computeroutput>ServiceWorkerThread</computeroutput>, get the token of the current process to create a user process using <computeroutput>CreateProcessAsUserW</computeroutput>.<itemizedlist>
+<listitem><para>For more information on how to create a user process into a service application in C++, see <ref refid="cpp_sample_userprocess" kindref="compound">UserProcess C++ sample</ref>.<linebreak/>
+</para>
+</listitem><listitem><para>For more information on how to create a user process into a service application in C, see <ref refid="c_sample_userprocess" kindref="compound">UserProcess C sample</ref>.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>In the user mode process, load ADLX and implement the desired functionality.</para>
+</listitem><listitem><para>In the user mode process, implement a communication mechanism suitable for communicating with the system service (such as shared memory) and tie the ADLX data with the communication mechanism.</para>
 </listitem><listitem><para>Run the user mode process and the service application.</para>
 </listitem></orderedlist>
 </para>

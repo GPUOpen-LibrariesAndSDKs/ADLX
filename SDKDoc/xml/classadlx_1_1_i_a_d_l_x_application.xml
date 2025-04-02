@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_application" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXApplication</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_application_1a154204be430d2dcd106477ace3567bbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXApplication::ProcessID</definition>
+        <argsstring>(adlx_ulong *pid)=0</argsstring>
+        <name>ProcessID</name>
+        <qualifiedname>adlx::IADLXApplication::ProcessID</qualifiedname>
+        <param>
+          <type>adlx_ulong *</type>
+          <declname>pid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IApplications.h" line="49" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_application_1a435a30b88ad8e34c65d6b0a6a1296acb" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXApplication::Name</definition>
+        <argsstring>(const wchar_t **ppAppName)=0</argsstring>
+        <name>Name</name>
+        <qualifiedname>adlx::IADLXApplication::Name</qualifiedname>
+        <param>
+          <type>const wchar_t **</type>
+          <declname>ppAppName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IApplications.h" line="75" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_application_1a1b34098d001c49511d68440c12ec674b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXApplication::FullPath</definition>
+        <argsstring>(const wchar_t **ppAppPath)=0</argsstring>
+        <name>FullPath</name>
+        <qualifiedname>adlx::IADLXApplication::FullPath</qualifiedname>
+        <param>
+          <type>const wchar_t **</type>
+          <declname>ppAppPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IApplications.h" line="101" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_application_1afb3ce01b3e8a85a8bdea249544e15acb" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXApplication::GPUDependencyType</definition>
+        <argsstring>(ADLX_APP_GPU_DEPENDENCY *gpuDependency)=0</argsstring>
+        <name>GPUDependencyType</name>
+        <qualifiedname>adlx::IADLXApplication::GPUDependencyType</qualifiedname>
+        <param>
+          <type><ref refid="group__enumerations_1gaf6c76078b265ef8526edd967e45ce15a" kindref="member">ADLX_APP_GPU_DEPENDENCY</ref> *</type>
+          <declname>gpuDependency</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IApplications.h" line="127" column="43"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IApplications.h" line="20" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IApplications.h" bodystart="21" bodyend="128"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXApplication</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_application_1a1b34098d001c49511d68440c12ec674b" prot="public" virt="pure-virtual"><scope>adlx::IADLXApplication</scope><name>FullPath</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_application_1afb3ce01b3e8a85a8bdea249544e15acb" prot="public" virt="pure-virtual"><scope>adlx::IADLXApplication</scope><name>GPUDependencyType</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_application_1a435a30b88ad8e34c65d6b0a6a1296acb" prot="public" virt="pure-virtual"><scope>adlx::IADLXApplication</scope><name>Name</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_application_1a154204be430d2dcd106477ace3567bbe" prot="public" virt="pure-virtual"><scope>adlx::IADLXApplication</scope><name>ProcessID</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXApplication</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXApplication</scope><name>Release</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

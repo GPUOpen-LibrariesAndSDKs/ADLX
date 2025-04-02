@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -7,8 +7,7 @@
 /// \brief Demonstrates how to control GPU metrics when programming with ADLX.
 
 #include "SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
-#include "SDK/Include/IPerformanceMonitoring.h"
-#include "SDK/Include/IPerformanceMonitoring2.h"
+#include "SDK/Include/IPerformanceMonitoring3.h"
 #include <iostream>
 
 // Use ADLX namespace
@@ -270,6 +269,16 @@ void ShowGPUMetricsRange(IADLXPerformanceMonitoringServicesPtr perfMonitoringSer
                 std::cout << "The NPU frequency between " << minValue << "MHz and " << maxValue << "MHz" << std::endl;
             else if (res == ADLX_NOT_SUPPORTED)
                 std::cout << "Don't support NPU frequency range" << std::endl;
+        }
+        IADLXGPUMetricsSupport2Ptr gpuMetricsSupport2(gpuMetricsSupport);
+        if (gpuMetricsSupport2)
+        {
+            // Get shared GPU memory range
+            res = gpuMetricsSupport2->GetGPUSharedMemoryRange(&minValue, &maxValue);
+            if (ADLX_SUCCEEDED(res))
+                std::cout << "The shared GPU memory range between " << minValue << "MB and " << maxValue << "MB" << std::endl;
+            else if (res == ADLX_NOT_SUPPORTED)
+                std::cout << "Don't support shared GPU memory range" << std::endl;
         }
     }
 }
@@ -570,6 +579,31 @@ void ShowNPUFrequency(IADLXGPUMetricsSupportPtr gpuMetricsSupport, IADLXGPUMetri
     }
 }
 
+// Display the shared GPU memory(in MB)
+void ShowSharedGPUMemory(IADLXGPUMetricsSupportPtr gpuMetricsSupport, IADLXGPUMetricsPtr gpuMetrics)
+{
+    adlx_bool supported = false;
+
+    IADLXGPUMetricsSupport2Ptr gpuMetricsSupport2(gpuMetricsSupport);
+    IADLXGPUMetrics2Ptr gpuMetrics2(gpuMetrics);
+    if (gpuMetricsSupport2 && gpuMetrics2)
+    {
+        // Display the shared GPU memory support status
+        ADLX_RESULT res = gpuMetricsSupport2->IsSupportedGPUSharedMemory(&supported);
+        if (ADLX_SUCCEEDED(res))
+        {
+            std::cout << "shared GPU memory support status: " << supported << std::endl;
+            if (supported)
+            {
+                adlx_int data = 0;
+                res = gpuMetrics2->GPUSharedMemory(&data);
+                if (ADLX_SUCCEEDED(res))
+                    std::cout << "The shared GPU memory is: " << data << "MB" << std::endl;
+            }
+        }
+    }
+}
+
 // Display current GPU metrics
 void ShowCurrentGPUMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitoringServices, IADLXGPUPtr oneGPU)
 {
@@ -606,6 +640,7 @@ void ShowCurrentGPUMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitoringS
             ShowGPUMemoryTemperature(gpuMetricsSupport, gpuMetrics);
             ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
             ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
+            ShowSharedGPUMemory(gpuMetricsSupport, gpuMetrics);
             std::cout << std::noboolalpha;
         }
         Sleep(1000);
@@ -643,7 +678,6 @@ void ShowCurrentGPUMetricsFromHistorical(IADLXPerformanceMonitoringServicesPtr p
     {
         // Clear screen
         system("cls");
-
         IADLXGPUMetricsListPtr gpuMetricsList;
         res = perfMonitoringServices->GetGPUMetricsHistory(oneGPU, startMs, stopMs, &gpuMetricsList);
 
@@ -672,6 +706,7 @@ void ShowCurrentGPUMetricsFromHistorical(IADLXPerformanceMonitoringServicesPtr p
                 ShowGPUMemoryTemperature(gpuMetricsSupport, gpuMetrics);
                 ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
                 ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
+                ShowSharedGPUMemory(gpuMetricsSupport, gpuMetrics);
                 std::cout << std::noboolalpha;
             }
             std::cout << std::endl;
@@ -747,6 +782,7 @@ void ShowHistoricalGPUMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitori
                 ShowGPUMemoryTemperature(gpuMetricsSupport, gpuMetrics);
                 ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
                 ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
+                ShowSharedGPUMemory(gpuMetricsSupport, gpuMetrics);
                 std::cout << std::noboolalpha;
             }
             std::cout << std::endl;

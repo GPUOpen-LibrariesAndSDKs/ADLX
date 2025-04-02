@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -30,6 +30,9 @@ void ShowGetPowerLimitRange(IADLXManualPowerTuning* manualPowerTuning);
 // Display current power limit
 void ShowGetPowerLimit(IADLXManualPowerTuning* manualPowerTuning);
 
+// Display default power limit
+void ShowGetPowerLimitDefault(IADLXManualPowerTuning* manualPowerTuning);
+
 // Set power limit
 void ShowSetPowerLimit(IADLXManualPowerTuning* manualPowerTuning);
 
@@ -41,6 +44,9 @@ void ShowGetTDCLimitRange(IADLXManualPowerTuning* manualPowerTuning);
 
 // Show how to get current TDC limit.
 void ShowGetTDCLimit(IADLXManualPowerTuning* manualPowerTuning);
+
+// Show how to get default TDC limit.
+void ShowGetTDCLimitDefault(IADLXManualPowerTuning* manualPowerTuning);
 
 // Show how to set TDC limit.
 void ShowSetTDCLimit(IADLXManualPowerTuning* manualPowerTuning);
@@ -148,6 +154,8 @@ void MainMenu()
     printf("\t->Press 5 to display TDC limit range\n");
     printf("\t->Press 6 to display current TDC limit\n");
     printf("\t->Press 7 to set TDC limit\n");
+    printf("\t->Press 8 to display default power limit\n");
+    printf("\t->Press 9 to display default TDC limit\n");
     printf("\t->Press Q/q to terminate the application\n");
     printf("\t->Press M/m to display main menu options\n");
 }
@@ -190,7 +198,14 @@ void MenuControl(IADLXManualPowerTuning* manualPowerTuning)
         case '7':
             ShowSetTDCLimit(manualPowerTuning);
             break;
-
+            // Display default power limit
+        case '8':
+            ShowGetPowerLimitDefault(manualPowerTuning);
+            break;
+            // Show how to get default TDC limit.
+        case '9':
+            ShowGetTDCLimitDefault(manualPowerTuning);
+            break;
         // Display menu options
         case 'm':
         case 'M':
@@ -265,6 +280,22 @@ void ShowGetPowerLimit(IADLXManualPowerTuning* manualPowerTuning)
     printf("\tCurrent power limit: %d, return code is: %d(0 means success)\n", powerLimit, res);
 }
 
+// Display default power limit
+void ShowGetPowerLimitDefault(IADLXManualPowerTuning* manualPowerTuning)
+{
+    IADLXManualPowerTuning1* manualPowerTuning1;
+    manualPowerTuning->pVtbl->QueryInterface(manualPowerTuning, IID_IADLXManualPowerTuning1(), (void**)&manualPowerTuning1);
+    if (manualPowerTuning1)
+    {
+        adlx_int powerLimit;
+        ADLX_RESULT res = manualPowerTuning1->pVtbl->GetPowerLimitDefault(manualPowerTuning1, &powerLimit);
+        printf("\tDefault power limit: %d, return code is: %d(0 means success)\n", powerLimit, res);
+        // release manualPowerTuning1
+        manualPowerTuning1->pVtbl->Release(manualPowerTuning1);
+        manualPowerTuning1 = NULL;
+    }
+}
+
 // Set power limit
 void ShowSetPowerLimit(IADLXManualPowerTuning* manualPowerTuning)
 {
@@ -300,6 +331,22 @@ void ShowGetTDCLimit(IADLXManualPowerTuning* manualPowerTuning)
     adlx_int tdcLimit;
     ADLX_RESULT res = manualPowerTuning->pVtbl->GetTDCLimit(manualPowerTuning, &tdcLimit);
     printf("\tThe current TDC limit is: %d, return code is: %d (0 means success)\n", tdcLimit, res);
+}
+
+// Show how to get default TDC limit.
+void ShowGetTDCLimitDefault(IADLXManualPowerTuning* manualPowerTuning)
+{
+    IADLXManualPowerTuning1* manualPowerTuning1;
+    manualPowerTuning->pVtbl->QueryInterface(manualPowerTuning, IID_IADLXManualPowerTuning1(), (void**)&manualPowerTuning1);
+    if (manualPowerTuning1)
+    {
+        adlx_int tdcLimit;
+        ADLX_RESULT res = manualPowerTuning1->pVtbl->GetTDCLimitDefault(manualPowerTuning1, &tdcLimit);
+        printf("\tThe default TDC limit is: %d, return code is: %d(0 means success)\n", tdcLimit, res);
+        // release manualPowerTuning1
+        manualPowerTuning1->pVtbl->Release(manualPowerTuning1);
+        manualPowerTuning1 = NULL;
+    }
 }
 
 // Show how to set TDC limit.

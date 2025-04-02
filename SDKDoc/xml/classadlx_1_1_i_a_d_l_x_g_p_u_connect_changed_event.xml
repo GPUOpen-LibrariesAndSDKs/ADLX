@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_event" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXGPUConnectChangedEvent</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXChangedEvent</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_event_1a53021cb67224bba8ad9d7b1285dc110b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUConnectChangedEvent::GetGPU</definition>
+        <argsstring>(IADLXGPU2 **ppGPU)=0</argsstring>
+        <name>GetGPU</name>
+        <qualifiedname>adlx::IADLXGPUConnectChangedEvent::GetGPU</qualifiedname>
+        <param>
+          <type>IADLXGPU2 **</type>
+          <declname>ppGPU</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPowerTuning1.h" line="195" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_event_1a4c68b52a35b19f12f3d397b87d3e9398" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>adlx_bool ADLX_STD_CALL</type>
+        <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXGPUConnectChangedEvent::IsGPUAppsListChanged</definition>
+        <argsstring>()=0</argsstring>
+        <name>IsGPUAppsListChanged</name>
+        <qualifiedname>adlx::IADLXGPUConnectChangedEvent::IsGPUAppsListChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPowerTuning1.h" line="221" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_event_1a943fd4c31c6674786146a3511c09a950" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>adlx_bool ADLX_STD_CALL</type>
+        <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXGPUConnectChangedEvent::IsGPUPowerChanged</definition>
+        <argsstring>()=0</argsstring>
+        <name>IsGPUPowerChanged</name>
+        <qualifiedname>adlx::IADLXGPUConnectChangedEvent::IsGPUPowerChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPowerTuning1.h" line="247" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_event_1a10de609fbab3513e51f5c6116c566696" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>adlx_bool ADLX_STD_CALL</type>
+        <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXGPUConnectChangedEvent::IsGPUPowerChangeError</definition>
+        <argsstring>(ADLX_RESULT *pPowerChangeError)=0</argsstring>
+        <name>IsGPUPowerChangeError</name>
+        <qualifiedname>adlx::IADLXGPUConnectChangedEvent::IsGPUPowerChangeError</qualifiedname>
+        <param>
+          <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> *</type>
+          <declname>pPowerChangeError</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPowerTuning1.h" line="273" column="43"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPowerTuning1.h" line="161" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPowerTuning1.h" bodystart="162" bodyend="274"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUConnectChangedEvent</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_event_1a53021cb67224bba8ad9d7b1285dc110b" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUConnectChangedEvent</scope><name>GetGPU</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_changed_event_1aabba9d15598621fe88ce7ed8712b2380" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUConnectChangedEvent</scope><name>GetOrigin</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_event_1a4c68b52a35b19f12f3d397b87d3e9398" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUConnectChangedEvent</scope><name>IsGPUAppsListChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_event_1a943fd4c31c6674786146a3511c09a950" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUConnectChangedEvent</scope><name>IsGPUPowerChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_event_1a10de609fbab3513e51f5c6116c566696" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUConnectChangedEvent</scope><name>IsGPUPowerChangeError</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUConnectChangedEvent</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXGPUConnectChangedEvent</scope><name>Release</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

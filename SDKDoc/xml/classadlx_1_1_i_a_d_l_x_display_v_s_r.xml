@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_display_v_s_r" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXDisplayVSR</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_v_s_r_1aa2352e5ea552f8a5c8fd7729c7221fe7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayVSR::IsSupported</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupported</name>
+        <qualifiedname>adlx::IADLXDisplayVSR::IsSupported</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -19,13 +20,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="166" column="43"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="165" column="43"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_v_s_r_1aa10a1009e46ed07e9d9d03438eda860c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayVSR::IsEnabled</definition>
         <argsstring>(adlx_bool *enabled)=0</argsstring>
         <name>IsEnabled</name>
+        <qualifiedname>adlx::IADLXDisplayVSR::IsEnabled</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>enabled</declname>
@@ -36,13 +38,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="192" column="43"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="191" column="43"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_v_s_r_1ad89c4f1066484f535b3b5015de0875f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayVSR::SetEnabled</definition>
         <argsstring>(adlx_bool enabled)=0</argsstring>
         <name>SetEnabled</name>
+        <qualifiedname>adlx::IADLXDisplayVSR::SetEnabled</qualifiedname>
         <param>
           <type>adlx_bool</type>
           <declname>enabled</declname>
@@ -53,14 +56,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="218" column="43"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="217" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="137" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="138" bodyend="219"/>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="136" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="137" bodyend="218"/>
     <listofallmembers>
       <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayVSR</scope><name>Acquire</name></member>
       <member refid="classadlx_1_1_i_a_d_l_x_display_v_s_r_1aa10a1009e46ed07e9d9d03438eda860c" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayVSR</scope><name>IsEnabled</name></member>

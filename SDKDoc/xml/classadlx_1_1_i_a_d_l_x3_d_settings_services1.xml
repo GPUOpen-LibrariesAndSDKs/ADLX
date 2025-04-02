@@ -1,14 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x3_d_settings_services1" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLX3DSettingsServices1</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLX3DSettingsServices</basecompoundref>
-      <sectiondef kind="public-func">
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x3_d_settings_services2" prot="public" virt="non-virtual">adlx::IADLX3DSettingsServices2</derivedcompoundref>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_settings_services1_1a2be52a8fcd3455df4403ed4d82f77f45" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DSettingsServices1::GetAMDFluidMotionFrames</definition>
         <argsstring>(IADLX3DAMDFluidMotionFrames **pp3DAMDFluidMotionFrames)=0</argsstring>
         <name>GetAMDFluidMotionFrames</name>
+        <qualifiedname>adlx::IADLX3DSettingsServices1::GetAMDFluidMotionFrames</qualifiedname>
         <param>
           <type>IADLX3DAMDFluidMotionFrames **</type>
           <declname>pp3DAMDFluidMotionFrames</declname>
@@ -19,14 +21,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" line="183" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" line="172" column="51"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" line="152" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" bodystart="153" bodyend="185"/>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" line="141" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" bodystart="142" bodyend="174"/>
     <listofallmembers>
       <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DSettingsServices1</scope><name>Acquire</name></member>
       <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_services_1a4d9cc32accc7a0bdc6167392418daf7e" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DSettingsServices1</scope><name>Get3DSettingsChangedHandling</name></member>

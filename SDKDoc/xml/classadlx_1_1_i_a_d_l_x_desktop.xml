@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_desktop" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXDesktop</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_desktop_1a7bed1e01348127a9f88c8a57410ae767" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDesktop::Orientation</definition>
         <argsstring>(ADLX_ORIENTATION *orientation)=0</argsstring>
         <name>Orientation</name>
+        <qualifiedname>adlx::IADLXDesktop::Orientation</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1gae896c86f4fc55efe4e866450e33465b1" kindref="member">ADLX_ORIENTATION</ref> *</type>
           <declname>orientation</declname>
@@ -26,6 +27,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDesktop::Size</definition>
         <argsstring>(adlx_int *width, adlx_int *height)=0</argsstring>
         <name>Size</name>
+        <qualifiedname>adlx::IADLXDesktop::Size</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>width</declname>
@@ -47,6 +49,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDesktop::TopLeft</definition>
         <argsstring>(ADLX_Point *locationTopLeft)=0</argsstring>
         <name>TopLeft</name>
+        <qualifiedname>adlx::IADLXDesktop::TopLeft</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___point" kindref="compound">ADLX_Point</ref> *</type>
           <declname>locationTopLeft</declname>
@@ -64,6 +67,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDesktop::Type</definition>
         <argsstring>(ADLX_DESKTOP_TYPE *desktopType)=0</argsstring>
         <name>Type</name>
+        <qualifiedname>adlx::IADLXDesktop::Type</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1ga83322f63ada9c973559376760f141b89" kindref="member">ADLX_DESKTOP_TYPE</ref> *</type>
           <declname>desktopType</declname>
@@ -81,6 +85,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDesktop::GetNumberOfDisplays</definition>
         <argsstring>(adlx_uint *numDisplays)=0</argsstring>
         <name>GetNumberOfDisplays</name>
+        <qualifiedname>adlx::IADLXDesktop::GetNumberOfDisplays</qualifiedname>
         <param>
           <type>adlx_uint *</type>
           <declname>numDisplays</declname>
@@ -98,6 +103,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDesktop::GetDisplays</definition>
         <argsstring>(IADLXDisplayList **ppDisplays)=0</argsstring>
         <name>GetDisplays</name>
+        <qualifiedname>adlx::IADLXDesktop::GetDisplays</qualifiedname>
         <param>
           <type>IADLXDisplayList **</type>
           <declname>ppDisplays</declname>
@@ -110,7 +116,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDesktops.h" line="178" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

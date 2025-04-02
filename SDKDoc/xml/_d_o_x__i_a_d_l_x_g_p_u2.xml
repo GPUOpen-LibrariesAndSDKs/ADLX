@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_g_p_u2" kind="page">
+    <compoundname>DOX_IADLXGPU2</compoundname>
+    <title>IADLXGPU2</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u2__a_m_d_software_edition">AMDSoftwareEdition</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u2__a_m_d_software_release_date">AMDSoftwareReleaseDate</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u2__a_m_d_software_version">AMDSoftwareVersion</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u2__a_m_d_windows_driver_version">AMDWindowsDriverVersion</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u2__abort_power_off">AbortPowerOff</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u2__driver_version">DriverVersion</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u2__get_applications">GetApplications</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u2__is_power_off">IsPowerOff</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u2__is_supported_application_list">IsSupportedApplicationList</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u2__l_u_i_d">LUID</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u2__power_on">PowerOn</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u2__start_power_off">StartPowerOff</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXGPU2</bold> is an extension of the <ref refid="_d_o_x__i_a_d_l_x_g_p_u" kindref="compound">IADLXGPU</ref> interface.<linebreak/>
+ This interface provides methods to get:<itemizedlist>
+<listitem><para>GPU driver information</para>
+</listitem><listitem><para>list of applications running on a GPU</para>
+</listitem><listitem><para>AMD GPUConnect functionality on a GPU</para>
+</listitem></itemizedlist>
+</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLXGPU2</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLXGPU2Ptr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u1" kindref="compound">IADLXGPU1</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para>The <bold>IADLXGPU2</bold> interface is obtained from the <ref refid="_d_o_x__i_a_d_l_x_g_p_u" kindref="compound">IADLXGPU</ref> interface or from any of its extension interfaces using <ref refid="_d_o_x__i_a_d_l_x_interface__query_interface" kindref="compound">QueryInterface</ref>.</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="13" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__a_m_d_software_edition" kindref="compound">AMDSoftwareEdition</ref>   </para>
+</entry><entry thead="no"><para>Gets the AMD software edition of a GPU.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__a_m_d_software_release_date" kindref="compound">AMDSoftwareReleaseDate</ref>   </para>
+</entry><entry thead="no"><para>Gets the AMD software release date of a GPU.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__a_m_d_software_version" kindref="compound">AMDSoftwareVersion</ref>   </para>
+</entry><entry thead="no"><para>Gets the AMD software version of a GPU.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__a_m_d_windows_driver_version" kindref="compound">AMDWindowsDriverVersion</ref>   </para>
+</entry><entry thead="no"><para>Gets the AMD Windows driver version of a GPU.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__abort_power_off" kindref="compound">AbortPowerOff</ref>   </para>
+</entry><entry thead="no"><para>Aborts powering off a GPU.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__driver_version" kindref="compound">DriverVersion</ref>   </para>
+</entry><entry thead="no"><para>Gets the driver version of a GPU.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__get_applications" kindref="compound">GetApplications</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted list of applications that run in the context of a GPU.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__is_power_off" kindref="compound">IsPowerOff</ref>   </para>
+</entry><entry thead="no"><para>Checks if a GPU is powered off.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__is_supported_application_list" kindref="compound">IsSupportedApplicationList</ref>   </para>
+</entry><entry thead="no"><para>Checks if reporting the list of applications running on a GPU is supported.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__l_u_i_d" kindref="compound">LUID</ref>   </para>
+</entry><entry thead="no"><para>Gets the local identifier information of a GPU.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__power_on" kindref="compound">PowerOn</ref>   </para>
+</entry><entry thead="no"><para>Powers on a GPU.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__start_power_off" kindref="compound">StartPowerOff</ref>   </para>
+</entry><entry thead="no"><para>Powers off a GPU.      </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;ISystem2.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.4</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp_sseco" kindref="compound">SmartShiftEco C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c_sseco" kindref="compound">SmartShiftEco C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__a_m_d_software_edition" kindref="compound">AMDSoftwareEdition</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__a_m_d_software_release_date" kindref="compound">AMDSoftwareReleaseDate</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__a_m_d_software_version" kindref="compound">AMDSoftwareVersion</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__a_m_d_windows_driver_version" kindref="compound">AMDWindowsDriverVersion</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__abort_power_off" kindref="compound">AbortPowerOff</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__driver_version" kindref="compound">DriverVersion</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__get_applications" kindref="compound">GetApplications</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__is_power_off" kindref="compound">IsPowerOff</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__is_supported_application_list" kindref="compound">IsSupportedApplicationList</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__l_u_i_d" kindref="compound">LUID</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__power_on" kindref="compound">PowerOn</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u2__start_power_off" kindref="compound">StartPowerOff</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXGPUPage.h"/>
+  </compounddef>
+</doxygen>

@@ -34,11 +34,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_d_l_x_defines_8h.html#ga0ec0640b97efee73b589bf0b1c07a8fea52e5d81a538ca03d28c5d3d0dd33662c",
-"_d_o_x__i_a_d_l_x3_d_enhanced_sync__is_supported.html",
-"_d_o_x__i_a_d_l_x_display_gamma__set_re_gamma_ramp_memory.html",
-"_d_o_x__i_a_d_l_x_g_p_u_preset_tuning__is_supported_balanced.html",
-"c__g_p_u_preset_tuning.html",
-"page_guide_languages.html"
+"_d_o_x__i_a_d_l_x3_d_chill__is_supported.html",
+"_d_o_x__i_a_d_l_x_display_free_sync_color_accuracy__set_enabled.html",
+"_d_o_x__i_a_d_l_x_g_p_u_auto_tuning__is_supported_overclock_v_r_a_m.html",
+"_d_o_x__i_a_d_l_x_memory_timing_description_list__at.html",
+"cpp_sample_userprocess.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

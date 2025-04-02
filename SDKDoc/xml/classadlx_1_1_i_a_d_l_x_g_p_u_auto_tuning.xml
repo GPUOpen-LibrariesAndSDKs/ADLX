@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXGPUAutoTuning</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_auto_tuning_1a8a94af9bbd70fb75d6ad5b9a409a8545" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::IsSupportedUndervoltGPU</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedUndervoltGPU</name>
+        <qualifiedname>adlx::IADLXGPUAutoTuning::IsSupportedUndervoltGPU</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -26,6 +27,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::IsSupportedOverclockGPU</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedOverclockGPU</name>
+        <qualifiedname>adlx::IADLXGPUAutoTuning::IsSupportedOverclockGPU</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -43,6 +45,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::IsSupportedOverclockVRAM</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedOverclockVRAM</name>
+        <qualifiedname>adlx::IADLXGPUAutoTuning::IsSupportedOverclockVRAM</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -60,6 +63,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::IsCurrentUndervoltGPU</definition>
         <argsstring>(adlx_bool *isUndervoltGPU)=0</argsstring>
         <name>IsCurrentUndervoltGPU</name>
+        <qualifiedname>adlx::IADLXGPUAutoTuning::IsCurrentUndervoltGPU</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isUndervoltGPU</declname>
@@ -77,6 +81,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::IsCurrentOverclockGPU</definition>
         <argsstring>(adlx_bool *isOverclockGPU)=0</argsstring>
         <name>IsCurrentOverclockGPU</name>
+        <qualifiedname>adlx::IADLXGPUAutoTuning::IsCurrentOverclockGPU</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isOverclockGPU</declname>
@@ -94,6 +99,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::IsCurrentOverclockVRAM</definition>
         <argsstring>(adlx_bool *isOverclockVRAM)=0</argsstring>
         <name>IsCurrentOverclockVRAM</name>
+        <qualifiedname>adlx::IADLXGPUAutoTuning::IsCurrentOverclockVRAM</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isOverclockVRAM</declname>
@@ -111,6 +117,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::StartUndervoltGPU</definition>
         <argsstring>(IADLXGPUAutoTuningCompleteListener *pCompleteListener)=0</argsstring>
         <name>StartUndervoltGPU</name>
+        <qualifiedname>adlx::IADLXGPUAutoTuning::StartUndervoltGPU</qualifiedname>
         <param>
           <type>IADLXGPUAutoTuningCompleteListener *</type>
           <declname>pCompleteListener</declname>
@@ -128,6 +135,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::StartOverclockGPU</definition>
         <argsstring>(IADLXGPUAutoTuningCompleteListener *pCompleteListener)=0</argsstring>
         <name>StartOverclockGPU</name>
+        <qualifiedname>adlx::IADLXGPUAutoTuning::StartOverclockGPU</qualifiedname>
         <param>
           <type>IADLXGPUAutoTuningCompleteListener *</type>
           <declname>pCompleteListener</declname>
@@ -145,6 +153,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUAutoTuning::StartOverclockVRAM</definition>
         <argsstring>(IADLXGPUAutoTuningCompleteListener *pCompleteListener)=0</argsstring>
         <name>StartOverclockVRAM</name>
+        <qualifiedname>adlx::IADLXGPUAutoTuning::StartOverclockVRAM</qualifiedname>
         <param>
           <type>IADLXGPUAutoTuningCompleteListener *</type>
           <declname>pCompleteListener</declname>
@@ -157,7 +166,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUAutoTuning.h" line="424" column="51"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

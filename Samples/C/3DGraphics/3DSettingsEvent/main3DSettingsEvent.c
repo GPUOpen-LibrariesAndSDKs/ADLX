@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -83,6 +83,7 @@ int main()
                 ADLX_RESULT addListenerRes = changeHandle->pVtbl->Add3DSettingsEventListener(changeHandle, &call);
 
                 // Change anti-lag state
+                printf("\nSwitching Anti-Lag status\n");
                 IADLX3DAntiLag* antiLag = NULL;
                 d3dSettingSrv->pVtbl->GetAntiLag(d3dSettingSrv, gpu, &antiLag);
                 adlx_bool enable;

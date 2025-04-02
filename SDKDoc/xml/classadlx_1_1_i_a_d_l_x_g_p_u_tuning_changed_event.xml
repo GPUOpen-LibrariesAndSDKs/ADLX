@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXGPUTuningChangedEvent</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXChangedEvent</basecompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event1" prot="public" virt="non-virtual">adlx::IADLXGPUTuningChangedEvent1</derivedcompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event_1a86153ef95c6e977019f529e9a986455d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUTuningChangedEvent::GetGPU</definition>
         <argsstring>(IADLXGPU **ppGPU)=0</argsstring>
         <name>GetGPU</name>
+        <qualifiedname>adlx::IADLXGPUTuningChangedEvent::GetGPU</qualifiedname>
         <param>
           <type>IADLXGPU **</type>
           <declname>ppGPU</declname>
@@ -27,6 +28,7 @@
         <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXGPUTuningChangedEvent::IsAutomaticTuningChanged</definition>
         <argsstring>()=0</argsstring>
         <name>IsAutomaticTuningChanged</name>
+        <qualifiedname>adlx::IADLXGPUTuningChangedEvent::IsAutomaticTuningChanged</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -40,6 +42,7 @@
         <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXGPUTuningChangedEvent::IsPresetTuningChanged</definition>
         <argsstring>()=0</argsstring>
         <name>IsPresetTuningChanged</name>
+        <qualifiedname>adlx::IADLXGPUTuningChangedEvent::IsPresetTuningChanged</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -53,6 +56,7 @@
         <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXGPUTuningChangedEvent::IsManualGPUCLKTuningChanged</definition>
         <argsstring>()=0</argsstring>
         <name>IsManualGPUCLKTuningChanged</name>
+        <qualifiedname>adlx::IADLXGPUTuningChangedEvent::IsManualGPUCLKTuningChanged</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -66,6 +70,7 @@
         <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXGPUTuningChangedEvent::IsManualVRAMTuningChanged</definition>
         <argsstring>()=0</argsstring>
         <name>IsManualVRAMTuningChanged</name>
+        <qualifiedname>adlx::IADLXGPUTuningChangedEvent::IsManualVRAMTuningChanged</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -79,6 +84,7 @@
         <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXGPUTuningChangedEvent::IsManualFanTuningChanged</definition>
         <argsstring>()=0</argsstring>
         <name>IsManualFanTuningChanged</name>
+        <qualifiedname>adlx::IADLXGPUTuningChangedEvent::IsManualFanTuningChanged</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -92,6 +98,7 @@
         <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXGPUTuningChangedEvent::IsManualPowerTuningChanged</definition>
         <argsstring>()=0</argsstring>
         <name>IsManualPowerTuningChanged</name>
+        <qualifiedname>adlx::IADLXGPUTuningChangedEvent::IsManualPowerTuningChanged</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -100,7 +107,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUTuning.h" line="616" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

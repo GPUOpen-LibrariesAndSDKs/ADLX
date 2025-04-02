@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_system2" kind="page">
+    <compoundname>DOX_IADLXSystem2</compoundname>
+    <title>IADLXSystem2</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system2__get_g_p_u_apps_list_changed_handling">GetGPUAppsListChangedHandling</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_system2__get_multimedia_services">GetMultimediaServices</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXSystem2</bold> is an extension to the <ref refid="_d_o_x__i_a_d_l_x_system" kindref="compound">IADLXSystem</ref> interface, and provides access to the main interface of the Multimedia domain. It allows users to register and unregister for notifications, when the list of applications running on a GPU is changed.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLXSystem2</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLXSystem2Ptr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system1" kindref="compound">IADLXSystem1</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para><bold>Note</bold>:<linebreak/>
+</para>
+<para>The <bold>IADLXSystem2</bold> interface is obtained using <ref refid="_d_o_x__i_a_d_l_x_interface__query_interface" kindref="compound">QueryInterface</ref> from the <ref refid="_d_o_x__i_a_d_l_x_system" kindref="compound">IADLXSystem</ref> using <ref refid="_d_o_x__i_a_d_l_x_system__query_interface" kindref="compound">QueryInterface</ref>, or from any of its extension interfaces.</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="3" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system2__get_g_p_u_apps_list_changed_handling" kindref="compound">GetGPUAppsListChangedHandling</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted interface that allows registering and unregistering for notifications when the list of applications running on a GPU changes.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_system2__get_multimedia_services" kindref="compound">GetMultimediaServices</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted main interface to the <ref refid="_d_o_x__i_a_d_l_x_multimedia_services" kindref="compound">Multimedia</ref> domain.      </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;ISystem2.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.4</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp_sseco" kindref="compound">SmartShiftEco C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c_sseco" kindref="compound">SmartShiftEco C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_system2__get_g_p_u_apps_list_changed_handling" kindref="compound">GetGPUAppsListChangedHandling</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_system2__get_multimedia_services" kindref="compound">GetMultimediaServices</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXSystem2Page.h"/>
+  </compounddef>
+</doxygen>

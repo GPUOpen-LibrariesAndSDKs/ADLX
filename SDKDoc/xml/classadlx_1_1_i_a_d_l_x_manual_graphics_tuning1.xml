@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning1" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXManualGraphicsTuning1</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_manual_graphics_tuning1_1af4ec046c3359d3b05bf21f499eca6a17" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualGraphicsTuning1::GetGPUTuningRanges</definition>
         <argsstring>(ADLX_IntRange *frequencyRange, ADLX_IntRange *voltageRange)=0</argsstring>
         <name>GetGPUTuningRanges</name>
+        <qualifiedname>adlx::IADLXManualGraphicsTuning1::GetGPUTuningRanges</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
           <declname>frequencyRange</declname>
@@ -30,6 +31,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualGraphicsTuning1::GetGPUTuningStates</definition>
         <argsstring>(IADLXManualTuningStateList **ppGFXStates)=0</argsstring>
         <name>GetGPUTuningStates</name>
+        <qualifiedname>adlx::IADLXManualGraphicsTuning1::GetGPUTuningStates</qualifiedname>
         <param>
           <type>IADLXManualTuningStateList **</type>
           <declname>ppGFXStates</declname>
@@ -47,6 +49,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualGraphicsTuning1::GetEmptyGPUTuningStates</definition>
         <argsstring>(IADLXManualTuningStateList **ppGFXStates)=0</argsstring>
         <name>GetEmptyGPUTuningStates</name>
+        <qualifiedname>adlx::IADLXManualGraphicsTuning1::GetEmptyGPUTuningStates</qualifiedname>
         <param>
           <type>IADLXManualTuningStateList **</type>
           <declname>ppGFXStates</declname>
@@ -64,6 +67,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualGraphicsTuning1::IsValidGPUTuningStates</definition>
         <argsstring>(IADLXManualTuningStateList *pGFXStates, adlx_int *errorIndex)=0</argsstring>
         <name>IsValidGPUTuningStates</name>
+        <qualifiedname>adlx::IADLXManualGraphicsTuning1::IsValidGPUTuningStates</qualifiedname>
         <param>
           <type>IADLXManualTuningStateList *</type>
           <declname>pGFXStates</declname>
@@ -85,6 +89,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualGraphicsTuning1::SetGPUTuningStates</definition>
         <argsstring>(IADLXManualTuningStateList *pGFXStates)=0</argsstring>
         <name>SetGPUTuningStates</name>
+        <qualifiedname>adlx::IADLXManualGraphicsTuning1::SetGPUTuningStates</qualifiedname>
         <param>
           <type>IADLXManualTuningStateList *</type>
           <declname>pGFXStates</declname>
@@ -97,7 +102,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualGFXTuning.h" line="175" column="51"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

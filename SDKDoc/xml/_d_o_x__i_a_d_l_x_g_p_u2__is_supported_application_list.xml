@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_g_p_u2__is_supported_application_list" kind="page">
+    <compoundname>DOX_IADLXGPU2_IsSupportedApplicationList</compoundname>
+    <title>IsSupportedApplicationList</title>
+    <briefdescription>
+<para>Checks if reporting the list of applications running on a GPU is supported. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>    IsSupportedApplicationList (adlx_bool* supported)
+ </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para><variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>1.</para>
+</entry><entry thead="no" class="paramdir"><para>[out]</para>
+</entry><entry thead="no" class="paramname"><para>supported</para>
+</entry><entry thead="no" class="paramtype"><para>adlx_bool*</para>
+</entry><entry thead="no"><para>The pointer to a variable where the Application list support status is returned. The variable is <bold>true</bold> if Integer Display Scaling is supported. The variable is <bold>false</bold> if Integer Display Scaling is not supported. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If the Application list support status is successfully returned, <bold>ADLX_OK</bold> is returned.<linebreak/>
+ If the Application list support status is not successfully returned, an error code is returned.<linebreak/>
+ Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.<linebreak/>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;ISystem2.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.4</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ISystem2.h"/>
+  </compounddef>
+</doxygen>

@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_system" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXSystem</compoundname>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_system_1a0c9be77f5ff98a069bf4fcd0b5fbb3ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystem::HybridGraphicsType</definition>
         <argsstring>(ADLX_HG_TYPE *hgType)=0</argsstring>
         <name>HybridGraphicsType</name>
+        <qualifiedname>adlx::IADLXSystem::HybridGraphicsType</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1ga260f926e27eef013ca1eacd0ff7b3ba7" kindref="member">ADLX_HG_TYPE</ref> *</type>
           <declname>hgType</declname>
@@ -25,6 +26,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystem::GetGPUs</definition>
         <argsstring>(IADLXGPUList **ppGPUs)=0</argsstring>
         <name>GetGPUs</name>
+        <qualifiedname>adlx::IADLXSystem::GetGPUs</qualifiedname>
         <param>
           <type>IADLXGPUList **</type>
           <declname>ppGPUs</declname>
@@ -42,6 +44,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystem::QueryInterface</definition>
         <argsstring>(const wchar_t *interfaceId, void **ppInterface)=0</argsstring>
         <name>QueryInterface</name>
+        <qualifiedname>adlx::IADLXSystem::QueryInterface</qualifiedname>
         <param>
           <type>const wchar_t *</type>
           <declname>interfaceId</declname>
@@ -63,6 +66,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystem::GetDisplaysServices</definition>
         <argsstring>(IADLXDisplayServices **ppDispServices)=0</argsstring>
         <name>GetDisplaysServices</name>
+        <qualifiedname>adlx::IADLXSystem::GetDisplaysServices</qualifiedname>
         <param>
           <type>IADLXDisplayServices **</type>
           <declname>ppDispServices</declname>
@@ -80,6 +84,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystem::GetDesktopsServices</definition>
         <argsstring>(IADLXDesktopServices **ppDeskServices)=0</argsstring>
         <name>GetDesktopsServices</name>
+        <qualifiedname>adlx::IADLXSystem::GetDesktopsServices</qualifiedname>
         <param>
           <type>IADLXDesktopServices **</type>
           <declname>ppDeskServices</declname>
@@ -97,6 +102,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystem::GetGPUsChangedHandling</definition>
         <argsstring>(IADLXGPUsChangedHandling **ppGPUsChangedHandling)=0</argsstring>
         <name>GetGPUsChangedHandling</name>
+        <qualifiedname>adlx::IADLXSystem::GetGPUsChangedHandling</qualifiedname>
         <param>
           <type>IADLXGPUsChangedHandling **</type>
           <declname>ppGPUsChangedHandling</declname>
@@ -114,6 +120,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystem::EnableLog</definition>
         <argsstring>(ADLX_LOG_DESTINATION mode, ADLX_LOG_SEVERITY severity, IADLXLog *pLogger, const wchar_t *fileName)=0</argsstring>
         <name>EnableLog</name>
+        <qualifiedname>adlx::IADLXSystem::EnableLog</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1gae308b7ad24806dce3fe087e9a780be67" kindref="member">ADLX_LOG_DESTINATION</ref></type>
           <declname>mode</declname>
@@ -143,6 +150,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystem::Get3DSettingsServices</definition>
         <argsstring>(IADLX3DSettingsServices **pp3DSettingsServices)=0</argsstring>
         <name>Get3DSettingsServices</name>
+        <qualifiedname>adlx::IADLXSystem::Get3DSettingsServices</qualifiedname>
         <param>
           <type>IADLX3DSettingsServices **</type>
           <declname>pp3DSettingsServices</declname>
@@ -160,6 +168,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystem::GetGPUTuningServices</definition>
         <argsstring>(IADLXGPUTuningServices **ppGPUTuningServices)=0</argsstring>
         <name>GetGPUTuningServices</name>
+        <qualifiedname>adlx::IADLXSystem::GetGPUTuningServices</qualifiedname>
         <param>
           <type>IADLXGPUTuningServices **</type>
           <declname>ppGPUTuningServices</declname>
@@ -177,6 +186,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystem::GetPerformanceMonitoringServices</definition>
         <argsstring>(IADLXPerformanceMonitoringServices **ppPerformanceMonitoringServices)=0</argsstring>
         <name>GetPerformanceMonitoringServices</name>
+        <qualifiedname>adlx::IADLXSystem::GetPerformanceMonitoringServices</qualifiedname>
         <param>
           <type>IADLXPerformanceMonitoringServices **</type>
           <declname>ppPerformanceMonitoringServices</declname>
@@ -194,6 +204,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystem::TotalSystemRAM</definition>
         <argsstring>(adlx_uint *ramMB)=0</argsstring>
         <name>TotalSystemRAM</name>
+        <qualifiedname>adlx::IADLXSystem::TotalSystemRAM</qualifiedname>
         <param>
           <type>adlx_uint *</type>
           <declname>ramMB</declname>
@@ -211,6 +222,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystem::GetI2C</definition>
         <argsstring>(IADLXGPU *pGPU, IADLXI2C **ppI2C)=0</argsstring>
         <name>GetI2C</name>
+        <qualifiedname>adlx::IADLXSystem::GetI2C</qualifiedname>
         <param>
           <type>IADLXGPU *</type>
           <declname>pGPU</declname>
@@ -227,7 +239,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ISystem.h" line="1179" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

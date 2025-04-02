@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="servicecall_8md" kind="file" language="Markdown">
     <compoundname>servicecall.md</compoundname>
     <briefdescription>
@@ -7,34 +7,56 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline><highlight class="normal">@page<sp/>page_guide_usingservice<sp/>Using<sp/>ADLX<sp/>in<sp/>a<sp/>system<sp/>service<sp/>application</highlight></codeline>
+<codeline><highlight class="normal">@page<sp/>page_guide_usingservice<sp/>Using<sp/>ADLX<sp/>in<sp/>a<sp/>Windows<sp/>system<sp/>service<sp/>application</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;!--</highlight></codeline>
-<codeline><highlight class="normal">#<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2024<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2025<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
 <codeline><highlight class="normal">#</highlight></codeline>
 <codeline><highlight class="normal">#-------------------------------------------------------------------------------------------------</highlight></codeline>
 <codeline><highlight class="normal">--&gt;</highlight></codeline>
+<codeline><highlight class="normal">ADLX<sp/>v1.4<sp/>and<sp/>above<sp/>can<sp/>be<sp/>used<sp/>directly<sp/>in<sp/>a<sp/>Windows<sp/>system<sp/>service<sp/>application,<sp/>providing<sp/>access<sp/>to<sp/>limited<sp/>ADLX<sp/>functionality.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">While<sp/>ADLX<sp/>cannot<sp/>be<sp/>used<sp/>directly<sp/>in<sp/>a<sp/>system<sp/>service<sp/>application,<sp/>its<sp/>functionality<sp/>can<sp/>be<sp/>accessed<sp/>in<sp/>a<sp/>system<sp/>service<sp/>application<sp/>through<sp/>a<sp/>user<sp/>mode<sp/>process.<sp/>A<sp/>communication<sp/>mechanism<sp/>between<sp/>the<sp/>user<sp/>mode<sp/>process<sp/>and<sp/>the<sp/>system<sp/>service,<sp/>such<sp/>as<sp/>shared<sp/>memory,<sp/>will<sp/>provide<sp/>the<sp/>ADLX<sp/>functionality<sp/>to<sp/>the<sp/>system<sp/>service.</highlight></codeline>
+<codeline><highlight class="normal">Refer<sp/>to<sp/>&lt;a<sp/>href=&quot;#v13&quot;&gt;ADLX<sp/>v1.3<sp/>and<sp/>below&lt;/a&gt;<sp/>if<sp/>the<sp/>Windows<sp/>system<sp/>service<sp/>application<sp/>requires<sp/>ADLX<sp/>functionality<sp/>that<sp/>is<sp/>not<sp/>available<sp/>when<sp/>ADLX<sp/>runs<sp/>in<sp/>Session<sp/>0.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">To<sp/>use<sp/>ADLX<sp/>in<sp/>a<sp/>system<sp/>service,</highlight></codeline>
-<codeline><highlight class="normal">1.<sp/>Create<sp/>a<sp/>system<sp/>service<sp/>application.</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Note:**<sp/>For<sp/>more<sp/>information<sp/>on<sp/>how<sp/>to<sp/>create<sp/>a<sp/>system<sp/>service<sp/>in<sp/>C++,<sp/>see<sp/>@ref<sp/>domain_cpp_sample_servicecall<sp/>&quot;ServiceCall<sp/>C++<sp/>sample&quot;.<sp/>For<sp/>more<sp/>information<sp/>on<sp/>how<sp/>to<sp/>create<sp/>a<sp/>system<sp/>service<sp/>in<sp/>C,<sp/>see<sp/>@ref<sp/>domain_c_sample_servicecall<sp/>&quot;ServiceCall<sp/>C<sp/>sample&quot;.</highlight></codeline>
+<codeline><highlight class="normal">&lt;h2&gt;ADLX<sp/>v1.4<sp/>and<sp/>above&lt;/h2&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">2.<sp/>In<sp/>the<sp/>system<sp/>service,<sp/>start<sp/>a<sp/>thread<sp/>to<sp/>complete<sp/>the<sp/>service<sp/>work,<sp/>such<sp/>as<sp/>ServiceWorkerThread.</highlight></codeline>
-<codeline><highlight class="normal">3.<sp/>On<sp/>the<sp/>ServiceWorkerThread,<sp/>get<sp/>the<sp/>token<sp/>of<sp/>the<sp/>current<sp/>process<sp/>to<sp/>create<sp/>a<sp/>user<sp/>process<sp/>using<sp/>CreateProcessAsUserW.</highlight></codeline>
+<codeline><highlight class="normal">When<sp/>ADLX<sp/>v1.4<sp/>and<sp/>above<sp/>runs<sp/>in<sp/>a<sp/>Windows<sp/>system<sp/>service<sp/>application,<sp/>the<sp/>following<sp/>functionality<sp/>is<sp/>available:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>@ref<sp/>page_ADLXHelps<sp/>&quot;ADLX<sp/>Helpers&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>@ref<sp/>DOX_IADLXSystem</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>@ref<sp/>gpu<sp/>&quot;GPU<sp/>information&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>@ref<sp/>gputuning<sp/>&quot;GPU<sp/>Tuning<sp/>functionality&quot;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>@ref<sp/>perfmonitoring<sp/>&quot;Performance<sp/>Monitoring<sp/>functionality&quot;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>**Note:**<sp/>For<sp/>more<sp/>information<sp/>on<sp/>how<sp/>to<sp/>create<sp/>a<sp/>user<sp/>process<sp/>into<sp/>a<sp/>service<sp/>application<sp/>in<sp/>C++,<sp/>see<sp/>@ref<sp/>cpp_sample_userprocess<sp/>&quot;UserProcess<sp/>C++<sp/>sample&quot;.</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>For<sp/>more<sp/>information<sp/>on<sp/>how<sp/>to<sp/>create<sp/>a<sp/>user<sp/>process<sp/>into<sp/>a<sp/>service<sp/>application<sp/>in<sp/>C,</highlight></codeline>
+<codeline><highlight class="normal">**Note:**<sp/>When<sp/>running<sp/>in<sp/>Session<sp/>0,<sp/>ADLX<sp/>cannot<sp/>be<sp/>initialized<sp/>with<sp/>an<sp/>ADL<sp/>context.&lt;br/&gt;</highlight></codeline>
+<codeline><highlight class="normal">See<sp/>@ref<sp/>page_guide_use_ADLX<sp/>&quot;Using<sp/>ADLX<sp/>in<sp/>an<sp/>ADL<sp/>application&quot;<sp/>for<sp/>more<sp/>information<sp/>for<sp/>initializing<sp/>ADLX<sp/>with<sp/>an<sp/>ADL<sp/>context.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;h2&gt;&lt;a<sp/>id=&quot;v13&quot;&gt;ADLX<sp/>v1.3<sp/>and<sp/>below&lt;/h2&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">ADLX<sp/>v1.3<sp/>and<sp/>below<sp/>cannot<sp/>be<sp/>used<sp/>directly<sp/>in<sp/>a<sp/>Windows<sp/>system<sp/>service<sp/>application.<sp/>However,<sp/>ADLX<sp/>functionality<sp/>can<sp/>be<sp/>accessed<sp/>in<sp/>a<sp/>system<sp/>service<sp/>application<sp/>through<sp/>a<sp/>user<sp/>mode<sp/>process.&lt;br/&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>functions<sp/>are<sp/>provided<sp/>through<sp/>a<sp/>communication<sp/>mechanism<sp/>between<sp/>the<sp/>user<sp/>mode<sp/>process<sp/>and<sp/>the<sp/>system<sp/>service<sp/>(such<sp/>as<sp/>shared<sp/>memory).&lt;br/&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>use<sp/>ADLX<sp/>v1.3<sp/>and<sp/>below<sp/>in<sp/>a<sp/>system<sp/>service<sp/>application,</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Create<sp/>a<sp/>system<sp/>service<sp/>application.&lt;br/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>*<sp/>For<sp/>more<sp/>information<sp/>on<sp/>how<sp/>to<sp/>create<sp/>a<sp/>system<sp/>service<sp/>application<sp/>in<sp/>C++,<sp/>see<sp/>@ref<sp/>domain_cpp_sample_servicecall<sp/>&quot;ServiceCall<sp/>C++<sp/>sample&quot;.&lt;br/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>*<sp/>For<sp/>more<sp/>information<sp/>on<sp/>how<sp/>to<sp/>create<sp/>a<sp/>system<sp/>service<sp/>application<sp/>in<sp/>C,<sp/>see<sp/>@ref<sp/>domain_c_sample_servicecall<sp/>&quot;ServiceCall<sp/>C<sp/>sample&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>In<sp/>the<sp/>system<sp/>service<sp/>application,<sp/>start<sp/>a<sp/>thread<sp/>to<sp/>complete<sp/>the<sp/>service<sp/>work,<sp/>such<sp/>as<sp/>`ServiceWorkerThread`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">3.<sp/>On<sp/>the<sp/>`ServiceWorkerThread`,<sp/>get<sp/>the<sp/>token<sp/>of<sp/>the<sp/>current<sp/>process<sp/>to<sp/>create<sp/>a<sp/>user<sp/>process<sp/>using<sp/>`CreateProcessAsUserW`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>*<sp/>For<sp/>more<sp/>information<sp/>on<sp/>how<sp/>to<sp/>create<sp/>a<sp/>user<sp/>process<sp/>into<sp/>a<sp/>service<sp/>application<sp/>in<sp/>C++,<sp/>see<sp/>@ref<sp/>cpp_sample_userprocess<sp/>&quot;UserProcess<sp/>C++<sp/>sample&quot;.&lt;br/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>*<sp/>For<sp/>more<sp/>information<sp/>on<sp/>how<sp/>to<sp/>create<sp/>a<sp/>user<sp/>process<sp/>into<sp/>a<sp/>service<sp/>application<sp/>in<sp/>C,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>see<sp/>@ref<sp/>c_sample_userprocess<sp/>&quot;UserProcess<sp/>C<sp/>sample&quot;.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">4.<sp/>In<sp/>user<sp/>mode,<sp/>process<sp/>load<sp/>ADLX<sp/>and<sp/>implement<sp/>the<sp/>desired<sp/>functionality.</highlight></codeline>
-<codeline><highlight class="normal">5.<sp/>In<sp/>user<sp/>mode,<sp/>process<sp/>implement<sp/>a<sp/>communication<sp/>mechanism<sp/>suitable<sp/>for<sp/>communicating<sp/>with<sp/>the<sp/>system<sp/>service<sp/>–<sp/>such<sp/>as<sp/>shared<sp/>memory<sp/>–<sp/>and<sp/>tie<sp/>the<sp/>ADLX<sp/>data<sp/>with<sp/>the<sp/>communication<sp/>mechanism.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>In<sp/>the<sp/>user<sp/>mode<sp/>process,<sp/>load<sp/>ADLX<sp/>and<sp/>implement<sp/>the<sp/>desired<sp/>functionality.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">5.<sp/>In<sp/>the<sp/>user<sp/>mode<sp/>process,<sp/>implement<sp/>a<sp/>communication<sp/>mechanism<sp/>suitable<sp/>for<sp/>communicating<sp/>with<sp/>the<sp/>system<sp/>service<sp/>(such<sp/>as<sp/>shared<sp/>memory)<sp/>and<sp/>tie<sp/>the<sp/>ADLX<sp/>data<sp/>with<sp/>the<sp/>communication<sp/>mechanism.</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal">6.<sp/>Run<sp/>the<sp/>user<sp/>mode<sp/>process<sp/>and<sp/>the<sp/>service<sp/>application.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">For<sp/>more<sp/>information,<sp/>see<sp/>@ref<sp/>domain_cpp_sample_servicecall<sp/>&quot;GPUServiceCall<sp/>C++<sp/>samples&quot;<sp/>and<sp/>@ref<sp/>domain_c_sample_servicecall<sp/>&quot;GPUServiceCall<sp/>C<sp/>samples&quot;.</highlight></codeline>
-<codeline></codeline>
     </programlisting>
     <location file="D:/AMD_Git/adlx_release/drivers/ADLX/docs/Config/ADLXProgrammingGuide/servicecall.md"/>
   </compounddef>

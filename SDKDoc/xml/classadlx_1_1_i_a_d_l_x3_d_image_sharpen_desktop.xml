@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x3_d_image_sharpen_desktop" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLX3DImageSharpenDesktop</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_image_sharpen_desktop_1a3f31d665e1911c6a7b69e7ad6e8104ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DImageSharpenDesktop::IsSupported</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupported</name>
+        <qualifiedname>adlx::IADLX3DImageSharpenDesktop::IsSupported</qualifiedname>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings2.h" line="53" column="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_image_sharpen_desktop_1a1bac37c3d1b2923660d085a5140359bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DImageSharpenDesktop::IsEnabled</definition>
+        <argsstring>(adlx_bool *enabled)=0</argsstring>
+        <name>IsEnabled</name>
+        <qualifiedname>adlx::IADLX3DImageSharpenDesktop::IsEnabled</qualifiedname>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings2.h" line="92" column="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_image_sharpen_desktop_1aeea9b59759e5f1da59e99ffc5ea80bb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DImageSharpenDesktop::SetEnabled</definition>
+        <argsstring>(adlx_bool enable)=0</argsstring>
+        <name>SetEnabled</name>
+        <qualifiedname>adlx::IADLX3DImageSharpenDesktop::SetEnabled</qualifiedname>
+        <param>
+          <type>adlx_bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings2.h" line="131" column="47"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings2.h" line="22" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings2.h" bodystart="23" bodyend="132"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DImageSharpenDesktop</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x3_d_image_sharpen_desktop_1a1bac37c3d1b2923660d085a5140359bf" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DImageSharpenDesktop</scope><name>IsEnabled</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x3_d_image_sharpen_desktop_1a3f31d665e1911c6a7b69e7ad6e8104ac" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DImageSharpenDesktop</scope><name>IsSupported</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DImageSharpenDesktop</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DImageSharpenDesktop</scope><name>Release</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x3_d_image_sharpen_desktop_1aeea9b59759e5f1da59e99ffc5ea80bb1" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DImageSharpenDesktop</scope><name>SetEnabled</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

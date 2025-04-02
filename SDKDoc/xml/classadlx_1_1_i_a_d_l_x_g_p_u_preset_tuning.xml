@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_u_preset_tuning" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXGPUPresetTuning</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_preset_tuning_1a92a64a2b906cde19f69ee15752dfe11b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUPresetTuning::IsSupportedPowerSaver</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedPowerSaver</name>
+        <qualifiedname>adlx::IADLXGPUPresetTuning::IsSupportedPowerSaver</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -26,6 +27,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUPresetTuning::IsSupportedQuiet</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedQuiet</name>
+        <qualifiedname>adlx::IADLXGPUPresetTuning::IsSupportedQuiet</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -43,6 +45,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUPresetTuning::IsSupportedBalanced</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedBalanced</name>
+        <qualifiedname>adlx::IADLXGPUPresetTuning::IsSupportedBalanced</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -60,6 +63,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUPresetTuning::IsSupportedTurbo</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedTurbo</name>
+        <qualifiedname>adlx::IADLXGPUPresetTuning::IsSupportedTurbo</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -77,6 +81,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUPresetTuning::IsSupportedRage</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedRage</name>
+        <qualifiedname>adlx::IADLXGPUPresetTuning::IsSupportedRage</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -94,6 +99,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUPresetTuning::IsCurrentPowerSaver</definition>
         <argsstring>(adlx_bool *isPowerSaver)=0</argsstring>
         <name>IsCurrentPowerSaver</name>
+        <qualifiedname>adlx::IADLXGPUPresetTuning::IsCurrentPowerSaver</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isPowerSaver</declname>
@@ -111,6 +117,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUPresetTuning::IsCurrentQuiet</definition>
         <argsstring>(adlx_bool *isQuiet)=0</argsstring>
         <name>IsCurrentQuiet</name>
+        <qualifiedname>adlx::IADLXGPUPresetTuning::IsCurrentQuiet</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isQuiet</declname>
@@ -128,6 +135,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUPresetTuning::IsCurrentBalanced</definition>
         <argsstring>(adlx_bool *isBalance)=0</argsstring>
         <name>IsCurrentBalanced</name>
+        <qualifiedname>adlx::IADLXGPUPresetTuning::IsCurrentBalanced</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isBalance</declname>
@@ -145,6 +153,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUPresetTuning::IsCurrentTurbo</definition>
         <argsstring>(adlx_bool *isTurbo)=0</argsstring>
         <name>IsCurrentTurbo</name>
+        <qualifiedname>adlx::IADLXGPUPresetTuning::IsCurrentTurbo</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isTurbo</declname>
@@ -162,6 +171,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUPresetTuning::IsCurrentRage</definition>
         <argsstring>(adlx_bool *isRage)=0</argsstring>
         <name>IsCurrentRage</name>
+        <qualifiedname>adlx::IADLXGPUPresetTuning::IsCurrentRage</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isRage</declname>
@@ -179,6 +189,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUPresetTuning::SetPowerSaver</definition>
         <argsstring>()=0</argsstring>
         <name>SetPowerSaver</name>
+        <qualifiedname>adlx::IADLXGPUPresetTuning::SetPowerSaver</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -192,6 +203,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUPresetTuning::SetQuiet</definition>
         <argsstring>()=0</argsstring>
         <name>SetQuiet</name>
+        <qualifiedname>adlx::IADLXGPUPresetTuning::SetQuiet</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -205,6 +217,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUPresetTuning::SetBalanced</definition>
         <argsstring>()=0</argsstring>
         <name>SetBalanced</name>
+        <qualifiedname>adlx::IADLXGPUPresetTuning::SetBalanced</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -218,6 +231,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUPresetTuning::SetTurbo</definition>
         <argsstring>()=0</argsstring>
         <name>SetTurbo</name>
+        <qualifiedname>adlx::IADLXGPUPresetTuning::SetTurbo</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -231,6 +245,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUPresetTuning::SetRage</definition>
         <argsstring>()=0</argsstring>
         <name>SetRage</name>
+        <qualifiedname>adlx::IADLXGPUPresetTuning::SetRage</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -239,7 +254,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUPresetTuning.h" line="427" column="51"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

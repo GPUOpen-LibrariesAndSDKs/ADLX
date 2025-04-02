@@ -10,7 +10,9 @@ var display =
     [ "IADLXDisplayConnectivityExperience", "_d_o_x__i_a_d_l_x_display_connectivity_experience.html", "_d_o_x__i_a_d_l_x_display_connectivity_experience" ],
     [ "IADLXDisplayCustomColor", "_d_o_x__i_a_d_l_x_display_custom_color.html", "_d_o_x__i_a_d_l_x_display_custom_color" ],
     [ "IADLXDisplayCustomResolution", "_d_o_x__i_a_d_l_x_display_custom_resolution.html", "_d_o_x__i_a_d_l_x_display_custom_resolution" ],
+    [ "IADLXDisplayDynamicRefreshRateControl", "_d_o_x__i_a_d_l_x_display_dynamic_refresh_rate_control.html", "_d_o_x__i_a_d_l_x_display_dynamic_refresh_rate_control" ],
     [ "IADLXDisplayFreeSync", "_d_o_x__i_a_d_l_x_display_free_sync.html", "_d_o_x__i_a_d_l_x_display_free_sync" ],
+    [ "IADLXDisplayFreeSyncColorAccuracy", "_d_o_x__i_a_d_l_x_display_free_sync_color_accuracy.html", "_d_o_x__i_a_d_l_x_display_free_sync_color_accuracy" ],
     [ "IADLXDisplayGPUScaling", "_d_o_x__i_a_d_l_x_display_g_p_u_scaling.html", "_d_o_x__i_a_d_l_x_display_g_p_u_scaling" ],
     [ "IADLXDisplayGamma", "_d_o_x__i_a_d_l_x_display_gamma.html", "_d_o_x__i_a_d_l_x_display_gamma" ],
     [ "IADLXDisplayGammaChangedEvent", "_d_o_x__i_a_d_l_x_display_gamma_changed_event.html", "_d_o_x__i_a_d_l_x_display_gamma_changed_event" ],
@@ -29,10 +31,13 @@ var display =
     [ "IADLXDisplayServices", "_d_o_x__i_a_d_l_x_display_services.html", "_d_o_x__i_a_d_l_x_display_services" ],
     [ "IADLXDisplayServices1", "_d_o_x__i_a_d_l_x_display_services1.html", "_d_o_x__i_a_d_l_x_display_services1" ],
     [ "IADLXDisplayServices2", "_d_o_x__i_a_d_l_x_display_services2.html", "_d_o_x__i_a_d_l_x_display_services2" ],
+    [ "IADLXDisplayServices3", "_d_o_x__i_a_d_l_x_display_services3.html", "_d_o_x__i_a_d_l_x_display_services3" ],
     [ "IADLXDisplaySettingsChangedEvent", "_d_o_x__i_a_d_l_x_display_settings_changed_event.html", "_d_o_x__i_a_d_l_x_display_settings_changed_event" ],
     [ "IADLXDisplaySettingsChangedEvent1", "_d_o_x__i_a_d_l_x_display_settings_changed_event1.html", "_d_o_x__i_a_d_l_x_display_settings_changed_event1" ],
     [ "IADLXDisplaySettingsChangedEvent2", "_d_o_x__i_a_d_l_x_display_settings_changed_event2.html", "_d_o_x__i_a_d_l_x_display_settings_changed_event2" ],
+    [ "IADLXDisplaySettingsChangedEvent3", "_d_o_x__i_a_d_l_x_display_settings_changed_event3.html", "_d_o_x__i_a_d_l_x_display_settings_changed_event3" ],
     [ "IADLXDisplaySettingsChangedListener", "_d_o_x__i_a_d_l_x_display_settings_changed_listener.html", "_d_o_x__i_a_d_l_x_display_settings_changed_listener" ],
     [ "IADLXDisplayVSR", "_d_o_x__i_a_d_l_x_display_v_s_r.html", "_d_o_x__i_a_d_l_x_display_v_s_r" ],
-    [ "IADLXDisplayVariBright", "_d_o_x__i_a_d_l_x_display_vari_bright.html", "_d_o_x__i_a_d_l_x_display_vari_bright" ]
+    [ "IADLXDisplayVariBright", "_d_o_x__i_a_d_l_x_display_vari_bright.html", "_d_o_x__i_a_d_l_x_display_vari_bright" ],
+    [ "IADLXDisplayVariBright1", "_d_o_x__i_a_d_l_x_display_vari_bright1.html", "_d_o_x__i_a_d_l_x_display_vari_bright1" ]
 ];

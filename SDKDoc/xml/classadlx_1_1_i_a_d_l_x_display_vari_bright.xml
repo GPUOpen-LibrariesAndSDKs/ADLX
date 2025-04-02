@@ -1,14 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_display_vari_bright" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXDisplayVariBright</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display_vari_bright1" prot="public" virt="non-virtual">adlx::IADLXDisplayVariBright1</derivedcompoundref>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_vari_bright_1a7655cf403ea1b7186c41858b61afb9b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayVariBright::IsSupported</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupported</name>
+        <qualifiedname>adlx::IADLXDisplayVariBright::IsSupported</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -19,13 +21,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2164" column="43"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2175" column="43"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_vari_bright_1aba43bed8cb76bf53c51f45bf9bd4205c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayVariBright::IsEnabled</definition>
         <argsstring>(adlx_bool *enabled)=0</argsstring>
         <name>IsEnabled</name>
+        <qualifiedname>adlx::IADLXDisplayVariBright::IsEnabled</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>enabled</declname>
@@ -36,13 +39,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2186" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2197" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_vari_bright_1af38d7ddbdc86195249e9d1298af1927a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayVariBright::SetEnabled</definition>
         <argsstring>(adlx_bool enabled)=0</argsstring>
         <name>SetEnabled</name>
+        <qualifiedname>adlx::IADLXDisplayVariBright::SetEnabled</qualifiedname>
         <param>
           <type>adlx_bool</type>
           <declname>enabled</declname>
@@ -53,13 +57,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2208" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2219" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_vari_bright_1aa220fc5f2885307a9d0263366b8d6ca4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayVariBright::IsCurrentMaximizeBrightness</definition>
         <argsstring>(adlx_bool *maximizeBrightness)=0</argsstring>
         <name>IsCurrentMaximizeBrightness</name>
+        <qualifiedname>adlx::IADLXDisplayVariBright::IsCurrentMaximizeBrightness</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>maximizeBrightness</declname>
@@ -70,13 +75,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2230" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2241" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_vari_bright_1a34ac8e00501e806ef1c0b53f8dfd5321" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayVariBright::IsCurrentOptimizeBrightness</definition>
         <argsstring>(adlx_bool *optimizeBrightness)=0</argsstring>
         <name>IsCurrentOptimizeBrightness</name>
+        <qualifiedname>adlx::IADLXDisplayVariBright::IsCurrentOptimizeBrightness</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>optimizeBrightness</declname>
@@ -87,13 +93,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2252" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2263" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_vari_bright_1a09e6ed9889f3b1c77eac1138961a70cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayVariBright::IsCurrentBalanced</definition>
         <argsstring>(adlx_bool *balanced)=0</argsstring>
         <name>IsCurrentBalanced</name>
+        <qualifiedname>adlx::IADLXDisplayVariBright::IsCurrentBalanced</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>balanced</declname>
@@ -104,13 +111,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2274" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2285" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_vari_bright_1aea1c0951f4c6aa9c0de4a3f772f2858a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayVariBright::IsCurrentOptimizeBattery</definition>
         <argsstring>(adlx_bool *optimizeBattery)=0</argsstring>
         <name>IsCurrentOptimizeBattery</name>
+        <qualifiedname>adlx::IADLXDisplayVariBright::IsCurrentOptimizeBattery</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>optimizeBattery</declname>
@@ -121,13 +129,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2296" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2307" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_vari_bright_1a75f6d9f6d1cb21880dd53ded0bb18562" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayVariBright::IsCurrentMaximizeBattery</definition>
         <argsstring>(adlx_bool *maximizeBattery)=0</argsstring>
         <name>IsCurrentMaximizeBattery</name>
+        <qualifiedname>adlx::IADLXDisplayVariBright::IsCurrentMaximizeBattery</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>maximizeBattery</declname>
@@ -138,79 +147,84 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2318" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2329" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_vari_bright_1a4111c027ac14d234dca5011c03dcd511" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayVariBright::SetMaximizeBrightness</definition>
         <argsstring>()=0</argsstring>
         <name>SetMaximizeBrightness</name>
+        <qualifiedname>adlx::IADLXDisplayVariBright::SetMaximizeBrightness</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2340" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2351" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_vari_bright_1a8631913e26a4727d14b9365407d481a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayVariBright::SetOptimizeBrightness</definition>
         <argsstring>()=0</argsstring>
         <name>SetOptimizeBrightness</name>
+        <qualifiedname>adlx::IADLXDisplayVariBright::SetOptimizeBrightness</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2362" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2373" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_vari_bright_1a8f0c2a71c73e1f247f2abbe81c892139" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayVariBright::SetBalanced</definition>
         <argsstring>()=0</argsstring>
         <name>SetBalanced</name>
+        <qualifiedname>adlx::IADLXDisplayVariBright::SetBalanced</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2384" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2395" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_vari_bright_1a5bc679344f68b51d8b3572acf0916174" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayVariBright::SetOptimizeBattery</definition>
         <argsstring>()=0</argsstring>
         <name>SetOptimizeBattery</name>
+        <qualifiedname>adlx::IADLXDisplayVariBright::SetOptimizeBattery</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2406" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2417" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_vari_bright_1a6588a78271b589ead2476521e7572041" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayVariBright::SetMaximizeBattery</definition>
         <argsstring>()=0</argsstring>
         <name>SetMaximizeBattery</name>
+        <qualifiedname>adlx::IADLXDisplayVariBright::SetMaximizeBattery</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2431" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2442" column="51"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2139" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="2140" bodyend="2432"/>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="2150" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="2151" bodyend="2443"/>
     <listofallmembers>
       <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayVariBright</scope><name>Acquire</name></member>
       <member refid="classadlx_1_1_i_a_d_l_x_display_vari_bright_1a09e6ed9889f3b1c77eac1138961a70cc" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayVariBright</scope><name>IsCurrentBalanced</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="_i_system_8h" kind="file" language="C++">
     <compoundname>ISystem.h</compoundname>
     <includes refid="_a_d_l_x_defines_8h" local="yes">ADLXDefines.h</includes>
@@ -7,18 +7,6 @@
     <includedby refid="_a_d_l_x_8h" local="yes">D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ADLX.h</includedby>
     <includedby refid="_i_system1_8h" local="yes">D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ISystem1.h</includedby>
     <incdepgraph>
-      <node id="5">
-        <label>stdint.h</label>
-      </node>
-      <node id="3">
-        <label>Windows.h</label>
-      </node>
-      <node id="1">
-        <label>D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ISystem.h</label>
-        <link refid="_i_system_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
       <node id="2">
         <label>ADLXDefines.h</label>
         <link refid="_a_d_l_x_defines_8h"/>
@@ -28,6 +16,18 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
+      </node>
+      <node id="1">
+        <label>D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ISystem.h</label>
+        <link refid="_i_system_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Windows.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
       </node>
       <node id="4">
         <label>stdio.h</label>
@@ -46,7 +46,7 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2024<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2025<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
@@ -329,14 +329,14 @@
 <codeline lineno="1230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLMapping</highlight></codeline>
 <codeline lineno="1231"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="1271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>GetADLXGPUFromBdf<sp/>(adlx_int<sp/>bus,<sp/>adlx_int<sp/>device,<sp/>adlx_int<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>IADLXGPU**<sp/>ppGPU)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="1271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>GetADLXGPUFromBdf<sp/>(adlx_int<sp/>bus,<sp/>adlx_int<sp/>device,<sp/>adlx_int<sp/>function,<sp/>IADLXGPU**<sp/>ppGPU)<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="1307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>GetADLXGPUFromAdlAdapterIndex<sp/>(adlx_int<sp/>adlAdapterIndex,<sp/>IADLXGPU**<sp/>ppGPU)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="1339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>BdfFromADLXGPU<sp/>(IADLXGPU*<sp/>pGPU,<sp/>adlx_int*<sp/>bus,<sp/>adlx_int*<sp/>device,<sp/>adlx_int*<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="1339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>BdfFromADLXGPU<sp/>(IADLXGPU*<sp/>pGPU,<sp/>adlx_int*<sp/>bus,<sp/>adlx_int*<sp/>device,<sp/>adlx_int*<sp/>function)<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="1369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>AdlAdapterIndexFromADLXGPU<sp/>(IADLXGPU*<sp/>pGPU,<sp/>adlx_int*<sp/>adlAdapterIndex)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="1410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>GetADLXDisplayFromADLIds<sp/>(adlx_int<sp/>adapterIndex,<sp/>adlx_int<sp/>displayIndex,<sp/>adlx_int<sp/>bus,<sp/>adlx_int<sp/>device,<sp/>adlx_int<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>IADLXDisplay**<sp/>ppDisplay)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="1444"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>ADLIdsFromADLXDisplay<sp/>(IADLXDisplay*<sp/>pDisplay,<sp/>adlx_int*<sp/>adapterIndex,<sp/>adlx_int*<sp/>displayIndex,<sp/>adlx_int*<sp/>bus,<sp/>adlx_int*<sp/>device,<sp/>adlx_int*<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="1487"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>GetADLXDesktopFromADLIds<sp/>(adlx_int<sp/>adapterIndex,<sp/>adlx_int<sp/>VidPnSourceId,<sp/>adlx_int<sp/>bus,<sp/>adlx_int<sp/>device,<sp/>adlx_int<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>IADLXDesktop**<sp/>ppDesktop)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="1521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>ADLIdsFromADLXDesktop<sp/>(IADLXDesktop*<sp/>pDesktop,<sp/>adlx_int*<sp/>adapterIndex,<sp/>adlx_int*<sp/>VidPnSourceId,<sp/>adlx_int*<sp/>bus,<sp/>adlx_int*<sp/>device,<sp/>adlx_int*<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="1410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>GetADLXDisplayFromADLIds<sp/>(adlx_int<sp/>adapterIndex,<sp/>adlx_int<sp/>displayIndex,<sp/>adlx_int<sp/>bus,<sp/>adlx_int<sp/>device,<sp/>adlx_int<sp/>function,<sp/>IADLXDisplay**<sp/>ppDisplay)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="1444"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>ADLIdsFromADLXDisplay<sp/>(IADLXDisplay*<sp/>pDisplay,<sp/>adlx_int*<sp/>adapterIndex,<sp/>adlx_int*<sp/>displayIndex,<sp/>adlx_int*<sp/>bus,<sp/>adlx_int*<sp/>device,<sp/>adlx_int*<sp/>function)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="1487"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>GetADLXDesktopFromADLIds<sp/>(adlx_int<sp/>adapterIndex,<sp/>adlx_int<sp/>VidPnSourceId,<sp/>adlx_int<sp/>bus,<sp/>adlx_int<sp/>device,<sp/>adlx_int<sp/>function,<sp/>IADLXDesktop**<sp/>ppDesktop)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="1521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>ADLIdsFromADLXDesktop<sp/>(IADLXDesktop*<sp/>pDesktop,<sp/>adlx_int*<sp/>adapterIndex,<sp/>adlx_int*<sp/>VidPnSourceId,<sp/>adlx_int*<sp/>bus,<sp/>adlx_int*<sp/>device,<sp/>adlx_int*<sp/>function)<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="1522"><highlight class="normal"><sp/><sp/><sp/><sp/>};<sp/></highlight><highlight class="comment">//<sp/>IADLMapping</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1523"><highlight class="normal">}<sp/><sp/><sp/></highlight><highlight class="comment">//namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1524"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
@@ -347,21 +347,21 @@
 <codeline lineno="1529"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLMappingVtbl</highlight></codeline>
 <codeline lineno="1530"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1531"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Gets<sp/>the<sp/>IADLXGPU<sp/>object<sp/>corresponding<sp/>to<sp/>a<sp/>GPU<sp/>with<sp/>given<sp/>bus,<sp/>device<sp/>and<sp/>function<sp/>number</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1532"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetADLXGPUFromBdf)<sp/>(IADLMapping*<sp/>pThis,<sp/>adlx_int<sp/>bus,<sp/>adlx_int<sp/>device,<sp/>adlx_int<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>IADLXGPU**<sp/>ppGPU);</highlight></codeline>
+<codeline lineno="1532"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetADLXGPUFromBdf)<sp/>(IADLMapping*<sp/>pThis,<sp/>adlx_int<sp/>bus,<sp/>adlx_int<sp/>device,<sp/>adlx_int<sp/>function,<sp/>IADLXGPU**<sp/>ppGPU);</highlight></codeline>
 <codeline lineno="1533"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Gets<sp/>the<sp/>IADLXGPU<sp/>object<sp/>corresponding<sp/>to<sp/>a<sp/>GPU<sp/>with<sp/>given<sp/>ADL<sp/>adapter<sp/>index</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1534"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetADLXGPUFromAdlAdapterIndex)<sp/>(IADLMapping*<sp/>pThis,<sp/>adlx_int<sp/>adlAdapterIndex,<sp/>IADLXGPU**<sp/>ppGPU);</highlight></codeline>
 <codeline lineno="1535"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Gets<sp/>the<sp/>bus,<sp/>device<sp/>and<sp/>function<sp/>number<sp/>corresponding<sp/>to<sp/>the<sp/>given<sp/>IADLXGPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1536"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*BdfFromADLXGPU)<sp/>(IADLMapping*<sp/>pThis,<sp/>IADLXGPU*<sp/>pGPU,<sp/>adlx_int*<sp/>bus,<sp/>adlx_int*<sp/>device,<sp/>adlx_int*<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1536"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*BdfFromADLXGPU)<sp/>(IADLMapping*<sp/>pThis,<sp/>IADLXGPU*<sp/>pGPU,<sp/>adlx_int*<sp/>bus,<sp/>adlx_int*<sp/>device,<sp/>adlx_int*<sp/>function);</highlight></codeline>
 <codeline lineno="1537"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Gets<sp/>the<sp/>ADL<sp/>Adapter<sp/>index<sp/>corresponding<sp/>to<sp/>the<sp/>given<sp/>IADLXGPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1538"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*AdlAdapterIndexFromADLXGPU)<sp/>(IADLMapping*<sp/>pThis,<sp/>IADLXGPU*<sp/>pGPU,<sp/>adlx_int*<sp/>adlAdapterIndex);</highlight></codeline>
 <codeline lineno="1539"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Gets<sp/>the<sp/>display<sp/>object<sp/>corresponding<sp/>to<sp/>the<sp/>give<sp/>ADL<sp/>ids</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1540"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetADLXDisplayFromADLIds)<sp/>(IADLMapping*<sp/>pThis,<sp/>adlx_int<sp/>adapterIndex,<sp/>adlx_int<sp/>displayIndex,<sp/>adlx_int<sp/>bus,<sp/>adlx_int<sp/>device,<sp/>adlx_int<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>IADLXDisplay**<sp/>ppDisplay);</highlight></codeline>
+<codeline lineno="1540"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetADLXDisplayFromADLIds)<sp/>(IADLMapping*<sp/>pThis,<sp/>adlx_int<sp/>adapterIndex,<sp/>adlx_int<sp/>displayIndex,<sp/>adlx_int<sp/>bus,<sp/>adlx_int<sp/>device,<sp/>adlx_int<sp/>function,<sp/>IADLXDisplay**<sp/>ppDisplay);</highlight></codeline>
 <codeline lineno="1541"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Gets<sp/>ADL<sp/>ids<sp/>corresponding<sp/>to<sp/>the<sp/>display<sp/>object</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1542"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*ADLIdsFromADLXDisplay)<sp/>(IADLMapping*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>adlx_int*<sp/>adapterIndex,<sp/>adlx_int*<sp/>displayIndex,<sp/>adlx_int*<sp/>bus,<sp/>adlx_int*<sp/>device,<sp/>adlx_int*<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1542"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*ADLIdsFromADLXDisplay)<sp/>(IADLMapping*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>adlx_int*<sp/>adapterIndex,<sp/>adlx_int*<sp/>displayIndex,<sp/>adlx_int*<sp/>bus,<sp/>adlx_int*<sp/>device,<sp/>adlx_int*<sp/>function);</highlight></codeline>
 <codeline lineno="1543"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Gets<sp/>the<sp/>desktop<sp/>object<sp/>corresponding<sp/>to<sp/>the<sp/>give<sp/>ADL<sp/>ids</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1544"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetADLXDesktopFromADLIds)<sp/>(IADLMapping*<sp/>pThis,<sp/>adlx_int<sp/>adapterIndex,<sp/>adlx_int<sp/>VidPnSourceId,<sp/>adlx_int<sp/>bus,<sp/>adlx_int<sp/>device,<sp/>adlx_int<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>IADLXDesktop**<sp/>ppDesktop);</highlight></codeline>
+<codeline lineno="1544"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetADLXDesktopFromADLIds)<sp/>(IADLMapping*<sp/>pThis,<sp/>adlx_int<sp/>adapterIndex,<sp/>adlx_int<sp/>VidPnSourceId,<sp/>adlx_int<sp/>bus,<sp/>adlx_int<sp/>device,<sp/>adlx_int<sp/>function,<sp/>IADLXDesktop**<sp/>ppDesktop);</highlight></codeline>
 <codeline lineno="1545"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Gets<sp/>ADL<sp/>ids<sp/>corresponding<sp/>to<sp/>the<sp/>desktop<sp/>object</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1546"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*ADLIdsFromADLXDesktop)<sp/>(IADLMapping*<sp/>pThis,<sp/>IADLXDesktop*<sp/>pDesktop,<sp/>adlx_int*<sp/>adapterIndex,<sp/>adlx_int*<sp/>VidPnSourceId,<sp/>adlx_int*<sp/>bus,<sp/>adlx_int*<sp/>device,<sp/>adlx_int*<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1546"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*ADLIdsFromADLXDesktop)<sp/>(IADLMapping*<sp/>pThis,<sp/>IADLXDesktop*<sp/>pDesktop,<sp/>adlx_int*<sp/>adapterIndex,<sp/>adlx_int*<sp/>VidPnSourceId,<sp/>adlx_int*<sp/>bus,<sp/>adlx_int*<sp/>device,<sp/>adlx_int*<sp/>function);</highlight></codeline>
 <codeline lineno="1547"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1548"><highlight class="normal">}<sp/>IADLMappingVtbl;</highlight></codeline>
 <codeline lineno="1549"><highlight class="normal"></highlight></codeline>
@@ -372,7 +372,7 @@
 <codeline lineno="1554"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1555"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLMapping<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1556"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1557"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight><highlight class="comment">//ADLX_ISYSTEM_H</highlight></codeline>
+<codeline lineno="1557"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight><highlight class="comment">//ADLX_ISYSTEM_H</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ISystem.h"/>
   </compounddef>

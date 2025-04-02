@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_u" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXGPU</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_g_p_u1" prot="public" virt="non-virtual">adlx::IADLXGPU1</derivedcompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u_1ac4bef1ca2caee26ad34122d7502d9fd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::VendorId</definition>
         <argsstring>(const char **vendorId)=0</argsstring>
         <name>VendorId</name>
+        <qualifiedname>adlx::IADLXGPU::VendorId</qualifiedname>
         <param>
           <type>const char **</type>
           <declname>vendorId</declname>
@@ -27,6 +28,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::ASICFamilyType</definition>
         <argsstring>(ADLX_ASIC_FAMILY_TYPE *asicFamilyType) const =0</argsstring>
         <name>ASICFamilyType</name>
+        <qualifiedname>adlx::IADLXGPU::ASICFamilyType</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1gaf4fd628e799e6a74201290ff40418d77" kindref="member">ADLX_ASIC_FAMILY_TYPE</ref> *</type>
           <declname>asicFamilyType</declname>
@@ -44,6 +46,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::Type</definition>
         <argsstring>(ADLX_GPU_TYPE *gpuType) const =0</argsstring>
         <name>Type</name>
+        <qualifiedname>adlx::IADLXGPU::Type</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1ga6fb3c9944d5c8aa79f7dbd0f675fac34" kindref="member">ADLX_GPU_TYPE</ref> *</type>
           <declname>gpuType</declname>
@@ -61,6 +64,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::IsExternal</definition>
         <argsstring>(adlx_bool *isExternal) const =0</argsstring>
         <name>IsExternal</name>
+        <qualifiedname>adlx::IADLXGPU::IsExternal</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isExternal</declname>
@@ -78,6 +82,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::Name</definition>
         <argsstring>(const char **name) const =0</argsstring>
         <name>Name</name>
+        <qualifiedname>adlx::IADLXGPU::Name</qualifiedname>
         <param>
           <type>const char **</type>
           <declname>name</declname>
@@ -95,6 +100,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::DriverPath</definition>
         <argsstring>(const char **driverPath) const =0</argsstring>
         <name>DriverPath</name>
+        <qualifiedname>adlx::IADLXGPU::DriverPath</qualifiedname>
         <param>
           <type>const char **</type>
           <declname>driverPath</declname>
@@ -112,6 +118,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::PNPString</definition>
         <argsstring>(const char **pnpString) const =0</argsstring>
         <name>PNPString</name>
+        <qualifiedname>adlx::IADLXGPU::PNPString</qualifiedname>
         <param>
           <type>const char **</type>
           <declname>pnpString</declname>
@@ -129,6 +136,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::HasDesktops</definition>
         <argsstring>(adlx_bool *hasDesktops) const =0</argsstring>
         <name>HasDesktops</name>
+        <qualifiedname>adlx::IADLXGPU::HasDesktops</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>hasDesktops</declname>
@@ -146,6 +154,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::TotalVRAM</definition>
         <argsstring>(adlx_uint *vramMB)=0</argsstring>
         <name>TotalVRAM</name>
+        <qualifiedname>adlx::IADLXGPU::TotalVRAM</qualifiedname>
         <param>
           <type>adlx_uint *</type>
           <declname>vramMB</declname>
@@ -163,6 +172,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::VRAMType</definition>
         <argsstring>(const char **type)=0</argsstring>
         <name>VRAMType</name>
+        <qualifiedname>adlx::IADLXGPU::VRAMType</qualifiedname>
         <param>
           <type>const char **</type>
           <declname>type</declname>
@@ -180,6 +190,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::BIOSInfo</definition>
         <argsstring>(const char **partNumber, const char **version, const char **date)=0</argsstring>
         <name>BIOSInfo</name>
+        <qualifiedname>adlx::IADLXGPU::BIOSInfo</qualifiedname>
         <param>
           <type>const char **</type>
           <declname>partNumber</declname>
@@ -205,6 +216,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::DeviceId</definition>
         <argsstring>(const char **deviceId)=0</argsstring>
         <name>DeviceId</name>
+        <qualifiedname>adlx::IADLXGPU::DeviceId</qualifiedname>
         <param>
           <type>const char **</type>
           <declname>deviceId</declname>
@@ -222,6 +234,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::RevisionId</definition>
         <argsstring>(const char **revisionId)=0</argsstring>
         <name>RevisionId</name>
+        <qualifiedname>adlx::IADLXGPU::RevisionId</qualifiedname>
         <param>
           <type>const char **</type>
           <declname>revisionId</declname>
@@ -239,6 +252,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::SubSystemId</definition>
         <argsstring>(const char **subSystemId)=0</argsstring>
         <name>SubSystemId</name>
+        <qualifiedname>adlx::IADLXGPU::SubSystemId</qualifiedname>
         <param>
           <type>const char **</type>
           <declname>subSystemId</declname>
@@ -256,6 +270,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::SubSystemVendorId</definition>
         <argsstring>(const char **subSystemVendorId)=0</argsstring>
         <name>SubSystemVendorId</name>
+        <qualifiedname>adlx::IADLXGPU::SubSystemVendorId</qualifiedname>
         <param>
           <type>const char **</type>
           <declname>subSystemVendorId</declname>
@@ -273,6 +288,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU::UniqueId</definition>
         <argsstring>(adlx_int *uniqueId)=0</argsstring>
         <name>UniqueId</name>
+        <qualifiedname>adlx::IADLXGPU::UniqueId</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>uniqueId</declname>
@@ -285,7 +301,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ISystem.h" line="477" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

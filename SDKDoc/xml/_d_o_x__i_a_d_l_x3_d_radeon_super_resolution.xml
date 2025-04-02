@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kind="page">
     <compoundname>DOX_IADLX3DRadeonSuperResolution</compoundname>
     <title>IADLX3DRadeonSuperResolution</title>
@@ -38,7 +38,7 @@
 </para>
 <para>Radeon Super Resolution requires <ref refid="_d_o_x__i_a_d_l_x_display_g_p_u_scaling" kindref="compound">GPU scaling</ref>. When Radeon Super Resolution is enabled, GPU scaling is automatically enabled. If GPU scaling is disabled while Radeon Super Resolution is enabled, Radeon Super Resolution is automatically disabled.<linebreak/>
 </para>
-<para>On some AMD GPUs, Radeon Super Resolution is mutually exclusive with <ref refid="_d_o_x__i_a_d_l_x3_d_chill" kindref="compound">AMD Radeon Chill</ref>, <ref refid="_d_o_x__i_a_d_l_x3_d_boost" kindref="compound">AMD Radeon Boost</ref>, <ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpening" kindref="compound">AMD Radeon Image Sharpening</ref>, <ref refid="_d_o_x__i_a_d_l_x_display_integer_scaling" kindref="compound">Integer Display Scaling</ref>, or <ref refid="_d_o_x__i_a_d_l_x_display_scaling_mode__get_mode" kindref="compound">Center Scaling</ref>.<linebreak/>
+<para>On some AMD GPUs, Radeon Super Resolution cannot be simultaneously enabled with <ref refid="_d_o_x__i_a_d_l_x3_d_boost" kindref="compound">AMD Radeon Boost</ref>, <ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpening" kindref="compound">AMD Radeon Image Sharpening</ref>, <ref refid="_d_o_x__i_a_d_l_x_display_integer_scaling" kindref="compound">Integer Display Scaling</ref>, or <ref refid="_d_o_x__i_a_d_l_x_display_scaling_mode__get_mode" kindref="compound">Center Scaling</ref>.<linebreak/>
 </para>
 <para>If Radeon Super Resolution is enabled, the mutually exclusive features are automatically disabled. When a mutually exclusive feature is re-enabled, its previous configuration settings are restored.<linebreak/>
 </para>
@@ -50,27 +50,27 @@
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution__get_sharpness" kindref="compound">GetSharpness</ref>   </para>
-</entry><entry thead="no"><para>Gets the Radeon™ Super Resolution current sharpness.    </para>
+</entry><entry thead="no"><para>Gets the Radeon™ Super Resolution current sharpness.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution__get_sharpness_range" kindref="compound">GetSharpnessRange</ref>   </para>
-</entry><entry thead="no"><para>Gets the Radeon™ Super Resolution maximum sharpness, minimum sharpness, and step sharpness.    </para>
+</entry><entry thead="no"><para>Gets the Radeon™ Super Resolution maximum sharpness, minimum sharpness, and step sharpness.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution__is_enabled" kindref="compound">IsEnabled</ref>   </para>
-</entry><entry thead="no"><para>Checks if Radeon™ Super Resolution is enabled.    </para>
+</entry><entry thead="no"><para>Checks if Radeon™ Super Resolution is enabled.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution__is_supported" kindref="compound">IsSupported</ref>   </para>
-</entry><entry thead="no"><para>Checks if Radeon™ Super Resolution is supported.    </para>
+</entry><entry thead="no"><para>Checks if Radeon™ Super Resolution is supported.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution__set_enabled" kindref="compound">SetEnabled</ref>   </para>
-</entry><entry thead="no"><para>Sets the activation status of Radeon™ Super Resolution.    </para>
+</entry><entry thead="no"><para>Sets the activation status of Radeon™ Super Resolution.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution__set_sharpness" kindref="compound">SetSharpness</ref>   </para>
-</entry><entry thead="no"><para>Sets the Radeon™ Super Resolution sharpness.   </para>
+</entry><entry thead="no"><para>Sets the Radeon™ Super Resolution sharpness.      </para>
 </entry></row>
 </table>
 </para>

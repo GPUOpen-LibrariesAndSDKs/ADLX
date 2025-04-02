@@ -4,5 +4,7 @@ var misc =
     [ "IADLXChangedEvent", "_d_o_x__i_a_d_l_x_changed_event.html", "_d_o_x__i_a_d_l_x_changed_event" ],
     [ "IADLXInterface", "_d_o_x__i_a_d_l_x_interface.html", "_d_o_x__i_a_d_l_x_interface" ],
     [ "IADLXList", "_d_o_x__i_a_d_l_x_list.html", "_d_o_x__i_a_d_l_x_list" ],
-    [ "IADLXLog", "_d_o_x__i_a_d_l_x_log.html", "_d_o_x__i_a_d_l_x_log" ]
+    [ "IADLXLog", "_d_o_x__i_a_d_l_x_log.html", "_d_o_x__i_a_d_l_x_log" ],
+    [ "IADLXApplication", "_d_o_x__i_a_d_l_x_application.html", "_d_o_x__i_a_d_l_x_application" ],
+    [ "IADLXApplicationList", "_d_o_x__i_a_d_l_x_application_list.html", "_d_o_x__i_a_d_l_x_application_list" ]
 ];

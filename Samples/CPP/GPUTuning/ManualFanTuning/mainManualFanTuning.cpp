@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -56,54 +56,42 @@ int main ()
         res = g_ADLXHelp.GetSystemServices ()->GetGPUTuningServices (&gpuTuningService);
         if (ADLX_FAILED (res))
         {
-            // Destroy ADLX
-            res = g_ADLXHelp.Terminate ();
-            std::cout << "Destroy ADLX res: " << res << std::endl;
-            return WaitAndExit ("\tGet GPU tuning services failed", 0);
+            std::cout << "\tGet GPU tuning services failed " << std::endl;
+            goto EXIT;
         }
         IADLXGPUListPtr gpus;
         res = g_ADLXHelp.GetSystemServices ()->GetGPUs (&gpus);
         if (ADLX_FAILED (res))
         {
-            // Destroy ADLX
-            res = g_ADLXHelp.Terminate ();
-            std::cout << "Destroy ADLX res: " << res << std::endl;
-            return WaitAndExit ("\tGet GPU list failed", 0);
+            std::cout << "\tGet GPU list failed " << std::endl;
+            goto EXIT;
         }
         IADLXGPUPtr oneGPU;
         res = gpus->At (0, &oneGPU);
         if (ADLX_FAILED (res) || oneGPU == nullptr)
         {
-            // Destroy ADLX
-            res = g_ADLXHelp.Terminate ();
-            std::cout << "Destroy ADLX res: " << res << std::endl;
-            return WaitAndExit ("\tGet GPU failed", 0);
+            std::cout << "\tGet GPU failed " << std::endl;
+            goto EXIT;
         }
         adlx_bool supported = false;
         res = gpuTuningService->IsSupportedManualFanTuning (oneGPU, &supported);
         if (ADLX_FAILED (res) || supported == false)
         {
-            // Destroy ADLX
-            res = g_ADLXHelp.Terminate ();
-            std::cout << "Destroy ADLX res: " << res << std::endl;
-            return WaitAndExit ("\tThis GPU doesn't supported manual fan tuning", 0);
+            std::cout << "\tThis GPU doesn't supported manual fan tuning " << std::endl;
+            goto EXIT;
         }
         IADLXInterfacePtr manualFanTuningIfc;
         res = gpuTuningService->GetManualFanTuning (oneGPU, &manualFanTuningIfc);
         if (ADLX_FAILED (res) || manualFanTuningIfc == nullptr)
         {
-            // Destroy ADLX
-            res = g_ADLXHelp.Terminate ();
-            std::cout << "Destroy ADLX res: " << res << std::endl;
-            return WaitAndExit ("\tGet manual fan tuning interface failed", 0);
+            std::cout << "\tGet manual fan tuning interface failed " << std::endl;
+            goto EXIT;
         }
         IADLXManualFanTuningPtr manualFanTuning (manualFanTuningIfc);
         if (manualFanTuning == nullptr)
         {
-            // Destroy ADLX
-            res = g_ADLXHelp.Terminate ();
-            std::cout << "Destroy ADLX res: " << res << std::endl;
-            return WaitAndExit ("\tGet manual fan tuning failed", 0);
+            std::cout << "\tGet manual fan tuning failed " << std::endl;
+            goto EXIT;
         }
         // Display main menu options
         MainMenu ();
@@ -113,7 +101,7 @@ int main ()
     }
     else
         return WaitAndExit ("\tg_ADLXHelp initialize failed", 0);
-
+    EXIT:
     // Destroy ADLX
     res = g_ADLXHelp.Terminate ();
     std::cout << "Destroy ADLX res: " << res << std::endl;
@@ -220,7 +208,24 @@ void ShowGetAndSetFan (IADLXManualFanTuningPtr manualFanTuning)
             std::cout << "\tThe current " << crt << " state: speed is " << speed << " temperature is " << temperature << std::endl;
         }
     }
-    
+
+    // Display default fan tuning states
+    IADLXManualFanTuning1Ptr manualFanTuning1(manualFanTuning);
+    if (manualFanTuning1)
+    {
+        res = manualFanTuning1->GetDefaultFanTuningStates(&states);
+        if (ADLX_SUCCEEDED(res))
+        {
+            for (adlx_uint crt = states->Begin(); crt != states->End(); ++crt)
+            {
+                res = states->At(crt, &oneState);
+                adlx_int speed = 0, temperature = 0;
+                oneState->GetFanSpeed(&speed);
+                oneState->GetTemperature(&temperature);
+                std::cout << "\tThe default " << crt << " state: speed is " << speed << " temperature is " << temperature << std::endl;
+            }
+        }
+    }
 
     // Set empty fan tuning states
     res = manualFanTuning->GetEmptyFanTuningStates (&states);
@@ -281,6 +286,12 @@ void ShowGetAndSetZeroRPM (IADLXManualFanTuningPtr manualFanTuning)
     std::cout << "\tReset ZeroRPM state" << ", return code is: "<< res << "(0 means success)" << std::endl;
     res = manualFanTuning->GetZeroRPMState (&isZeroRPMStateSet);
     std::cout << "\tIs ZeroRPM state set: " << isZeroRPMStateSet << ", return code is: "<< res << "(0 means success)" << std::endl;
+    IADLXManualFanTuning1Ptr manualFanTuning1(manualFanTuning);
+    if (manualFanTuning1)
+    {
+        res = manualFanTuning1->GetDefaultZeroRPMState(&isZeroRPMStateSet);
+        std::cout << "\tDefault ZeroRPM state is: " << isZeroRPMStateSet << ", return code is: " << res << "(0 means success)" << std::endl;
+    }
 }
 
 // Display and set MinAcoustic settings
@@ -303,6 +314,13 @@ void ShowGetAndSetMinAcoustic (IADLXManualFanTuningPtr manualFanTuning)
     res = manualFanTuning->SetMinAcousticLimit (tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
     res = manualFanTuning->GetMinAcousticLimit (&minAcousticLimit);
     std::cout << "\tSet current min acoustic limit to: " << minAcousticLimit << ", return code is: "<< res << "(0 means success)" << std::endl;
+
+    IADLXManualFanTuning1Ptr manualFanTuning1(manualFanTuning);
+    if (manualFanTuning1)
+    {
+        res = manualFanTuning1->GetMinAcousticLimitDefault(&minAcousticLimit);
+        std::cout << "\tDisplay default min acoustic limit: " << minAcousticLimit << ", return code is: " << res << "(0 means success)" << std::endl;
+    }
 }
 
 // Display and set MinFanSpeed settings
@@ -327,6 +345,13 @@ void ShowGetAndSetMinFanSpeed (IADLXManualFanTuningPtr manualFanTuning)
     res = manualFanTuning->SetMinFanSpeed(tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
     res = manualFanTuning->GetMinFanSpeed (&minFanSpeed);
     std::cout << "\tSet current MinFanSpeed to: " << minFanSpeed << ", return code is: "<< res << "(0 means success)" << std::endl;
+
+    IADLXManualFanTuning1Ptr manualFanTuning1(manualFanTuning);
+    if (manualFanTuning1)
+    {
+        res = manualFanTuning1->GetMinFanSpeedDefault(&minFanSpeed);
+        std::cout << "\tDisplay default MinFanSpeed: " << minFanSpeed << ", return code is: " << res << "(0 means success)" << std::endl;
+    }
 }
 
 // Display and set TargetFanSpeed settings
@@ -351,4 +376,11 @@ void ShowGetAndSetTargetFanSpeed (IADLXManualFanTuningPtr manualFanTuning)
     res = manualFanTuning->SetTargetFanSpeed (tuningRange.minValue + (tuningRange.maxValue - tuningRange.minValue) / 2);
     res = manualFanTuning->GetTargetFanSpeed (&targetFanSpeed);
     std::cout << "\tSet current TargetFanSpeed to: " << targetFanSpeed << ", return code is: "<< res << "(0 means success)" << std::endl;
+
+    IADLXManualFanTuning1Ptr manualFanTuning1(manualFanTuning);
+    if (manualFanTuning1)
+    {
+        res = manualFanTuning1->GetTargetFanSpeedDefault(&targetFanSpeed);
+        std::cout << "\tDisplay default TargetFanSpeed: " << targetFanSpeed << ", return code is: " << res << "(0 means success)" << std::endl;
+    }
 }

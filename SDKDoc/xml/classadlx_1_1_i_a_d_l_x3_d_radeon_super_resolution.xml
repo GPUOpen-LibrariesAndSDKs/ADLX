@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x3_d_radeon_super_resolution" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLX3DRadeonSuperResolution</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_radeon_super_resolution_1a04b937fa2386909a95bf4704d31a8102" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DRadeonSuperResolution::IsSupported</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupported</name>
+        <qualifiedname>adlx::IADLX3DRadeonSuperResolution::IsSupported</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -19,13 +20,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2164" column="47"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2180" column="47"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_radeon_super_resolution_1afbdb4bf02dd180f40cc99105e476599c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DRadeonSuperResolution::IsEnabled</definition>
         <argsstring>(adlx_bool *enabled)=0</argsstring>
         <name>IsEnabled</name>
+        <qualifiedname>adlx::IADLX3DRadeonSuperResolution::IsEnabled</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>enabled</declname>
@@ -36,13 +38,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2198" column="47"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2214" column="47"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_radeon_super_resolution_1ac69ea76ab5226dd3ef04a25f8a774432" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DRadeonSuperResolution::SetEnabled</definition>
         <argsstring>(adlx_bool enable)=0</argsstring>
         <name>SetEnabled</name>
+        <qualifiedname>adlx::IADLX3DRadeonSuperResolution::SetEnabled</qualifiedname>
         <param>
           <type>adlx_bool</type>
           <declname>enable</declname>
@@ -53,13 +56,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2234" column="47"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2250" column="47"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_radeon_super_resolution_1aab41dd0952fb4de5d44e3a11d9763394" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DRadeonSuperResolution::GetSharpnessRange</definition>
         <argsstring>(ADLX_IntRange *range)=0</argsstring>
         <name>GetSharpnessRange</name>
+        <qualifiedname>adlx::IADLX3DRadeonSuperResolution::GetSharpnessRange</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
           <declname>range</declname>
@@ -70,13 +74,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2264" column="47"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2280" column="47"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_radeon_super_resolution_1a4a5f2beb9be52de5204588316f1082c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DRadeonSuperResolution::GetSharpness</definition>
         <argsstring>(adlx_int *currentSharpness)=0</argsstring>
         <name>GetSharpness</name>
+        <qualifiedname>adlx::IADLX3DRadeonSuperResolution::GetSharpness</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>currentSharpness</declname>
@@ -87,13 +92,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2291" column="47"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2307" column="47"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_radeon_super_resolution_1ac1ee39b24a374147b5a2d26a9bfd42e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DRadeonSuperResolution::SetSharpness</definition>
         <argsstring>(adlx_int sharpness)=0</argsstring>
         <name>SetSharpness</name>
+        <qualifiedname>adlx::IADLX3DRadeonSuperResolution::SetSharpness</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>sharpness</declname>
@@ -104,14 +110,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2318" column="47"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2334" column="47"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2134" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="2135" bodyend="2319"/>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2150" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="2151" bodyend="2335"/>
     <listofallmembers>
       <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DRadeonSuperResolution</scope><name>Acquire</name></member>
       <member refid="classadlx_1_1_i_a_d_l_x3_d_radeon_super_resolution_1a4a5f2beb9be52de5204588316f1082c6" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DRadeonSuperResolution</scope><name>GetSharpness</name></member>

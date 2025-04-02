@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -7,7 +7,7 @@
 /// \brief Demonstrates how to receive notifications of changes in power tuning settings using ADLX. To receive the event, another application (such as SmartShiftMax) must be used to change these settings.
 
 #include "SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
-#include "SDK/Include/IPowerTuning.h"
+#include "SDK/Include/IPowerTuning1.h"
 #include "SDK/Include/ISystem1.h"
 #include <iostream>
 #include <string>
@@ -29,12 +29,18 @@ class CallBackPowerTuningChanged : public IADLXPowerTuningChangedListener
 public:
     adlx_bool ADLX_STD_CALL OnPowerTuningChanged(IADLXPowerTuningChangedEvent* pPowerTuningChangedEvent)
     {
+        IADLXPowerTuningChangedEvent1Ptr pPowerTuningChangedEvent1 = nullptr;
+        pPowerTuningChangedEvent->QueryInterface(IADLXPowerTuningChangedEvent1::IID(), reinterpret_cast<void**>(&pPowerTuningChangedEvent1));
         ADLX_SYNC_ORIGIN origin = pPowerTuningChangedEvent->GetOrigin();
         if (origin == SYNC_ORIGIN_EXTERNAL)
         {
             if (pPowerTuningChangedEvent->IsSmartShiftMaxChanged())
             {
                 std::cout << "\tSmartShiftMaxChanged" << std::endl;
+            }
+            else if (pPowerTuningChangedEvent1->IsSmartShiftEcoChanged())
+            {
+                std::cout << "\tSmartShiftEcoChanged" << std::endl;
             }
         }
         SetEvent(blockEvent);

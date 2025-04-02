@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x3_d_a_m_d_fluid_motion_frames" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLX3DAMDFluidMotionFrames</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_a_m_d_fluid_motion_frames_1a664c4ec439ba2a76da0b77eadb688eee" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DAMDFluidMotionFrames::IsSupported</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupported</name>
+        <qualifiedname>adlx::IADLX3DAMDFluidMotionFrames::IsSupported</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -26,6 +27,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DAMDFluidMotionFrames::IsEnabled</definition>
         <argsstring>(adlx_bool *enabled)=0</argsstring>
         <name>IsEnabled</name>
+        <qualifiedname>adlx::IADLX3DAMDFluidMotionFrames::IsEnabled</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>enabled</declname>
@@ -36,13 +38,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" line="85" column="47"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" line="80" column="47"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_a_m_d_fluid_motion_frames_1ab44e6774eb96a32fea661373c6ff40df" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DAMDFluidMotionFrames::SetEnabled</definition>
         <argsstring>(adlx_bool enable)=0</argsstring>
         <name>SetEnabled</name>
+        <qualifiedname>adlx::IADLX3DAMDFluidMotionFrames::SetEnabled</qualifiedname>
         <param>
           <type>adlx_bool</type>
           <declname>enable</declname>
@@ -53,14 +56,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" line="118" column="47"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" line="107" column="47"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" line="22" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" bodystart="23" bodyend="119"/>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" line="22" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" bodystart="23" bodyend="108"/>
     <listofallmembers>
       <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DAMDFluidMotionFrames</scope><name>Acquire</name></member>
       <member refid="classadlx_1_1_i_a_d_l_x3_d_a_m_d_fluid_motion_frames_1a875be6e1f0ad5d62b4792ef20a50e833" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DAMDFluidMotionFrames</scope><name>IsEnabled</name></member>

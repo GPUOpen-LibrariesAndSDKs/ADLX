@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="c__manual_power_tuning" kind="page">
     <compoundname>c_ManualPowerTuning</compoundname>
     <title>ManualPowerTuning</title>
@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
 <para><htmlonly>&lt;!--
-# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 --&gt;
@@ -28,6 +28,8 @@
 		&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt; Get TDC limit range.&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt; Get current TDC limit.&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt; Set TDC limit.&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt; Get default power limit.&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt;9&lt;/td&gt;&lt;td&gt; Get default TDC limit.&lt;/td&gt;&lt;/tr&gt;
 		&lt;tr&gt;&lt;td&gt;M/m&lt;/td&gt;&lt;td&gt; Show this menu.&lt;/td&gt;&lt;/tr&gt;
 		&lt;tr&gt;&lt;td&gt;Q/q&lt;/td&gt;&lt;td&gt; Quit.&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
@@ -35,10 +37,11 @@
     &lt;h2&gt;Sample Path&lt;/h2&gt;
     &lt;p&gt;/Samples/C/GPUTuning/ManualPowerTuning&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</htmlonly> <heading level="2">Code </heading>
+&lt;/html&gt;
+</htmlonly> <heading level="2">Code </heading>
 </para>
 <para>C <programlisting filename="./C/GPUTuning/ManualPowerTuning/mainManualPowerTuning.c"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2024<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2025<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -67,6 +70,9 @@
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Display<sp/>current<sp/>power<sp/>limit</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowGetPowerLimit(IADLXManualPowerTuning*<sp/>manualPowerTuning);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Display<sp/>default<sp/>power<sp/>limit</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowGetPowerLimitDefault(IADLXManualPowerTuning*<sp/>manualPowerTuning);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Set<sp/>power<sp/>limit</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowSetPowerLimit(IADLXManualPowerTuning*<sp/>manualPowerTuning);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -78,6 +84,9 @@
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Show<sp/>how<sp/>to<sp/>get<sp/>current<sp/>TDC<sp/>limit.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowGetTDCLimit(IADLXManualPowerTuning*<sp/>manualPowerTuning);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Show<sp/>how<sp/>to<sp/>get<sp/>default<sp/>TDC<sp/>limit.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowGetTDCLimitDefault(IADLXManualPowerTuning*<sp/>manualPowerTuning);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Show<sp/>how<sp/>to<sp/>set<sp/>TDC<sp/>limit.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowSetTDCLimit(IADLXManualPowerTuning*<sp/>manualPowerTuning);</highlight></codeline>
@@ -185,6 +194,8 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>5<sp/>to<sp/>display<sp/>TDC<sp/>limit<sp/>range\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>6<sp/>to<sp/>display<sp/>current<sp/>TDC<sp/>limit\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>7<sp/>to<sp/>set<sp/>TDC<sp/>limit\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>8<sp/>to<sp/>display<sp/>default<sp/>power<sp/>limit\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>9<sp/>to<sp/>display<sp/>default<sp/>TDC<sp/>limit\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>Q/q<sp/>to<sp/>terminate<sp/>the<sp/>application\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-&gt;Press<sp/>M/m<sp/>to<sp/>display<sp/>main<sp/>menu<sp/>options\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
@@ -227,7 +238,14 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;7&apos;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShowSetTDCLimit(manualPowerTuning);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Display<sp/>default<sp/>power<sp/>limit</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;8&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShowGetPowerLimitDefault(manualPowerTuning);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Show<sp/>how<sp/>to<sp/>get<sp/>default<sp/>TDC<sp/>limit.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;9&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShowGetTDCLimitDefault(manualPowerTuning);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Display<sp/>menu<sp/>options</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;m&apos;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;M&apos;</highlight><highlight class="normal">:</highlight></codeline>
@@ -302,6 +320,22 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tCurrent<sp/>power<sp/>limit:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>powerLimit,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Display<sp/>default<sp/>power<sp/>limit</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowGetPowerLimitDefault(IADLXManualPowerTuning*<sp/>manualPowerTuning)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>IADLXManualPowerTuning1*<sp/>manualPowerTuning1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manualPowerTuning-&gt;pVtbl-&gt;QueryInterface(manualPowerTuning,<sp/>IID_IADLXManualPowerTuning1(),<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**)&amp;manualPowerTuning1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manualPowerTuning1)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_int<sp/>powerLimit;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>manualPowerTuning1-&gt;pVtbl-&gt;GetPowerLimitDefault(manualPowerTuning1,<sp/>&amp;powerLimit);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tDefault<sp/>power<sp/>limit:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>powerLimit,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>release<sp/>manualPowerTuning1</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manualPowerTuning1-&gt;pVtbl-&gt;Release(manualPowerTuning1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manualPowerTuning1<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Set<sp/>power<sp/>limit</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowSetPowerLimit(IADLXManualPowerTuning*<sp/>manualPowerTuning)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
@@ -337,6 +371,22 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_int<sp/>tdcLimit;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>manualPowerTuning-&gt;pVtbl-&gt;GetTDCLimit(manualPowerTuning,<sp/>&amp;tdcLimit);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tThe<sp/>current<sp/>TDC<sp/>limit<sp/>is:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d<sp/>(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>tdcLimit,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Show<sp/>how<sp/>to<sp/>get<sp/>default<sp/>TDC<sp/>limit.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowGetTDCLimitDefault(IADLXManualPowerTuning*<sp/>manualPowerTuning)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>IADLXManualPowerTuning1*<sp/>manualPowerTuning1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manualPowerTuning-&gt;pVtbl-&gt;QueryInterface(manualPowerTuning,<sp/>IID_IADLXManualPowerTuning1(),<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**)&amp;manualPowerTuning1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manualPowerTuning1)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_int<sp/>tdcLimit;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>res<sp/>=<sp/>manualPowerTuning1-&gt;pVtbl-&gt;GetTDCLimitDefault(manualPowerTuning1,<sp/>&amp;tdcLimit);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tThe<sp/>default<sp/>TDC<sp/>limit<sp/>is:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>tdcLimit,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>release<sp/>manualPowerTuning1</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manualPowerTuning1-&gt;pVtbl-&gt;Release(manualPowerTuning1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manualPowerTuning1<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Show<sp/>how<sp/>to<sp/>set<sp/>TDC<sp/>limit.</highlight><highlight class="normal"></highlight></codeline>

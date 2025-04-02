@@ -1,14 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_u1" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXGPU1</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXGPU</basecompoundref>
-      <sectiondef kind="public-func">
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_g_p_u2" prot="public" virt="non-virtual">adlx::IADLXGPU2</derivedcompoundref>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_u1_1a9edf9e90dc1f44f093d474eb4398894e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU1::PCIBusType</definition>
         <argsstring>(ADLX_PCI_BUS_TYPE *busType) const =0</argsstring>
         <name>PCIBusType</name>
+        <qualifiedname>adlx::IADLXGPU1::PCIBusType</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1gafcbeca41c0df518ccf5556e8e6e83f62" kindref="member">ADLX_PCI_BUS_TYPE</ref> *</type>
           <declname>busType</declname>
@@ -26,6 +28,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU1::PCIBusLaneWidth</definition>
         <argsstring>(adlx_uint *laneWidth) const =0</argsstring>
         <name>PCIBusLaneWidth</name>
+        <qualifiedname>adlx::IADLXGPU1::PCIBusLaneWidth</qualifiedname>
         <param>
           <type>adlx_uint *</type>
           <declname>laneWidth</declname>
@@ -43,6 +46,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU1::MultiGPUMode</definition>
         <argsstring>(ADLX_MGPU_MODE *mode)=0</argsstring>
         <name>MultiGPUMode</name>
+        <qualifiedname>adlx::IADLXGPU1::MultiGPUMode</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1gada547c00826e15266732f874a0f3478d" kindref="member">ADLX_MGPU_MODE</ref> *</type>
           <declname>mode</declname>
@@ -60,6 +64,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPU1::ProductName</definition>
         <argsstring>(const char **productName) const =0</argsstring>
         <name>ProductName</name>
+        <qualifiedname>adlx::IADLXGPU1::ProductName</qualifiedname>
         <param>
           <type>const char **</type>
           <declname>productName</declname>
@@ -72,7 +77,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ISystem1.h" line="123" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

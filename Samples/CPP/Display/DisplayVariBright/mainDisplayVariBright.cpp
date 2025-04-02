@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -35,8 +35,23 @@ void GetCurrentVariBright (const IADLXDisplayServicesPtr& displayService, const 
 // Get displayVariBright current state
 void SetCurrentVariBright (const IADLXDisplayServicesPtr& displayService, const IADLXDisplayPtr& display, int userChoice);
 
+// Display supported status, enabled state and set state for Backlight Adaptive Vari-Bright Scaling mode
+void BacklightAdaptiveFunctionality(const IADLXDisplayVariBright1Ptr& displayVariBright1);
+
+// Display supported status, enabled state and set state for Battery Life Vari-Bright Scaling mode
+void BatteryLifeFunctionality(const IADLXDisplayVariBright1Ptr& displayVariBright1);
+
+// Display supported status, enabled state and set state for Windows Power Mode Vari-Bright Scaling mode
+void WindowsPowerModeFunctionality(const IADLXDisplayVariBright1Ptr& displayVariBright1);
+
+// Display supported status, enabled state and set state for Full-Screen Video Vari-Bright Scaling mode
+void FullScreenVideoFunctionality(const IADLXDisplayVariBright1Ptr& displayVariBright1);
+
 // Main menu
 void MainMenu();
+
+// Vari-Bright Scaling menu action control
+void VariBrightScalingMenuControl(const IADLXDisplayVariBright1Ptr& displayVariBright1, int userChoice);
 
 // Menu action control
 void MenuControl(const IADLXDisplayServicesPtr& displayService, const IADLXDisplayPtr& display);
@@ -220,6 +235,133 @@ void SetCurrentVariBright (const IADLXDisplayServicesPtr& displayService, const 
     }
 }
 
+void BacklightAdaptiveFunctionality(const IADLXDisplayVariBright1Ptr& displayVariBright1)
+{
+    ADLX_RESULT res = ADLX_FAIL;
+    adlx_bool supported = false, enabled = false;
+    int num = 0;
+    while ((num = getchar()) != 'q' && num != 'Q')
+    {
+        switch (num)
+        {
+        case '1':
+            res = displayVariBright1->IsBacklightAdaptiveSupported(&supported);
+            std::cout << "\t\tBacklight Adaptive Vari-Bright Scaling mode is supported on the display: " << (supported ? "true" : "false") << ", return code: " << res << " (0 means success)" << std::endl;
+            break;
+        case '2':
+            res = displayVariBright1->IsBacklightAdaptiveEnabled(&enabled);
+            std::cout << "\t\tBacklight Adaptive Vari-Bright Scaling mode is enabled on the display: " << (enabled ? "true" : "false") << ", return code: " << res << " (0 means success)" << std::endl;
+            break;
+        case '3':
+            res = displayVariBright1->SetBacklightAdaptiveEnabled(true);
+            std::cout << "\t\tSet Backlight Adaptive Vari-Bright Scaling mode enabled " << (ADLX_SUCCEEDED(res) ? "successfully" : "failed") << std::endl;
+            break;
+        case '4':
+            res = displayVariBright1->SetBacklightAdaptiveEnabled(false);
+            std::cout << "\t\tSet Backlight Adaptive Vari-Bright Scaling mode disabled " << (ADLX_SUCCEEDED(res) ? "successfully" : "failed") << std::endl;
+            break;
+        default:
+            break;
+        }
+    }
+}
+
+// Display supported status, enabled state and set state for Battery Life Vari-Bright Scaling mode
+void BatteryLifeFunctionality(const IADLXDisplayVariBright1Ptr& displayVariBright1)
+{
+    ADLX_RESULT res = ADLX_FAIL;
+    adlx_bool supported = false, enabled = false;
+    int num = 0;
+    while ((num = getchar()) != 'q' && num != 'Q')
+    {
+        switch (num)
+        {
+        case '1':
+            res = displayVariBright1->IsBatteryLifeSupported(&supported);
+            std::cout << "\t\tBattery Life Vari-Bright Scaling mode is supported on the display: " << (supported ? "true" : "false") << ", return code: " << res << " (0 means success)" << std::endl;
+            break;
+        case '2':
+            res = displayVariBright1->IsBatteryLifeEnabled(&enabled);
+            std::cout << "\t\tBattery Life Vari-Bright Scaling mode is enabled on the display: " << (enabled ? "true" : "false") << ", return code: " << res << " (0 means success)" << std::endl;
+            break;
+        case '3':
+            res = displayVariBright1->SetBatteryLifeEnabled(true);
+            std::cout << "\t\tSet Battery Life Vari-Bright Scaling mode enabled " << (ADLX_SUCCEEDED(res) ? "successfully" : "failed") << std::endl;
+            break;
+        case '4':
+            res = displayVariBright1->SetBatteryLifeEnabled(false);
+            std::cout << "\t\tSet Battery Life Vari-Bright Scaling mode disabled " << (ADLX_SUCCEEDED(res) ? "successfully" : "failed") << std::endl;
+            break;
+        default:
+            break;
+        }
+    }
+}
+
+// Display supported status, enabled state and set state for Windows Power Mode Vari-Bright Scaling mode
+void WindowsPowerModeFunctionality(const IADLXDisplayVariBright1Ptr& displayVariBright1)
+{
+    ADLX_RESULT res = ADLX_FAIL;
+    adlx_bool supported = false, enabled = false;
+    int num = 0;
+    while ((num = getchar()) != 'q' && num != 'Q')
+    {
+        switch (num)
+        {
+        case '1':
+            res = displayVariBright1->IsWindowsPowerModeSupported(&supported);
+            std::cout << "\t\tWindows Power Mode Vari-Bright Scaling mode is supported on the display: " << (supported ? "true" : "false") << ", return code: " << res << " (0 means success)" << std::endl;
+            break;
+        case '2':
+            res = displayVariBright1->IsWindowsPowerModeEnabled(&enabled);
+            std::cout << "\t\tWindows Power Mode Vari-Bright Scaling mode is enabled on the display: " << (enabled ? "true" : "false") << ", return code: " << res << " (0 means success)" << std::endl;
+            break;
+        case '3':
+            res = displayVariBright1->SetWindowsPowerModeEnabled(true);
+            std::cout << "\t\tSet Windows Power Mode Vari-Bright Scaling mode enabled " << (ADLX_SUCCEEDED(res) ? "successfully" : "failed") << std::endl;
+            break;
+        case '4':
+            res = displayVariBright1->SetWindowsPowerModeEnabled(false);
+            std::cout << "\t\tSet Windows Power Mode Vari-Bright Scaling mode disabled " << (ADLX_SUCCEEDED(res) ? "successfully" : "failed") << std::endl;
+            break;
+        default:
+            break;
+        }
+    }
+}
+
+// Display supported status, enabled state and set state for Full-Screen Video Vari-Bright Scaling mode
+void FullScreenVideoFunctionality(const IADLXDisplayVariBright1Ptr& displayVariBright1)
+{
+    ADLX_RESULT res = ADLX_FAIL;
+    adlx_bool supported = false, enabled = false;
+    int num = 0;
+    while ((num = getchar()) != 'q' && num != 'Q')
+    {
+        switch (num)
+        {
+        case '1':
+            res = displayVariBright1->IsFullScreenVideoSupported(&supported);
+            std::cout << "\t\tFull-Screen Video Vari-Bright Scaling mode is supported on the display: " << (supported ? "true" : "false") << ", return code: " << res << " (0 means success)" << std::endl;
+            break;
+        case '2':
+            res = displayVariBright1->IsFullScreenVideoEnabled(&enabled);
+            std::cout << "\t\tFull-Screen Video Vari-Bright Scaling mode is enabled on the display: " << (enabled ? "true" : "false") << ", return code: " << res << " (0 means success)" << std::endl;
+            break;
+        case '3':
+            res = displayVariBright1->SetFullScreenVideoEnabled(true);
+            std::cout << "\t\tSet Full-Screen Video Vari-Bright Scaling mode enabled " << (ADLX_SUCCEEDED(res) ? "successfully" : "failed") << std::endl;
+            break;
+        case '4':
+            res = displayVariBright1->SetFullScreenVideoEnabled(false);
+            std::cout << "\t\tSet Full-Screen Video Vari-Bright Scaling mode disabled " << (ADLX_SUCCEEDED(res) ? "successfully" : "failed") << std::endl;
+            break;
+        default:
+            break;
+        }
+    }
+}
+
 void MainMenu()
 {
     std::cout << "\tChoose from following options" << std::endl;
@@ -238,6 +380,11 @@ void MainMenu()
     std::cout << "\t->Press c to set the Vari-Bright mode to Balanced preset on a display" << std::endl;
     std::cout << "\t->Press d to set the Vari-Bright mode to Optimized Battery preset on a display" << std::endl;
     std::cout << "\t->Press e to set the Vari-Bright mode to Maximized Battery preset on a display" << std::endl;
+    // Vari-Bright Scaling
+    std::cout << "\t->Press f to use Backlight Adaptive Vari-Bright Scaling mode functionality on a display" << std::endl;
+    std::cout << "\t->Press g to use Battery Life Vari-Bright Scaling mode functionality on a display" << std::endl;
+    std::cout << "\t->Press h to use Windows Power Mode Vari-Bright Scaling mode functionality on a display" << std::endl;
+    std::cout << "\t->Press i to use Full-Screen Video Vari-Bright Scaling mode functionality on a display" << std::endl;
 
     std::cout << "\t->Press Q/q to terminate the application" << std::endl;
     std::cout << "\t->Press M/m to display main menu options" << std::endl;
@@ -287,6 +434,29 @@ void MenuControl(const IADLXDisplayServicesPtr& displayService, const IADLXDispl
             SetCurrentVariBright (displayService, display, num - 'a');
             break;
 
+        case 'f':
+        case 'g':
+        case 'h':
+        case 'i':
+        {
+            IADLXDisplayVariBrightPtr displayVariBright;
+            ADLX_RESULT res = displayService->GetVariBright(display, &displayVariBright);
+            if (ADLX_SUCCEEDED(res))
+            {
+                IADLXDisplayVariBright1Ptr displayVariBright1;
+                ADLX_RESULT res = displayVariBright->QueryInterface(IADLXDisplayVariBright1::IID(), reinterpret_cast<void**>(&displayVariBright1));
+                if (ADLX_SUCCEEDED(res))
+                {
+                    VariBrightScalingMenuControl(displayVariBright1, num - 'f');
+                }
+                else
+                    std::cout << "Failed to get the Vari-Bright Scaling" << std::endl;
+            }
+            else
+                std::cout << "Failed to get the Vari-Bright" << std::endl;
+            break;
+        }
+
             // Display main menu options
         case 'm':
         case 'M':
@@ -296,6 +466,56 @@ void MenuControl(const IADLXDisplayServicesPtr& displayService, const IADLXDispl
         default:
             break;
         }
+    }
+}
+
+// Vari-Bright Scaling menu action control
+void VariBrightScalingMenuControl(const IADLXDisplayVariBright1Ptr& displayVariBright1, int userChoice)
+{
+    switch (userChoice)
+    {
+    case 0:
+        std::cout << "\t\t->Press 1 to check if Backlight Adaptive Vari-Bright Scaling mode is supported on a display" << std::endl;
+        std::cout << "\t\t->Press 2 to check if Backlight Adaptive Vari-Bright Scaling mode is enabled on a display" << std::endl;
+        std::cout << "\t\t->Press 3 to set Backlight Adaptive Vari-Bright Scaling mode enabled on a display" << std::endl;
+        std::cout << "\t\t->Press 4 to set Backlight Adaptive Vari-Bright Scaling mode disabled on a display" << std::endl;
+        std::cout << "\t\t->Press Q/q to go back to the previous menu" << std::endl;
+        BacklightAdaptiveFunctionality(displayVariBright1);
+        MainMenu();
+        break;
+
+    case 1:
+        std::cout << "\t\t->Press 1 to check if Battery Life Vari-Bright Scaling mode is supported on a display" << std::endl;
+        std::cout << "\t\t->Press 2 to check if Battery Life Vari-Bright Scaling mode is enabled on a display" << std::endl;
+        std::cout << "\t\t->Press 3 to set Battery Life Vari-Bright Scaling mode enabled on a display" << std::endl;
+        std::cout << "\t\t->Press 4 to set Battery Life Vari-Bright Scaling mode disabled on a display" << std::endl;
+        std::cout << "\t\t->Press Q/q to go back to the previous menu" << std::endl;
+        BatteryLifeFunctionality(displayVariBright1);
+        MainMenu();
+        break;
+
+    case 2:
+        std::cout << "\t\t->Press 1 to check if Windows Power Mode Vari-Bright Scaling mode is supported on a display" << std::endl;
+        std::cout << "\t\t->Press 2 to check if Windows Power Mode Vari-Bright Scaling mode is enabled on a display" << std::endl;
+        std::cout << "\t\t->Press 3 to set Windows Power Mode Vari-Bright Scaling mode enabled on a display" << std::endl;
+        std::cout << "\t\t->Press 4 to set Windows Power Mode Vari-Bright Scaling mode disabled on a display" << std::endl;
+        std::cout << "\t\t->Press Q/q to go back to the previous menu" << std::endl;
+        WindowsPowerModeFunctionality(displayVariBright1);
+        MainMenu();
+        break;
+
+    case 3:
+        std::cout << "\t\t->Press 1 to check if Full-Screen Video Vari-Bright Scaling mode is supported on a display" << std::endl;
+        std::cout << "\t\t->Press 2 to check if Full-Screen Video Vari-Bright Scaling mode is enabled on a display" << std::endl;
+        std::cout << "\t\t->Press 3 to set Full-Screen Video Vari-Bright Scaling mode enabled on a display" << std::endl;
+        std::cout << "\t\t->Press 4 to set Full-Screen Video Vari-Bright Scaling mode disabled on a display" << std::endl;
+        std::cout << "\t\t->Press Q/q to go back to the previous menu" << std::endl;
+        FullScreenVideoFunctionality(displayVariBright1);
+        MainMenu();
+        break;
+
+    default:
+        break;
     }
 }
 

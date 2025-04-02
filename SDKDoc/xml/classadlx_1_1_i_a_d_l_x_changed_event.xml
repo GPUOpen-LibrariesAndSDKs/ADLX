@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_changed_event" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXChangedEvent</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
@@ -8,14 +8,17 @@
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display_gamma_changed_event" prot="public" virt="non-virtual">adlx::IADLXDisplayGammaChangedEvent</derivedcompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display_gamut_changed_event" prot="public" virt="non-virtual">adlx::IADLXDisplayGamutChangedEvent</derivedcompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event" prot="public" virt="non-virtual">adlx::IADLXDisplaySettingsChangedEvent</derivedcompoundref>
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_g_p_u_connect_changed_event" prot="public" virt="non-virtual">adlx::IADLXGPUConnectChangedEvent</derivedcompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_g_p_u_tuning_changed_event" prot="public" virt="non-virtual">adlx::IADLXGPUTuningChangedEvent</derivedcompoundref>
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_multimedia_changed_event" prot="public" virt="non-virtual">adlx::IADLXMultimediaChangedEvent</derivedcompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_power_tuning_changed_event" prot="public" virt="non-virtual">adlx::IADLXPowerTuningChangedEvent</derivedcompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_changed_event_1aabba9d15598621fe88ce7ed8712b2380" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga7a1e20106faef482c0664c546e04ba00" kindref="member">ADLX_SYNC_ORIGIN</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_SYNC_ORIGIN ADLX_STD_CALL adlx::IADLXChangedEvent::GetOrigin</definition>
         <argsstring>()=0</argsstring>
         <name>GetOrigin</name>
+        <qualifiedname>adlx::IADLXChangedEvent::GetOrigin</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -24,7 +27,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IChangedEvent.h" line="43" column="50"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

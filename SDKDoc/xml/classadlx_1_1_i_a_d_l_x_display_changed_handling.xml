@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_display_changed_handling" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXDisplayChangedHandling</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_changed_handling_1a47732c94ff51d8d52075f442ee75d8d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayChangedHandling::AddDisplayListEventListener</definition>
         <argsstring>(IADLXDisplayListChangedListener *pDisplayListChangedListener)=0</argsstring>
         <name>AddDisplayListEventListener</name>
+        <qualifiedname>adlx::IADLXDisplayChangedHandling::AddDisplayListEventListener</qualifiedname>
         <param>
           <type>IADLXDisplayListChangedListener *</type>
           <declname>pDisplayListChangedListener</declname>
@@ -26,6 +27,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayChangedHandling::RemoveDisplayListEventListener</definition>
         <argsstring>(IADLXDisplayListChangedListener *pDisplayListChangedListener)=0</argsstring>
         <name>RemoveDisplayListEventListener</name>
+        <qualifiedname>adlx::IADLXDisplayChangedHandling::RemoveDisplayListEventListener</qualifiedname>
         <param>
           <type>IADLXDisplayListChangedListener *</type>
           <declname>pDisplayListChangedListener</declname>
@@ -43,6 +45,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayChangedHandling::AddDisplayGamutEventListener</definition>
         <argsstring>(IADLXDisplayGamutChangedListener *pDisplayGamutChangedListener)=0</argsstring>
         <name>AddDisplayGamutEventListener</name>
+        <qualifiedname>adlx::IADLXDisplayChangedHandling::AddDisplayGamutEventListener</qualifiedname>
         <param>
           <type>IADLXDisplayGamutChangedListener *</type>
           <declname>pDisplayGamutChangedListener</declname>
@@ -60,6 +63,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayChangedHandling::RemoveDisplayGamutEventListener</definition>
         <argsstring>(IADLXDisplayGamutChangedListener *pDisplayGamutChangedListener)=0</argsstring>
         <name>RemoveDisplayGamutEventListener</name>
+        <qualifiedname>adlx::IADLXDisplayChangedHandling::RemoveDisplayGamutEventListener</qualifiedname>
         <param>
           <type>IADLXDisplayGamutChangedListener *</type>
           <declname>pDisplayGamutChangedListener</declname>
@@ -77,6 +81,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayChangedHandling::AddDisplayGammaEventListener</definition>
         <argsstring>(IADLXDisplayGammaChangedListener *pDisplayGammaChangedListener)=0</argsstring>
         <name>AddDisplayGammaEventListener</name>
+        <qualifiedname>adlx::IADLXDisplayChangedHandling::AddDisplayGammaEventListener</qualifiedname>
         <param>
           <type>IADLXDisplayGammaChangedListener *</type>
           <declname>pDisplayGammaChangedListener</declname>
@@ -94,6 +99,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayChangedHandling::RemoveDisplayGammaEventListener</definition>
         <argsstring>(IADLXDisplayGammaChangedListener *pDisplayGammaChangedListener)=0</argsstring>
         <name>RemoveDisplayGammaEventListener</name>
+        <qualifiedname>adlx::IADLXDisplayChangedHandling::RemoveDisplayGammaEventListener</qualifiedname>
         <param>
           <type>IADLXDisplayGammaChangedListener *</type>
           <declname>pDisplayGammaChangedListener</declname>
@@ -111,6 +117,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayChangedHandling::AddDisplay3DLUTEventListener</definition>
         <argsstring>(IADLXDisplay3DLUTChangedListener *pDisplay3DLUTChangedListener)=0</argsstring>
         <name>AddDisplay3DLUTEventListener</name>
+        <qualifiedname>adlx::IADLXDisplayChangedHandling::AddDisplay3DLUTEventListener</qualifiedname>
         <param>
           <type>IADLXDisplay3DLUTChangedListener *</type>
           <declname>pDisplay3DLUTChangedListener</declname>
@@ -128,6 +135,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayChangedHandling::RemoveDisplay3DLUTEventListener</definition>
         <argsstring>(IADLXDisplay3DLUTChangedListener *pDisplay3DLUTChangedListener)=0</argsstring>
         <name>RemoveDisplay3DLUTEventListener</name>
+        <qualifiedname>adlx::IADLXDisplayChangedHandling::RemoveDisplay3DLUTEventListener</qualifiedname>
         <param>
           <type>IADLXDisplay3DLUTChangedListener *</type>
           <declname>pDisplay3DLUTChangedListener</declname>
@@ -145,6 +153,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayChangedHandling::AddDisplaySettingsEventListener</definition>
         <argsstring>(IADLXDisplaySettingsChangedListener *pDisplaySettingsChangedListener)=0</argsstring>
         <name>AddDisplaySettingsEventListener</name>
+        <qualifiedname>adlx::IADLXDisplayChangedHandling::AddDisplaySettingsEventListener</qualifiedname>
         <param>
           <type>IADLXDisplaySettingsChangedListener *</type>
           <declname>pDisplaySettingsChangedListener</declname>
@@ -162,6 +171,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayChangedHandling::RemoveDisplaySettingsEventListener</definition>
         <argsstring>(IADLXDisplaySettingsChangedListener *pDisplaySettingsChangedListener)=0</argsstring>
         <name>RemoveDisplaySettingsEventListener</name>
+        <qualifiedname>adlx::IADLXDisplayChangedHandling::RemoveDisplaySettingsEventListener</qualifiedname>
         <param>
           <type>IADLXDisplaySettingsChangedListener *</type>
           <declname>pDisplaySettingsChangedListener</declname>
@@ -174,7 +184,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplays.h" line="2042" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

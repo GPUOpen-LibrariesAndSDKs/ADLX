@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_i_displays3_8h" kind="file" language="C++">
+    <compoundname>IDisplays3.h</compoundname>
+    <includes refid="_i_displays2_8h" local="yes">IDisplays2.h</includes>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x_display_services3" prot="public">adlx::IADLXDisplayServices3</innerclass>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x_display_settings_changed_event3" prot="public">adlx::IADLXDisplaySettingsChangedEvent3</innerclass>
+    <innernamespace refid="namespaceadlx">adlx</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2025<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ADLX_IDISPLAYS3_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADLX_IDISPLAYS3_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;IDisplays2.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//IDisplays3.h<sp/>-<sp/>Interfaces<sp/>for<sp/>ADLX<sp/>Display<sp/>dynamic<sp/>refresh<sp/>rate<sp/>control<sp/>functionality</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>IADLXDisplayServices3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">adlx</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLXDisplayDynamicRefreshRateControl;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLXDisplayFreeSyncColorAccuracy;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLXDisplayServices3<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLXDisplayServices2</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DECLARE_IID(L</highlight><highlight class="stringliteral">&quot;IADLXDisplayServices3&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>GetDynamicRefreshRateControl<sp/>(IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayDynamicRefreshRateControl**<sp/>ppDRRC)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>ADLX_STD_CALL<sp/>GetFreeSyncColorAccuracy(IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayFreeSyncColorAccuracy**<sp/>ppFSCA)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>};<sp/><sp/></highlight><highlight class="comment">//IADLXDisplayServices3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLXDisplayServices3&gt;<sp/>IADLXDisplayServices3Ptr;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">ADLX_DECLARE_IID(IADLXDisplayServices3,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLXDisplayServices3&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplayServices3<sp/>IADLXDisplayServices3;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplayDynamicRefreshRateControl<sp/>IADLXDisplayDynamicRefreshRateControl;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplayFreeSyncColorAccuracy<sp/>IADLXDisplayFreeSyncColorAccuracy;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplayServices3Vtbl</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Acquire)(IADLXDisplayServices3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Release)(IADLXDisplayServices3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>QueryInterface)(IADLXDisplayServices3*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXDisplayServices</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetNumberOfDisplays)(IADLXDisplayServices3*<sp/>pThis,<sp/>adlx_uint*<sp/>numDisplays);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetDisplays)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplayList**<sp/>ppDisplays);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>Get3DLUT)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplay3DLUT**<sp/>ppDisp3DLUT);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetGamut)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayGamut**<sp/>ppDispGamut);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetGamma)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayGamma**<sp/>ppDispGamma);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetDisplayChangedHandling)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplayChangedHandling**<sp/>ppDisplayChangedHandling);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetFreeSync)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayFreeSync**<sp/>ppFreeSync);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetVirtualSuperResolution)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayVSR**<sp/>ppVSR);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetGPUScaling)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayGPUScaling**<sp/>ppGPUScaling);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetScalingMode)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayScalingMode**<sp/>ppScalingMode);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetIntegerScaling)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayIntegerScaling**<sp/>ppIntegerScaling);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetColorDepth)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayColorDepth**<sp/>ppColorDepth);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetPixelFormat)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayPixelFormat**<sp/>ppPixelFormat);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetCustomColor)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayCustomColor**<sp/>ppCustomColor);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetHDCP)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayHDCP**<sp/>ppHDCP);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetCustomResolution)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayCustomResolution**<sp/>ppCustomResolution);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetVariBright)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayVariBright**<sp/>ppVariBright);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXDisplayServices1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetDisplayBlanking)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayBlanking**<sp/>ppDisplayBlanking);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXDisplayServices2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetDisplayConnectivityExperience)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayConnectivityExperience**<sp/>ppDisplayConnectivityExperience);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXDisplayServices3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetDynamicRefreshRateControl)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayDynamicRefreshRateControl**<sp/>ppDRRC);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetFreeSyncColorAccuracy)(IADLXDisplayServices3*<sp/>pThis,<sp/>IADLXDisplay*<sp/>pDisplay,<sp/>IADLXDisplayFreeSyncColorAccuracy**<sp/>ppFSCA);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}<sp/>IADLXDisplayServices3Vtbl;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplayServices3<sp/>{<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLXDisplayServices3Vtbl*<sp/>pVtbl;<sp/>};</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXDisplayServices3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>IADLXDisplaySettingsChangedEvent3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">adlx</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLXDisplaySettingsChangedEvent3<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLXDisplaySettingsChangedEvent2</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DECLARE_IID(L</highlight><highlight class="stringliteral">&quot;IADLXDisplaySettingsChangedEvent3&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>adlx_bool<sp/>ADLX_STD_CALL<sp/>IsDisplayDynamicRefreshRateControlChanged<sp/>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>adlx_bool<sp/>ADLX_STD_CALL<sp/>IsFreeSyncColorAccuracyChanged()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>};<sp/></highlight><highlight class="comment">//IADLXDisplaySettingsChangedEvent3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLXDisplaySettingsChangedEvent3&gt;<sp/>IADLXDisplaySettingsChangedEvent3Ptr;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal">ADLX_DECLARE_IID(IADLXDisplaySettingsChangedEvent3,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLXDisplaySettingsChangedEvent3&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplaySettingsChangedEvent3<sp/>IADLXDisplaySettingsChangedEvent3;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplaySettingsChangedEvent3Vtbl</highlight></codeline>
+<codeline lineno="213"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Acquire)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Release)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>QueryInterface)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXChangedEvent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga7a1e20106faef482c0664c546e04ba00" kindref="member">ADLX_SYNC_ORIGIN</ref>(ADLX_STD_CALL*<sp/>GetOrigin)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>IADLXDisplaySettingsChangedEvent<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetDisplay)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis,<sp/>IADLXDisplay**<sp/>ppDisplay);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsFreeSyncChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsVSRChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsGPUScalingChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsScalingModeChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsIntegerScalingChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsColorDepthChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsPixelFormatChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsHDCPChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsCustomColorHueChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsCustomColorSaturationChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsCustomColorBrightnessChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsCustomColorTemperatureChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsCustomColorContrastChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsCustomResolutionChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsVariBrightChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>IADLXDisplaySettingsChangedEvent1<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsDisplayBlankingChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>IADLXDisplaySettingsChangedEvent2<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsDisplayConnectivityExperienceChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>IADLXDisplaySettingsChangedEvent3<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsDisplayDynamicRefreshRateControlChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsFreeSyncColorAccuracyChanged)(IADLXDisplaySettingsChangedEvent3*<sp/>pThis);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal">}<sp/>IADLXDisplaySettingsChangedEvent3Vtbl;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXDisplaySettingsChangedEvent3<sp/>{<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLXDisplaySettingsChangedEvent3Vtbl*<sp/>pVtbl;<sp/>};</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXDisplaySettingsChangedEvent3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//ADLX_IDISPLAYS3_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplays3.h"/>
+  </compounddef>
+</doxygen>

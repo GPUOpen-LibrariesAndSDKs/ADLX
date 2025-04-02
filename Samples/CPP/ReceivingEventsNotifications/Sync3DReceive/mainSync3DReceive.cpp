@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -9,6 +9,7 @@
 #include "SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
 #include "SDK/Include/I3DSettings.h"
 #include "SDK/Include/I3DSettings1.h"
+#include "SDK/Include/I3DSettings2.h"
 #include "conio.h"
 #include <iostream>
 #include <string>
@@ -101,11 +102,18 @@ public:
         IADLX3DSettingsServicesPtr d3dSettingSrv;
         g_ADLXHelp.GetSystemServices()->Get3DSettingsServices(&d3dSettingSrv);
         IADLX3DSettingsServices1Ptr d3dSettingSrv1 (d3dSettingSrv);
+        IADLX3DSettingsServices2Ptr d3dSettingSrv2(d3dSettingSrv);
 
         IADLX3DSettingsChangedEvent1Ptr p3DSettingsChangedEvent1(p3DSettingsChangedEvent);
         if (p3DSettingsChangedEvent1 == nullptr)
         {
             std::cout << "3DSettingsChangedEvent1 not supported" << std::endl;
+        }
+
+        IADLX3DSettingsChangedEvent2Ptr p3DSettingsChangedEvent2 (p3DSettingsChangedEvent);
+        if (p3DSettingsChangedEvent2 == nullptr)
+        {
+            std::cout << "3DSettingsChangedEvent2 not supported" << std::endl;
         }
 
         // Get the GPU interface
@@ -249,6 +257,16 @@ public:
             {
                 std::cout << "\tResetShaderCache" << std::endl;
             }
+
+            else if (p3DSettingsChangedEvent2->IsImageSharpenDesktopChanged())
+            {
+                // Get ImageSharpen interface
+                IADLX3DImageSharpenDesktopPtr d3dImageSharpenDesktop;
+                d3dSettingSrv2->GetImageSharpenDesktop(gpu, &d3dImageSharpenDesktop);
+                adlx_bool enabled;
+                d3dImageSharpenDesktop->IsEnabled(&enabled);
+                std::cout << "\tImage Sharpeing 2 changed\n\tIsEnabled: " << enabled << std::endl;
+             }
         }
 
         if (origin == SYNC_ORIGIN_UNKNOWN)

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="_d_o_x__i_a_d_l_x_display_g_p_u_scaling__set_enabled" kind="page">
     <compoundname>DOX_IADLXDisplayGPUScaling_SetEnabled</compoundname>
     <title>SetEnabled</title>
@@ -7,7 +7,6 @@
 <para>Sets the GPU scaling to enabled or disabled state on a display. </para>
     </briefdescription>
     <detaileddescription>
-<para>Sets the GPU scaling to enabled or disabled state on a display.</para>
 <para><heading level="2">Syntax </heading>
 </para>
 <para><preformatted>
@@ -38,8 +37,13 @@
 </para>
 <para>GPU scaling uses the GPU to scale up lower resolutions to fit the display. <linebreak/>
  GPU scaling requires a digital connection (DVI, HDMI or DisplayPort™) from the display to the GPU.<linebreak/>
- <bold>Note:</bold> <ref refid="_d_o_x__i_a_d_l_x_display_integer_scaling" kindref="compound">Integer Display Scaling</ref> is not supported when GPU scaling is disabled. <linebreak/>
- GPU scaling is required for <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon™ Super Resolution</ref>. By disabling GPU scaling when Radeon Super Resolution is enabled, Radeon Super Resolution is automatically disabled.</para>
+</para>
+<para><heading level="2">Dependent Interfaces </heading>
+</para>
+<para>When GPU scaling is disabled, <ref refid="_d_o_x__i_a_d_l_x_display_integer_scaling" kindref="compound">Integer Display Scaling</ref> is not supported.<linebreak/>
+</para>
+<para>GPU scaling is required for <ref refid="_d_o_x__i_a_d_l_x3_d_radeon_super_resolution" kindref="compound">Radeon™ Super Resolution</ref>. GPU scaling is automatically enabled when Radeon Super Resolution is enabled.<linebreak/>
+</para>
 <para><heading level="2">Requirements </heading>
 </para>
 <para><table rows="2" cols="2"><row>

@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_all_metrics" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXAllMetrics</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_all_metrics_1a8abe269b4e7949829ba9efc1a317e3ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXAllMetrics::TimeStamp</definition>
         <argsstring>(adlx_int64 *ms)=0</argsstring>
         <name>TimeStamp</name>
+        <qualifiedname>adlx::IADLXAllMetrics::TimeStamp</qualifiedname>
         <param>
           <type>adlx_int64 *</type>
           <declname>ms</declname>
@@ -26,6 +27,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXAllMetrics::GetSystemMetrics</definition>
         <argsstring>(IADLXSystemMetrics **ppSystemMetrics)=0</argsstring>
         <name>GetSystemMetrics</name>
+        <qualifiedname>adlx::IADLXAllMetrics::GetSystemMetrics</qualifiedname>
         <param>
           <type>IADLXSystemMetrics **</type>
           <declname>ppSystemMetrics</declname>
@@ -43,6 +45,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXAllMetrics::GetFPS</definition>
         <argsstring>(IADLXFPS **ppFPS)=0</argsstring>
         <name>GetFPS</name>
+        <qualifiedname>adlx::IADLXAllMetrics::GetFPS</qualifiedname>
         <param>
           <type>IADLXFPS **</type>
           <declname>ppFPS</declname>
@@ -60,6 +63,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXAllMetrics::GetGPUMetrics</definition>
         <argsstring>(IADLXGPU *pGPU, IADLXGPUMetrics **ppGPUMetrics)=0</argsstring>
         <name>GetGPUMetrics</name>
+        <qualifiedname>adlx::IADLXAllMetrics::GetGPUMetrics</qualifiedname>
         <param>
           <type>IADLXGPU *</type>
           <declname>pGPU</declname>
@@ -76,7 +80,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1757" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

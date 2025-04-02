@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -10,6 +10,7 @@
 #include "SDK/Include/IDisplays.h"
 #include "SDK/Include/IDisplays1.h"
 #include "SDK/Include/IDisplays2.h"
+#include "SDK/Include/IDisplays3.h"
 #include "SDK/Include/IDisplaySettings.h"
 #include "conio.h"
 
@@ -136,6 +137,28 @@ adlx_bool ADLX_STD_CALL OnDisplaySettingsChanged(IADLXDisplaySettingsChangedList
         {
             pDisplaySettingChangedEvent2->pVtbl->Release(pDisplaySettingChangedEvent2);
             pDisplaySettingChangedEvent2 = NULL;
+        }
+
+        // Get IADLXDisplaySettingsChangedEvent3 interface
+        IADLXDisplaySettingsChangedEvent3* pDisplaySettingChangedEvent3 = NULL;
+        res = pDisplaySettingsChangedEvent->pVtbl->QueryInterface(pDisplaySettingsChangedEvent, IID_IADLXDisplaySettingsChangedEvent3(), &pDisplaySettingChangedEvent3);
+        if (!ADLX_SUCCEEDED(res) || NULL == pDisplaySettingChangedEvent3)
+        {
+            printf("IID_IADLXDisplaySettingsChangedEvent3 not supported");
+        }
+        else
+        {
+            if (pDisplaySettingChangedEvent3->pVtbl->IsFreeSyncColorAccuracyChanged(pDisplaySettingChangedEvent3))
+            {
+                printf("Display %s get sync event, FreeSync color accuracy is changed\n", displayName);
+            }
+        }
+
+        // Release the IADLXDisplaySettingsChangedEvent3 interface
+        if (pDisplaySettingChangedEvent3 != NULL)
+        {
+            pDisplaySettingChangedEvent3->pVtbl->Release(pDisplaySettingChangedEvent3);
+            pDisplaySettingChangedEvent3 = NULL;
         }
          
         // Release the Display interface

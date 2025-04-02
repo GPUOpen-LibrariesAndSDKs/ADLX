@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_i3_d_settings2_8h" kind="file" language="C++">
+    <compoundname>I3DSettings2.h</compoundname>
+    <includes refid="_a_d_l_x_structures_8h" local="yes">ADLXStructures.h</includes>
+    <includes refid="_i3_d_settings1_8h" local="yes">I3DSettings1.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>ADLXDefines.h</label>
+        <link refid="_a_d_l_x_defines_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ADLXStructures.h</label>
+        <link refid="_a_d_l_x_structures_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings2.h</label>
+        <link refid="_i3_d_settings2_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Windows.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="5">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x3_d_image_sharpen_desktop" prot="public">adlx::IADLX3DImageSharpenDesktop</innerclass>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x3_d_settings_services2" prot="public">adlx::IADLX3DSettingsServices2</innerclass>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_event2" prot="public">adlx::IADLX3DSettingsChangedEvent2</innerclass>
+    <innernamespace refid="namespaceadlx">adlx</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2023<sp/>-<sp/>2025<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ADLX_I3DSETTINGS2_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADLX_I3DSETTINGS2_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_d_l_x_structures_8h" kindref="compound">ADLXStructures.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;I3DSettings1.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//I3DSetting.2h<sp/>-<sp/>Interfaces<sp/>for<sp/>ADLX<sp/>GPU<sp/>3DSetting<sp/>functionality</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//3DSharpenDesktop<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>IADLX3DImageSharpenDesktop<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">adlx</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLX3DImageSharpenDesktop<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLXInterface</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DECLARE_IID(L</highlight><highlight class="stringliteral">&quot;IADLX3DImageSharpenDesktop&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>IsSupported(adlx_bool*<sp/>supported)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>IsEnabled(adlx_bool*<sp/>enabled)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>SetEnabled(adlx_bool<sp/>enable)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>};<sp/><sp/></highlight><highlight class="comment">//IADLX3DImageSharpenDesktop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLX3DImageSharpenDesktop&gt;<sp/>IADLX3DImageSharpenDesktopPtr;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal">ADLX_DECLARE_IID(IADLX3DImageSharpenDesktop,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLX3DImageSharpenDesktop&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLX3DImageSharpenDesktop<sp/>IADLX3DImageSharpenDesktop;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLX3DImageSharpenDesktopVtbl</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Acquire)(IADLX3DImageSharpenDesktop*<sp/>pThis);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Release)(IADLX3DImageSharpenDesktop*<sp/>pThis);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>QueryInterface)(IADLX3DImageSharpenDesktop*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLX3DImageSharpenDesktop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>IsSupported)<sp/>(IADLX3DImageSharpenDesktop*<sp/>pThis,<sp/>adlx_bool*<sp/>supported);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>IsEnabled)<sp/>(IADLX3DImageSharpenDesktop*<sp/>pThis,<sp/>adlx_bool*<sp/>enabled);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>SetEnabled)<sp/>(IADLX3DImageSharpenDesktop*<sp/>pThis,<sp/>adlx_bool<sp/>enable);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">}IADLX3DImageSharpenDesktopVtbl;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLX3DImageSharpenDesktop<sp/>{<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLX3DImageSharpenDesktopVtbl*<sp/>pVtbl;<sp/>};</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLX3DImageSharpenDesktop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="comment">//3DSetting<sp/>Services<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>IADLX3DSettingsServices2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">adlx</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLX3DSettingsServices2<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLX3DSettingsServices1</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DECLARE_IID(L</highlight><highlight class="stringliteral">&quot;IADLX3DSettingsServices2&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>GetImageSharpenDesktop(IADLXGPU*<sp/>pGPU,IADLX3DImageSharpenDesktop**<sp/>pp3DImageSharpenDesktop)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>};<sp/><sp/></highlight><highlight class="comment">//IADLX3DSettingsServices1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLX3DSettingsServices2&gt;<sp/>IADLX3DSettingsServices2Ptr;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal">ADLX_DECLARE_IID<sp/>(IADLX3DSettingsServices2,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLX3DSettingsServices2&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLX3DSettingsServices2<sp/>IADLX3DSettingsServices2;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLX3DSettingsServices2Vtbl</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long<sp/>(ADLX_STD_CALL<sp/>*Acquire)(IADLX3DSettingsServices2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long<sp/>(ADLX_STD_CALL<sp/>*Release)(IADLX3DSettingsServices2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*QueryInterface)(IADLX3DSettingsServices2*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLX3DSettingsServices</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetAntiLag)(IADLX3DSettingsServices2*<sp/>pThis,<sp/>IADLXGPU*<sp/>pGPU,<sp/>IADLX3DAntiLag**<sp/>pp3DAntiLag);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetChill)(IADLX3DSettingsServices2*<sp/>pThis,<sp/>IADLXGPU*<sp/>pGPU,<sp/>IADLX3DChill**<sp/>pp3DChill);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetBoost)(IADLX3DSettingsServices2*<sp/>pThis,<sp/>IADLXGPU*<sp/>pGPU,<sp/>IADLX3DBoost**<sp/>pp3DBoost);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetImageSharpening)(IADLX3DSettingsServices2*<sp/>pThis,<sp/>IADLXGPU*<sp/>pGPU,<sp/>IADLX3DImageSharpening**<sp/>pp3DImageSharpening);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetEnhancedSync)(IADLX3DSettingsServices2*<sp/>pThis,<sp/>IADLXGPU*<sp/>pGPU,<sp/>IADLX3DEnhancedSync**<sp/>pp3DEnhancedSync);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetWaitForVerticalRefresh)(IADLX3DSettingsServices2*<sp/>pThis,<sp/>IADLXGPU*<sp/>pGPU,<sp/>IADLX3DWaitForVerticalRefresh**<sp/>pp3DWaitForVerticalRefresh);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetFrameRateTargetControl)(IADLX3DSettingsServices2*<sp/>pThis,<sp/>IADLXGPU*<sp/>pGPU,<sp/>IADLX3DFrameRateTargetControl**<sp/>pp3DFrameRateTargetControl);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetAntiAliasing)(IADLX3DSettingsServices2*<sp/>pThis,<sp/>IADLXGPU*<sp/>pGPU,<sp/>IADLX3DAntiAliasing**<sp/>pp3DAntiAliasing);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetMorphologicalAntiAliasing)(IADLX3DSettingsServices2*<sp/>pThis,<sp/>IADLXGPU*<sp/>pGPU,<sp/>IADLX3DMorphologicalAntiAliasing**<sp/>pp3DMorphologicalAntiAliasing);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetAnisotropicFiltering)(IADLX3DSettingsServices2*<sp/>pThis,<sp/>IADLXGPU*<sp/>pGPU,<sp/>IADLX3DAnisotropicFiltering**<sp/>pp3DAnisotropicFiltering);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetTessellation)(IADLX3DSettingsServices2*<sp/>pThis,<sp/>IADLXGPU*<sp/>pGPU,<sp/>IADLX3DTessellation**<sp/>pp3DTessellation);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetRadeonSuperResolution)<sp/>(IADLX3DSettingsServices2*<sp/>pThis,<sp/>IADLX3DRadeonSuperResolution**<sp/>pp3DRadeonSuperResolution);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*GetResetShaderCache)(IADLX3DSettingsServices2*<sp/>pThis,<sp/>IADLXGPU*<sp/>pGPU,<sp/>IADLX3DResetShaderCache**<sp/>pp3DResetShaderCache);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/>(ADLX_STD_CALL<sp/>*Get3DSettingsChangedHandling)(IADLX3DSettingsServices2*<sp/>pThis,<sp/>IADLX3DSettingsChangedHandling**<sp/>pp3DSettingsChangedHandling);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetAMDFluidMotionFrames)<sp/>(IADLX3DSettingsServices2*<sp/>pThis,<sp/>IADLX3DAMDFluidMotionFrames**<sp/>pp3DGetAMDFluidMotionFrames);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetImageSharpenDesktop)<sp/>(IADLX3DSettingsServices2*<sp/>pThis,<sp/>IADLXGPU*<sp/>pGPU,<sp/>IADLX3DImageSharpenDesktop**<sp/>pp3DImageSharpenDesktop);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal">}IADLX3DSettingsServices2Vtbl;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLX3DSettingsServices2<sp/>{<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLX3DSettingsServices2Vtbl<sp/>*pVtbl;<sp/>};</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLX3DSettingsServices2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="comment">//Interface<sp/>with<sp/>information<sp/>on<sp/>3D<sp/>setting<sp/>changes<sp/>on<sp/>a<sp/>GPU.<sp/>ADLX<sp/>passes<sp/>this<sp/>to<sp/>application<sp/>that<sp/>registered<sp/>for<sp/>3D<sp/>setting<sp/>changed<sp/>event<sp/>in<sp/>the<sp/>IADLX3DSettingsChangedListener::On3DSettingsChanged()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>IADLX3DSettingsChangedEvent2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">adlx</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLXGPU;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLX3DSettingsChangedEvent2<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLX3DSettingsChangedEvent1</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DECLARE_IID(L</highlight><highlight class="stringliteral">&quot;IADLX3DSettingsChangedEvent2&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>adlx_bool<sp/>ADLX_STD_CALL<sp/>IsImageSharpenDesktopChanged()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>};<sp/></highlight><highlight class="comment">//IADLX3DSettingsChangedEvent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLX3DSettingsChangedEvent2&gt;<sp/>IADLX3DSettingsChangedEvent2Ptr;</highlight></codeline>
+<codeline lineno="278"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal">ADLX_DECLARE_IID(IADLX3DSettingsChangedEvent2,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLX3DSettingsChangedEvent2&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLX3DSettingsChangedEvent2<sp/>IADLX3DSettingsChangedEvent2;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLX3DSettingsChangedEvent2Vtbl</highlight></codeline>
+<codeline lineno="284"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Acquire)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Release)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>QueryInterface)(IADLX3DSettingsChangedEvent2*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXChangedEvent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga7a1e20106faef482c0664c546e04ba00" kindref="member">ADLX_SYNC_ORIGIN</ref>(ADLX_STD_CALL*<sp/>GetOrigin)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>IADLX3DSettingsChangedEvent<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetGPU)(IADLX3DSettingsChangedEvent2*<sp/>pThis,<sp/>IADLXGPU**<sp/>ppGPU);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsAntiLagChanged)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsChillChanged)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsBoostChanged)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsImageSharpeningChanged)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsEnhancedSyncChanged)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsWaitForVerticalRefreshChanged)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsFrameRateTargetControlChanged)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsAntiAliasingChanged)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsMorphologicalAntiAliasingChanged)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsAnisotropicFilteringChanged)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsTessellationModeChanged)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsRadeonSuperResolutionChanged)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsResetShaderCache)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsAMDFluidMotionFramesChanged)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_bool(ADLX_STD_CALL*<sp/>IsImageSharpenDesktopChanged)(IADLX3DSettingsChangedEvent2*<sp/>pThis);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal">}<sp/>IADLX3DSettingsChangedEvent2Vtbl;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLX3DSettingsChangedEvent2<sp/>{<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLX3DSettingsChangedEvent2Vtbl*<sp/>pVtbl;<sp/>};</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLX3DSettingsChangedEvent2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//ADLX_I3DSETTINGS2_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings2.h"/>
+  </compounddef>
+</doxygen>

@@ -1,13 +1,14 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
 /// \file mainImageSharpening.cpp
-/// \brief Demonstrates how to access AMD Radeon Image Sharpening options, and perform related testing when programming with ADLX.
+/// \brief Demonstrates how to access AMD Radeon Image Sharpening and Image Sharpen Desktop options, and perform related testing when programming with ADLX.
 
 #include "SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
 #include "SDK/Include/I3DSettings.h"
+#include "SDK/Include/I3DSettings2.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -20,20 +21,23 @@ using namespace adlx;
 // Use global variables to ensure validity of the interface.
 static ADLXHelper g_ADLXHelp;
 
-// Display Image Sharpening support
-void ShowImageSharpenSupport(const IADLX3DImageSharpeningPtr& d3dImageSharpen);
+// Display Image Sharpening and Image Sharpen Desktop support
+void ShowImageSharpenSupport(const IADLX3DImageSharpeningPtr& d3dImageSharpen, const IADLX3DImageSharpenDesktopPtr& d3dImageSharpenDesktop);
 
-// Get current Image Sharpening state and additional information
-void GetImageSharpenState(const IADLX3DImageSharpeningPtr& d3dImageSharpen);
+// Get current Image Sharpening and Image Sharpen Desktop state and additional information
+void GetImageSharpenState(const IADLX3DImageSharpeningPtr& d3dImageSharpen, const IADLX3DImageSharpenDesktopPtr& d3dImageSharpenDesktop);
 
-// Set Image Sharpening state
+// Set Image Sharpening and Image Sharpen Desktop state
+void SetImageSharpenState(const IADLX3DImageSharpeningPtr& d3dImageSharpen, const IADLX3DImageSharpenDesktopPtr& d3dImageSharpenDesktop, int imageSharpeningIndex, int imageSharpenDesktopIndex);
+
+// Disable Image Sharpening state
 void SetImageSharpenState(const IADLX3DImageSharpeningPtr& d3dImageSharpen, int index);
 
 // Menu
 void MainMenu();
 
 // Menu control
-void MenuControl(const IADLX3DImageSharpeningPtr& d3dImageSharpen);
+void MenuControl(const IADLX3DImageSharpeningPtr& d3dImageSharpen, const IADLX3DImageSharpenDesktopPtr& d3dImageSharpenDesktop);
 
 // Wait for exit with error message
 int WaitAndExit(const char* msg, const int retCode);
@@ -68,8 +72,16 @@ int main()
                     res = d3dSettingSrv->GetImageSharpening(gpuInfo, &d3dImageSharpen);
                     if (ADLX_SUCCEEDED(res))
                     {
-                        MainMenu();
-                        MenuControl(d3dImageSharpen);
+                        IADLX3DSettingsServices2Ptr d3dSettingSrv2(d3dSettingSrv);
+                        // Get Sharpen Desktop interface
+                        IADLX3DImageSharpenDesktopPtr d3dImageSharpenDesktop;
+                        res = d3dSettingSrv2->GetImageSharpenDesktop(gpuInfo, &d3dImageSharpenDesktop);
+                        if (ADLX_SUCCEEDED(res))
+                        {
+                            MainMenu();
+                            MenuControl(d3dImageSharpen, d3dImageSharpenDesktop);
+                        }
+
                     }
                 }
             }
@@ -98,18 +110,28 @@ int main()
     return 0;
 }
 
-void ShowImageSharpenSupport(const IADLX3DImageSharpeningPtr& d3dImageSharpen)
+void ShowImageSharpenSupport(const IADLX3DImageSharpeningPtr& d3dImageSharpen, const IADLX3DImageSharpenDesktopPtr& d3dImageSharpenDesktop)
 {
     adlx_bool supported = false;
     ADLX_RESULT res = d3dImageSharpen->IsSupported(&supported);
-    std::cout << "\tIsSupported: " << supported << ", return code is: "<< res << "(0 means success)" << std::endl;
+    std::cout << "\tImageSharpening IsSupported: " << supported << ", return code is: "<< res << "(0 means success)" << std::endl;
+
+    supported = false;
+    res = d3dImageSharpen->IsSupported(&supported);
+    std::cout << "\tImageSharpenDesktop IsSupported: " << supported << ", return code is: " << res << "(0 means success)" << std::endl;
+
 }
 
-void GetImageSharpenState(const IADLX3DImageSharpeningPtr& d3dImageSharpen)
+void GetImageSharpenState(const IADLX3DImageSharpeningPtr& d3dImageSharpen, const IADLX3DImageSharpenDesktopPtr& d3dImageSharpenDesktop)
 {
     adlx_bool enabled = false;
     ADLX_RESULT res = d3dImageSharpen->IsEnabled(&enabled);
-    std::cout << "\tIsEnabled: " << enabled << ", return code is: "<< res << "(0 means success)" << std::endl;
+    std::cout << "\tImageSharpening IsEnabled: " << enabled << ", return code is: "<< res << "(0 means success)" << std::endl;
+
+    enabled = false;
+    res = d3dImageSharpenDesktop->IsEnabled(&enabled);
+    std::cout << "\tImageSharpenDesktop IsEnabled: " << enabled << ", return code is: " << res << "(0 means success)" << std::endl;
+
     adlx_int sharpness;
     ADLX_IntRange sharpnessRange  = {0};
     res = d3dImageSharpen->GetSharpness(&sharpness);
@@ -120,13 +142,17 @@ void GetImageSharpenState(const IADLX3DImageSharpeningPtr& d3dImageSharpen)
               << ", return code is: "<< res << "(0 means success)" << std::endl;
 }
 
-void SetImageSharpenState(const IADLX3DImageSharpeningPtr& d3dImageSharpen, int index)
+void SetImageSharpenState(const IADLX3DImageSharpeningPtr& d3dImageSharpen, const IADLX3DImageSharpenDesktopPtr& d3dImageSharpenDesktop, int imageSharpeningIndex, int imageSharpenDesktopIndex)
 {
-    ADLX_RESULT res = d3dImageSharpen->SetEnabled(index == 0);
-    std::cout << "\tReturn code is: " << res << "(0 means success)" << std::endl;
+    ADLX_RESULT res = d3dImageSharpen->SetEnabled(imageSharpeningIndex);
+    std::cout << "\tImage Sharpening Return code is: " << res << "(0 means success)" << std::endl;
 
-    if (index == 0 && ADLX_SUCCEEDED(res))
+    if (imageSharpeningIndex && ADLX_SUCCEEDED(res))
     {
+
+        res = d3dImageSharpenDesktop->SetEnabled(imageSharpenDesktopIndex);
+        std::cout << "\tImage Sharpen Desktop Return code is: " << res << "(0 means success)" << std::endl;
+
         adlx_int sharpness;
         ADLX_IntRange sharpnessRange  = {0};
         d3dImageSharpen->GetSharpness(&sharpness);
@@ -144,6 +170,12 @@ void SetImageSharpenState(const IADLX3DImageSharpeningPtr& d3dImageSharpen, int 
     }
 }
 
+void SetImageSharpenState(const IADLX3DImageSharpeningPtr& d3dImageSharpen, int index)
+{
+    ADLX_RESULT res = d3dImageSharpen->SetEnabled(index);
+    std::cout << "\tImage Sharpening Return code is: " << res << "(0 means success)" << std::endl;
+}
+
 int WaitAndExit(const char* msg, const int retCode)
 {
     // Printout the message and pause to see it before returning the desired code
@@ -158,36 +190,44 @@ void MainMenu()
 {
     std::cout << "\tChoose from the following options:" << std::endl;
 
-    std::cout << "\t->Press 1 to display Image Sharpening support" << std::endl;
-    std::cout << "\t->Press 2 to get current Image Sharpening state and additional information" << std::endl;
-    std::cout << "\t->Press 3 to enable and configure Image Sharpening" << std::endl;
-    std::cout << "\t->Press 4 to disable Image Sharpening" << std::endl;
+    std::cout << "\t->Press 1 to display Image Sharpening and Image Sharpen Desktop support" << std::endl;
+    std::cout << "\t->Press 2 to get current Image Sharpening and Image Sharpen Desktop state & additional information" << std::endl;
+    std::cout << "\t->Press 3 to enable Image Sharpening and disable Image Sharpen Desktop" << std::endl;
+    std::cout << "\t->Press 4 to enable Image Sharpening and Image Sharpen Desktop" << std::endl;
+    std::cout << "\t->Press 5 to disable Image Sharpening" << std::endl;
 
     std::cout << "\t->Press Q/q to quit the application" << std::endl;
     std::cout << "\t->Press M/m to display menu options" << std::endl;
 }
 
-void MenuControl(const IADLX3DImageSharpeningPtr& d3dImageSharpen)
+void MenuControl(const IADLX3DImageSharpeningPtr& d3dImageSharpen, const IADLX3DImageSharpenDesktopPtr& d3dImageSharpenDesktop)
 {
     int num = 0;
     while ((num = getchar()) != 'q' && num != 'Q')
     {
         switch (num)
         {
-            // Display Image Sharpening support
+            // Display Image Sharpening and Image Sharpen Desktop support
         case '1':
-            ShowImageSharpenSupport(d3dImageSharpen);
+            ShowImageSharpenSupport(d3dImageSharpen, d3dImageSharpenDesktop);
             break;
 
-            // Get current Image Sharpening state and additional information
+            // Get current Image Sharpening and Image Sharpen Desktop state and additional information
         case '2':
-            GetImageSharpenState(d3dImageSharpen);
+            GetImageSharpenState(d3dImageSharpen, d3dImageSharpenDesktop);
             break;
 
-            // Set Image Sharpening state
+            // Enable Image Sharpening and disable Image Sharpen Desktop
         case '3':
+            SetImageSharpenState(d3dImageSharpen, d3dImageSharpenDesktop, true, false);
+            break;
+            // Enable Image Sharpening and Image Sharpen Desktop
         case '4':
-            SetImageSharpenState(d3dImageSharpen, num - '3');
+            SetImageSharpenState(d3dImageSharpen, d3dImageSharpenDesktop, true, true);
+            break;
+            // Disable Image Sharpening
+        case '5':
+            SetImageSharpenState(d3dImageSharpen, false);
             break;
 
             // Display menu options

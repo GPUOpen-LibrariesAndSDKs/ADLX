@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_f_p_s" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXFPS</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_f_p_s_1a14d53a3f26fe653c1b7602b229cd7442" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXFPS::TimeStamp</definition>
         <argsstring>(adlx_int64 *ms)=0</argsstring>
         <name>TimeStamp</name>
+        <qualifiedname>adlx::IADLXFPS::TimeStamp</qualifiedname>
         <param>
           <type>adlx_int64 *</type>
           <declname>ms</declname>
@@ -26,6 +27,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXFPS::FPS</definition>
         <argsstring>(adlx_int *data)=0</argsstring>
         <name>FPS</name>
+        <qualifiedname>adlx::IADLXFPS::FPS</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>data</declname>
@@ -38,7 +40,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="1510" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

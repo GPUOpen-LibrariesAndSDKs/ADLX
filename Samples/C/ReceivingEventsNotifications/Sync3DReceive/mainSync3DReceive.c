@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -9,6 +9,7 @@
 #include "SDK/ADLXHelper/Windows/C/ADLXHelper.h"
 #include "SDK/Include/I3DSettings.h"
 #include "SDK/Include/I3DSettings1.h"
+#include "SDK/Include/I3DSettings2.h"
 #include "conio.h"
 
 // Block event to verify call back
@@ -30,6 +31,13 @@ adlx_bool ADLX_STD_CALL On3DSettingsChanged(IADLX3DSettingsChangedListener *pThi
     if (p3DSettingsChangedEvent1 == NULL)
     {
         printf("3DSettingsChangedEvent1 not supported\n");
+    }
+
+    IADLX3DSettingsChangedEvent2* p3DSettingsChangedEvent2 = NULL;
+    p3DSettingsChangedEvent->pVtbl->QueryInterface(p3DSettingsChangedEvent, IID_IADLX3DSettingsChangedEvent2(), &p3DSettingsChangedEvent2);
+    if (p3DSettingsChangedEvent2 == NULL)
+    {
+        printf("3DSettingsChangedEvent2 not supported\n");
     }
 	
     //RadeonSuperResolution is a global feature (the GPU interface is NULL); skip printing its name
@@ -90,6 +98,10 @@ adlx_bool ADLX_STD_CALL On3DSettingsChanged(IADLX3DSettingsChangedListener *pThi
         {
             printf("\tResetShaderCache\n");
         }
+        else if (p3DSettingsChangedEvent2->pVtbl->IsImageSharpenDesktopChanged(p3DSettingsChangedEvent2))
+        {
+            printf("\tImage Sharpening 2 is changed\n");
+        }
     }
 
     if (origin == SYNC_ORIGIN_UNKNOWN)
@@ -115,6 +127,13 @@ adlx_bool ADLX_STD_CALL On3DSettingsChanged(IADLX3DSettingsChangedListener *pThi
     {
         p3DSettingsChangedEvent1->pVtbl->Release(p3DSettingsChangedEvent1);
         p3DSettingsChangedEvent1 = NULL;
+    }
+
+    // Release the IADLX3DSettingsChangedEvent2 interface
+    if (p3DSettingsChangedEvent2 != NULL)
+    {
+        p3DSettingsChangedEvent2->pVtbl->Release(p3DSettingsChangedEvent2);
+        p3DSettingsChangedEvent2 = NULL;
     }
 
     SetEvent(blockEvent);

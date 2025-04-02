@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="compatibility_8md" kind="file" language="Markdown">
     <compoundname>compatibility.md</compoundname>
     <briefdescription>
@@ -9,14 +9,14 @@
     <programlisting>
 <codeline><highlight class="normal">@page<sp/>page_guide_Compatibility<sp/>Compatibility</highlight></codeline>
 <codeline><highlight class="normal">&lt;!--</highlight></codeline>
-<codeline><highlight class="normal">#<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2024<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2025<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
 <codeline><highlight class="normal">#</highlight></codeline>
 <codeline><highlight class="normal">#-------------------------------------------------------------------------------------------------</highlight></codeline>
 <codeline><highlight class="normal">--&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">ADLX<sp/>features<sp/>forward<sp/>and<sp/>backward<sp/>compatibility<sp/>for<sp/>ADLX<sp/>dependent<sp/>applications,<sp/>including<sp/>compatibility<sp/>for<sp/>system<sp/>installed<sp/>AMD<sp/>drivers.</highlight></codeline>
+<codeline><highlight class="normal">ADLX<sp/>provides<sp/>forward<sp/>and<sp/>backward<sp/>compatibility<sp/>for<sp/>ADLX<sp/>dependent<sp/>applications,<sp/>including<sp/>compatibility<sp/>for<sp/>system<sp/>installed<sp/>AMD<sp/>drivers.</highlight></codeline>
 <codeline><highlight class="normal">An<sp/>application<sp/>using<sp/>ADLX<sp/>will<sp/>run<sp/>as<sp/>expected<sp/>when<sp/>installed<sp/>on<sp/>a<sp/>system<sp/>with<sp/>a<sp/>newer<sp/>AMD<sp/>driver<sp/>version.</highlight></codeline>
-<codeline><highlight class="normal">If<sp/>the<sp/>application<sp/>is<sp/>installed<sp/>on<sp/>a<sp/>system<sp/>with<sp/>an<sp/>older<sp/>AMD<sp/>driver<sp/>version,<sp/>the<sp/>application<sp/>will<sp/>run<sp/>with<sp/>reduced<sp/>functionality<sp/>and<sp/>support<sp/>for<sp/>some<sp/>interfaces.</highlight></codeline>
+<codeline><highlight class="normal">If<sp/>the<sp/>application<sp/>is<sp/>installed<sp/>on<sp/>a<sp/>system<sp/>with<sp/>an<sp/>older<sp/>AMD<sp/>driver<sp/>version,<sp/>the<sp/>application<sp/>will<sp/>run<sp/>with<sp/>reduced<sp/>functionality,<sp/>supporting<sp/>only<sp/>the<sp/>interfaces<sp/>from<sp/>the<sp/>ADLX<sp/>version<sp/>installed<sp/>with<sp/>the<sp/>older<sp/>AMD<sp/>driver.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">When<sp/>new<sp/>functionalities<sp/>are<sp/>introduced,<sp/>they<sp/>are<sp/>provided<sp/>in<sp/>new<sp/>interfaces.<sp/>ADLX<sp/>interfaces<sp/>are<sp/>locked<sp/>and<sp/>do<sp/>not<sp/>change;<sp/>all<sp/>in-application<sp/>ADLX<sp/>code<sp/>will<sp/>continue<sp/>to</highlight></codeline>
 <codeline><highlight class="normal">compile<sp/>throughout<sp/>future<sp/>versions<sp/>of<sp/>the<sp/>ADLX<sp/>SDK.&lt;br/&gt;</highlight></codeline>

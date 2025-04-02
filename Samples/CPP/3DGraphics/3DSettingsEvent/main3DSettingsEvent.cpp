@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -91,6 +91,7 @@ int main()
                 ADLX_RESULT addListenerRes = changeHandle->Add3DSettingsEventListener(call);
                 
                 // Change anti-lag state
+                std::cout << "\nSwitching Anti-Lag status\n";
                 IADLX3DAntiLagPtr antiLag;
                 d3dSettingSrv->GetAntiLag(gpuInfo, &antiLag);
                 adlx_bool enable;

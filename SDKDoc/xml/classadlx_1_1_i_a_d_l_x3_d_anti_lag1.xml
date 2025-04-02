@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x3_d_anti_lag1" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLX3DAntiLag1</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLX3DAntiLag</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_anti_lag1_1aff924449737da73262971ceb7d4ee3b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DAntiLag1::GetLevel</definition>
         <argsstring>(ADLX_ANTILAG_STATE *level)=0</argsstring>
         <name>GetLevel</name>
+        <qualifiedname>adlx::IADLX3DAntiLag1::GetLevel</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1ga67d22cfa2969510afada5140a157df62" kindref="member">ADLX_ANTILAG_STATE</ref> *</type>
           <declname>level</declname>
@@ -26,6 +27,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DAntiLag1::SetLevel</definition>
         <argsstring>(ADLX_ANTILAG_STATE level)=0</argsstring>
         <name>SetLevel</name>
+        <qualifiedname>adlx::IADLX3DAntiLag1::SetLevel</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1ga67d22cfa2969510afada5140a157df62" kindref="member">ADLX_ANTILAG_STATE</ref></type>
           <declname>level</declname>
@@ -38,7 +40,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="206" column="55"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

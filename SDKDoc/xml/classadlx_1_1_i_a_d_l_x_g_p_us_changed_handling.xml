@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_g_p_us_changed_handling" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXGPUsChangedHandling</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_g_p_us_changed_handling_1ac6d3ca3724037f4904dbde048184e418" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUsChangedHandling::AddGPUsListEventListener</definition>
         <argsstring>(IADLXGPUsEventListener *pListener)=0</argsstring>
         <name>AddGPUsListEventListener</name>
+        <qualifiedname>adlx::IADLXGPUsChangedHandling::AddGPUsListEventListener</qualifiedname>
         <param>
           <type>IADLXGPUsEventListener *</type>
           <declname>pListener</declname>
@@ -26,6 +27,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXGPUsChangedHandling::RemoveGPUsListEventListener</definition>
         <argsstring>(IADLXGPUsEventListener *pListener)=0</argsstring>
         <name>RemoveGPUsListEventListener</name>
+        <qualifiedname>adlx::IADLXGPUsChangedHandling::RemoveGPUsListEventListener</qualifiedname>
         <param>
           <type>IADLXGPUsEventListener *</type>
           <declname>pListener</declname>
@@ -38,7 +40,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/ISystem.h" line="726" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

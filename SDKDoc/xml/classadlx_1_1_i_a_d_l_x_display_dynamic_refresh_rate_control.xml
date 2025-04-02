@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_display_dynamic_refresh_rate_control" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXDisplayDynamicRefreshRateControl</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_dynamic_refresh_rate_control_1a1cbdc663e23ba5231fb044e26f6d97fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayDynamicRefreshRateControl::IsSupported</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsSupported</name>
+        <qualifiedname>adlx::IADLXDisplayDynamicRefreshRateControl::IsSupported</qualifiedname>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="3284" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_dynamic_refresh_rate_control_1aea168536f252befda549dc81c24ab21f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayDynamicRefreshRateControl::IsEnabled</definition>
+        <argsstring>(adlx_bool *enabled)=0</argsstring>
+        <name>IsEnabled</name>
+        <qualifiedname>adlx::IADLXDisplayDynamicRefreshRateControl::IsEnabled</qualifiedname>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="3305" column="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_dynamic_refresh_rate_control_1a405a7793e9dc85389517cb4a148e9f17" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayDynamicRefreshRateControl::SetEnabled</definition>
+        <argsstring>(adlx_bool enabled)=0</argsstring>
+        <name>SetEnabled</name>
+        <qualifiedname>adlx::IADLXDisplayDynamicRefreshRateControl::SetEnabled</qualifiedname>
+        <param>
+          <type>adlx_bool</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="3326" column="51"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="3260" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="3261" bodyend="3327"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayDynamicRefreshRateControl</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_dynamic_refresh_rate_control_1aea168536f252befda549dc81c24ab21f" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayDynamicRefreshRateControl</scope><name>IsEnabled</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_dynamic_refresh_rate_control_1a1cbdc663e23ba5231fb044e26f6d97fc" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayDynamicRefreshRateControl</scope><name>IsSupported</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayDynamicRefreshRateControl</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayDynamicRefreshRateControl</scope><name>Release</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_display_dynamic_refresh_rate_control_1a405a7793e9dc85389517cb4a148e9f17" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayDynamicRefreshRateControl</scope><name>SetEnabled</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

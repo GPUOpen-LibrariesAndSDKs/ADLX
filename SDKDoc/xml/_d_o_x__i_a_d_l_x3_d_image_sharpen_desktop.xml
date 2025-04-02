@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x3_d_image_sharpen_desktop" kind="page">
+    <compoundname>DOX_IADLX3DImageSharpenDesktop</compoundname>
+    <title>IADLX3DImageSharpenDesktop</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x3_d_image_sharpen_desktop__is_enabled">IsEnabled</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x3_d_image_sharpen_desktop__is_supported">IsSupported</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x3_d_image_sharpen_desktop__set_enabled">SetEnabled</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLX3DImageSharpenDesktop</bold> interface configures the Sharpen Desktop settings of a GPU.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLX3DImageSharpenDesktop</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLX3DImageSharpenDesktopPtr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_interface" kindref="compound">IADLXInterface</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para>Sharpen Desktop restores clarity softened by other effects to all the desktop visuals, for both windowed applications and for applications that run in fullscreen exclusive mode.<linebreak/>
+ <heading level="2">Dependent Interfaces </heading>
+</para>
+<para>Sharpen Desktop requires <ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpening" kindref="compound">AMD Radeon™ Image Sharpening</ref>.<linebreak/>
+</para>
+<para>When AMD Radeon Image sharpening is enabled and Sharpen Desktop is enabled, the sharpening is applied for both windowed applications and for applications that run in fullscreen exclusive mode.<linebreak/>
+</para>
+<para>When AMD Radeon Image sharpening is enabled and Sharpen Desktop is disabled, the sharpening is only applied to applications that run in fullscreen exclusive mode.<linebreak/>
+</para>
+<para>When AMD Radeon™ Image sharpening is disabled and Sharpen Desktop is enabled, Sharpen Desktop remains in enabled state, but the value is ignored.<linebreak/>
+</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpen_desktop__is_enabled" kindref="compound">IsEnabled</ref>   </para>
+</entry><entry thead="no"><para>Checks if Sharpen Desktop is enabled on a GPU.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpen_desktop__is_supported" kindref="compound">IsSupported</ref>   </para>
+</entry><entry thead="no"><para>Checks if Sharpen Desktop is supported on a GPU.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpen_desktop__set_enabled" kindref="compound">SetEnabled</ref>   </para>
+</entry><entry thead="no"><para>Sets Sharpen Desktop to enabled or disabled on a GPU.      </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;I3DSettings2.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.4</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp__image_sharpening" kindref="compound">ImageSharpening C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c__image_sharpening" kindref="compound">ImageSharpening C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpen_desktop__is_enabled" kindref="compound">IsEnabled</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpen_desktop__is_supported" kindref="compound">IsSupported</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpen_desktop__set_enabled" kindref="compound">SetEnabled</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLX3DSettingsPage.h"/>
+  </compounddef>
+</doxygen>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="page__a_d_l_x_initialize_with_caller_adl__fn" kind="page">
     <compoundname>page_ADLXInitializeWithCallerAdl_Fn</compoundname>
     <title>ADLXInitializeWithCallerAdl_Fn</title>
@@ -7,11 +7,10 @@
 <para>A pointer to the function to initialize ADLX with an ADL context. </para>
     </briefdescription>
     <detaileddescription>
-<para>A pointer to the function to initialize ADLX with an ADL context.</para>
 <para><heading level="2">Syntax </heading>
 </para>
 <para><preformatted>
-  typedef <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> (ADLX_CDECL_CALL *ADLXInitializeWithCallerAdl_Fn)(adlx_uint64 version, <ref refid="_d_o_x__i_a_d_l_x_system" kindref="compound">IADLXSystem</ref>** ppSystem, <ref refid="_d_o_x__i_a_d_l_mapping" kindref="compound">IADLMapping</ref>** ppAdlMapping, adlx_handle adlContext, <ref refid="group___a_d_l_x_defs_1ga7301579b153c3612dca5c442e5f2dd45" kindref="member">ADLX_ADL_Main_Memory_Free</ref> adlMainMemoryFree)
+  typedef <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> (ADLX_CDECL_CALL *ADLXInitializeWithCallerAdl_Fn)(adlx_uint64 version, <ref refid="_d_o_x__i_a_d_l_x_system" kindref="compound">IADLXSystem</ref>** ppSystem, <ref refid="_d_o_x__i_a_d_l_mapping" kindref="compound">IADLMapping</ref>** ppAdlMapping, adlx_handle adlContext, <ref refid="group___a_d_l_x_defs_1gabdc3ae7e3b002ff843e7aaa8f055ae77" kindref="member">ADLX_ADL_Main_Memory_Free</ref> adlMainMemoryFree)
  </preformatted> <heading level="2">Parameters </heading>
 </para>
 <para><variablelist>
@@ -72,7 +71,7 @@
 <entry thead="no" class="paramidx"><para>5.</para>
 </entry><entry thead="no" class="paramdir"><para>[in]</para>
 </entry><entry thead="no" class="paramname"><para>adlMainMemoryFree</para>
-</entry><entry thead="no" class="paramtype"><para><ref refid="group___a_d_l_x_defs_1ga7301579b153c3612dca5c442e5f2dd45" kindref="member">ADLX_ADL_Main_Memory_Free</ref></para>
+</entry><entry thead="no" class="paramtype"><para><ref refid="group___a_d_l_x_defs_1gabdc3ae7e3b002ff843e7aaa8f055ae77" kindref="member">ADLX_ADL_Main_Memory_Free</ref></para>
 </entry><entry thead="no"><para>The callback handle of the memory deallocation function. </para>
 </entry></row>
 </table>

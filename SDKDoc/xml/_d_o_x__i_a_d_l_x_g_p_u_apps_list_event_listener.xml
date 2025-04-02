@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_g_p_u_apps_list_event_listener" kind="page">
+    <compoundname>DOX_IADLXGPUAppsListEventListener</compoundname>
+    <title>IADLXGPUAppsListEventListener</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_g_p_u_apps_list_event_listener__on_g_p_u_apps_list_changed">OnGPUAppsListChanged</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXGPUAppsListEventListener</bold> interface can be implemented in an application to receive updates from ADLX when the list of applications running on a GPU changes.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para>ADLX calls the <bold>OnGPUAppsListChanged</bold> method of the interface to provide an updated list of GPU applications.<linebreak/>
+ To receive these updates, an instance of the implemented <bold>IADLXGPUAppsListEventListener</bold> interface must be passed to <ref refid="_d_o_x__i_a_d_l_x_g_p_u_apps_list_changed_handling__add_g_p_u_apps_list_event_listener" kindref="compound">AddGPUAppsListEventListener</ref>.<linebreak/>
+ For more information on how to subscribe for event notifications, refer to <ref refid="page_guide_event" kindref="compound">Subscribing to Event Notifications using ADLX</ref>.</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_apps_list_event_listener__on_g_p_u_apps_list_changed" kindref="compound">OnGPUAppsListChanged</ref>   </para>
+</entry><entry thead="no"><para><bold>OnGPUAppsListChanged</bold> is called by ADLX to provide an updated list of GPU applications.      </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IApplications&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.4</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp_sseco" kindref="compound">SmartShiftEco C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c_sseco" kindref="compound">SmartShiftEco C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u_apps_list_event_listener__on_g_p_u_apps_list_changed" kindref="compound">OnGPUAppsListChanged</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXGPUPage.h"/>
+  </compounddef>
+</doxygen>

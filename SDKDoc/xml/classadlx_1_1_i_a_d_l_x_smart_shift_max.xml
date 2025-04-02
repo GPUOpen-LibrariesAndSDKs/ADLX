@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_smart_shift_max" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXSmartShiftMax</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_smart_shift_max_1a2bae088adf98c24e8dce3aed2841bfde" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSmartShiftMax::IsSupported</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupported</name>
+        <qualifiedname>adlx::IADLXSmartShiftMax::IsSupported</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -26,6 +27,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSmartShiftMax::GetBiasMode</definition>
         <argsstring>(ADLX_SSM_BIAS_MODE *mode)=0</argsstring>
         <name>GetBiasMode</name>
+        <qualifiedname>adlx::IADLXSmartShiftMax::GetBiasMode</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1gae2895828b9a8b0345e1fb8bf416ff1b4" kindref="member">ADLX_SSM_BIAS_MODE</ref> *</type>
           <declname>mode</declname>
@@ -43,6 +45,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSmartShiftMax::SetBiasMode</definition>
         <argsstring>(ADLX_SSM_BIAS_MODE mode)=0</argsstring>
         <name>SetBiasMode</name>
+        <qualifiedname>adlx::IADLXSmartShiftMax::SetBiasMode</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1gae2895828b9a8b0345e1fb8bf416ff1b4" kindref="member">ADLX_SSM_BIAS_MODE</ref></type>
           <declname>mode</declname>
@@ -60,6 +63,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSmartShiftMax::GetBiasRange</definition>
         <argsstring>(ADLX_IntRange *range)=0</argsstring>
         <name>GetBiasRange</name>
+        <qualifiedname>adlx::IADLXSmartShiftMax::GetBiasRange</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
           <declname>range</declname>
@@ -77,6 +81,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSmartShiftMax::GetBias</definition>
         <argsstring>(adlx_int *bias)=0</argsstring>
         <name>GetBias</name>
+        <qualifiedname>adlx::IADLXSmartShiftMax::GetBias</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>bias</declname>
@@ -94,6 +99,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSmartShiftMax::SetBias</definition>
         <argsstring>(adlx_int bias)=0</argsstring>
         <name>SetBias</name>
+        <qualifiedname>adlx::IADLXSmartShiftMax::SetBias</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>bias</declname>
@@ -106,7 +112,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPowerTuning.h" line="182" column="51"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['presentation_1121',['presentation',['../group__structures_val.html#a51ca72ac4b7a7d132dc9f809c89f8515',1,'ADLX_CustomResolution']]]
+  ['maxvalue_0',['maxValue',['../group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1',1,'ADLX_IntRange']]],
+  ['minvalue_1',['minValue',['../group__structures_val.html#aff4a4b69a07d715083773dc23f162e05',1,'ADLX_IntRange']]]
 ];

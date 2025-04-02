@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_power_tuning_services1" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXPowerTuningServices1</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXPowerTuningServices</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_power_tuning_services1_1a308862ebe91cf21b237a7632e92860ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPowerTuningServices1::GetSmartShiftEco</definition>
+        <argsstring>(IADLXSmartShiftEco **ppSmartShiftEco)=0</argsstring>
+        <name>GetSmartShiftEco</name>
+        <qualifiedname>adlx::IADLXPowerTuningServices1::GetSmartShiftEco</qualifiedname>
+        <param>
+          <type>IADLXSmartShiftEco **</type>
+          <declname>ppSmartShiftEco</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPowerTuning1.h" line="437" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_power_tuning_services1_1ad9f4ee63614a395e6014473c4b82a56c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPowerTuningServices1::IsGPUConnectSupported</definition>
+        <argsstring>(adlx_bool *supported)=0</argsstring>
+        <name>IsGPUConnectSupported</name>
+        <qualifiedname>adlx::IADLXPowerTuningServices1::IsGPUConnectSupported</qualifiedname>
+        <param>
+          <type>adlx_bool *</type>
+          <declname>supported</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPowerTuning1.h" line="459" column="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_power_tuning_services1_1aa6f49b408bff5a61c76bc7bca8a26dc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXPowerTuningServices1::GetGPUConnectGPUs</definition>
+        <argsstring>(IADLXGPU2List **ppGPUs)=0</argsstring>
+        <name>GetGPUConnectGPUs</name>
+        <qualifiedname>adlx::IADLXPowerTuningServices1::GetGPUConnectGPUs</qualifiedname>
+        <param>
+          <type>IADLXGPU2List **</type>
+          <declname>ppGPUs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPowerTuning1.h" line="486" column="43"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPowerTuning1.h" line="407" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPowerTuning1.h" bodystart="408" bodyend="487"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXPowerTuningServices1</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_power_tuning_services1_1aa6f49b408bff5a61c76bc7bca8a26dc5" prot="public" virt="pure-virtual"><scope>adlx::IADLXPowerTuningServices1</scope><name>GetGPUConnectGPUs</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_power_tuning_services_1a1b4d3baf792c622f2343a662da538cae" prot="public" virt="pure-virtual"><scope>adlx::IADLXPowerTuningServices1</scope><name>GetPowerTuningChangedHandling</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_power_tuning_services1_1a308862ebe91cf21b237a7632e92860ad" prot="public" virt="pure-virtual"><scope>adlx::IADLXPowerTuningServices1</scope><name>GetSmartShiftEco</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_power_tuning_services_1a742bf8813a3005ce77dae7459dad0415" prot="public" virt="pure-virtual"><scope>adlx::IADLXPowerTuningServices1</scope><name>GetSmartShiftMax</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_power_tuning_services1_1ad9f4ee63614a395e6014473c4b82a56c" prot="public" virt="pure-virtual"><scope>adlx::IADLXPowerTuningServices1</scope><name>IsGPUConnectSupported</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXPowerTuningServices1</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXPowerTuningServices1</scope><name>Release</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

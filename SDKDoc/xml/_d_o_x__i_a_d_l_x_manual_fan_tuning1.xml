@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x_manual_fan_tuning1" kind="page">
+    <compoundname>DOX_IADLXManualFanTuning1</compoundname>
+    <title>IADLXManualFanTuning1</title>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_default_fan_tuning_states">GetDefaultFanTuningStates</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_default_zero_r_p_m_state">GetDefaultZeroRPMState</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_min_acoustic_limit_default">GetMinAcousticLimitDefault</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_min_fan_speed_default">GetMinFanSpeedDefault</innerpage>
+    <innerpage refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_target_fan_speed_default">GetTargetFanSpeedDefault</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <bold>IADLXManualFanTuning1</bold> is an extension interface to <ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning" kindref="compound">IADLXManualFanTuning</ref>. It provides the default metric value of a GPU.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>InterfaceId:</para>
+</entry><entry thead="no"><para>IADLXManualFanTuning1</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Smart Pointer Interface Name:</para>
+</entry><entry thead="no"><para>IADLXManualFanTuning1Ptr</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherits:</para>
+</entry><entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning" kindref="compound">IADLXManualFanTuning</ref></para>
+</entry></row>
+<row>
+<entry thead="no"><para>Inherited By:</para>
+</entry><entry thead="no"><para>N/A</para>
+</entry></row>
+</table>
+</para>
+<para>The <bold>IADLXManualFanTuning1</bold> interface is obtained from the <ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning" kindref="compound">IADLXManualFanTuning</ref> interface or from any of its extension interfaces using <ref refid="_d_o_x__i_a_d_l_x_interface__query_interface" kindref="compound">QueryInterface</ref>.</para>
+<para><heading level="2">Methods </heading>
+</para>
+<para><table rows="6" cols="2"><row>
+<entry thead="yes"><para>Method   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_default_fan_tuning_states" kindref="compound">GetDefaultFanTuningStates</ref>   </para>
+</entry><entry thead="no"><para>Gets the reference counted list of default GPU fan tuning states on a GPU.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_default_zero_r_p_m_state" kindref="compound">GetDefaultZeroRPMState</ref>   </para>
+</entry><entry thead="no"><para>Gets the default zero RPM is state on a GPU.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_min_acoustic_limit_default" kindref="compound">GetMinAcousticLimitDefault</ref>   </para>
+</entry><entry thead="no"><para>Gets the default minimum acoustic limit on a GPU.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_min_fan_speed_default" kindref="compound">GetMinFanSpeedDefault</ref>   </para>
+</entry><entry thead="no"><para>Gets the default minimum fan speed on a GPU.       </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_target_fan_speed_default" kindref="compound">GetTargetFanSpeedDefault</ref>   </para>
+</entry><entry thead="no"><para>Gets the default target fan speed on a GPU.      </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;IGPUManualFanTuning.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.4</para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Example </heading>
+</para>
+<para>To see how to use this interface in a C++ application, refer to the <ref refid="cpp__manual_fan_tuning" kindref="compound">ManualFanTuning C++ sample</ref>.<linebreak/>
+ For a C application, refer to the <ref refid="c__manual_fan_tuning" kindref="compound">ManualFanTuning C sample</ref>.</para>
+<para><itemizedlist>
+<listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_default_fan_tuning_states" kindref="compound">GetDefaultFanTuningStates</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_default_zero_r_p_m_state" kindref="compound">GetDefaultZeroRPMState</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_min_acoustic_limit_default" kindref="compound">GetMinAcousticLimitDefault</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_min_fan_speed_default" kindref="compound">GetMinFanSpeedDefault</ref></para>
+</listitem><listitem><para><ref refid="_d_o_x__i_a_d_l_x_manual_fan_tuning1__get_target_fan_speed_default" kindref="compound">GetTargetFanSpeedDefault</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/docs/Config/ADLXInterfacePage/ADLXGPUTuningPage.h"/>
+  </compounddef>
+</doxygen>

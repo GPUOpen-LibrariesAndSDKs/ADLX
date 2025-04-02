@@ -17,5 +17,7 @@ var domain_cpp_sample__display =
     [ "DisplayPixelFormat", "cpp_display__pixel_format.html", null ],
     [ "DisplayScalingMode", "cpp_display__scaling_mode.html", null ],
     [ "DisplayVariBright", "cpp_display__display_vari_bright.html", null ],
-    [ "DisplayVSR", "cpp_display__v_s_r.html", null ]
+    [ "DisplayVSR", "cpp_display__v_s_r.html", null ],
+    [ "DisplayDynamicRefreshRateControl", "cpp_display__dynamic_refresh_rate_control.html", null ],
+    [ "DisplayFreeSyncColorAccuracy", "cpp_display__free_sync_color_accuracy.html", null ]
 ];

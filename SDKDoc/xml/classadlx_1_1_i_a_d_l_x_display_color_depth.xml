@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_display_color_depth" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXDisplayColorDepth</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_color_depth_1a11e07c986a3ec654e1ab0ebdb057fe84" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayColorDepth::IsSupported</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupported</name>
+        <qualifiedname>adlx::IADLXDisplayColorDepth::IsSupported</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -19,13 +20,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="653" column="43"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="664" column="43"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_color_depth_1a4dab255fa43a44fcba3a20b6e13d6257" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayColorDepth::GetValue</definition>
         <argsstring>(ADLX_COLOR_DEPTH *currentColorDepth)=0</argsstring>
         <name>GetValue</name>
+        <qualifiedname>adlx::IADLXDisplayColorDepth::GetValue</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1ga75858347333129a462cee4fdf4729d6b" kindref="member">ADLX_COLOR_DEPTH</ref> *</type>
           <declname>currentColorDepth</declname>
@@ -36,13 +38,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="678" column="43"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="689" column="43"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_color_depth_1a62196b269ec367d49f5b1ae4531c1826" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayColorDepth::SetValue</definition>
         <argsstring>(ADLX_COLOR_DEPTH colorDepth)=0</argsstring>
         <name>SetValue</name>
+        <qualifiedname>adlx::IADLXDisplayColorDepth::SetValue</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1ga75858347333129a462cee4fdf4729d6b" kindref="member">ADLX_COLOR_DEPTH</ref></type>
           <declname>colorDepth</declname>
@@ -53,13 +56,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="703" column="43"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="714" column="43"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_color_depth_1a7417cba557168f1c95f3d12e9533b20e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayColorDepth::IsSupportedColorDepth</definition>
         <argsstring>(ADLX_COLOR_DEPTH colorDepth, adlx_bool *supported)=0</argsstring>
         <name>IsSupportedColorDepth</name>
+        <qualifiedname>adlx::IADLXDisplayColorDepth::IsSupportedColorDepth</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1ga75858347333129a462cee4fdf4729d6b" kindref="member">ADLX_COLOR_DEPTH</ref></type>
           <declname>colorDepth</declname>
@@ -74,13 +78,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="725" column="43"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="736" column="43"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_color_depth_1acd7fd14187f8d65f4f6d5f4a3ea3791d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayColorDepth::IsSupportedBPC_6</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedBPC_6</name>
+        <qualifiedname>adlx::IADLXDisplayColorDepth::IsSupportedBPC_6</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -91,13 +96,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="746" column="43"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="757" column="43"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_color_depth_1a9a94591620d4e60236ee5898087d3c7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayColorDepth::IsSupportedBPC_8</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedBPC_8</name>
+        <qualifiedname>adlx::IADLXDisplayColorDepth::IsSupportedBPC_8</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -108,13 +114,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="767" column="43"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="778" column="43"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_color_depth_1a7737bfb676f5b4e020020b2e96bd8ee9" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayColorDepth::IsSupportedBPC_10</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedBPC_10</name>
+        <qualifiedname>adlx::IADLXDisplayColorDepth::IsSupportedBPC_10</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -125,13 +132,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="788" column="43"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="799" column="43"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_color_depth_1ae2dbba98002fb1e1fd88768cc94dd45d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayColorDepth::IsSupportedBPC_12</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedBPC_12</name>
+        <qualifiedname>adlx::IADLXDisplayColorDepth::IsSupportedBPC_12</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -142,13 +150,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="809" column="43"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="820" column="43"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_color_depth_1a2c0f8d9bda47368e9fe8138517302913" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayColorDepth::IsSupportedBPC_14</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedBPC_14</name>
+        <qualifiedname>adlx::IADLXDisplayColorDepth::IsSupportedBPC_14</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -159,13 +168,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="830" column="43"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="841" column="43"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_display_color_depth_1a1992b80204ff5a405fe1598ced16ae11" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXDisplayColorDepth::IsSupportedBPC_16</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedBPC_16</name>
+        <qualifiedname>adlx::IADLXDisplayColorDepth::IsSupportedBPC_16</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -176,14 +186,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="851" column="43"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="862" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="625" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="626" bodyend="852"/>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" line="636" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDisplaySettings.h" bodystart="637" bodyend="863"/>
     <listofallmembers>
       <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayColorDepth</scope><name>Acquire</name></member>
       <member refid="classadlx_1_1_i_a_d_l_x_display_color_depth_1a4dab255fa43a44fcba3a20b6e13d6257" prot="public" virt="pure-virtual"><scope>adlx::IADLXDisplayColorDepth</scope><name>GetValue</name></member>

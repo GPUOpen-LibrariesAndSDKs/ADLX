@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="c__manual_fan_tuning" kind="page">
     <compoundname>c_ManualFanTuning</compoundname>
     <title>ManualFanTuning</title>
@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
 <para><htmlonly>&lt;!--
-# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 --&gt;
@@ -33,10 +33,11 @@
     &lt;h2&gt;Sample Path&lt;/h2&gt;
     &lt;p&gt;/Samples/C/GPUTuning/ManualFanTuning&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</htmlonly> <heading level="2">Code </heading>
+&lt;/html&gt;
+</htmlonly> <heading level="2">Code </heading>
 </para>
 <para>C <programlisting filename="./C/GPUTuning/ManualFanTuning/mainManualFanTuning.c"><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2024<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2025<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -305,7 +306,36 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>states<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Display<sp/>default<sp/>fan<sp/>tuning<sp/>states</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>IADLXManualFanTuning1*<sp/>manualFanTuning1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manualFanTuning-&gt;pVtbl-&gt;QueryInterface(manualFanTuning,<sp/>IID_IADLXManualFanTuning1(),<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**)&amp;manualFanTuning1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manualFanTuning1)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning1-&gt;pVtbl-&gt;GetDefaultFanTuningStates(manualFanTuning1,<sp/>&amp;states);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group___a_d_l_x_macro_1gaa6d4b27e28dc60797e52e901ad4e9ced" kindref="member">ADLX_SUCCEEDED</ref>(res))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(adlx_uint<sp/>crt<sp/>=<sp/>states-&gt;pVtbl-&gt;Begin(states);<sp/>crt<sp/>!=<sp/>states-&gt;pVtbl-&gt;End(states);<sp/>++crt)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>states-&gt;pVtbl-&gt;At_ManualFanTuningStateList(states,<sp/>crt,<sp/>&amp;oneState);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adlx_int<sp/>speed<sp/>=<sp/>0,<sp/>temperature<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oneState-&gt;pVtbl-&gt;GetFanSpeed(oneState,<sp/>&amp;speed);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oneState-&gt;pVtbl-&gt;GetTemperature(oneState,<sp/>&amp;temperature);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tThe<sp/>default<sp/>%d<sp/>state:<sp/>speed<sp/>is<sp/>%d<sp/>temperature<sp/>is<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>crt,<sp/>speed,<sp/>temperature);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(oneState<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oneState-&gt;pVtbl-&gt;Release(oneState);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oneState<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(states<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>states-&gt;pVtbl-&gt;Release(states);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>states<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manualFanTuning1-&gt;pVtbl-&gt;Release(manualFanTuning1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manualFanTuning1<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>empty<sp/>fan<sp/>tuning<sp/>states</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning-&gt;pVtbl-&gt;GetEmptyFanTuningStates<sp/>(manualFanTuning,<sp/>&amp;states);</highlight></codeline>
@@ -385,6 +415,16 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;\tReset<sp/>ZeroRPM<sp/>state,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning-&gt;pVtbl-&gt;GetZeroRPMState<sp/>(manualFanTuning,<sp/>&amp;isZeroRPMStateSet);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;\tIs<sp/>ZeroRPM<sp/>state<sp/>set:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>isZeroRPMStateSet,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>IADLXManualFanTuning1*<sp/>manualFanTuning1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manualFanTuning-&gt;pVtbl-&gt;QueryInterface(manualFanTuning,<sp/>IID_IADLXManualFanTuning1(),<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**)&amp;manualFanTuning1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manualFanTuning1)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning1-&gt;pVtbl-&gt;GetDefaultZeroRPMState(manualFanTuning1,<sp/>&amp;isZeroRPMStateSet);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tDefault<sp/>ZeroRPM<sp/>state<sp/>is:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>isZeroRPMStateSet,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>release<sp/>manualFanTuning1</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manualFanTuning1-&gt;pVtbl-&gt;Release(manualFanTuning1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manualFanTuning1<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Display<sp/>and<sp/>set<sp/>MinAcoustic<sp/>settings</highlight><highlight class="normal"></highlight></codeline>
@@ -406,6 +446,17 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning-&gt;pVtbl-&gt;SetMinAcousticLimit<sp/>(manualFanTuning,<sp/>tuningRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref><sp/>+<sp/>(tuningRange.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref><sp/>-<sp/>tuningRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>)<sp/>/<sp/>2);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning-&gt;pVtbl-&gt;GetMinAcousticLimit<sp/>(manualFanTuning,<sp/>&amp;minAcousticLimit);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>current<sp/>min<sp/>acoustic<sp/>limit<sp/>to:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>minAcousticLimit,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>IADLXManualFanTuning1*<sp/>manualFanTuning1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manualFanTuning-&gt;pVtbl-&gt;QueryInterface(manualFanTuning,<sp/>IID_IADLXManualFanTuning1(),<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**)&amp;manualFanTuning1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manualFanTuning1)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning1-&gt;pVtbl-&gt;GetMinAcousticLimitDefault(manualFanTuning1,<sp/>&amp;minAcousticLimit);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tDefault<sp/>min<sp/>acoustic<sp/>limit<sp/>is:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>minAcousticLimit,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>release<sp/>manualFanTuning1</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manualFanTuning1-&gt;pVtbl-&gt;Release(manualFanTuning1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manualFanTuning1<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Display<sp/>and<sp/>set<sp/>MinFanSpeed<sp/>settings</highlight><highlight class="normal"></highlight></codeline>
@@ -427,6 +478,17 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning-&gt;pVtbl-&gt;SetMinFanSpeed<sp/>(manualFanTuning,<sp/>tuningRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref><sp/>+<sp/>(tuningRange.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref><sp/>-<sp/>tuningRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>)<sp/>/<sp/>2);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning-&gt;pVtbl-&gt;GetMinFanSpeed<sp/>(manualFanTuning,<sp/>&amp;minFanSpeed);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>current<sp/>MinFanSpeed<sp/>to:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>minFanSpeed,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>IADLXManualFanTuning1*<sp/>manualFanTuning1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manualFanTuning-&gt;pVtbl-&gt;QueryInterface(manualFanTuning,<sp/>IID_IADLXManualFanTuning1(),<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**)&amp;manualFanTuning1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manualFanTuning1)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning1-&gt;pVtbl-&gt;GetMinFanSpeedDefault(manualFanTuning1,<sp/>&amp;minFanSpeed);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\tDefault<sp/>MinFanSpeed<sp/>is:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>minFanSpeed,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>release<sp/>manualFanTuning1</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manualFanTuning1-&gt;pVtbl-&gt;Release(manualFanTuning1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manualFanTuning1<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Display<sp/>and<sp/>set<sp/>TargetFanSpeed<sp/>settings</highlight><highlight class="normal"></highlight></codeline>
@@ -442,12 +504,24 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning-&gt;pVtbl-&gt;GetTargetFanSpeedRange<sp/>(manualFanTuning,<sp/>&amp;tuningRange);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;\tTargetFanSpeed<sp/>range:<sp/>(%d,<sp/>%d),<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>tuningRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>,<sp/>tuningRange.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref>,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_int<sp/>minAcousticLimit;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning-&gt;pVtbl-&gt;GetTargetFanSpeed<sp/>(manualFanTuning,<sp/>&amp;minAcousticLimit);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;\tCurrent<sp/>TargetFanSpeed:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>minAcousticLimit,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_int<sp/>targetFanSpeed;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning-&gt;pVtbl-&gt;GetTargetFanSpeed<sp/>(manualFanTuning,<sp/>&amp;targetFanSpeed);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;\tCurrent<sp/>TargetFanSpeed:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>targetFanSpeed,<sp/>res);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning-&gt;pVtbl-&gt;SetTargetFanSpeed<sp/>(manualFanTuning,<sp/>tuningRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref><sp/>+<sp/>(tuningRange.<ref refid="struct_a_d_l_x___int_range_1a514f377840f96d92a1f11e41af9b3db1" kindref="member">maxValue</ref><sp/>-<sp/>tuningRange.<ref refid="struct_a_d_l_x___int_range_1aff4a4b69a07d715083773dc23f162e05" kindref="member">minValue</ref>)<sp/>/<sp/>2);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning-&gt;pVtbl-&gt;GetTargetFanSpeed<sp/>(manualFanTuning,<sp/>&amp;minAcousticLimit);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>current<sp/>TargetFanSpeed<sp/>to:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>minAcousticLimit,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning-&gt;pVtbl-&gt;GetTargetFanSpeed<sp/>(manualFanTuning,<sp/>&amp;targetFanSpeed);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;\tSet<sp/>current<sp/>TargetFanSpeed<sp/>to:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>targetFanSpeed,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>IADLXManualFanTuning1*<sp/>manualFanTuning1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manualFanTuning-&gt;pVtbl-&gt;QueryInterface(manualFanTuning,<sp/>IID_IADLXManualFanTuning1(),<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**)&amp;manualFanTuning1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manualFanTuning1)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>manualFanTuning1-&gt;pVtbl-&gt;GetTargetFanSpeedDefault(manualFanTuning1,<sp/>&amp;targetFanSpeed);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\Default<sp/>TargetFanSpeed:<sp/>%d,<sp/>return<sp/>code<sp/>is:<sp/>%d(0<sp/>means<sp/>success)\n&quot;</highlight><highlight class="normal">,<sp/>targetFanSpeed,<sp/>res);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>release<sp/>manualFanTuning1</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manualFanTuning1-&gt;pVtbl-&gt;Release(manualFanTuning1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manualFanTuning1<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> </para>
     </detaileddescription>

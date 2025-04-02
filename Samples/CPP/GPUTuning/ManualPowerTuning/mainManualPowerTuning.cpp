@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -34,6 +34,9 @@ void ShowGetPowerLimitRange(IADLXManualPowerTuningPtr manualPowerTuning);
 // Display current power limit
 void ShowGetPowerLimit(IADLXManualPowerTuningPtr manualPowerTuning);
 
+// Display default power limit
+void ShowGetPowerLimitDefault(IADLXManualPowerTuningPtr manualPowerTuning);
+
 // Set power limit
 void ShowSetPowerLimit(IADLXManualPowerTuningPtr manualPowerTuning);
 
@@ -45,6 +48,9 @@ void ShowGetTDCLimitRange(IADLXManualPowerTuningPtr manualPowerTuning);
 
 // Show how to get current TDC limit.
 void ShowGetTDCLimit(IADLXManualPowerTuningPtr manualPowerTuning);
+
+// Show how to get default TDC limit.
+void ShowGetTDCLimitDefault(IADLXManualPowerTuningPtr manualPowerTuning);
 
 // Show how to set TDC limit.
 void ShowSetTDCLimit(IADLXManualPowerTuningPtr manualPowerTuning);
@@ -62,54 +68,42 @@ int main()
         res = g_ADLXHelp.GetSystemServices()->GetGPUTuningServices(&gpuTuningService);
         if (ADLX_FAILED (res))
         {
-            // Destroy ADLX
-            res = g_ADLXHelp.Terminate ();
-            std::cout << "Destroy ADLX res: " << res << std::endl;
-            return WaitAndExit ("\tGet GPU tuning services failed", 0);
+            std::cout << "\tGet GPU tuning services failed " << std::endl;
+            goto EXIT;
         }
         IADLXGPUListPtr gpus;
         res = g_ADLXHelp.GetSystemServices()->GetGPUs(&gpus);
         if (ADLX_FAILED (res))
         {
-            // Destroy ADLX
-            res = g_ADLXHelp.Terminate ();
-            std::cout << "Destroy ADLX res: " << res << std::endl;
-            return WaitAndExit ("\tGet GPU list failed", 0);
+            std::cout << "\tGet GPU list failed " << std::endl;
+            goto EXIT;
         }
         IADLXGPUPtr oneGPU;
         res = gpus->At(0, &oneGPU);
         if (ADLX_FAILED (res) || oneGPU == nullptr)
         {
-            // Destroy ADLX
-            res = g_ADLXHelp.Terminate ();
-            std::cout << "Destroy ADLX res: " << res << std::endl;
-            return WaitAndExit ("\tGet GPU failed", 0);
+            std::cout << "\tGet GPU failed " << std::endl;
+            goto EXIT;
         }
         adlx_bool supported = false;
         res = gpuTuningService->IsSupportedManualPowerTuning(oneGPU, &supported);
         if (ADLX_FAILED (res) || supported == false)
         {
-            // Destroy ADLX
-            res = g_ADLXHelp.Terminate ();
-            std::cout << "Destroy ADLX res: " << res << std::endl;
-            return WaitAndExit ("\tThis GPU does not support manual power tuning", 0);
+            std::cout << "\tThis GPU does not support manual power tuning " << std::endl;
+            goto EXIT;
         }
         IADLXInterfacePtr manualPowerTuningIfc;
         res = gpuTuningService->GetManualPowerTuning(oneGPU, &manualPowerTuningIfc);
         if (ADLX_FAILED (res) || manualPowerTuningIfc == nullptr)
         {
-            // Destroy ADLX
-            res = g_ADLXHelp.Terminate ();
-            std::cout << "Destroy ADLX res: " << res << std::endl;
-            return WaitAndExit ("\tGet manual power tuning interface failed", 0);
+            std::cout << "\tGet manual power tuning interface failed " << std::endl;
+            goto EXIT;
         }
         IADLXManualPowerTuningPtr manualPowerTuning(manualPowerTuningIfc);
         if (manualPowerTuning == nullptr)
         {
-            // Destroy ADLX
-            res = g_ADLXHelp.Terminate ();
-            std::cout << "Destroy ADLX res: " << res << std::endl;
-            return WaitAndExit ("\tGet manual power tuning failed", 0);
+            std::cout << "\tGet manual power tuning failed " << std::endl;
+            goto EXIT;
         }
         // Display main menu options
         MainMenu();
@@ -119,7 +113,7 @@ int main()
     }
     else
         return WaitAndExit("\tg_ADLXHelp initialize failed", 0);
-
+    EXIT:
     // Destroy ADLX
     res = g_ADLXHelp.Terminate();
     std::cout << "Destroy ADLX res: " << res << std::endl;
@@ -142,6 +136,8 @@ void MainMenu()
     std::cout << "\t->Press 5 to show how to get TDC limit range" << std::endl;
     std::cout << "\t->Press 6 to show how to get current TDC limit" << std::endl;
     std::cout << "\t->Press 7 to show how to set TDC limit" << std::endl;
+    std::cout << "\t->Press 8 to show how to get default power limit" << std::endl;
+    std::cout << "\t->Press 9 to show how to get default TDC limit" << std::endl;
 
     std::cout << "\t->Press Q/q to terminate the application" << std::endl;
     std::cout << "\t->Press M/m to display main menu options" << std::endl;
@@ -188,6 +184,15 @@ void MenuControl(IADLXManualPowerTuningPtr manualPowerTuning)
             ShowSetTDCLimit(manualPowerTuning);
             break;
 
+            // Display default power limit
+        case '8':
+            ShowGetPowerLimitDefault(manualPowerTuning);
+            break;
+            // Show how to get default TDC limit.
+        case '9':
+            ShowGetTDCLimitDefault(manualPowerTuning);
+            break;
+
         // Display menu options
         case 'm':
         case 'M':
@@ -227,6 +232,21 @@ void ShowGetPowerLimit(IADLXManualPowerTuningPtr manualPowerTuning)
     std::cout << "\tCurrent power limit: " << powerLimit << ", return code is: "<< res << "(0 means success)" << std::endl;
 }
 
+// Display default power limit
+void ShowGetPowerLimitDefault(IADLXManualPowerTuningPtr manualPowerTuning)
+{
+    IADLXManualPowerTuning1Ptr manualGFXTuning1(manualPowerTuning);
+    if (manualGFXTuning1 == nullptr)
+    {
+        std::cout << "\tGet IADLXManualPowerTuning1Ptr failed" << std::endl;
+        return;
+    }
+
+    adlx_int powerLimit;
+    ADLX_RESULT res = manualGFXTuning1->GetPowerLimitDefault(&powerLimit);
+    std::cout << "\tDefault power limit: " << powerLimit << ", return code is: " << res << "(0 means success)" << std::endl;
+}
+
 // Set power limit
 void ShowSetPowerLimit(IADLXManualPowerTuningPtr manualPowerTuning)
 {
@@ -262,6 +282,20 @@ void ShowGetTDCLimit(IADLXManualPowerTuningPtr manualPowerTuning)
     adlx_int tdcLimit;
     ADLX_RESULT res = manualPowerTuning->GetTDCLimit(&tdcLimit);
     std::cout << "\tThe current TDC limit is: " << tdcLimit << ", return code (0 is Success) is: " << res << std::endl;
+}
+
+// Show how to get current TDC limit.
+void ShowGetTDCLimitDefault(IADLXManualPowerTuningPtr manualPowerTuning)
+{
+    IADLXManualPowerTuning1Ptr manualGFXTuning1(manualPowerTuning);
+    if (manualGFXTuning1 == nullptr)
+    {
+        std::cout << "\tGet IADLXManualPowerTuning1Ptr failed" << std::endl;
+        return;
+    }
+    adlx_int tdcLimit;
+    ADLX_RESULT res = manualGFXTuning1->GetTDCLimitDefault(&tdcLimit);
+    std::cout << "\tThe default TDC limit is: " << tdcLimit << ", return code (0 is Success) is: " << res << std::endl;
 }
 
 // Show how to set TDC limit.

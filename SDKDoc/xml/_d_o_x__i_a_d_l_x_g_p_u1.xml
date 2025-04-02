@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="_d_o_x__i_a_d_l_x_g_p_u1" kind="page">
     <compoundname>DOX_IADLXGPU1</compoundname>
     <title>IADLXGPU1</title>
@@ -10,7 +10,13 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para><bold>IADLXGPU1</bold> is an extension to the <ref refid="_d_o_x__i_a_d_l_x_g_p_u" kindref="compound">IADLXGPU</ref> interface. This interface provides the method to get multi-GPU setup details, PCI bus details, and the product name of a GPU.</para>
+<para><bold>IADLXGPU1</bold> is an extension of the <ref refid="_d_o_x__i_a_d_l_x_g_p_u" kindref="compound">IADLXGPU</ref> interface.<linebreak/>
+ This interface provides methods to get:<itemizedlist>
+<listitem><para>multi-GPU setup details</para>
+</listitem><listitem><para>PCI bus details</para>
+</listitem><listitem><para>product name of a GPU</para>
+</listitem></itemizedlist>
+</para>
 <para><table rows="4" cols="2"><row>
 <entry thead="no"><para>InterfaceId:</para>
 </entry><entry thead="no"><para>IADLXGPU1</para>
@@ -38,19 +44,19 @@
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u1__multi_g_p_u_mode" kindref="compound">MultiGPUMode</ref>   </para>
-</entry><entry thead="no"><para>Gets the AMD MGPU mode of a GPU.    </para>
+</entry><entry thead="no"><para>Gets the AMD MGPU mode of a GPU.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u1__p_c_i_bus_lane_width" kindref="compound">PCIBusLaneWidth</ref>   </para>
-</entry><entry thead="no"><para>Gets the PCI bus lane width of a GPU.    </para>
+</entry><entry thead="no"><para>Gets the PCI bus lane width of a GPU.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u1__p_c_i_bus_type" kindref="compound">PCIBusType</ref>   </para>
-</entry><entry thead="no"><para>Gets the PCI bus type of a GPU.    </para>
+</entry><entry thead="no"><para>Gets the PCI bus type of a GPU.       </para>
 </entry></row>
 <row>
 <entry thead="no"><para><ref refid="_d_o_x__i_a_d_l_x_g_p_u1__product_name" kindref="compound">ProductName</ref>   </para>
-</entry><entry thead="no"><para>Gets the product name of a GPU.   </para>
+</entry><entry thead="no"><para>Gets the product name of a GPU.      </para>
 </entry></row>
 </table>
 </para>

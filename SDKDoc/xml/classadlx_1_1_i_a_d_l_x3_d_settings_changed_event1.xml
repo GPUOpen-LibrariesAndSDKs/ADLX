@@ -1,28 +1,30 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x3_d_settings_changed_event1" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLX3DSettingsChangedEvent1</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLX3DSettingsChangedEvent</basecompoundref>
-      <sectiondef kind="public-func">
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_event2" prot="public" virt="non-virtual">adlx::IADLX3DSettingsChangedEvent2</derivedcompoundref>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_settings_changed_event1_1a6850c8542512e90e4f6d66b8a85e011e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>adlx_bool ADLX_STD_CALL</type>
         <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLX3DSettingsChangedEvent1::IsAMDFluidMotionFramesChanged</definition>
         <argsstring>()=0</argsstring>
         <name>IsAMDFluidMotionFramesChanged</name>
+        <qualifiedname>adlx::IADLX3DSettingsChangedEvent1::IsAMDFluidMotionFramesChanged</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" line="259" column="41"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" line="248" column="41"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" line="229" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" bodystart="230" bodyend="261"/>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" line="218" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings1.h" bodystart="219" bodyend="250"/>
     <listofallmembers>
       <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DSettingsChangedEvent1</scope><name>Acquire</name></member>
       <member refid="classadlx_1_1_i_a_d_l_x3_d_settings_changed_event_1a4ab77ca2eace4df2d38cd47713346e74" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DSettingsChangedEvent1</scope><name>GetGPU</name></member>

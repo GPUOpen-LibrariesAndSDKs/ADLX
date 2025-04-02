@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -199,6 +199,17 @@ void GetState(IADLXInterface* vramTuningIfc)
         printf("\tMaxVRAMFrequency is: %d, return code is: %d(0 means success)\n", freq, res);
         res = vramTuning2->pVtbl->GetMaxVRAMFrequencyRange(vramTuning2, &rang);
         printf("\tMaxVRAMFrequencyRange: [ %d, %d ], step: %d, return code is: %d(0 means success)\n", rang.minValue, rang.maxValue, rang.step, res);
+    
+        IADLXManualVRAMTuning2_1* vramTuning2_1;
+        vramTuning2->pVtbl->QueryInterface(vramTuning2, IID_IADLXManualVRAMTuning2_1(), (void**)&vramTuning2_1);
+        if (vramTuning2_1)
+        {
+            res = vramTuning2_1->pVtbl->GetMaxVRAMFrequencyDefault(vramTuning2_1, &freq);
+            printf("\tDefault MaxVRAMFrequency is: %d, return code is: %d(0 means success)\n", freq, res);
+            // release vramTuning2_1
+            vramTuning2_1->pVtbl->Release(vramTuning2_1);
+            vramTuning2_1 = NULL;
+        }
     }
     else if (vramTuning1)
     {

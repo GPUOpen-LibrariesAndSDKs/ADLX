@@ -1,27 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="_i_g_p_u_manual_v_r_a_m_tuning_8h" kind="file" language="C++">
     <compoundname>IGPUManualVRAMTuning.h</compoundname>
     <includes refid="_a_d_l_x_structures_8h" local="yes">ADLXStructures.h</includes>
     <incdepgraph>
-      <node id="1">
-        <label>D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualVRAMTuning.h</label>
-        <link refid="_i_g_p_u_manual_v_r_a_m_tuning_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>stdint.h</label>
-      </node>
-      <node id="4">
-        <label>Windows.h</label>
-      </node>
-      <node id="2">
-        <label>ADLXStructures.h</label>
-        <link refid="_a_d_l_x_structures_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="3">
         <label>ADLXDefines.h</label>
         <link refid="_a_d_l_x_defines_8h"/>
@@ -32,12 +14,31 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
+      <node id="2">
+        <label>ADLXStructures.h</label>
+        <link refid="_a_d_l_x_structures_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualVRAMTuning.h</label>
+        <link refid="_i_g_p_u_manual_v_r_a_m_tuning_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Windows.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
       <node id="5">
         <label>stdio.h</label>
       </node>
     </incdepgraph>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_manual_v_r_a_m_tuning1" prot="public">adlx::IADLXManualVRAMTuning1</innerclass>
     <innerclass refid="classadlx_1_1_i_a_d_l_x_manual_v_r_a_m_tuning2" prot="public">adlx::IADLXManualVRAMTuning2</innerclass>
+    <innerclass refid="classadlx_1_1_i_a_d_l_x_manual_v_r_a_m_tuning2__1" prot="public">adlx::IADLXManualVRAMTuning2_1</innerclass>
     <innernamespace refid="namespaceadlx">adlx</innernamespace>
     <briefdescription>
     </briefdescription>
@@ -45,7 +46,7 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2024<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>-<sp/>2025<sp/>Advanced<sp/>Micro<sp/>Devices,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//-------------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ADLX_IGPUMANUALVRAMTUNING_H</highlight><highlight class="normal"></highlight></codeline>
@@ -174,7 +175,50 @@
 <codeline lineno="511"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="512"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXManualVRAMTuning2</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="513"><highlight class="normal"></highlight></codeline>
-<codeline lineno="514"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="comment">//ADLX_IGPUMANUALVRAMTUNING_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="514"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>IADLXManualVRAMTuning2_1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="515"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="516"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">adlx</highlight></codeline>
+<codeline lineno="517"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ADLX_NO_VTABLE<sp/>IADLXManualVRAMTuning2_1<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IADLXManualVRAMTuning2</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_DECLARE_IID(L</highlight><highlight class="stringliteral">&quot;IADLXManualVRAMTuning2_1&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"></highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADLX_STD_CALL<sp/>GetMaxVRAMFrequencyDefault(adlx_int*<sp/>defaultVal)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//----------------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>IADLXInterfacePtr_T&lt;IADLXManualVRAMTuning2_1&gt;<sp/>IADLXManualVRAMTuning2_1Ptr;</highlight></codeline>
+<codeline lineno="547"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>adlx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="548"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="549"><highlight class="normal">ADLX_DECLARE_IID(IADLXManualVRAMTuning2_1,<sp/>L</highlight><highlight class="stringliteral">&quot;IADLXManualVRAMTuning2_1&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXManualVRAMTuning2_1<sp/>IADLXManualVRAMTuning2_1;</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXManualVRAMTuning2_1Vtbl</highlight></codeline>
+<codeline lineno="552"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXInterface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Acquire)(IADLXManualVRAMTuning2_1*<sp/>pThis);</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/><sp/><sp/>adlx_long(ADLX_STD_CALL*<sp/>Release)(IADLXManualVRAMTuning2_1*<sp/>pThis);</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>QueryInterface)(IADLXManualVRAMTuning2_1*<sp/>pThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>interfaceId,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ppInterface);</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"></highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXManualVRAMTuning2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>IsSupportedMemoryTiming)(IADLXManualVRAMTuning2_1*<sp/>pThis,<sp/>adlx_bool*<sp/>supported);</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetSupportedMemoryTimingDescriptionList)(IADLXManualVRAMTuning2_1*<sp/>pThis,<sp/>IADLXMemoryTimingDescriptionList**<sp/>ppDescriptionList);</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetMemoryTimingDescription)(IADLXManualVRAMTuning2_1*<sp/>pThis,<sp/><ref refid="group__enumerations_1gaa25f244e38a3502a52167c303abcec11" kindref="member">ADLX_MEMORYTIMING_DESCRIPTION</ref>*<sp/>description);</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>SetMemoryTimingDescription)(IADLXManualVRAMTuning2_1*<sp/>pThis,<sp/><ref refid="group__enumerations_1gaa25f244e38a3502a52167c303abcec11" kindref="member">ADLX_MEMORYTIMING_DESCRIPTION</ref><sp/>description);</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"></highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetMaxVRAMFrequencyRange)(IADLXManualVRAMTuning2_1*<sp/>pThis,<sp/><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref>*<sp/>tuningRange);</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetMaxVRAMFrequency)(IADLXManualVRAMTuning2_1*<sp/>pThis,<sp/>adlx_int*<sp/>freq);</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>SetMaxVRAMFrequency)(IADLXManualVRAMTuning2_1*<sp/>pThis,<sp/>adlx_int<sp/>freq);</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"></highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IADLXManualVRAMTuning2_1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>(ADLX_STD_CALL*<sp/>GetMaxVRAMFrequencyDefault)(IADLXManualVRAMTuning2_1*<sp/>pThis,<sp/>adlx_int*<sp/>defaultVal);</highlight></codeline>
+<codeline lineno="570"><highlight class="normal">}IADLXManualVRAMTuning2_1Vtbl;</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"></highlight></codeline>
+<codeline lineno="572"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IADLXManualVRAMTuning2_1<sp/>{<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IADLXManualVRAMTuning2_1Vtbl*<sp/>pVtbl;<sp/>};</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="574"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>IADLXManualVRAMTuning2_1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="575"><highlight class="normal"></highlight></codeline>
+<codeline lineno="576"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="comment">//ADLX_IGPUMANUALVRAMTUNING_H</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualVRAMTuning.h"/>
   </compounddef>

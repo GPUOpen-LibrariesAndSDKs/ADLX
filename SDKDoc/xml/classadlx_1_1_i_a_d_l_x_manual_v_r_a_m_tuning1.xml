@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_manual_v_r_a_m_tuning1" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXManualVRAMTuning1</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_manual_v_r_a_m_tuning1_1aa588c0d06257a4dea184dad897d42e8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualVRAMTuning1::IsSupportedMemoryTiming</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedMemoryTiming</name>
+        <qualifiedname>adlx::IADLXManualVRAMTuning1::IsSupportedMemoryTiming</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -26,6 +27,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualVRAMTuning1::GetSupportedMemoryTimingDescriptionList</definition>
         <argsstring>(IADLXMemoryTimingDescriptionList **ppDescriptionList)=0</argsstring>
         <name>GetSupportedMemoryTimingDescriptionList</name>
+        <qualifiedname>adlx::IADLXManualVRAMTuning1::GetSupportedMemoryTimingDescriptionList</qualifiedname>
         <param>
           <type>IADLXMemoryTimingDescriptionList **</type>
           <declname>ppDescriptionList</declname>
@@ -43,6 +45,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualVRAMTuning1::GetMemoryTimingDescription</definition>
         <argsstring>(ADLX_MEMORYTIMING_DESCRIPTION *description)=0</argsstring>
         <name>GetMemoryTimingDescription</name>
+        <qualifiedname>adlx::IADLXManualVRAMTuning1::GetMemoryTimingDescription</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1gaa25f244e38a3502a52167c303abcec11" kindref="member">ADLX_MEMORYTIMING_DESCRIPTION</ref> *</type>
           <declname>description</declname>
@@ -60,6 +63,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualVRAMTuning1::SetMemoryTimingDescription</definition>
         <argsstring>(ADLX_MEMORYTIMING_DESCRIPTION description)=0</argsstring>
         <name>SetMemoryTimingDescription</name>
+        <qualifiedname>adlx::IADLXManualVRAMTuning1::SetMemoryTimingDescription</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1gaa25f244e38a3502a52167c303abcec11" kindref="member">ADLX_MEMORYTIMING_DESCRIPTION</ref></type>
           <declname>description</declname>
@@ -77,6 +81,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualVRAMTuning1::GetVRAMTuningRanges</definition>
         <argsstring>(ADLX_IntRange *frequencyRange, ADLX_IntRange *voltageRange)=0</argsstring>
         <name>GetVRAMTuningRanges</name>
+        <qualifiedname>adlx::IADLXManualVRAMTuning1::GetVRAMTuningRanges</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
           <declname>frequencyRange</declname>
@@ -98,6 +103,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualVRAMTuning1::GetVRAMTuningStates</definition>
         <argsstring>(IADLXManualTuningStateList **ppVRAMStates)=0</argsstring>
         <name>GetVRAMTuningStates</name>
+        <qualifiedname>adlx::IADLXManualVRAMTuning1::GetVRAMTuningStates</qualifiedname>
         <param>
           <type>IADLXManualTuningStateList **</type>
           <declname>ppVRAMStates</declname>
@@ -115,6 +121,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualVRAMTuning1::GetEmptyVRAMTuningStates</definition>
         <argsstring>(IADLXManualTuningStateList **ppVRAMStates)=0</argsstring>
         <name>GetEmptyVRAMTuningStates</name>
+        <qualifiedname>adlx::IADLXManualVRAMTuning1::GetEmptyVRAMTuningStates</qualifiedname>
         <param>
           <type>IADLXManualTuningStateList **</type>
           <declname>ppVRAMStates</declname>
@@ -132,6 +139,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualVRAMTuning1::IsValidVRAMTuningStates</definition>
         <argsstring>(IADLXManualTuningStateList *pVRAMStates, adlx_int *errorIndex)=0</argsstring>
         <name>IsValidVRAMTuningStates</name>
+        <qualifiedname>adlx::IADLXManualVRAMTuning1::IsValidVRAMTuningStates</qualifiedname>
         <param>
           <type>IADLXManualTuningStateList *</type>
           <declname>pVRAMStates</declname>
@@ -153,6 +161,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualVRAMTuning1::SetVRAMTuningStates</definition>
         <argsstring>(IADLXManualTuningStateList *pVRAMStates)=0</argsstring>
         <name>SetVRAMTuningStates</name>
+        <qualifiedname>adlx::IADLXManualVRAMTuning1::SetVRAMTuningStates</qualifiedname>
         <param>
           <type>IADLXManualTuningStateList *</type>
           <declname>pVRAMStates</declname>
@@ -165,7 +174,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualVRAMTuning.h" line="264" column="51"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

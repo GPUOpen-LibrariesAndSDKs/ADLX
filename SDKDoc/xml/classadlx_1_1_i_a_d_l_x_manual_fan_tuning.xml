@@ -1,14 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_manual_fan_tuning" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXManualFanTuning</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_manual_fan_tuning1" prot="public" virt="non-virtual">adlx::IADLXManualFanTuning1</derivedcompoundref>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_manual_fan_tuning_1a7d200a80272ced81baed77a6560e0ee4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::GetFanTuningRanges</definition>
         <argsstring>(ADLX_IntRange *speedRange, ADLX_IntRange *temperatureRange)=0</argsstring>
         <name>GetFanTuningRanges</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::GetFanTuningRanges</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
           <declname>speedRange</declname>
@@ -30,6 +32,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::GetFanTuningStates</definition>
         <argsstring>(IADLXManualFanTuningStateList **ppStates)=0</argsstring>
         <name>GetFanTuningStates</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::GetFanTuningStates</qualifiedname>
         <param>
           <type>IADLXManualFanTuningStateList **</type>
           <declname>ppStates</declname>
@@ -47,6 +50,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::GetEmptyFanTuningStates</definition>
         <argsstring>(IADLXManualFanTuningStateList **ppStates)=0</argsstring>
         <name>GetEmptyFanTuningStates</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::GetEmptyFanTuningStates</qualifiedname>
         <param>
           <type>IADLXManualFanTuningStateList **</type>
           <declname>ppStates</declname>
@@ -64,6 +68,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::IsValidFanTuningStates</definition>
         <argsstring>(IADLXManualFanTuningStateList *pStates, adlx_int *errorIndex)=0</argsstring>
         <name>IsValidFanTuningStates</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::IsValidFanTuningStates</qualifiedname>
         <param>
           <type>IADLXManualFanTuningStateList *</type>
           <declname>pStates</declname>
@@ -85,6 +90,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::SetFanTuningStates</definition>
         <argsstring>(IADLXManualFanTuningStateList *pStates)=0</argsstring>
         <name>SetFanTuningStates</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::SetFanTuningStates</qualifiedname>
         <param>
           <type>IADLXManualFanTuningStateList *</type>
           <declname>pStates</declname>
@@ -102,6 +108,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::IsSupportedZeroRPM</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedZeroRPM</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::IsSupportedZeroRPM</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -119,6 +126,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::GetZeroRPMState</definition>
         <argsstring>(adlx_bool *isSet)=0</argsstring>
         <name>GetZeroRPMState</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::GetZeroRPMState</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>isSet</declname>
@@ -136,6 +144,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::SetZeroRPMState</definition>
         <argsstring>(adlx_bool set)=0</argsstring>
         <name>SetZeroRPMState</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::SetZeroRPMState</qualifiedname>
         <param>
           <type>adlx_bool</type>
           <declname>set</declname>
@@ -153,6 +162,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::IsSupportedMinAcousticLimit</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedMinAcousticLimit</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::IsSupportedMinAcousticLimit</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -170,6 +180,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::GetMinAcousticLimitRange</definition>
         <argsstring>(ADLX_IntRange *tuningRange)=0</argsstring>
         <name>GetMinAcousticLimitRange</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::GetMinAcousticLimitRange</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
           <declname>tuningRange</declname>
@@ -187,6 +198,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::GetMinAcousticLimit</definition>
         <argsstring>(adlx_int *value)=0</argsstring>
         <name>GetMinAcousticLimit</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::GetMinAcousticLimit</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>value</declname>
@@ -204,6 +216,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::SetMinAcousticLimit</definition>
         <argsstring>(adlx_int value)=0</argsstring>
         <name>SetMinAcousticLimit</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::SetMinAcousticLimit</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>value</declname>
@@ -221,6 +234,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::IsSupportedMinFanSpeed</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedMinFanSpeed</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::IsSupportedMinFanSpeed</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -238,6 +252,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::GetMinFanSpeedRange</definition>
         <argsstring>(ADLX_IntRange *tuningRange)=0</argsstring>
         <name>GetMinFanSpeedRange</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::GetMinFanSpeedRange</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
           <declname>tuningRange</declname>
@@ -255,6 +270,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::GetMinFanSpeed</definition>
         <argsstring>(adlx_int *value)=0</argsstring>
         <name>GetMinFanSpeed</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::GetMinFanSpeed</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>value</declname>
@@ -272,6 +288,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::SetMinFanSpeed</definition>
         <argsstring>(adlx_int value)=0</argsstring>
         <name>SetMinFanSpeed</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::SetMinFanSpeed</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>value</declname>
@@ -289,6 +306,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::IsSupportedTargetFanSpeed</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedTargetFanSpeed</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::IsSupportedTargetFanSpeed</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -306,6 +324,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::GetTargetFanSpeedRange</definition>
         <argsstring>(ADLX_IntRange *tuningRange)=0</argsstring>
         <name>GetTargetFanSpeedRange</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::GetTargetFanSpeedRange</qualifiedname>
         <param>
           <type><ref refid="struct_a_d_l_x___int_range" kindref="compound">ADLX_IntRange</ref> *</type>
           <declname>tuningRange</declname>
@@ -323,6 +342,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::GetTargetFanSpeed</definition>
         <argsstring>(adlx_int *value)=0</argsstring>
         <name>GetTargetFanSpeed</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::GetTargetFanSpeed</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>value</declname>
@@ -340,6 +360,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXManualFanTuning::SetTargetFanSpeed</definition>
         <argsstring>(adlx_int value)=0</argsstring>
         <name>SetTargetFanSpeed</name>
+        <qualifiedname>adlx::IADLXManualFanTuning::SetTargetFanSpeed</qualifiedname>
         <param>
           <type>adlx_int</type>
           <declname>value</declname>
@@ -352,7 +373,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IGPUManualFanTuning.h" line="775" column="51"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

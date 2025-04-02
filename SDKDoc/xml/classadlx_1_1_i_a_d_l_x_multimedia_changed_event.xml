@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classadlx_1_1_i_a_d_l_x_multimedia_changed_event" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>adlx::IADLXMultimediaChangedEvent</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">adlx::IADLXChangedEvent</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_multimedia_changed_event_1a07378085c6292639a421135fc35c264b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
+        <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXMultimediaChangedEvent::GetGPU</definition>
+        <argsstring>(IADLXGPU **ppGPU)=0</argsstring>
+        <name>GetGPU</name>
+        <qualifiedname>adlx::IADLXMultimediaChangedEvent::GetGPU</qualifiedname>
+        <param>
+          <type>IADLXGPU **</type>
+          <declname>ppGPU</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IMultiMedia.h" line="296" column="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_multimedia_changed_event_1a24357863a2747b92ebd52b2e87bc4295" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>adlx_bool ADLX_STD_CALL</type>
+        <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXMultimediaChangedEvent::IsVideoUpscaleChanged</definition>
+        <argsstring>()=0</argsstring>
+        <name>IsVideoUpscaleChanged</name>
+        <qualifiedname>adlx::IADLXMultimediaChangedEvent::IsVideoUpscaleChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IMultiMedia.h" line="322" column="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_multimedia_changed_event_1ada2b3a85ea4e96bc87c3bf3746e8c917" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>adlx_bool ADLX_STD_CALL</type>
+        <definition>virtual adlx_bool ADLX_STD_CALL adlx::IADLXMultimediaChangedEvent::IsVideoSuperResolutionChanged</definition>
+        <argsstring>()=0</argsstring>
+        <name>IsVideoSuperResolutionChanged</name>
+        <qualifiedname>adlx::IADLXMultimediaChangedEvent::IsVideoSuperResolutionChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IMultiMedia.h" line="325" column="47"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IMultiMedia.h" line="261" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IMultiMedia.h" bodystart="262" bodyend="327"/>
+    <listofallmembers>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLXMultimediaChangedEvent</scope><name>Acquire</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_multimedia_changed_event_1a07378085c6292639a421135fc35c264b" prot="public" virt="pure-virtual"><scope>adlx::IADLXMultimediaChangedEvent</scope><name>GetGPU</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_changed_event_1aabba9d15598621fe88ce7ed8712b2380" prot="public" virt="pure-virtual"><scope>adlx::IADLXMultimediaChangedEvent</scope><name>GetOrigin</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_multimedia_changed_event_1ada2b3a85ea4e96bc87c3bf3746e8c917" prot="public" virt="pure-virtual"><scope>adlx::IADLXMultimediaChangedEvent</scope><name>IsVideoSuperResolutionChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_multimedia_changed_event_1a24357863a2747b92ebd52b2e87bc4295" prot="public" virt="pure-virtual"><scope>adlx::IADLXMultimediaChangedEvent</scope><name>IsVideoUpscaleChanged</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1aec8f7d033d48598b4fe1bf448b6be465" prot="public" virt="pure-virtual"><scope>adlx::IADLXMultimediaChangedEvent</scope><name>QueryInterface</name></member>
+      <member refid="classadlx_1_1_i_a_d_l_x_interface_1ae993f9bbde0a75386d4368d5998df213" prot="public" virt="pure-virtual"><scope>adlx::IADLXMultimediaChangedEvent</scope><name>Release</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

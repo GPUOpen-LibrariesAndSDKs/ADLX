@@ -7,6 +7,7 @@ var page_sample_cpp =
     [ "I2C", "domain_cpp_sample__i2_c.html", "domain_cpp_sample__i2_c" ],
     [ "Performance Monitoring", "domain_cpp_sample__performance_monitoring.html", "domain_cpp_sample__performance_monitoring" ],
     [ "Power Tuning", "domain_cpp_sample_powertuning.html", "domain_cpp_sample_powertuning" ],
+    [ "Multimedia", "domain_cpp_sample_multimedia.html", "domain_cpp_sample_multimedia" ],
     [ "Receiving Events Notifications", "domain_cpp_sample_globalsync.html", "domain_cpp_sample_globalsync" ],
     [ "ServiceCall", "domain_cpp_sample_servicecall.html", "domain_cpp_sample_servicecall" ],
     [ "Miscellaneous", "domain_cpp_sample__generic.html", "domain_cpp_sample__generic" ]

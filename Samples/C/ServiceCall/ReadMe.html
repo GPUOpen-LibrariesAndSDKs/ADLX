@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -7,53 +7,44 @@
 <html>
 <body>
     <h1 id="background">Background</h1>
-    <p>User may encounter a situation where they cannot directly use ADLX functionalities in windows service application.</p>
-    <p>This documentation demonstrates how to call ADLX functionalities in windows service call.</p>
-    <p>We have the sample codes in “ADLX/Samples/CPP/ServiceCall/GPUService” as CPP project or “ADLX/Samples/C/ServiceCall/GPUService” as C project. They both generate executable “GPUService.exe”.</p>
-    <h1 id="usage">Usage</h1>
-    <p>This executable is run as service (if you run it as a normal application it will abort with errors)</p>
-    <h2 id="install-this-service">Install this service</h2>
-    <ol type="1">
-        <li><p>Open windows command line utility with administrator permission. Switch directory to the executable’s path, take my dev PC for example:</p></li>
+    <p><b>Important:</b> Before proceeding to install the service application, refer to <a href="page_guide_usingservice.html">Using ADLX in a Windows system service application</a> to determine if this procedure is required.</p>
+    <ul>
+        <li>ADLX v1.4 and above can be used directly in a Windows system service application, providing access to a limited set of ADLX functionality when ADLX runs in Session 0.<br/>
+        If the Windows system service application requires additional ADLX functionality, it can be accessed through a user mode process.</li>
+        <li>ADLX v1.3 and below cannot be used directly in a Windows system service application, and can be accessed through a user mode process.</li>
+    </ul>
+    <p>This sample demonstrates how to create a user process from within a Windows system service application to access full ADLX functionality, provided through a communication mechanism between the user mode process that uses ADLX, and the system service.</p>
+    <p>This process uses shared memory to obtain ADLX information from the user process into the system service. Every three seconds, the sample service will output debug information - including vendor id and name - for the first GPU enumerated.</p>
+    <h1 id="usage">SamplePath</h1>
+    <p>/Samples/C/ServiceCall/GPUService</p>
+    <p>The sample builds GPUService.exe, and this application must be installed and executed as a Windows service application.</p>
+    <p>The sample must be compiled with debug information in order to debug the service.</p>
+    <h2 id="install-this-service">Installing the ADLX GPU Service application</h2>
+    <ol>
+        <li>Run the Windows Command Processor application (cmd.exe) as administrator.</li>
+        <li>In Windows Command Processor, change the working directory to the path where GPUService.exe is built.</li>
+        <li>In Windows Command Processor, execute: <code>GPUService.exe -install</code>.</li>
+        <li>Press <b>Win + R</b> to launch Windows Services, and enter: <code>services.msc</code>.</li>
+        <li>In Windows Services, select <b>ADLX GPU Service</b>.</li>
     </ol>
-    <blockquote>
-    <p>“D:/DevShared3/Work/Repo/drivers/drivers/ADLX/Samples/C/build/bin/Debug/”</p>
-    </blockquote>
-    <ol start="2" type="1">
-        <li><p>Copy “ADLX.dll”(ADLX library binary) in this folder, then enter “GPUService.exe -install:</p></li>
+    <h2 id="debug-this-service">Debugging the ADLX GPU Service application</h2>
+    <ol>
+        <li>Launch DebugView as administrator.</li>
+        <li>In DebugView, click <b>Capture</b> in the top menu and select the following options:
+            <ul>
+                <li>Capture Win32</li>
+                <li>Capture Global Win32</li>
+                <li>Pass-Through</li>
+                <li>Capture Events</li>
+            </ul>
+        <li>Press <b>Win + R</b> and enter: <code>services.msc</code> to launch Windows Services.</li>
+        <li>Right-click on Windows Services > ADLX GPU Service, and select <b>Start</b> from the menu.</li>
+        <li>In DebugView, note that every 3 seconds the ADLX GPU Service outputs debug information with the vendor id and and name for the first GPU enumerated, prefixed with <b>ADLX Call Service:</b>.</li>
     </ol>
-    <blockquote>
-    <p><img src="media/image1.png" style="width:5.76806in;height:3.15in" alt="Text Description automatically generated" /></p>
-    </blockquote>
-    <ol start="3" type="1">
-        <li><p>Check if the service is installed:</p></li>
+    <h2 id="uninstall-adlx-gpu-service">Uninstalling the ADLX GPU Service application</h2>
+    <ol>
+        <li>Run the Windows Command Processor application (cmd.exe) as administrator.</li>
+        <li>In Windows Command Processor, execute: <code>GPUService.exe –remove</code>.</li>
     </ol>
-    <blockquote>
-    <p>Open windows’ service settings by win+R with services.msc:</p>
-    <p><img src="media/image2.png" style="width:3.07557in;height:1.78705in" alt="Graphical user interface, text, application Description automatically generated" /></p>
-    <p>Check service with name “ADLX GPU Service”</p>
-    <p><img src="media/image3.png" style="width:5.15972in;height:3.05105in" /></p>
-    </blockquote>
-    <h2 id="uninstall-adlx-gpu-service">Uninstall “ADLX GPU Service”</h2>
-    <p>Open windows command line utility with administrator permission, enter “GPUService.exe -remove”</p>
-    <p><img src="media/image4.png" style="width:5.76389in;height:0.65278in" /></p>
-    <p>The service is removed in OS.</p>
-    <h2 id="debug-this-service">Debug this service</h2>
-    <ol type="1">
-        <li><p>Start the service:</p></li>
-    </ol>
-    <p><img src="media/image5.png" style="width:5.76806in;height:2.38264in" alt="Graphical user interface, application Description automatically generated" /></p>
-    <ol start="2" type="1">
-        <li><p>Run the debugging executable (compiled with debug configuration)</p></li>
-    </ol>
-    <p>Open Dbgview.exe (visual studio contains it by default) with administrator mode to view the output of this service. By default, the service runs a worker thread in backgound to output GPU vendor id and name periodically with 3 seconds.</p>
-    <ol start="3" type="1">
-        <li><p>Set Dbgview.exe (admin mode) with below options:</p></li>
-    </ol>
-    <p><img src="media/image6.png" style="width:5.76806in;height:2.96111in" alt="Graphical user interface, text, application, email Description automatically generated" /></p>
-    <ol start="4" type="1">
-        <li><p>Check the service outputs (with “ADLX Call Service:”prefix):</p></li>
-    </ol>
-    <p><img src="media/image7.png" style="width:5.76597in;height:1.89583in" /></p>
 </body>
 </html>

@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x3_d_tessellation" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLX3DTessellation</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_tessellation_1a62a173a06f5856f0a9b87ddaffc655ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DTessellation::IsSupported</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupported</name>
+        <qualifiedname>adlx::IADLX3DTessellation::IsSupported</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -19,13 +20,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="1995" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2011" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_tessellation_1a1bd0ffaa681d95c334284b008e553706" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DTessellation::GetMode</definition>
         <argsstring>(ADLX_TESSELLATION_MODE *currentMode)=0</argsstring>
         <name>GetMode</name>
+        <qualifiedname>adlx::IADLX3DTessellation::GetMode</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1ga7899078325beddfbe0f4e63dca8ce8ca" kindref="member">ADLX_TESSELLATION_MODE</ref> *</type>
           <declname>currentMode</declname>
@@ -36,13 +38,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2021" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2037" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_tessellation_1a5bf292c060dcc7493f72fa77a7c9353e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DTessellation::GetLevel</definition>
         <argsstring>(ADLX_TESSELLATION_LEVEL *currentLevel)=0</argsstring>
         <name>GetLevel</name>
+        <qualifiedname>adlx::IADLX3DTessellation::GetLevel</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1ga5967c593434c0cba5891c996d64cff5c" kindref="member">ADLX_TESSELLATION_LEVEL</ref> *</type>
           <declname>currentLevel</declname>
@@ -53,13 +56,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2047" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2063" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_tessellation_1ab7dd3af34859b8afbf2ca87ebb62e7be" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DTessellation::SetMode</definition>
         <argsstring>(ADLX_TESSELLATION_MODE mode)=0</argsstring>
         <name>SetMode</name>
+        <qualifiedname>adlx::IADLX3DTessellation::SetMode</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1ga7899078325beddfbe0f4e63dca8ce8ca" kindref="member">ADLX_TESSELLATION_MODE</ref></type>
           <declname>mode</declname>
@@ -70,13 +74,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2073" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2089" column="51"/>
       </memberdef>
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x3_d_tessellation_1a139b9acf6b13223492d13f70203fdb3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLX3DTessellation::SetLevel</definition>
         <argsstring>(ADLX_TESSELLATION_LEVEL level)=0</argsstring>
         <name>SetLevel</name>
+        <qualifiedname>adlx::IADLX3DTessellation::SetLevel</qualifiedname>
         <param>
           <type><ref refid="group__enumerations_1ga5967c593434c0cba5891c996d64cff5c" kindref="member">ADLX_TESSELLATION_LEVEL</ref></type>
           <declname>level</declname>
@@ -87,14 +92,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2099" column="51"/>
+        <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="2115" column="51"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="1966" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="1967" bodyend="2101"/>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" line="1982" column="5" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings.h" bodystart="1983" bodyend="2117"/>
     <listofallmembers>
       <member refid="classadlx_1_1_i_a_d_l_x_interface_1a983d24356f5cbfdcca173454f3e09deb" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DTessellation</scope><name>Acquire</name></member>
       <member refid="classadlx_1_1_i_a_d_l_x3_d_tessellation_1a5bf292c060dcc7493f72fa77a7c9353e" prot="public" virt="pure-virtual"><scope>adlx::IADLX3DTessellation</scope><name>GetLevel</name></member>

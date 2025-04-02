@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="struct_a_d_l_x_helper" kind="class" language="C++" prot="public">
     <compoundname>ADLXHelper</compoundname>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="struct_a_d_l_x_helper_1a51ea569e8334fa158d0c5f2d31ab6265" prot="public" static="no" mutable="no">
         <type>adlx_handle</type>
         <definition>adlx_handle ADLXHelper::m_hDLLHandle</definition>
         <argsstring></argsstring>
         <name>m_hDLLHandle</name>
+        <qualifiedname>ADLXHelper::m_hDLLHandle</qualifiedname>
         <initializer>= nullptr</initializer>
         <briefdescription>
         </briefdescription>
@@ -22,6 +23,7 @@
         <definition>adlx_uint64 ADLXHelper::m_ADLXFullVersion</definition>
         <argsstring></argsstring>
         <name>m_ADLXFullVersion</name>
+        <qualifiedname>ADLXHelper::m_ADLXFullVersion</qualifiedname>
         <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
@@ -36,6 +38,7 @@
         <definition>const char * ADLXHelper::m_ADLXVersion</definition>
         <argsstring></argsstring>
         <name>m_ADLXVersion</name>
+        <qualifiedname>ADLXHelper::m_ADLXVersion</qualifiedname>
         <initializer>= nullptr</initializer>
         <briefdescription>
         </briefdescription>
@@ -50,6 +53,7 @@
         <definition>IADLXSystem* ADLXHelper::m_pSystemServices</definition>
         <argsstring></argsstring>
         <name>m_pSystemServices</name>
+        <qualifiedname>ADLXHelper::m_pSystemServices</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -63,6 +67,7 @@
         <definition>IADLMapping* ADLXHelper::m_pAdlMapping</definition>
         <argsstring></argsstring>
         <name>m_pAdlMapping</name>
+        <qualifiedname>ADLXHelper::m_pAdlMapping</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -72,10 +77,11 @@
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/C/ADLXHelper.c" line="22" column="13" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/C/ADLXHelper.c" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_a_d_l_x_helper_1a543b98cb51c9e5f9897806a3f3e4b05f" prot="public" static="no" mutable="no">
-        <type><ref refid="group___a_d_l_x_defs_1ga6adc3b43ac10780441c675a07a0fa4ae" kindref="member">ADLXQueryFullVersion_Fn</ref></type>
+        <type><ref refid="group___a_d_l_x_defs_1ga977d52d7192498cf99383797c5fc44a5" kindref="member">ADLXQueryFullVersion_Fn</ref></type>
         <definition>ADLXQueryFullVersion_Fn ADLXHelper::m_fullVersionFn</definition>
         <argsstring></argsstring>
         <name>m_fullVersionFn</name>
+        <qualifiedname>ADLXHelper::m_fullVersionFn</qualifiedname>
         <initializer>= nullptr</initializer>
         <briefdescription>
         </briefdescription>
@@ -86,10 +92,11 @@
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/C/ADLXHelper.c" line="25" column="25" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/C/ADLXHelper.c" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_a_d_l_x_helper_1abe503404fdf2b5c808c0e7d068d707ec" prot="public" static="no" mutable="no">
-        <type><ref refid="group___a_d_l_x_defs_1gacc89675ee4e79ce8f3a2d729bc48fc0b" kindref="member">ADLXQueryVersion_Fn</ref></type>
+        <type><ref refid="group___a_d_l_x_defs_1gab6bea1ad7226aaefe89c0cbcc0e72def" kindref="member">ADLXQueryVersion_Fn</ref></type>
         <definition>ADLXQueryVersion_Fn ADLXHelper::m_versionFn</definition>
         <argsstring></argsstring>
         <name>m_versionFn</name>
+        <qualifiedname>ADLXHelper::m_versionFn</qualifiedname>
         <initializer>= nullptr</initializer>
         <briefdescription>
         </briefdescription>
@@ -100,10 +107,11 @@
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/C/ADLXHelper.c" line="28" column="21" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/C/ADLXHelper.c" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_a_d_l_x_helper_1a6f68e251a54654f2a86a107d0fe1e4e4" prot="public" static="no" mutable="no">
-        <type><ref refid="group___a_d_l_x_defs_1gadb90c5a66bc15b34f864d5883158ed44" kindref="member">ADLXInitializeWithCallerAdl_Fn</ref></type>
+        <type><ref refid="group___a_d_l_x_defs_1ga549c1dd974464d1cf9de5e5900e0aa1c" kindref="member">ADLXInitializeWithCallerAdl_Fn</ref></type>
         <definition>ADLXInitializeWithCallerAdl_Fn ADLXHelper::m_initWithADLFn</definition>
         <argsstring></argsstring>
         <name>m_initWithADLFn</name>
+        <qualifiedname>ADLXHelper::m_initWithADLFn</qualifiedname>
         <initializer>= nullptr</initializer>
         <briefdescription>
         </briefdescription>
@@ -114,10 +122,11 @@
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/C/ADLXHelper.c" line="31" column="32" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/C/ADLXHelper.c" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_a_d_l_x_helper_1a7bb4347589c8b19300bc539791b88583" prot="public" static="no" mutable="no">
-        <type><ref refid="group___a_d_l_x_defs_1gac5f7f97490516e7be3e62c3be1383c66" kindref="member">ADLXInitialize_Fn</ref></type>
+        <type><ref refid="group___a_d_l_x_defs_1gac1ba04c408146afccbfcfe2878ca3a3f" kindref="member">ADLXInitialize_Fn</ref></type>
         <definition>ADLXInitialize_Fn ADLXHelper::m_initFnEx</definition>
         <argsstring></argsstring>
         <name>m_initFnEx</name>
+        <qualifiedname>ADLXHelper::m_initFnEx</qualifiedname>
         <initializer>= nullptr</initializer>
         <briefdescription>
         </briefdescription>
@@ -128,10 +137,11 @@
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/C/ADLXHelper.c" line="34" column="19" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/C/ADLXHelper.c" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_a_d_l_x_helper_1ac834dc1c28d6e9cd261739d1c6682ef4" prot="public" static="no" mutable="no">
-        <type><ref refid="group___a_d_l_x_defs_1gac5f7f97490516e7be3e62c3be1383c66" kindref="member">ADLXInitialize_Fn</ref></type>
+        <type><ref refid="group___a_d_l_x_defs_1gac1ba04c408146afccbfcfe2878ca3a3f" kindref="member">ADLXInitialize_Fn</ref></type>
         <definition>ADLXInitialize_Fn ADLXHelper::m_initFn</definition>
         <argsstring></argsstring>
         <name>m_initFn</name>
+        <qualifiedname>ADLXHelper::m_initFn</qualifiedname>
         <initializer>= nullptr</initializer>
         <briefdescription>
         </briefdescription>
@@ -142,10 +152,11 @@
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/C/ADLXHelper.c" line="37" column="19" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/C/ADLXHelper.c" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_a_d_l_x_helper_1a53ab75150596cc5efca0c5f85b55ba59" prot="public" static="no" mutable="no">
-        <type><ref refid="group___a_d_l_x_defs_1ga8c0d01f62522f27bdb72ece0c7c89ded" kindref="member">ADLXTerminate_Fn</ref></type>
+        <type><ref refid="group___a_d_l_x_defs_1ga286c8f710923eb9205239ca3b8b6cd05" kindref="member">ADLXTerminate_Fn</ref></type>
         <definition>ADLXTerminate_Fn ADLXHelper::m_terminateFn</definition>
         <argsstring></argsstring>
         <name>m_terminateFn</name>
+        <qualifiedname>ADLXHelper::m_terminateFn</qualifiedname>
         <initializer>= nullptr</initializer>
         <briefdescription>
         </briefdescription>
@@ -155,13 +166,14 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/C/ADLXHelper.c" line="40" column="18" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/C/ADLXHelper.c" bodystart="40" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="protected-attrib">
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="struct_a_d_l_x_helper_1a4a46bf295e3c6dcd19f7edeaf056688e" prot="protected" static="no" mutable="no">
         <type>adlx::IADLXSystem *</type>
         <definition>adlx::IADLXSystem* ADLXHelper::m_pSystemServices</definition>
         <argsstring></argsstring>
         <name>m_pSystemServices</name>
+        <qualifiedname>ADLXHelper::m_pSystemServices</qualifiedname>
         <initializer>= nullptr</initializer>
         <briefdescription>
         </briefdescription>
@@ -176,6 +188,7 @@
         <definition>adlx::IADLMapping* ADLXHelper::m_pAdlMapping</definition>
         <argsstring></argsstring>
         <name>m_pAdlMapping</name>
+        <qualifiedname>ADLXHelper::m_pAdlMapping</qualifiedname>
         <initializer>= nullptr</initializer>
         <briefdescription>
         </briefdescription>
@@ -185,13 +198,14 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h" line="326" column="23" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h" bodystart="326" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="struct_a_d_l_x_helper_1a861b8aede7bdebaeeefe8036bbdbee53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>ADLXHelper::ADLXHelper</definition>
         <argsstring>()</argsstring>
         <name>ADLXHelper</name>
+        <qualifiedname>ADLXHelper::ADLXHelper</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -205,6 +219,7 @@
         <definition>ADLXHelper::~ADLXHelper</definition>
         <argsstring>()</argsstring>
         <name>~ADLXHelper</name>
+        <qualifiedname>ADLXHelper::~ADLXHelper</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -218,12 +233,13 @@
         <definition>ADLX_RESULT ADLXHelper::InitializeWithCallerAdl</definition>
         <argsstring>(adlx_handle adlContext, ADLX_ADL_Main_Memory_Free adlMainMemoryFree)</argsstring>
         <name>InitializeWithCallerAdl</name>
+        <qualifiedname>ADLXHelper::InitializeWithCallerAdl</qualifiedname>
         <param>
           <type>adlx_handle</type>
           <declname>adlContext</declname>
         </param>
         <param>
-          <type><ref refid="group___a_d_l_x_defs_1ga7301579b153c3612dca5c442e5f2dd45" kindref="member">ADLX_ADL_Main_Memory_Free</ref></type>
+          <type><ref refid="group___a_d_l_x_defs_1gabdc3ae7e3b002ff843e7aaa8f055ae77" kindref="member">ADLX_ADL_Main_Memory_Free</ref></type>
           <declname>adlMainMemoryFree</declname>
         </param>
         <briefdescription>
@@ -239,6 +255,7 @@
         <definition>ADLX_RESULT ADLXHelper::Initialize</definition>
         <argsstring>()</argsstring>
         <name>Initialize</name>
+        <qualifiedname>ADLXHelper::Initialize</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -252,6 +269,7 @@
         <definition>ADLX_RESULT ADLXHelper::InitializeWithIncompatibleDriver</definition>
         <argsstring>()</argsstring>
         <name>InitializeWithIncompatibleDriver</name>
+        <qualifiedname>ADLXHelper::InitializeWithIncompatibleDriver</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -265,6 +283,7 @@
         <definition>ADLX_RESULT ADLXHelper::Terminate</definition>
         <argsstring>()</argsstring>
         <name>Terminate</name>
+        <qualifiedname>ADLXHelper::Terminate</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -278,6 +297,7 @@
         <definition>adlx_uint64 ADLXHelper::QueryFullVersion</definition>
         <argsstring>()</argsstring>
         <name>QueryFullVersion</name>
+        <qualifiedname>ADLXHelper::QueryFullVersion</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -291,6 +311,7 @@
         <definition>const char * ADLXHelper::QueryVersion</definition>
         <argsstring>()</argsstring>
         <name>QueryVersion</name>
+        <qualifiedname>ADLXHelper::QueryVersion</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -304,6 +325,7 @@
         <definition>adlx::IADLXSystem * ADLXHelper::GetSystemServices</definition>
         <argsstring>()</argsstring>
         <name>GetSystemServices</name>
+        <qualifiedname>ADLXHelper::GetSystemServices</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -317,6 +339,7 @@
         <definition>adlx::IADLMapping * ADLXHelper::GetAdlMapping</definition>
         <argsstring>()</argsstring>
         <name>GetAdlMapping</name>
+        <qualifiedname>ADLXHelper::GetAdlMapping</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -325,13 +348,14 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h" line="309" column="23" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/Cpp/ADLXHelper.cpp" bodystart="93" bodyend="96"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="protected-func">
+    </sectiondef>
+    <sectiondef kind="protected-func">
       <memberdef kind="function" id="struct_a_d_l_x_helper_1a8b5c4502af902ce6e9a2592b258790c0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref></type>
         <definition>ADLX_RESULT ADLXHelper::LoadADLXDll</definition>
         <argsstring>()</argsstring>
         <name>LoadADLXDll</name>
+        <qualifiedname>ADLXHelper::LoadADLXDll</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -345,12 +369,13 @@
         <definition>ADLX_RESULT ADLXHelper::InitializePrivate</definition>
         <argsstring>(adlx_handle adlContext, ADLX_ADL_Main_Memory_Free adlMainMemoryFree, adlx_bool useIncompatibleDriver=false)</argsstring>
         <name>InitializePrivate</name>
+        <qualifiedname>ADLXHelper::InitializePrivate</qualifiedname>
         <param>
           <type>adlx_handle</type>
           <declname>adlContext</declname>
         </param>
         <param>
-          <type><ref refid="group___a_d_l_x_defs_1ga7301579b153c3612dca5c442e5f2dd45" kindref="member">ADLX_ADL_Main_Memory_Free</ref></type>
+          <type><ref refid="group___a_d_l_x_defs_1gabdc3ae7e3b002ff843e7aaa8f055ae77" kindref="member">ADLX_ADL_Main_Memory_Free</ref></type>
           <declname>adlMainMemoryFree</declname>
         </param>
         <param>
@@ -366,7 +391,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h" line="350" column="17" bodyfile="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/ADLXHelper/Windows/Cpp/ADLXHelper.cpp" bodystart="126" bodyend="152"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

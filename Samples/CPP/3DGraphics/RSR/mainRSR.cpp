@@ -1,5 +1,5 @@
 ﻿//
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -68,10 +68,7 @@ int main()
         }
         else
         {
-            // Destroy ADLX
-            res = g_ADLXHelp.Terminate();
-            std::cout << "Destroy ADLX res: " << res << std::endl;
-            return WaitAndExit("Failed to get 3DSettings services", 0);
+            std::cout << "Failed to get 3DSettings services: " << res << std::endl;
         }
     }
     else

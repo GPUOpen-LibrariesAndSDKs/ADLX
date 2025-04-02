@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_simple_eyefinity" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXSimpleEyefinity</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_simple_eyefinity_1ad48a3e5a662989491b8b91cb05f4d6c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSimpleEyefinity::IsSupported</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupported</name>
+        <qualifiedname>adlx::IADLXSimpleEyefinity::IsSupported</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -26,6 +27,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSimpleEyefinity::Create</definition>
         <argsstring>(IADLXEyefinityDesktop **ppEyefinityDesktop)=0</argsstring>
         <name>Create</name>
+        <qualifiedname>adlx::IADLXSimpleEyefinity::Create</qualifiedname>
         <param>
           <type>IADLXEyefinityDesktop **</type>
           <declname>ppEyefinityDesktop</declname>
@@ -43,6 +45,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSimpleEyefinity::DestroyAll</definition>
         <argsstring>()=0</argsstring>
         <name>DestroyAll</name>
+        <qualifiedname>adlx::IADLXSimpleEyefinity::DestroyAll</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -56,6 +59,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSimpleEyefinity::Destroy</definition>
         <argsstring>(IADLXEyefinityDesktop *pDesktop)=0</argsstring>
         <name>Destroy</name>
+        <qualifiedname>adlx::IADLXSimpleEyefinity::Destroy</qualifiedname>
         <param>
           <type>IADLXEyefinityDesktop *</type>
           <declname>pDesktop</declname>
@@ -68,7 +72,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IDesktops.h" line="737" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -25,8 +25,23 @@ void GetCurrentVariBright ( IADLXDisplayServices* pDisplayService,  IADLXDisplay
 // Get display Vari-Bright current state
 void SetCurrentVariBright ( IADLXDisplayServices* pDisplayService,  IADLXDisplay* pDisplay, int userChoice);
 
+// Display supported status, enabled state and set state for Backlight Adaptive Vari-Bright Scaling mode
+void BacklightAdaptiveFunctionality(IADLXDisplayVariBright1* displayVariBright1);
+
+// Display supported status, enabled state and set state for Battery Life Vari-Bright Scaling mode
+void BatteryLifeFunctionality(IADLXDisplayVariBright1* displayVariBright1);
+
+// Display supported status, enabled state and set state for Windows Power Mode Vari-Bright Scaling mode
+void WindowsPowerModeFunctionality(IADLXDisplayVariBright1* displayVariBright1);
+
+// Display supported status, enabled state and set state for Full-Screen Video Vari-Bright Scaling mode
+void FullScreenVideoFunctionality(IADLXDisplayVariBright1* displayVariBright1);
+
 // Main menu
 void MainMenu();
+
+// Vari-Bright Scaling menu action control
+void VariBrightScalingMenuControl(IADLXDisplayVariBright1* displayVariBright1, int userChoice);
 
 // Menu action control
 void MenuControl( IADLXDisplayServices* pDisplayService,  IADLXDisplay* pDisplay);
@@ -228,6 +243,133 @@ void SetCurrentVariBright ( IADLXDisplayServices* pDisplayService, IADLXDisplay*
     }
 }
 
+void BacklightAdaptiveFunctionality(IADLXDisplayVariBright1* displayVariBright1)
+{
+    ADLX_RESULT res = ADLX_FAIL;
+    adlx_bool supported = false, enabled = false;
+    int num = 0;
+    while ((num = getchar()) != 'q' && num != 'Q')
+    {
+        switch (num)
+        {
+        case '1':
+            res = displayVariBright1->pVtbl->IsBacklightAdaptiveSupported(displayVariBright1, &supported);
+            printf("\t\tBacklight Adaptive Vari-Bright Scaling mode is supported on the display: %s, return code: %d (0 means success)\n", (supported ? "true" : "false"), res);
+            break;
+        case '2':
+            res = displayVariBright1->pVtbl->IsBacklightAdaptiveEnabled(displayVariBright1, &enabled);
+            printf("\t\tBacklight Adaptive Vari-Bright Scaling mode is enabled on the display: %s, return code: %d (0 means success)\n", (enabled ? "true" : "false"), res);
+            break;
+        case '3':
+            res = displayVariBright1->pVtbl->SetBacklightAdaptiveEnabled(displayVariBright1, true);
+            printf("\t\tSet Backlight Adaptive Vari-Bright Scaling mode enabled %s\n", (ADLX_SUCCEEDED(res) ? "successfully" : "failed"));
+            break;
+        case '4':
+            res = displayVariBright1->pVtbl->SetBacklightAdaptiveEnabled(displayVariBright1, false);
+            printf("\t\tSet Backlight Adaptive Vari-Bright Scaling mode disabled %s\n", (ADLX_SUCCEEDED(res) ? "successfully" : "failed"));
+            break;
+        default:
+            break;
+        }
+    }
+}
+
+// Display supported status, enabled state and set state for Battery Life Vari-Bright Scaling mode
+void BatteryLifeFunctionality(IADLXDisplayVariBright1* displayVariBright1)
+{
+    ADLX_RESULT res = ADLX_FAIL;
+    adlx_bool supported = false, enabled = false;
+    int num = 0;
+    while ((num = getchar()) != 'q' && num != 'Q')
+    {
+        switch (num)
+        {
+        case '1':
+            res = displayVariBright1->pVtbl->IsBatteryLifeSupported(displayVariBright1, &supported);
+            printf("\t\tBattery Life Vari-Bright Scaling mode is supported on the display: %s, return code: %d (0 means success)\n", (supported ? "true" : "false"), res);
+            break;
+        case '2':
+            res = displayVariBright1->pVtbl->IsBatteryLifeEnabled(displayVariBright1, &enabled);
+            printf("\t\tBattery Life Vari-Bright Scaling mode is enabled on the display: %s, return code: %d (0 means success)\n", (enabled ? "true" : "false"), res);
+            break;
+        case '3':
+            res = displayVariBright1->pVtbl->SetBatteryLifeEnabled(displayVariBright1, true);
+            printf("\t\tSet Battery Life Vari-Bright Scaling mode enabled %s\n", (ADLX_SUCCEEDED(res) ? "successfully" : "failed"));
+            break;
+        case '4':
+            res = displayVariBright1->pVtbl->SetBatteryLifeEnabled(displayVariBright1, false);
+            printf("\t\tSet Battery Life Vari-Bright Scaling mode disabled %s\n", (ADLX_SUCCEEDED(res) ? "successfully" : "failed"));
+            break;
+        default:
+            break;
+        }
+    }
+}
+
+// Display supported status, enabled state and set state for Windows Power Mode Vari-Bright Scaling mode
+void WindowsPowerModeFunctionality(IADLXDisplayVariBright1* displayVariBright1)
+{
+    ADLX_RESULT res = ADLX_FAIL;
+    adlx_bool supported = false, enabled = false;
+    int num = 0;
+    while ((num = getchar()) != 'q' && num != 'Q')
+    {
+        switch (num)
+        {
+        case '1':
+            res = displayVariBright1->pVtbl->IsWindowsPowerModeSupported(displayVariBright1, &supported);
+            printf("\t\tWindows Power Mode Vari-Bright Scaling mode is supported on the display: %s, return code: %d (0 means success)\n", (supported ? "true" : "false"), res);
+            break;
+        case '2':
+            res = displayVariBright1->pVtbl->IsWindowsPowerModeEnabled(displayVariBright1, &enabled);
+            printf("\t\tWindows Power Mode Vari-Bright Scaling mode is enabled on the display: %s, return code: %d (0 means success)\n", (enabled ? "true" : "false"), res);
+            break;
+        case '3':
+            res = displayVariBright1->pVtbl->SetWindowsPowerModeEnabled(displayVariBright1, true);
+            printf("\t\tSet Windows Power Mode Vari-Bright Scaling mode enabled %s\n", (ADLX_SUCCEEDED(res) ? "successfully" : "failed"));
+            break;
+        case '4':
+            res = displayVariBright1->pVtbl->SetWindowsPowerModeEnabled(displayVariBright1, false);
+            printf("\t\tSet Windows Power Mode Vari-Bright Scaling mode disabled %s\n", (ADLX_SUCCEEDED(res) ? "successfully" : "failed"));
+            break;
+        default:
+            break;
+        }
+    }
+}
+
+// Display supported status, enabled state and set state for Full-Screen Video Vari-Bright Scaling mode
+void FullScreenVideoFunctionality(IADLXDisplayVariBright1* displayVariBright1)
+{
+    ADLX_RESULT res = ADLX_FAIL;
+    adlx_bool supported = false, enabled = false;
+    int num = 0;
+    while ((num = getchar()) != 'q' && num != 'Q')
+    {
+        switch (num)
+        {
+        case '1':
+            res = displayVariBright1->pVtbl->IsFullScreenVideoSupported(displayVariBright1, &supported);
+            printf("\t\tFull-Screen Video Vari-Bright Scaling mode is supported on the display: %s, return code: %d (0 means success)\n", (supported ? "true" : "false"), res);
+            break;
+        case '2':
+            res = displayVariBright1->pVtbl->IsFullScreenVideoEnabled(displayVariBright1, &enabled);
+            printf("\t\tFull-Screen Video Vari-Bright Scaling mode is enabled on the display: %s, return code: %d (0 means success)\n", (enabled ? "true" : "false"), res);
+            break;
+        case '3':
+            res = displayVariBright1->pVtbl->SetFullScreenVideoEnabled(displayVariBright1, true);
+            printf("\t\tSet Full-Screen Video Vari-Bright Scaling mode enabled %s\n", (ADLX_SUCCEEDED(res) ? "successfully" : "failed"));
+            break;
+        case '4':
+            res = displayVariBright1->pVtbl->SetFullScreenVideoEnabled(displayVariBright1, false);
+            printf("\t\tSet Full-Screen Video Vari-Bright Scaling mode disabled %s\n", (ADLX_SUCCEEDED(res) ? "successfully" : "failed"));
+            break;
+        default:
+            break;
+        }
+    }
+}
+
 void MainMenu()
 {
     printf ("\tChoose from the following options:\n");
@@ -246,6 +388,11 @@ void MainMenu()
     printf ("\t->Press c to set the Vari-Bright mode to balanced preset on the display\n");
     printf ("\t->Press d to set the Vari-Bright mode to optimized battery preset on the display\n");
     printf ("\t->Press e to sets the Vari-Bright mode to maximized battery preset on the display\n");
+    // Vari-Bright Scaling
+    printf("\t->Press f to use Backlight Adaptive Vari-Bright Scaling mode functionality on the display\n");
+    printf("\t->Press g to use Battery Life Vari-Bright Scaling mode functionality on the display\n");
+    printf("\t->Press h to use Windows Power Mode Vari-Bright Scaling mode functionality on the display\n");
+    printf("\t->Press i to use Full-Screen Video Vari-Bright Scaling mode functionality on the display\n");
 
     printf ("\t->Press Q/q to terminate the application\n");
     printf ("\t->Press M/m to display the main menu options\n");
@@ -295,6 +442,40 @@ void MenuControl( IADLXDisplayServices* pDisplayService, IADLXDisplay* pDisplay)
             SetCurrentVariBright (pDisplayService, pDisplay, num - 'a');
             break;
 
+        case 'f':
+        case 'g':
+        case 'h':
+        case 'i':
+        {
+            IADLXDisplayVariBright* displayVariBright = NULL;
+            ADLX_RESULT res = pDisplayService->pVtbl->GetVariBright(pDisplayService, pDisplay, &displayVariBright);
+            if (ADLX_SUCCEEDED(res))
+            {
+                IADLXDisplayVariBright1* displayVariBright1 = NULL;
+                ADLX_RESULT res = displayVariBright->pVtbl->QueryInterface(displayVariBright, IID_IADLXDisplayVariBright1(), (void**)&displayVariBright1);
+                if (ADLX_SUCCEEDED(res))
+                {
+                    VariBrightScalingMenuControl(displayVariBright1, num - 'f');
+                    if (NULL != displayVariBright1)
+                    {
+                        displayVariBright1->pVtbl->Release(displayVariBright1);
+                        displayVariBright1 = NULL;
+                    }
+                }
+                else
+                    printf("Failed to get the Vari-Bright Scaling\n");
+
+                if (NULL != displayVariBright)
+                {
+                    displayVariBright->pVtbl->Release(displayVariBright);
+                    displayVariBright = NULL;
+                }
+            }
+            else
+                printf("Failed to get the Vari-Bright\n");
+            break;
+        }
+
             // Display main menu options
         case 'm':
         case 'M':
@@ -304,6 +485,56 @@ void MenuControl( IADLXDisplayServices* pDisplayService, IADLXDisplay* pDisplay)
         default:
             break;
         }
+    }
+}
+
+// Vari-Bright Scaling menu action control
+void VariBrightScalingMenuControl(IADLXDisplayVariBright1* displayVariBright1, int userChoice)
+{
+    switch (userChoice)
+    {
+    case 0:
+        printf("\t\t->Press 1 to check if Backlight Adaptive Vari-Bright Scaling mode is supported on a display\n");
+        printf("\t\t->Press 2 to check if Backlight Adaptive Vari-Bright Scaling mode is enabled on a display\n");
+        printf("\t\t->Press 3 to set Backlight Adaptive Vari-Bright Scaling mode enabled on a display\n");
+        printf("\t\t->Press 4 to set Backlight Adaptive Vari-Bright Scaling mode disabled on a display\n");
+        printf("\t\t->Press Q/q to go back to the previous menu\n");
+        BacklightAdaptiveFunctionality(displayVariBright1);
+        MainMenu();
+        break;
+
+    case 1:
+        printf("\t\t->Press 1 to check if Battery Life Vari-Bright Scaling mode is supported on a display\n");
+        printf("\t\t->Press 2 to check if Battery Life Vari-Bright Scaling mode is enabled on a display\n");
+        printf("\t\t->Press 3 to set Battery Life Vari-Bright Scaling mode enabled on a display\n");
+        printf("\t\t->Press 4 to set Battery Life Vari-Bright Scaling mode disabled on a display\n");
+        printf("\t\t->Press Q/q to go back to the previous menu\n");
+        BatteryLifeFunctionality(displayVariBright1);
+        MainMenu();
+        break;
+
+    case 2:
+        printf("\t\t->Press 1 to check if Windows Power Mode Vari-Bright Scaling mode is supported on a display\n");
+        printf("\t\t->Press 2 to check if Windows Power Mode Vari-Bright Scaling mode is enabled on a display\n");
+        printf("\t\t->Press 3 to set Windows Power Mode Vari-Bright Scaling mode enabled on a display\n");
+        printf("\t\t->Press 4 to set Windows Power Mode Vari-Bright Scaling mode disabled on a display\n");
+        printf("\t\t->Press Q/q to go back to the previous menu\n");
+        WindowsPowerModeFunctionality(displayVariBright1);
+        MainMenu();
+        break;
+
+    case 3:
+        printf("\t\t->Press 1 to check if Full-Screen Video Vari-Bright Scaling mode is supported on a display\n");
+        printf("\t\t->Press 2 to check if Full-Screen Video Vari-Bright Scaling mode is enabled on a display\n");
+        printf("\t\t->Press 3 to set Full-Screen Video Vari-Bright Scaling mode enabled on a display\n");
+        printf("\t\t->Press 4 to set Full-Screen Video Vari-Bright Scaling mode disabled on a display\n");
+        printf("\t\t->Press Q/q to go back to the previous menu\n");
+        FullScreenVideoFunctionality(displayVariBright1);
+        MainMenu();
+        break;
+
+    default:
+        break;
     }
 }
 

@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classadlx_1_1_i_a_d_l_x_system_metrics_support" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>adlx::IADLXSystemMetricsSupport</compoundname>
     <basecompoundref prot="public" virt="non-virtual">adlx::IADLXInterface</basecompoundref>
     <derivedcompoundref refid="classadlx_1_1_i_a_d_l_x_system_metrics_support1" prot="public" virt="non-virtual">adlx::IADLXSystemMetricsSupport1</derivedcompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classadlx_1_1_i_a_d_l_x_system_metrics_support_1afc7812436c8a4b4878b70b253664aa7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> ADLX_STD_CALL</type>
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystemMetricsSupport::IsSupportedCPUUsage</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedCPUUsage</name>
+        <qualifiedname>adlx::IADLXSystemMetricsSupport::IsSupportedCPUUsage</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -27,6 +28,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystemMetricsSupport::IsSupportedSystemRAM</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedSystemRAM</name>
+        <qualifiedname>adlx::IADLXSystemMetricsSupport::IsSupportedSystemRAM</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -44,6 +46,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystemMetricsSupport::IsSupportedSmartShift</definition>
         <argsstring>(adlx_bool *supported)=0</argsstring>
         <name>IsSupportedSmartShift</name>
+        <qualifiedname>adlx::IADLXSystemMetricsSupport::IsSupportedSmartShift</qualifiedname>
         <param>
           <type>adlx_bool *</type>
           <declname>supported</declname>
@@ -61,6 +64,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystemMetricsSupport::GetCPUUsageRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetCPUUsageRange</name>
+        <qualifiedname>adlx::IADLXSystemMetricsSupport::GetCPUUsageRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -82,6 +86,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystemMetricsSupport::GetSystemRAMRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetSystemRAMRange</name>
+        <qualifiedname>adlx::IADLXSystemMetricsSupport::GetSystemRAMRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -103,6 +108,7 @@
         <definition>virtual ADLX_RESULT ADLX_STD_CALL adlx::IADLXSystemMetricsSupport::GetSmartShiftRange</definition>
         <argsstring>(adlx_int *minValue, adlx_int *maxValue)=0</argsstring>
         <name>GetSmartShiftRange</name>
+        <qualifiedname>adlx::IADLXSystemMetricsSupport::GetSmartShiftRange</qualifiedname>
         <param>
           <type>adlx_int *</type>
           <declname>minValue</declname>
@@ -119,7 +125,7 @@
         </inbodydescription>
         <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/IPerformanceMonitoring.h" line="751" column="43"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

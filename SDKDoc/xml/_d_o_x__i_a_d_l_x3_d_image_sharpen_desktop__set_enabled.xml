@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_d_o_x__i_a_d_l_x3_d_image_sharpen_desktop__set_enabled" kind="page">
+    <compoundname>DOX_IADLX3DImageSharpenDesktop_SetEnabled</compoundname>
+    <title>SetEnabled</title>
+    <briefdescription>
+<para>Sets Sharpen Desktop to enabled or disabled on a GPU. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><heading level="2">Syntax </heading>
+</para>
+<para><preformatted>
+ <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref>    SetEnabled (adlx_bool enable)
+ </preformatted></para>
+<para><heading level="2">Parameters </heading>
+</para>
+<para><variablelist>
+<varlistentry><term></term></varlistentry>
+<listitem><para><table rows="1" cols="5"><row>
+<entry thead="no" class="paramidx"><para>1.</para>
+</entry><entry thead="no" class="paramdir"><para>[in]</para>
+</entry><entry thead="no" class="paramname"><para>enable</para>
+</entry><entry thead="no" class="paramtype"><para>adlx_bool</para>
+</entry><entry thead="no"><para>The new Sharpen Desktop state. Set <bold>true</bold> to enable Sharpen Desktop. Set <bold>false</bold> to disable Sharpen Desktop. </para>
+</entry></row>
+</table>
+</para>
+</listitem>
+</variablelist>
+</para>
+<para><heading level="2">Return Value </heading>
+</para>
+<para>If the state of Sharpen Desktop is successfully set, <bold>ADLX_OK</bold> is returned.<linebreak/>
+ If the state of Sharpen Desktop is not successfully set, an error code is returned.<linebreak/>
+ Refer to <ref refid="group__enumerations_1ga9306b05f15578edbf79b649dd612b8c0" kindref="member">ADLX_RESULT</ref> for success codes and error codes.<linebreak/>
+</para>
+<para><heading level="2">Additional Info </heading>
+</para>
+<para>Sharpen Desktop restores clarity softened by other effects to all the desktop visuals, for both windowed applications and for applications that run in fullscreen exclusive mode. <linebreak/>
+</para>
+<para><heading level="2">Dependent Interfaces </heading>
+</para>
+<para>Sharpen Desktop requires <ref refid="_d_o_x__i_a_d_l_x3_d_image_sharpening" kindref="compound">AMD Radeon™ Image Sharpening</ref>.<linebreak/>
+</para>
+<para>When AMD Radeon Image sharpening is enabled and Sharpen Desktop is enabled, the sharpening is applied for both windowed applications and for applications that run in fullscreen exclusive mode.<linebreak/>
+</para>
+<para>When AMD Radeon Image sharpening is enabled and Sharpen Desktop is disabled, the sharpening is only applied to applications that run in fullscreen exclusive mode.<linebreak/>
+</para>
+<para>When AMD Radeon™ Image sharpening is disabled and Sharpen Desktop is enabled, Sharpen Desktop remains in enabled state, but the value is ignored.<linebreak/>
+</para>
+<para><heading level="2">Requirements </heading>
+</para>
+<para><table rows="2" cols="2"><row>
+<entry thead="no"><para>Header</para>
+</entry><entry thead="no"><para>include &quot;I3DSettings2.h&quot;</para>
+</entry></row>
+<row>
+<entry thead="no"><para>Minimum version</para>
+</entry><entry thead="no"><para>1.4</para>
+</entry></row>
+</table>
+</para>
+    </detaileddescription>
+    <location file="D:/AMD_Git/adlx_release/drivers/ADLX/SDK/Include/I3DSettings2.h"/>
+  </compounddef>
+</doxygen>
