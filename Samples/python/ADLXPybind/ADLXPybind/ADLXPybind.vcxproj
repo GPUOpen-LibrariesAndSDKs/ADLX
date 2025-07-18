@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -118,11 +118,12 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>python39.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>python311.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy /Y "$(TargetDir)$(ProjectName).pyd" "$(SolutionDir)..\DisplayEvents\$(ProjectName).pyd"
-copy /Y "$(TargetDir)$(ProjectName).pyd" "$(SolutionDir)..\DisplayInfo\$(ProjectName).pyd"</Command>
+copy /Y "$(TargetDir)$(ProjectName).pyd" "$(SolutionDir)..\DisplayInfo\$(ProjectName).pyd"
+copy /Y "$(TargetDir)$(ProjectName).pyd" "$(SolutionDir)..\3D\$(ProjectName).pyd"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -163,11 +164,12 @@ copy /Y "$(TargetDir)$(ProjectName).pyd" "$(SolutionDir)..\DisplayInfo\$(Project
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>python39.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>python311.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy /Y "$(TargetDir)$(ProjectName).pyd" ""$(SolutionDir)..\DisplayEvents\$(ProjectName).pyd"
-copy /Y "$(TargetDir)$(ProjectName).pyd" ""$(SolutionDir)..\DisplayInfo\$(ProjectName).pyd"</Command>
+copy /Y "$(TargetDir)$(ProjectName).pyd" ""$(SolutionDir)..\DisplayInfo\$(ProjectName).pyd"
+copy /Y "$(TargetDir)$(ProjectName).pyd" ""$(SolutionDir)..\3D\$(ProjectName).pyd"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
