@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('cpp__anti_aliasing.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -145,7 +145,7 @@ $(function(){initNavTree('cpp__anti_aliasing.html',''); initResizable(true); });
 </html>
  <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -211,6 +211,9 @@ $(function(){initNavTree('cpp__anti_aliasing.html',''); initResizable(true); });
 <div class="line">                IADLXGPUPtr gpuInfo;</div>
 <div class="line">                adlx_uint index = 0;</div>
 <div class="line">                res = gpus-&gt;At(index, &amp;gpuInfo);</div>
+<div class="line">                <span class="keyword">const</span> <span class="keywordtype">char</span>* gpuName = <span class="keyword">nullptr</span>;</div>
+<div class="line">                res = gpuInfo-&gt;Name(&amp;gpuName);</div>
+<div class="line">                std::cout &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; gpuName &lt;&lt; <span class="stringliteral">&quot; is selected.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">                <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="comment">// Get AntiAliasing interface</span></div>
@@ -250,25 +253,25 @@ $(function(){initNavTree('cpp__anti_aliasing.html',''); initResizable(true); });
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> <span class="keyword">const</span> std::map&lt;ADLX_ANTI_ALIASING_MODE, const char*&gt; antiAliasingMode =</div>
 <div class="line">    {</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga4d154a77789a08d19a8d0a8ba809b64aafcdbcd9e36a12cf8a058ce18a76a4e87">AA_MODE_USE_APP_SETTINGS</a>, <span class="stringliteral">&quot;Use application settings&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga4d154a77789a08d19a8d0a8ba809b64aabfcb1c017509f128c0078105cbc1390d">AA_MODE_ENHANCE_APP_SETTINGS</a>, <span class="stringliteral">&quot;Enhance application settings&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga4d154a77789a08d19a8d0a8ba809b64aac675f198bfd0017b5301fbd033d6cd7b">AA_MODE_OVERRIDE_APP_SETTINGS</a>, <span class="stringliteral">&quot;Override application settings&quot;</span>}};</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga34e12f41e65f0f9f740768b03d30d172a26d7f49add7b80ee06ae1d2ebe2a3180">AA_MODE_USE_APP_SETTINGS</a>, <span class="stringliteral">&quot;Use application settings&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga34e12f41e65f0f9f740768b03d30d172a983df149cd2145a55397220b338445e3">AA_MODE_ENHANCE_APP_SETTINGS</a>, <span class="stringliteral">&quot;Enhance application settings&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga34e12f41e65f0f9f740768b03d30d172ae8ebf51414f1ab4edae1d080b9d13f92">AA_MODE_OVERRIDE_APP_SETTINGS</a>, <span class="stringliteral">&quot;Override application settings&quot;</span>}};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> <span class="keyword">const</span> std::map&lt;ADLX_ANTI_ALIASING_METHOD, const char*&gt; antiAliasingMethod =</div>
 <div class="line">    {</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gad99bac74ba876c14fa2d42c094641b44aa4eb7e0a05f331b28effb11f1a81396d">AA_METHOD_MULTISAMPLING</a>, <span class="stringliteral">&quot;Muti-Sampling&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gad99bac74ba876c14fa2d42c094641b44adab6ce43f0c5a84fc1e73e9c8332bbdf">AA_METHOD_ADAPTIVE_MULTISAMPLING</a>, <span class="stringliteral">&quot;Adaptive Muti-Sampling&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gad99bac74ba876c14fa2d42c094641b44a3f2065b92560638f8ede3205cd4f954f">AA_METHOD_SUPERSAMPLING</a>, <span class="stringliteral">&quot;Super Sampling&quot;</span>}};</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga497533f08204a810abc3d28da2476d73af83cae900219cb66fb894842f170846f">AA_METHOD_MULTISAMPLING</a>, <span class="stringliteral">&quot;Muti-Sampling&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga497533f08204a810abc3d28da2476d73ad0ddd40f5b7b5482de539214d9d4cb07">AA_METHOD_ADAPTIVE_MULTISAMPLING</a>, <span class="stringliteral">&quot;Adaptive Muti-Sampling&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga497533f08204a810abc3d28da2476d73a00e8ff7b328d34a3fcdba3f10652949f">AA_METHOD_SUPERSAMPLING</a>, <span class="stringliteral">&quot;Super Sampling&quot;</span>}};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> <span class="keyword">const</span> std::map&lt;ADLX_ANTI_ALIASING_LEVEL, const char*&gt; antiAliasingLevel =</div>
 <div class="line">    {</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953eac9ed1aab71b7cc44b46126ae15bca500">AA_LEVEL_INVALID</a>, <span class="stringliteral">&quot;Level Invalid&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953eaeb58238bdb8609c4c2e0a388e294db2f">AA_LEVEL_2X</a>, <span class="stringliteral">&quot;2X&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953ea844d2a1f7154e478afe7a624fd9048f0">AA_LEVEL_2XEQ</a>, <span class="stringliteral">&quot;2XEQ&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953ea701fd055b77bc3bbf3abb1d4f739f04c">AA_LEVEL_4X</a>, <span class="stringliteral">&quot;4X&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953ea3ca65ee6828959bdfb2c13135f31f229">AA_LEVEL_4XEQ</a>, <span class="stringliteral">&quot;4XEQ&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953eacbd5f629935c94c89e40d1ff42b4c9ce">AA_LEVEL_8X</a>, <span class="stringliteral">&quot;8X&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953ea44792bd9c8b04fec8a1636030e16295f">AA_LEVEL_8XEQ</a>, <span class="stringliteral">&quot;8XEQ&quot;</span>}};</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga2009312b6a275a90818d69affad8cd4ea9ee06440ef594017a5ac24397bf80a63">AA_LEVEL_INVALID</a>, <span class="stringliteral">&quot;Level Invalid&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga2009312b6a275a90818d69affad8cd4ead869909d4aee928d9d5385e59859a360">AA_LEVEL_2X</a>, <span class="stringliteral">&quot;2X&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga2009312b6a275a90818d69affad8cd4eace42efff41ce77c375e8b05192a39dbd">AA_LEVEL_2XEQ</a>, <span class="stringliteral">&quot;2XEQ&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga2009312b6a275a90818d69affad8cd4ea664c43994643904fc7d002e0ecb8cbfb">AA_LEVEL_4X</a>, <span class="stringliteral">&quot;4X&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga2009312b6a275a90818d69affad8cd4ea631194b9636ed004f30c7ab2985fc8be">AA_LEVEL_4XEQ</a>, <span class="stringliteral">&quot;4XEQ&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga2009312b6a275a90818d69affad8cd4ea70f124ce47a91185998e1d7c7f4cbe6f">AA_LEVEL_8X</a>, <span class="stringliteral">&quot;8X&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga2009312b6a275a90818d69affad8cd4eae45e80f3d2c610f80b67b248a7734d05">AA_LEVEL_8XEQ</a>, <span class="stringliteral">&quot;8XEQ&quot;</span>}};</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> ShowAntiAliasingSupport(<span class="keyword">const</span> IADLX3DAntiAliasingPtr&amp; antiAliasing)</div>
 <div class="line">{</div>
@@ -280,15 +283,15 @@ $(function(){initNavTree('cpp__anti_aliasing.html',''); initResizable(true); });
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> GetAntiAliasingState(<span class="keyword">const</span> IADLX3DAntiAliasingPtr&amp; antiAliasing)</div>
 <div class="line">{</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga4d154a77789a08d19a8d0a8ba809b64a">ADLX_ANTI_ALIASING_MODE</a> mode;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga34e12f41e65f0f9f740768b03d30d172">ADLX_ANTI_ALIASING_MODE</a> mode;</div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = antiAliasing-&gt;GetMode(&amp;mode);</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tMode: &quot;</span> &lt;&lt; antiAliasingMode.find (mode)-&gt;second &lt;&lt; std::endl;</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gad99bac74ba876c14fa2d42c094641b44">ADLX_ANTI_ALIASING_METHOD</a> method;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga497533f08204a810abc3d28da2476d73">ADLX_ANTI_ALIASING_METHOD</a> method;</div>
 <div class="line">    res = antiAliasing-&gt;GetMethod(&amp;method);</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tMethod: &quot;</span> &lt;&lt; antiAliasingMethod.find (method)-&gt;second &lt;&lt; std::endl;</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga8c2e57a18318ffeb5e36de7717ff953e">ADLX_ANTI_ALIASING_LEVEL</a> level;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga2009312b6a275a90818d69affad8cd4e">ADLX_ANTI_ALIASING_LEVEL</a> level;</div>
 <div class="line">    res = antiAliasing-&gt;GetLevel(&amp;level);</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tLevel: &quot;</span> &lt;&lt; antiAliasingLevel.find(level)-&gt;second &lt;&lt; std::endl;</div>
@@ -297,19 +300,19 @@ $(function(){initNavTree('cpp__anti_aliasing.html',''); initResizable(true); });
 <div class="line"><span class="keywordtype">void</span> SetAntiAliasingMode(<span class="keyword">const</span> IADLX3DAntiAliasingPtr&amp; antiAliasing, <span class="keywordtype">int</span> index)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a>;</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga4d154a77789a08d19a8d0a8ba809b64a">ADLX_ANTI_ALIASING_MODE</a> mode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga4d154a77789a08d19a8d0a8ba809b64aafcdbcd9e36a12cf8a058ce18a76a4e87">AA_MODE_USE_APP_SETTINGS</a>;</div>
-<div class="line">    mode = (<a class="code hl_enumeration" href="group__enumerations.html#ga4d154a77789a08d19a8d0a8ba809b64a">ADLX_ANTI_ALIASING_MODE</a>)(mode + index);</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga34e12f41e65f0f9f740768b03d30d172">ADLX_ANTI_ALIASING_MODE</a> mode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga34e12f41e65f0f9f740768b03d30d172a26d7f49add7b80ee06ae1d2ebe2a3180">AA_MODE_USE_APP_SETTINGS</a>;</div>
+<div class="line">    mode = (<a class="code hl_enumeration" href="group__enumerations.html#ga34e12f41e65f0f9f740768b03d30d172">ADLX_ANTI_ALIASING_MODE</a>)(mode + index);</div>
 <div class="line">    res = antiAliasing-&gt;SetMode(mode);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tReturn code is : &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetAntiAliasingMethod(<span class="keyword">const</span> IADLX3DAntiAliasingPtr&amp; antiAliasing)</div>
 <div class="line">{</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gad99bac74ba876c14fa2d42c094641b44">ADLX_ANTI_ALIASING_METHOD</a> method = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gad99bac74ba876c14fa2d42c094641b44aa4eb7e0a05f331b28effb11f1a81396d">AA_METHOD_MULTISAMPLING</a>;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga497533f08204a810abc3d28da2476d73">ADLX_ANTI_ALIASING_METHOD</a> method = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga497533f08204a810abc3d28da2476d73af83cae900219cb66fb894842f170846f">AA_METHOD_MULTISAMPLING</a>;</div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = antiAliasing-&gt;GetMethod(&amp;method);</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
 <div class="line">    {</div>
-<div class="line">        method = (<a class="code hl_enumeration" href="group__enumerations.html#gad99bac74ba876c14fa2d42c094641b44">ADLX_ANTI_ALIASING_METHOD</a>)((method + 1) % 3);</div>
+<div class="line">        method = (<a class="code hl_enumeration" href="group__enumerations.html#ga497533f08204a810abc3d28da2476d73">ADLX_ANTI_ALIASING_METHOD</a>)((method + 1) % 3);</div>
 <div class="line">        res = antiAliasing-&gt;SetMethod(method);</div>
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet method: &quot;</span> &lt;&lt; antiAliasingMethod.find(method)-&gt;second &lt;&lt; <span class="stringliteral">&quot;, res is &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
 <div class="line">    }</div>
@@ -317,11 +320,11 @@ $(function(){initNavTree('cpp__anti_aliasing.html',''); initResizable(true); });
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetAntiAliasingLevel(<span class="keyword">const</span> IADLX3DAntiAliasingPtr&amp; antiAliasing)</div>
 <div class="line">{</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga8c2e57a18318ffeb5e36de7717ff953e">ADLX_ANTI_ALIASING_LEVEL</a> level;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga2009312b6a275a90818d69affad8cd4e">ADLX_ANTI_ALIASING_LEVEL</a> level;</div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = antiAliasing-&gt;GetLevel(&amp;level);</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res))</div>
 <div class="line">    {</div>
-<div class="line">        level = (level == <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953eaeb58238bdb8609c4c2e0a388e294db2f">AA_LEVEL_2X</a>) ? <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953ea701fd055b77bc3bbf3abb1d4f739f04c">AA_LEVEL_4X</a> : <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953eaeb58238bdb8609c4c2e0a388e294db2f">AA_LEVEL_2X</a>;</div>
+<div class="line">        level = (level == <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga2009312b6a275a90818d69affad8cd4ead869909d4aee928d9d5385e59859a360">AA_LEVEL_2X</a>) ? AA_LEVEL_4X : <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga2009312b6a275a90818d69affad8cd4ead869909d4aee928d9d5385e59859a360">AA_LEVEL_2X</a>;</div>
 <div class="line">        res = antiAliasing-&gt;SetLevel(level);</div>
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet level: &quot;</span> &lt;&lt; antiAliasingLevel.find(level)-&gt;second &lt;&lt; <span class="stringliteral">&quot;, res is &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
 <div class="line">    }</div>
@@ -398,25 +401,25 @@ $(function(){initNavTree('cpp__anti_aliasing.html',''); initResizable(true); });
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga4d154a77789a08d19a8d0a8ba809b64aabfcb1c017509f128c0078105cbc1390d"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga4d154a77789a08d19a8d0a8ba809b64aabfcb1c017509f128c0078105cbc1390d">AA_MODE_ENHANCE_APP_SETTINGS</a></div><div class="ttdeci">@ AA_MODE_ENHANCE_APP_SETTINGS</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:761</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga4d154a77789a08d19a8d0a8ba809b64aac675f198bfd0017b5301fbd033d6cd7b"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga4d154a77789a08d19a8d0a8ba809b64aac675f198bfd0017b5301fbd033d6cd7b">AA_MODE_OVERRIDE_APP_SETTINGS</a></div><div class="ttdeci">@ AA_MODE_OVERRIDE_APP_SETTINGS</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:762</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga4d154a77789a08d19a8d0a8ba809b64aafcdbcd9e36a12cf8a058ce18a76a4e87"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga4d154a77789a08d19a8d0a8ba809b64aafcdbcd9e36a12cf8a058ce18a76a4e87">AA_MODE_USE_APP_SETTINGS</a></div><div class="ttdeci">@ AA_MODE_USE_APP_SETTINGS</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:760</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga8c2e57a18318ffeb5e36de7717ff953ea3ca65ee6828959bdfb2c13135f31f229"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953ea3ca65ee6828959bdfb2c13135f31f229">AA_LEVEL_4XEQ</a></div><div class="ttdeci">@ AA_LEVEL_4XEQ</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:779</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga8c2e57a18318ffeb5e36de7717ff953ea44792bd9c8b04fec8a1636030e16295f"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953ea44792bd9c8b04fec8a1636030e16295f">AA_LEVEL_8XEQ</a></div><div class="ttdeci">@ AA_LEVEL_8XEQ</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:781</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga8c2e57a18318ffeb5e36de7717ff953ea701fd055b77bc3bbf3abb1d4f739f04c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953ea701fd055b77bc3bbf3abb1d4f739f04c">AA_LEVEL_4X</a></div><div class="ttdeci">@ AA_LEVEL_4X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:778</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga8c2e57a18318ffeb5e36de7717ff953ea844d2a1f7154e478afe7a624fd9048f0"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953ea844d2a1f7154e478afe7a624fd9048f0">AA_LEVEL_2XEQ</a></div><div class="ttdeci">@ AA_LEVEL_2XEQ</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:777</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga8c2e57a18318ffeb5e36de7717ff953eac9ed1aab71b7cc44b46126ae15bca500"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953eac9ed1aab71b7cc44b46126ae15bca500">AA_LEVEL_INVALID</a></div><div class="ttdeci">@ AA_LEVEL_INVALID</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:775</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga8c2e57a18318ffeb5e36de7717ff953eacbd5f629935c94c89e40d1ff42b4c9ce"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953eacbd5f629935c94c89e40d1ff42b4c9ce">AA_LEVEL_8X</a></div><div class="ttdeci">@ AA_LEVEL_8X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:780</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga8c2e57a18318ffeb5e36de7717ff953eaeb58238bdb8609c4c2e0a388e294db2f"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga8c2e57a18318ffeb5e36de7717ff953eaeb58238bdb8609c4c2e0a388e294db2f">AA_LEVEL_2X</a></div><div class="ttdeci">@ AA_LEVEL_2X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:776</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gad99bac74ba876c14fa2d42c094641b44a3f2065b92560638f8ede3205cd4f954f"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gad99bac74ba876c14fa2d42c094641b44a3f2065b92560638f8ede3205cd4f954f">AA_METHOD_SUPERSAMPLING</a></div><div class="ttdeci">@ AA_METHOD_SUPERSAMPLING</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:796</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gad99bac74ba876c14fa2d42c094641b44aa4eb7e0a05f331b28effb11f1a81396d"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gad99bac74ba876c14fa2d42c094641b44aa4eb7e0a05f331b28effb11f1a81396d">AA_METHOD_MULTISAMPLING</a></div><div class="ttdeci">@ AA_METHOD_MULTISAMPLING</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:794</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gad99bac74ba876c14fa2d42c094641b44adab6ce43f0c5a84fc1e73e9c8332bbdf"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gad99bac74ba876c14fa2d42c094641b44adab6ce43f0c5a84fc1e73e9c8332bbdf">AA_METHOD_ADAPTIVE_MULTISAMPLING</a></div><div class="ttdeci">@ AA_METHOD_ADAPTIVE_MULTISAMPLING</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:795</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga4d154a77789a08d19a8d0a8ba809b64a"><div class="ttname"><a href="group__enumerations.html#ga4d154a77789a08d19a8d0a8ba809b64a">ADLX_ANTI_ALIASING_MODE</a></div><div class="ttdeci">ADLX_ANTI_ALIASING_MODE</div><div class="ttdoc">Indicates the anti-aliasing mode.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:759</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga8c2e57a18318ffeb5e36de7717ff953e"><div class="ttname"><a href="group__enumerations.html#ga8c2e57a18318ffeb5e36de7717ff953e">ADLX_ANTI_ALIASING_LEVEL</a></div><div class="ttdeci">ADLX_ANTI_ALIASING_LEVEL</div><div class="ttdoc">Indicates the anti-aliasing level.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:774</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
-<div class="ttc" id="agroup__enumerations_html_gad99bac74ba876c14fa2d42c094641b44"><div class="ttname"><a href="group__enumerations.html#gad99bac74ba876c14fa2d42c094641b44">ADLX_ANTI_ALIASING_METHOD</a></div><div class="ttdeci">ADLX_ANTI_ALIASING_METHOD</div><div class="ttdoc">Indicates the anti-aliasing method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:793</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga2009312b6a275a90818d69affad8cd4ea631194b9636ed004f30c7ab2985fc8be"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga2009312b6a275a90818d69affad8cd4ea631194b9636ed004f30c7ab2985fc8be">adlx::AA_LEVEL_4XEQ</a></div><div class="ttdeci">@ AA_LEVEL_4XEQ</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:787</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga2009312b6a275a90818d69affad8cd4ea664c43994643904fc7d002e0ecb8cbfb"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga2009312b6a275a90818d69affad8cd4ea664c43994643904fc7d002e0ecb8cbfb">adlx::AA_LEVEL_4X</a></div><div class="ttdeci">@ AA_LEVEL_4X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:786</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga2009312b6a275a90818d69affad8cd4ea70f124ce47a91185998e1d7c7f4cbe6f"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga2009312b6a275a90818d69affad8cd4ea70f124ce47a91185998e1d7c7f4cbe6f">adlx::AA_LEVEL_8X</a></div><div class="ttdeci">@ AA_LEVEL_8X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:788</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga2009312b6a275a90818d69affad8cd4ea9ee06440ef594017a5ac24397bf80a63"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga2009312b6a275a90818d69affad8cd4ea9ee06440ef594017a5ac24397bf80a63">adlx::AA_LEVEL_INVALID</a></div><div class="ttdeci">@ AA_LEVEL_INVALID</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:783</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga2009312b6a275a90818d69affad8cd4eace42efff41ce77c375e8b05192a39dbd"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga2009312b6a275a90818d69affad8cd4eace42efff41ce77c375e8b05192a39dbd">adlx::AA_LEVEL_2XEQ</a></div><div class="ttdeci">@ AA_LEVEL_2XEQ</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:785</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga2009312b6a275a90818d69affad8cd4ead869909d4aee928d9d5385e59859a360"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga2009312b6a275a90818d69affad8cd4ead869909d4aee928d9d5385e59859a360">adlx::AA_LEVEL_2X</a></div><div class="ttdeci">@ AA_LEVEL_2X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:784</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga2009312b6a275a90818d69affad8cd4eae45e80f3d2c610f80b67b248a7734d05"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga2009312b6a275a90818d69affad8cd4eae45e80f3d2c610f80b67b248a7734d05">adlx::AA_LEVEL_8XEQ</a></div><div class="ttdeci">@ AA_LEVEL_8XEQ</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:789</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga34e12f41e65f0f9f740768b03d30d172a26d7f49add7b80ee06ae1d2ebe2a3180"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga34e12f41e65f0f9f740768b03d30d172a26d7f49add7b80ee06ae1d2ebe2a3180">adlx::AA_MODE_USE_APP_SETTINGS</a></div><div class="ttdeci">@ AA_MODE_USE_APP_SETTINGS</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:768</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga34e12f41e65f0f9f740768b03d30d172a983df149cd2145a55397220b338445e3"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga34e12f41e65f0f9f740768b03d30d172a983df149cd2145a55397220b338445e3">adlx::AA_MODE_ENHANCE_APP_SETTINGS</a></div><div class="ttdeci">@ AA_MODE_ENHANCE_APP_SETTINGS</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:769</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga34e12f41e65f0f9f740768b03d30d172ae8ebf51414f1ab4edae1d080b9d13f92"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga34e12f41e65f0f9f740768b03d30d172ae8ebf51414f1ab4edae1d080b9d13f92">adlx::AA_MODE_OVERRIDE_APP_SETTINGS</a></div><div class="ttdeci">@ AA_MODE_OVERRIDE_APP_SETTINGS</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:770</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga497533f08204a810abc3d28da2476d73a00e8ff7b328d34a3fcdba3f10652949f"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga497533f08204a810abc3d28da2476d73a00e8ff7b328d34a3fcdba3f10652949f">adlx::AA_METHOD_SUPERSAMPLING</a></div><div class="ttdeci">@ AA_METHOD_SUPERSAMPLING</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:804</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga497533f08204a810abc3d28da2476d73ad0ddd40f5b7b5482de539214d9d4cb07"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga497533f08204a810abc3d28da2476d73ad0ddd40f5b7b5482de539214d9d4cb07">adlx::AA_METHOD_ADAPTIVE_MULTISAMPLING</a></div><div class="ttdeci">@ AA_METHOD_ADAPTIVE_MULTISAMPLING</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:803</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga497533f08204a810abc3d28da2476d73af83cae900219cb66fb894842f170846f"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga497533f08204a810abc3d28da2476d73af83cae900219cb66fb894842f170846f">adlx::AA_METHOD_MULTISAMPLING</a></div><div class="ttdeci">@ AA_METHOD_MULTISAMPLING</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:802</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:283</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga2009312b6a275a90818d69affad8cd4e"><div class="ttname"><a href="group__enumerations.html#ga2009312b6a275a90818d69affad8cd4e">adlx::ADLX_ANTI_ALIASING_LEVEL</a></div><div class="ttdeci">ADLX_ANTI_ALIASING_LEVEL</div><div class="ttdoc">Indicates the anti-aliasing level.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:782</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga34e12f41e65f0f9f740768b03d30d172"><div class="ttname"><a href="group__enumerations.html#ga34e12f41e65f0f9f740768b03d30d172">adlx::ADLX_ANTI_ALIASING_MODE</a></div><div class="ttdeci">ADLX_ANTI_ALIASING_MODE</div><div class="ttdoc">Indicates the anti-aliasing mode.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:767</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga497533f08204a810abc3d28da2476d73"><div class="ttname"><a href="group__enumerations.html#ga497533f08204a810abc3d28da2476d73">adlx::ADLX_ANTI_ALIASING_METHOD</a></div><div class="ttdeci">ADLX_ANTI_ALIASING_METHOD</div><div class="ttdoc">Indicates the anti-aliasing method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:801</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

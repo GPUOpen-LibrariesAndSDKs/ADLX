@@ -8,6 +8,8 @@ var domain_c_sample_3_d_graphics =
     [ "Boost", "c__boost.html", null ],
     [ "Chill", "c__chill.html", null ],
     [ "EnhancedSync", "c__enhanced_sync.html", null ],
+    [ "FidelityFrameGenUpgrade", "c__fidelity_f_x_f_g_u.html", null ],
+    [ "FidelityFXSuperResolution", "c__fidelity_f_x_s_r.html", null ],
     [ "FRTC", "c__f_r_t_c.html", null ],
     [ "ImageSharpening", "c__image_sharpening.html", null ],
     [ "MorphologicAntiAliasing", "c__morphologic_anti_aliasing.html", null ],

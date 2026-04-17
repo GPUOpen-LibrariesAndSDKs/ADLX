@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['centered_0',['CENTERED',['../_a_d_l_x_defines_8h.html#ga0ec0640b97efee73b589bf0b1c07a8fea53f811bc46dd28493ccb7260b2cc8f38',1,'ADLXDefines.h']]],
-  ['cs_5fbt2020_1',['CS_BT2020',['../_a_d_l_x_defines_8h.html#gabe8d6f1562d0472d97c5edbf55c6d8cca39dc38d674d4dbbc54dde4383bb8c842',1,'ADLXDefines.h']]],
-  ['cs_5fdcip3_2',['CS_DCIP3',['../_a_d_l_x_defines_8h.html#gabe8d6f1562d0472d97c5edbf55c6d8ccaef18171467fde57447ed94e29d9b4ebb',1,'ADLXDefines.h']]],
-  ['cs_5fnative_3',['CS_NATIVE',['../_a_d_l_x_defines_8h.html#gabe8d6f1562d0472d97c5edbf55c6d8cca9e90a1fb63e1904946eb400980364fdc',1,'ADLXDefines.h']]],
-  ['cs_5fsrgb_4',['CS_SRGB',['../_a_d_l_x_defines_8h.html#gabe8d6f1562d0472d97c5edbf55c6d8cca8eb37dfb98408e99d29c5c0290b03be8',1,'ADLXDefines.h']]],
-  ['cvt_5',['CVT',['../_a_d_l_x_defines_8h.html#ga5f02fa0b6e26f22606a85221393f8ae2aa91863e8a8dc6a9708359251cb58da67',1,'ADLXDefines.h']]],
-  ['cvt_5frb_6',['CVT_RB',['../_a_d_l_x_defines_8h.html#ga5f02fa0b6e26f22606a85221393f8ae2aa289f79dd3346e3b76f10622218ad88d',1,'ADLXDefines.h']]]
+  ['centered_0',['CENTERED',['../_a_d_l_x_defines_8h.html#ga5358d52690a79c651752257cbc9f354fa4f82b1472f6edbe09a79492ca762cb9b',1,'adlx']]],
+  ['cs_5fbt2020_1',['CS_BT2020',['../_a_d_l_x_defines_8h.html#ga11c9b2ddb867a1c3e3e090fe301a3db9aa90f452e6072a486a567c0e97a3b24f1',1,'adlx']]],
+  ['cs_5fdcip3_2',['CS_DCIP3',['../_a_d_l_x_defines_8h.html#ga11c9b2ddb867a1c3e3e090fe301a3db9a74d6e84ede013317546837f88588b991',1,'adlx']]],
+  ['cs_5fnative_3',['CS_NATIVE',['../_a_d_l_x_defines_8h.html#ga11c9b2ddb867a1c3e3e090fe301a3db9a580df8cd218c192bd46f3c94660e74c3',1,'adlx']]],
+  ['cs_5fsrgb_4',['CS_SRGB',['../_a_d_l_x_defines_8h.html#ga11c9b2ddb867a1c3e3e090fe301a3db9ac513fbb72cd5b00d9e0849fe6ea49822',1,'adlx']]],
+  ['cvt_5',['CVT',['../_a_d_l_x_defines_8h.html#gad74f1377d4a8eefb3d814ede5a31f521ab239d8ee6b35d00b84122a8a4d1b2461',1,'adlx']]],
+  ['cvt_5frb_6',['CVT_RB',['../_a_d_l_x_defines_8h.html#gad74f1377d4a8eefb3d814ede5a31f521ab865fde2eaf8a277e7367dd88979a9e9',1,'adlx']]]
 ];

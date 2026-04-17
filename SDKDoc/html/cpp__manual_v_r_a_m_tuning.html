@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('cpp__manual_v_r_a_m_tuning.html',''); initResizable(tr
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -142,7 +142,7 @@ $(function(){initNavTree('cpp__manual_v_r_a_m_tuning.html',''); initResizable(tr
 </html>
  <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -168,16 +168,16 @@ $(function(){initNavTree('cpp__manual_v_r_a_m_tuning.html',''); initResizable(tr
 <div class="line"><span class="keywordtype">void</span> GetState(IADLXInterfacePtr&amp; vramTuningIfc);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Set Memory Timing Level</span></div>
-<div class="line"><span class="keywordtype">void</span> SetTimingLevel(IADLXInterfacePtr&amp; vramTuningIfc);</div>
+<div class="line"><span class="keywordtype">void</span> SetTimingLevel(IADLXInterfacePtr&amp; vramTuningIfc, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Set VRAM state</span></div>
-<div class="line"><span class="keywordtype">void</span> SetState(IADLXInterfacePtr&amp; vramTuningIfc);</div>
+<div class="line"><span class="keywordtype">void</span> SetState(IADLXInterfacePtr&amp; vramTuningIfc, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Main menu</span></div>
-<div class="line"><span class="keywordtype">void</span> MainMenu(IADLXInterfacePtr&amp; vramTuningIfc);</div>
+<div class="line"><span class="keywordtype">void</span> MainMenu(IADLXInterfacePtr&amp; vramTuningIfc, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Menu action control</span></div>
-<div class="line"><span class="keywordtype">void</span> MenuControl(IADLXInterfacePtr vramTuningIfc);</div>
+<div class="line"><span class="keywordtype">void</span> MenuControl(IADLXInterfacePtr vramTuningIfc, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Wait for exit with error message</span></div>
 <div class="line"><span class="keywordtype">int</span> WaitAndExit(<span class="keyword">const</span> <span class="keywordtype">char</span>* msg, <span class="keyword">const</span> <span class="keywordtype">int</span> retCode);</div>
@@ -205,6 +205,9 @@ $(function(){initNavTree('cpp__manual_v_r_a_m_tuning.html',''); initResizable(tr
 <div class="line">                IADLXGPUPtr gpu;</div>
 <div class="line">                adlx_uint index = 0;</div>
 <div class="line">                res = gpus-&gt;At(index, &amp;gpu);</div>
+<div class="line">                <span class="keyword">const</span> <span class="keywordtype">char</span>* gpuName = <span class="keyword">nullptr</span>;</div>
+<div class="line">                res = gpu-&gt;Name(&amp;gpuName);</div>
+<div class="line">                std::cout &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; gpuName &lt;&lt; <span class="stringliteral">&quot; is selected.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">                <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="comment">// Get manual VRAM tuning support</span></div>
@@ -219,8 +222,8 @@ $(function(){initNavTree('cpp__manual_v_r_a_m_tuning.html',''); initResizable(tr
 <div class="line">                        res = gpuTuningService-&gt;GetManualVRAMTuning(gpu, &amp;vramTuningIfc);</div>
 <div class="line">                        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
 <div class="line">                        {</div>
-<div class="line">                            MainMenu(vramTuningIfc);</div>
-<div class="line">                            MenuControl(vramTuningIfc);</div>
+<div class="line">                            MainMenu(vramTuningIfc, gpuTuningService, gpu);</div>
+<div class="line">                            MenuControl(vramTuningIfc, gpuTuningService, gpu);</div>
 <div class="line">                        }</div>
 <div class="line">                    }</div>
 <div class="line">                    <span class="keywordflow">else</span></div>
@@ -250,12 +253,12 @@ $(function(){initNavTree('cpp__manual_v_r_a_m_tuning.html',''); initResizable(tr
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> std::map&lt;ADLX_MEMORYTIMING_DESCRIPTION, const char*&gt; descMap =</div>
 <div class="line">    {</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11afe3950cab8cd7256574a2d833ae06f26">MEMORYTIMING_DEFAULT</a>, <span class="stringliteral">&quot;Default&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11ae75d55283f428316b2db4833d54ecf77">MEMORYTIMING_FAST_TIMING</a>, <span class="stringliteral">&quot;Fast Timing&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11a9ec2a8597122dc8cc85e9cff91eede1c">MEMORYTIMING_FAST_TIMING_LEVEL_2</a>, <span class="stringliteral">&quot;Fast Timing Level2&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11a36391b593ecff100518944cea6668e74">MEMORYTIMING_AUTOMATIC</a>, <span class="stringliteral">&quot;Automatic&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11ae2165248a4d00fbfe16140ca4afd0e9b">MEMORYTIMING_MEMORYTIMING_LEVEL_1</a>, <span class="stringliteral">&quot;Memory Timing Level1&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11a2ae2530d0e57e0db3bf2b94f4f3f96d8">MEMORYTIMING_MEMORYTIMING_LEVEL_2</a>, <span class="stringliteral">&quot;Memory Timing Level2&quot;</span>}};</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga31046a238f3bce8a46d42de3845b0c85a7a490635c67ff78867d9d053f1b0950a">MEMORYTIMING_DEFAULT</a>, <span class="stringliteral">&quot;Default&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga31046a238f3bce8a46d42de3845b0c85a49fb9a0ead590f2fe836465c9f82cda2">MEMORYTIMING_FAST_TIMING</a>, <span class="stringliteral">&quot;Fast Timing&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga31046a238f3bce8a46d42de3845b0c85aefdc90aed0556806b450a87e04b039ec">MEMORYTIMING_FAST_TIMING_LEVEL_2</a>, <span class="stringliteral">&quot;Fast Timing Level2&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga31046a238f3bce8a46d42de3845b0c85acdeecdb68cc061dbc6af54bc5fc4342c">MEMORYTIMING_AUTOMATIC</a>, <span class="stringliteral">&quot;Automatic&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga31046a238f3bce8a46d42de3845b0c85a2143a28e371e77b79c10e6b0db12e8d6">MEMORYTIMING_MEMORYTIMING_LEVEL_1</a>, <span class="stringliteral">&quot;Memory Timing Level1&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga31046a238f3bce8a46d42de3845b0c85a6c7b906cf072e4deba1325d389b17501">MEMORYTIMING_MEMORYTIMING_LEVEL_2</a>, <span class="stringliteral">&quot;Memory Timing Level2&quot;</span>}};</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> ShowSupport(IADLXInterfacePtr&amp; vramTuningIfc)</div>
 <div class="line">{</div>
@@ -278,7 +281,7 @@ $(function(){initNavTree('cpp__manual_v_r_a_m_tuning.html',''); initResizable(tr
 <div class="line">{</div>
 <div class="line">    IADLXManualVRAMTuning2Ptr vramTuning2(vramTuningIfc);</div>
 <div class="line">    IADLXManualVRAMTuning1Ptr vramTuning1(vramTuningIfc);</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gaa25f244e38a3502a52167c303abcec11">ADLX_MEMORYTIMING_DESCRIPTION</a> desc;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga31046a238f3bce8a46d42de3845b0c85">ADLX_MEMORYTIMING_DESCRIPTION</a> desc;</div>
 <div class="line">    IADLXMemoryTimingDescriptionListPtr descList;</div>
 <div class="line">    <span class="keywordflow">if</span> (vramTuning2)</div>
 <div class="line">    {</div>
@@ -344,12 +347,12 @@ $(function(){initNavTree('cpp__manual_v_r_a_m_tuning.html',''); initResizable(tr
 <div class="line">    std::cout &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> SetTimingLevel(IADLXInterfacePtr&amp; vramTuningIfc)</div>
+<div class="line"><span class="keywordtype">void</span> SetTimingLevel(IADLXInterfacePtr&amp; vramTuningIfc, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res;</div>
 <div class="line">    IADLXManualVRAMTuning2Ptr vramTuning2(vramTuningIfc);</div>
 <div class="line">    IADLXManualVRAMTuning1Ptr vramTuning1(vramTuningIfc);</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gaa25f244e38a3502a52167c303abcec11">ADLX_MEMORYTIMING_DESCRIPTION</a> desc, currentDesc;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga31046a238f3bce8a46d42de3845b0c85">ADLX_MEMORYTIMING_DESCRIPTION</a> desc, currentDesc;</div>
 <div class="line">    IADLXMemoryTimingDescriptionListPtr descList;</div>
 <div class="line">    <span class="keywordtype">bool</span> supported = <span class="keyword">false</span>;</div>
 <div class="line">    <span class="keywordflow">if</span> (vramTuning2)</div>
@@ -370,6 +373,15 @@ $(function(){initNavTree('cpp__manual_v_r_a_m_tuning.html',''); initResizable(tr
 <div class="line">                    <span class="keywordflow">if</span> (currentDesc != desc)</div>
 <div class="line">                    {</div>
 <div class="line">                        res = vramTuning2-&gt;SetMemoryTimingDescription(desc);</div>
+<div class="line">                        <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">                        {</div>
+<div class="line">                            res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">                            <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                            {</div>
+<div class="line">                                res = vramTuning2-&gt;SetMemoryTimingDescription(desc);</div>
+<div class="line">                            }</div>
+<div class="line">                        }</div>
+<div class="line"> </div>
 <div class="line">                        std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet Memory Timing description to &quot;</span> &lt;&lt; descMap[desc] &lt;&lt; <span class="stringliteral">&quot;: return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot; (0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">                        <span class="keywordflow">break</span>;</div>
 <div class="line">                    }</div>
@@ -420,7 +432,7 @@ $(function(){initNavTree('cpp__manual_v_r_a_m_tuning.html',''); initResizable(tr
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> SetState(IADLXInterfacePtr&amp; vramTuningIfc)</div>
+<div class="line"><span class="keywordtype">void</span> SetState(IADLXInterfacePtr&amp; vramTuningIfc, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res;</div>
 <div class="line">    IADLXManualVRAMTuning2Ptr vramTuning2(vramTuningIfc);</div>
@@ -439,11 +451,29 @@ $(function(){initNavTree('cpp__manual_v_r_a_m_tuning.html',''); initResizable(tr
 <div class="line">            <span class="keywordflow">if</span> (freq != rang.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>)</div>
 <div class="line">            {</div>
 <div class="line">                res = vramTuning2-&gt;SetMaxVRAMFrequency(rang.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>);</div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">                {</div>
+<div class="line">                    res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">                    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                    {</div>
+<div class="line">                        res = vramTuning2-&gt;SetMaxVRAMFrequency(rang.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>);</div>
+<div class="line">                    }</div>
+<div class="line">                }</div>
+<div class="line"> </div>
 <div class="line">                std::cout &lt;&lt; <span class="stringliteral">&quot;\tUse min Frequency to set, return code(0 is Success) is: &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
 <div class="line">            }</div>
 <div class="line">            <span class="keywordflow">else</span></div>
 <div class="line">            {</div>
 <div class="line">                res = vramTuning2-&gt;SetMaxVRAMFrequency(rang.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + rang.<a class="code hl_variable" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a> * 2);</div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">                {</div>
+<div class="line">                    res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">                    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                    {</div>
+<div class="line">                        res = vramTuning2-&gt;SetMaxVRAMFrequency(rang.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + rang.<a class="code hl_variable" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a> * 2);</div>
+<div class="line">                    }</div>
+<div class="line">                }</div>
+<div class="line"> </div>
 <div class="line">                std::cout &lt;&lt; <span class="stringliteral">&quot;\tUse max Frequency to set, return code(0 is Success) is: &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
 <div class="line">            }</div>
 <div class="line">        }</div>
@@ -474,10 +504,34 @@ $(function(){initNavTree('cpp__manual_v_r_a_m_tuning.html',''); initResizable(tr
 <div class="line">                state-&gt;GetVoltage(&amp;voltage);</div>
 <div class="line">                <span class="comment">// Only change the last</span></div>
 <div class="line">                res = state-&gt;SetFrequency(frequencyRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - frequencyRange.<a class="code hl_variable" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a> * 10);</div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">                {</div>
+<div class="line">                    res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">                    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                    {</div>
+<div class="line">                        res = state-&gt;SetFrequency(frequencyRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - frequencyRange.<a class="code hl_variable" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a> * 10);</div>
+<div class="line">                    }</div>
+<div class="line">                }</div>
 <div class="line">                res = state-&gt;SetVoltage(voltageRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - voltageRange.<a class="code hl_variable" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a> * 10);</div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">                {</div>
+<div class="line">                    res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">                    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                    {</div>
+<div class="line">                        res = state-&gt;SetVoltage(voltageRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - voltageRange.<a class="code hl_variable" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a> * 10);</div>
+<div class="line">                    }</div>
+<div class="line">                }</div>
 <div class="line">                <span class="keywordflow">break</span>;</div>
 <div class="line">            }</div>
 <div class="line">            res = vramTuning1-&gt;SetVRAMTuningStates(states);</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">            {</div>
+<div class="line">                res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                {</div>
+<div class="line">                    res = vramTuning1-&gt;SetVRAMTuningStates(states);</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
 <div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tChange VRAM tuning states, return code(0 is Success) is: &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span></div>
@@ -487,7 +541,7 @@ $(function(){initNavTree('cpp__manual_v_r_a_m_tuning.html',''); initResizable(tr
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> MainMenu(IADLXInterfacePtr&amp; vramTuningIfc)</div>
+<div class="line"><span class="keywordtype">void</span> MainMenu(IADLXInterfacePtr&amp; vramTuningIfc, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// Acquire to ManualVRAMTuning1</span></div>
 <div class="line">    IADLXManualVRAMTuning1Ptr vramTuning1(vramTuningIfc);</div>
@@ -513,7 +567,7 @@ $(function(){initNavTree('cpp__manual_v_r_a_m_tuning.html',''); initResizable(tr
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press M/m to display main menu options&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> MenuControl(IADLXInterfacePtr vramTuningIfc)</div>
+<div class="line"><span class="keywordtype">void</span> MenuControl(IADLXInterfacePtr vramTuningIfc, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> num = 0;</div>
 <div class="line">    <span class="keywordflow">while</span> ((num = getchar()) != <span class="charliteral">&#39;q&#39;</span> &amp;&amp; num != <span class="charliteral">&#39;Q&#39;</span>)</div>
@@ -532,18 +586,18 @@ $(function(){initNavTree('cpp__manual_v_r_a_m_tuning.html',''); initResizable(tr
 <div class="line"> </div>
 <div class="line">        <span class="comment">// Set timing level</span></div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>:</div>
-<div class="line">            SetTimingLevel(vramTuningIfc);</div>
+<div class="line">            SetTimingLevel(vramTuningIfc,  gpuTuningService,  oneGPU);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
 <div class="line">        <span class="comment">// Set VRAM state</span></div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;4&#39;</span>:</div>
-<div class="line">            SetState(vramTuningIfc);</div>
+<div class="line">            SetState(vramTuningIfc,  gpuTuningService,  oneGPU);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
 <div class="line">        <span class="comment">// Display menu options</span></div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;m&#39;</span>:</div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;M&#39;</span>:</div>
-<div class="line">            MainMenu(vramTuningIfc);</div>
+<div class="line">            MainMenu(vramTuningIfc, gpuTuningService, oneGPU);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">default</span>:</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
@@ -560,20 +614,21 @@ $(function(){initNavTree('cpp__manual_v_r_a_m_tuning.html',''); initResizable(tr
 <div class="line">    system(<span class="stringliteral">&quot;pause&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">return</span> retCode;</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11a2ae2530d0e57e0db3bf2b94f4f3f96d8"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11a2ae2530d0e57e0db3bf2b94f4f3f96d8">MEMORYTIMING_MEMORYTIMING_LEVEL_2</a></div><div class="ttdeci">@ MEMORYTIMING_MEMORYTIMING_LEVEL_2</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:867</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11a36391b593ecff100518944cea6668e74"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11a36391b593ecff100518944cea6668e74">MEMORYTIMING_AUTOMATIC</a></div><div class="ttdeci">@ MEMORYTIMING_AUTOMATIC</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:865</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11a9ec2a8597122dc8cc85e9cff91eede1c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11a9ec2a8597122dc8cc85e9cff91eede1c">MEMORYTIMING_FAST_TIMING_LEVEL_2</a></div><div class="ttdeci">@ MEMORYTIMING_FAST_TIMING_LEVEL_2</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:864</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11ae2165248a4d00fbfe16140ca4afd0e9b"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11ae2165248a4d00fbfe16140ca4afd0e9b">MEMORYTIMING_MEMORYTIMING_LEVEL_1</a></div><div class="ttdeci">@ MEMORYTIMING_MEMORYTIMING_LEVEL_1</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:866</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11ae75d55283f428316b2db4833d54ecf77"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11ae75d55283f428316b2db4833d54ecf77">MEMORYTIMING_FAST_TIMING</a></div><div class="ttdeci">@ MEMORYTIMING_FAST_TIMING</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:863</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa25f244e38a3502a52167c303abcec11afe3950cab8cd7256574a2d833ae06f26"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa25f244e38a3502a52167c303abcec11afe3950cab8cd7256574a2d833ae06f26">MEMORYTIMING_DEFAULT</a></div><div class="ttdeci">@ MEMORYTIMING_DEFAULT</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:862</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
-<div class="ttc" id="agroup__enumerations_html_gaa25f244e38a3502a52167c303abcec11"><div class="ttname"><a href="group__enumerations.html#gaa25f244e38a3502a52167c303abcec11">ADLX_MEMORYTIMING_DESCRIPTION</a></div><div class="ttdeci">ADLX_MEMORYTIMING_DESCRIPTION</div><div class="ttdoc">Indicates the memory timing description.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:861</div></div>
-<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:154</div></div>
-<div class="ttc" id="agroup__structures_val_html_ae0e545b501a683c565f08089ed3e8023"><div class="ttname"><a href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">ADLX_IntRange::step</a></div><div class="ttdeci">adlx_int step</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:155</div></div>
-<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:153</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:152</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga31046a238f3bce8a46d42de3845b0c85a2143a28e371e77b79c10e6b0db12e8d6"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga31046a238f3bce8a46d42de3845b0c85a2143a28e371e77b79c10e6b0db12e8d6">adlx::MEMORYTIMING_MEMORYTIMING_LEVEL_1</a></div><div class="ttdeci">@ MEMORYTIMING_MEMORYTIMING_LEVEL_1</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:874</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga31046a238f3bce8a46d42de3845b0c85a49fb9a0ead590f2fe836465c9f82cda2"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga31046a238f3bce8a46d42de3845b0c85a49fb9a0ead590f2fe836465c9f82cda2">adlx::MEMORYTIMING_FAST_TIMING</a></div><div class="ttdeci">@ MEMORYTIMING_FAST_TIMING</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:871</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga31046a238f3bce8a46d42de3845b0c85a6c7b906cf072e4deba1325d389b17501"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga31046a238f3bce8a46d42de3845b0c85a6c7b906cf072e4deba1325d389b17501">adlx::MEMORYTIMING_MEMORYTIMING_LEVEL_2</a></div><div class="ttdeci">@ MEMORYTIMING_MEMORYTIMING_LEVEL_2</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:875</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga31046a238f3bce8a46d42de3845b0c85a7a490635c67ff78867d9d053f1b0950a"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga31046a238f3bce8a46d42de3845b0c85a7a490635c67ff78867d9d053f1b0950a">adlx::MEMORYTIMING_DEFAULT</a></div><div class="ttdeci">@ MEMORYTIMING_DEFAULT</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:870</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga31046a238f3bce8a46d42de3845b0c85acdeecdb68cc061dbc6af54bc5fc4342c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga31046a238f3bce8a46d42de3845b0c85acdeecdb68cc061dbc6af54bc5fc4342c">adlx::MEMORYTIMING_AUTOMATIC</a></div><div class="ttdeci">@ MEMORYTIMING_AUTOMATIC</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:873</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga31046a238f3bce8a46d42de3845b0c85aefdc90aed0556806b450a87e04b039ec"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga31046a238f3bce8a46d42de3845b0c85aefdc90aed0556806b450a87e04b039ec">adlx::MEMORYTIMING_FAST_TIMING_LEVEL_2</a></div><div class="ttdeci">@ MEMORYTIMING_FAST_TIMING_LEVEL_2</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:872</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:283</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a></div><div class="ttdeci">@ ADLX_RESET_NEEDED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:298</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga31046a238f3bce8a46d42de3845b0c85"><div class="ttname"><a href="group__enumerations.html#ga31046a238f3bce8a46d42de3845b0c85">adlx::ADLX_MEMORYTIMING_DESCRIPTION</a></div><div class="ttdeci">ADLX_MEMORYTIMING_DESCRIPTION</div><div class="ttdoc">Indicates the memory timing description.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:869</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
+<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:158</div></div>
+<div class="ttc" id="agroup__structures_val_html_ae0e545b501a683c565f08089ed3e8023"><div class="ttname"><a href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">ADLX_IntRange::step</a></div><div class="ttdeci">adlx_int step</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:159</div></div>
+<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:157</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:156</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

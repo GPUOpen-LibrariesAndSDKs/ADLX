@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2023 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -7,7 +7,7 @@
 /// \brief Demonstrates how to access AMD Fluid Motion Frames options, and perform related testing when programming with ADLX.
 
 #include "SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
-#include "SDK/Include/I3DSettings1.h"
+#include "SDK/Include/I3DSettings3.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -58,7 +58,6 @@ int main()
 
             if (NULL != d3dSettingSrv1)
             {
-
                 // Get AFMF interface
                 IADLX3DAMDFluidMotionFramesPtr d3dAFMF;
                 res = d3dSettingSrv1->GetAMDFluidMotionFrames(&d3dAFMF);
@@ -115,6 +114,122 @@ void SetAFMFState(const IADLX3DAMDFluidMotionFramesPtr& d3dAFMF,int index)
 
 }
 
+void GetAFMF1Status(const IADLX3DAMDFluidMotionFramesPtr& d3dAFMF)
+{
+    // Get AFMF1 interface
+    IADLX3DAMDFluidMotionFrames1Ptr d3dAFMF1(d3dAFMF);
+    if (d3dAFMF1 == nullptr)
+    {
+        std::cout << "AFMF2 interface is not supported" << std::endl;
+        return;
+    }
+
+    adlx_bool supported = false;
+    ADLX_RESULT res = d3dAFMF1->IsSupportedAlgorithm(&supported);
+    std::cout << "\tIsSupportedAlgorithm: " << supported << ", return code is: " << res << "(0 means success)" << std::endl;
+    if (ADLX_SUCCEEDED(res) && supported)
+    {
+        ADLX_AFMF_ALGORITHM algorithm;
+        res = d3dAFMF1->GetAlgorithm(&algorithm);
+        std::cout << "\tAlgorithm: " << algorithm << ", return code is: " << res << "(0 means success)" << std::endl;
+    }
+
+    ADLX_AFMF_SEARCH_MODE_TYPE searchMode;
+    res = d3dAFMF1->GetSearchMode(&searchMode);
+    std::cout << "\tSearchMode: " << searchMode << ", return code is: " << res << "(0 means success)" << std::endl;
+
+    ADLX_AFMF_PERFORMANCE_MODE_TYPE performanceMode;
+    res = d3dAFMF1->GetPerformanceMode(&performanceMode);
+    std::cout << "\tPerformanceMode: " << performanceMode << ", return code is: " << res << "(0 means success)" << std::endl;
+
+    ADLX_AFMF_FAST_MOTION_RESP response;
+    res = d3dAFMF1->GetFastMotionResponse(&response);
+    std::cout << "\tFastMotionResponse: " << response << ", return code is: " << res << "(0 means success)" << std::endl;
+}
+
+void SetAlgorithmCapabilities(const IADLX3DAMDFluidMotionFramesPtr& d3dAFMF)
+{
+    // Get AFMF1 interface
+    IADLX3DAMDFluidMotionFrames1Ptr d3dAFMF1(d3dAFMF);
+    if (d3dAFMF1 == nullptr)
+    {
+        std::cout << "AFMF2 interface is not supported" << std::endl;
+        return;
+    }
+    ADLX_AFMF_ALGORITHM algorithm;
+    ADLX_RESULT res = d3dAFMF1->GetAlgorithm(&algorithm);
+    // Set algorithm to a different value
+    if (AFMF_ALGORITHM_AUTO == algorithm)
+        res = d3dAFMF1->SetAlgorithm(AFMF_ALGORITHM_STANDARD);
+    else if (AFMF_ALGORITHM_ENHANCED == algorithm)
+        res = d3dAFMF1->SetAlgorithm(AFMF_ALGORITHM_STANDARD);
+    else
+        res = d3dAFMF1->SetAlgorithm(AFMF_ALGORITHM_ENHANCED);
+    std::cout << "\tReturn code is: " << res << "(0 means success)" << std::endl;
+}
+
+void SetSearchMode(const IADLX3DAMDFluidMotionFramesPtr& d3dAFMF)
+{
+    // Get AFMF1 interface
+    IADLX3DAMDFluidMotionFrames1Ptr d3dAFMF1(d3dAFMF);
+    if (d3dAFMF1 == nullptr)
+    {
+        std::cout << "AFMF2 interface is not supported" << std::endl;
+        return;
+    }
+    ADLX_AFMF_SEARCH_MODE_TYPE searchMode;
+    ADLX_RESULT res = d3dAFMF1->GetSearchMode(&searchMode);
+    // Set search mode to a different value
+    if (AFMF_SEARCH_MODE_AUTO == searchMode)
+        res = d3dAFMF1->SetSearchMode(AFMF_SEARCH_MODE_STANDARD);
+    else if (AFMF_SEARCH_MODE_STANDARD == searchMode)
+        res = d3dAFMF1->SetSearchMode(AFMF_SEARCH_MODE_HIGH);
+    else if (AFMF_SEARCH_MODE_HIGH == searchMode)
+        res = d3dAFMF1->SetSearchMode(AFMF_SEARCH_MODE_AUTO);
+
+    std::cout << "\tReturn code is: " << res << "(0 means success)" << std::endl;
+}
+
+void SetPerformanceMode(const IADLX3DAMDFluidMotionFramesPtr& d3dAFMF)
+{
+    // Get AFMF1 interface
+    IADLX3DAMDFluidMotionFrames1Ptr d3dAFMF1(d3dAFMF);
+    if (d3dAFMF1 == nullptr)
+    {
+        std::cout << "AFMF2 interface is not supported" << std::endl;
+        return;
+    }
+    ADLX_AFMF_PERFORMANCE_MODE_TYPE performanceMode;
+    ADLX_RESULT res = d3dAFMF1->GetPerformanceMode(&performanceMode);
+    // Set performance mode to a different value
+    if (AFMF_PERFORMANCE_MODE_AUTO == performanceMode)
+        res = d3dAFMF1->SetPerformanceMode(AFMF_PERFORMANCE_MODE_QUALITY);
+    else if (AFMF_PERFORMANCE_MODE_QUALITY == performanceMode)
+        res = d3dAFMF1->SetPerformanceMode(AFMF_PERFORMANCE_MODE_PERFORMANCE);
+    else
+        res = d3dAFMF1->SetPerformanceMode(AFMF_PERFORMANCE_MODE_AUTO);
+    std::cout << "\tReturn code is: " << res << "(0 means success)" << std::endl;
+}
+
+void SetFastMotionResponse(const IADLX3DAMDFluidMotionFramesPtr& d3dAFMF)
+{
+    // Get AFMF1 interface
+    IADLX3DAMDFluidMotionFrames1Ptr d3dAFMF1(d3dAFMF);
+    if (d3dAFMF1 == nullptr)
+    {
+        std::cout << "AFMF2 interface is not supported" << std::endl;
+        return;
+    }
+    ADLX_AFMF_FAST_MOTION_RESP response;
+    ADLX_RESULT res = d3dAFMF1->GetFastMotionResponse(&response);
+    // Set fast motion response to a different value
+    if (AFMF_RESP_REPEAT_FRAMES == response)
+        res = d3dAFMF1->SetFastMotionResponse(AFMF_RESP_BLENDED_FRAMES);
+    else
+        res = d3dAFMF1->SetFastMotionResponse(AFMF_RESP_REPEAT_FRAMES);
+    std::cout << "\tReturn code is: " << res << "(0 means success)" << std::endl;
+}
+
 int WaitAndExit(const char* msg, const int retCode)
 {
     // Printout the message and pause to see it before returning the desired code
@@ -133,6 +248,11 @@ void MainMenu()
     std::cout << "\t->Press 2 to display current AFMF state" << std::endl;
     std::cout << "\t->Press 3 to enable AFMF" << std::endl;
     std::cout << "\t->Press 4 to disable AFMF" << std::endl;
+    std::cout << "\t->Press 5 to display AFMF2.1 capabilities and state" << std::endl;
+    std::cout << "\t->Press 6 to set algorithm capabilities" << std::endl;
+    std::cout << "\t->Press 7 to set search mode" << std::endl;
+    std::cout << "\t->Press 8 to set performance mode" << std::endl;
+    std::cout << "\t->Press 9 to set fast motion response" << std::endl;
 
     std::cout << "\t->Press Q/q to quit the application" << std::endl;
     std::cout << "\t->Press M/m to display menu options" << std::endl;
@@ -161,6 +281,29 @@ void MenuControl(const IADLX3DAMDFluidMotionFramesPtr& d3dAFMF)
             SetAFMFState(d3dAFMF, num - '3');
             break;
 
+            // Get AFMF2.1 capabilities and state
+        case '5':
+            GetAFMF1Status(d3dAFMF);
+            break;
+
+            // Set Algorithm capabilities
+        case '6':
+            SetAlgorithmCapabilities(d3dAFMF);
+            break;
+
+            // Set Search mode
+        case '7':
+            SetSearchMode(d3dAFMF);
+            break;
+            // Set Performance mode
+        case '8':
+            SetPerformanceMode(d3dAFMF);
+            break;
+
+            // Set Fast motion response
+        case '9':
+            SetFastMotionResponse(d3dAFMF);
+            break;
             // Display menu options
         case 'm':
         case 'M':

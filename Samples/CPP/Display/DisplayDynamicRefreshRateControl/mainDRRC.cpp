@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -147,13 +147,13 @@ void SetDynamicRefreshRateControlState(const IADLXDisplayServices3Ptr& displaySe
 		{
 			// Set Dynamic Refresh Rate Control disabled
 		case 0:
-			std::cout << "  === Set Dynamic Refresh Rate Control enabled: false" << std::endl;
-			res = displayDynamicRefreshRateControl->SetEnabled(false);
+			std::cout << "  === Set Dynamic Refresh Rate Control enabled: true ===" << std::endl;
+			res = displayDynamicRefreshRateControl->SetEnabled(true);
 			break;
 			// Set Dynamic Refresh Rate Control enabled
 		case 1:
-			std::cout << "  === Set Dynamic Refresh Rate Control enabled: true" << std::endl;
-			res = displayDynamicRefreshRateControl->SetEnabled(true);
+			std::cout << "  === Set Dynamic Refresh Rate Control enabled: false ===" << std::endl;
+			res = displayDynamicRefreshRateControl->SetEnabled(false);
 			break;
 		default:
 			break;

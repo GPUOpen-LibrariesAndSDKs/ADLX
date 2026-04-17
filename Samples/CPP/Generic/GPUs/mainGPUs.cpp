@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -7,7 +7,8 @@
 /// \brief Demonstrates how to enumerate GPUs, get GPU information, receive notifications when GPUs are enabled and disabled, and maintain GPU change event when programming with ADLX.
 
 #include "SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
-#include "SDK/Include/ISystem2.h"
+#include "SDK/Include/ISystem3.h"
+#include "SDK/Include/IApplications.h"
 #include <chrono>
 #include <iostream>
 #include <thread>
@@ -72,7 +73,11 @@ int main()
         {
             // Inspect for the first GPU in the list
             IADLXGPUPtr gpu;
-            res = gpus->At(0, &gpu);
+            adlx_uint index = 0;
+            res = gpus->At(index, &gpu);
+            const char* gpuName = nullptr;
+            res = gpu->Name(&gpuName);
+            std::cout << "\t" << gpuName << " is selected." << std::endl;
             if (ADLX_SUCCEEDED(res))
             {
                 // Display main menu options
@@ -184,6 +189,46 @@ void ShowGPUInfo(const IADLXGPUPtr& gpu)
     IADLXGPU2Ptr gpu2(gpu);
     if (gpu2)
     {
+        adlx_bool supported = false;
+        ret = gpu2->IsSupportedApplicationList(&supported);
+        IADLXApplicationListPtr appList;
+        ret = gpu2->GetApplications(&appList);
+        if (ADLX_SUCCEEDED(ret))
+        {
+            for (auto it = appList->Begin(); it != appList->End(); ++it)
+            {
+                IADLXApplicationPtr app;
+                ret = appList->At(it, &app);
+                if (ADLX_SUCCEEDED(ret))
+                {
+                    adlx_ulong pid = 0;
+                    ret = app->ProcessID(&pid);
+                    if (ADLX_SUCCEEDED(ret))
+                        std::cout << "\tThe process ID of the process running on the GPU is: " << pid << std::endl;
+                    const wchar_t* name = nullptr;
+                    ret = app->Name(&name);
+                    if (ADLX_SUCCEEDED(ret))
+                        std::wcout << "\tThe name of the process running on the GPU is: " << name << std::endl;
+
+                    const wchar_t* fullPath = nullptr;
+                    ret = app->FullPath(&fullPath);
+                    if (ADLX_SUCCEEDED(ret))
+                        std::wcout << "\tThe full path of the process running on the GPU is: " << fullPath << std::endl;
+
+                    ADLX_APP_GPU_DEPENDENCY type = ADLX_APP_GPU_DEPENDENCY::APP_GPU_UNKNOWN;
+                    ret = app->GPUDependencyType(&type);
+                    if (ADLX_SUCCEEDED(ret))
+                    {
+                        if (type == ADLX_APP_GPU_DEPENDENCY::APP_GPU_BOUND)
+                            std::cout << "\tThe GPU dependency type of the process running on the GPU is: APP_GPU_BOUND" << std::endl;
+                        else if (type == ADLX_APP_GPU_DEPENDENCY::APP_GPU_NOT_BOUND)
+                            std::cout << "\tThe GPU dependency type of the process running on the GPU is: APP_GPU_NOT_BOUND" << std::endl;
+                        else
+                            std::cout << "\tThe GPU dependency type of the process running on the GPU is: APP_GPU_UNKNOWN" << std::endl;
+                    }
+                }
+            }
+        }
         // edition
         const char* driverInfo = nullptr;
         ret = gpu2->AMDSoftwareEdition(&driverInfo);
@@ -200,6 +245,33 @@ void ShowGPUInfo(const IADLXGPUPtr& gpu)
         ADLX_LUID luid = {};
         ret = gpu2->LUID(&luid);
         std::cout << "LUID: lowPart: " << luid.lowPart << " , highPart: " << luid.highPart << std::endl;
+    }
+
+    IADLXGPU3Ptr gpu3(gpu);
+    if (gpu3)
+    {
+        const char* microArchitecture = nullptr;
+        ret = gpu3->MicroArchitecture(&microArchitecture);
+        std::cout << "MicroArchitecture: " << microArchitecture << std::endl;
+        // Memory Bandwidth
+        adlx_uint data = 0;
+        ret = gpu3->HighestVRAMBandwidth(&data);
+        std::cout << "HighestVRAMBandwidth: " << data << " MB/s" << ", return code is: " << ret << "(0 means success)" << std::endl;
+        // InvisibleVRAM
+        ret = gpu3->InvisibleVRAM(&data);
+        std::cout << "InvisibleVRAM: " << data << " MB" << ", return code is: " << ret << "(0 means success)" << std::endl;
+        // VisibleVRAM
+        ret = gpu3->VisibleVRAM(&data);
+        std::cout << "VisibleVRAM: " << data << " MB" << ", return code is: " << ret << "(0 means success)" << std::endl;
+        // VRAMVendorRevId
+        ret = gpu3->VRAMVendorRevId(&data);
+        std::cout << "VRAMVendorRevId: " << data << ", return code is: " << ret << "(0 means success)" << std::endl;
+        // VRAMBandwidth
+        ret = gpu3->VRAMBandwidth(&data);
+        std::cout << "ActualHighestVRAMBandwidth: " << data << " MB/s" << ", return code is: " << ret << "(0 means success)" << std::endl;
+        // VRAMBitRate
+        ret = gpu3->VRAMBitRate(&data);
+        std::cout << "ActualMemoryBitRate: " << data << " Mbps" << ", return code is: " << ret << "(0 means success)" << std::endl;
     }
 }
 

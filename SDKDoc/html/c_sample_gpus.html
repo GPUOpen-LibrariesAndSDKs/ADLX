@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('c_sample_gpus.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -128,12 +128,12 @@ $(function(){initNavTree('c_sample_gpus.html',''); initResizable(true); });
 </html>
  <h2>Code </h2>
 <div class="codeHeader"><span class="language">C</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/ADLXHelper/Windows/C/ADLXHelper.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;SDK/Include/ISystem2.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;SDK/Include/ISystem3.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Callback for GPU change event</span></div>
@@ -228,11 +228,11 @@ $(function(){initNavTree('c_sample_gpus.html',''); initResizable(true); });
 <div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> ret = gpu-&gt;pVtbl-&gt;VendorId(gpu, &amp;vendorId);</div>
 <div class="line">        printf(<span class="stringliteral">&quot;VendorId: %s, return code is: %d(0 means success)\n&quot;</span>, vendorId, ret);</div>
 <div class="line"> </div>
-<div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#gaf4fd628e799e6a74201290ff40418d77">ADLX_ASIC_FAMILY_TYPE</a> asicFamilyType = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaf4fd628e799e6a74201290ff40418d77a3545ff1a23cd34b9adbc8c665a5951be">ASIC_UNDEFINED</a>;</div>
+<div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#ga56d3c86a07bbe094a22f9cea60db14da">ADLX_ASIC_FAMILY_TYPE</a> asicFamilyType = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga56d3c86a07bbe094a22f9cea60db14daa81cc897bc9f493245a8118511965ca42">ASIC_UNDEFINED</a>;</div>
 <div class="line">        ret = gpu-&gt;pVtbl-&gt;ASICFamilyType(gpu, &amp;asicFamilyType);</div>
 <div class="line">        printf(<span class="stringliteral">&quot;ASICFamilyType: %d, return code is: %d(0 means success)\n&quot;</span>, asicFamilyType, ret);</div>
 <div class="line"> </div>
-<div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#ga6fb3c9944d5c8aa79f7dbd0f675fac34">ADLX_GPU_TYPE</a> gpuType = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga6fb3c9944d5c8aa79f7dbd0f675fac34ace1bf6380e6eb87aec4f7879f4d117c9">GPUTYPE_UNDEFINED</a>;</div>
+<div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#ga5966f6ec4d96aa3ab90b2a4a1db320bf">ADLX_GPU_TYPE</a> gpuType = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga5966f6ec4d96aa3ab90b2a4a1db320bfae00f4edeacbd4a05f17eb144b0cc2ac5">GPUTYPE_UNDEFINED</a>;</div>
 <div class="line">        ret = gpu-&gt;pVtbl-&gt;Type(gpu, &amp;gpuType);</div>
 <div class="line">        printf(<span class="stringliteral">&quot;Type: %d, return code is: %d(0 means success)\n&quot;</span>, gpuType, ret);</div>
 <div class="line"> </div>
@@ -272,17 +272,17 @@ $(function(){initNavTree('c_sample_gpus.html',''); initResizable(true); });
 <div class="line">            ret = gpu1-&gt;pVtbl-&gt;ProductName(gpu1, &amp;productName);</div>
 <div class="line">            printf(<span class="stringliteral">&quot;ProductName: %s\n&quot;</span>, productName);</div>
 <div class="line"> </div>
-<div class="line">            <a class="code hl_enumeration" href="group__enumerations.html#gada547c00826e15266732f874a0f3478d">ADLX_MGPU_MODE</a> mode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gada547c00826e15266732f874a0f3478daf2165ffea80d451f834d3a5d2994b3c8">MGPU_NONE</a>;</div>
+<div class="line">            <a class="code hl_enumeration" href="group__enumerations.html#ga39cca3c3d0274ca97a73e1164551820c">ADLX_MGPU_MODE</a> mode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga39cca3c3d0274ca97a73e1164551820ca1c1b7abfc1f990dc3cf55050d00bf2b4">MGPU_NONE</a>;</div>
 <div class="line">            ret = gpu1-&gt;pVtbl-&gt;MultiGPUMode(gpu1, &amp;mode);</div>
 <div class="line">            printf(<span class="stringliteral">&quot;Multi-GPU Mode: &quot;</span>);</div>
-<div class="line">            <span class="keywordflow">if</span> (mode == <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gada547c00826e15266732f874a0f3478daa8e7af64a7da10bed79c2e5de97b7cb8">MGPU_PRIMARY</a>)</div>
+<div class="line">            <span class="keywordflow">if</span> (mode == MGPU_PRIMARY)</div>
 <div class="line">                printf(<span class="stringliteral">&quot;GPU is the primary GPU\n&quot;</span>);</div>
-<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gada547c00826e15266732f874a0f3478da9100baedfaa6e08d64fa900cd7685cef">MGPU_SECONDARY</a>)</div>
+<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mode == MGPU_SECONDARY)</div>
 <div class="line">                printf(<span class="stringliteral">&quot;GPU is the secondary GPU\n&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">else</span></div>
 <div class="line">                printf(<span class="stringliteral">&quot;GPU is not in Multi-GPU\n&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">            <a class="code hl_enumeration" href="group__enumerations.html#gafcbeca41c0df518ccf5556e8e6e83f62">ADLX_PCI_BUS_TYPE</a> busType = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gafcbeca41c0df518ccf5556e8e6e83f62a605159e8a4c32319fd69b5d151369d93">UNDEFINED</a>;</div>
+<div class="line">            <a class="code hl_enumeration" href="group__enumerations.html#ga5ede6debe6eec10802aea6ca910e5f6f">ADLX_PCI_BUS_TYPE</a> busType = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga5ede6debe6eec10802aea6ca910e5f6fac827b46c77087192e81d794bfea5b33a">UNDEFINED</a>;</div>
 <div class="line">            ret = gpu1-&gt;pVtbl-&gt;PCIBusType(gpu1, &amp;busType);</div>
 <div class="line">            printf(<span class="stringliteral">&quot;PCIBusType: %d\n&quot;</span>, busType);</div>
 <div class="line"> </div>
@@ -321,6 +321,31 @@ $(function(){initNavTree('c_sample_gpus.html',''); initResizable(true); });
 <div class="line">            gpu2 = NULL;</div>
 <div class="line">        }</div>
 <div class="line"> </div>
+<div class="line">        IADLXGPU3* gpu3 = NULL;</div>
+<div class="line">        ret = gpu-&gt;pVtbl-&gt;QueryInterface(gpu, IID_IADLXGPU3(), &amp;gpu3);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(ret))</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keyword">const</span> <span class="keywordtype">char</span>* microArchitecture = NULL;</div>
+<div class="line">            ret = gpu3-&gt;pVtbl-&gt;MicroArchitecture(gpu3, &amp;microArchitecture);</div>
+<div class="line">            printf(<span class="stringliteral">&quot;microArchitecture: %s\n&quot;</span>, microArchitecture);</div>
+<div class="line">            adlx_uint data = 0;</div>
+<div class="line">            gpu3-&gt;pVtbl-&gt;HighestVRAMBandwidth(gpu3, &amp;data);</div>
+<div class="line">            printf(<span class="stringliteral">&quot;HighestVRAMBandwidth: %d MB/s\n&quot;</span>, data);</div>
+<div class="line">            gpu3-&gt;pVtbl-&gt;InvisibleVRAM(gpu3, &amp;data);</div>
+<div class="line">            printf(<span class="stringliteral">&quot;InvisibleVRAM: %d MB\n&quot;</span>, data);</div>
+<div class="line">            gpu3-&gt;pVtbl-&gt;VisibleVRAM(gpu3, &amp;data);</div>
+<div class="line">            printf(<span class="stringliteral">&quot;VisibleVRAM: %d MB\n&quot;</span>, data);</div>
+<div class="line">            gpu3-&gt;pVtbl-&gt;VRAMVendorRevId(gpu3, &amp;data);</div>
+<div class="line">            printf(<span class="stringliteral">&quot;VRAMVendorRevId: %d\n&quot;</span>, data);</div>
+<div class="line">            gpu3-&gt;pVtbl-&gt;VRAMBandwidth(gpu3, &amp;data);</div>
+<div class="line">            printf(<span class="stringliteral">&quot;VRAMBandwidth: %d MB/s\n&quot;</span>, data);</div>
+<div class="line">            gpu3-&gt;pVtbl-&gt;VRAMBitRate(gpu3, &amp;data);</div>
+<div class="line">            printf(<span class="stringliteral">&quot;VRAMBitRate: %d Mbps\n&quot;</span>, data);</div>
+<div class="line"> </div>
+<div class="line">            gpu3-&gt;pVtbl-&gt;Release(gpu3);</div>
+<div class="line">            gpu3 = NULL;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
 <div class="line">        gpu-&gt;pVtbl-&gt;Release(gpu);</div>
 <div class="line">        gpu = NULL;</div>
 <div class="line">    }</div>
@@ -329,7 +354,7 @@ $(function(){initNavTree('c_sample_gpus.html',''); initResizable(true); });
 <div class="line"><span class="comment">// Display GPU hybrid graphic type</span></div>
 <div class="line"><span class="keywordtype">void</span> ShowHybridGraphicType()</div>
 <div class="line">{</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga260f926e27eef013ca1eacd0ff7b3ba7">ADLX_HG_TYPE</a> hgType = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga260f926e27eef013ca1eacd0ff7b3ba7ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a>;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga0523abdbbb46c6b9bc85475b6ed4f2e6">ADLX_HG_TYPE</a> hgType = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga0523abdbbb46c6b9bc85475b6ed4f2e6a799272e04767029bcf01e25c1dcb7e4e">NONE</a>;</div>
 <div class="line"> </div>
 <div class="line">    IADLXSystem* sys = ADLXHelper_GetSystemServices();</div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = sys-&gt;pVtbl-&gt;GetHybridGraphicsType(sys, &amp;hgType);</div>
@@ -337,13 +362,13 @@ $(function(){initNavTree('c_sample_gpus.html',''); initResizable(true); });
 <div class="line">    {</div>
 <div class="line">        <span class="keywordflow">switch</span> (hgType)</div>
 <div class="line">        {</div>
-<div class="line">        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga260f926e27eef013ca1eacd0ff7b3ba7ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a>:</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga0523abdbbb46c6b9bc85475b6ed4f2e6a799272e04767029bcf01e25c1dcb7e4e">NONE</a>:</div>
 <div class="line">            printf(<span class="stringliteral">&quot;The GPU hybrid type is: NONE\n&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga260f926e27eef013ca1eacd0ff7b3ba7ac1f5c308ff9610759dbc1415b20df568">AMD</a>:</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga0523abdbbb46c6b9bc85475b6ed4f2e6a525d5cc8ca4297ec80c27eea1a25c66d">AMD</a>:</div>
 <div class="line">            printf(<span class="stringliteral">&quot;The GPU hybrid type is: AMD\n&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga260f926e27eef013ca1eacd0ff7b3ba7adbf1dee1b8cd7ea3c82661943c7b74f4">OTHER</a>:</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga0523abdbbb46c6b9bc85475b6ed4f2e6a63697d900131957a8e23716781afd983">OTHER</a>:</div>
 <div class="line">            printf(<span class="stringliteral">&quot;The GPU hybrid type is: OTHER\n&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        }</div>
@@ -436,26 +461,24 @@ $(function(){initNavTree('c_sample_gpus.html',''); initResizable(true); });
 <div class="line">    system(<span class="stringliteral">&quot;pause&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">return</span> retCode;</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga260f926e27eef013ca1eacd0ff7b3ba7ac157bdf0b85a40d2619cbc8bc1ae5fe2"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga260f926e27eef013ca1eacd0ff7b3ba7ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:333</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga260f926e27eef013ca1eacd0ff7b3ba7ac1f5c308ff9610759dbc1415b20df568"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga260f926e27eef013ca1eacd0ff7b3ba7ac1f5c308ff9610759dbc1415b20df568">AMD</a></div><div class="ttdeci">@ AMD</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:334</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga260f926e27eef013ca1eacd0ff7b3ba7adbf1dee1b8cd7ea3c82661943c7b74f4"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga260f926e27eef013ca1eacd0ff7b3ba7adbf1dee1b8cd7ea3c82661943c7b74f4">OTHER</a></div><div class="ttdeci">@ OTHER</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:335</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga6fb3c9944d5c8aa79f7dbd0f675fac34ace1bf6380e6eb87aec4f7879f4d117c9"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga6fb3c9944d5c8aa79f7dbd0f675fac34ace1bf6380e6eb87aec4f7879f4d117c9">GPUTYPE_UNDEFINED</a></div><div class="ttdeci">@ GPUTYPE_UNDEFINED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:414</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gada547c00826e15266732f874a0f3478da9100baedfaa6e08d64fa900cd7685cef"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gada547c00826e15266732f874a0f3478da9100baedfaa6e08d64fa900cd7685cef">MGPU_SECONDARY</a></div><div class="ttdeci">@ MGPU_SECONDARY</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:995</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gada547c00826e15266732f874a0f3478daa8e7af64a7da10bed79c2e5de97b7cb8"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gada547c00826e15266732f874a0f3478daa8e7af64a7da10bed79c2e5de97b7cb8">MGPU_PRIMARY</a></div><div class="ttdeci">@ MGPU_PRIMARY</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:994</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gada547c00826e15266732f874a0f3478daf2165ffea80d451f834d3a5d2994b3c8"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gada547c00826e15266732f874a0f3478daf2165ffea80d451f834d3a5d2994b3c8">MGPU_NONE</a></div><div class="ttdeci">@ MGPU_NONE</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:993</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaf4fd628e799e6a74201290ff40418d77a3545ff1a23cd34b9adbc8c665a5951be"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaf4fd628e799e6a74201290ff40418d77a3545ff1a23cd34b9adbc8c665a5951be">ASIC_UNDEFINED</a></div><div class="ttdeci">@ ASIC_UNDEFINED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:349</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gafcbeca41c0df518ccf5556e8e6e83f62a605159e8a4c32319fd69b5d151369d93"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gafcbeca41c0df518ccf5556e8e6e83f62a605159e8a4c32319fd69b5d151369d93">UNDEFINED</a></div><div class="ttdeci">@ UNDEFINED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:369</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga260f926e27eef013ca1eacd0ff7b3ba7"><div class="ttname"><a href="group__enumerations.html#ga260f926e27eef013ca1eacd0ff7b3ba7">ADLX_HG_TYPE</a></div><div class="ttdeci">ADLX_HG_TYPE</div><div class="ttdoc">Indicates the type of Hybrid Graphic.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:332</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga6fb3c9944d5c8aa79f7dbd0f675fac34"><div class="ttname"><a href="group__enumerations.html#ga6fb3c9944d5c8aa79f7dbd0f675fac34">ADLX_GPU_TYPE</a></div><div class="ttdeci">ADLX_GPU_TYPE</div><div class="ttdoc">Indicates the GPU type.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:413</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
-<div class="ttc" id="agroup__enumerations_html_gada547c00826e15266732f874a0f3478d"><div class="ttname"><a href="group__enumerations.html#gada547c00826e15266732f874a0f3478d">ADLX_MGPU_MODE</a></div><div class="ttdeci">ADLX_MGPU_MODE</div><div class="ttdoc">Indicates the AMD MGPU mode.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:992</div></div>
-<div class="ttc" id="agroup__enumerations_html_gaf4fd628e799e6a74201290ff40418d77"><div class="ttname"><a href="group__enumerations.html#gaf4fd628e799e6a74201290ff40418d77">ADLX_ASIC_FAMILY_TYPE</a></div><div class="ttdeci">ADLX_ASIC_FAMILY_TYPE</div><div class="ttdoc">Indicates the ASIC family type.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:348</div></div>
-<div class="ttc" id="agroup__enumerations_html_gafcbeca41c0df518ccf5556e8e6e83f62"><div class="ttname"><a href="group__enumerations.html#gafcbeca41c0df518ccf5556e8e6e83f62">ADLX_PCI_BUS_TYPE</a></div><div class="ttdeci">ADLX_PCI_BUS_TYPE</div><div class="ttdoc">Indicates the PCI bus type.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:368</div></div>
-<div class="ttc" id="agroup__structures_val_html_a4a23efaf6a763f558daee94e10ca1001"><div class="ttname"><a href="group__structures_val.html#a4a23efaf6a763f558daee94e10ca1001">ADLX_LUID::highPart</a></div><div class="ttdeci">adlx_long highPart</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:202</div></div>
-<div class="ttc" id="agroup__structures_val_html_a735831818db6d449f6719c25eb3c06fc"><div class="ttname"><a href="group__structures_val.html#a735831818db6d449f6719c25eb3c06fc">ADLX_LUID::lowPart</a></div><div class="ttdeci">adlx_ulong lowPart</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:201</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___l_u_i_d"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___l_u_i_d">ADLX_LUID</a></div><div class="ttdoc">This structure contains the local identifier information of the adapter.</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:200</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga0523abdbbb46c6b9bc85475b6ed4f2e6a525d5cc8ca4297ec80c27eea1a25c66d"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga0523abdbbb46c6b9bc85475b6ed4f2e6a525d5cc8ca4297ec80c27eea1a25c66d">adlx::AMD</a></div><div class="ttdeci">@ AMD</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:341</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga0523abdbbb46c6b9bc85475b6ed4f2e6a63697d900131957a8e23716781afd983"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga0523abdbbb46c6b9bc85475b6ed4f2e6a63697d900131957a8e23716781afd983">adlx::OTHER</a></div><div class="ttdeci">@ OTHER</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:342</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga0523abdbbb46c6b9bc85475b6ed4f2e6a799272e04767029bcf01e25c1dcb7e4e"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga0523abdbbb46c6b9bc85475b6ed4f2e6a799272e04767029bcf01e25c1dcb7e4e">adlx::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:340</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga39cca3c3d0274ca97a73e1164551820ca1c1b7abfc1f990dc3cf55050d00bf2b4"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga39cca3c3d0274ca97a73e1164551820ca1c1b7abfc1f990dc3cf55050d00bf2b4">adlx::MGPU_NONE</a></div><div class="ttdeci">@ MGPU_NONE</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1001</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga56d3c86a07bbe094a22f9cea60db14daa81cc897bc9f493245a8118511965ca42"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga56d3c86a07bbe094a22f9cea60db14daa81cc897bc9f493245a8118511965ca42">adlx::ASIC_UNDEFINED</a></div><div class="ttdeci">@ ASIC_UNDEFINED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:356</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga5966f6ec4d96aa3ab90b2a4a1db320bfae00f4edeacbd4a05f17eb144b0cc2ac5"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga5966f6ec4d96aa3ab90b2a4a1db320bfae00f4edeacbd4a05f17eb144b0cc2ac5">adlx::GPUTYPE_UNDEFINED</a></div><div class="ttdeci">@ GPUTYPE_UNDEFINED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:422</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga5ede6debe6eec10802aea6ca910e5f6fac827b46c77087192e81d794bfea5b33a"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga5ede6debe6eec10802aea6ca910e5f6fac827b46c77087192e81d794bfea5b33a">adlx::UNDEFINED</a></div><div class="ttdeci">@ UNDEFINED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:376</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:283</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga0523abdbbb46c6b9bc85475b6ed4f2e6"><div class="ttname"><a href="group__enumerations.html#ga0523abdbbb46c6b9bc85475b6ed4f2e6">adlx::ADLX_HG_TYPE</a></div><div class="ttdeci">ADLX_HG_TYPE</div><div class="ttdoc">Indicates the type of Hybrid Graphic.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:339</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga39cca3c3d0274ca97a73e1164551820c"><div class="ttname"><a href="group__enumerations.html#ga39cca3c3d0274ca97a73e1164551820c">adlx::ADLX_MGPU_MODE</a></div><div class="ttdeci">ADLX_MGPU_MODE</div><div class="ttdoc">Indicates the AMD MGPU mode.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1000</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga56d3c86a07bbe094a22f9cea60db14da"><div class="ttname"><a href="group__enumerations.html#ga56d3c86a07bbe094a22f9cea60db14da">adlx::ADLX_ASIC_FAMILY_TYPE</a></div><div class="ttdeci">ADLX_ASIC_FAMILY_TYPE</div><div class="ttdoc">Indicates the ASIC family type.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:355</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga5966f6ec4d96aa3ab90b2a4a1db320bf"><div class="ttname"><a href="group__enumerations.html#ga5966f6ec4d96aa3ab90b2a4a1db320bf">adlx::ADLX_GPU_TYPE</a></div><div class="ttdeci">ADLX_GPU_TYPE</div><div class="ttdoc">Indicates the GPU type.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:421</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga5ede6debe6eec10802aea6ca910e5f6f"><div class="ttname"><a href="group__enumerations.html#ga5ede6debe6eec10802aea6ca910e5f6f">adlx::ADLX_PCI_BUS_TYPE</a></div><div class="ttdeci">ADLX_PCI_BUS_TYPE</div><div class="ttdoc">Indicates the PCI bus type.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:375</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
+<div class="ttc" id="agroup__structures_val_html_a4a23efaf6a763f558daee94e10ca1001"><div class="ttname"><a href="group__structures_val.html#a4a23efaf6a763f558daee94e10ca1001">ADLX_LUID::highPart</a></div><div class="ttdeci">adlx_long highPart</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:206</div></div>
+<div class="ttc" id="agroup__structures_val_html_a735831818db6d449f6719c25eb3c06fc"><div class="ttname"><a href="group__structures_val.html#a735831818db6d449f6719c25eb3c06fc">ADLX_LUID::lowPart</a></div><div class="ttdeci">adlx_ulong lowPart</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:205</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___l_u_i_d"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___l_u_i_d">ADLX_LUID</a></div><div class="ttdoc">This structure contains the local identifier information of the adapter.</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:204</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

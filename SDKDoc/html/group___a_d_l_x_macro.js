@@ -7,6 +7,7 @@ var group___a_d_l_x_macro =
     [ "ADLX_DLL_NAMEW", "group___a_d_l_x_macro.html#ga230859c12673173fe14d5fa5bf3c2438", null ],
     [ "ADLX_DLL_NAMEW", "group___a_d_l_x_macro.html#ga230859c12673173fe14d5fa5bf3c2438", null ],
     [ "ADLX_FAILED", "group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482", null ],
+    [ "ADLX_INIT2_FUNCTION_NAME", "group___a_d_l_x_macro.html#gaed710ace50ff6cad1352b3241c215b3b", null ],
     [ "ADLX_INIT_FUNCTION_NAME", "group___a_d_l_x_macro.html#ga8f14be1543fc55eae619dda67965bf35", null ],
     [ "ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME", "group___a_d_l_x_macro.html#gad4b30c181751a349fccd865550dbc709", null ],
     [ "ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME", "group___a_d_l_x_macro.html#ga6219bdf1844b1f9bbb4fde96630442e4", null ],

@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2023 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -136,7 +136,7 @@ int main()
                     bool loopFlag = true;
                     std::thread t{ QuitWait, &loopFlag };
 
-                    std::cout << "\nWaiting for 3DSetting change event... Press Q/q to quit" << std::endl;
+                    std::cout << "\nWaiting for Multimedia change event... Press Q/q to quit" << std::endl;
                     while (true)
                     {
                         // Wait for change event or request to quit

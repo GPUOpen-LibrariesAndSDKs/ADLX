@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('cpp__manual_graphics_tuning.html',''); initResizable(t
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -142,7 +142,7 @@ $(function(){initNavTree('cpp__manual_graphics_tuning.html',''); initResizable(t
 </html>
  <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -161,10 +161,10 @@ $(function(){initNavTree('cpp__manual_graphics_tuning.html',''); initResizable(t
 <div class="line"><span class="keyword">static</span> ADLXHelper g_ADLXHelp;</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Main menu</span></div>
-<div class="line"><span class="keywordtype">void</span> MainMenu(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphicsTuning2Ptr manualGFXTuning2);</div>
+<div class="line"><span class="keywordtype">void</span> MainMenu(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphicsTuning2Ptr manualGFXTuning2, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Menu action control</span></div>
-<div class="line"><span class="keywordtype">void</span> MenuControl(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphicsTuning2Ptr manualGFXTuning2);</div>
+<div class="line"><span class="keywordtype">void</span> MenuControl(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphicsTuning2Ptr manualGFXTuning2, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Wait for exit with error message</span></div>
 <div class="line"><span class="keywordtype">int</span> WaitAndExit(<span class="keyword">const</span> <span class="keywordtype">char</span>* msg, <span class="keyword">const</span> <span class="keywordtype">int</span> retCode);</div>
@@ -179,8 +179,8 @@ $(function(){initNavTree('cpp__manual_graphics_tuning.html',''); initResizable(t
 <div class="line"><span class="comment">// Display default GPU tuning states</span></div>
 <div class="line"><span class="keywordtype">void</span> GetDefaultStates(IADLXManualGraphicsTuning2Ptr manualGFXTuning2);</div>
 <div class="line"><span class="comment">// Set GPU states</span></div>
-<div class="line"><span class="keywordtype">void</span> SetGPUStates(IADLXManualGraphicsTuning1Ptr manualGFXTuning1);</div>
-<div class="line"><span class="keywordtype">void</span> SetGPUStates(IADLXManualGraphicsTuning2Ptr manualGFXTuning2);</div>
+<div class="line"><span class="keywordtype">void</span> SetGPUStates(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);</div>
+<div class="line"><span class="keywordtype">void</span> SetGPUStates(IADLXManualGraphicsTuning2Ptr manualGFXTuning2, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main()</div>
 <div class="line">{</div>
@@ -206,7 +206,11 @@ $(function(){initNavTree('cpp__manual_graphics_tuning.html',''); initResizable(t
 <div class="line">            <span class="keywordflow">goto</span> EXIT;</div>
 <div class="line">        }</div>
 <div class="line">        IADLXGPUPtr oneGPU;</div>
-<div class="line">        res = gpus-&gt;At(0, &amp;oneGPU);</div>
+<div class="line">        adlx_uint index = 0;</div>
+<div class="line">        res = gpus-&gt;At(index, &amp;oneGPU);</div>
+<div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span>* gpuName = <span class="keyword">nullptr</span>;</div>
+<div class="line">        res = oneGPU-&gt;Name(&amp;gpuName);</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; gpuName &lt;&lt; <span class="stringliteral">&quot; is selected.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a> (res) || oneGPU == <span class="keyword">nullptr</span>)</div>
 <div class="line">        {</div>
 <div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tGet GPU failed &quot;</span> &lt;&lt; std::endl;</div>
@@ -236,10 +240,10 @@ $(function(){initNavTree('cpp__manual_graphics_tuning.html',''); initResizable(t
 <div class="line">            <span class="keywordflow">goto</span> EXIT;</div>
 <div class="line">        }</div>
 <div class="line">        <span class="comment">// Display main menu options</span></div>
-<div class="line">        MainMenu(manualGFXTuning1, manualGFXTuning2);</div>
+<div class="line">        MainMenu(manualGFXTuning1, manualGFXTuning2,gpuTuningService,  oneGPU);</div>
 <div class="line"> </div>
 <div class="line">        <span class="comment">// Get and execute the choice</span></div>
-<div class="line">        MenuControl(manualGFXTuning1, manualGFXTuning2);</div>
+<div class="line">        MenuControl(manualGFXTuning1, manualGFXTuning2, gpuTuningService,  oneGPU);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">        <span class="keywordflow">return</span> WaitAndExit(<span class="stringliteral">&quot;\tg_ADLXHelp initialize failed&quot;</span>, 0);</div>
@@ -256,7 +260,7 @@ $(function(){initNavTree('cpp__manual_graphics_tuning.html',''); initResizable(t
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Main menu</span></div>
-<div class="line"><span class="keywordtype">void</span> MainMenu(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphicsTuning2Ptr manualGFXTuning2)</div>
+<div class="line"><span class="keywordtype">void</span> MainMenu(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphicsTuning2Ptr manualGFXTuning2, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)</div>
 <div class="line">{</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">if</span> (manualGFXTuning1)</div>
@@ -271,7 +275,7 @@ $(function(){initNavTree('cpp__manual_graphics_tuning.html',''); initResizable(t
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press M/m to display main menu options&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> MenuControl(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphicsTuning2Ptr manualGFXTuning2)</div>
+<div class="line"><span class="keywordtype">void</span> MenuControl(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphicsTuning2Ptr manualGFXTuning2, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keywordtype">char</span> num = 0;</div>
 <div class="line">    <span class="keywordflow">while</span> ((num = getchar()) != <span class="charliteral">&#39;q&#39;</span> &amp;&amp; num != <span class="charliteral">&#39;Q&#39;</span>)</div>
@@ -293,13 +297,13 @@ $(function(){initNavTree('cpp__manual_graphics_tuning.html',''); initResizable(t
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Set GPU states</span></div>
 <div class="line">            <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>:</div>
-<div class="line">                SetGPUStates(manualGFXTuning1);</div>
+<div class="line">                SetGPUStates(manualGFXTuning1, gpuTuningService, oneGPU);</div>
 <div class="line">                <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Display menu options</span></div>
 <div class="line">            <span class="keywordflow">case</span> <span class="charliteral">&#39;m&#39;</span>:</div>
 <div class="line">            <span class="keywordflow">case</span> <span class="charliteral">&#39;M&#39;</span>:</div>
-<div class="line">                MainMenu(manualGFXTuning1, manualGFXTuning2);</div>
+<div class="line">                MainMenu(manualGFXTuning1, manualGFXTuning2, gpuTuningService, oneGPU);</div>
 <div class="line">                <span class="keywordflow">break</span>;</div>
 <div class="line">            <span class="keywordflow">default</span>:</div>
 <div class="line">                <span class="keywordflow">break</span>;</div>
@@ -322,7 +326,7 @@ $(function(){initNavTree('cpp__manual_graphics_tuning.html',''); initResizable(t
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Set GPU states</span></div>
 <div class="line">            <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>:</div>
-<div class="line">                SetGPUStates(manualGFXTuning2);</div>
+<div class="line">                SetGPUStates(manualGFXTuning2,  gpuTuningService,   oneGPU);</div>
 <div class="line">                <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Display default GPU tuning states</span></div>
@@ -331,7 +335,7 @@ $(function(){initNavTree('cpp__manual_graphics_tuning.html',''); initResizable(t
 <div class="line">            <span class="comment">// Display menu options</span></div>
 <div class="line">            <span class="keywordflow">case</span> <span class="charliteral">&#39;m&#39;</span>:</div>
 <div class="line">            <span class="keywordflow">case</span> <span class="charliteral">&#39;M&#39;</span>:</div>
-<div class="line">                MainMenu(manualGFXTuning1, manualGFXTuning2);</div>
+<div class="line">                MainMenu(manualGFXTuning1, manualGFXTuning2, gpuTuningService,  oneGPU);</div>
 <div class="line">                <span class="keywordflow">break</span>;</div>
 <div class="line">            <span class="keywordflow">default</span>:</div>
 <div class="line">                <span class="keywordflow">break</span>;</div>
@@ -383,7 +387,7 @@ $(function(){initNavTree('cpp__manual_graphics_tuning.html',''); initResizable(t
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Set GPU states</span></div>
-<div class="line"><span class="keywordtype">void</span> SetGPUStates(IADLXManualGraphicsTuning1Ptr manualGFXTuning1)</div>
+<div class="line"><span class="keywordtype">void</span> SetGPUStates(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)</div>
 <div class="line">{</div>
 <div class="line">    IADLXManualTuningStateListPtr states;</div>
 <div class="line">    IADLXManualTuningStatePtr oneState;</div>
@@ -417,6 +421,15 @@ $(function(){initNavTree('cpp__manual_graphics_tuning.html',''); initResizable(t
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
 <div class="line">    {</div>
 <div class="line">        res = manualGFXTuning1-&gt;SetGPUTuningStates(states);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">        {</div>
+<div class="line">            res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">            {</div>
+<div class="line">                res = manualGFXTuning1-&gt;SetGPUTuningStates(states);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line"> </div>
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet GPU tuning states &quot;</span> &lt;&lt; (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
@@ -445,10 +458,10 @@ $(function(){initNavTree('cpp__manual_graphics_tuning.html',''); initResizable(t
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tGPU min frequency range: (&quot;</span> &lt;&lt; freqRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a></div>
 <div class="line">              &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; freqRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    res = manualGFXTuning2-&gt;GetGPUMaxFrequencyRange(&amp;freqRange);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tGPU max frequency (offset) range: (&quot;</span> &lt;&lt; freqRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a></div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tGPU max frequency range: (&quot;</span> &lt;&lt; freqRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a></div>
 <div class="line">              &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; freqRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    res = manualGFXTuning2-&gt;GetGPUVoltageRange(&amp;voltRange);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tVoltage (offset) range: (&quot;</span> &lt;&lt; voltRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a></div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tVoltage range: (&quot;</span> &lt;&lt; voltRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a></div>
 <div class="line">              &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; voltRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -459,9 +472,9 @@ $(function(){initNavTree('cpp__manual_graphics_tuning.html',''); initResizable(t
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = manualGFXTuning2-&gt;GetGPUMinFrequency(&amp;minFreq);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tCurrent GPU min frequency: &quot;</span> &lt;&lt; minFreq &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    res = manualGFXTuning2-&gt;GetGPUMaxFrequency(&amp;maxFreq);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tCurrent GPU max frequency (offset): &quot;</span> &lt;&lt; maxFreq &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tCurrent GPU max frequency: &quot;</span> &lt;&lt; maxFreq &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    res = manualGFXTuning2-&gt;GetGPUVoltage(&amp;volt);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tCurrent GPU clock voltage (offset): &quot;</span> &lt;&lt; volt &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tCurrent GPU clock voltage: &quot;</span> &lt;&lt; volt &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Display default GPU tuning states</span></div>
@@ -479,39 +492,66 @@ $(function(){initNavTree('cpp__manual_graphics_tuning.html',''); initResizable(t
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = manualGFXTuning2_1-&gt;GetGPUMinFrequencyDefault(&amp;minFreq);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tDefault GPU min frequency: &quot;</span> &lt;&lt; minFreq &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    res = manualGFXTuning2_1-&gt;GetGPUMaxFrequencyDefault(&amp;maxFreq);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tDefault GPU max frequency (offset): &quot;</span> &lt;&lt; maxFreq &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tDefault GPU max frequency: &quot;</span> &lt;&lt; maxFreq &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    res = manualGFXTuning2_1-&gt;GetGPUVoltageDefault(&amp;volt);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tDefault GPU clock voltage (offset): &quot;</span> &lt;&lt; volt &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tDefault GPU clock voltage: &quot;</span> &lt;&lt; volt &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Set GPU states</span></div>
-<div class="line"><span class="keywordtype">void</span> SetGPUStates(IADLXManualGraphicsTuning2Ptr manualGFXTuning2)</div>
+<div class="line"><span class="keywordtype">void</span> SetGPUStates(IADLXManualGraphicsTuning2Ptr manualGFXTuning2, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code hl_struct" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> freqRange, voltRange;</div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = manualGFXTuning2-&gt;GetGPUMinFrequencyRange(&amp;freqRange);</div>
 <div class="line">    res = manualGFXTuning2-&gt;GetGPUVoltageRange(&amp;voltRange);</div>
 <div class="line">    res = manualGFXTuning2-&gt;SetGPUMinFrequency(freqRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">    {</div>
+<div class="line">        res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        {</div>
+<div class="line">            res = manualGFXTuning2-&gt;SetGPUMinFrequency(freqRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet GPU min frequency &quot;</span> &lt;&lt; (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line">    res = manualGFXTuning2-&gt;SetGPUMaxFrequency(freqRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + 100);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet GPU max frequency (offset) &quot;</span> &lt;&lt; (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">    {</div>
+<div class="line">        res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        {</div>
+<div class="line">            res = manualGFXTuning2-&gt;SetGPUMaxFrequency(freqRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + 100);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet GPU max frequency &quot;</span> &lt;&lt; (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line">    res = manualGFXTuning2-&gt;SetGPUVoltage(voltRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + (voltRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - voltRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / 2);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet GPU voltage (offset) &quot;</span> &lt;&lt; (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">    {</div>
+<div class="line">        res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        {</div>
+<div class="line">            res = manualGFXTuning2-&gt;SetGPUVoltage(voltRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + (voltRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - voltRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / 2);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet GPU voltage &quot;</span> &lt;&lt; (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tAfter setting:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    adlx_int minFreq = 0, maxFreq = 0, volt = 0;</div>
 <div class="line">    res = manualGFXTuning2-&gt;GetGPUMinFrequency(&amp;minFreq);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tCurrent GPU min frequency: &quot;</span> &lt;&lt; minFreq &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    res = manualGFXTuning2-&gt;GetGPUMaxFrequency(&amp;maxFreq);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tCurrent GPU max frequency (offset): &quot;</span> &lt;&lt; maxFreq &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tCurrent GPU max frequency: &quot;</span> &lt;&lt; maxFreq &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    res = manualGFXTuning2-&gt;GetGPUVoltage(&amp;volt);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tCurrent GPU clock voltage (offset): &quot;</span> &lt;&lt; volt &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tCurrent GPU clock voltage: &quot;</span> &lt;&lt; volt &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span>&lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_ga6ea0e7f02e40768a1e47cb60e0e6f482"><div class="ttname"><a href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a></div><div class="ttdeci">#define ADLX_FAILED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:319</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
-<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:154</div></div>
-<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:153</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:152</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:283</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a></div><div class="ttdeci">@ ADLX_RESET_NEEDED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:298</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_ga6ea0e7f02e40768a1e47cb60e0e6f482"><div class="ttname"><a href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a></div><div class="ttdeci">#define ADLX_FAILED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:321</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
+<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:158</div></div>
+<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:157</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:156</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

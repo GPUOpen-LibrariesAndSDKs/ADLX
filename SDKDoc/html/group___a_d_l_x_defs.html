@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -126,6 +126,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:gab6bea1ad7226aaefe89c0cbcc0e72def"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac1ba04c408146afccbfcfe2878ca3a3f" id="r_gac1ba04c408146afccbfcfe2878ca3a3f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>(ADLX_CDECL_CALL *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac1ba04c408146afccbfcfe2878ca3a3f">ADLXInitialize_Fn</a>) (adlx_uint64 version, adlx::IADLXSystem **ppSystem)</td></tr>
 <tr class="separator:gac1ba04c408146afccbfcfe2878ca3a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga554b3b0a259688ccca6c5d612e83ea31" id="r_ga554b3b0a259688ccca6c5d612e83ea31"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>(ADLX_CDECL_CALL *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga554b3b0a259688ccca6c5d612e83ea31">ADLXInitialize2_Fn</a>) (adlx_uint64 version, adlx::IADLXSystem **ppSystem, adlx::IADLMapping **ppAdlMapping)</td></tr>
+<tr class="separator:ga554b3b0a259688ccca6c5d612e83ea31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga549c1dd974464d1cf9de5e5900e0aa1c" id="r_ga549c1dd974464d1cf9de5e5900e0aa1c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>(ADLX_CDECL_CALL *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga549c1dd974464d1cf9de5e5900e0aa1c">ADLXInitializeWithCallerAdl_Fn</a>) (adlx_uint64 version, adlx::IADLXSystem **ppSystem, adlx::IADLMapping **ppAdlMapping, adlx_handle adlContext, <a class="el" href="#gabdc3ae7e3b002ff843e7aaa8f055ae77">ADLX_ADL_Main_Memory_Free</a> adlMainMemoryFree)</td></tr>
 <tr class="separator:ga549c1dd974464d1cf9de5e5900e0aa1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga286c8f710923eb9205239ca3b8b6cd05" id="r_ga286c8f710923eb9205239ca3b8b6cd05"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>(ADLX_CDECL_CALL *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga286c8f710923eb9205239ca3b8b6cd05">ADLXTerminate_Fn</a>) ()</td></tr>
@@ -155,6 +157,23 @@ Typedefs</h2></td></tr>
 <p>The typedef of ADLX_ADL_Main_Memory_Free function. </p><h3>Definition </h3>
 <pre class="fragment">
   typedef void (ADLX_STD_CALL* ADLX_ADL_Main_Memory_Free)(void** buffer)
+  </pre> 
+</div>
+</div>
+<a id="ga554b3b0a259688ccca6c5d612e83ea31" name="ga554b3b0a259688ccca6c5d612e83ea31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga554b3b0a259688ccca6c5d612e83ea31">&#9670;&#160;</a></span>ADLXInitialize2_Fn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>(ADLX_CDECL_CALL * ADLXInitialize2_Fn) (adlx_uint64 version, adlx::IADLXSystem **ppSystem, adlx::IADLMapping **ppAdlMapping)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The typedef of ADLXInitialize function. </p><h3>Definition </h3>
+<pre class="fragment">
+ typedef <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> (ADLX_CDECL_CALL *ADLXInitialize2_Fn)(adlx_uint64 version, <a class="el" href="_d_o_x__i_a_d_l_x_system.html">IADLXSystem</a>** ppSystem, <a class="el" href="_d_o_x__i_a_d_l_mapping.html">IADLMapping</a>** ppAdlMapping)
   </pre> 
 </div>
 </div>

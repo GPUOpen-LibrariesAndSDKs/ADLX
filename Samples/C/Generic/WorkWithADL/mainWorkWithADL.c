@@ -1,10 +1,10 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
 /// \file mainWorkWithADL.c
-/// \brief Demonstartes how to work with ADLX along ADL when programming with ADLX.
+/// \brief Demonstrates how to work with ADLX along ADL when programming with ADLX.
 
 #include "SDK/ADLXHelper/Windows/C/ADLXHelper.h"
 

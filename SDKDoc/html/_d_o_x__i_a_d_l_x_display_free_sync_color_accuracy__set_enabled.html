@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -113,7 +113,7 @@ $(function(){initNavTree('_d_o_x__i_a_d_l_x_display_free_sync_color_accuracy__se
   <div class="headertitle"><div class="title">SetEnabled</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Activates or deactivates the AMD FreeSync(TM) Premium Pro HDR media profile on a display.</p>
+<div class="textblock"><p>Activates or deactivates the AMD FreeSync™ Premium Pro HDR media profile on a display.</p>
 <h2>Syntax </h2>
 <pre class="fragment">
  <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>    SetEnabled (adlx_bool enable)
@@ -122,16 +122,18 @@ $(function(){initNavTree('_d_o_x__i_a_d_l_x_display_free_sync_color_accuracy__se
 <dt></dt>
 <dd><table class="params">
 <tr>
-<td class="paramidx">1.</td><td class="paramdir">[in]</td><td class="paramname">enable</td><td class="paramtype">adlx_bool</td><td>The new FreeSync color accuracy state. Set <b>true</b> to activate the AMD FreeSync(TM) Premium Pro HDR media profile. Set <b>false</b> to activate the HDR10 media profile. </td></tr>
+<td class="paramidx">1.</td><td class="paramdir">[in]</td><td class="paramname">enable</td><td class="paramtype">adlx_bool</td><td>The new FreeSync color accuracy state. Set <b>true</b> to activate the AMD FreeSync Premium Pro HDR media profile. Set <b>false</b> to activate the HDR10 media profile. </td></tr>
 </table>
 </dd>
 </dl>
 <h2>Return Value </h2>
-<p>If the FreeSync color accuracy enabled status is successfully set, <b>ADLX_OK</b> is returned. <br  />
- If the FreeSync color accuracy enabled status is not successfully set, an error code is returned. <br  />
+<p>If the state of FreeSync color accuracy is successfully set, <b>ADLX_OK</b> is returned. <br  />
+ If the state of FreeSync color accuracy is not successfully set, an error code is returned. <br  />
  Refer to <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> for success codes and error codes.</p>
 <h2>Additional Info </h2>
-<p>When enabled, the FreeSync color accuracy activates the AMD FreeSync(TM) Premium Pro HDR media profile for the display for optimal color accuracy when viewing HDR content.When disabled, it activates the HDR10 media profile for the display.</p>
+<p>When enabled, FreeSync color accuracy activates the AMD FreeSync Premium Pro HDR media profile for optimal color accuracy when viewing HDR content.<br  />
+</p>
+<p>When disabled, it switches to the HDR10 media profile for the display.</p>
 <h2>Requirements </h2>
 <table class="doxtable">
 <tr style="height=40px">

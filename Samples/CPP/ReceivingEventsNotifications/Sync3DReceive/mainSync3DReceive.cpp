@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -7,9 +7,7 @@
 /// \brief Demonstrates how to receive notifications of changes in 3D settings using ADLX.
 
 #include "SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
-#include "SDK/Include/I3DSettings.h"
-#include "SDK/Include/I3DSettings1.h"
-#include "SDK/Include/I3DSettings2.h"
+#include "SDK/Include/I3DSettings3.h"
 #include "conio.h"
 #include <iostream>
 #include <string>
@@ -103,6 +101,7 @@ public:
         g_ADLXHelp.GetSystemServices()->Get3DSettingsServices(&d3dSettingSrv);
         IADLX3DSettingsServices1Ptr d3dSettingSrv1 (d3dSettingSrv);
         IADLX3DSettingsServices2Ptr d3dSettingSrv2(d3dSettingSrv);
+        IADLX3DSettingsServices3Ptr d3dSettingSrv3(d3dSettingSrv);
 
         IADLX3DSettingsChangedEvent1Ptr p3DSettingsChangedEvent1(p3DSettingsChangedEvent);
         if (p3DSettingsChangedEvent1 == nullptr)
@@ -115,6 +114,13 @@ public:
         {
             std::cout << "3DSettingsChangedEvent2 not supported" << std::endl;
         }
+
+        IADLX3DSettingsChangedEvent3Ptr p3DSettingsChangedEvent3 (p3DSettingsChangedEvent);
+        if (p3DSettingsChangedEvent3 == nullptr)
+        {
+            std::cout << "3DSettingsChangedEvent3 not supported" << std::endl;
+        }
+
 
         // Get the GPU interface
         IADLXGPUPtr gpu;
@@ -258,7 +264,7 @@ public:
                 std::cout << "\tResetShaderCache" << std::endl;
             }
 
-            else if (p3DSettingsChangedEvent2->IsImageSharpenDesktopChanged())
+            else if (p3DSettingsChangedEvent2 && p3DSettingsChangedEvent2->IsImageSharpenDesktopChanged())
             {
                 // Get ImageSharpen interface
                 IADLX3DImageSharpenDesktopPtr d3dImageSharpenDesktop;
@@ -267,6 +273,26 @@ public:
                 d3dImageSharpenDesktop->IsEnabled(&enabled);
                 std::cout << "\tImage Sharpeing 2 changed\n\tIsEnabled: " << enabled << std::endl;
              }
+
+            else if (p3DSettingsChangedEvent3 && p3DSettingsChangedEvent3->IsFidelityFXSuperResolutionChanged())
+            {
+                // Get IADLX3DFidelityFXSuperResolution interface
+                IADLX3DFidelityFXSuperResolutionPtr ffxsr;
+                d3dSettingSrv3->GetFidelityFXSuperResolution(gpu, &ffxsr);
+                adlx_bool enabled = false;
+                ffxsr->IsEnabled(&enabled);
+                std::cout << "\tFidelityFX Super Resolution changed\n\tIsEnabled: " << enabled << std::endl;
+            }
+            else if (p3DSettingsChangedEvent3 && p3DSettingsChangedEvent3->IsFidelityFXFrameGenUpgradeChanged())
+            {
+                // Get IADLX3DFidelityFXFrameGenUpgrade interface
+                IADLX3DFidelityFXFrameGenUpgradePtr ffxfg;
+                d3dSettingSrv3->GetFidelityFXFrameGenUpgrade(gpu, &ffxfg);
+                adlx_bool enabled = false;
+                ffxfg->IsEnabled(&enabled);
+                std::cout << "\tFidelityFX Frame Generation Upgrade changed\n\tIsEnabled: " << enabled <<  std::endl;
+            }
+
         }
 
         if (origin == SYNC_ORIGIN_UNKNOWN)
@@ -282,7 +308,7 @@ public:
                 rsr->GetSharpness(&sharpness);
                 std::cout << "\tRSR changed\n\tIsEnabled: " << enabled << " , Sharpness: " << sharpness <<  std::endl;
             }
-            else if (p3DSettingsChangedEvent1->IsAMDFluidMotionFramesChanged())
+            else if (p3DSettingsChangedEvent1 && p3DSettingsChangedEvent1->IsAMDFluidMotionFramesChanged())
             {
                 // Get AMDFluidMotionFrames interface
                 IADLX3DAMDFluidMotionFramesPtr d3dAfmd;

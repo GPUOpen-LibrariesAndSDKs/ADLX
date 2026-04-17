@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -113,7 +113,7 @@ $(function(){initNavTree('_d_o_x__i_a_d_l_x_display_resolution_list__at.html',''
   <div class="headertitle"><div class="title">At</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Returns the item at the asked location.</p>
+<div class="textblock"><p>Returns the reference counted interface at the requested location.</p>
 <h2>Syntax </h2>
 <pre class="fragment">
  <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>    At (const adlx_uint location, <a class="el" href="_d_o_x__i_a_d_l_x_display_resolution.html">IADLXDisplayResolution</a>** ppItem)
@@ -122,7 +122,7 @@ $(function(){initNavTree('_d_o_x__i_a_d_l_x_display_resolution_list__at.html',''
 <dt></dt>
 <dd><table class="params">
 <tr>
-<td class="paramidx">1.</td><td class="paramdir">[in] </td><td class="paramname">location</td><td class="paramtype">const adlx_uint </td><td>Location index to retrieve the resolution item from the list. </td></tr>
+<td class="paramidx">1.</td><td class="paramdir">[in] </td><td class="paramname">location</td><td class="paramtype">const adlx_uint </td><td>The location of the requested interface. </td></tr>
 </table>
 </dd>
 </dl>
@@ -130,12 +130,15 @@ $(function(){initNavTree('_d_o_x__i_a_d_l_x_display_resolution_list__at.html',''
 <dt></dt>
 <dd><table class="params">
 <tr>
-<td class="paramidx">2.</td><td class="paramdir">[out] </td><td class="paramname">ppItem</td><td class="paramtype"><a class="el" href="_d_o_x__i_a_d_l_x_display_resolution.html">IADLXDisplayResolution</a>** </td><td>The address of a pointer variable that receives a pointer to the <a class="el" href="_d_o_x__i_a_d_l_x_display_resolution.html">IADLXDisplayResolution</a> interface. </td></tr>
+<td class="paramidx">2.</td><td class="paramdir">[out] </td><td class="paramname">ppItem</td><td class="paramtype"><a class="el" href="_d_o_x__i_a_d_l_x_display_resolution.html">IADLXDisplayResolution</a>** </td><td>The address of a pointer to the returned interface. If the interface is not successfully returned then the method sets the dereferenced address <b>*ppItem</b> to <b>nullptr</b>. </td></tr>
 </table>
 </dd>
 </dl>
 <h2>Return Value </h2>
-<p>Returns <b>ADLX_OK</b> for success and ADLX error code <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> for failure.</p>
+<p>If the location is within the list bounds, <b>ADLX_OK</b> is returned.<br  />
+ If the location is not within the list bounds, an error code is returned.<br  />
+ Refer to <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> for success codes and error codes.<br  />
+</p>
 <h2>Remarks </h2>
 <p>The returned interface must be discarded with <a class="el" href="_d_o_x__i_a_d_l_x_interface__release.html">Release</a> when it is no longer needed.</p>
 <h2>Additional Info </h2>

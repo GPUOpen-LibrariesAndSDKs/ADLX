@@ -2,6 +2,7 @@ var funpage =
 [
     [ "ADLXInitializeWithCallerAdl_Fn", "page__a_d_l_x_initialize_with_caller_adl__fn.html", null ],
     [ "ADLXInitialize_Fn", "page__a_d_l_x_initialize__fn.html", null ],
+    [ "ADLXInitialize2_Fn", "page__a_d_l_x_initialize2__fn.html", null ],
     [ "ADLXQueryFullVersion_Fn", "page__a_d_l_x_query_full_version__fn.html", null ],
     [ "ADLXQueryVersion_Fn", "page__a_d_l_x_query_version__fn.html", null ],
     [ "ADLXTerminate_Fn", "page__a_d_l_x_terminate__fn.html", null ],

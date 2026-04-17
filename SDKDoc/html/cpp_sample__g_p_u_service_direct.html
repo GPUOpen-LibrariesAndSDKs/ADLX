@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -147,12 +147,15 @@ $(function(){initNavTree('cpp_sample__g_p_u_service_direct.html',''); initResiza
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;Windows.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;TlHelp32.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;WtsApi32.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;tchar.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/Include/ISystem.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/Include/IPerformanceMonitoring3.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#pragma comment(lib, &quot;wtsapi32.lib&quot;)</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#define MAX_DEBUG_STR_LEN 1024</span></div>
 <div class="line"> </div>
@@ -171,9 +174,11 @@ $(function(){initNavTree('cpp_sample__g_p_u_service_direct.html',''); initResiza
 <div class="line"><span class="keyword">using namespace </span>adlx;</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// ADLXHelper instance.</span></div>
-<div class="line"><span class="comment">// No outstanding interfaces from ADLX must exist when ADLX destory.</span></div>
-<div class="line"><span class="comment">// So we use global variables to ensure the valid of the interface.</span></div>
 <div class="line"><span class="keyword">static</span> ADLXHelper g_ADLXHelp;</div>
+<div class="line"><span class="comment">// Indicates that ADLX is functional</span></div>
+<div class="line"><span class="keywordtype">bool</span> g_ADLXAlive = <span class="keyword">false</span>;</div>
+<div class="line"><span class="comment">// An event to wait for the right conditions to initialize ADLX</span></div>
+<div class="line">HANDLE g_ADLXInitReady = CreateEvent(NULL, FALSE, FALSE, NULL);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Service name</span></div>
 <div class="line"><span class="preprocessor">#define ADLX_SERVICE_NAME  L&quot;ADLX GPU Service&quot;</span></div>
@@ -182,11 +187,15 @@ $(function(){initNavTree('cpp_sample__g_p_u_service_direct.html',''); initResiza
 <div class="line">SERVICE_STATUS_HANDLE g_StatusHandle = NULL;</div>
 <div class="line">SERVICE_STATUS        g_ServiceStatus = { 0 };</div>
 <div class="line">HANDLE                g_ServiceStopEvent = INVALID_HANDLE_VALUE;</div>
+<div class="line"><span class="keywordtype">bool</span>                  g_StopWorkThread = <span class="keyword">false</span>;</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Service routine</span></div>
 <div class="line">VOID WINAPI  ServiceMain (DWORD argc, LPTSTR* argv);</div>
-<div class="line">VOID WINAPI  ServiceCtrlHandler (DWORD);</div>
+<div class="line">DWORD WINAPI ServiceCtrlHandler(DWORD ctrlCode, DWORD eventType, LPVOID eventData, LPVOID context);</div>
 <div class="line">DWORD WINAPI ServiceWorkerThread (LPVOID lpParam);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Check if any user is logged on</span></div>
+<div class="line"><span class="keywordtype">bool</span> IsAnyUserLogon ();</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Install/unistall this service</span></div>
 <div class="line"><span class="comment">// N.B: Need admin permission</span></div>
@@ -266,7 +275,7 @@ $(function(){initNavTree('cpp_sample__g_p_u_service_direct.html',''); initResiza
 <div class="line"> </div>
 <div class="line">    XTrace (L<span class="stringliteral">&quot;ADLX Call Service: ServiceMain: Entry&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">    g_StatusHandle = RegisterServiceCtrlHandlerW (ADLX_SERVICE_NAME, ServiceCtrlHandler);</div>
+<div class="line">    g_StatusHandle = RegisterServiceCtrlHandlerExW (ADLX_SERVICE_NAME, ServiceCtrlHandler, NULL);</div>
 <div class="line">    <span class="keywordflow">if</span> (g_StatusHandle == NULL)</div>
 <div class="line">    {</div>
 <div class="line">        XTrace (L<span class="stringliteral">&quot;ADLX Call Service: ServiceMain: RegisterServiceCtrlHandler returned error&quot;</span>);</div>
@@ -276,7 +285,7 @@ $(function(){initNavTree('cpp_sample__g_p_u_service_direct.html',''); initResiza
 <div class="line">    <span class="comment">// Tell the service controller we are starting</span></div>
 <div class="line">    ZeroMemory (&amp;g_ServiceStatus, <span class="keyword">sizeof</span> (g_ServiceStatus));</div>
 <div class="line">    g_ServiceStatus.dwServiceType = SERVICE_WIN32_OWN_PROCESS;</div>
-<div class="line">    g_ServiceStatus.dwControlsAccepted = 0;</div>
+<div class="line">    g_ServiceStatus.dwControlsAccepted = SERVICE_ACCEPT_STOP | SERVICE_ACCEPT_SESSIONCHANGE;</div>
 <div class="line">    g_ServiceStatus.dwCurrentState = SERVICE_START_PENDING;</div>
 <div class="line">    g_ServiceStatus.dwWin32ExitCode = 0;</div>
 <div class="line">    g_ServiceStatus.dwServiceSpecificExitCode = 0;</div>
@@ -311,7 +320,7 @@ $(function(){initNavTree('cpp_sample__g_p_u_service_direct.html',''); initResiza
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Tell the service controller we are started</span></div>
-<div class="line">    g_ServiceStatus.dwControlsAccepted = SERVICE_ACCEPT_STOP;</div>
+<div class="line">    g_ServiceStatus.dwControlsAccepted = SERVICE_ACCEPT_STOP | SERVICE_ACCEPT_SESSIONCHANGE;</div>
 <div class="line">    g_ServiceStatus.dwCurrentState = SERVICE_RUNNING;</div>
 <div class="line">    g_ServiceStatus.dwWin32ExitCode = 0;</div>
 <div class="line">    g_ServiceStatus.dwCheckPoint = 0;</div>
@@ -320,9 +329,6 @@ $(function(){initNavTree('cpp_sample__g_p_u_service_direct.html',''); initResiza
 <div class="line">    {</div>
 <div class="line">        XTrace (L<span class="stringliteral">&quot;ADLX Call Service: ServiceMain: SetServiceStatus returned error&quot;</span>);</div>
 <div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// Enable when Debug</span></div>
-<div class="line">    <span class="comment">//Sleep(20000);</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Start the thread that will perform the main task of the service</span></div>
 <div class="line">    HANDLE hThread = CreateThread (NULL, 0, ServiceWorkerThread, NULL, 0, NULL);</div>
@@ -360,15 +366,15 @@ $(function(){initNavTree('cpp_sample__g_p_u_service_direct.html',''); initResiza
 <div class="line">    <span class="keywordflow">return</span>;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line">VOID WINAPI ServiceCtrlHandler (DWORD CtrlCode)</div>
+<div class="line">DWORD WINAPI ServiceCtrlHandler (DWORD ctrlCode, DWORD eventType, LPVOID eventData, LPVOID context)</div>
 <div class="line">{</div>
 <div class="line">    XTrace (L<span class="stringliteral">&quot;ADLX Call Service: ServiceCtrlHandler: Entry&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">switch</span> (CtrlCode)</div>
+<div class="line">    <span class="keywordflow">switch</span> (ctrlCode)</div>
 <div class="line">    {</div>
 <div class="line">    <span class="keywordflow">case</span> SERVICE_CONTROL_STOP:</div>
-<div class="line"> </div>
-<div class="line">        XTrace (L<span class="stringliteral">&quot;ADLX Call Service: ServiceCtrlHandler: SERVICE_CONTROL_STOP Request&quot;</span>);</div>
+<div class="line">    {</div>
+<div class="line">        XTrace(L<span class="stringliteral">&quot;ADLX Call Service: ServiceCtrlHandler: SERVICE_CONTROL_STOP Request&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">        <span class="keywordflow">if</span> (g_ServiceStatus.dwCurrentState != SERVICE_RUNNING)</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
@@ -382,32 +388,80 @@ $(function(){initNavTree('cpp_sample__g_p_u_service_direct.html',''); initResiza
 <div class="line">        g_ServiceStatus.dwWin32ExitCode = 0;</div>
 <div class="line">        g_ServiceStatus.dwCheckPoint = 4;</div>
 <div class="line"> </div>
-<div class="line">        <span class="keywordflow">if</span> (SetServiceStatus (g_StatusHandle, &amp;g_ServiceStatus) == FALSE)</div>
+<div class="line">        <span class="keywordflow">if</span> (SetServiceStatus(g_StatusHandle, &amp;g_ServiceStatus) == FALSE)</div>
 <div class="line">        {</div>
-<div class="line">            XTrace (L<span class="stringliteral">&quot;ADLX Call Service: ServiceCtrlHandler: SetServiceStatus returned error&quot;</span>);</div>
+<div class="line">            XTrace(L<span class="stringliteral">&quot;ADLX Call Service: ServiceCtrlHandler: SetServiceStatus returned error&quot;</span>);</div>
 <div class="line">        }</div>
 <div class="line"> </div>
 <div class="line">        <span class="comment">// This will signal the worker thread to shut down</span></div>
-<div class="line">        SetEvent (g_ServiceStopEvent);</div>
+<div class="line">        SetEvent(g_ServiceStopEvent);</div>
+<div class="line">        g_StopWorkThread = <span class="keyword">true</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> SERVICE_CONTROL_SESSIONCHANGE:</div>
+<div class="line">    {</div>
+<div class="line">        XTrace(L<span class="stringliteral">&quot;ADLX Call Service: ServiceCtrlHandler: SERVICE_CONTROL_SESSIONCHANGE&quot;</span>);</div>
+<div class="line">        WTSSESSION_NOTIFICATION* pSessionNotification = (WTSSESSION_NOTIFICATION*)eventData;</div>
+<div class="line">        <span class="keywordflow">switch</span> (eventType)</div>
+<div class="line">        {</div>
+<div class="line">        <span class="keywordflow">case</span> WTS_SESSION_LOGOFF:</div>
+<div class="line">        {</div>
+<div class="line">            XTrace(L<span class="stringliteral">&quot;ADLX Call Service: ServiceCtrlHandler: WTS_SESSION_LOGOFF&quot;</span>);</div>
+<div class="line">        }</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
-<div class="line"> </div>
+<div class="line">        <span class="keywordflow">case</span> WTS_SESSION_LOGON:</div>
+<div class="line">        {</div>
+<div class="line">            XTrace(L<span class="stringliteral">&quot;ADLX Call Service: ServiceCtrlHandler: WTS_SESSION_LOGON&quot;</span>);</div>
+<div class="line">            <span class="comment">// When user logon, initialize ADLX</span></div>
+<div class="line">            <span class="keywordflow">if</span> (!g_ADLXAlive)</div>
+<div class="line">            {</div>
+<div class="line">                <span class="keyword">auto</span> res = g_ADLXHelp.Initialize();</div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                {</div>
+<div class="line">                    XTrace(L<span class="stringliteral">&quot;Initialize ADLX succeed: %d\n&quot;</span>, res);</div>
+<div class="line">                    g_ADLXAlive = <span class="keyword">true</span>;</div>
+<div class="line">                }</div>
+<div class="line">                <span class="keywordflow">else</span></div>
+<div class="line">                {</div>
+<div class="line">                    XTrace(L<span class="stringliteral">&quot;Initialize ADLX failed: %d\n&quot;</span>, res);</div>
+<div class="line">                }</div>
+<div class="line">                SetEvent(g_ADLXInitReady);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">default</span>:</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">break</span>;</div>
 <div class="line">    <span class="keywordflow">default</span>:</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    XTrace (L<span class="stringliteral">&quot;ADLX Call Service: ServiceCtrlHandler: Exit&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> NO_ERROR;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line">DWORD WINAPI ServiceWorkerThread (LPVOID lpParam)</div>
 <div class="line">{</div>
 <div class="line">    XTrace (L<span class="stringliteral">&quot;ADLX Call Service: ServiceWorkerThread: Entry&quot;</span>);</div>
 <div class="line"> </div>
+<div class="line">    <span class="comment">// Check if any user is logged on</span></div>
+<div class="line">    <span class="keywordflow">if</span> (!IsAnyUserLogon())</div>
+<div class="line">    {</div>
+<div class="line">        XTrace(L<span class="stringliteral">&quot;No user logon, wait for user logon&quot;</span>);</div>
+<div class="line">        g_ADLXAlive = <span class="keyword">false</span>;</div>
+<div class="line">        WaitForSingleObject(g_ADLXInitReady, INFINITE);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = g_ADLXHelp.Initialize();</div>
 <div class="line">    XTrace(L<span class="stringliteral">&quot;--Initialize:  %d\n&quot;</span>, res);</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">auto</span> iloop = 20;</div>
-<div class="line">        <span class="keywordflow">while</span> (iloop-- &gt; 0)</div>
+<div class="line">        g_ADLXAlive = <span class="keyword">true</span>;</div>
+<div class="line"> </div>
+<div class="line">        <span class="keyword">auto</span> iloop = 40;</div>
+<div class="line">        <span class="keywordflow">while</span> (iloop-- &gt; 0 &amp;&amp; !g_StopWorkThread)</div>
 <div class="line">        {</div>
 <div class="line">            <span class="comment">// Get GPU list</span></div>
 <div class="line">            IADLXGPUListPtr gpus;</div>
@@ -435,6 +489,30 @@ $(function(){initNavTree('cpp_sample__g_p_u_service_direct.html',''); initResiza
 <div class="line">                    }</div>
 <div class="line">                }</div>
 <div class="line">            }</div>
+<div class="line">            <span class="keywordflow">if</span> (res == <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0a0f2aa9a92254cd0fe4b705b0f77ca314">ADLX_ORPHAN_OBJECTS</a>)</div>
+<div class="line">            {</div>
+<div class="line">                XTrace(L<span class="stringliteral">&quot;ADLX return ADLX_ORPHAN_OBJECTS&quot;</span>);</div>
+<div class="line">                <span class="comment">// Terminate ADLX, discard all the cached ADLX interfaces and wait for the right conditions to re-initialize ADLX</span></div>
+<div class="line">                g_ADLXHelp.Terminate();</div>
+<div class="line">                g_ADLXAlive = <span class="keyword">false</span>;</div>
+<div class="line"> </div>
+<div class="line">                <span class="comment">//Attempt to re-initialize, if another user is still logged on</span></div>
+<div class="line">                <span class="keywordflow">if</span> (IsAnyUserLogon())</div>
+<div class="line">                {</div>
+<div class="line">                    res = g_ADLXHelp.Initialize();</div>
+<div class="line">                    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                    {</div>
+<div class="line">                        XTrace(L<span class="stringliteral">&quot;ADLX recovered &quot;</span>);</div>
+<div class="line">                        g_ADLXAlive = <span class="keyword">true</span>;</div>
+<div class="line">                    }</div>
+<div class="line">                }</div>
+<div class="line"> </div>
+<div class="line">                <span class="keywordflow">if</span> (!g_ADLXAlive)</div>
+<div class="line">                {</div>
+<div class="line">                    WaitForSingleObject(g_ADLXInitReady, INFINITE);</div>
+<div class="line">                    <span class="keywordflow">continue</span>;</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Get performance monitoring service</span></div>
 <div class="line">            IADLXPerformanceMonitoringServicesPtr perfMonitorServ;</div>
@@ -447,6 +525,30 @@ $(function(){initNavTree('cpp_sample__g_p_u_service_direct.html',''); initResiza
 <div class="line">                XTrace(L<span class="stringliteral">&quot;--GetSamplingIntervalRange:  %d\n&quot;</span>, res);</div>
 <div class="line">                XTrace(L<span class="stringliteral">&quot;range.minValue: %d, range.maxValue: %d, range.step: %d&quot;</span>, range.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, range.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>, range.<a class="code hl_variable" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a>);</div>
 <div class="line">            }</div>
+<div class="line">            <span class="keywordflow">if</span> (res == <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0a0f2aa9a92254cd0fe4b705b0f77ca314">ADLX_ORPHAN_OBJECTS</a>)</div>
+<div class="line">            {</div>
+<div class="line">                XTrace(L<span class="stringliteral">&quot;ADLX return ADLX_ORPHAN_OBJECTS&quot;</span>);</div>
+<div class="line">                <span class="comment">// Terminate ADLX, discard all the cached ADLX interfaces and wait for the right conditions to re-initialize ADLX</span></div>
+<div class="line">                g_ADLXHelp.Terminate();</div>
+<div class="line">                g_ADLXAlive = <span class="keyword">false</span>;</div>
+<div class="line"> </div>
+<div class="line">                <span class="comment">//Attempt to re-initialize, if another user is still logged on</span></div>
+<div class="line">                <span class="keywordflow">if</span> (IsAnyUserLogon())</div>
+<div class="line">                {</div>
+<div class="line">                    res = g_ADLXHelp.Initialize();</div>
+<div class="line">                    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">                    {</div>
+<div class="line">                        XTrace(L<span class="stringliteral">&quot;ADLX recovered &quot;</span>);</div>
+<div class="line">                        g_ADLXAlive = <span class="keyword">true</span>;</div>
+<div class="line">                    }</div>
+<div class="line">                }</div>
+<div class="line"> </div>
+<div class="line">                <span class="keywordflow">if</span> (!g_ADLXAlive)</div>
+<div class="line">                {</div>
+<div class="line">                    WaitForSingleObject(g_ADLXInitReady, INFINITE);</div>
+<div class="line">                    <span class="keywordflow">continue</span>;</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
 <div class="line">            Sleep(3000);</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
@@ -457,6 +559,26 @@ $(function(){initNavTree('cpp_sample__g_p_u_service_direct.html',''); initResiza
 <div class="line">    XTrace (L<span class="stringliteral">&quot;ADLX Call Service: ServiceWorkerThread: Exit&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> ERROR_SUCCESS;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">bool</span> IsAnyUserLogon ()</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordtype">bool</span> isUserLogon = <span class="keyword">false</span>;</div>
+<div class="line">    WTS_SESSION_INFO *pSessionInfo = NULL;</div>
+<div class="line">    DWORD sessionCount = 0;</div>
+<div class="line">    <span class="keywordflow">if</span> (WTSEnumerateSessions(WTS_CURRENT_SERVER_HANDLE, 0, 1, &amp;pSessionInfo, &amp;sessionCount) == TRUE &amp;&amp; pSessionInfo != NULL)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">for</span> (DWORD i = 0; i &lt; sessionCount; i++)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">if</span> (pSessionInfo[i].State == WTSActive)</div>
+<div class="line">            {</div>
+<div class="line">                isUserLogon = <span class="keyword">true</span>;</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">        WTSFreeMemory(pSessionInfo);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> isUserLogon;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> InstallService ()</div>
@@ -527,12 +649,13 @@ $(function(){initNavTree('cpp_sample__g_p_u_service_direct.html',''); initResiza
 <div class="line">    CloseServiceHandle (serviceHandle);</div>
 <div class="line">    CloseServiceHandle (serviceManager);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
-<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:154</div></div>
-<div class="ttc" id="agroup__structures_val_html_ae0e545b501a683c565f08089ed3e8023"><div class="ttname"><a href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">ADLX_IntRange::step</a></div><div class="ttdeci">adlx_int step</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:155</div></div>
-<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:153</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:152</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0a0f2aa9a92254cd0fe4b705b0f77ca314"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0a0f2aa9a92254cd0fe4b705b0f77ca314">ADLX_ORPHAN_OBJECTS</a></div><div class="ttdeci">@ ADLX_ORPHAN_OBJECTS</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:291</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
+<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:158</div></div>
+<div class="ttc" id="agroup__structures_val_html_ae0e545b501a683c565f08089ed3e8023"><div class="ttname"><a href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">ADLX_IntRange::step</a></div><div class="ttdeci">adlx_int step</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:159</div></div>
+<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:157</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:156</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

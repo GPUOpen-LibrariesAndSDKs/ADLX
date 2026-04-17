@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('cpp__manual_power_tuning.html',''); initResizable(true
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -147,7 +147,7 @@ $(function(){initNavTree('cpp__manual_power_tuning.html',''); initResizable(true
 </html>
  <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -169,7 +169,7 @@ $(function(){initNavTree('cpp__manual_power_tuning.html',''); initResizable(true
 <div class="line"><span class="keywordtype">void</span> MainMenu();</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Menu action control</span></div>
-<div class="line"><span class="keywordtype">void</span> MenuControl(IADLXManualPowerTuningPtr manualPowerTuning);</div>
+<div class="line"><span class="keywordtype">void</span> MenuControl(IADLXManualPowerTuningPtr manualPowerTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Wait for exit with error message</span></div>
 <div class="line"><span class="keywordtype">int</span> WaitAndExit(<span class="keyword">const</span> <span class="keywordtype">char</span>* msg, <span class="keyword">const</span> <span class="keywordtype">int</span> retCode);</div>
@@ -184,7 +184,7 @@ $(function(){initNavTree('cpp__manual_power_tuning.html',''); initResizable(true
 <div class="line"><span class="keywordtype">void</span> ShowGetPowerLimitDefault(IADLXManualPowerTuningPtr manualPowerTuning);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Set power limit</span></div>
-<div class="line"><span class="keywordtype">void</span> ShowSetPowerLimit(IADLXManualPowerTuningPtr manualPowerTuning);</div>
+<div class="line"><span class="keywordtype">void</span> ShowSetPowerLimit(IADLXManualPowerTuningPtr manualPowerTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">//Show to check TDC  limit is supported</span></div>
 <div class="line"><span class="keywordtype">void</span> ShowTDCLimitSupported(IADLXManualPowerTuningPtr manualPowerTuning);</div>
@@ -199,7 +199,7 @@ $(function(){initNavTree('cpp__manual_power_tuning.html',''); initResizable(true
 <div class="line"><span class="keywordtype">void</span> ShowGetTDCLimitDefault(IADLXManualPowerTuningPtr manualPowerTuning);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Show how to set TDC limit.</span></div>
-<div class="line"><span class="keywordtype">void</span> ShowSetTDCLimit(IADLXManualPowerTuningPtr manualPowerTuning);</div>
+<div class="line"><span class="keywordtype">void</span> ShowSetTDCLimit(IADLXManualPowerTuningPtr manualPowerTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main()</div>
 <div class="line">{</div>
@@ -226,6 +226,9 @@ $(function(){initNavTree('cpp__manual_power_tuning.html',''); initResizable(true
 <div class="line">        }</div>
 <div class="line">        IADLXGPUPtr oneGPU;</div>
 <div class="line">        res = gpus-&gt;At(0, &amp;oneGPU);</div>
+<div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span>* gpuName = <span class="keyword">nullptr</span>;</div>
+<div class="line">        res = oneGPU-&gt;Name(&amp;gpuName);</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; gpuName &lt;&lt; <span class="stringliteral">&quot; is selected.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a> (res) || oneGPU == <span class="keyword">nullptr</span>)</div>
 <div class="line">        {</div>
 <div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tGet GPU failed &quot;</span> &lt;&lt; std::endl;</div>
@@ -255,7 +258,7 @@ $(function(){initNavTree('cpp__manual_power_tuning.html',''); initResizable(true
 <div class="line">        MainMenu();</div>
 <div class="line"> </div>
 <div class="line">        <span class="comment">// Get and execute the choice</span></div>
-<div class="line">        MenuControl(manualPowerTuning);</div>
+<div class="line">        MenuControl(manualPowerTuning, gpuTuningService,oneGPU);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">        <span class="keywordflow">return</span> WaitAndExit(<span class="stringliteral">&quot;\tg_ADLXHelp initialize failed&quot;</span>, 0);</div>
@@ -290,7 +293,7 @@ $(function(){initNavTree('cpp__manual_power_tuning.html',''); initResizable(true
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Menu action control</span></div>
-<div class="line"><span class="keywordtype">void</span> MenuControl(IADLXManualPowerTuningPtr manualPowerTuning)</div>
+<div class="line"><span class="keywordtype">void</span> MenuControl(IADLXManualPowerTuningPtr manualPowerTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> num = 0;</div>
 <div class="line">    <span class="keywordflow">while</span> ((num = getchar()) != <span class="charliteral">&#39;q&#39;</span> &amp;&amp; num != <span class="charliteral">&#39;Q&#39;</span>)</div>
@@ -309,7 +312,7 @@ $(function(){initNavTree('cpp__manual_power_tuning.html',''); initResizable(true
 <div class="line"> </div>
 <div class="line">        <span class="comment">// Set power limit</span></div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>:</div>
-<div class="line">            ShowSetPowerLimit(manualPowerTuning);</div>
+<div class="line">            ShowSetPowerLimit(manualPowerTuning, gpuTuningService,  oneGPU);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">            <span class="comment">// Show to check if TDCLimit is supported</span></div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;4&#39;</span>:</div>
@@ -327,7 +330,7 @@ $(function(){initNavTree('cpp__manual_power_tuning.html',''); initResizable(true
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Show how to set TDC limit.</span></div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;7&#39;</span>:</div>
-<div class="line">            ShowSetTDCLimit(manualPowerTuning);</div>
+<div class="line">            ShowSetTDCLimit(manualPowerTuning, gpuTuningService,  oneGPU);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Display default power limit</span></div>
@@ -394,11 +397,20 @@ $(function(){initNavTree('cpp__manual_power_tuning.html',''); initResizable(true
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Set power limit</span></div>
-<div class="line"><span class="keywordtype">void</span> ShowSetPowerLimit(IADLXManualPowerTuningPtr manualPowerTuning)</div>
+<div class="line"><span class="keywordtype">void</span> ShowSetPowerLimit(IADLXManualPowerTuningPtr manualPowerTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code hl_struct" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> powerRange;</div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = manualPowerTuning-&gt;GetPowerLimitRange(&amp;powerRange);</div>
 <div class="line">    res = manualPowerTuning-&gt;SetPowerLimit(powerRange.<a class="code hl_variable" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a> + powerRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + (powerRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - powerRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / 2);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">    {</div>
+<div class="line">        res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        {</div>
+<div class="line">            res = manualPowerTuning-&gt;SetPowerLimit(powerRange.<a class="code hl_variable" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a> + powerRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + (powerRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - powerRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / 2);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet power limit &quot;</span> &lt;&lt; (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line">    adlx_int powerLimit;</div>
 <div class="line">    res = manualPowerTuning-&gt;GetPowerLimit(&amp;powerLimit);</div>
@@ -445,24 +457,33 @@ $(function(){initNavTree('cpp__manual_power_tuning.html',''); initResizable(true
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Show how to set TDC limit.</span></div>
-<div class="line"><span class="keywordtype">void</span> ShowSetTDCLimit(IADLXManualPowerTuningPtr manualPowerTuning)</div>
+<div class="line"><span class="keywordtype">void</span> ShowSetTDCLimit(IADLXManualPowerTuningPtr manualPowerTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code hl_struct" href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a> tdcRange;</div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = manualPowerTuning-&gt;GetTDCLimitRange(&amp;tdcRange);</div>
 <div class="line"> </div>
 <div class="line">    res = manualPowerTuning-&gt;SetTDCLimit(tdcRange.<a class="code hl_variable" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a> + tdcRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + (tdcRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - tdcRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / 2);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">    {</div>
+<div class="line">        res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        {</div>
+<div class="line">            res = manualPowerTuning-&gt;SetTDCLimit(tdcRange.<a class="code hl_variable" href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">step</a> + tdcRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + (tdcRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - tdcRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / 2);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
 <div class="line">    adlx_int tdcLimit;</div>
 <div class="line">    res = manualPowerTuning-&gt;GetTDCLimit (&amp;tdcLimit);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet current TDC limit to: &quot;</span> &lt;&lt; tdcLimit &lt;&lt; <span class="stringliteral">&quot;, return code (0 is Success) is: &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_ga6ea0e7f02e40768a1e47cb60e0e6f482"><div class="ttname"><a href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a></div><div class="ttdeci">#define ADLX_FAILED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:319</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
-<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:154</div></div>
-<div class="ttc" id="agroup__structures_val_html_ae0e545b501a683c565f08089ed3e8023"><div class="ttname"><a href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">ADLX_IntRange::step</a></div><div class="ttdeci">adlx_int step</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:155</div></div>
-<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:153</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:152</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:283</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a></div><div class="ttdeci">@ ADLX_RESET_NEEDED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:298</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_ga6ea0e7f02e40768a1e47cb60e0e6f482"><div class="ttname"><a href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a></div><div class="ttdeci">#define ADLX_FAILED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:321</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
+<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:158</div></div>
+<div class="ttc" id="agroup__structures_val_html_ae0e545b501a683c565f08089ed3e8023"><div class="ttname"><a href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">ADLX_IntRange::step</a></div><div class="ttdeci">adlx_int step</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:159</div></div>
+<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:157</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:156</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -278,27 +278,28 @@ void SetSmartAccessMemoryState(IADLXGPUTuningServices1Ptr gpuTuningService1, IAD
                     std::cout << "Call IsEnabled() failed" << std::endl;
                 res = smartAccessMemory->SetEnabled(!enabled);
                 if (ADLX_SUCCEEDED(res))
+                {
                     std::cout << "Set AMD SmartAccess Memory to " << (!enabled ? "enabled" : "disabled") << " for " << (index + 1) << "th GPU" << std::endl;
+                    // First event received quickly before SAM start
+                    WaitForSingleObject(SAMEvent, 2000);
+
+                    // When receive the first event, avoid calling any other ADLX method, and if any UI application is running, we must close it to avoid crashing
+                    // Close(application)......
+
+                    // Second event received after SAM completed, the maximum consuming time less than 20 seconds.
+                    WaitForSingleObject(SAMEvent, 20000);
+
+                    // Now SAM completed, we can restart the UI application, and continue to call ADLX function
+                    // Start(application)......
+
+                    res = smartAccessMemory->IsEnabled(&enabled);
+                    if (ADLX_SUCCEEDED(res))
+                        std::cout << "After setting, AMD SmartAccess Memory is " << (enabled ? "enabled" : "disabled") << " on " << (index + 1) << "th GPU" << std::endl;
+                    else
+                        std::cout << "Call IsEnabled() failed" << std::endl;
+                }
                 else
-                    std::cout << "Call SetEnabled() failed" << std::endl;
-
-                // First event received quickly before SAM start
-                WaitForSingleObject(SAMEvent, 2000);
-
-                // When receive the first event, avoid calling any other ADLX method, and if any UI application is running, we must close it to avoid crashing
-                // Close(application)......
-
-                // Second event received after SAM completed, the maximum consuming time less than 20 seconds.
-                WaitForSingleObject(SAMEvent, 20000);
-
-                // Now SAM completed, we can restart the UI application, and continue to call ADLX function
-                // Start(application)......
-
-                res = smartAccessMemory->IsEnabled(&enabled);
-                if (ADLX_SUCCEEDED(res))
-                    std::cout << "After setting, AMD SmartAccess Memory is " << (enabled ? "enabled" : "disabled") << " on " << (index + 1) << "th GPU" << std::endl;
-                else
-                    std::cout << "Call IsEnabled() failed" << std::endl;
+                    std::cout << "Call SetEnabled() Not supported: " << res << std::endl;
             }
             else
                 std::cout << "Failed to get smartAccessMemory" << std::endl;

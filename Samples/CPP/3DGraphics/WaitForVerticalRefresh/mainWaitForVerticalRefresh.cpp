@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -61,6 +61,9 @@ int main()
             IADLXGPUPtr gpuInfo;
             adlx_uint index = 0;
             res = gpus->At(index, &gpuInfo);
+            const char* gpuName = nullptr;
+            res = gpuInfo->Name(&gpuName);
+            std::cout << "\t" << gpuName << " is selected." << std::endl;
 
             // Get VSync interface
             IADLX3DWaitForVerticalRefreshPtr vsync;

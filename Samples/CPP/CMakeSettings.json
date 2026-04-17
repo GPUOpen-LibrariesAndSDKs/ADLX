@@ -22,7 +22,14 @@
       "configurationType": "Debug",
       "buildRoot": "${projectDir}\\build",
       "inheritEnvironments": [ "msvc_x64_x64" ],
-      "intelliSenseMode": "windows-msvc-x64"
+      "intelliSenseMode": "windows-msvc-x64",
+      "variables": [
+        {
+          "name": "CMAKE_BUILD_TYPE",
+          "value": "Debug",
+          "type": "STRING"
+        }
+      ]
     },
     {
       "name": "Release_x64",

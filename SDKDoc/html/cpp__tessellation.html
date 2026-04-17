@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('cpp__tessellation.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -144,7 +144,7 @@ $(function(){initNavTree('cpp__tessellation.html',''); initResizable(true); });
 </html>
  <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -207,6 +207,9 @@ $(function(){initNavTree('cpp__tessellation.html',''); initResizable(true); });
 <div class="line">            IADLXGPUPtr gpuInfo;</div>
 <div class="line">            adlx_uint index = 0;</div>
 <div class="line">            res = gpus-&gt;At(index, &amp;gpuInfo);</div>
+<div class="line">            <span class="keyword">const</span> <span class="keywordtype">char</span>* gpuName = <span class="keyword">nullptr</span>;</div>
+<div class="line">            res = gpuInfo-&gt;Name(&amp;gpuName);</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; gpuName &lt;&lt; <span class="stringliteral">&quot; is selected.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Get IADLX3DTessellation interface</span></div>
 <div class="line">            IADLX3DTessellationPtr tessellation;</div>
@@ -239,20 +242,20 @@ $(function(){initNavTree('cpp__tessellation.html',''); initResizable(true); });
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> <span class="keyword">const</span> std::map&lt;ADLX_TESSELLATION_MODE, const char*&gt; Modes =</div>
 <div class="line">    {</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga7899078325beddfbe0f4e63dca8ce8caa73ae5eb0bacfbde56077eea258648325">T_MODE_AMD_OPTIMIZED</a>, <span class="stringliteral">&quot;AMD optimized&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga7899078325beddfbe0f4e63dca8ce8caa908c4c2fcd9ca251f77201ac62002b7e">T_MODE_USE_APP_SETTINGS</a>, <span class="stringliteral">&quot;Use application settings&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga7899078325beddfbe0f4e63dca8ce8caa457aa8bc48fb10ec6b107b28e56a56b5">T_MODE_OVERRIDE_APP_SETTINGS</a>, <span class="stringliteral">&quot;Override application settings&quot;</span>}};</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaa6e14a78bb8553e5becd26ef315995f0af58cdbb88ac76b71e10d87cfce71a747">T_MODE_AMD_OPTIMIZED</a>, <span class="stringliteral">&quot;AMD optimized&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaa6e14a78bb8553e5becd26ef315995f0a43a0dca464c38a8a755987cceeba0730">T_MODE_USE_APP_SETTINGS</a>, <span class="stringliteral">&quot;Use application settings&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaa6e14a78bb8553e5becd26ef315995f0a7d5e611b48f77f3b4f8df11d9ed8f229">T_MODE_OVERRIDE_APP_SETTINGS</a>, <span class="stringliteral">&quot;Override application settings&quot;</span>}};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> <span class="keyword">const</span> std::map&lt;ADLX_TESSELLATION_LEVEL, const char*&gt; Levels =</div>
 <div class="line">    {</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca07fb2f890b90b7ad6cbcf07cfbcae36c">T_LEVEL_OFF</a>, <span class="stringliteral">&quot;Off&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca1ab9133a629987f8ca508e3d4031b4df">T_LEVEL_2X</a>, <span class="stringliteral">&quot;2X&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca2abb616e9496d3cfd550ac2f92c9e3ee">T_LEVEL_4X</a>, <span class="stringliteral">&quot;4X&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca4f8d9cec3c1ff901e46ed1e9156c7420">T_LEVEL_6X</a>, <span class="stringliteral">&quot;6X&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5cad61c7030ea4f89ca43af8d9087fafd45">T_LEVEL_8X</a>, <span class="stringliteral">&quot;8X&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca81da4c659b7805407bec0d0ad595bb69">T_LEVEL_16X</a>, <span class="stringliteral">&quot;16X&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca4e5b2fc5d494fd9a30109f7f7038ac03">T_LEVEL_32X</a>, <span class="stringliteral">&quot;32X&quot;</span>},</div>
-<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5cafc6e09b3c44597e193bedd8a592474c0">T_LEVEL_64X</a>, <span class="stringliteral">&quot;64X&quot;</span>}};</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a7dc57282466e47985ee12cc9b635f49e">T_LEVEL_OFF</a>, <span class="stringliteral">&quot;Off&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087ade1a612fb6e0a4a2fe21a654affeace8">T_LEVEL_2X</a>, <span class="stringliteral">&quot;2X&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a12c90bb34407646d57d0570e51f4a543">T_LEVEL_4X</a>, <span class="stringliteral">&quot;4X&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087ae58165293933402f57c51215a4519d6f">T_LEVEL_6X</a>, <span class="stringliteral">&quot;6X&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a021b34937d19edff4113be2ccb091c40">T_LEVEL_8X</a>, <span class="stringliteral">&quot;8X&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a0e24f974e2006aa08c8195ac447de3c2">T_LEVEL_16X</a>, <span class="stringliteral">&quot;16X&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a8cabc82063a6f4b65bea6f3ec2d1e307">T_LEVEL_32X</a>, <span class="stringliteral">&quot;32X&quot;</span>},</div>
+<div class="line">        {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a6a6a2c167a5b2dc7a9386c3dad16f7bd">T_LEVEL_64X</a>, <span class="stringliteral">&quot;64X&quot;</span>}};</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> ShowSupport(<span class="keyword">const</span> IADLX3DTessellationPtr&amp; tessellation)</div>
 <div class="line">{</div>
@@ -263,11 +266,11 @@ $(function(){initNavTree('cpp__tessellation.html',''); initResizable(true); });
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> GetState(<span class="keyword">const</span> IADLX3DTessellationPtr&amp; tessellation)</div>
 <div class="line">{</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga7899078325beddfbe0f4e63dca8ce8ca">ADLX_TESSELLATION_MODE</a> mode;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gaa6e14a78bb8553e5becd26ef315995f0">ADLX_TESSELLATION_MODE</a> mode;</div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = tessellation-&gt;GetMode(&amp;mode);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tMode: &quot;</span> &lt;&lt; Modes.find(mode)-&gt;second &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga5967c593434c0cba5891c996d64cff5c">ADLX_TESSELLATION_LEVEL</a> level;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gad220568d4b112a3a7884b9ce9d91e087">ADLX_TESSELLATION_LEVEL</a> level;</div>
 <div class="line">    res = tessellation-&gt;GetLevel(&amp;level);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tLevel: &quot;</span> &lt;&lt; Levels.find(level)-&gt;second &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
@@ -275,17 +278,17 @@ $(function(){initNavTree('cpp__tessellation.html',''); initResizable(true); });
 <div class="line"><span class="keywordtype">void</span> SetMode(<span class="keyword">const</span> IADLX3DTessellationPtr&amp; tessellation, <span class="keywordtype">int</span> index)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a>;</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga7899078325beddfbe0f4e63dca8ce8ca">ADLX_TESSELLATION_MODE</a> mode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga7899078325beddfbe0f4e63dca8ce8caa73ae5eb0bacfbde56077eea258648325">T_MODE_AMD_OPTIMIZED</a>;</div>
-<div class="line">    mode = (<a class="code hl_enumeration" href="group__enumerations.html#ga7899078325beddfbe0f4e63dca8ce8ca">ADLX_TESSELLATION_MODE</a>)(mode + index);</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gaa6e14a78bb8553e5becd26ef315995f0">ADLX_TESSELLATION_MODE</a> mode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaa6e14a78bb8553e5becd26ef315995f0af58cdbb88ac76b71e10d87cfce71a747">T_MODE_AMD_OPTIMIZED</a>;</div>
+<div class="line">    mode = (<a class="code hl_enumeration" href="group__enumerations.html#gaa6e14a78bb8553e5becd26ef315995f0">ADLX_TESSELLATION_MODE</a>)(mode + index);</div>
 <div class="line">    res = tessellation-&gt;SetMode(mode);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tReturn code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetLevel(<span class="keyword">const</span> IADLX3DTessellationPtr&amp; tessellation)</div>
 <div class="line">{</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga5967c593434c0cba5891c996d64cff5c">ADLX_TESSELLATION_LEVEL</a> level;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gad220568d4b112a3a7884b9ce9d91e087">ADLX_TESSELLATION_LEVEL</a> level;</div>
 <div class="line">    tessellation-&gt;GetLevel(&amp;level);</div>
-<div class="line">    level = (level == <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca1ab9133a629987f8ca508e3d4031b4df">T_LEVEL_2X</a>) ? <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca2abb616e9496d3cfd550ac2f92c9e3ee">T_LEVEL_4X</a> : <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca1ab9133a629987f8ca508e3d4031b4df">T_LEVEL_2X</a>;</div>
+<div class="line">    level = (level == <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087ade1a612fb6e0a4a2fe21a654affeace8">T_LEVEL_2X</a>) ? T_LEVEL_4X : <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087ade1a612fb6e0a4a2fe21a654affeace8">T_LEVEL_2X</a>;</div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = tessellation-&gt;SetLevel(level);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet level: &quot;</span> &lt;&lt; Levels.find(level)-&gt;second &lt;&lt; <span class="stringliteral">&quot; res is &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
 <div class="line">}</div>
@@ -355,22 +358,22 @@ $(function(){initNavTree('cpp__tessellation.html',''); initResizable(true); });
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga5967c593434c0cba5891c996d64cff5ca07fb2f890b90b7ad6cbcf07cfbcae36c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca07fb2f890b90b7ad6cbcf07cfbcae36c">T_LEVEL_OFF</a></div><div class="ttdeci">@ T_LEVEL_OFF</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:841</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga5967c593434c0cba5891c996d64cff5ca1ab9133a629987f8ca508e3d4031b4df"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca1ab9133a629987f8ca508e3d4031b4df">T_LEVEL_2X</a></div><div class="ttdeci">@ T_LEVEL_2X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:842</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga5967c593434c0cba5891c996d64cff5ca2abb616e9496d3cfd550ac2f92c9e3ee"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca2abb616e9496d3cfd550ac2f92c9e3ee">T_LEVEL_4X</a></div><div class="ttdeci">@ T_LEVEL_4X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:843</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga5967c593434c0cba5891c996d64cff5ca4e5b2fc5d494fd9a30109f7f7038ac03"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca4e5b2fc5d494fd9a30109f7f7038ac03">T_LEVEL_32X</a></div><div class="ttdeci">@ T_LEVEL_32X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:847</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga5967c593434c0cba5891c996d64cff5ca4f8d9cec3c1ff901e46ed1e9156c7420"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca4f8d9cec3c1ff901e46ed1e9156c7420">T_LEVEL_6X</a></div><div class="ttdeci">@ T_LEVEL_6X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:844</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga5967c593434c0cba5891c996d64cff5ca81da4c659b7805407bec0d0ad595bb69"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca81da4c659b7805407bec0d0ad595bb69">T_LEVEL_16X</a></div><div class="ttdeci">@ T_LEVEL_16X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:846</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga5967c593434c0cba5891c996d64cff5cad61c7030ea4f89ca43af8d9087fafd45"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5cad61c7030ea4f89ca43af8d9087fafd45">T_LEVEL_8X</a></div><div class="ttdeci">@ T_LEVEL_8X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:845</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga5967c593434c0cba5891c996d64cff5cafc6e09b3c44597e193bedd8a592474c0"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5cafc6e09b3c44597e193bedd8a592474c0">T_LEVEL_64X</a></div><div class="ttdeci">@ T_LEVEL_64X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:848</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga7899078325beddfbe0f4e63dca8ce8caa457aa8bc48fb10ec6b107b28e56a56b5"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga7899078325beddfbe0f4e63dca8ce8caa457aa8bc48fb10ec6b107b28e56a56b5">T_MODE_OVERRIDE_APP_SETTINGS</a></div><div class="ttdeci">@ T_MODE_OVERRIDE_APP_SETTINGS</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:828</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga7899078325beddfbe0f4e63dca8ce8caa73ae5eb0bacfbde56077eea258648325"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga7899078325beddfbe0f4e63dca8ce8caa73ae5eb0bacfbde56077eea258648325">T_MODE_AMD_OPTIMIZED</a></div><div class="ttdeci">@ T_MODE_AMD_OPTIMIZED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:826</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga7899078325beddfbe0f4e63dca8ce8caa908c4c2fcd9ca251f77201ac62002b7e"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga7899078325beddfbe0f4e63dca8ce8caa908c4c2fcd9ca251f77201ac62002b7e">T_MODE_USE_APP_SETTINGS</a></div><div class="ttdeci">@ T_MODE_USE_APP_SETTINGS</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:827</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga5967c593434c0cba5891c996d64cff5c"><div class="ttname"><a href="group__enumerations.html#ga5967c593434c0cba5891c996d64cff5c">ADLX_TESSELLATION_LEVEL</a></div><div class="ttdeci">ADLX_TESSELLATION_LEVEL</div><div class="ttdoc">Indicates the tessellation level on a GPU.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:840</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga7899078325beddfbe0f4e63dca8ce8ca"><div class="ttname"><a href="group__enumerations.html#ga7899078325beddfbe0f4e63dca8ce8ca">ADLX_TESSELLATION_MODE</a></div><div class="ttdeci">ADLX_TESSELLATION_MODE</div><div class="ttdoc">Indicates the tessellation setting on a GPU.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:825</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:283</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa6e14a78bb8553e5becd26ef315995f0a43a0dca464c38a8a755987cceeba0730"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa6e14a78bb8553e5becd26ef315995f0a43a0dca464c38a8a755987cceeba0730">adlx::T_MODE_USE_APP_SETTINGS</a></div><div class="ttdeci">@ T_MODE_USE_APP_SETTINGS</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:835</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa6e14a78bb8553e5becd26ef315995f0a7d5e611b48f77f3b4f8df11d9ed8f229"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa6e14a78bb8553e5becd26ef315995f0a7d5e611b48f77f3b4f8df11d9ed8f229">adlx::T_MODE_OVERRIDE_APP_SETTINGS</a></div><div class="ttdeci">@ T_MODE_OVERRIDE_APP_SETTINGS</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:836</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaa6e14a78bb8553e5becd26ef315995f0af58cdbb88ac76b71e10d87cfce71a747"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaa6e14a78bb8553e5becd26ef315995f0af58cdbb88ac76b71e10d87cfce71a747">adlx::T_MODE_AMD_OPTIMIZED</a></div><div class="ttdeci">@ T_MODE_AMD_OPTIMIZED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:834</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gad220568d4b112a3a7884b9ce9d91e087a021b34937d19edff4113be2ccb091c40"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a021b34937d19edff4113be2ccb091c40">adlx::T_LEVEL_8X</a></div><div class="ttdeci">@ T_LEVEL_8X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:853</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gad220568d4b112a3a7884b9ce9d91e087a0e24f974e2006aa08c8195ac447de3c2"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a0e24f974e2006aa08c8195ac447de3c2">adlx::T_LEVEL_16X</a></div><div class="ttdeci">@ T_LEVEL_16X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:854</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gad220568d4b112a3a7884b9ce9d91e087a12c90bb34407646d57d0570e51f4a543"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a12c90bb34407646d57d0570e51f4a543">adlx::T_LEVEL_4X</a></div><div class="ttdeci">@ T_LEVEL_4X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:851</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gad220568d4b112a3a7884b9ce9d91e087a6a6a2c167a5b2dc7a9386c3dad16f7bd"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a6a6a2c167a5b2dc7a9386c3dad16f7bd">adlx::T_LEVEL_64X</a></div><div class="ttdeci">@ T_LEVEL_64X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:856</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gad220568d4b112a3a7884b9ce9d91e087a7dc57282466e47985ee12cc9b635f49e"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a7dc57282466e47985ee12cc9b635f49e">adlx::T_LEVEL_OFF</a></div><div class="ttdeci">@ T_LEVEL_OFF</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:849</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gad220568d4b112a3a7884b9ce9d91e087a8cabc82063a6f4b65bea6f3ec2d1e307"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a8cabc82063a6f4b65bea6f3ec2d1e307">adlx::T_LEVEL_32X</a></div><div class="ttdeci">@ T_LEVEL_32X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:855</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gad220568d4b112a3a7884b9ce9d91e087ade1a612fb6e0a4a2fe21a654affeace8"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087ade1a612fb6e0a4a2fe21a654affeace8">adlx::T_LEVEL_2X</a></div><div class="ttdeci">@ T_LEVEL_2X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:850</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gad220568d4b112a3a7884b9ce9d91e087ae58165293933402f57c51215a4519d6f"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087ae58165293933402f57c51215a4519d6f">adlx::T_LEVEL_6X</a></div><div class="ttdeci">@ T_LEVEL_6X</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:852</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
+<div class="ttc" id="agroup__enumerations_html_gaa6e14a78bb8553e5becd26ef315995f0"><div class="ttname"><a href="group__enumerations.html#gaa6e14a78bb8553e5becd26ef315995f0">adlx::ADLX_TESSELLATION_MODE</a></div><div class="ttdeci">ADLX_TESSELLATION_MODE</div><div class="ttdoc">Indicates the tessellation setting on a GPU.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:833</div></div>
+<div class="ttc" id="agroup__enumerations_html_gad220568d4b112a3a7884b9ce9d91e087"><div class="ttname"><a href="group__enumerations.html#gad220568d4b112a3a7884b9ce9d91e087">adlx::ADLX_TESSELLATION_LEVEL</a></div><div class="ttdeci">ADLX_TESSELLATION_LEVEL</div><div class="ttdoc">Indicates the tessellation level on a GPU.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:848</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

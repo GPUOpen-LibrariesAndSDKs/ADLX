@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -27,16 +27,16 @@ void ShowSupport(IADLXInterfacePtr& vramTuningIfc);
 void GetState(IADLXInterfacePtr& vramTuningIfc);
 
 // Set Memory Timing Level
-void SetTimingLevel(IADLXInterfacePtr& vramTuningIfc);
+void SetTimingLevel(IADLXInterfacePtr& vramTuningIfc, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);
 
 // Set VRAM state
-void SetState(IADLXInterfacePtr& vramTuningIfc);
+void SetState(IADLXInterfacePtr& vramTuningIfc, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);
 
 // Main menu
-void MainMenu(IADLXInterfacePtr& vramTuningIfc);
+void MainMenu(IADLXInterfacePtr& vramTuningIfc, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);
 
 // Menu action control
-void MenuControl(IADLXInterfacePtr vramTuningIfc);
+void MenuControl(IADLXInterfacePtr vramTuningIfc, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);
 
 // Wait for exit with error message
 int WaitAndExit(const char* msg, const int retCode);
@@ -64,6 +64,9 @@ int main()
                 IADLXGPUPtr gpu;
                 adlx_uint index = 0;
                 res = gpus->At(index, &gpu);
+                const char* gpuName = nullptr;
+                res = gpu->Name(&gpuName);
+                std::cout << "\t" << gpuName << " is selected." << std::endl;
                 if (ADLX_SUCCEEDED(res))
                 {
                     // Get manual VRAM tuning support
@@ -78,8 +81,8 @@ int main()
                         res = gpuTuningService->GetManualVRAMTuning(gpu, &vramTuningIfc);
                         if (ADLX_SUCCEEDED(res))
                         {
-                            MainMenu(vramTuningIfc);
-                            MenuControl(vramTuningIfc);
+                            MainMenu(vramTuningIfc, gpuTuningService, gpu);
+                            MenuControl(vramTuningIfc, gpuTuningService, gpu);
                         }
                     }
                     else
@@ -203,7 +206,7 @@ void GetState(IADLXInterfacePtr& vramTuningIfc)
     std::cout << std::endl;
 }
 
-void SetTimingLevel(IADLXInterfacePtr& vramTuningIfc)
+void SetTimingLevel(IADLXInterfacePtr& vramTuningIfc, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)
 {
     ADLX_RESULT res;
     IADLXManualVRAMTuning2Ptr vramTuning2(vramTuningIfc);
@@ -229,6 +232,15 @@ void SetTimingLevel(IADLXInterfacePtr& vramTuningIfc)
                     if (currentDesc != desc)
                     {
                         res = vramTuning2->SetMemoryTimingDescription(desc);
+                        if (ADLX_RESET_NEEDED == res)
+                        {
+                            res = gpuTuningService->ResetToFactory(oneGPU);
+                            if (ADLX_SUCCEEDED(res))
+                            {
+                                res = vramTuning2->SetMemoryTimingDescription(desc);
+                            }
+                        }
+
                         std::cout << "\tSet Memory Timing description to " << descMap[desc] << ": return code is: " << res << " (0 means success)" << std::endl;
                         break;
                     }
@@ -279,7 +291,7 @@ void SetTimingLevel(IADLXInterfacePtr& vramTuningIfc)
     }
 }
 
-void SetState(IADLXInterfacePtr& vramTuningIfc)
+void SetState(IADLXInterfacePtr& vramTuningIfc, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)
 {
     ADLX_RESULT res;
     IADLXManualVRAMTuning2Ptr vramTuning2(vramTuningIfc);
@@ -298,11 +310,29 @@ void SetState(IADLXInterfacePtr& vramTuningIfc)
             if (freq != rang.minValue)
             {
                 res = vramTuning2->SetMaxVRAMFrequency(rang.minValue);
+                if (ADLX_RESET_NEEDED == res)
+                {
+                    res = gpuTuningService->ResetToFactory(oneGPU);
+                    if (ADLX_SUCCEEDED(res))
+                    {
+                        res = vramTuning2->SetMaxVRAMFrequency(rang.minValue);
+                    }
+                }
+
                 std::cout << "\tUse min Frequency to set, return code(0 is Success) is: " << res << std::endl;
             }
             else
             {
                 res = vramTuning2->SetMaxVRAMFrequency(rang.minValue + rang.step * 2);
+                if (ADLX_RESET_NEEDED == res)
+                {
+                    res = gpuTuningService->ResetToFactory(oneGPU);
+                    if (ADLX_SUCCEEDED(res))
+                    {
+                        res = vramTuning2->SetMaxVRAMFrequency(rang.minValue + rang.step * 2);
+                    }
+                }
+
                 std::cout << "\tUse max Frequency to set, return code(0 is Success) is: " << res << std::endl;
             }
         }
@@ -333,10 +363,34 @@ void SetState(IADLXInterfacePtr& vramTuningIfc)
                 state->GetVoltage(&voltage);
                 // Only change the last
                 res = state->SetFrequency(frequencyRange.maxValue - frequencyRange.step * 10);
+                if (ADLX_RESET_NEEDED == res)
+                {
+                    res = gpuTuningService->ResetToFactory(oneGPU);
+                    if (ADLX_SUCCEEDED(res))
+                    {
+                        res = state->SetFrequency(frequencyRange.maxValue - frequencyRange.step * 10);
+                    }
+                }
                 res = state->SetVoltage(voltageRange.maxValue - voltageRange.step * 10);
+                if (ADLX_RESET_NEEDED == res)
+                {
+                    res = gpuTuningService->ResetToFactory(oneGPU);
+                    if (ADLX_SUCCEEDED(res))
+                    {
+                        res = state->SetVoltage(voltageRange.maxValue - voltageRange.step * 10);
+                    }
+                }
                 break;
             }
             res = vramTuning1->SetVRAMTuningStates(states);
+            if (ADLX_RESET_NEEDED == res)
+            {
+                res = gpuTuningService->ResetToFactory(oneGPU);
+                if (ADLX_SUCCEEDED(res))
+                {
+                    res = vramTuning1->SetVRAMTuningStates(states);
+                }
+            }
             std::cout << "\tChange VRAM tuning states, return code(0 is Success) is: " << res << std::endl;
         }
         else
@@ -346,7 +400,7 @@ void SetState(IADLXInterfacePtr& vramTuningIfc)
     }
 }
 
-void MainMenu(IADLXInterfacePtr& vramTuningIfc)
+void MainMenu(IADLXInterfacePtr& vramTuningIfc, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)
 {
     // Acquire to ManualVRAMTuning1
     IADLXManualVRAMTuning1Ptr vramTuning1(vramTuningIfc);
@@ -372,7 +426,7 @@ void MainMenu(IADLXInterfacePtr& vramTuningIfc)
     std::cout << "\t->Press M/m to display main menu options" << std::endl;
 }
 
-void MenuControl(IADLXInterfacePtr vramTuningIfc)
+void MenuControl(IADLXInterfacePtr vramTuningIfc, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)
 {
     int num = 0;
     while ((num = getchar()) != 'q' && num != 'Q')
@@ -391,18 +445,18 @@ void MenuControl(IADLXInterfacePtr vramTuningIfc)
 
         // Set timing level
         case '3':
-            SetTimingLevel(vramTuningIfc);
+            SetTimingLevel(vramTuningIfc,  gpuTuningService,  oneGPU);
             break;
 
         // Set VRAM state
         case '4':
-            SetState(vramTuningIfc);
+            SetState(vramTuningIfc,  gpuTuningService,  oneGPU);
             break;
 
         // Display menu options
         case 'm':
         case 'M':
-            MainMenu(vramTuningIfc);
+            MainMenu(vramTuningIfc, gpuTuningService, oneGPU);
             break;
         default:
             break;

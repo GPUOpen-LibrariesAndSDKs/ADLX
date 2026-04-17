@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('c__manual_graphics_tuning.html',''); initResizable(tru
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -142,7 +142,7 @@ $(function(){initNavTree('c__manual_graphics_tuning.html',''); initResizable(tru
 </html>
  <h2>Code </h2>
 <div class="codeHeader"><span class="language">C</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -542,9 +542,9 @@ $(function(){initNavTree('c__manual_graphics_tuning.html',''); initResizable(tru
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res= manualGFXTuning2-&gt;pVtbl-&gt;GetGPUMinFrequencyRange(manualGFXTuning2, &amp;freqRange);</div>
 <div class="line">    printf(<span class="stringliteral">&quot;\tGPU minimum frequency range: (%d, %d), return code is: %d(0 means success)\n&quot;</span>, freqRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, freqRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>, res);</div>
 <div class="line">    res = manualGFXTuning2-&gt;pVtbl-&gt;GetGPUMaxFrequencyRange(manualGFXTuning2, &amp;freqRange);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tGPU maximum frequency (offset) range: (%d, %d), return code is: %d(0 means success)\n&quot;</span>, freqRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, freqRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>, res);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tGPU maximum frequency range: (%d, %d), return code is: %d(0 means success)\n&quot;</span>, freqRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, freqRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>, res);</div>
 <div class="line">    res = manualGFXTuning2-&gt;pVtbl-&gt;GetGPUVoltageRange(manualGFXTuning2, &amp;voltRange);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tVoltage (offset) range: (%d, %d), return code is: %d(0 means success)\n&quot;</span>, voltRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, voltRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>, res);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tVoltage range: (%d, %d), return code is: %d(0 means success)\n&quot;</span>, voltRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>, voltRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a>, res);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Display current GPU tuning states</span></div>
@@ -554,9 +554,9 @@ $(function(){initNavTree('c__manual_graphics_tuning.html',''); initResizable(tru
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = manualGFXTuning2-&gt;pVtbl-&gt;GetGPUMinFrequency(manualGFXTuning2, &amp;minFreq);</div>
 <div class="line">    printf(<span class="stringliteral">&quot;\tCurrent GPU minimum frequency: %d, return code is: %d(0 means success)\n&quot;</span>, minFreq, res);</div>
 <div class="line">    res = manualGFXTuning2-&gt;pVtbl-&gt;GetGPUMaxFrequency(manualGFXTuning2, &amp;maxFreq);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tCurrent GPU maximum frequency (offset): %d, return code is: %d(0 means success)\n&quot;</span>, maxFreq, res);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tCurrent GPU maximum frequency: %d, return code is: %d(0 means success)\n&quot;</span>, maxFreq, res);</div>
 <div class="line">    res = manualGFXTuning2-&gt;pVtbl-&gt;GetGPUVoltage(manualGFXTuning2, &amp;volt);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tCurrent GPU clock voltage (offset): %d, return code is: %d(0 means success)\n&quot;</span>, volt, res);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tCurrent GPU clock voltage: %d, return code is: %d(0 means success)\n&quot;</span>, volt, res);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> GetDefaultStates2(IADLXManualGraphicsTuning2* manualGFXTuning2)</div>
@@ -569,9 +569,9 @@ $(function(){initNavTree('c__manual_graphics_tuning.html',''); initResizable(tru
 <div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = manualFanTuning2_1-&gt;pVtbl-&gt;GetGPUMinFrequencyDefault(manualFanTuning2_1, &amp;minFreq);</div>
 <div class="line">        printf(<span class="stringliteral">&quot;\tDefault GPU minimum frequency: %d, return code is: %d(0 means success)\n&quot;</span>, minFreq, res);</div>
 <div class="line">        res = manualFanTuning2_1-&gt;pVtbl-&gt;GetGPUMaxFrequencyDefault(manualFanTuning2_1, &amp;maxFreq);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;\tDefault GPU maximum frequency (offset): %d, return code is: %d(0 means success)\n&quot;</span>, maxFreq, res);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tDefault GPU maximum frequency: %d, return code is: %d(0 means success)\n&quot;</span>, maxFreq, res);</div>
 <div class="line">        res = manualFanTuning2_1-&gt;pVtbl-&gt;GetGPUVoltageDefault(manualFanTuning2_1, &amp;volt);</div>
-<div class="line">        printf(<span class="stringliteral">&quot;\tDefault GPU clock voltage (offset): %d, return code is: %d(0 means success)\n&quot;</span>, volt, res);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tDefault GPU clock voltage: %d, return code is: %d(0 means success)\n&quot;</span>, volt, res);</div>
 <div class="line"> </div>
 <div class="line">        <span class="comment">// release manualFanTuning2_1</span></div>
 <div class="line">        manualFanTuning2_1-&gt;pVtbl-&gt;Release(manualFanTuning2_1);</div>
@@ -587,25 +587,25 @@ $(function(){initNavTree('c__manual_graphics_tuning.html',''); initResizable(tru
 <div class="line">    res = manualGFXTuning2-&gt;pVtbl-&gt;SetGPUMinFrequency(manualGFXTuning2, freqRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>);</div>
 <div class="line">    printf (<span class="stringliteral">&quot;\tSet GPU min frequency %s\n&quot;</span>, (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>));</div>
 <div class="line">    res = manualGFXTuning2-&gt;pVtbl-&gt;SetGPUMaxFrequency(manualGFXTuning2, freqRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + 100);</div>
-<div class="line">    printf (<span class="stringliteral">&quot;\tSet GPU max frequency (offset) %s\n&quot;</span>, (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>));</div>
+<div class="line">    printf (<span class="stringliteral">&quot;\tSet GPU max frequency %s\n&quot;</span>, (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>));</div>
 <div class="line">    res = manualGFXTuning2-&gt;pVtbl-&gt;SetGPUVoltage(manualGFXTuning2, voltRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a> + (voltRange.<a class="code hl_variable" href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">maxValue</a> - voltRange.<a class="code hl_variable" href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">minValue</a>) / 2);</div>
-<div class="line">    printf (<span class="stringliteral">&quot;\tSet GPU voltage (offset) %s\n&quot;</span>, (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>));</div>
+<div class="line">    printf (<span class="stringliteral">&quot;\tSet GPU voltage %s\n&quot;</span>, (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>));</div>
 <div class="line">    printf(<span class="stringliteral">&quot;\tAfter setting:\n&quot;</span>);</div>
 <div class="line">    adlx_int minFreq = 0, maxFreq = 0, volt = 0;</div>
 <div class="line">    res = manualGFXTuning2-&gt;pVtbl-&gt;GetGPUMinFrequency(manualGFXTuning2, &amp;minFreq);</div>
 <div class="line">    printf(<span class="stringliteral">&quot;\tCurrent GPU min frequency: %d, return code is: %d(0 means success)\n&quot;</span>, minFreq, res);</div>
 <div class="line">    res = manualGFXTuning2-&gt;pVtbl-&gt;GetGPUMaxFrequency(manualGFXTuning2, &amp;maxFreq);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tCurrent GPU max frequency (offset): %d, return code is: %d(0 means success)\n&quot;</span>, maxFreq, res);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tCurrent GPU max frequency: %d, return code is: %d(0 means success)\n&quot;</span>, maxFreq, res);</div>
 <div class="line">    res = manualGFXTuning2-&gt;pVtbl-&gt;GetGPUVoltage(manualGFXTuning2, &amp;volt);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tCurrent GPU clock voltage (offset): %d, return code is: %d(0 means success)\n&quot;</span>, volt, res);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tCurrent GPU clock voltage: %d, return code is: %d(0 means success)\n&quot;</span>, volt, res);</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_ga6ea0e7f02e40768a1e47cb60e0e6f482"><div class="ttname"><a href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a></div><div class="ttdeci">#define ADLX_FAILED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:319</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
-<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:154</div></div>
-<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:153</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:152</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:283</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_ga6ea0e7f02e40768a1e47cb60e0e6f482"><div class="ttname"><a href="group___a_d_l_x_macro.html#ga6ea0e7f02e40768a1e47cb60e0e6f482">ADLX_FAILED</a></div><div class="ttdeci">#define ADLX_FAILED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:321</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
+<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:158</div></div>
+<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:157</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:156</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

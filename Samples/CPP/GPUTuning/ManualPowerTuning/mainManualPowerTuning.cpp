@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ static ADLXHelper g_ADLXHelp;
 void MainMenu();
 
 // Menu action control
-void MenuControl(IADLXManualPowerTuningPtr manualPowerTuning);
+void MenuControl(IADLXManualPowerTuningPtr manualPowerTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);
 
 // Wait for exit with error message
 int WaitAndExit(const char* msg, const int retCode);
@@ -38,7 +38,7 @@ void ShowGetPowerLimit(IADLXManualPowerTuningPtr manualPowerTuning);
 void ShowGetPowerLimitDefault(IADLXManualPowerTuningPtr manualPowerTuning);
 
 // Set power limit
-void ShowSetPowerLimit(IADLXManualPowerTuningPtr manualPowerTuning);
+void ShowSetPowerLimit(IADLXManualPowerTuningPtr manualPowerTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);
 
 //Show to check TDC  limit is supported
 void ShowTDCLimitSupported(IADLXManualPowerTuningPtr manualPowerTuning);
@@ -53,7 +53,7 @@ void ShowGetTDCLimit(IADLXManualPowerTuningPtr manualPowerTuning);
 void ShowGetTDCLimitDefault(IADLXManualPowerTuningPtr manualPowerTuning);
 
 // Show how to set TDC limit.
-void ShowSetTDCLimit(IADLXManualPowerTuningPtr manualPowerTuning);
+void ShowSetTDCLimit(IADLXManualPowerTuningPtr manualPowerTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);
 
 int main()
 {
@@ -80,6 +80,9 @@ int main()
         }
         IADLXGPUPtr oneGPU;
         res = gpus->At(0, &oneGPU);
+        const char* gpuName = nullptr;
+        res = oneGPU->Name(&gpuName);
+        std::cout << "\t" << gpuName << " is selected." << std::endl;
         if (ADLX_FAILED (res) || oneGPU == nullptr)
         {
             std::cout << "\tGet GPU failed " << std::endl;
@@ -109,7 +112,7 @@ int main()
         MainMenu();
 
         // Get and execute the choice
-        MenuControl(manualPowerTuning);
+        MenuControl(manualPowerTuning, gpuTuningService,oneGPU);
     }
     else
         return WaitAndExit("\tg_ADLXHelp initialize failed", 0);
@@ -144,7 +147,7 @@ void MainMenu()
 }
 
 // Menu action control
-void MenuControl(IADLXManualPowerTuningPtr manualPowerTuning)
+void MenuControl(IADLXManualPowerTuningPtr manualPowerTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)
 {
     int num = 0;
     while ((num = getchar()) != 'q' && num != 'Q')
@@ -163,7 +166,7 @@ void MenuControl(IADLXManualPowerTuningPtr manualPowerTuning)
 
         // Set power limit
         case '3':
-            ShowSetPowerLimit(manualPowerTuning);
+            ShowSetPowerLimit(manualPowerTuning, gpuTuningService,  oneGPU);
             break;
             // Show to check if TDCLimit is supported
         case '4':
@@ -181,7 +184,7 @@ void MenuControl(IADLXManualPowerTuningPtr manualPowerTuning)
 
             // Show how to set TDC limit.
         case '7':
-            ShowSetTDCLimit(manualPowerTuning);
+            ShowSetTDCLimit(manualPowerTuning, gpuTuningService,  oneGPU);
             break;
 
             // Display default power limit
@@ -248,11 +251,20 @@ void ShowGetPowerLimitDefault(IADLXManualPowerTuningPtr manualPowerTuning)
 }
 
 // Set power limit
-void ShowSetPowerLimit(IADLXManualPowerTuningPtr manualPowerTuning)
+void ShowSetPowerLimit(IADLXManualPowerTuningPtr manualPowerTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)
 {
     ADLX_IntRange powerRange;
     ADLX_RESULT res = manualPowerTuning->GetPowerLimitRange(&powerRange);
     res = manualPowerTuning->SetPowerLimit(powerRange.step + powerRange.minValue + (powerRange.maxValue - powerRange.minValue) / 2);
+    if (ADLX_RESET_NEEDED == res)
+    {
+        res = gpuTuningService->ResetToFactory(oneGPU);
+        if (ADLX_SUCCEEDED(res))
+        {
+            res = manualPowerTuning->SetPowerLimit(powerRange.step + powerRange.minValue + (powerRange.maxValue - powerRange.minValue) / 2);
+        }
+    }
+
     std::cout << "\tSet power limit " << (ADLX_SUCCEEDED (res) ? "succeeded" : "failed") << std::endl;
     adlx_int powerLimit;
     res = manualPowerTuning->GetPowerLimit(&powerLimit);
@@ -299,12 +311,20 @@ void ShowGetTDCLimitDefault(IADLXManualPowerTuningPtr manualPowerTuning)
 }
 
 // Show how to set TDC limit.
-void ShowSetTDCLimit(IADLXManualPowerTuningPtr manualPowerTuning)
+void ShowSetTDCLimit(IADLXManualPowerTuningPtr manualPowerTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)
 {
     ADLX_IntRange tdcRange;
     ADLX_RESULT res = manualPowerTuning->GetTDCLimitRange(&tdcRange);
 
     res = manualPowerTuning->SetTDCLimit(tdcRange.step + tdcRange.minValue + (tdcRange.maxValue - tdcRange.minValue) / 2);
+    if (ADLX_RESET_NEEDED == res)
+    {
+        res = gpuTuningService->ResetToFactory(oneGPU);
+        if (ADLX_SUCCEEDED(res))
+        {
+            res = manualPowerTuning->SetTDCLimit(tdcRange.step + tdcRange.minValue + (tdcRange.maxValue - tdcRange.minValue) / 2);
+        }
+    }
     adlx_int tdcLimit;
     res = manualPowerTuning->GetTDCLimit (&tdcLimit);
     std::cout << "\tSet current TDC limit to: " << tdcLimit << ", return code (0 is Success) is: " << res << std::endl;

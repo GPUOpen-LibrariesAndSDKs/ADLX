@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2023 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -298,6 +298,10 @@ void ShowSmartShiftEcoEnabledState(IADLXSmartShiftEco* smartShiftEco)
         if (ADLX_SUCCEEDED(res))
             printf("\tIs AMD SmartShift Eco enabled: %d\n", enabled);
     }
+    else
+    {
+        printf("\tReturn code is: %d (0 means success)\n", res);
+    }
 }
 
 // Set AMD SmartShift Eco enabled state
@@ -322,6 +326,10 @@ void SetSmartShiftEcoEnabledState(IADLXSmartShiftEco* smartShiftEco)
         if (ADLX_SUCCEEDED(res))
             printf("\tAfter set, the AMD SmartShift Eco enable state is: %d\n", enabled);
     }
+    else
+    {
+        printf("\tReturn code is: %d (0 means success)\n", res);
+    }
 }
 
 // Display AMD SmartShift Eco inactive state
@@ -345,6 +353,10 @@ void ShowSmartShiftEcoInactiveState(IADLXSmartShiftEco* smartShiftEco)
                 printf("\tIs AMD SmartShift Eco inactive reason: %d\n", reason);
             }
         }
+    }
+    else
+    {
+        printf("\tReturn code is: %d (0 means success)\n", res);
     }
 }
 

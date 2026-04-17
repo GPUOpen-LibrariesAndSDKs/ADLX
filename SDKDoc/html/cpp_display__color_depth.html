@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('cpp_display__color_depth.html',''); initResizable(true
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -144,7 +144,7 @@ $(function(){initNavTree('cpp_display__color_depth.html',''); initResizable(true
 </html>
  <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -279,18 +279,19 @@ $(function(){initNavTree('cpp_display__color_depth.html',''); initResizable(true
 <div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedBPC_16, result &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot; BPC_16 support: &quot;</span> &lt;&lt; isSupported &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">        <span class="keyword">const</span> std::unordered_map&lt;ADLX_COLOR_DEPTH, std::string&gt; colorDepthMap{</div>
-<div class="line">            {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga75858347333129a462cee4fdf4729d6ba2979beb1814574eb6d8a2d8bf7adca5c">BPC_6</a>, <span class="stringliteral">&quot;BPC_6&quot;</span>},</div>
-<div class="line">            {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga75858347333129a462cee4fdf4729d6ba156db294ea7f1db8499f7c059343a5b4">BPC_8</a>, <span class="stringliteral">&quot;BPC_8&quot;</span>},</div>
-<div class="line">            {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga75858347333129a462cee4fdf4729d6baaf8c112f48f64b58156bcbd3368fee1e">BPC_10</a>, <span class="stringliteral">&quot;BPC_10&quot;</span>},</div>
-<div class="line">            {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga75858347333129a462cee4fdf4729d6baba8a9bc6354201651acc2dfed9bce5be">BPC_12</a>, <span class="stringliteral">&quot;BPC_12&quot;</span>},</div>
-<div class="line">            {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga75858347333129a462cee4fdf4729d6bae6150c4c30145fa7b316577e56dfecf0">BPC_14</a>, <span class="stringliteral">&quot;BPC_14&quot;</span>},</div>
-<div class="line">            {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga75858347333129a462cee4fdf4729d6bab3d477dbdc1ade25a89485357b8ee0ca">BPC_16</a>, <span class="stringliteral">&quot;BPC_16&quot;</span>}</div>
+<div class="line">            {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga959bfe96f9170a25d8dd9f7b893ff29cac3150a98101a7943f9239b80de096620">BPC_6</a>, <span class="stringliteral">&quot;BPC_6&quot;</span>},</div>
+<div class="line">            {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga959bfe96f9170a25d8dd9f7b893ff29caafee8fa0444dd958a054c617540eabeb">BPC_8</a>, <span class="stringliteral">&quot;BPC_8&quot;</span>},</div>
+<div class="line">            {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga959bfe96f9170a25d8dd9f7b893ff29ca2e0b7fb8be8c6f4e673fa78d50a7ac11">BPC_10</a>, <span class="stringliteral">&quot;BPC_10&quot;</span>},</div>
+<div class="line">            {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga959bfe96f9170a25d8dd9f7b893ff29ca9fe6c55168ef35a41bfe87ae9e7051a5">BPC_12</a>, <span class="stringliteral">&quot;BPC_12&quot;</span>},</div>
+<div class="line">            {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga959bfe96f9170a25d8dd9f7b893ff29ca6fa4e89a328ee88bb4a2cdbf8d09e786">BPC_14</a>, <span class="stringliteral">&quot;BPC_14&quot;</span>},</div>
+<div class="line">            {<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga959bfe96f9170a25d8dd9f7b893ff29cafbe09e865a5d161497fc9a86e1b0ff79">BPC_16</a>, <span class="stringliteral">&quot;BPC_16&quot;</span>}</div>
 <div class="line">        };</div>
 <div class="line">        for_each (colorDepthMap.begin (), colorDepthMap.end (), [&amp;](<span class="keyword">auto</span> colorDepth) {</div>
 <div class="line">            res = displayColorDepth-&gt;IsSupportedColorDepth (colorDepth.first, &amp;isSupported);</div>
 <div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupported&quot;</span> &lt;&lt; colorDepth.second &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; isSupported &lt;&lt; std::endl;</div>
 <div class="line">        });</div>
 <div class="line">    }</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tReturn code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> GetColorDepthState(<span class="keyword">const</span> IADLXDisplayServicesPtr&amp; displayService, <span class="keyword">const</span> IADLXDisplayPtr&amp; display)</div>
@@ -301,7 +302,7 @@ $(function(){initNavTree('cpp_display__color_depth.html',''); initResizable(true
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
 <div class="line">    {</div>
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;  === Get color depth enabled status ===&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#ga75858347333129a462cee4fdf4729d6b">ADLX_COLOR_DEPTH</a> cd = BPC_UNKNOWN;</div>
+<div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#ga959bfe96f9170a25d8dd9f7b893ff29c">ADLX_COLOR_DEPTH</a> cd = BPC_UNKNOWN;</div>
 <div class="line">        res = displayColorDepth-&gt;GetValue(&amp;cd);</div>
 <div class="line">        std::string cdStr = <span class="stringliteral">&quot;BPC_Unknown&quot;</span>;</div>
 <div class="line">        <span class="keyword">auto</span> searchIter = colorDepthMap.find(cd);</div>
@@ -325,15 +326,15 @@ $(function(){initNavTree('cpp_display__color_depth.html',''); initResizable(true
 <div class="line">        {</div>
 <div class="line">            <span class="comment">// set ColorDepth BPC_6</span></div>
 <div class="line">        <span class="keywordflow">case</span> 0:</div>
-<div class="line">            res = displayColorDepth-&gt;SetValue(<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga75858347333129a462cee4fdf4729d6ba2979beb1814574eb6d8a2d8bf7adca5c">BPC_6</a>);</div>
+<div class="line">            res = displayColorDepth-&gt;SetValue(BPC_6);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">            <span class="comment">// set ColorDepth BPC_8</span></div>
 <div class="line">        <span class="keywordflow">case</span> 1:</div>
-<div class="line">            res = displayColorDepth-&gt;SetValue(<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga75858347333129a462cee4fdf4729d6ba156db294ea7f1db8499f7c059343a5b4">BPC_8</a>);</div>
+<div class="line">            res = displayColorDepth-&gt;SetValue(BPC_8);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">            <span class="comment">// set ColorDepth BPC_10</span></div>
 <div class="line">        <span class="keywordflow">case</span> 2:</div>
-<div class="line">            res = displayColorDepth-&gt;SetValue(<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga75858347333129a462cee4fdf4729d6baaf8c112f48f64b58156bcbd3368fee1e">BPC_10</a>);</div>
+<div class="line">            res = displayColorDepth-&gt;SetValue(BPC_10);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">default</span>:</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
@@ -409,16 +410,16 @@ $(function(){initNavTree('cpp_display__color_depth.html',''); initResizable(true
 <div class="line">    system(<span class="stringliteral">&quot;Pause&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">return</span> retCode;</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga75858347333129a462cee4fdf4729d6ba156db294ea7f1db8499f7c059343a5b4"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga75858347333129a462cee4fdf4729d6ba156db294ea7f1db8499f7c059343a5b4">BPC_8</a></div><div class="ttdeci">@ BPC_8</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:685</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga75858347333129a462cee4fdf4729d6ba2979beb1814574eb6d8a2d8bf7adca5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga75858347333129a462cee4fdf4729d6ba2979beb1814574eb6d8a2d8bf7adca5c">BPC_6</a></div><div class="ttdeci">@ BPC_6</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:684</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga75858347333129a462cee4fdf4729d6baaf8c112f48f64b58156bcbd3368fee1e"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga75858347333129a462cee4fdf4729d6baaf8c112f48f64b58156bcbd3368fee1e">BPC_10</a></div><div class="ttdeci">@ BPC_10</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:686</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga75858347333129a462cee4fdf4729d6bab3d477dbdc1ade25a89485357b8ee0ca"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga75858347333129a462cee4fdf4729d6bab3d477dbdc1ade25a89485357b8ee0ca">BPC_16</a></div><div class="ttdeci">@ BPC_16</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:689</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga75858347333129a462cee4fdf4729d6baba8a9bc6354201651acc2dfed9bce5be"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga75858347333129a462cee4fdf4729d6baba8a9bc6354201651acc2dfed9bce5be">BPC_12</a></div><div class="ttdeci">@ BPC_12</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:687</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga75858347333129a462cee4fdf4729d6bae6150c4c30145fa7b316577e56dfecf0"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga75858347333129a462cee4fdf4729d6bae6150c4c30145fa7b316577e56dfecf0">BPC_14</a></div><div class="ttdeci">@ BPC_14</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:688</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga75858347333129a462cee4fdf4729d6b"><div class="ttname"><a href="group__enumerations.html#ga75858347333129a462cee4fdf4729d6b">ADLX_COLOR_DEPTH</a></div><div class="ttdeci">ADLX_COLOR_DEPTH</div><div class="ttdoc">Indicates the color/bit depth, which is the number of bits used to indicate the color of a single pix...</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:682</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:283</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga959bfe96f9170a25d8dd9f7b893ff29ca2e0b7fb8be8c6f4e673fa78d50a7ac11"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga959bfe96f9170a25d8dd9f7b893ff29ca2e0b7fb8be8c6f4e673fa78d50a7ac11">adlx::BPC_10</a></div><div class="ttdeci">@ BPC_10</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:694</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga959bfe96f9170a25d8dd9f7b893ff29ca6fa4e89a328ee88bb4a2cdbf8d09e786"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga959bfe96f9170a25d8dd9f7b893ff29ca6fa4e89a328ee88bb4a2cdbf8d09e786">adlx::BPC_14</a></div><div class="ttdeci">@ BPC_14</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:696</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga959bfe96f9170a25d8dd9f7b893ff29ca9fe6c55168ef35a41bfe87ae9e7051a5"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga959bfe96f9170a25d8dd9f7b893ff29ca9fe6c55168ef35a41bfe87ae9e7051a5">adlx::BPC_12</a></div><div class="ttdeci">@ BPC_12</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:695</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga959bfe96f9170a25d8dd9f7b893ff29caafee8fa0444dd958a054c617540eabeb"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga959bfe96f9170a25d8dd9f7b893ff29caafee8fa0444dd958a054c617540eabeb">adlx::BPC_8</a></div><div class="ttdeci">@ BPC_8</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:693</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga959bfe96f9170a25d8dd9f7b893ff29cac3150a98101a7943f9239b80de096620"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga959bfe96f9170a25d8dd9f7b893ff29cac3150a98101a7943f9239b80de096620">adlx::BPC_6</a></div><div class="ttdeci">@ BPC_6</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:692</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga959bfe96f9170a25d8dd9f7b893ff29cafbe09e865a5d161497fc9a86e1b0ff79"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga959bfe96f9170a25d8dd9f7b893ff29cafbe09e865a5d161497fc9a86e1b0ff79">adlx::BPC_16</a></div><div class="ttdeci">@ BPC_16</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:697</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga959bfe96f9170a25d8dd9f7b893ff29c"><div class="ttname"><a href="group__enumerations.html#ga959bfe96f9170a25d8dd9f7b893ff29c">adlx::ADLX_COLOR_DEPTH</a></div><div class="ttdeci">ADLX_COLOR_DEPTH</div><div class="ttdoc">Indicates the color/bit depth, which is the number of bits used to indicate the color of a single pix...</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:690</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

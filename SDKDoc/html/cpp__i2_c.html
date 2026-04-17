@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('cpp__i2_c.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -142,7 +142,7 @@ $(function(){initNavTree('cpp__i2_c.html',''); initResizable(true); });
 </html>
  <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -197,12 +197,15 @@ $(function(){initNavTree('cpp__i2_c.html',''); initResizable(true); });
 <div class="line">        IADLXGPUListPtr gpus;</div>
 <div class="line">        res = g_ADLXHelp.GetSystemServices()-&gt;GetGPUs(&amp;gpus);</div>
 <div class="line"> </div>
-<div class="line">        <span class="keywordflow">if</span> (!gpus-&gt;Empty() &amp;&amp; <a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res) &amp;&amp; !gpus-&gt;Empty())</div>
 <div class="line">        {</div>
 <div class="line">            <span class="comment">// Get GPU interface</span></div>
 <div class="line">            IADLXGPUPtr gpuInfo;</div>
 <div class="line">            adlx_uint index = 0;</div>
 <div class="line">            res = gpus-&gt;At(index, &amp;gpuInfo);</div>
+<div class="line">            <span class="keyword">const</span> <span class="keywordtype">char</span>* gpuName = <span class="keyword">nullptr</span>;</div>
+<div class="line">            res = gpuInfo-&gt;Name(&amp;gpuName);</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; gpuName &lt;&lt; <span class="stringliteral">&quot; is selected.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Get I2C interface</span></div>
 <div class="line">            IADLXI2CPtr i2c;</div>
@@ -246,7 +249,7 @@ $(function(){initNavTree('cpp__i2_c.html',''); initResizable(true); });
 <div class="line">{</div>
 <div class="line">    <span class="comment">// The following is hardware specific</span></div>
 <div class="line">    adlx_byte data[DATA_SIZE] = { 0 };</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = i2c-&gt;Read(<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga75eb2c93942ff81ff1cbeef647c2cf67a397ea3400420f6a75ec671eec8318bd9">I2C_LINE_OEM2</a>, 100, 0x93, 0x30, DATA_SIZE, data);</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = i2c-&gt;Read(I2C_LINE_OEM2, 100, 0x93, 0x30, DATA_SIZE, data);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tI2C read info:\n&quot;</span> </div>
 <div class="line">    &lt;&lt; <span class="stringliteral">&quot;\t\tline: I2C_LINE_OEM2\n\t\tspeed: 100\n\t\taddress: 0x93\n\t\toffset: 0x30\n\t\tdataSize: &quot;</span></div>
 <div class="line">    &lt;&lt; DATA_SIZE &lt;&lt; <span class="stringliteral">&quot;\n\t\tdata: &quot;</span> &lt;&lt; (int)data[0] &lt;&lt; std::endl;</div>
@@ -257,7 +260,7 @@ $(function(){initNavTree('cpp__i2_c.html',''); initResizable(true); });
 <div class="line">{</div>
 <div class="line">    <span class="comment">// The following is hardware specific</span></div>
 <div class="line">    adlx_byte data[DATA_SIZE] = { 0 };</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = i2c-&gt;RepeatedStartRead(<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga75eb2c93942ff81ff1cbeef647c2cf67a397ea3400420f6a75ec671eec8318bd9">I2C_LINE_OEM2</a>, 100, 0x93, 0x30, DATA_SIZE, data);</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = i2c-&gt;RepeatedStartRead(I2C_LINE_OEM2, 100, 0x93, 0x30, DATA_SIZE, data);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tI2C read info:\n&quot;</span></div>
 <div class="line">    &lt;&lt; <span class="stringliteral">&quot;\t\tline: I2C_LINE_OEM2\n\t\tspeed: 100\n\t\taddress: 0x93\n\t\toffset: 0x30\n\t\tdataSize: &quot;</span></div>
 <div class="line">    &lt;&lt; DATA_SIZE &lt;&lt; <span class="stringliteral">&quot;\n\t\tdata: &quot;</span> &lt;&lt; (int)data[0] &lt;&lt; std::endl;</div>
@@ -269,7 +272,7 @@ $(function(){initNavTree('cpp__i2_c.html',''); initResizable(true); });
 <div class="line">    <span class="comment">// The following is hardware specific</span></div>
 <div class="line">    adlx_byte data[DATA_SIZE] = { 0 };</div>
 <div class="line">    data[0] = 176;</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = i2c-&gt;Write(<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga75eb2c93942ff81ff1cbeef647c2cf67a397ea3400420f6a75ec671eec8318bd9">I2C_LINE_OEM2</a>, 100, 0x93, 0x30, DATA_SIZE, data);</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = i2c-&gt;Write(I2C_LINE_OEM2, 100, 0x93, 0x30, DATA_SIZE, data);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tI2C write info:\n&quot;</span></div>
 <div class="line">    &lt;&lt; <span class="stringliteral">&quot;\t\tline: I2C_LINE_OEM2\n\t\tspeed: 100\n\t\taddress: 0x93\n\t\toffset: 0x30\n\t\tdataSize: &quot;</span></div>
 <div class="line">    &lt;&lt; DATA_SIZE &lt;&lt; <span class="stringliteral">&quot;\n\t\tdata: &quot;</span> &lt;&lt; (int)data[0] &lt;&lt; std::endl;</div>
@@ -279,7 +282,7 @@ $(function(){initNavTree('cpp__i2_c.html',''); initResizable(true); });
 <div class="line"><span class="keywordtype">void</span> Capability(<span class="keyword">const</span> IADLXI2CPtr&amp; i2c)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool isSupported = <span class="keyword">false</span>;</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = i2c-&gt;IsSupported(<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga75eb2c93942ff81ff1cbeef647c2cf67a397ea3400420f6a75ec671eec8318bd9">I2C_LINE_OEM2</a>, 0x93, &amp;isSupported);</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = i2c-&gt;IsSupported(I2C_LINE_OEM2, 0x93, &amp;isSupported);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tI2C support info:\n&quot;</span></div>
 <div class="line">    &lt;&lt; <span class="stringliteral">&quot;\t\tline: I2C_LINE_OEM2\n\t\taddress: 0x93\n\t\tisSupported: &quot;</span> &lt;&lt; isSupported</div>
 <div class="line">    &lt;&lt; <span class="stringliteral">&quot;\n\tres is: &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
@@ -352,10 +355,9 @@ $(function(){initNavTree('cpp__i2_c.html',''); initResizable(true); });
 <div class="line">    system(<span class="stringliteral">&quot;pause&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">return</span> retCode;</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga75eb2c93942ff81ff1cbeef647c2cf67a397ea3400420f6a75ec671eec8318bd9"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga75eb2c93942ff81ff1cbeef647c2cf67a397ea3400420f6a75ec671eec8318bd9">I2C_LINE_OEM2</a></div><div class="ttdeci">@ I2C_LINE_OEM2</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:883</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:283</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

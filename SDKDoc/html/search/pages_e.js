@@ -11,9 +11,10 @@ var searchData=
   ['ongpuautotuningcomplete_8',['OnGPUAutoTuningComplete',['../_d_o_x__i_a_d_l_x_g_p_u_auto_tuning_complete_listener__on_g_p_u_auto_tuning_complete.html',1,'DOX_IADLXGPUAutoTuningCompleteListener']]],
   ['ongpuconnectchanged_9',['OnGPUConnectChanged',['../_d_o_x__i_a_d_l_x_g_p_u_connect_changed_listener__on_g_p_u_connect_changed.html',1,'DOX_IADLXGPUConnectChangedListener']]],
   ['ongpulistchanged_10',['OnGPUListChanged',['../_d_o_x__i_a_d_l_x_g_p_us_event_listener__on_g_p_u_list_changed.html',1,'DOX_IADLXGPUsEventListener']]],
-  ['ongputuningchanged_11',['OnGPUTuningChanged',['../_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_listener__on_g_p_u_tuning_changed.html',1,'DOX_IADLXGPUTuningChangedListener']]],
-  ['onmultimediachanged_12',['OnMultimediaChanged',['../_d_o_x__i_a_d_l_x_multimedia_changed_event_listener__on_multimedia_changed.html',1,'DOX_IADLXMultimediaChangedEventListener']]],
-  ['onpowertuningchanged_13',['OnPowerTuningChanged',['../_d_o_x__i_a_d_l_x_power_tuning_changed_listener__on_power_tuning_changed.html',1,'DOX_IADLXPowerTuningChangedListener']]],
-  ['operating_20systems_14',['Supported Operating Systems',['../page_guide_os.html',1,'page_guide_spe']]],
-  ['orientation_15',['Orientation',['../_d_o_x__i_a_d_l_x_desktop__orientation.html',1,'DOX_IADLXDesktop']]]
+  ['ongpustresstestfinished_11',['OnGPUStressTestFinished',['../_d_o_x__i_a_d_l_x_g_p_u_stress_test_finished_listener__on_g_p_u_stress_test_finished.html',1,'DOX_IADLXGPUStressTestFinishedListener']]],
+  ['ongputuningchanged_12',['OnGPUTuningChanged',['../_d_o_x__i_a_d_l_x_g_p_u_tuning_changed_listener__on_g_p_u_tuning_changed.html',1,'DOX_IADLXGPUTuningChangedListener']]],
+  ['onmultimediachanged_13',['OnMultimediaChanged',['../_d_o_x__i_a_d_l_x_multimedia_changed_event_listener__on_multimedia_changed.html',1,'DOX_IADLXMultimediaChangedEventListener']]],
+  ['onpowertuningchanged_14',['OnPowerTuningChanged',['../_d_o_x__i_a_d_l_x_power_tuning_changed_listener__on_power_tuning_changed.html',1,'DOX_IADLXPowerTuningChangedListener']]],
+  ['operating_20systems_15',['Supported Operating Systems',['../page_guide_os.html',1,'page_guide_spe']]],
+  ['orientation_16',['Orientation',['../_d_o_x__i_a_d_l_x_desktop__orientation.html',1,'DOX_IADLXDesktop']]]
 ];

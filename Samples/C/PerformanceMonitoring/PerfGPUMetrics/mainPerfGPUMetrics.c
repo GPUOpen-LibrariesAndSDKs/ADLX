@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -302,6 +302,25 @@ void ShowGPUMetricsRange(IADLXPerformanceMonitoringServices* perfMonitoringServi
             gpuMetricsSupport2->pVtbl->Release(gpuMetricsSupport2);
             gpuMetricsSupport2 = NULL;
         }
+
+        IADLXGPUMetricsSupport3* gpuMetricsSupport3 = NULL;
+        res = gpuMetricsSupport->pVtbl->QueryInterface(gpuMetricsSupport, IID_IADLXGPUMetricsSupport3(), &gpuMetricsSupport3);
+        if (ADLX_SUCCEEDED(res))
+        {
+            // Get GPU Fan Duty range
+            res = gpuMetricsSupport3->pVtbl->GetGPUFanDutyRange(gpuMetricsSupport3, &minValue, &maxValue);
+            if (ADLX_SUCCEEDED(res))
+                printf("The GPU Fan Duty range between %d%% and %d%%\n", minValue, maxValue);
+            else if (res == ADLX_NOT_SUPPORTED)
+                printf("GPU Fan Duty range not supported\n");
+        }
+
+        if (gpuMetricsSupport3)
+        {
+            gpuMetricsSupport3->pVtbl->Release(gpuMetricsSupport3);
+            gpuMetricsSupport3 = NULL;
+        }
+
     }
 
     if (gpuMetricsSupport != NULL)
@@ -549,6 +568,45 @@ void ShowSharedGPUMemory(IADLXGPUMetricsSupport* gpuMetricsSupport, IADLXGPUMetr
     }
 }
 
+// Display GPU Fan Duty (in %)
+void ShowGPUFanDutyCycle(IADLXGPUMetricsSupport* gpuMetricsSupport, IADLXGPUMetrics* gpuMetrics)
+{
+    adlx_bool supported = false;
+    // Display GPU Fan Duty status
+    IADLXGPUMetricsSupport3* gpuMetricsSupport3 = NULL;
+    IADLXGPUMetrics3* gpuMetrics3 = NULL;
+    ADLX_RESULT supportRes = gpuMetricsSupport->pVtbl->QueryInterface(gpuMetricsSupport, IID_IADLXGPUMetricsSupport3(), &gpuMetricsSupport3);
+    ADLX_RESULT metricsRes = gpuMetrics->pVtbl->QueryInterface(gpuMetrics, IID_IADLXGPUMetrics3(), &gpuMetrics3);
+    if (ADLX_SUCCEEDED(supportRes) && ADLX_SUCCEEDED(metricsRes))
+    {
+        // Display the GPU Fan Duty support status
+        ADLX_RESULT res = gpuMetricsSupport3->pVtbl->IsSupportedGPUFanDuty(gpuMetricsSupport3, &supported);
+        if (ADLX_SUCCEEDED(res))
+        {
+            printf("GPU Fan Duty status: %d\n", supported);
+            if (supported)
+            {
+                adlx_int memory = 0;
+                res = gpuMetrics3->pVtbl->GPUFanDuty(gpuMetrics3, &memory);
+                if (ADLX_SUCCEEDED(res))
+                    printf("The GPU Fan Duty usage is: %d %%\n", memory);
+            }
+        }
+    }
+
+    if (gpuMetricsSupport3)
+    {
+        gpuMetricsSupport3->pVtbl->Release(gpuMetricsSupport3);
+        gpuMetricsSupport3 = NULL;
+    }
+
+    if (gpuMetrics3)
+    {
+        gpuMetrics3->pVtbl->Release(gpuMetrics3);
+        gpuMetrics3 = NULL;
+    }
+}
+
 // Display GPU Voltage (in mV)
 void ShowGPUVoltage(IADLXGPUMetricsSupport* gpuMetricsSupport, IADLXGPUMetrics* gpuMetrics)
 {
@@ -724,6 +782,7 @@ void ShowCurrentGPUMetrics(IADLXPerformanceMonitoringServices *perfMonitoringSer
             ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
             ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
             ShowSharedGPUMemory(gpuMetricsSupport, gpuMetrics);
+            ShowGPUFanDutyCycle(gpuMetricsSupport, gpuMetrics);
         }
         Sleep(1000);
 
@@ -804,6 +863,7 @@ void ShowCurrentGPUMetricsFromHistorical(IADLXPerformanceMonitoringServices* per
                     ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
                     ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
                     ShowSharedGPUMemory(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUFanDutyCycle(gpuMetricsSupport, gpuMetrics);
                 }
 
                 // Release IADLXGPUMetrics interface
@@ -899,6 +959,7 @@ void ShowHistoricalGPUMetrics(IADLXPerformanceMonitoringServices *perfMonitoring
                 ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
                 ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
                 ShowSharedGPUMemory(gpuMetricsSupport, gpuMetrics);
+                ShowGPUFanDutyCycle(gpuMetricsSupport, gpuMetrics);
             }
             printf("\n");
             if (gpuMetrics != NULL)

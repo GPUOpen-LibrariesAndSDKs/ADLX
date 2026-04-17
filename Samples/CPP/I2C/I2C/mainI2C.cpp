@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -56,12 +56,15 @@ int main()
         IADLXGPUListPtr gpus;
         res = g_ADLXHelp.GetSystemServices()->GetGPUs(&gpus);
 
-        if (!gpus->Empty() && ADLX_SUCCEEDED(res))
+        if (ADLX_SUCCEEDED(res) && !gpus->Empty())
         {
             // Get GPU interface
             IADLXGPUPtr gpuInfo;
             adlx_uint index = 0;
             res = gpus->At(index, &gpuInfo);
+            const char* gpuName = nullptr;
+            res = gpuInfo->Name(&gpuName);
+            std::cout << "\t" << gpuName << " is selected." << std::endl;
 
             // Get I2C interface
             IADLXI2CPtr i2c;

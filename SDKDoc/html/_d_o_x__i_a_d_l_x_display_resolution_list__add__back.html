@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -113,7 +113,7 @@ $(function(){initNavTree('_d_o_x__i_a_d_l_x_display_resolution_list__add__back.h
   <div class="headertitle"><div class="title">Add_Back</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Adds an element to the back.</p>
+<div class="textblock"><p>Adds an interface to the end of a list.</p>
 <h2>Syntax </h2>
 <pre class="fragment">
  <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a>    Add_Back (<a class="el" href="_d_o_x__i_a_d_l_x_display_resolution.html">IADLXDisplayResolution</a>* pItem)
@@ -122,15 +122,15 @@ $(function(){initNavTree('_d_o_x__i_a_d_l_x_display_resolution_list__add__back.h
 <dt></dt>
 <dd><table class="params">
 <tr>
-<td class="paramidx">1.</td><td class="paramdir">[in] </td><td class="paramname">pItem</td><td class="paramtype"><a class="el" href="_d_o_x__i_a_d_l_x_display_resolution.html">IADLXDisplayResolution</a>* </td><td>The address of a pointer variable that receives the <a class="el" href="_d_o_x__i_a_d_l_x_display_resolution.html">IADLXDisplayResolution</a> interface. </td></tr>
+<td class="paramidx">1.</td><td class="paramdir">[in] </td><td class="paramname">pItem</td><td class="paramtype"><a class="el" href="_d_o_x__i_a_d_l_x_display_resolution.html">IADLXDisplayResolution</a>* </td><td>The pointer to the interface to be added to the list. </td></tr>
 </table>
 </dd>
 </dl>
 <h2>Return Value </h2>
-<p>Returns <b>ADLX_OK</b> for success and ADLX error code <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> for failure.</p>
-<h2>Remarks </h2>
-<p>Adds an element to the back.</p>
-<p>You should call this method whenever you need to add the resolution item to the end of the list.</p>
+<p>If the interface is added successfully to the end of the list, <b>ADLX_OK</b> is returned.<br  />
+ If the interface is not added to the end of the list, an error code is returned.<br  />
+ Refer to <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> for success codes and error codes.<br  />
+</p>
 <h2>Requirements </h2>
 <table class="doxtable">
 <tr style="height=40px">

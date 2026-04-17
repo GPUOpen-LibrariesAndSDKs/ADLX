@@ -8,6 +8,8 @@ var domain_cpp_sample_3_d_graphics =
     [ "Boost", "cpp__boost.html", null ],
     [ "Chill", "cpp__chill.html", null ],
     [ "EnhancedSync", "cpp__enhanced_sync.html", null ],
+    [ "FidelityFrameGenUpgrade", "cpp__fidelity_f_x_f_g_u.html", null ],
+    [ "FidelityFXSuperResolution", "cpp__fidelity_f_x_s_r.html", null ],
     [ "FRTC", "cpp__f_r_t_c.html", null ],
     [ "ImageSharpening", "cpp__image_sharpening.html", null ],
     [ "MorphologicAntiAliasing", "cpp__morphologic_anti_aliasing.html", null ],

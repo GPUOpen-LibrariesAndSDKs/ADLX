@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -63,6 +63,9 @@ int main()
                 // Use the first GPU in the list
                 IADLXGPUPtr oneGPU;
                 res = gpus->At(gpus->Begin(), &oneGPU);
+                const char* gpuName = nullptr;
+                res = oneGPU->Name(&gpuName);
+                std::cout << "\t" << gpuName << " is selected." << std::endl;
                 if (ADLX_SUCCEEDED(res))
                 {
                     // Display main menu options

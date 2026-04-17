@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -66,6 +66,9 @@ int main()
                 // Use the first GPU in the list
                 IADLXGPUPtr oneGPU;
                 res = gpus->At(gpus->Begin(), &oneGPU);
+                const char* gpuName = nullptr;
+                res = oneGPU->Name(&gpuName);
+                std::cout << "\t" << gpuName << " is selected." << std::endl;
                 if (ADLX_SUCCEEDED(res))
                 {
                     // Display main menu options
@@ -279,6 +282,16 @@ void ShowGPUMetricsRange(IADLXPerformanceMonitoringServicesPtr perfMonitoringSer
                 std::cout << "The shared GPU memory range between " << minValue << "MB and " << maxValue << "MB" << std::endl;
             else if (res == ADLX_NOT_SUPPORTED)
                 std::cout << "Don't support shared GPU memory range" << std::endl;
+        }
+        IADLXGPUMetricsSupport3Ptr gpuMetricsSupport3(gpuMetricsSupport);
+        if (gpuMetricsSupport3)
+        {
+            // Get GPU Fan Duty
+            res = gpuMetricsSupport3->GetGPUFanDutyRange(&minValue, &maxValue);
+            if (ADLX_SUCCEEDED(res))
+                std::cout << "The GPU Fan Duty range between " << minValue << "% and " << maxValue << "%" << std::endl;
+            else if (res == ADLX_NOT_SUPPORTED)
+                std::cout << "Don't support GPU Fan Duty range" << std::endl;
         }
     }
 }
@@ -604,6 +617,30 @@ void ShowSharedGPUMemory(IADLXGPUMetricsSupportPtr gpuMetricsSupport, IADLXGPUMe
     }
 }
 
+// Display the GPU Fan Duty(in %)
+void ShowGPUFanDuty(IADLXGPUMetricsSupportPtr gpuMetricsSupport, IADLXGPUMetricsPtr gpuMetrics)
+{
+    adlx_bool supported = false;
+    IADLXGPUMetricsSupport3Ptr gpuMetricsSupport3(gpuMetricsSupport);
+    IADLXGPUMetrics3Ptr gpuMetrics3(gpuMetrics);
+    if (gpuMetricsSupport3 && gpuMetrics3)
+    {
+        // Display the GPU Fan Duty support status
+        ADLX_RESULT res = gpuMetricsSupport3->IsSupportedGPUFanDuty(&supported);
+        if (ADLX_SUCCEEDED(res))
+        {
+            std::cout << "GPU Fan Duty support status: " << supported << std::endl;
+            if (supported)
+            {
+                adlx_int data = 0;
+                res = gpuMetrics3->GPUFanDuty(&data);
+                if (ADLX_SUCCEEDED(res))
+                    std::cout << "The GPU Fan Duty is: " << data << "%" << std::endl;
+            }
+        }
+    }
+}
+
 // Display current GPU metrics
 void ShowCurrentGPUMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitoringServices, IADLXGPUPtr oneGPU)
 {
@@ -641,6 +678,7 @@ void ShowCurrentGPUMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitoringS
             ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
             ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
             ShowSharedGPUMemory(gpuMetricsSupport, gpuMetrics);
+            ShowGPUFanDuty(gpuMetricsSupport, gpuMetrics);
             std::cout << std::noboolalpha;
         }
         Sleep(1000);
@@ -680,36 +718,39 @@ void ShowCurrentGPUMetricsFromHistorical(IADLXPerformanceMonitoringServicesPtr p
         system("cls");
         IADLXGPUMetricsListPtr gpuMetricsList;
         res = perfMonitoringServices->GetGPUMetricsHistory(oneGPU, startMs, stopMs, &gpuMetricsList);
-
-        // Display all the GPU metrics in the list
-        IADLXGPUMetricsPtr gpuMetrics;
-        for (int i = gpuMetricsList->Begin(); i != gpuMetricsList->End(); ++i)
+        if (ADLX_SUCCEEDED(res))
         {
-            res = gpuMetricsList->At(i, &gpuMetrics);
-            // Display timestamp and GPU metrics
-            if (ADLX_SUCCEEDED(metricsSupportRet) && ADLX_SUCCEEDED(res))
+            // Display all the GPU metrics in the list
+            IADLXGPUMetricsPtr gpuMetrics;
+            for (int i = gpuMetricsList->Begin(); i != gpuMetricsList->End(); ++i)
             {
-                std::cout << "The current GPU metrics: " << std::endl;
-                std::cout << std::boolalpha;  // Display boolean variable as true or false
-                GetTimeStamp(gpuMetrics);
-                ShowGPUUsage(gpuMetricsSupport, gpuMetrics);
-                ShowGPUClockSpeed(gpuMetricsSupport, gpuMetrics);
-                ShowGPUVRAMClockSpeed(gpuMetricsSupport, gpuMetrics);
-                ShowGPUTemperature(gpuMetricsSupport, gpuMetrics);
-                ShowGPUHotspotTemperature(gpuMetricsSupport, gpuMetrics);
-                ShowGPUPower(gpuMetricsSupport, gpuMetrics);
-                ShowGPUFanSpeed(gpuMetricsSupport, gpuMetrics);
-                ShowGPUVRAM(gpuMetricsSupport, gpuMetrics);
-                ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);
-                ShowGPUTotalBoardPower(gpuMetricsSupport, gpuMetrics);
-                ShowGPUIntakeTemperature(gpuMetricsSupport, gpuMetrics);
-                ShowGPUMemoryTemperature(gpuMetricsSupport, gpuMetrics);
-                ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
-                ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
-                ShowSharedGPUMemory(gpuMetricsSupport, gpuMetrics);
-                std::cout << std::noboolalpha;
+                res = gpuMetricsList->At(i, &gpuMetrics);
+                // Display timestamp and GPU metrics
+                if (ADLX_SUCCEEDED(metricsSupportRet) && ADLX_SUCCEEDED(res))
+                {
+                    std::cout << "The current GPU metrics: " << std::endl;
+                    std::cout << std::boolalpha;  // Display boolean variable as true or false
+                    GetTimeStamp(gpuMetrics);
+                    ShowGPUUsage(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUClockSpeed(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUVRAMClockSpeed(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUTemperature(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUHotspotTemperature(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUPower(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUFanSpeed(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUVRAM(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUVoltage(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUTotalBoardPower(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUIntakeTemperature(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUMemoryTemperature(gpuMetricsSupport, gpuMetrics);
+                    ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
+                    ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
+                    ShowSharedGPUMemory(gpuMetricsSupport, gpuMetrics);
+                    ShowGPUFanDuty(gpuMetricsSupport, gpuMetrics);
+                    std::cout << std::noboolalpha;
+                }
+                std::cout << std::endl;
             }
-            std::cout << std::endl;
         }
 
         Sleep(1000);
@@ -783,6 +824,7 @@ void ShowHistoricalGPUMetrics(IADLXPerformanceMonitoringServicesPtr perfMonitori
                 ShowNPUActivityLevel(gpuMetricsSupport, gpuMetrics);
                 ShowNPUFrequency(gpuMetricsSupport, gpuMetrics);
                 ShowSharedGPUMemory(gpuMetricsSupport, gpuMetrics);
+                ShowGPUFanDuty(gpuMetricsSupport, gpuMetrics);
                 std::cout << std::noboolalpha;
             }
             std::cout << std::endl;

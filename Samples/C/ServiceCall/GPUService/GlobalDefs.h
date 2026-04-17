@@ -1,3 +1,4 @@
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 #ifndef _GLOBAL_DEFS_H
 #define _GLOBAL_DEFS_H
 #pragma once

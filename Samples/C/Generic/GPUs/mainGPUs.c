@@ -1,12 +1,12 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
 /// \file mainGPUs.c
 /// \brief Demonstrates how to enumerate GPUs, get GPU information, receive notifications when GPUs are enabled and disabled, and maintain GPU change event when programming with ADLX.
 #include "SDK/ADLXHelper/Windows/C/ADLXHelper.h"
-#include "SDK/Include/ISystem2.h"
+#include "SDK/Include/ISystem3.h"
 #include <stdio.h>
 
 // Callback for GPU change event
@@ -192,6 +192,31 @@ void ShowGPUInfo(IADLXGPU* gpu)
 
             gpu2->pVtbl->Release(gpu2);
             gpu2 = NULL;
+        }
+
+        IADLXGPU3* gpu3 = NULL;
+        ret = gpu->pVtbl->QueryInterface(gpu, IID_IADLXGPU3(), &gpu3);
+        if (ADLX_SUCCEEDED(ret))
+        {
+            const char* microArchitecture = NULL;
+            ret = gpu3->pVtbl->MicroArchitecture(gpu3, &microArchitecture);
+            printf("microArchitecture: %s\n", microArchitecture);
+            adlx_uint data = 0;
+            gpu3->pVtbl->HighestVRAMBandwidth(gpu3, &data);
+            printf("HighestVRAMBandwidth: %d MB/s\n", data);
+            gpu3->pVtbl->InvisibleVRAM(gpu3, &data);
+            printf("InvisibleVRAM: %d MB\n", data);
+            gpu3->pVtbl->VisibleVRAM(gpu3, &data);
+            printf("VisibleVRAM: %d MB\n", data);
+            gpu3->pVtbl->VRAMVendorRevId(gpu3, &data);
+            printf("VRAMVendorRevId: %d\n", data);
+            gpu3->pVtbl->VRAMBandwidth(gpu3, &data);
+            printf("VRAMBandwidth: %d MB/s\n", data);
+            gpu3->pVtbl->VRAMBitRate(gpu3, &data);
+            printf("VRAMBitRate: %d Mbps\n", data);
+
+            gpu3->pVtbl->Release(gpu3);
+            gpu3 = NULL;
         }
 
         gpu->pVtbl->Release(gpu);

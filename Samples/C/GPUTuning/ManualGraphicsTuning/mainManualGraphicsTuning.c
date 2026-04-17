@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -401,9 +401,9 @@ void ShowFrequencyAndVoltageRange2(IADLXManualGraphicsTuning2* manualGFXTuning2)
     ADLX_RESULT res= manualGFXTuning2->pVtbl->GetGPUMinFrequencyRange(manualGFXTuning2, &freqRange);
     printf("\tGPU minimum frequency range: (%d, %d), return code is: %d(0 means success)\n", freqRange.minValue, freqRange.maxValue, res);
     res = manualGFXTuning2->pVtbl->GetGPUMaxFrequencyRange(manualGFXTuning2, &freqRange);
-    printf("\tGPU maximum frequency (offset) range: (%d, %d), return code is: %d(0 means success)\n", freqRange.minValue, freqRange.maxValue, res);
+    printf("\tGPU maximum frequency range: (%d, %d), return code is: %d(0 means success)\n", freqRange.minValue, freqRange.maxValue, res);
     res = manualGFXTuning2->pVtbl->GetGPUVoltageRange(manualGFXTuning2, &voltRange);
-    printf("\tVoltage (offset) range: (%d, %d), return code is: %d(0 means success)\n", voltRange.minValue, voltRange.maxValue, res);
+    printf("\tVoltage range: (%d, %d), return code is: %d(0 means success)\n", voltRange.minValue, voltRange.maxValue, res);
 }
 
 // Display current GPU tuning states
@@ -413,9 +413,9 @@ void GetCurrentStates2(IADLXManualGraphicsTuning2* manualGFXTuning2)
     ADLX_RESULT res = manualGFXTuning2->pVtbl->GetGPUMinFrequency(manualGFXTuning2, &minFreq);
     printf("\tCurrent GPU minimum frequency: %d, return code is: %d(0 means success)\n", minFreq, res);
     res = manualGFXTuning2->pVtbl->GetGPUMaxFrequency(manualGFXTuning2, &maxFreq);
-    printf("\tCurrent GPU maximum frequency (offset): %d, return code is: %d(0 means success)\n", maxFreq, res);
+    printf("\tCurrent GPU maximum frequency: %d, return code is: %d(0 means success)\n", maxFreq, res);
     res = manualGFXTuning2->pVtbl->GetGPUVoltage(manualGFXTuning2, &volt);
-    printf("\tCurrent GPU clock voltage (offset): %d, return code is: %d(0 means success)\n", volt, res);
+    printf("\tCurrent GPU clock voltage: %d, return code is: %d(0 means success)\n", volt, res);
 }
 
 void GetDefaultStates2(IADLXManualGraphicsTuning2* manualGFXTuning2)
@@ -428,9 +428,9 @@ void GetDefaultStates2(IADLXManualGraphicsTuning2* manualGFXTuning2)
         ADLX_RESULT res = manualFanTuning2_1->pVtbl->GetGPUMinFrequencyDefault(manualFanTuning2_1, &minFreq);
         printf("\tDefault GPU minimum frequency: %d, return code is: %d(0 means success)\n", minFreq, res);
         res = manualFanTuning2_1->pVtbl->GetGPUMaxFrequencyDefault(manualFanTuning2_1, &maxFreq);
-        printf("\tDefault GPU maximum frequency (offset): %d, return code is: %d(0 means success)\n", maxFreq, res);
+        printf("\tDefault GPU maximum frequency: %d, return code is: %d(0 means success)\n", maxFreq, res);
         res = manualFanTuning2_1->pVtbl->GetGPUVoltageDefault(manualFanTuning2_1, &volt);
-        printf("\tDefault GPU clock voltage (offset): %d, return code is: %d(0 means success)\n", volt, res);
+        printf("\tDefault GPU clock voltage: %d, return code is: %d(0 means success)\n", volt, res);
 
         // release manualFanTuning2_1
         manualFanTuning2_1->pVtbl->Release(manualFanTuning2_1);
@@ -446,15 +446,15 @@ void SetGPUStates2(IADLXManualGraphicsTuning2* manualGFXTuning2)
     res = manualGFXTuning2->pVtbl->SetGPUMinFrequency(manualGFXTuning2, freqRange.minValue);
     printf ("\tSet GPU min frequency %s\n", (ADLX_SUCCEEDED (res) ? "succeeded" : "failed"));
     res = manualGFXTuning2->pVtbl->SetGPUMaxFrequency(manualGFXTuning2, freqRange.minValue + 100);
-    printf ("\tSet GPU max frequency (offset) %s\n", (ADLX_SUCCEEDED (res) ? "succeeded" : "failed"));
+    printf ("\tSet GPU max frequency %s\n", (ADLX_SUCCEEDED (res) ? "succeeded" : "failed"));
     res = manualGFXTuning2->pVtbl->SetGPUVoltage(manualGFXTuning2, voltRange.minValue + (voltRange.maxValue - voltRange.minValue) / 2);
-    printf ("\tSet GPU voltage (offset) %s\n", (ADLX_SUCCEEDED (res) ? "succeeded" : "failed"));
+    printf ("\tSet GPU voltage %s\n", (ADLX_SUCCEEDED (res) ? "succeeded" : "failed"));
     printf("\tAfter setting:\n");
     adlx_int minFreq = 0, maxFreq = 0, volt = 0;
     res = manualGFXTuning2->pVtbl->GetGPUMinFrequency(manualGFXTuning2, &minFreq);
     printf("\tCurrent GPU min frequency: %d, return code is: %d(0 means success)\n", minFreq, res);
     res = manualGFXTuning2->pVtbl->GetGPUMaxFrequency(manualGFXTuning2, &maxFreq);
-    printf("\tCurrent GPU max frequency (offset): %d, return code is: %d(0 means success)\n", maxFreq, res);
+    printf("\tCurrent GPU max frequency: %d, return code is: %d(0 means success)\n", maxFreq, res);
     res = manualGFXTuning2->pVtbl->GetGPUVoltage(manualGFXTuning2, &volt);
-    printf("\tCurrent GPU clock voltage (offset): %d, return code is: %d(0 means success)\n", volt, res);
+    printf("\tCurrent GPU clock voltage: %d, return code is: %d(0 means success)\n", volt, res);
 }

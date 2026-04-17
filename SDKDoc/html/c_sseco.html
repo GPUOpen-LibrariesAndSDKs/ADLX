@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('c_sseco.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2023 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -149,7 +149,7 @@ $(function(){initNavTree('c_sseco.html',''); initResizable(true); });
 </html>
  <h2>Code </h2>
 <div class="codeHeader"><span class="language">C</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2023 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -446,6 +446,10 @@ $(function(){initNavTree('c_sseco.html',''); initResizable(true); });
 <div class="line">        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
 <div class="line">            printf(<span class="stringliteral">&quot;\tIs AMD SmartShift Eco enabled: %d\n&quot;</span>, enabled);</div>
 <div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tReturn code is: %d (0 means success)\n&quot;</span>, res);</div>
+<div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Set AMD SmartShift Eco enabled state</span></div>
@@ -470,6 +474,10 @@ $(function(){initNavTree('c_sseco.html',''); initResizable(true); });
 <div class="line">        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
 <div class="line">            printf(<span class="stringliteral">&quot;\tAfter set, the AMD SmartShift Eco enable state is: %d\n&quot;</span>, enabled);</div>
 <div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tReturn code is: %d (0 means success)\n&quot;</span>, res);</div>
+<div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Display AMD SmartShift Eco inactive state</span></div>
@@ -488,11 +496,15 @@ $(function(){initNavTree('c_sseco.html',''); initResizable(true); });
 <div class="line">            printf(<span class="stringliteral">&quot;\tIs AMD SmartShift Eco inactive: %d\n&quot;</span>, inactive);</div>
 <div class="line">            <span class="keywordflow">if</span> (inactive)</div>
 <div class="line">            {</div>
-<div class="line">                <a class="code hl_enumeration" href="group__enumerations.html#ga2bf5d9b0977f2d6f0091088a797953a0">ADLX_SMARTSHIFT_ECO_INACTIVE_REASON</a> reason = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga2bf5d9b0977f2d6f0091088a797953a0acec10650f1569643539398c3d1e48b2e">INACTIVE_REASON_UNKNOWN</a>;</div>
+<div class="line">                <a class="code hl_enumeration" href="group__enumerations.html#ga042359a24ccfa0a4b0aad6e2274261c5">ADLX_SMARTSHIFT_ECO_INACTIVE_REASON</a> reason = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga042359a24ccfa0a4b0aad6e2274261c5a769f3a922418d29486db7c76b8c0ddc9">INACTIVE_REASON_UNKNOWN</a>;</div>
 <div class="line">                <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = smartShiftEco-&gt;pVtbl-&gt;GetInactiveReason(smartShiftEco, &amp;reason);</div>
 <div class="line">                printf(<span class="stringliteral">&quot;\tIs AMD SmartShift Eco inactive reason: %d\n&quot;</span>, reason);</div>
 <div class="line">            }</div>
 <div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tReturn code is: %d (0 means success)\n&quot;</span>, res);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -630,13 +642,13 @@ $(function(){initNavTree('c_sseco.html',''); initResizable(true); });
 <div class="line">                        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
 <div class="line">                            printf(<span class="stringliteral">&quot;\tThe full path of the process running on the GPU is: %ls\n&quot;</span>, fullPath);</div>
 <div class="line"> </div>
-<div class="line">                        <a class="code hl_enumeration" href="group__enumerations.html#gaf6c76078b265ef8526edd967e45ce15a">ADLX_APP_GPU_DEPENDENCY</a> type = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaf6c76078b265ef8526edd967e45ce15aa80dd6f151c30b332eb37cca8622b055a">APP_GPU_UNKNOWN</a>;</div>
+<div class="line">                        <a class="code hl_enumeration" href="group__enumerations.html#ga2ef831ddba6249fb181c6ac644a59bd9">ADLX_APP_GPU_DEPENDENCY</a> type = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga2ef831ddba6249fb181c6ac644a59bd9ad1522e7b58169b525f8a1105b44f4086">APP_GPU_UNKNOWN</a>;</div>
 <div class="line">                        res = app-&gt;pVtbl-&gt;GPUDependencyType(app, &amp;type);</div>
 <div class="line">                        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
 <div class="line">                        {</div>
-<div class="line">                            <span class="keywordflow">if</span> (type == <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaf6c76078b265ef8526edd967e45ce15aa1f5af5fca78d751cd74a7cf808cd1b96">APP_GPU_BOUND</a>)</div>
+<div class="line">                            <span class="keywordflow">if</span> (type == APP_GPU_BOUND)</div>
 <div class="line">                                printf(<span class="stringliteral">&quot;\tThe GPU dependency type of the process running on the GPU is: APP_GPU_BOUND\n&quot;</span>);</div>
-<div class="line">                            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaf6c76078b265ef8526edd967e45ce15aacb2e2326ad22a9565d9fda356bcab599">APP_GPU_NOT_BOUND</a>)</div>
+<div class="line">                            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == APP_GPU_NOT_BOUND)</div>
 <div class="line">                                printf(<span class="stringliteral">&quot;\tThe GPU dependency type of the process running on the GPU is: APP_GPU_NOT_BOUND\n&quot;</span>);</div>
 <div class="line">                            <span class="keywordflow">else</span></div>
 <div class="line">                                printf(<span class="stringliteral">&quot;\tThe GPU dependency type of the process running on the GPU is: APP_GPU_UNKNOWN\n&quot;</span>);</div>
@@ -752,13 +764,13 @@ $(function(){initNavTree('c_sseco.html',''); initResizable(true); });
 <div class="line">                    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
 <div class="line">                        printf(<span class="stringliteral">&quot;\tThe full path of the process running on the GPU is: %ls\n&quot;</span>, fullPath);</div>
 <div class="line"> </div>
-<div class="line">                    <a class="code hl_enumeration" href="group__enumerations.html#gaf6c76078b265ef8526edd967e45ce15a">ADLX_APP_GPU_DEPENDENCY</a> type = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaf6c76078b265ef8526edd967e45ce15aa80dd6f151c30b332eb37cca8622b055a">APP_GPU_UNKNOWN</a>;</div>
+<div class="line">                    <a class="code hl_enumeration" href="group__enumerations.html#ga2ef831ddba6249fb181c6ac644a59bd9">ADLX_APP_GPU_DEPENDENCY</a> type = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga2ef831ddba6249fb181c6ac644a59bd9ad1522e7b58169b525f8a1105b44f4086">APP_GPU_UNKNOWN</a>;</div>
 <div class="line">                    res = app-&gt;pVtbl-&gt;GPUDependencyType(app, &amp;type);</div>
 <div class="line">                    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
 <div class="line">                    {</div>
-<div class="line">                        <span class="keywordflow">if</span> (type == <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaf6c76078b265ef8526edd967e45ce15aa1f5af5fca78d751cd74a7cf808cd1b96">APP_GPU_BOUND</a>)</div>
+<div class="line">                        <span class="keywordflow">if</span> (type == APP_GPU_BOUND)</div>
 <div class="line">                            printf(<span class="stringliteral">&quot;\tThe GPU dependency type of the process running on the GPU is: APP_GPU_BOUND\n&quot;</span>);</div>
-<div class="line">                        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaf6c76078b265ef8526edd967e45ce15aacb2e2326ad22a9565d9fda356bcab599">APP_GPU_NOT_BOUND</a>)</div>
+<div class="line">                        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == APP_GPU_NOT_BOUND)</div>
 <div class="line">                            printf(<span class="stringliteral">&quot;\tThe GPU dependency type of the process running on the GPU is: APP_GPU_NOT_BOUND\n&quot;</span>);</div>
 <div class="line">                        <span class="keywordflow">else</span></div>
 <div class="line">                            printf(<span class="stringliteral">&quot;\tThe GPU dependency type of the process running on the GPU is: APP_GPU_UNKNOWN\n&quot;</span>);</div>
@@ -778,17 +790,15 @@ $(function(){initNavTree('c_sseco.html',''); initResizable(true); });
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga2bf5d9b0977f2d6f0091088a797953a0acec10650f1569643539398c3d1e48b2e"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga2bf5d9b0977f2d6f0091088a797953a0acec10650f1569643539398c3d1e48b2e">INACTIVE_REASON_UNKNOWN</a></div><div class="ttdeci">@ INACTIVE_REASON_UNKNOWN</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:960</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0a2431684033e55e857a3f9b2d55d318f0"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0a2431684033e55e857a3f9b2d55d318f0">ADLX_GPU_IN_USE</a></div><div class="ttdeci">@ ADLX_GPU_IN_USE</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:294</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0a600700f1d71935ca0ff5836a41dd8edb"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0a600700f1d71935ca0ff5836a41dd8edb">ADLX_TIMEOUT_OPERATION</a></div><div class="ttdeci">@ ADLX_TIMEOUT_OPERATION</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:295</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaf6c76078b265ef8526edd967e45ce15aa1f5af5fca78d751cd74a7cf808cd1b96"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaf6c76078b265ef8526edd967e45ce15aa1f5af5fca78d751cd74a7cf808cd1b96">APP_GPU_BOUND</a></div><div class="ttdeci">@ APP_GPU_BOUND</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1010</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaf6c76078b265ef8526edd967e45ce15aa80dd6f151c30b332eb37cca8622b055a"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaf6c76078b265ef8526edd967e45ce15aa80dd6f151c30b332eb37cca8622b055a">APP_GPU_UNKNOWN</a></div><div class="ttdeci">@ APP_GPU_UNKNOWN</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1009</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaf6c76078b265ef8526edd967e45ce15aacb2e2326ad22a9565d9fda356bcab599"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaf6c76078b265ef8526edd967e45ce15aacb2e2326ad22a9565d9fda356bcab599">APP_GPU_NOT_BOUND</a></div><div class="ttdeci">@ APP_GPU_NOT_BOUND</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1011</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga2bf5d9b0977f2d6f0091088a797953a0"><div class="ttname"><a href="group__enumerations.html#ga2bf5d9b0977f2d6f0091088a797953a0">ADLX_SMARTSHIFT_ECO_INACTIVE_REASON</a></div><div class="ttdeci">ADLX_SMARTSHIFT_ECO_INACTIVE_REASON</div><div class="ttdoc">Indicates the type of SmartShift Eco inactive state reason.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:959</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
-<div class="ttc" id="agroup__enumerations_html_gaf6c76078b265ef8526edd967e45ce15a"><div class="ttname"><a href="group__enumerations.html#gaf6c76078b265ef8526edd967e45ce15a">ADLX_APP_GPU_DEPENDENCY</a></div><div class="ttdeci">ADLX_APP_GPU_DEPENDENCY</div><div class="ttdoc">Indicates the type of dependence of an application on the GPU on which it runs.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1008</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga042359a24ccfa0a4b0aad6e2274261c5a769f3a922418d29486db7c76b8c0ddc9"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga042359a24ccfa0a4b0aad6e2274261c5a769f3a922418d29486db7c76b8c0ddc9">adlx::INACTIVE_REASON_UNKNOWN</a></div><div class="ttdeci">@ INACTIVE_REASON_UNKNOWN</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:968</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga2ef831ddba6249fb181c6ac644a59bd9ad1522e7b58169b525f8a1105b44f4086"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga2ef831ddba6249fb181c6ac644a59bd9ad1522e7b58169b525f8a1105b44f4086">adlx::APP_GPU_UNKNOWN</a></div><div class="ttdeci">@ APP_GPU_UNKNOWN</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1017</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0a2431684033e55e857a3f9b2d55d318f0"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0a2431684033e55e857a3f9b2d55d318f0">ADLX_GPU_IN_USE</a></div><div class="ttdeci">@ ADLX_GPU_IN_USE</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:295</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0a600700f1d71935ca0ff5836a41dd8edb"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0a600700f1d71935ca0ff5836a41dd8edb">ADLX_TIMEOUT_OPERATION</a></div><div class="ttdeci">@ ADLX_TIMEOUT_OPERATION</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:296</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:283</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga042359a24ccfa0a4b0aad6e2274261c5"><div class="ttname"><a href="group__enumerations.html#ga042359a24ccfa0a4b0aad6e2274261c5">adlx::ADLX_SMARTSHIFT_ECO_INACTIVE_REASON</a></div><div class="ttdeci">ADLX_SMARTSHIFT_ECO_INACTIVE_REASON</div><div class="ttdoc">Indicates the reason as to why SmartShift Eco is inactive.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:967</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga2ef831ddba6249fb181c6ac644a59bd9"><div class="ttname"><a href="group__enumerations.html#ga2ef831ddba6249fb181c6ac644a59bd9">adlx::ADLX_APP_GPU_DEPENDENCY</a></div><div class="ttdeci">ADLX_APP_GPU_DEPENDENCY</div><div class="ttdoc">Indicates the type of dependence of an application on the GPU on which it runs.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1016</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

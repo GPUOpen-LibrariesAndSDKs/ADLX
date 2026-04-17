@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -10,6 +10,7 @@
 #include "SDK/Include/IDisplaySettings.h"
 #include "SDK/Include/IDisplays.h"
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <unordered_map>
 
@@ -167,20 +168,20 @@ void PrintResolution(IADLXDisplayResolutionPtr pResolution)
         return;
     }
 
-    char buff[1024] = {0};
-    int offset = std::snprintf(buff, sizeof(buff), "\n  resolution (Px)\t\t%d x %d\n", cr.resWidth, cr.resHeight);
-    offset += std::snprintf(buff + offset, sizeof(buff) - offset, "  Refresh Rate (Hz)\t\t%d\n", cr.refreshRate);
-    offset += std::snprintf(buff + offset, sizeof(buff) - offset, "  Presentation\t\t\t%s\n", sPresention.c_str());
-    offset += std::snprintf(buff + offset, sizeof(buff) - offset, "  Timing Standard\t\t%s\n", sTimingStandard.c_str());
-    offset += std::snprintf(buff + offset, sizeof(buff) - offset, "  G.Pixel Clock (kHz)\t\t%d\n", cr.GPixelClock);
-    offset += std::snprintf(buff + offset, sizeof(buff) - offset, "  Timing Info\t\t\tHorizontal\tVertical\n");
-    offset += std::snprintf(buff + offset, sizeof(buff) - offset, "  Timing Total\t\t\t%d\t%d\n", cr.detailedTiming.hTotal, cr.detailedTiming.vTotal);
-    offset += std::snprintf(buff + offset, sizeof(buff) - offset, "  Timing Display\t\t%d\t%d\n", cr.detailedTiming.hDisplay, cr.detailedTiming.vDisplay);
-    offset += std::snprintf(buff + offset, sizeof(buff) - offset, "  Timing Front Porch\t\t%d\t%d\n", cr.detailedTiming.hFrontPorch, cr.detailedTiming.vFrontPorch);
-    offset += std::snprintf(buff + offset, sizeof(buff) - offset, "  Timing Sync Width\t\t%d\t%d\n", cr.detailedTiming.hSyncWidth, cr.detailedTiming.vSyncWidth);
-    offset += std::snprintf(buff + offset, sizeof(buff) - offset, "  Timing Polarity\t\t%s %s\n", sHPolarity.c_str(), sVPolarity.c_str());
+    std::ostringstream oss;
+    oss << "\n  resolution (Px)\t\t" << cr.resWidth << " x " << cr.resHeight << "\n"
+        << "  Refresh Rate (Hz)\t\t" << cr.refreshRate << "\n"
+        << "  Presentation\t\t\t" << sPresention << "\n"
+        << "  Timing Standard\t\t" << sTimingStandard << "\n"
+        << "  G.Pixel Clock (kHz)\t\t" << cr.GPixelClock << "\n"
+        << "  Timing Info\t\t\tHorizontal\tVertical\n"
+        << "  Timing Total\t\t\t" << cr.detailedTiming.hTotal << "\t" << cr.detailedTiming.vTotal << "\n"
+        << "  Timing Display\t\t" << cr.detailedTiming.hDisplay << "\t" << cr.detailedTiming.vDisplay << "\n"
+        << "  Timing Front Porch\t\t" << cr.detailedTiming.hFrontPorch << "\t" << cr.detailedTiming.vFrontPorch << "\n"
+        << "  Timing Sync Width\t\t" << cr.detailedTiming.hSyncWidth << "\t" << cr.detailedTiming.vSyncWidth << "\n"
+        << "  Timing Polarity\t\t" << sHPolarity << " " << sVPolarity << "\n";
 
-    std::cout << buff << std::endl;
+    std::cout << oss.str() << std::endl;
 }
 
 void PrintResolutions(IADLXDisplayResolutionListPtr pResolutionList)
@@ -265,7 +266,10 @@ void MenuControl(const IADLXDisplayServicesPtr& displayService, const IADLXDispl
             std::cout << "  === Get current resolution: ===" << std::endl;
             IADLXDisplayResolutionPtr pDisplayResolution;
             GetCurrentResolution(pCustomResolution, &pDisplayResolution);
-            PrintResolution(pDisplayResolution);
+            if (pDisplayResolution)
+            {
+                PrintResolution(pDisplayResolution);
+            }
             break;
         }
             // Create new customized resolution
@@ -297,7 +301,7 @@ void MenuControl(const IADLXDisplayServicesPtr& displayService, const IADLXDispl
             std::cout << "  === Delete resolution: ===" << std::endl;
             IADLXDisplayResolutionListPtr pResolutionList;
             GetResolutionList(pCustomResolution, &pResolutionList);
-            if (pResolutionList->Size() > 0)
+            if (pResolutionList && pResolutionList->Size() > 0)
             {
                 IADLXDisplayResolutionPtr pDisplayResolution;
                 ADLX_RESULT res = pResolutionList->At(0, &pDisplayResolution);

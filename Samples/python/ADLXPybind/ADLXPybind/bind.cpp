@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -422,7 +422,6 @@ PYBIND11_MODULE(ADLXPybind, m) {
 	// ADLX_helper
 	py::class_<ADLXHelper>(m, "ADLXHelper")
 		.def(py::init<>())
-		.def("InitializeWithCallerAdl", &ADLXHelper::InitializeWithCallerAdl)
 		.def("Initialize", &ADLXHelper::Initialize)
 		.def("InitializeWithIncompatibleDriver", &ADLXHelper::InitializeWithIncompatibleDriver)
 		.def("Terminate", &ADLXHelper::Terminate)

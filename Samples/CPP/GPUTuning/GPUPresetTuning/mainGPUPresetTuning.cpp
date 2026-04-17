@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ static ADLXHelper g_ADLXHelp;
 void MainMenu();
 
 // Menu action control
-void MenuControl(IADLXGPUPresetTuningPtr gpuPresetTuning);
+void MenuControl(IADLXGPUPresetTuningPtr gpuPresetTuning,IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);
 
 // Wait for exit with error message
 int WaitAndExit(const char* msg, const int retCode);
@@ -35,7 +35,7 @@ void ShowIsSupported(IADLXGPUPresetTuningPtr gpuPresetTuning);
 void GetCurrentStates(IADLXGPUPresetTuningPtr gpuPresetTuning);
 
 // Set GPU states
-void SetGPUStates(IADLXGPUPresetTuningPtr gpuPresetTuning);
+void SetGPUStates(IADLXGPUPresetTuningPtr gpuPresetTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);
 
 int main()
 {
@@ -56,6 +56,9 @@ int main()
             {
                 IADLXGPUPtr oneGPU;
                 res = gpus->At(0, &oneGPU);
+                const char* gpuName = nullptr;
+                res = oneGPU->Name(&gpuName);
+                std::cout << "\t" << gpuName << " is selected." << std::endl;
                 if (ADLX_SUCCEEDED (res) && oneGPU != nullptr)
                 {
                     adlx_bool supported = false;
@@ -73,7 +76,7 @@ int main()
                                 MainMenu();
 
                                 // Get and execute the choice
-                                MenuControl(gpuPresetTuning);
+                                MenuControl(gpuPresetTuning,gpuTuningService,oneGPU);
                             }
                             else
                             {
@@ -131,7 +134,7 @@ void MainMenu()
     std::cout << "\t->Press M/m to display main menu options" << std::endl;
 }
 
-void MenuControl(IADLXGPUPresetTuningPtr gpuPresetTuning)
+void MenuControl(IADLXGPUPresetTuningPtr gpuPresetTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)
 {
     char num = 0;
     while ((num = getchar()) != 'q' && num != 'Q')
@@ -150,7 +153,7 @@ void MenuControl(IADLXGPUPresetTuningPtr gpuPresetTuning)
 
         // Set GPU states
         case '3':
-            SetGPUStates(gpuPresetTuning);
+            SetGPUStates(gpuPresetTuning, gpuTuningService,oneGPU);
             break;
 
         // Display menu options
@@ -216,26 +219,72 @@ void GetCurrentStates(IADLXGPUPresetTuningPtr gpuPresetTuning)
 }
 
 // Set GPU states
-void SetGPUStates(IADLXGPUPresetTuningPtr gpuPresetTuning)
+void SetGPUStates(IADLXGPUPresetTuningPtr gpuPresetTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)
 {
     adlx_bool applied = false;
     ADLX_RESULT res = gpuPresetTuning->SetPowerSaver();
+    if (ADLX_RESET_NEEDED == res)
+    {
+        res = gpuTuningService->ResetToFactory(oneGPU);
+        if (ADLX_SUCCEEDED(res))
+        {
+            res = gpuPresetTuning->SetPowerSaver();
+        }
+    }
+
     res = gpuPresetTuning->IsCurrentPowerSaver(&applied);
     std::cout << "\tSet Power Saver preset tuning " << (applied ? "Successful" : "failed") << ", return code is: " << res << "(0 means success)" << std::endl;
     applied = false;
     res = gpuPresetTuning->SetQuiet();
+    if (ADLX_RESET_NEEDED == res)
+    {
+        res = gpuTuningService->ResetToFactory(oneGPU);
+        if (ADLX_SUCCEEDED(res))
+        {
+            res = gpuPresetTuning->SetQuiet();
+        }
+    }
+
     res = gpuPresetTuning->IsCurrentQuiet(&applied);
     std::cout << "\tSet Quiet preset tuning " << (applied ? "Successful" : "failed") << ", return code is: " << res << "(0 means success)" << std::endl;
     applied = false;
     res = gpuPresetTuning->SetBalanced();
+
+    if (ADLX_RESET_NEEDED == res)
+    {
+        res = gpuTuningService->ResetToFactory(oneGPU);
+        if (ADLX_SUCCEEDED(res))
+        {
+            res = gpuPresetTuning->SetBalanced();
+        }
+    }
+
     res = gpuPresetTuning->IsCurrentBalanced(&applied);
     std::cout << "\tSet Balanced preset tuning " << (applied ? "Successful" : "failed") << ", return code is: " << res << "(0 means success)" << std::endl;
     applied = false;
     res = gpuPresetTuning->SetTurbo();
+ 
+    if (ADLX_RESET_NEEDED == res)
+    {
+        res = gpuTuningService->ResetToFactory(oneGPU);
+        if (ADLX_SUCCEEDED(res))
+        {
+            res = gpuPresetTuning->SetTurbo();
+        }
+    }
+
     res = gpuPresetTuning->IsCurrentTurbo(&applied);
     std::cout << "\tSet Turbo preset tuning " << (applied ? "Successful" : "failed") << ", return code is: " << res << "(0 means success)" << std::endl;
     applied = false;
     res = gpuPresetTuning->SetRage();
+    if (ADLX_RESET_NEEDED == res)
+    {
+        res = gpuTuningService->ResetToFactory(oneGPU);
+        if (ADLX_SUCCEEDED(res))
+        {
+            res = gpuPresetTuning->SetRage();
+        }
+    }
     res = gpuPresetTuning->IsCurrentRage(&applied);
     std::cout << "\tSet Rage preset tuning " << (applied ? "Successful" : "failed") << ", return code is: " << res << "(0 means success)" << std::endl;
 }

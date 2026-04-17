@@ -1,0 +1,195 @@
+#
+# Makefile.template
+#
+DEBUG_NO_MAPSYM=1
+include $(DEPTH)/make/platformdefs
+
+EXE_TARGET = GPUServiceDirect
+#WARNINGS_ARE_TYPE = errors
+
+#include $(DEPTH)/make/swdefs
+
+
+INST_DIR := ADLXUnitTest/Samples/ServiceCall
+#
+# Installable targets and paths
+#
+INST_TARGETS = $(BUILD_DIR)/$(EXE_TARGET:=.exe)
+
+
+ifeq ($(TARGET_OS), wNow64a)
+    OS_TYPE  = WINDOWS
+	TARGET_OS = wNow64a
+	DK_COMPONENT = adlx
+	DK_TARGET_OS = $(TARGET_OS)
+	DK_C =
+    DK_LOCAL_OVERRIDE_WDK =
+	ifeq ($(findstring drivers/kmd/imported,$(CURDIR)),)
+        # Not under kmd/imported directory
+        -include $(DEPTH)/drivers/$(DK_COMPONENT)/make/makefile.wdk
+    else
+        # Underkmd/imported directory
+        -include $(DEPTH)/drivers/kmd/imported/$(DK_COMPONENT)/make/makefile.wdk
+    endif
+    ifeq ($(DK_C),)
+       -include $(DEPTH)/make/makefile_driver.wdk
+    endif
+    ifeq ($(DK_C),)
+         $(warning ****************  WDK not setup properly)
+        ###   $(error Aborting build)
+        DK_C =ms_wdk/n9200
+    endif
+    export DK_C
+endif
+
+ifeq ($(TARGET_OS), wNxt64a)
+    OS_TYPE  = WINDOWS
+	TARGET_OS = wNxt64a
+	DK_COMPONENT = ADLX
+	DK_TARGET_OS = $(TARGET_OS)
+	DK_C =
+    DK_LOCAL_OVERRIDE_WDK =
+	ifeq ($(findstring drivers/kmd/imported,$(CURDIR)),)
+        # Not under kmd/imported directory
+        -include $(DEPTH)/drivers/$(DK_COMPONENT)/make/makefile.wdk
+    else
+        # Underkmd/imported directory
+        -include $(DEPTH)/drivers/kmd/imported/$(DK_COMPONENT)/make/makefile.wdk
+    endif
+    ifeq ($(DK_C),)
+       -include $(DEPTH)/make/makefile_driver.wdk
+    endif
+    ifeq ($(DK_C),)
+         $(warning ****************  WDK not setup properly)
+        ###   $(error Aborting build)
+        DK_C =ms_wdk/n9200
+    endif
+    export DK_C
+endif
+
+LOG_TARGET  = $(EXE_TARGET).$(BUILD_TYPE)
+LOG_STREAMS = $(LOG_ALL)
+
+#
+# Header paths
+#
+ADLX_PATH	 = $(DEPTH)/drivers/ADLX
+
+LCXXINCS = $(DK_GCXXINCS) \
+           -I$(ADLX_PATH)
+
+# Defines and flags
+#
+# include swdefs here to pick up the correct compiler, linker, etc
+#
+include $(DEPTH)/make/swdefs
+
+GLLIBS = $(SPACE)
+
+
+
+LCXXDEFS = -D_WIN32_WINNT=0x0600
+
+#
+# Setup compile type x86 or AMD64
+#
+ifeq ($(TARGET_OS), wNow64a)
+    COMPILE_TYPE = 64a
+    DKBLDTYPE = amd64
+    LCXXDEFS += -D_WIN64 -DWIN64_ -D_M_AMD64 -D_AMD64_ -DAMD64
+    MT = $(SET_ENV_32);$(DK_SDK_ROOT)/bin/$(WIN_ARCH_VER)/x64/mt.exe
+endif
+
+ifeq ($(TARGET_OS), wNxt64a)
+    COMPILE_TYPE = 64a
+    DKBLDTYPE = amd64
+    LCXXDEFS += -D_WIN64 -DWIN64_ -D_M_AMD64 -D_AMD64_ -DAMD64
+    MT = $(SET_ENV_32);$(DK_SDK_ROOT)/bin/$(WIN_ARCH_VER)/x64/mt.exe
+endif
+
+ifeq ($(BUILD_TYPE),dbg)
+    BLDFOLDER = B_dbg
+    LCXXDEFS += -D_DEBUG -DDBG=1
+    LCXXOPTS += -Od -Oi
+    DEBUG_NO_NMSYM = 1
+else
+    BLDFOLDER = B_rel
+    LCXXDEFS += -DNDEBUG
+    DEBUG_NO_MAPSYM = 1
+    DEBUG_NO_NMSYM  = 1
+endif
+
+
+#
+# Source files to compile
+#
+vpath %.cpp $(ADLX_PATH)/SDK/Platform/Windows \
+			$(ADLX_PATH)/SDK/ADLXHelper/Windows/Cpp
+
+CPPFILES = ../mainGPUServiceDirect.cpp \
+			ADLXHelper.cpp \
+			WinAPIs.cpp
+
+LIBCOPT = $(SPACE)
+
+#
+# Setup library paths and libraries to link
+#
+
+ifeq ($(TARGET_OS), wNow64a)
+    GLOPTS += $(DK_GLLIBS)
+
+
+    LLOPTS += /LIBPATH:$(DEPTH)/drivers/erecord/src/eRecordLib/build/wNow64a/User/$(BLDFOLDER)
+    LLOPTS += /LIBPATH:$(DEPTH)/drivers/amdlog/um/amdlogumlogif/build/wNow64a/$(BLDFOLDER)
+
+    W32ENV=FALSE
+    OS_TYPE = amd64
+endif
+
+ifeq ($(TARGET_OS), wNxt64a)
+    GLOPTS += $(DK_GLLIBS)
+
+
+    LLOPTS += /LIBPATH:$(DEPTH)/drivers/erecord/src/eRecordLib/build/wNxt64a/User/$(BLDFOLDER)
+    LLOPTS += /LIBPATH:$(DEPTH)/drivers/amdlog/um/amdlogumlogif/build/wNxt64a/$(BLDFOLDER)
+
+    W32ENV=FALSE
+    OS_TYPE = amd64
+endif
+
+GLOPTS += /PDBSTRIPPED:$(EXE_TARGET).pdb.pub
+
+####
+#
+#  Generate and embed manifest
+#
+####
+
+TEMP_MAN = temp.manifest
+LOCAL_TARGETS += create_manifest embed_manifest delete_manifest
+
+create_manifest:
+	@echo '<?xml version="1.0" encoding="utf-8" ?>' > $(TEMP_MAN)
+	@echo '<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">' >> $(TEMP_MAN)
+	@echo '  <assemblyIdentity version="1.0.0.0"' >> $(TEMP_MAN)
+	@echo '      processorArchitecture="'$(OS_TYPE)'"' >> $(TEMP_MAN)
+	@echo '      name="'$(EXE_TARGET:=.exe)'"' >> $(TEMP_MAN)
+	@echo '      type="win32" />' >> $(TEMP_MAN)
+	@echo '  <description>AMD External Event Utility</description>' >> $(TEMP_MAN)
+	@echo '  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">' >> $(TEMP_MAN)
+	@echo '    <security>' >> $(TEMP_MAN)
+	@echo '      <requestedPrivileges>' >> $(TEMP_MAN)
+	@echo '        <requestedExecutionLevel level="asInvoker" uiAccess="false"/>' >> $(TEMP_MAN)
+	@echo '      </requestedPrivileges>' >> $(TEMP_MAN)
+	@echo '    </security>' >> $(TEMP_MAN)
+	@echo '  </trustInfo>' >> $(TEMP_MAN)
+	@echo '</assembly>' >> $(TEMP_MAN)
+
+embed_manifest: create_manifest
+	$(MT) -manifest "$(TEMP_MAN)" -outputresource:"$(BUILD_DIR)/$(EXE_TARGET:=.exe);1"
+  
+delete_manifest: embed_manifest
+	$(RM) $(TEMP_MAN)
+
+include $(DEPTH)/make/swrules

@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -20,10 +20,10 @@ using namespace adlx;
 static ADLXHelper g_ADLXHelp;
 
 // Main menu
-void MainMenu(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphicsTuning2Ptr manualGFXTuning2);
+void MainMenu(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphicsTuning2Ptr manualGFXTuning2, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);
 
 // Menu action control
-void MenuControl(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphicsTuning2Ptr manualGFXTuning2);
+void MenuControl(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphicsTuning2Ptr manualGFXTuning2, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);
 
 // Wait for exit with error message
 int WaitAndExit(const char* msg, const int retCode);
@@ -38,8 +38,8 @@ void GetCurrentStates(IADLXManualGraphicsTuning2Ptr manualGFXTuning2);
 // Display default GPU tuning states
 void GetDefaultStates(IADLXManualGraphicsTuning2Ptr manualGFXTuning2);
 // Set GPU states
-void SetGPUStates(IADLXManualGraphicsTuning1Ptr manualGFXTuning1);
-void SetGPUStates(IADLXManualGraphicsTuning2Ptr manualGFXTuning2);
+void SetGPUStates(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);
+void SetGPUStates(IADLXManualGraphicsTuning2Ptr manualGFXTuning2, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);
 
 int main()
 {
@@ -65,7 +65,11 @@ int main()
             goto EXIT;
         }
         IADLXGPUPtr oneGPU;
-        res = gpus->At(0, &oneGPU);
+        adlx_uint index = 0;
+        res = gpus->At(index, &oneGPU);
+        const char* gpuName = nullptr;
+        res = oneGPU->Name(&gpuName);
+        std::cout << "\t" << gpuName << " is selected." << std::endl;
         if (ADLX_FAILED (res) || oneGPU == nullptr)
         {
             std::cout << "\tGet GPU failed " << std::endl;
@@ -95,10 +99,10 @@ int main()
             goto EXIT;
         }
         // Display main menu options
-        MainMenu(manualGFXTuning1, manualGFXTuning2);
+        MainMenu(manualGFXTuning1, manualGFXTuning2,gpuTuningService,  oneGPU);
 
         // Get and execute the choice
-        MenuControl(manualGFXTuning1, manualGFXTuning2);
+        MenuControl(manualGFXTuning1, manualGFXTuning2, gpuTuningService,  oneGPU);
     }
     else
         return WaitAndExit("\tg_ADLXHelp initialize failed", 0);
@@ -115,7 +119,7 @@ int main()
 }
 
 // Main menu
-void MainMenu(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphicsTuning2Ptr manualGFXTuning2)
+void MainMenu(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphicsTuning2Ptr manualGFXTuning2, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)
 {
 
     if (manualGFXTuning1)
@@ -130,7 +134,7 @@ void MainMenu(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphic
     std::cout << "\t->Press M/m to display main menu options" << std::endl;
 }
 
-void MenuControl(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphicsTuning2Ptr manualGFXTuning2)
+void MenuControl(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGraphicsTuning2Ptr manualGFXTuning2, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)
 {
     char num = 0;
     while ((num = getchar()) != 'q' && num != 'Q')
@@ -152,13 +156,13 @@ void MenuControl(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGrap
 
             // Set GPU states
             case '3':
-                SetGPUStates(manualGFXTuning1);
+                SetGPUStates(manualGFXTuning1, gpuTuningService, oneGPU);
                 break;
 
             // Display menu options
             case 'm':
             case 'M':
-                MainMenu(manualGFXTuning1, manualGFXTuning2);
+                MainMenu(manualGFXTuning1, manualGFXTuning2, gpuTuningService, oneGPU);
                 break;
             default:
                 break;
@@ -181,7 +185,7 @@ void MenuControl(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGrap
 
             // Set GPU states
             case '3':
-                SetGPUStates(manualGFXTuning2);
+                SetGPUStates(manualGFXTuning2,  gpuTuningService,   oneGPU);
                 break;
 
             // Display default GPU tuning states
@@ -190,7 +194,7 @@ void MenuControl(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXManualGrap
             // Display menu options
             case 'm':
             case 'M':
-                MainMenu(manualGFXTuning1, manualGFXTuning2);
+                MainMenu(manualGFXTuning1, manualGFXTuning2, gpuTuningService,  oneGPU);
                 break;
             default:
                 break;
@@ -242,7 +246,7 @@ void GetCurrentStates(IADLXManualGraphicsTuning1Ptr manualGFXTuning1)
 }
 
 // Set GPU states
-void SetGPUStates(IADLXManualGraphicsTuning1Ptr manualGFXTuning1)
+void SetGPUStates(IADLXManualGraphicsTuning1Ptr manualGFXTuning1, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)
 {
     IADLXManualTuningStateListPtr states;
     IADLXManualTuningStatePtr oneState;
@@ -276,6 +280,15 @@ void SetGPUStates(IADLXManualGraphicsTuning1Ptr manualGFXTuning1)
     if (ADLX_SUCCEEDED(res))
     {
         res = manualGFXTuning1->SetGPUTuningStates(states);
+        if (ADLX_RESET_NEEDED == res)
+        {
+            res = gpuTuningService->ResetToFactory(oneGPU);
+            if (ADLX_SUCCEEDED(res))
+            {
+                res = manualGFXTuning1->SetGPUTuningStates(states);
+            }
+        }
+
         std::cout << "\tSet GPU tuning states " << (ADLX_SUCCEEDED (res) ? "succeeded" : "failed") << std::endl;
     }
     else
@@ -304,10 +317,10 @@ void ShowFrequencyAndVoltageRange(IADLXManualGraphicsTuning2Ptr manualGFXTuning2
     std::cout << "\tGPU min frequency range: (" << freqRange.minValue
               << ", " << freqRange.maxValue << ")" << ", return code is: "<< res << "(0 means success)" << std::endl;
     res = manualGFXTuning2->GetGPUMaxFrequencyRange(&freqRange);
-    std::cout << "\tGPU max frequency (offset) range: (" << freqRange.minValue
+    std::cout << "\tGPU max frequency range: (" << freqRange.minValue
               << ", " << freqRange.maxValue << ")" << ", return code is: "<< res << "(0 means success)" << std::endl;
     res = manualGFXTuning2->GetGPUVoltageRange(&voltRange);
-    std::cout << "\tVoltage (offset) range: (" << voltRange.minValue
+    std::cout << "\tVoltage range: (" << voltRange.minValue
               << ", " << voltRange.maxValue << ")" << ", return code is: "<< res << "(0 means success)" << std::endl;
 }
 
@@ -318,9 +331,9 @@ void GetCurrentStates(IADLXManualGraphicsTuning2Ptr manualGFXTuning2)
     ADLX_RESULT res = manualGFXTuning2->GetGPUMinFrequency(&minFreq);
     std::cout << "\tCurrent GPU min frequency: " << minFreq << ", return code is: "<< res << "(0 means success)" << std::endl;
     res = manualGFXTuning2->GetGPUMaxFrequency(&maxFreq);
-    std::cout << "\tCurrent GPU max frequency (offset): " << maxFreq << ", return code is: "<< res << "(0 means success)" << std::endl;
+    std::cout << "\tCurrent GPU max frequency: " << maxFreq << ", return code is: "<< res << "(0 means success)" << std::endl;
     res = manualGFXTuning2->GetGPUVoltage(&volt);
-    std::cout << "\tCurrent GPU clock voltage (offset): " << volt << ", return code is: "<< res << "(0 means success)" << std::endl;
+    std::cout << "\tCurrent GPU clock voltage: " << volt << ", return code is: "<< res << "(0 means success)" << std::endl;
 }
 
 // Display default GPU tuning states
@@ -338,29 +351,55 @@ void GetDefaultStates(IADLXManualGraphicsTuning2Ptr manualGFXTuning2)
     ADLX_RESULT res = manualGFXTuning2_1->GetGPUMinFrequencyDefault(&minFreq);
     std::cout << "\tDefault GPU min frequency: " << minFreq << ", return code is: " << res << "(0 means success)" << std::endl;
     res = manualGFXTuning2_1->GetGPUMaxFrequencyDefault(&maxFreq);
-    std::cout << "\tDefault GPU max frequency (offset): " << maxFreq << ", return code is: " << res << "(0 means success)" << std::endl;
+    std::cout << "\tDefault GPU max frequency: " << maxFreq << ", return code is: " << res << "(0 means success)" << std::endl;
     res = manualGFXTuning2_1->GetGPUVoltageDefault(&volt);
-    std::cout << "\tDefault GPU clock voltage (offset): " << volt << ", return code is: " << res << "(0 means success)" << std::endl;
+    std::cout << "\tDefault GPU clock voltage: " << volt << ", return code is: " << res << "(0 means success)" << std::endl;
 }
 
 // Set GPU states
-void SetGPUStates(IADLXManualGraphicsTuning2Ptr manualGFXTuning2)
+void SetGPUStates(IADLXManualGraphicsTuning2Ptr manualGFXTuning2, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)
 {
     ADLX_IntRange freqRange, voltRange;
     ADLX_RESULT res = manualGFXTuning2->GetGPUMinFrequencyRange(&freqRange);
     res = manualGFXTuning2->GetGPUVoltageRange(&voltRange);
     res = manualGFXTuning2->SetGPUMinFrequency(freqRange.minValue);
+    if (ADLX_RESET_NEEDED == res)
+    {
+        res = gpuTuningService->ResetToFactory(oneGPU);
+        if (ADLX_SUCCEEDED(res))
+        {
+            res = manualGFXTuning2->SetGPUMinFrequency(freqRange.minValue);
+        }
+    }
+
     std::cout << "\tSet GPU min frequency " << (ADLX_SUCCEEDED (res) ? "succeeded" : "failed") << std::endl;
     res = manualGFXTuning2->SetGPUMaxFrequency(freqRange.minValue + 100);
-    std::cout << "\tSet GPU max frequency (offset) " << (ADLX_SUCCEEDED (res) ? "succeeded" : "failed") << std::endl;
+    if (ADLX_RESET_NEEDED == res)
+    {
+        res = gpuTuningService->ResetToFactory(oneGPU);
+        if (ADLX_SUCCEEDED(res))
+        {
+            res = manualGFXTuning2->SetGPUMaxFrequency(freqRange.minValue + 100);
+        }
+    }
+    std::cout << "\tSet GPU max frequency " << (ADLX_SUCCEEDED (res) ? "succeeded" : "failed") << std::endl;
     res = manualGFXTuning2->SetGPUVoltage(voltRange.minValue + (voltRange.maxValue - voltRange.minValue) / 2);
-    std::cout << "\tSet GPU voltage (offset) " << (ADLX_SUCCEEDED (res) ? "succeeded" : "failed") << std::endl;
+    if (ADLX_RESET_NEEDED == res)
+    {
+        res = gpuTuningService->ResetToFactory(oneGPU);
+        if (ADLX_SUCCEEDED(res))
+        {
+            res = manualGFXTuning2->SetGPUVoltage(voltRange.minValue + (voltRange.maxValue - voltRange.minValue) / 2);
+        }
+    }
+
+    std::cout << "\tSet GPU voltage " << (ADLX_SUCCEEDED (res) ? "succeeded" : "failed") << std::endl;
     std::cout << "\tAfter setting:" << std::endl;
     adlx_int minFreq = 0, maxFreq = 0, volt = 0;
     res = manualGFXTuning2->GetGPUMinFrequency(&minFreq);
     std::cout << "\tCurrent GPU min frequency: " << minFreq << ", return code is: "<< res << "(0 means success)" << std::endl;
     res = manualGFXTuning2->GetGPUMaxFrequency(&maxFreq);
-    std::cout << "\tCurrent GPU max frequency (offset): " << maxFreq << ", return code is: "<< res << "(0 means success)" << std::endl;
+    std::cout << "\tCurrent GPU max frequency: " << maxFreq << ", return code is: "<< res << "(0 means success)" << std::endl;
     res = manualGFXTuning2->GetGPUVoltage(&volt);
-    std::cout << "\tCurrent GPU clock voltage (offset): " << volt << ", return code is: "<< res << "(0 means success)" << std::endl;
+    std::cout << "\tCurrent GPU clock voltage: " << volt << ", return code is: "<< res << "(0 means success)" << std::endl;
 }

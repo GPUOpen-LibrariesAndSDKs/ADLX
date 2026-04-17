@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -180,6 +180,7 @@ void GetSupportStateForEachColorDepth (IADLXDisplayServices* pDisplayService, IA
         pDisplayColorDepth->pVtbl->Release(pDisplayColorDepth);
         pDisplayColorDepth = NULL;
     }
+    printf("\treturn code is: %d (0 means Success)\n", res);
 }
 
 void GetColorDepthState(IADLXDisplayServices* pDisplayService, IADLXDisplay* pDisplay)

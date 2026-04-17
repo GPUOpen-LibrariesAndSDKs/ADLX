@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -177,6 +177,7 @@ void GetDisplayBlankingState(IADLXDisplayServices1* displayService1, IADLXDispla
         displayBlanking->pVtbl->Release(displayBlanking);
         displayBlanking = NULL;
     }
+    printf("\tReturn code is: %d  (0 means Success)\n", res);
 }
 
 void SetDisplayBlankingState(IADLXDisplayServices1* displayService1, IADLXDisplay* display, const int key)

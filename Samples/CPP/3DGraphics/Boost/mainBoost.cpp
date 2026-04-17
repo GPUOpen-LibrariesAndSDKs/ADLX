@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -61,6 +61,9 @@ int main()
             IADLXGPUPtr gpuInfo;
             adlx_uint index = 0;
             res = gpus->At(index, &gpuInfo);
+            const char* gpuName = nullptr;
+            res = gpuInfo->Name(&gpuName);
+            std::cout << "\t" << gpuName << " is selected." << std::endl;
 
             // Get Boost interface
             IADLX3DBoostPtr d3dBoost;
@@ -142,6 +145,7 @@ void SetBoostState(const IADLX3DBoostPtr& d3dBoost, int index)
     }
 }
 
+
 int WaitAndExit(const char* msg, const int retCode)
 {
     // Printout the message and pause to see it before returning the desired code
@@ -158,7 +162,7 @@ void MainMenu()
 
     std::cout << "\t->Press 1 to display Boost support" << std::endl;
     std::cout << "\t->Press 2 to display current Boost state" << std::endl;
-    std::cout << "\t->Press 3 to enable Boost" << std::endl;
+    std::cout << "\t->Press 3 to enable Boost and  and change minimum resolution" << std::endl;
     std::cout << "\t->Press 4 to disable Boost" << std::endl;
 
     std::cout << "\t->Press Q/q to quit the application" << std::endl;
@@ -166,7 +170,7 @@ void MainMenu()
 }
 
 void MenuControl(const IADLX3DBoostPtr& d3dBoost)
-{
+{    
     int num = 0;
     while ((num = getchar()) != 'q' && num != 'Q')
     {

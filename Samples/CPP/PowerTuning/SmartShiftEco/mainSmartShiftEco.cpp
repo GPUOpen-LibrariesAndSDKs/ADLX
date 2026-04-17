@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2023 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -125,9 +125,8 @@ int main()
             if (ADLX_SUCCEEDED(res))
             {
                 // Get power tuning service 1
-                IADLXPowerTuningServices1Ptr powerTuningService1;
-                res = powerTuningService->QueryInterface(IADLXPowerTuningServices1::IID(), reinterpret_cast<void**>(&powerTuningService1));
-                if (ADLX_SUCCEEDED(res))
+                IADLXPowerTuningServices1Ptr powerTuningService1(powerTuningService);
+                if (NULL != powerTuningService1)
                 {
                     // Add power tuning changed listener
                     IADLXPowerTuningChangedHandlingPtr powerTuningChangedHandle;
@@ -282,6 +281,10 @@ void ShowSmartShiftEcoEnabledState(IADLXSmartShiftEcoPtr smartShiftEco)
         if (ADLX_SUCCEEDED(res))
             std::cout << "\tIs AMD SmartShift Eco enabled: " << enabled << std::endl;
     }
+    else
+    {
+        std::cout << "\tReturn code is: " << res << "(0 means success)" << std::endl;
+    }
 }
 
 // Set AMD SmartShift Eco enabled state
@@ -305,6 +308,10 @@ void SetSmartShiftEcoEnabledState(IADLXSmartShiftEcoPtr smartShiftEco)
         res = smartShiftEco->IsEnabled(&enabled);
         if (ADLX_SUCCEEDED(res))
             std::cout << "\tAfter set, the AMD SmartShift Eco enable state is: " << enabled << std::endl;
+    }
+    else
+    {
+        std::cout << "\tReturn code is: " << res << "(0 means success)" << std::endl;
     }
 }
 
@@ -332,6 +339,10 @@ void ShowSmartShiftEcoInactiveState(IADLXSmartShiftEcoPtr smartShiftEco)
                 }
             }
         }
+    }
+    else
+    {
+        std::cout << "\tReturn code is: " << res << "(0 means success)" << std::endl;
     }
 }
 
@@ -522,10 +533,16 @@ void AbortPowerOffGPU(IADLXGPU2Ptr gpu)
 // Set power control to default
 void SetPowerControlToDefault(IADLXSmartShiftEcoPtr smartShiftEco)
 {
-    // The default power control policy is to enable AMD SmartShift Eco
-    ADLX_RESULT res = smartShiftEco->SetEnabled(true);
-    if (ADLX_SUCCEEDED(res))
-        std::cout << "\tSet Power control to default" << std::endl;
+    adlx_bool supported = false;
+    ADLX_RESULT res = smartShiftEco->IsSupported(&supported);
+    if (ADLX_SUCCEEDED(res) && supported) {
+        // The default power control policy is to enable AMD SmartShift Eco
+        res = smartShiftEco->SetEnabled(true);
+        if (ADLX_SUCCEEDED(res))
+            std::cout << "\tSet Power control to default" << std::endl;
+    } else {
+        std::cout << "\tGPU connect is not supported" << std::endl;
+    }
 }
 
 // Display get application list support
@@ -562,12 +579,12 @@ void GetApplicationList(IADLXGPU2Ptr gpu)
                     const wchar_t* name = nullptr;
                     res = app->Name(&name);
                     if (ADLX_SUCCEEDED(res))
-                        std::cout << "\tThe name of the process running on the GPU is: " << name << std::endl;
+                        std::wcout << "\tThe name of the process running on the GPU is: " << name << std::endl;
 
                     const wchar_t* fullPath = nullptr;
                     res = app->FullPath(&fullPath);
                     if (ADLX_SUCCEEDED(res))
-                        std::cout << "\tThe full path of the process running on the GPU is: " << fullPath << std::endl;
+                        std::wcout << "\tThe full path of the process running on the GPU is: " << fullPath << std::endl;
 
                     ADLX_APP_GPU_DEPENDENCY type = ADLX_APP_GPU_DEPENDENCY::APP_GPU_UNKNOWN;
                     res = app->GPUDependencyType(&type);

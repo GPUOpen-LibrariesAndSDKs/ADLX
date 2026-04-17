@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('c__a_f_m_f.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2023 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -132,6 +132,11 @@ $(function(){initNavTree('c__a_f_m_f.html',''); initResizable(true); });
 		<tr><td>2</td><td> Display current AMD Fluid Motion Frames state</td></tr>
 		<tr><td>3</td><td> Enable AMD Fluid Motion Frames</td></tr>
 		<tr><td>4</td><td> Disable AMD Fluid Motion Frames</td></tr>
+        <tr><td>5</td><td> Display AFMF2.1 capabilities and state</td></tr>
+        <tr><td>6</td><td> Set algorithm</td></tr>
+        <tr><td>7</td><td> Set search mode</td></tr>
+        <tr><td>8</td><td> Set performance mode</td></tr>
+        <tr><td>9</td><td> Set fast motion response</td></tr>
 		<tr><td>M/m</td><td> Display the main menu</td></tr>
 		<tr><td>Q/q</td><td> Quit the application</td></tr>
         </tbody>
@@ -142,13 +147,13 @@ $(function(){initNavTree('c__a_f_m_f.html',''); initResizable(true); });
 </html>
  <h2>Code </h2>
 <div class="codeHeader"><span class="language">C</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2023 - 2025 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/ADLXHelper/Windows/C/ADLXHelper.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;SDK/Include/I3DSettings1.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;SDK/Include/I3DSettings3.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Display AFMF support</span></div>
@@ -268,6 +273,155 @@ $(function(){initNavTree('c__a_f_m_f.html',''); initResizable(true); });
 <div class="line"> </div>
 <div class="line">}</div>
 <div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> GetAFMF1Status(IADLX3DAMDFluidMotionFrames* d3dAFMF)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Get AFMF1 interface</span></div>
+<div class="line">    IADLX3DAMDFluidMotionFrames1* d3dAFMF1 = NULL;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dAFMF-&gt;pVtbl-&gt;QueryInterface(d3dAFMF, IID_IADLX3DAMDFluidMotionFrames1(), (<span class="keywordtype">void</span>**)&amp;d3dAFMF1);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res) &amp;&amp; d3dAFMF1)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// Get AFMF1 status</span></div>
+<div class="line">        adlx_bool supported = <span class="keyword">false</span>;</div>
+<div class="line">        res = d3dAFMF1-&gt;pVtbl-&gt;IsSupportedAlgorithm(d3dAFMF1, &amp;supported);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tIsSupportedAlgorithm: %d, return code is: %d(0 means success)\n&quot;</span>, supported, res);</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Get AFMF1 algorithm</span></div>
+<div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#ga179e7502cf37502bbfd96fc1a38099b8">ADLX_AFMF_ALGORITHM</a> algorithm;</div>
+<div class="line">        res = d3dAFMF1-&gt;pVtbl-&gt;GetAlgorithm(d3dAFMF1, &amp;algorithm);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tGetAlgorithm: %d, return code is: %d(0 means success)\n&quot;</span>, algorithm, res);</div>
+<div class="line">        <span class="comment">// Get AFMF1 search mode</span></div>
+<div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#ga0ed00ebc4a2df15464170f9f2ba59b27">ADLX_AFMF_SEARCH_MODE_TYPE</a> searchMode;</div>
+<div class="line">        res = d3dAFMF1-&gt;pVtbl-&gt;GetSearchMode(d3dAFMF1, &amp;searchMode);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tGetSearchMode: %d, return code is: %d(0 means success)\n&quot;</span>, searchMode, res);</div>
+<div class="line">        <span class="comment">// Get AFMF1 performance mode</span></div>
+<div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#ga08416b85ef39ce89884ddd3fceab90ef">ADLX_AFMF_PERFORMANCE_MODE_TYPE</a> performanceMode;</div>
+<div class="line">        res = d3dAFMF1-&gt;pVtbl-&gt;GetPerformanceMode(d3dAFMF1, &amp;performanceMode);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tGetPerformanceMode: %d, return code is: %d(0 means success)\n&quot;</span>, performanceMode, res);</div>
+<div class="line">        <span class="comment">// Get AFMF1 fast motion response</span></div>
+<div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#ga2e77214f71e26ff498e9cd04373ae905">ADLX_AFMF_FAST_MOTION_RESP</a> fastMotionResponse;</div>
+<div class="line">        res = d3dAFMF1-&gt;pVtbl-&gt;GetFastMotionResponse(d3dAFMF1, &amp;fastMotionResponse);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tGetFastMotionResponse: %d, return code is: %d(0 means success)\n&quot;</span>, fastMotionResponse, res);</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Release AFMF1 interface</span></div>
+<div class="line">        d3dAFMF1-&gt;pVtbl-&gt;Release(d3dAFMF1);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Failed to get AFMF1 interface\n&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> SetAlgorithmCapabilities(IADLX3DAMDFluidMotionFrames* d3dAFMF)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Get AFMF1 interface</span></div>
+<div class="line">    IADLX3DAMDFluidMotionFrames1* d3dAFMF1 = NULL;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dAFMF-&gt;pVtbl-&gt;QueryInterface(d3dAFMF, IID_IADLX3DAMDFluidMotionFrames1(), (<span class="keywordtype">void</span>**)&amp;d3dAFMF1);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res) &amp;&amp; d3dAFMF1)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#ga179e7502cf37502bbfd96fc1a38099b8">ADLX_AFMF_ALGORITHM</a> algorithm;</div>
+<div class="line">        res = d3dAFMF1-&gt;pVtbl-&gt;GetAlgorithm(d3dAFMF1, &amp;algorithm);</div>
+<div class="line">        <span class="comment">// Set algorithm to a different value</span></div>
+<div class="line">        <span class="keywordflow">if</span> (AFMF_ALGORITHM_AUTO == algorithm)</div>
+<div class="line">            algorithm = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga179e7502cf37502bbfd96fc1a38099b8a6aebac042c0f24c0219b1a881882d5d1">AFMF_ALGORITHM_STANDARD</a>;</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (AFMF_ALGORITHM_ENHANCED == algorithm)</div>
+<div class="line">            algorithm = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga179e7502cf37502bbfd96fc1a38099b8a6aebac042c0f24c0219b1a881882d5d1">AFMF_ALGORITHM_STANDARD</a>;</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">            algorithm = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga179e7502cf37502bbfd96fc1a38099b8a3b19d0ac31cee627955ea85d750e5655">AFMF_ALGORITHM_ENHANCED</a>;</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Set AFMF1 algorithm</span></div>
+<div class="line">        res = d3dAFMF1-&gt;pVtbl-&gt;SetAlgorithm(d3dAFMF1, algorithm);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tSetAlgorithm: %d, return code is: %d(0 means success)\n&quot;</span>, algorithm, res);</div>
+<div class="line">        <span class="comment">// Release AFMF1 interface</span></div>
+<div class="line">        d3dAFMF1-&gt;pVtbl-&gt;Release(d3dAFMF1);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Failed to get AFMF1 interface\n&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> SetSearchMode(IADLX3DAMDFluidMotionFrames* d3dAFMF)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Get AFMF1 interface</span></div>
+<div class="line">    IADLX3DAMDFluidMotionFrames1* d3dAFMF1 = NULL;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dAFMF-&gt;pVtbl-&gt;QueryInterface(d3dAFMF, IID_IADLX3DAMDFluidMotionFrames1(), (<span class="keywordtype">void</span>**)&amp;d3dAFMF1);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res) &amp;&amp; d3dAFMF1)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#ga0ed00ebc4a2df15464170f9f2ba59b27">ADLX_AFMF_SEARCH_MODE_TYPE</a> searchMode;</div>
+<div class="line">        res = d3dAFMF1-&gt;pVtbl-&gt;GetSearchMode(d3dAFMF1, &amp;searchMode);</div>
+<div class="line">        <span class="comment">// Set search mode to a different value</span></div>
+<div class="line">        <span class="keywordflow">if</span> (AFMF_SEARCH_MODE_AUTO == searchMode)</div>
+<div class="line">            searchMode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga0ed00ebc4a2df15464170f9f2ba59b27ad744df8d6a5831df4681e1353df8c7a7">AFMF_SEARCH_MODE_STANDARD</a>;</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (AFMF_SEARCH_MODE_STANDARD == searchMode)</div>
+<div class="line">            searchMode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga0ed00ebc4a2df15464170f9f2ba59b27a53cd925112dba713989e997f56866cf5">AFMF_SEARCH_MODE_HIGH</a>;</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">            searchMode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga0ed00ebc4a2df15464170f9f2ba59b27a73dec649629654343622d3751d9dc13b">AFMF_SEARCH_MODE_AUTO</a>;</div>
+<div class="line">        <span class="comment">// Set AFMF1 search mode</span></div>
+<div class="line">        res = d3dAFMF1-&gt;pVtbl-&gt;SetSearchMode(d3dAFMF1, searchMode);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tSetSearchMode: %d, return code is: %d(0 means success)\n&quot;</span>, searchMode, res);</div>
+<div class="line">        <span class="comment">// Release AFMF1 interface</span></div>
+<div class="line">        d3dAFMF1-&gt;pVtbl-&gt;Release(d3dAFMF1);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Failed to get AFMF1 interface\n&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> SetPerformanceMode(IADLX3DAMDFluidMotionFrames* d3dAFMF)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Get AFMF1 interface</span></div>
+<div class="line">    IADLX3DAMDFluidMotionFrames1* d3dAFMF1 = NULL;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dAFMF-&gt;pVtbl-&gt;QueryInterface(d3dAFMF, IID_IADLX3DAMDFluidMotionFrames1(), (<span class="keywordtype">void</span>**)&amp;d3dAFMF1);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res) &amp;&amp; d3dAFMF1)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#ga08416b85ef39ce89884ddd3fceab90ef">ADLX_AFMF_PERFORMANCE_MODE_TYPE</a> performanceMode;</div>
+<div class="line">        res = d3dAFMF1-&gt;pVtbl-&gt;GetPerformanceMode(d3dAFMF1, &amp;performanceMode);</div>
+<div class="line">        <span class="comment">// Set performance mode to a different value</span></div>
+<div class="line">        <span class="keywordflow">if</span> (AFMF_PERFORMANCE_MODE_AUTO == performanceMode)</div>
+<div class="line">            performanceMode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga08416b85ef39ce89884ddd3fceab90efa53cf4b506948553f9b1dd9d868e18af7">AFMF_PERFORMANCE_MODE_QUALITY</a>;</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (AFMF_PERFORMANCE_MODE_QUALITY == performanceMode)</div>
+<div class="line">            performanceMode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga08416b85ef39ce89884ddd3fceab90efabaeb1551a0444e4b029022fd43c5c0f7">AFMF_PERFORMANCE_MODE_PERFORMANCE</a>;</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">            performanceMode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga08416b85ef39ce89884ddd3fceab90efa043b5b95f7c1f06c4625b0fe297d50e8">AFMF_PERFORMANCE_MODE_AUTO</a>;</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Set AFMF1 performance mode</span></div>
+<div class="line">        res = d3dAFMF1-&gt;pVtbl-&gt;SetPerformanceMode(d3dAFMF1, performanceMode);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tSetPerformanceMode: %d, return code is: %d(0 means success)\n&quot;</span>, performanceMode, res);</div>
+<div class="line">        <span class="comment">// Release AFMF1 interface</span></div>
+<div class="line">        d3dAFMF1-&gt;pVtbl-&gt;Release(d3dAFMF1);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Failed to get AFMF1 interface\n&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> SetFastMotionResponse(IADLX3DAMDFluidMotionFrames* d3dAFMF)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Get AFMF1 interface</span></div>
+<div class="line">    IADLX3DAMDFluidMotionFrames1* d3dAFMF1 = NULL;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dAFMF-&gt;pVtbl-&gt;QueryInterface(d3dAFMF, IID_IADLX3DAMDFluidMotionFrames1(), (<span class="keywordtype">void</span>**)&amp;d3dAFMF1);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res) &amp;&amp; d3dAFMF1)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#ga2e77214f71e26ff498e9cd04373ae905">ADLX_AFMF_FAST_MOTION_RESP</a> fastMotionResponse;</div>
+<div class="line">        res = d3dAFMF1-&gt;pVtbl-&gt;GetFastMotionResponse(d3dAFMF1, &amp;fastMotionResponse);</div>
+<div class="line">        <span class="comment">// Set fast motion response to a different value</span></div>
+<div class="line">        <span class="keywordflow">if</span> (AFMF_RESP_REPEAT_FRAMES == fastMotionResponse)</div>
+<div class="line">            fastMotionResponse = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga2e77214f71e26ff498e9cd04373ae905a01d612d98dab65761fcd9f0a3ae54e5a">AFMF_RESP_BLENDED_FRAMES</a>;</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">            fastMotionResponse = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga2e77214f71e26ff498e9cd04373ae905af24f7adbb9a40f6cf9669f45c27e1f37">AFMF_RESP_REPEAT_FRAMES</a>;</div>
+<div class="line">        <span class="comment">// Set AFMF1 fast motion response</span></div>
+<div class="line">        res = d3dAFMF1-&gt;pVtbl-&gt;SetFastMotionResponse(d3dAFMF1, fastMotionResponse);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tSetFastMotionResponse: %d, return code is: %d(0 means success)\n&quot;</span>, fastMotionResponse, res);</div>
+<div class="line">        <span class="comment">// Release AFMF1 interface</span></div>
+<div class="line">        d3dAFMF1-&gt;pVtbl-&gt;Release(d3dAFMF1);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Failed to get AFMF1 interface\n&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
 <div class="line"><span class="keywordtype">void</span> MainMenu()</div>
 <div class="line">{</div>
 <div class="line">    printf(<span class="stringliteral">&quot;\tChoose from the following options:\n&quot;</span>);</div>
@@ -276,6 +430,11 @@ $(function(){initNavTree('c__a_f_m_f.html',''); initResizable(true); });
 <div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press 2 to display current AMD Fluid Motion Frames state\n&quot;</span>);</div>
 <div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press 3 to enable AFMF\n&quot;</span>);</div>
 <div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press 4 to disable AFMF\n&quot;</span>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press 5 to display AFMF1 capabilities and state\n&quot;</span>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press 6 to set algorithm\n&quot;</span>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press 7 to set search mode\n&quot;</span>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press 8 to set performance mode\n&quot;</span>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press 9 to set fast motion response\n&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press Q/q to quit the application\n&quot;</span>);</div>
 <div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press M/m to display main menu\n&quot;</span>);</div>
@@ -304,6 +463,29 @@ $(function(){initNavTree('c__a_f_m_f.html',''); initResizable(true); });
 <div class="line">            SetAFMFState(d3dAFMF, num - <span class="charliteral">&#39;3&#39;</span>);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
+<div class="line">            <span class="comment">// Get AFMF2.1 capabilities and state</span></div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;5&#39;</span>:</div>
+<div class="line">            GetAFMF1Status(d3dAFMF);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// Set AFMF1 algorithm</span></div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;6&#39;</span>:</div>
+<div class="line">            SetAlgorithmCapabilities(d3dAFMF);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// Set AFMF1 search mode</span></div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;7&#39;</span>:</div>
+<div class="line">            SetSearchMode(d3dAFMF);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="comment">// Set AFMF1 performance mode</span></div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;8&#39;</span>:</div>
+<div class="line">            SetPerformanceMode(d3dAFMF);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="comment">// Set AFMF1 fast motion response</span></div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;9&#39;</span>:</div>
+<div class="line">            SetFastMotionResponse(d3dAFMF);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line"> </div>
 <div class="line">            <span class="comment">// Display menu options</span></div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;m&#39;</span>:</div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;M&#39;</span>:</div>
@@ -314,9 +496,23 @@ $(function(){initNavTree('c__a_f_m_f.html',''); initResizable(true); });
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga08416b85ef39ce89884ddd3fceab90efa043b5b95f7c1f06c4625b0fe297d50e8"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga08416b85ef39ce89884ddd3fceab90efa043b5b95f7c1f06c4625b0fe297d50e8">adlx::AFMF_PERFORMANCE_MODE_AUTO</a></div><div class="ttdeci">@ AFMF_PERFORMANCE_MODE_AUTO</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1075</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga08416b85ef39ce89884ddd3fceab90efa53cf4b506948553f9b1dd9d868e18af7"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga08416b85ef39ce89884ddd3fceab90efa53cf4b506948553f9b1dd9d868e18af7">adlx::AFMF_PERFORMANCE_MODE_QUALITY</a></div><div class="ttdeci">@ AFMF_PERFORMANCE_MODE_QUALITY</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1076</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga08416b85ef39ce89884ddd3fceab90efabaeb1551a0444e4b029022fd43c5c0f7"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga08416b85ef39ce89884ddd3fceab90efabaeb1551a0444e4b029022fd43c5c0f7">adlx::AFMF_PERFORMANCE_MODE_PERFORMANCE</a></div><div class="ttdeci">@ AFMF_PERFORMANCE_MODE_PERFORMANCE</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1077</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga0ed00ebc4a2df15464170f9f2ba59b27a53cd925112dba713989e997f56866cf5"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga0ed00ebc4a2df15464170f9f2ba59b27a53cd925112dba713989e997f56866cf5">adlx::AFMF_SEARCH_MODE_HIGH</a></div><div class="ttdeci">@ AFMF_SEARCH_MODE_HIGH</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1061</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga0ed00ebc4a2df15464170f9f2ba59b27a73dec649629654343622d3751d9dc13b"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga0ed00ebc4a2df15464170f9f2ba59b27a73dec649629654343622d3751d9dc13b">adlx::AFMF_SEARCH_MODE_AUTO</a></div><div class="ttdeci">@ AFMF_SEARCH_MODE_AUTO</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1059</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga0ed00ebc4a2df15464170f9f2ba59b27ad744df8d6a5831df4681e1353df8c7a7"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga0ed00ebc4a2df15464170f9f2ba59b27ad744df8d6a5831df4681e1353df8c7a7">adlx::AFMF_SEARCH_MODE_STANDARD</a></div><div class="ttdeci">@ AFMF_SEARCH_MODE_STANDARD</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1060</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga179e7502cf37502bbfd96fc1a38099b8a3b19d0ac31cee627955ea85d750e5655"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga179e7502cf37502bbfd96fc1a38099b8a3b19d0ac31cee627955ea85d750e5655">adlx::AFMF_ALGORITHM_ENHANCED</a></div><div class="ttdeci">@ AFMF_ALGORITHM_ENHANCED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1090</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga179e7502cf37502bbfd96fc1a38099b8a6aebac042c0f24c0219b1a881882d5d1"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga179e7502cf37502bbfd96fc1a38099b8a6aebac042c0f24c0219b1a881882d5d1">adlx::AFMF_ALGORITHM_STANDARD</a></div><div class="ttdeci">@ AFMF_ALGORITHM_STANDARD</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1091</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga2e77214f71e26ff498e9cd04373ae905a01d612d98dab65761fcd9f0a3ae54e5a"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga2e77214f71e26ff498e9cd04373ae905a01d612d98dab65761fcd9f0a3ae54e5a">adlx::AFMF_RESP_BLENDED_FRAMES</a></div><div class="ttdeci">@ AFMF_RESP_BLENDED_FRAMES</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1103</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga2e77214f71e26ff498e9cd04373ae905af24f7adbb9a40f6cf9669f45c27e1f37"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga2e77214f71e26ff498e9cd04373ae905af24f7adbb9a40f6cf9669f45c27e1f37">adlx::AFMF_RESP_REPEAT_FRAMES</a></div><div class="ttdeci">@ AFMF_RESP_REPEAT_FRAMES</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1102</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:283</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga08416b85ef39ce89884ddd3fceab90ef"><div class="ttname"><a href="group__enumerations.html#ga08416b85ef39ce89884ddd3fceab90ef">adlx::ADLX_AFMF_PERFORMANCE_MODE_TYPE</a></div><div class="ttdeci">ADLX_AFMF_PERFORMANCE_MODE_TYPE</div><div class="ttdoc">Indicates the AMD Fluid Motion Frames performance mode.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1074</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga0ed00ebc4a2df15464170f9f2ba59b27"><div class="ttname"><a href="group__enumerations.html#ga0ed00ebc4a2df15464170f9f2ba59b27">adlx::ADLX_AFMF_SEARCH_MODE_TYPE</a></div><div class="ttdeci">ADLX_AFMF_SEARCH_MODE_TYPE</div><div class="ttdoc">Indicates the AMD Fluid Motion Frames search mode.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1058</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga179e7502cf37502bbfd96fc1a38099b8"><div class="ttname"><a href="group__enumerations.html#ga179e7502cf37502bbfd96fc1a38099b8">adlx::ADLX_AFMF_ALGORITHM</a></div><div class="ttdeci">ADLX_AFMF_ALGORITHM</div><div class="ttdoc">Indicates the algorithm used by AMD Fluid Motion Frames.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1088</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga2e77214f71e26ff498e9cd04373ae905"><div class="ttname"><a href="group__enumerations.html#ga2e77214f71e26ff498e9cd04373ae905">adlx::ADLX_AFMF_FAST_MOTION_RESP</a></div><div class="ttdeci">ADLX_AFMF_FAST_MOTION_RESP</div><div class="ttdoc">Indicates the AMD Fluid Motion Frames approach to fast-motion content.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1101</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

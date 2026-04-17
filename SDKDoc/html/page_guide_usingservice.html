@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,24 @@ $(function(){initNavTree('page_guide_usingservice.html',''); initResizable(true)
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>ADLX v1.4 and above can be used directly in a Windows system service application, providing access to limited ADLX functionality.</p>
+<p>To use ADLX directly in a Windows system services application, a user must be logged to the local computer.<br  />
+</p>
+<p>When the user logs off, ADLX is no longer functional in the system service application.</p>
+<p>Any ADLX functions and methods called after the user log off will return ADLX_ORPHAN_OBJECTS. Any interface obtained from ADLX must be discarded and ADLX must be terminated. After a user logs on again, ADLX must be re-initialized.<br  />
+</p>
+<p>For more information on using ADLX directly into a Windows system service application, see <a class="el" href="cpp_sample__g_p_u_service_direct.html">GPUServiceDirect C++ sample</a> and <a class="el" href="c_sample__g_p_u_service_direct.html">GPUServiceDirect C sample</a>.</p>
+<p><b>Note:</b> When running in Session 0, ADLX cannot be initialized with an ADL context.<br  />
+ See <a class="el" href="page_guide_use__a_d_l_x.html">Using ADLX in an ADL application</a> for more information for initializing ADLX with an ADL context.</p>
 <p>Refer to <a href="#v13">ADLX v1.3 and below</a> if the Windows system service application requires ADLX functionality that is not available when ADLX runs in Session 0.</p>
+<h2>ADLX v1.5 and above</h2>
+<p>When ADLX v1.5 and above runs in a Windows system service application, the following functionality is available:</p><ul>
+<li>the functionality available in a Windows system service application with <a href="#v13">ADLX v1.4 and above</a></li>
+<li><a class="el" href="desktop.html">Desktop functionality</a></li>
+<li><a class="el" href="display.html">Display functionality</a></li>
+<li><a class="el" href="i2c.html">I2C functionality</a></li>
+<li><a class="el" href="domain_powertuning.html">Power Tuning functionality</a></li>
+<li><a class="el" href="system.html">System functionality</a></li>
+</ul>
 <h2>ADLX v1.4 and above</h2>
 <p>When ADLX v1.4 and above runs in a Windows system service application, the following functionality is available:</p><ul>
 <li><a class="el" href="page__a_d_l_x_helps.html">ADLX Helpers</a></li>
@@ -123,8 +140,6 @@ $(function(){initNavTree('page_guide_usingservice.html',''); initResizable(true)
 <li><a class="el" href="gputuning.html">GPU Tuning functionality</a></li>
 <li><a class="el" href="perfmonitoring.html">Performance Monitoring functionality</a></li>
 </ul>
-<p><b>Note:</b> When running in Session 0, ADLX cannot be initialized with an ADL context.<br  />
- See <a class="el" href="page_guide_use__a_d_l_x.html">Using ADLX in an ADL application</a> for more information for initializing ADLX with an ADL context.</p>
 <h2><a class="anchor" id="v13"></a>ADLX v1.3 and below</h2>
 <p>ADLX v1.3 and below cannot be used directly in a Windows system service application. However, ADLX functionality can be accessed in a system service application through a user mode process.<br  />
 </p>

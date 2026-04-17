@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -7,9 +7,7 @@
 /// \brief Demonstrates how to receive notifications of changes in 3D settings using ADLX. To receive the event, another application (such as AntiLag) must be used to change these settings.
 
 #include "SDK/ADLXHelper/Windows/C/ADLXHelper.h"
-#include "SDK/Include/I3DSettings.h"
-#include "SDK/Include/I3DSettings1.h"
-#include "SDK/Include/I3DSettings2.h"
+#include "SDK/Include/I3DSettings3.h"
 #include "conio.h"
 
 // Block event to verify call back
@@ -39,7 +37,14 @@ adlx_bool ADLX_STD_CALL On3DSettingsChanged(IADLX3DSettingsChangedListener *pThi
     {
         printf("3DSettingsChangedEvent2 not supported\n");
     }
-	
+
+    IADLX3DSettingsChangedEvent3* p3DSettingsChangedEvent3 = NULL;
+    p3DSettingsChangedEvent->pVtbl->QueryInterface(p3DSettingsChangedEvent, IID_IADLX3DSettingsChangedEvent3(), &p3DSettingsChangedEvent3);
+    if (p3DSettingsChangedEvent3 == NULL)
+    {
+        printf("3DSettingsChangedEvent3 not supported\n");
+    }
+
     //RadeonSuperResolution is a global feature (the GPU interface is NULL); skip printing its name
     if (!p3DSettingsChangedEvent->pVtbl->IsRadeonSuperResolutionChanged(p3DSettingsChangedEvent))
     {
@@ -98,9 +103,17 @@ adlx_bool ADLX_STD_CALL On3DSettingsChanged(IADLX3DSettingsChangedListener *pThi
         {
             printf("\tResetShaderCache\n");
         }
-        else if (p3DSettingsChangedEvent2->pVtbl->IsImageSharpenDesktopChanged(p3DSettingsChangedEvent2))
+        else if (p3DSettingsChangedEvent2 && p3DSettingsChangedEvent2->pVtbl->IsImageSharpenDesktopChanged(p3DSettingsChangedEvent2))
         {
             printf("\tImage Sharpening 2 is changed\n");
+        }
+        else if (p3DSettingsChangedEvent3 && p3DSettingsChangedEvent3->pVtbl->IsFidelityFXSuperResolutionChanged(p3DSettingsChangedEvent3))
+        {
+            printf("\tFidelityFX Super Resolution is changed\n");
+        }
+        else if (p3DSettingsChangedEvent3 && p3DSettingsChangedEvent3->pVtbl->IsFidelityFXFrameGenUpgradeChanged(p3DSettingsChangedEvent3))
+        {
+            printf("\tFidelityFX Frame Generation Upgrade is changed\n");
         }
     }
 
@@ -110,7 +123,7 @@ adlx_bool ADLX_STD_CALL On3DSettingsChanged(IADLX3DSettingsChangedListener *pThi
         {
             printf("\tget sync event, RSR changed\n");
         }
-        else if (p3DSettingsChangedEvent1->pVtbl->IsAMDFluidMotionFramesChanged(p3DSettingsChangedEvent1))
+        else if (p3DSettingsChangedEvent1 && p3DSettingsChangedEvent1->pVtbl->IsAMDFluidMotionFramesChanged(p3DSettingsChangedEvent1))
         {
             printf("\tAMDFluidMotionFrames changed\n");
         }
@@ -136,6 +149,12 @@ adlx_bool ADLX_STD_CALL On3DSettingsChanged(IADLX3DSettingsChangedListener *pThi
         p3DSettingsChangedEvent2 = NULL;
     }
 
+    // Release the IADLX3DSettingsChangedEvent3 interface
+    if (p3DSettingsChangedEvent3 != NULL)
+    {
+        p3DSettingsChangedEvent3->pVtbl->Release(p3DSettingsChangedEvent3);
+        p3DSettingsChangedEvent3 = NULL;
+    }
     SetEvent(blockEvent);
 
     // Return true for ADLX to continue notifying the next listener, or false to stop notification

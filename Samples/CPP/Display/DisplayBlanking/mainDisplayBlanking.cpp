@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -154,6 +154,7 @@ void GetDisplayBlankingState(const IADLXDisplayServices1Ptr& displayService1, co
         if (ADLX_SUCCEEDED(res))
             std::cout << "\tIsCurrentUnblanked: " << (unBlanked ? "true" : "false") << std::endl;
     }
+    std::cout << "\tReturn code is: " << res << " (0 means success)" << std::endl;
 }
 
 void SetDisplayBlankingState(const IADLXDisplayServices1Ptr& displayService1, const IADLXDisplayPtr& display, const int key)

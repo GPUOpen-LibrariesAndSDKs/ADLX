@@ -33,12 +33,13 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_a_d_l_x_defines_8h.html#ga0ec0640b97efee73b589bf0b1c07a8fea52e5d81a538ca03d28c5d3d0dd33662c",
-"_d_o_x__i_a_d_l_x3_d_chill__is_supported.html",
-"_d_o_x__i_a_d_l_x_display_free_sync_color_accuracy__set_enabled.html",
-"_d_o_x__i_a_d_l_x_g_p_u_auto_tuning__is_supported_overclock_v_r_a_m.html",
-"_d_o_x__i_a_d_l_x_memory_timing_description_list__at.html",
-"cpp_sample_userprocess.html"
+"_a_d_l_x_defines_8h.html#ga031ebfb1ab98baeb9e2b49df3eb3302ca5ffa3b60d0bd170c844f209f50a52c01",
+"_d_o_x__i_a_d_l_x3_d_a_m_d_fluid_motion_frames1__set_search_mode.html",
+"_d_o_x__i_a_d_l_x_display_color_depth__is_supported_b_p_c_10.html",
+"_d_o_x__i_a_d_l_x_eyefinity_desktop__display_orientation.html",
+"_d_o_x__i_a_d_l_x_manual_fan_tuning__set_fan_tuning_states.html",
+"c__wait_for_vertical_refresh.html",
+"group__structures_val.html#ad34c7449d0336a88ffd1cdbef31c2540"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -34,7 +34,7 @@ void SetDynamicRefreshRateControlState(IADLXDisplayServices3* displayService3, I
 void MainMenu();
 
 // Menu action control
-void MenuControl(IADLXDisplayServices3* displayService3, const IADLXDisplay* display);
+void MenuControl(IADLXDisplayServices3* displayService3, IADLXDisplay* display);
 
 // Wait for exit with error message
 int WaitAndExit(const char* msg, const int retCode);
@@ -154,17 +154,18 @@ void SetDynamicRefreshRateControlState(IADLXDisplayServices3* displayService3, I
     ADLX_RESULT res = displayService3->pVtbl->GetDynamicRefreshRateControl(displayService3,display, &displayDynamicRefreshRateControl);
     if (ADLX_SUCCEEDED(res))
     {
-        printf("  === Set Dynamic Refresh Rate Control ===\n");
         ADLX_RESULT res = ADLX_FAIL;
         switch (key)
         {
             // Set Dynamic Refresh Rate Control disabled
         case 0:
-            res = displayDynamicRefreshRateControl->pVtbl->SetEnabled(displayDynamicRefreshRateControl, false);
+            printf("  === Set Dynamic Refresh Rate Control enabled: true ===\n");
+            res = displayDynamicRefreshRateControl->pVtbl->SetEnabled(displayDynamicRefreshRateControl, true);
             break;
             // Set Dynamic Refresh Rate Control enabled
         case 1:
-            res = displayDynamicRefreshRateControl->pVtbl->SetEnabled(displayDynamicRefreshRateControl, true);
+            printf("  === Set Dynamic Refresh Rate Control enabled: false ===\n");
+            res = displayDynamicRefreshRateControl->pVtbl->SetEnabled(displayDynamicRefreshRateControl, false);
             break;
         default:
             break;
@@ -190,7 +191,7 @@ void MainMenu()
 }
 
 // Menu action control
-void MenuControl(IADLXDisplayServices3* displayService3, const IADLXDisplay* display)
+void MenuControl(IADLXDisplayServices3* displayService3, IADLXDisplay* display)
 {
     int num = 0;
     while ((num = getchar()) != 'q' && num != 'Q')

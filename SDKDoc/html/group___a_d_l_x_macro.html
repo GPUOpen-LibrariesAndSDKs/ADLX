@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -132,6 +132,8 @@ Macros</h2></td></tr>
 <tr class="separator:ga8f14be1543fc55eae619dda67965bf35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6219bdf1844b1f9bbb4fde96630442e4" id="r_ga6219bdf1844b1f9bbb4fde96630442e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6219bdf1844b1f9bbb4fde96630442e4">ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME</a>&#160;&#160;&#160;&quot;ADLXInitializeWithIncompatibleDriver&quot;</td></tr>
 <tr class="separator:ga6219bdf1844b1f9bbb4fde96630442e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed710ace50ff6cad1352b3241c215b3b" id="r_gaed710ace50ff6cad1352b3241c215b3b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaed710ace50ff6cad1352b3241c215b3b">ADLX_INIT2_FUNCTION_NAME</a>&#160;&#160;&#160;&quot;ADLXInitialize2&quot;</td></tr>
+<tr class="separator:gaed710ace50ff6cad1352b3241c215b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad4b30c181751a349fccd865550dbc709" id="r_gad4b30c181751a349fccd865550dbc709"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad4b30c181751a349fccd865550dbc709">ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME</a>&#160;&#160;&#160;&quot;ADLXInitializeWithCallerAdl&quot;</td></tr>
 <tr class="separator:gad4b30c181751a349fccd865550dbc709"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4eb1fd9b5d55b0699d498535f29c4634" id="r_ga4eb1fd9b5d55b0699d498535f29c4634"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4eb1fd9b5d55b0699d498535f29c4634">ADLX_TERMINATE_FUNCTION_NAME</a>&#160;&#160;&#160;&quot;ADLXTerminate&quot;</td></tr>
@@ -285,12 +287,29 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0a72597a9998fa21f37bfcaddd9cafaed5">ADLX_OK</a> != (x)  &amp;&amp; <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0a85feb7c16bb0c565f3aab9892afe5fd5">ADLX_ALREADY_ENABLED</a> != (x) &amp;&amp; <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0ab8b50ab5ce732abd04769f06bf5c47f7">ADLX_ALREADY_INITIALIZED</a> != (x))</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0a72597a9998fa21f37bfcaddd9cafaed5"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0a72597a9998fa21f37bfcaddd9cafaed5">ADLX_OK</a></div><div class="ttdeci">@ ADLX_OK</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0a85feb7c16bb0c565f3aab9892afe5fd5"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0a85feb7c16bb0c565f3aab9892afe5fd5">ADLX_ALREADY_ENABLED</a></div><div class="ttdeci">@ ADLX_ALREADY_ENABLED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:280</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0ab8b50ab5ce732abd04769f06bf5c47f7"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0ab8b50ab5ce732abd04769f06bf5c47f7">ADLX_ALREADY_INITIALIZED</a></div><div class="ttdeci">@ ADLX_ALREADY_INITIALIZED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:281</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0a72597a9998fa21f37bfcaddd9cafaed5"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0a72597a9998fa21f37bfcaddd9cafaed5">ADLX_OK</a></div><div class="ttdeci">@ ADLX_OK</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:280</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0a85feb7c16bb0c565f3aab9892afe5fd5"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0a85feb7c16bb0c565f3aab9892afe5fd5">ADLX_ALREADY_ENABLED</a></div><div class="ttdeci">@ ADLX_ALREADY_ENABLED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:281</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0ab8b50ab5ce732abd04769f06bf5c47f7"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0ab8b50ab5ce732abd04769f06bf5c47f7">ADLX_ALREADY_INITIALIZED</a></div><div class="ttdeci">@ ADLX_ALREADY_INITIALIZED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
 </div><!-- fragment --><p>Checks if the result code passed as parameter indicates an unsuccessful operation. </p><h3>Definition </h3>
 <pre class="fragment">
   #define ADLX_FAILED(x) (<b>ADLX_OK</b> != (x)  &amp;&amp; <b>ADLX_ALREADY_ENABLED</b> != (x) &amp;&amp; <b>ADLX_ALREADY_INITIALIZED</b> != (x))
+  </pre> 
+</div>
+</div>
+<a id="gaed710ace50ff6cad1352b3241c215b3b" name="gaed710ace50ff6cad1352b3241c215b3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaed710ace50ff6cad1352b3241c215b3b">&#9670;&#160;</a></span>ADLX_INIT2_FUNCTION_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADLX_INIT2_FUNCTION_NAME&#160;&#160;&#160;&quot;ADLXInitialize2&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The function name of ADLXInitialize2 </p><h3>Definition </h3>
+<pre class="fragment">
+  #define ADLX_INIT2_FUNCTION_NAME                             "ADLXInitialize2"
   </pre> 
 </div>
 </div>
@@ -342,6 +361,9 @@ Macros</h2></td></tr>
 <p>The function name of ADLXInitializeWithIncompatibleDriver </p><h3>Definition </h3>
 <pre class="fragment">
   #define ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME          "ADLXInitializeWithIncompatibleDriver"
+  </pre><p>The function name of ADLXInitializeWithIncompatibleDriver </p><h3>Definition </h3>
+<pre class="fragment">
+  #define ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME          "ADLXInitializeWithIncompatibleDriver2"
   </pre> 
 </div>
 </div>

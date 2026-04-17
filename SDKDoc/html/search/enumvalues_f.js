@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['undefined_0',['UNDEFINED',['../_a_d_l_x_defines_8h.html#gafcbeca41c0df518ccf5556e8e6e83f62a605159e8a4c32319fd69b5d151369d93',1,'ADLXDefines.h']]],
-  ['unknow_1',['UNKNOW',['../_a_d_l_x_defines_8h.html#ga87f8763d8496a4e5ec84964e149144fda09b024ff449662360c66ce18d20096fa',1,'ADLXDefines.h']]]
+  ['undefined_0',['UNDEFINED',['../_a_d_l_x_defines_8h.html#ga5ede6debe6eec10802aea6ca910e5f6fac827b46c77087192e81d794bfea5b33a',1,'adlx']]],
+  ['unknow_1',['UNKNOW',['../_a_d_l_x_defines_8h.html#ga9c76a65997af254438faad094276bb4ea83317aa06eeb295d2158ecc505c90536',1,'adlx']]]
 ];

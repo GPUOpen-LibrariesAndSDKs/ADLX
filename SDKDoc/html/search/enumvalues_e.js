@@ -1,17 +1,17 @@
 var searchData=
 [
-  ['t_5flevel_5f16x_0',['T_LEVEL_16X',['../_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca81da4c659b7805407bec0d0ad595bb69',1,'ADLXDefines.h']]],
-  ['t_5flevel_5f2x_1',['T_LEVEL_2X',['../_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca1ab9133a629987f8ca508e3d4031b4df',1,'ADLXDefines.h']]],
-  ['t_5flevel_5f32x_2',['T_LEVEL_32X',['../_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca4e5b2fc5d494fd9a30109f7f7038ac03',1,'ADLXDefines.h']]],
-  ['t_5flevel_5f4x_3',['T_LEVEL_4X',['../_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca2abb616e9496d3cfd550ac2f92c9e3ee',1,'ADLXDefines.h']]],
-  ['t_5flevel_5f64x_4',['T_LEVEL_64X',['../_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5cafc6e09b3c44597e193bedd8a592474c0',1,'ADLXDefines.h']]],
-  ['t_5flevel_5f6x_5',['T_LEVEL_6X',['../_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca4f8d9cec3c1ff901e46ed1e9156c7420',1,'ADLXDefines.h']]],
-  ['t_5flevel_5f8x_6',['T_LEVEL_8X',['../_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5cad61c7030ea4f89ca43af8d9087fafd45',1,'ADLXDefines.h']]],
-  ['t_5flevel_5foff_7',['T_LEVEL_OFF',['../_a_d_l_x_defines_8h.html#ga5967c593434c0cba5891c996d64cff5ca07fb2f890b90b7ad6cbcf07cfbcae36c',1,'ADLXDefines.h']]],
-  ['t_5fmode_5famd_5foptimized_8',['T_MODE_AMD_OPTIMIZED',['../_a_d_l_x_defines_8h.html#ga7899078325beddfbe0f4e63dca8ce8caa73ae5eb0bacfbde56077eea258648325',1,'ADLXDefines.h']]],
-  ['t_5fmode_5foverride_5fapp_5fsettings_9',['T_MODE_OVERRIDE_APP_SETTINGS',['../_a_d_l_x_defines_8h.html#ga7899078325beddfbe0f4e63dca8ce8caa457aa8bc48fb10ec6b107b28e56a56b5',1,'ADLXDefines.h']]],
-  ['t_5fmode_5fuse_5fapp_5fsettings_10',['T_MODE_USE_APP_SETTINGS',['../_a_d_l_x_defines_8h.html#ga7899078325beddfbe0f4e63dca8ce8caa908c4c2fcd9ca251f77201ac62002b7e',1,'ADLXDefines.h']]],
-  ['tf_5fg22_11',['TF_G22',['../_a_d_l_x_defines_8h.html#ga7ebbfe051a5113c2c1521af3426b7955a13489b5b70dc2920b2a39b0617a1674d',1,'ADLXDefines.h']]],
-  ['tf_5fpq_12',['TF_PQ',['../_a_d_l_x_defines_8h.html#ga7ebbfe051a5113c2c1521af3426b7955ab7e789edc19856a34fe8b6e0c23ded66',1,'ADLXDefines.h']]],
-  ['tf_5fsrgb_13',['TF_SRGB',['../_a_d_l_x_defines_8h.html#ga7ebbfe051a5113c2c1521af3426b7955a0a4fa9ac7814d34d0d9da291b0496208',1,'ADLXDefines.h']]]
+  ['t_5flevel_5f16x_0',['T_LEVEL_16X',['../_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a0e24f974e2006aa08c8195ac447de3c2',1,'adlx']]],
+  ['t_5flevel_5f2x_1',['T_LEVEL_2X',['../_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087ade1a612fb6e0a4a2fe21a654affeace8',1,'adlx']]],
+  ['t_5flevel_5f32x_2',['T_LEVEL_32X',['../_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a8cabc82063a6f4b65bea6f3ec2d1e307',1,'adlx']]],
+  ['t_5flevel_5f4x_3',['T_LEVEL_4X',['../_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a12c90bb34407646d57d0570e51f4a543',1,'adlx']]],
+  ['t_5flevel_5f64x_4',['T_LEVEL_64X',['../_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a6a6a2c167a5b2dc7a9386c3dad16f7bd',1,'adlx']]],
+  ['t_5flevel_5f6x_5',['T_LEVEL_6X',['../_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087ae58165293933402f57c51215a4519d6f',1,'adlx']]],
+  ['t_5flevel_5f8x_6',['T_LEVEL_8X',['../_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a021b34937d19edff4113be2ccb091c40',1,'adlx']]],
+  ['t_5flevel_5foff_7',['T_LEVEL_OFF',['../_a_d_l_x_defines_8h.html#gad220568d4b112a3a7884b9ce9d91e087a7dc57282466e47985ee12cc9b635f49e',1,'adlx']]],
+  ['t_5fmode_5famd_5foptimized_8',['T_MODE_AMD_OPTIMIZED',['../_a_d_l_x_defines_8h.html#gaa6e14a78bb8553e5becd26ef315995f0af58cdbb88ac76b71e10d87cfce71a747',1,'adlx']]],
+  ['t_5fmode_5foverride_5fapp_5fsettings_9',['T_MODE_OVERRIDE_APP_SETTINGS',['../_a_d_l_x_defines_8h.html#gaa6e14a78bb8553e5becd26ef315995f0a7d5e611b48f77f3b4f8df11d9ed8f229',1,'adlx']]],
+  ['t_5fmode_5fuse_5fapp_5fsettings_10',['T_MODE_USE_APP_SETTINGS',['../_a_d_l_x_defines_8h.html#gaa6e14a78bb8553e5becd26ef315995f0a43a0dca464c38a8a755987cceeba0730',1,'adlx']]],
+  ['tf_5fg22_11',['TF_G22',['../_a_d_l_x_defines_8h.html#gaa78351dcd7f33221796739191d25c15aa30dc02bfef44e25843435760b001969b',1,'adlx']]],
+  ['tf_5fpq_12',['TF_PQ',['../_a_d_l_x_defines_8h.html#gaa78351dcd7f33221796739191d25c15aa7d958b71c5f17cac5b3a7936140f0a2f',1,'adlx']]],
+  ['tf_5fsrgb_13',['TF_SRGB',['../_a_d_l_x_defines_8h.html#gaa78351dcd7f33221796739191d25c15aa7fc8fccd0eb51f2762d923de70c82c99',1,'adlx']]]
 ];

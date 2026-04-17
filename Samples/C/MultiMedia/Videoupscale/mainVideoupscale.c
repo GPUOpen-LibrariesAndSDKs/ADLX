@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2023 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -155,6 +155,7 @@ void GetVideoupscaleState(IADLXVideoUpscale* videoupscale)
     ADLX_RESULT res = videoupscale->pVtbl->IsEnabled(videoupscale, &enabled);
     if (ADLX_SUCCEEDED(res))
         printf("\tIsEnabled: %d\n", enabled);
+    printf("\tReturn code is: %d (0 means success)\n", res);
     adlx_int minSharp;
     ADLX_IntRange sharpnessRange;
     res = videoupscale->pVtbl->GetSharpness(videoupscale, &minSharp);

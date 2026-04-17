@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -113,7 +113,7 @@ $(function(){initNavTree('_d_o_x__i_a_d_l_x_multimedia_changed_event_listener__o
   <div class="headertitle"><div class="title">OnMultimediaChanged</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><b>OnMultimediaChanged</b> is called by ADLX when multimedia settings change.</p>
+<div class="textblock"><p><b>OnMultimediaChanged</b> is called by ADLX when multimedia settings are changed.</p>
 <h2>Syntax </h2>
 <pre class="fragment">
  adlx_bool    OnMultimediaChanged (<a class="el" href="_d_o_x__i_a_d_l_x_multimedia_changed_event.html">IADLXMultimediaChangedEvent</a>* pMultimediaChangedEvent)
@@ -131,7 +131,11 @@ $(function(){initNavTree('_d_o_x__i_a_d_l_x_multimedia_changed_event_listener__o
  If the application requires ADLX to stop notifying the next listener, <b>false</b> must be returned.<br  />
 </p>
 <h2>Remarks </h2>
-<p>Once the application registers to the notifications with <a class="el" href="_d_o_x__i_a_d_l_x_multimedia_changed_handling__add_multimedia_event_listener.html">AddMultimediaEventListener</a>, ADLX will call this method until the application unregisters from the notifications with <a class="el" href="_d_o_x__i_a_d_l_x_multimedia_changed_handling__remove_multimedia_event_listener.html">RemoveMultimediaEventListener</a>. The method should return quickly to not block the execution path in ADLX. If the method requires a long processing of the event notification, the application must hold onto a reference to the multimedia settings change event with <a class="el" href="_d_o_x__i_a_d_l_x_interface__acquire.html">Acquire</a> and make it available on an asynchronous thread and return immediately. When the asynchronous thread is done processing it must discard the multimedia settings change event with <a class="el" href="_d_o_x__i_a_d_l_x_interface__release.html">Release</a>.</p>
+<p>Once the application registers to the notifications with <a class="el" href="_d_o_x__i_a_d_l_x_multimedia_changed_handling__add_multimedia_event_listener.html">AddMultimediaEventListener</a>, ADLX will call this method until the application unregisters from the notifications with <a class="el" href="_d_o_x__i_a_d_l_x_multimedia_changed_handling__remove_multimedia_event_listener.html">RemoveMultimediaEventListener</a>.<br  />
+</p>
+<p>The method should return quickly to not block the execution path in ADLX. If the method requires a long processing of the event notification, the application must hold onto a reference to the multimedia settings change event with <a class="el" href="_d_o_x__i_a_d_l_x_interface__acquire.html">Acquire</a> and make it available on an asynchronous thread and return immediately.<br  />
+</p>
+<p>When the asynchronous thread is done processing it must discard the multimedia settings change event with <a class="el" href="_d_o_x__i_a_d_l_x_interface__release.html">Release</a>.  </p>
 <h2>Requirements </h2>
 <table class="doxtable">
 <tr style="height=40px">

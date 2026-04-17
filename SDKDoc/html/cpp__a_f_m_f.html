@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('cpp__a_f_m_f.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2023 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -132,6 +132,11 @@ $(function(){initNavTree('cpp__a_f_m_f.html',''); initResizable(true); });
 		<tr><td>2</td><td> Display current AMD Fluid Motion Frames state</td></tr>
 		<tr><td>3</td><td> Enable AMD Fluid Motion Frames</td></tr>
 		<tr><td>4</td><td> Disable AMD Fluid Motion Frames</td></tr>
+        <tr><td>5</td><td> Display AFMF2.1 capabilities and state</td></tr>
+        <tr><td>6</td><td> Set algorithm</td></tr>
+        <tr><td>7</td><td> Set search mode</td></tr>
+        <tr><td>8</td><td> Set performance mode</td></tr>
+        <tr><td>9</td><td> Set fast motion response</td></tr>
 		<tr><td>M/m</td><td> Display the main menu</td></tr>
 		<tr><td>Q/q</td><td> Quit the application</td></tr>
         </tbody>
@@ -142,13 +147,13 @@ $(function(){initNavTree('cpp__a_f_m_f.html',''); initResizable(true); });
 </html>
  <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2023 - 2025 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;SDK/Include/I3DSettings1.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;SDK/Include/I3DSettings3.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
@@ -199,7 +204,6 @@ $(function(){initNavTree('cpp__a_f_m_f.html',''); initResizable(true); });
 <div class="line"> </div>
 <div class="line">            <span class="keywordflow">if</span> (NULL != d3dSettingSrv1)</div>
 <div class="line">            {</div>
-<div class="line"> </div>
 <div class="line">                <span class="comment">// Get AFMF interface</span></div>
 <div class="line">                IADLX3DAMDFluidMotionFramesPtr d3dAFMF;</div>
 <div class="line">                res = d3dSettingSrv1-&gt;GetAMDFluidMotionFrames(&amp;d3dAFMF);</div>
@@ -256,6 +260,122 @@ $(function(){initNavTree('cpp__a_f_m_f.html',''); initResizable(true); });
 <div class="line"> </div>
 <div class="line">}</div>
 <div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> GetAFMF1Status(<span class="keyword">const</span> IADLX3DAMDFluidMotionFramesPtr&amp; d3dAFMF)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Get AFMF1 interface</span></div>
+<div class="line">    IADLX3DAMDFluidMotionFrames1Ptr d3dAFMF1(d3dAFMF);</div>
+<div class="line">    <span class="keywordflow">if</span> (d3dAFMF1 == <span class="keyword">nullptr</span>)</div>
+<div class="line">    {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;AFMF2 interface is not supported&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    adlx_bool supported = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dAFMF1-&gt;IsSupportedAlgorithm(&amp;supported);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tIsSupportedAlgorithm: &quot;</span> &lt;&lt; supported &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res) &amp;&amp; supported)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code hl_enumeration" href="group__enumerations.html#ga179e7502cf37502bbfd96fc1a38099b8">ADLX_AFMF_ALGORITHM</a> algorithm;</div>
+<div class="line">        res = d3dAFMF1-&gt;GetAlgorithm(&amp;algorithm);</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;\tAlgorithm: &quot;</span> &lt;&lt; algorithm &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga0ed00ebc4a2df15464170f9f2ba59b27">ADLX_AFMF_SEARCH_MODE_TYPE</a> searchMode;</div>
+<div class="line">    res = d3dAFMF1-&gt;GetSearchMode(&amp;searchMode);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSearchMode: &quot;</span> &lt;&lt; searchMode &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga08416b85ef39ce89884ddd3fceab90ef">ADLX_AFMF_PERFORMANCE_MODE_TYPE</a> performanceMode;</div>
+<div class="line">    res = d3dAFMF1-&gt;GetPerformanceMode(&amp;performanceMode);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tPerformanceMode: &quot;</span> &lt;&lt; performanceMode &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga2e77214f71e26ff498e9cd04373ae905">ADLX_AFMF_FAST_MOTION_RESP</a> response;</div>
+<div class="line">    res = d3dAFMF1-&gt;GetFastMotionResponse(&amp;response);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tFastMotionResponse: &quot;</span> &lt;&lt; response &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> SetAlgorithmCapabilities(<span class="keyword">const</span> IADLX3DAMDFluidMotionFramesPtr&amp; d3dAFMF)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Get AFMF1 interface</span></div>
+<div class="line">    IADLX3DAMDFluidMotionFrames1Ptr d3dAFMF1(d3dAFMF);</div>
+<div class="line">    <span class="keywordflow">if</span> (d3dAFMF1 == <span class="keyword">nullptr</span>)</div>
+<div class="line">    {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;AFMF2 interface is not supported&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga179e7502cf37502bbfd96fc1a38099b8">ADLX_AFMF_ALGORITHM</a> algorithm;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dAFMF1-&gt;GetAlgorithm(&amp;algorithm);</div>
+<div class="line">    <span class="comment">// Set algorithm to a different value</span></div>
+<div class="line">    <span class="keywordflow">if</span> (AFMF_ALGORITHM_AUTO == algorithm)</div>
+<div class="line">        res = d3dAFMF1-&gt;SetAlgorithm(AFMF_ALGORITHM_STANDARD);</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (AFMF_ALGORITHM_ENHANCED == algorithm)</div>
+<div class="line">        res = d3dAFMF1-&gt;SetAlgorithm(AFMF_ALGORITHM_STANDARD);</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">        res = d3dAFMF1-&gt;SetAlgorithm(AFMF_ALGORITHM_ENHANCED);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tReturn code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> SetSearchMode(<span class="keyword">const</span> IADLX3DAMDFluidMotionFramesPtr&amp; d3dAFMF)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Get AFMF1 interface</span></div>
+<div class="line">    IADLX3DAMDFluidMotionFrames1Ptr d3dAFMF1(d3dAFMF);</div>
+<div class="line">    <span class="keywordflow">if</span> (d3dAFMF1 == <span class="keyword">nullptr</span>)</div>
+<div class="line">    {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;AFMF2 interface is not supported&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga0ed00ebc4a2df15464170f9f2ba59b27">ADLX_AFMF_SEARCH_MODE_TYPE</a> searchMode;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dAFMF1-&gt;GetSearchMode(&amp;searchMode);</div>
+<div class="line">    <span class="comment">// Set search mode to a different value</span></div>
+<div class="line">    <span class="keywordflow">if</span> (AFMF_SEARCH_MODE_AUTO == searchMode)</div>
+<div class="line">        res = d3dAFMF1-&gt;SetSearchMode(AFMF_SEARCH_MODE_STANDARD);</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (AFMF_SEARCH_MODE_STANDARD == searchMode)</div>
+<div class="line">        res = d3dAFMF1-&gt;SetSearchMode(AFMF_SEARCH_MODE_HIGH);</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (AFMF_SEARCH_MODE_HIGH == searchMode)</div>
+<div class="line">        res = d3dAFMF1-&gt;SetSearchMode(AFMF_SEARCH_MODE_AUTO);</div>
+<div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tReturn code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> SetPerformanceMode(<span class="keyword">const</span> IADLX3DAMDFluidMotionFramesPtr&amp; d3dAFMF)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Get AFMF1 interface</span></div>
+<div class="line">    IADLX3DAMDFluidMotionFrames1Ptr d3dAFMF1(d3dAFMF);</div>
+<div class="line">    <span class="keywordflow">if</span> (d3dAFMF1 == <span class="keyword">nullptr</span>)</div>
+<div class="line">    {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;AFMF2 interface is not supported&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga08416b85ef39ce89884ddd3fceab90ef">ADLX_AFMF_PERFORMANCE_MODE_TYPE</a> performanceMode;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dAFMF1-&gt;GetPerformanceMode(&amp;performanceMode);</div>
+<div class="line">    <span class="comment">// Set performance mode to a different value</span></div>
+<div class="line">    <span class="keywordflow">if</span> (AFMF_PERFORMANCE_MODE_AUTO == performanceMode)</div>
+<div class="line">        res = d3dAFMF1-&gt;SetPerformanceMode(AFMF_PERFORMANCE_MODE_QUALITY);</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (AFMF_PERFORMANCE_MODE_QUALITY == performanceMode)</div>
+<div class="line">        res = d3dAFMF1-&gt;SetPerformanceMode(AFMF_PERFORMANCE_MODE_PERFORMANCE);</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">        res = d3dAFMF1-&gt;SetPerformanceMode(AFMF_PERFORMANCE_MODE_AUTO);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tReturn code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> SetFastMotionResponse(<span class="keyword">const</span> IADLX3DAMDFluidMotionFramesPtr&amp; d3dAFMF)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Get AFMF1 interface</span></div>
+<div class="line">    IADLX3DAMDFluidMotionFrames1Ptr d3dAFMF1(d3dAFMF);</div>
+<div class="line">    <span class="keywordflow">if</span> (d3dAFMF1 == <span class="keyword">nullptr</span>)</div>
+<div class="line">    {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;AFMF2 interface is not supported&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga2e77214f71e26ff498e9cd04373ae905">ADLX_AFMF_FAST_MOTION_RESP</a> response;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = d3dAFMF1-&gt;GetFastMotionResponse(&amp;response);</div>
+<div class="line">    <span class="comment">// Set fast motion response to a different value</span></div>
+<div class="line">    <span class="keywordflow">if</span> (AFMF_RESP_REPEAT_FRAMES == response)</div>
+<div class="line">        res = d3dAFMF1-&gt;SetFastMotionResponse(AFMF_RESP_BLENDED_FRAMES);</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">        res = d3dAFMF1-&gt;SetFastMotionResponse(AFMF_RESP_REPEAT_FRAMES);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tReturn code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> WaitAndExit(<span class="keyword">const</span> <span class="keywordtype">char</span>* msg, <span class="keyword">const</span> <span class="keywordtype">int</span> retCode)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// Printout the message and pause to see it before returning the desired code</span></div>
@@ -274,6 +394,11 @@ $(function(){initNavTree('cpp__a_f_m_f.html',''); initResizable(true); });
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 2 to display current AFMF state&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 3 to enable AFMF&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 4 to disable AFMF&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 5 to display AFMF2.1 capabilities and state&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 6 to set algorithm capabilities&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 7 to set search mode&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 8 to set performance mode&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press 9 to set fast motion response&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press Q/q to quit the application&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press M/m to display menu options&quot;</span> &lt;&lt; std::endl;</div>
@@ -302,6 +427,29 @@ $(function(){initNavTree('cpp__a_f_m_f.html',''); initResizable(true); });
 <div class="line">            SetAFMFState(d3dAFMF, num - <span class="charliteral">&#39;3&#39;</span>);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
+<div class="line">            <span class="comment">// Get AFMF2.1 capabilities and state</span></div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;5&#39;</span>:</div>
+<div class="line">            GetAFMF1Status(d3dAFMF);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// Set Algorithm capabilities</span></div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;6&#39;</span>:</div>
+<div class="line">            SetAlgorithmCapabilities(d3dAFMF);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// Set Search mode</span></div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;7&#39;</span>:</div>
+<div class="line">            SetSearchMode(d3dAFMF);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="comment">// Set Performance mode</span></div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;8&#39;</span>:</div>
+<div class="line">            SetPerformanceMode(d3dAFMF);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// Set Fast motion response</span></div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;9&#39;</span>:</div>
+<div class="line">            SetFastMotionResponse(d3dAFMF);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">            <span class="comment">// Display menu options</span></div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;m&#39;</span>:</div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;M&#39;</span>:</div>
@@ -312,9 +460,13 @@ $(function(){initNavTree('cpp__a_f_m_f.html',''); initResizable(true); });
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:283</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga08416b85ef39ce89884ddd3fceab90ef"><div class="ttname"><a href="group__enumerations.html#ga08416b85ef39ce89884ddd3fceab90ef">adlx::ADLX_AFMF_PERFORMANCE_MODE_TYPE</a></div><div class="ttdeci">ADLX_AFMF_PERFORMANCE_MODE_TYPE</div><div class="ttdoc">Indicates the AMD Fluid Motion Frames performance mode.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1074</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga0ed00ebc4a2df15464170f9f2ba59b27"><div class="ttname"><a href="group__enumerations.html#ga0ed00ebc4a2df15464170f9f2ba59b27">adlx::ADLX_AFMF_SEARCH_MODE_TYPE</a></div><div class="ttdeci">ADLX_AFMF_SEARCH_MODE_TYPE</div><div class="ttdoc">Indicates the AMD Fluid Motion Frames search mode.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1058</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga179e7502cf37502bbfd96fc1a38099b8"><div class="ttname"><a href="group__enumerations.html#ga179e7502cf37502bbfd96fc1a38099b8">adlx::ADLX_AFMF_ALGORITHM</a></div><div class="ttdeci">ADLX_AFMF_ALGORITHM</div><div class="ttdoc">Indicates the algorithm used by AMD Fluid Motion Frames.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1088</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga2e77214f71e26ff498e9cd04373ae905"><div class="ttname"><a href="group__enumerations.html#ga2e77214f71e26ff498e9cd04373ae905">adlx::ADLX_AFMF_FAST_MOTION_RESP</a></div><div class="ttdeci">ADLX_AFMF_FAST_MOTION_RESP</div><div class="ttdoc">Indicates the AMD Fluid Motion Frames approach to fast-motion content.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:1101</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

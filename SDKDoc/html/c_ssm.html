@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('c_ssm.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -143,7 +143,7 @@ $(function(){initNavTree('c_ssm.html',''); initResizable(true); });
 </html>
  <h2>Code </h2>
 <div class="codeHeader"><span class="language">C</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -251,10 +251,10 @@ $(function(){initNavTree('c_ssm.html',''); initResizable(true); });
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> ShowSmartShiftMaxSate(IADLXSmartShiftMax* ssm)</div>
 <div class="line">{</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gae2895828b9a8b0345e1fb8bf416ff1b4">ADLX_SSM_BIAS_MODE</a> mode;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gaf1a4f2f31619d71e67d6593c60e1267b">ADLX_SSM_BIAS_MODE</a> mode;</div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> ret = ssm-&gt;pVtbl-&gt;GetBiasMode(ssm, &amp;mode);</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(ret))</div>
-<div class="line">        printf(<span class="stringliteral">&quot;\tBias mode: %s\n&quot;</span>, (mode == <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gae2895828b9a8b0345e1fb8bf416ff1b4af35e1bfcb1955e0e0c900876c1c67746">SSM_BIAS_MANUAL</a> ? <span class="stringliteral">&quot;manual&quot;</span> : <span class="stringliteral">&quot;auto&quot;</span>));</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\tBias mode: %s\n&quot;</span>, (mode == SSM_BIAS_MANUAL ? <span class="stringliteral">&quot;manual&quot;</span> : <span class="stringliteral">&quot;auto&quot;</span>));</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">        printf(<span class="stringliteral">&quot;\tFailed to get bias mode, error code: %d\n&quot;</span>, ret);</div>
 <div class="line"> </div>
@@ -275,9 +275,9 @@ $(function(){initNavTree('c_ssm.html',''); initResizable(true); });
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetSmartShiftMaxBiasMode(IADLXSmartShiftMax* ssm, <span class="keywordtype">int</span> index)</div>
 <div class="line">{</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gae2895828b9a8b0345e1fb8bf416ff1b4">ADLX_SSM_BIAS_MODE</a> mode = index == 0 ? <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gae2895828b9a8b0345e1fb8bf416ff1b4af35e1bfcb1955e0e0c900876c1c67746">SSM_BIAS_MANUAL</a> : <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gae2895828b9a8b0345e1fb8bf416ff1b4aa01f2492c707f2d545a726a70bfe4885">SSM_BIAS_AUTO</a>;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gaf1a4f2f31619d71e67d6593c60e1267b">ADLX_SSM_BIAS_MODE</a> mode = index == 0 ? <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaf1a4f2f31619d71e67d6593c60e1267baec0b7ea8e5275ef7197fc8aa0a6c6d6d">SSM_BIAS_MANUAL</a> : <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaf1a4f2f31619d71e67d6593c60e1267bab126570642e373d751ac99de14b0a147">SSM_BIAS_AUTO</a>;</div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = ssm-&gt;pVtbl-&gt;SetBiasMode(ssm, mode);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\tSet bias mode %s, return code: %d\n&quot;</span>, (mode == <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gae2895828b9a8b0345e1fb8bf416ff1b4af35e1bfcb1955e0e0c900876c1c67746">SSM_BIAS_MANUAL</a> ? <span class="stringliteral">&quot;manual&quot;</span> : <span class="stringliteral">&quot;auto&quot;</span>), res);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\tSet bias mode %s, return code: %d\n&quot;</span>, (mode == SSM_BIAS_MANUAL ? <span class="stringliteral">&quot;manual&quot;</span> : <span class="stringliteral">&quot;auto&quot;</span>), res);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetSmartShiftMaxBiasValue(IADLXSmartShiftMax* ssm)</div>
@@ -342,16 +342,16 @@ $(function(){initNavTree('c_ssm.html',''); initResizable(true); });
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gae2895828b9a8b0345e1fb8bf416ff1b4aa01f2492c707f2d545a726a70bfe4885"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gae2895828b9a8b0345e1fb8bf416ff1b4aa01f2492c707f2d545a726a70bfe4885">SSM_BIAS_AUTO</a></div><div class="ttdeci">@ SSM_BIAS_AUTO</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:946</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gae2895828b9a8b0345e1fb8bf416ff1b4af35e1bfcb1955e0e0c900876c1c67746"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gae2895828b9a8b0345e1fb8bf416ff1b4af35e1bfcb1955e0e0c900876c1c67746">SSM_BIAS_MANUAL</a></div><div class="ttdeci">@ SSM_BIAS_MANUAL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:947</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
-<div class="ttc" id="agroup__enumerations_html_gae2895828b9a8b0345e1fb8bf416ff1b4"><div class="ttname"><a href="group__enumerations.html#gae2895828b9a8b0345e1fb8bf416ff1b4">ADLX_SSM_BIAS_MODE</a></div><div class="ttdeci">ADLX_SSM_BIAS_MODE</div><div class="ttdoc">AMD SmartShift Max bias mode.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:945</div></div>
-<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:154</div></div>
-<div class="ttc" id="agroup__structures_val_html_ae0e545b501a683c565f08089ed3e8023"><div class="ttname"><a href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">ADLX_IntRange::step</a></div><div class="ttdeci">adlx_int step</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:155</div></div>
-<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:153</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:152</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:283</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaf1a4f2f31619d71e67d6593c60e1267bab126570642e373d751ac99de14b0a147"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaf1a4f2f31619d71e67d6593c60e1267bab126570642e373d751ac99de14b0a147">adlx::SSM_BIAS_AUTO</a></div><div class="ttdeci">@ SSM_BIAS_AUTO</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:954</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaf1a4f2f31619d71e67d6593c60e1267baec0b7ea8e5275ef7197fc8aa0a6c6d6d"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaf1a4f2f31619d71e67d6593c60e1267baec0b7ea8e5275ef7197fc8aa0a6c6d6d">adlx::SSM_BIAS_MANUAL</a></div><div class="ttdeci">@ SSM_BIAS_MANUAL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:955</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
+<div class="ttc" id="agroup__enumerations_html_gaf1a4f2f31619d71e67d6593c60e1267b"><div class="ttname"><a href="group__enumerations.html#gaf1a4f2f31619d71e67d6593c60e1267b">adlx::ADLX_SSM_BIAS_MODE</a></div><div class="ttdeci">ADLX_SSM_BIAS_MODE</div><div class="ttdoc">AMD SmartShift Max bias mode.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:953</div></div>
+<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:158</div></div>
+<div class="ttc" id="agroup__structures_val_html_ae0e545b501a683c565f08089ed3e8023"><div class="ttname"><a href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">ADLX_IntRange::step</a></div><div class="ttdeci">adlx_int step</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:159</div></div>
+<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:157</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:156</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

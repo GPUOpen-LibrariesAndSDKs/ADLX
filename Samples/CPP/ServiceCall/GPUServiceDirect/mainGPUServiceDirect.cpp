@@ -10,12 +10,15 @@
 
 #include <Windows.h>
 #include <TlHelp32.h>
+#include <WtsApi32.h>
 #include <tchar.h>
 #include "SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
 #include "SDK/Include/ISystem.h"
 #include "SDK/Include/IPerformanceMonitoring3.h"
 #include <string>
 #include <iostream>
+
+#pragma comment(lib, "wtsapi32.lib")
 
 #define MAX_DEBUG_STR_LEN 1024
 
@@ -34,9 +37,11 @@ void XTrace (wchar_t* lpszFormat, ...)
 using namespace adlx;
 
 // ADLXHelper instance.
-// No outstanding interfaces from ADLX must exist when ADLX destory.
-// So we use global variables to ensure the valid of the interface.
 static ADLXHelper g_ADLXHelp;
+// Indicates that ADLX is functional
+bool g_ADLXAlive = false;
+// An event to wait for the right conditions to initialize ADLX
+HANDLE g_ADLXInitReady = CreateEvent(NULL, FALSE, FALSE, NULL);
 
 // Service name
 #define ADLX_SERVICE_NAME  L"ADLX GPU Service"
@@ -45,11 +50,15 @@ static ADLXHelper g_ADLXHelp;
 SERVICE_STATUS_HANDLE g_StatusHandle = NULL;
 SERVICE_STATUS        g_ServiceStatus = { 0 };
 HANDLE                g_ServiceStopEvent = INVALID_HANDLE_VALUE;
+bool                  g_StopWorkThread = false;
 
 // Service routine
 VOID WINAPI  ServiceMain (DWORD argc, LPTSTR* argv);
-VOID WINAPI  ServiceCtrlHandler (DWORD);
+DWORD WINAPI ServiceCtrlHandler(DWORD ctrlCode, DWORD eventType, LPVOID eventData, LPVOID context);
 DWORD WINAPI ServiceWorkerThread (LPVOID lpParam);
+
+// Check if any user is logged on
+bool IsAnyUserLogon ();
 
 // Install/unistall this service
 // N.B: Need admin permission
@@ -129,7 +138,7 @@ VOID WINAPI ServiceMain (DWORD argc, LPTSTR* argv)
 
     XTrace (L"ADLX Call Service: ServiceMain: Entry");
 
-    g_StatusHandle = RegisterServiceCtrlHandlerW (ADLX_SERVICE_NAME, ServiceCtrlHandler);
+    g_StatusHandle = RegisterServiceCtrlHandlerExW (ADLX_SERVICE_NAME, ServiceCtrlHandler, NULL);
     if (g_StatusHandle == NULL)
     {
         XTrace (L"ADLX Call Service: ServiceMain: RegisterServiceCtrlHandler returned error");
@@ -139,7 +148,7 @@ VOID WINAPI ServiceMain (DWORD argc, LPTSTR* argv)
     // Tell the service controller we are starting
     ZeroMemory (&g_ServiceStatus, sizeof (g_ServiceStatus));
     g_ServiceStatus.dwServiceType = SERVICE_WIN32_OWN_PROCESS;
-    g_ServiceStatus.dwControlsAccepted = 0;
+    g_ServiceStatus.dwControlsAccepted = SERVICE_ACCEPT_STOP | SERVICE_ACCEPT_SESSIONCHANGE;
     g_ServiceStatus.dwCurrentState = SERVICE_START_PENDING;
     g_ServiceStatus.dwWin32ExitCode = 0;
     g_ServiceStatus.dwServiceSpecificExitCode = 0;
@@ -174,7 +183,7 @@ VOID WINAPI ServiceMain (DWORD argc, LPTSTR* argv)
     }
 
     // Tell the service controller we are started
-    g_ServiceStatus.dwControlsAccepted = SERVICE_ACCEPT_STOP;
+    g_ServiceStatus.dwControlsAccepted = SERVICE_ACCEPT_STOP | SERVICE_ACCEPT_SESSIONCHANGE;
     g_ServiceStatus.dwCurrentState = SERVICE_RUNNING;
     g_ServiceStatus.dwWin32ExitCode = 0;
     g_ServiceStatus.dwCheckPoint = 0;
@@ -183,9 +192,6 @@ VOID WINAPI ServiceMain (DWORD argc, LPTSTR* argv)
     {
         XTrace (L"ADLX Call Service: ServiceMain: SetServiceStatus returned error");
     }
-
-    // Enable when Debug
-    //Sleep(20000);
 
     // Start the thread that will perform the main task of the service
     HANDLE hThread = CreateThread (NULL, 0, ServiceWorkerThread, NULL, 0, NULL);
@@ -223,15 +229,15 @@ EXIT:
     return;
 }
 
-VOID WINAPI ServiceCtrlHandler (DWORD CtrlCode)
+DWORD WINAPI ServiceCtrlHandler (DWORD ctrlCode, DWORD eventType, LPVOID eventData, LPVOID context)
 {
     XTrace (L"ADLX Call Service: ServiceCtrlHandler: Entry");
 
-    switch (CtrlCode)
+    switch (ctrlCode)
     {
     case SERVICE_CONTROL_STOP:
-
-        XTrace (L"ADLX Call Service: ServiceCtrlHandler: SERVICE_CONTROL_STOP Request");
+    {
+        XTrace(L"ADLX Call Service: ServiceCtrlHandler: SERVICE_CONTROL_STOP Request");
 
         if (g_ServiceStatus.dwCurrentState != SERVICE_RUNNING)
             break;
@@ -245,32 +251,80 @@ VOID WINAPI ServiceCtrlHandler (DWORD CtrlCode)
         g_ServiceStatus.dwWin32ExitCode = 0;
         g_ServiceStatus.dwCheckPoint = 4;
 
-        if (SetServiceStatus (g_StatusHandle, &g_ServiceStatus) == FALSE)
+        if (SetServiceStatus(g_StatusHandle, &g_ServiceStatus) == FALSE)
         {
-            XTrace (L"ADLX Call Service: ServiceCtrlHandler: SetServiceStatus returned error");
+            XTrace(L"ADLX Call Service: ServiceCtrlHandler: SetServiceStatus returned error");
         }
 
         // This will signal the worker thread to shut down
-        SetEvent (g_ServiceStopEvent);
+        SetEvent(g_ServiceStopEvent);
+        g_StopWorkThread = true;
+    }
+    break;
+    case SERVICE_CONTROL_SESSIONCHANGE:
+    {
+        XTrace(L"ADLX Call Service: ServiceCtrlHandler: SERVICE_CONTROL_SESSIONCHANGE");
+        WTSSESSION_NOTIFICATION* pSessionNotification = (WTSSESSION_NOTIFICATION*)eventData;
+        switch (eventType)
+        {
+        case WTS_SESSION_LOGOFF:
+        {
+            XTrace(L"ADLX Call Service: ServiceCtrlHandler: WTS_SESSION_LOGOFF");
+        }
         break;
-
+        case WTS_SESSION_LOGON:
+        {
+            XTrace(L"ADLX Call Service: ServiceCtrlHandler: WTS_SESSION_LOGON");
+            // When user logon, initialize ADLX
+            if (!g_ADLXAlive)
+            {
+                auto res = g_ADLXHelp.Initialize();
+                if (ADLX_SUCCEEDED(res))
+                {
+                    XTrace(L"Initialize ADLX succeed: %d\n", res);
+                    g_ADLXAlive = true;
+                }
+                else
+                {
+                    XTrace(L"Initialize ADLX failed: %d\n", res);
+                }
+                SetEvent(g_ADLXInitReady);
+            }
+        }
+        break;
+        default:
+            break;
+        }
+    }
+    break;
     default:
         break;
     }
 
     XTrace (L"ADLX Call Service: ServiceCtrlHandler: Exit");
+    return NO_ERROR;
 }
 
 DWORD WINAPI ServiceWorkerThread (LPVOID lpParam)
 {
     XTrace (L"ADLX Call Service: ServiceWorkerThread: Entry");
 
+    // Check if any user is logged on
+    if (!IsAnyUserLogon())
+    {
+        XTrace(L"No user logon, wait for user logon");
+        g_ADLXAlive = false;
+        WaitForSingleObject(g_ADLXInitReady, INFINITE);
+    }
+
     ADLX_RESULT res = g_ADLXHelp.Initialize();
     XTrace(L"--Initialize:  %d\n", res);
     if (ADLX_SUCCEEDED(res))
     {
-        auto iloop = 20;
-        while (iloop-- > 0)
+        g_ADLXAlive = true;
+
+        auto iloop = 40;
+        while (iloop-- > 0 && !g_StopWorkThread)
         {
             // Get GPU list
             IADLXGPUListPtr gpus;
@@ -298,6 +352,30 @@ DWORD WINAPI ServiceWorkerThread (LPVOID lpParam)
                     }
                 }
             }
+            if (res == ADLX_ORPHAN_OBJECTS)
+            {
+                XTrace(L"ADLX return ADLX_ORPHAN_OBJECTS");
+                // Terminate ADLX, discard all the cached ADLX interfaces and wait for the right conditions to re-initialize ADLX
+                g_ADLXHelp.Terminate();
+                g_ADLXAlive = false;
+
+                //Attempt to re-initialize, if another user is still logged on
+                if (IsAnyUserLogon())
+                {
+                    res = g_ADLXHelp.Initialize();
+                    if (ADLX_SUCCEEDED(res))
+                    {
+                        XTrace(L"ADLX recovered ");
+                        g_ADLXAlive = true;
+                    }
+                }
+
+                if (!g_ADLXAlive)
+                {
+                    WaitForSingleObject(g_ADLXInitReady, INFINITE);
+                    continue;
+                }
+            }
 
             // Get performance monitoring service
             IADLXPerformanceMonitoringServicesPtr perfMonitorServ;
@@ -310,6 +388,30 @@ DWORD WINAPI ServiceWorkerThread (LPVOID lpParam)
                 XTrace(L"--GetSamplingIntervalRange:  %d\n", res);
                 XTrace(L"range.minValue: %d, range.maxValue: %d, range.step: %d", range.minValue, range.maxValue, range.step);
             }
+            if (res == ADLX_ORPHAN_OBJECTS)
+            {
+                XTrace(L"ADLX return ADLX_ORPHAN_OBJECTS");
+                // Terminate ADLX, discard all the cached ADLX interfaces and wait for the right conditions to re-initialize ADLX
+                g_ADLXHelp.Terminate();
+                g_ADLXAlive = false;
+
+                //Attempt to re-initialize, if another user is still logged on
+                if (IsAnyUserLogon())
+                {
+                    res = g_ADLXHelp.Initialize();
+                    if (ADLX_SUCCEEDED(res))
+                    {
+                        XTrace(L"ADLX recovered ");
+                        g_ADLXAlive = true;
+                    }
+                }
+
+                if (!g_ADLXAlive)
+                {
+                    WaitForSingleObject(g_ADLXInitReady, INFINITE);
+                    continue;
+                }
+            }
             Sleep(3000);
         }
     }
@@ -320,6 +422,26 @@ DWORD WINAPI ServiceWorkerThread (LPVOID lpParam)
     XTrace (L"ADLX Call Service: ServiceWorkerThread: Exit");
 
     return ERROR_SUCCESS;
+}
+
+bool IsAnyUserLogon ()
+{
+    bool isUserLogon = false;
+    WTS_SESSION_INFO *pSessionInfo = NULL;
+    DWORD sessionCount = 0;
+    if (WTSEnumerateSessions(WTS_CURRENT_SERVER_HANDLE, 0, 1, &pSessionInfo, &sessionCount) == TRUE && pSessionInfo != NULL)
+    {
+        for (DWORD i = 0; i < sessionCount; i++)
+        {
+            if (pSessionInfo[i].State == WTSActive)
+            {
+                isUserLogon = true;
+                break;
+            }
+        }
+        WTSFreeMemory(pSessionInfo);
+    }
+    return isUserLogon;
 }
 
 void InstallService ()

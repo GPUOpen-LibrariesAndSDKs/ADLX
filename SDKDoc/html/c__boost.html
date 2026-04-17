@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('c__boost.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -128,12 +128,12 @@ $(function(){initNavTree('c__boost.html',''); initResizable(true); });
         <tr style="height:40px"><th>Command Prompt</th><th>Description</th></tr>
         </thead>
         <tbody>
-		<tr><td>1</td><td> Display Radeon Boost support</td></tr>
-		<tr><td>2</td><td> Display current Radeon Boost state, current resolution, and resolution range</td></tr>
-		<tr><td>3</td><td> Enable Radeon Boost and change minimum resolution</td></tr>
-		<tr><td>4</td><td> Disable Radeon Boost</td></tr>
-		<tr><td>M/m</td><td> Display the main menu</td></tr>
-		<tr><td>Q/q</td><td> Quit the application</td></tr>
+            <tr><td>1</td><td> Display Radeon Boost support</td></tr>
+            <tr><td>2</td><td> Display current Radeon Boost state, current resolution, and resolution range</td></tr>
+            <tr><td>3</td><td> Enable Radeon Boost and change minimum resolution</td></tr>
+            <tr><td>4</td><td> Disable Radeon Boost</td></tr>
+            <tr><td>M/m</td><td> Display the main menu</td></tr>
+            <tr><td>Q/q</td><td> Quit the application</td></tr>
         </tbody>
     </table>
     <h2>Sample Path</h2>
@@ -142,7 +142,7 @@ $(function(){initNavTree('c__boost.html',''); initResizable(true); });
 </html>
  <h2>Code </h2>
 <div class="codeHeader"><span class="language">C</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -158,6 +158,7 @@ $(function(){initNavTree('c__boost.html',''); initResizable(true); });
 <div class="line"> </div>
 <div class="line"><span class="comment">// Set Boost state</span></div>
 <div class="line"><span class="keywordtype">void</span> SetBoostState(IADLX3DBoost* d3dBoost, <span class="keywordtype">int</span> index);</div>
+<div class="line"> </div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Menu</span></div>
 <div class="line"><span class="keywordtype">void</span> MainMenu();</div>
@@ -301,15 +302,15 @@ $(function(){initNavTree('c__boost.html',''); initResizable(true); });
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"> </div>
+<div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> MainMenu()</div>
 <div class="line">{</div>
 <div class="line">    printf(<span class="stringliteral">&quot;\tChoose from the following options:\n&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press 1 to display Boost support\n&quot;</span>);</div>
 <div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press 2 to display current Boost state\n&quot;</span>);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press 3 to enable Boost\n&quot;</span>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press 3 to enable Boost and change minimum resolution\n&quot;</span>);</div>
 <div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press 4 to disable Boost\n&quot;</span>);</div>
-<div class="line"> </div>
 <div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press Q/q to quit the application\n&quot;</span>);</div>
 <div class="line">    printf(<span class="stringliteral">&quot;\t-&gt;Press M/m to display menu options\n&quot;</span>);</div>
 <div class="line">}</div>
@@ -336,7 +337,6 @@ $(function(){initNavTree('c__boost.html',''); initResizable(true); });
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;4&#39;</span>:</div>
 <div class="line">            SetBoostState(d3dBoost, num - <span class="charliteral">&#39;3&#39;</span>);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
-<div class="line"> </div>
 <div class="line">            <span class="comment">// Display menu options</span></div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;m&#39;</span>:</div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;M&#39;</span>:</div>
@@ -347,13 +347,13 @@ $(function(){initNavTree('c__boost.html',''); initResizable(true); });
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
-<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:154</div></div>
-<div class="ttc" id="agroup__structures_val_html_ae0e545b501a683c565f08089ed3e8023"><div class="ttname"><a href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">ADLX_IntRange::step</a></div><div class="ttdeci">adlx_int step</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:155</div></div>
-<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:153</div></div>
-<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:152</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:283</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
+<div class="ttc" id="agroup__structures_val_html_a514f377840f96d92a1f11e41af9b3db1"><div class="ttname"><a href="group__structures_val.html#a514f377840f96d92a1f11e41af9b3db1">ADLX_IntRange::maxValue</a></div><div class="ttdeci">adlx_int maxValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:158</div></div>
+<div class="ttc" id="agroup__structures_val_html_ae0e545b501a683c565f08089ed3e8023"><div class="ttname"><a href="group__structures_val.html#ae0e545b501a683c565f08089ed3e8023">ADLX_IntRange::step</a></div><div class="ttdeci">adlx_int step</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:159</div></div>
+<div class="ttc" id="agroup__structures_val_html_aff4a4b69a07d715083773dc23f162e05"><div class="ttname"><a href="group__structures_val.html#aff4a4b69a07d715083773dc23f162e05">ADLX_IntRange::minValue</a></div><div class="ttdeci">adlx_int minValue</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:157</div></div>
+<div class="ttc" id="agroup__structures_val_html_struct_a_d_l_x___int_range"><div class="ttname"><a href="group__structures_val.html#struct_a_d_l_x___int_range">ADLX_IntRange</a></div><div class="ttdoc">This structure contains information on the integer range.</div><div class="ttdef"><b>Definition</b> ADLXStructures.h:156</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -1,10 +1,10 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
 /// \file mainLog.cpp
-/// \brief Demonstartes how to enable log and get log data when programming in ADLX.
+/// \brief Demonstrates how to enable log and get log data when programming in ADLX.
 
 #include "SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
 #include "SDK/Include/IDisplays.h"

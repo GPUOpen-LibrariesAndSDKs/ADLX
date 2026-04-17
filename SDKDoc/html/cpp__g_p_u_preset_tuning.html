@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('cpp__g_p_u_preset_tuning.html',''); initResizable(true
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -141,7 +141,7 @@ $(function(){initNavTree('cpp__g_p_u_preset_tuning.html',''); initResizable(true
 </html>
  <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -163,7 +163,7 @@ $(function(){initNavTree('cpp__g_p_u_preset_tuning.html',''); initResizable(true
 <div class="line"><span class="keywordtype">void</span> MainMenu();</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Menu action control</span></div>
-<div class="line"><span class="keywordtype">void</span> MenuControl(IADLXGPUPresetTuningPtr gpuPresetTuning);</div>
+<div class="line"><span class="keywordtype">void</span> MenuControl(IADLXGPUPresetTuningPtr gpuPresetTuning,IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Wait for exit with error message</span></div>
 <div class="line"><span class="keywordtype">int</span> WaitAndExit(<span class="keyword">const</span> <span class="keywordtype">char</span>* msg, <span class="keyword">const</span> <span class="keywordtype">int</span> retCode);</div>
@@ -175,7 +175,7 @@ $(function(){initNavTree('cpp__g_p_u_preset_tuning.html',''); initResizable(true
 <div class="line"><span class="keywordtype">void</span> GetCurrentStates(IADLXGPUPresetTuningPtr gpuPresetTuning);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Set GPU states</span></div>
-<div class="line"><span class="keywordtype">void</span> SetGPUStates(IADLXGPUPresetTuningPtr gpuPresetTuning);</div>
+<div class="line"><span class="keywordtype">void</span> SetGPUStates(IADLXGPUPresetTuningPtr gpuPresetTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU);</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main()</div>
 <div class="line">{</div>
@@ -196,6 +196,9 @@ $(function(){initNavTree('cpp__g_p_u_preset_tuning.html',''); initResizable(true
 <div class="line">            {</div>
 <div class="line">                IADLXGPUPtr oneGPU;</div>
 <div class="line">                res = gpus-&gt;At(0, &amp;oneGPU);</div>
+<div class="line">                <span class="keyword">const</span> <span class="keywordtype">char</span>* gpuName = <span class="keyword">nullptr</span>;</div>
+<div class="line">                res = oneGPU-&gt;Name(&amp;gpuName);</div>
+<div class="line">                std::cout &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; gpuName &lt;&lt; <span class="stringliteral">&quot; is selected.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">                <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a> (res) &amp;&amp; oneGPU != <span class="keyword">nullptr</span>)</div>
 <div class="line">                {</div>
 <div class="line">                    adlx_bool supported = <span class="keyword">false</span>;</div>
@@ -213,7 +216,7 @@ $(function(){initNavTree('cpp__g_p_u_preset_tuning.html',''); initResizable(true
 <div class="line">                                MainMenu();</div>
 <div class="line"> </div>
 <div class="line">                                <span class="comment">// Get and execute the choice</span></div>
-<div class="line">                                MenuControl(gpuPresetTuning);</div>
+<div class="line">                                MenuControl(gpuPresetTuning,gpuTuningService,oneGPU);</div>
 <div class="line">                            }</div>
 <div class="line">                            <span class="keywordflow">else</span></div>
 <div class="line">                            {</div>
@@ -271,7 +274,7 @@ $(function(){initNavTree('cpp__g_p_u_preset_tuning.html',''); initResizable(true
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\t-&gt;Press M/m to display main menu options&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> MenuControl(IADLXGPUPresetTuningPtr gpuPresetTuning)</div>
+<div class="line"><span class="keywordtype">void</span> MenuControl(IADLXGPUPresetTuningPtr gpuPresetTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keywordtype">char</span> num = 0;</div>
 <div class="line">    <span class="keywordflow">while</span> ((num = getchar()) != <span class="charliteral">&#39;q&#39;</span> &amp;&amp; num != <span class="charliteral">&#39;Q&#39;</span>)</div>
@@ -290,7 +293,7 @@ $(function(){initNavTree('cpp__g_p_u_preset_tuning.html',''); initResizable(true
 <div class="line"> </div>
 <div class="line">        <span class="comment">// Set GPU states</span></div>
 <div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>:</div>
-<div class="line">            SetGPUStates(gpuPresetTuning);</div>
+<div class="line">            SetGPUStates(gpuPresetTuning, gpuTuningService,oneGPU);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line"> </div>
 <div class="line">        <span class="comment">// Display menu options</span></div>
@@ -356,32 +359,79 @@ $(function(){initNavTree('cpp__g_p_u_preset_tuning.html',''); initResizable(true
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Set GPU states</span></div>
-<div class="line"><span class="keywordtype">void</span> SetGPUStates(IADLXGPUPresetTuningPtr gpuPresetTuning)</div>
+<div class="line"><span class="keywordtype">void</span> SetGPUStates(IADLXGPUPresetTuningPtr gpuPresetTuning, IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUPtr oneGPU)</div>
 <div class="line">{</div>
 <div class="line">    adlx_bool applied = <span class="keyword">false</span>;</div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = gpuPresetTuning-&gt;SetPowerSaver();</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">    {</div>
+<div class="line">        res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        {</div>
+<div class="line">            res = gpuPresetTuning-&gt;SetPowerSaver();</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
 <div class="line">    res = gpuPresetTuning-&gt;IsCurrentPowerSaver(&amp;applied);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet Power Saver preset tuning &quot;</span> &lt;&lt; (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
 <div class="line">    res = gpuPresetTuning-&gt;SetQuiet();</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">    {</div>
+<div class="line">        res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        {</div>
+<div class="line">            res = gpuPresetTuning-&gt;SetQuiet();</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
 <div class="line">    res = gpuPresetTuning-&gt;IsCurrentQuiet(&amp;applied);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet Quiet preset tuning &quot;</span> &lt;&lt; (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
 <div class="line">    res = gpuPresetTuning-&gt;SetBalanced();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">    {</div>
+<div class="line">        res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        {</div>
+<div class="line">            res = gpuPresetTuning-&gt;SetBalanced();</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
 <div class="line">    res = gpuPresetTuning-&gt;IsCurrentBalanced(&amp;applied);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet Balanced preset tuning &quot;</span> &lt;&lt; (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
 <div class="line">    res = gpuPresetTuning-&gt;SetTurbo();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">    {</div>
+<div class="line">        res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        {</div>
+<div class="line">            res = gpuPresetTuning-&gt;SetTurbo();</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
 <div class="line">    res = gpuPresetTuning-&gt;IsCurrentTurbo(&amp;applied);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet Turbo preset tuning &quot;</span> &lt;&lt; (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    applied = <span class="keyword">false</span>;</div>
 <div class="line">    res = gpuPresetTuning-&gt;SetRage();</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a> == res)</div>
+<div class="line">    {</div>
+<div class="line">        res = gpuTuningService-&gt;ResetToFactory(oneGPU);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_define" href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a>(res))</div>
+<div class="line">        {</div>
+<div class="line">            res = gpuPresetTuning-&gt;SetRage();</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
 <div class="line">    res = gpuPresetTuning-&gt;IsCurrentRage(&amp;applied);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\tSet Rage preset tuning &quot;</span> &lt;&lt; (applied ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;, return code is: &quot;</span> &lt;&lt; res &lt;&lt; <span class="stringliteral">&quot;(0 means success)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:283</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aebe46b8243e207523073a5f63f60c975">ADLX_RESET_NEEDED</a></div><div class="ttdeci">@ ADLX_RESET_NEEDED</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:298</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

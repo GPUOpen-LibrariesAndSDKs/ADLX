@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -319,27 +319,28 @@ void SetSmartAccessMemoryState(IADLXGPUTuningServices1* gpuTuningService1, IADLX
                     printf("Call IsEnabled() failed\n");
                 res = smartAccessMemory->pVtbl->SetEnabled(smartAccessMemory, !enabled);
                 if (ADLX_SUCCEEDED(res))
+                {
                     printf("Set AMD SmartAccess Memory to %s for %dth GPU\n", (!enabled ? "enabled" : "disabled"), (index + 1));
+                    // First event received quickly before SAM start
+                    WaitForSingleObject(SAMEvent, 2000);
+
+                    // When receive the first event, avoid calling any other ADLX method, and if any UI application is running, we must close it to avoid crashing
+                    // Close(application)......
+
+                    // Second event received after SAM completed, the maximum consuming time less than 20 seconds.
+                    WaitForSingleObject(SAMEvent, 20000);
+
+                    // Now SAM completed, we can restart the UI application, and continue to call ADLX function
+                    // Start(application)......
+
+                    res = smartAccessMemory->pVtbl->IsEnabled(smartAccessMemory, &enabled);
+                    if (ADLX_SUCCEEDED(res))
+                        printf("After setting, AMD SmartAccess Memory is %s on %dth GPU\n", (enabled ? "enabled" : "disabled"), (index + 1));
+                    else
+                        printf("Call IsEnabled() failed\n");
+                }
                 else
-                    printf("Call SetEnabled() failed\n");
-
-                // First event received quickly before SAM start
-                WaitForSingleObject(SAMEvent, 2000);
-
-                // When receive the first event, avoid calling any other ADLX method, and if any UI application is running, we must close it to avoid crashing
-                // Close(application)......
-
-                // Second event received after SAM completed, the maximum consuming time less than 20 seconds.
-                WaitForSingleObject(SAMEvent, 20000);
-
-                // Now SAM completed, we can restart the UI application, and continue to call ADLX function
-                // Start(application)......
-
-                res = smartAccessMemory->pVtbl->IsEnabled(smartAccessMemory, &enabled);
-                if (ADLX_SUCCEEDED(res))
-                    printf("After setting, AMD SmartAccess Memory is %s on %dth GPU\n", (enabled ? "enabled" : "disabled"), (index + 1));
-                else
-                    printf("Call IsEnabled() failed\n");
+                    printf("Call SetEnabled() Not supported: %d\n", res);
             }
             else
                 printf("Failed to get smartAccessMemory\n");

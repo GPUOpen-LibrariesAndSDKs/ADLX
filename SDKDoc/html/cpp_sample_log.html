@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.4</span>
+   &#160;<span id="projectnumber">v1.5</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('cpp_sample_log.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -140,7 +140,7 @@ $(function(){initNavTree('cpp_sample_log.html',''); initResizable(true); });
 </html>
  <h2>Code </h2>
 <div class="codeHeader"><span class="language">C++</span></div> <div class="fragment"><div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.</span></div>
+<div class="line"><span class="comment">// Copyright Advanced Micro Devices, Inc. All rights reserved.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//-------------------------------------------------------------------------------------------------</span></div>
 <div class="line"> </div>
@@ -244,8 +244,8 @@ $(function(){initNavTree('cpp_sample_log.html',''); initResizable(true); });
 <div class="line"><span class="keywordtype">void</span> UseLocalFile()</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// Log destination, severity, logfile</span></div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gae308b7ad24806dce3fe087e9a780be67">ADLX_LOG_DESTINATION</a> mode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gae308b7ad24806dce3fe087e9a780be67ab247590fcecf66f9a58d7c3beebd22c8">LOCALFILE</a>;</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gaadfaa61953d62bced2b6c516f8bebccd">ADLX_LOG_SEVERITY</a> severity = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaadfaa61953d62bced2b6c516f8bebccda99a9c50ae812fdb9418bb4d04e55521e">LDEBUG</a>;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga084e30b20169f3c1a9930bc54289016a">ADLX_LOG_DESTINATION</a> mode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga084e30b20169f3c1a9930bc54289016aab3c783528b7c2368dfe75fdf5da363a9">LOCALFILE</a>;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga8119cdbfe0250e70bcc6db9651aa63d9">ADLX_LOG_SEVERITY</a> severity = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga8119cdbfe0250e70bcc6db9651aa63d9a03b6e3e762bfb8f2112c7115cd098151">LDEBUG</a>;</div>
 <div class="line">    <span class="keywordtype">wchar_t</span> logfile[] = L<span class="stringliteral">&quot;./ADLX.log&quot;</span>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Enable log</span></div>
@@ -257,8 +257,8 @@ $(function(){initNavTree('cpp_sample_log.html',''); initResizable(true); });
 <div class="line"><span class="keywordtype">void</span> UseDebugView()</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// Log destination, severity</span></div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gae308b7ad24806dce3fe087e9a780be67">ADLX_LOG_DESTINATION</a> mode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gae308b7ad24806dce3fe087e9a780be67a212223605a82f278e4a43166f7ea5e55">DBGVIEW</a>;</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gaadfaa61953d62bced2b6c516f8bebccd">ADLX_LOG_SEVERITY</a> severity = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaadfaa61953d62bced2b6c516f8bebccda99a9c50ae812fdb9418bb4d04e55521e">LDEBUG</a>;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga084e30b20169f3c1a9930bc54289016a">ADLX_LOG_DESTINATION</a> mode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga084e30b20169f3c1a9930bc54289016aa56c4216b64f86255091669b771f88005">DBGVIEW</a>;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga8119cdbfe0250e70bcc6db9651aa63d9">ADLX_LOG_SEVERITY</a> severity = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga8119cdbfe0250e70bcc6db9651aa63d9a03b6e3e762bfb8f2112c7115cd098151">LDEBUG</a>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Enable log</span></div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = g_ADLXHelp.GetSystemServices()-&gt;EnableLog(mode, severity, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
@@ -269,8 +269,8 @@ $(function(){initNavTree('cpp_sample_log.html',''); initResizable(true); });
 <div class="line"><span class="keywordtype">void</span> UseAppHandlLog()</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// Log destination, severity</span></div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gae308b7ad24806dce3fe087e9a780be67">ADLX_LOG_DESTINATION</a> mode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gae308b7ad24806dce3fe087e9a780be67a241e8ba97c5a6b68b13a60bb16235b85">APPLICATION</a>;</div>
-<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#gaadfaa61953d62bced2b6c516f8bebccd">ADLX_LOG_SEVERITY</a> severity = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#gaadfaa61953d62bced2b6c516f8bebccda99a9c50ae812fdb9418bb4d04e55521e">LDEBUG</a>;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga084e30b20169f3c1a9930bc54289016a">ADLX_LOG_DESTINATION</a> mode = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga084e30b20169f3c1a9930bc54289016aad49b9cf361dd7ab39e6258ec208db8ab">APPLICATION</a>;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga8119cdbfe0250e70bcc6db9651aa63d9">ADLX_LOG_SEVERITY</a> severity = <a class="code hl_enumvalue" href="_a_d_l_x_defines_8h.html#ga8119cdbfe0250e70bcc6db9651aa63d9a03b6e3e762bfb8f2112c7115cd098151">LDEBUG</a>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Enable log</span></div>
 <div class="line">    <a class="code hl_enumeration" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> res = g_ADLXHelp.GetSystemServices()-&gt;EnableLog(mode, severity, &amp;g_appHandlLog, <span class="keyword">nullptr</span>);</div>
@@ -313,16 +313,16 @@ $(function(){initNavTree('cpp_sample_log.html',''); initResizable(true); });
 <div class="line">        <span class="keywordflow">break</span>;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0a72597a9998fa21f37bfcaddd9cafaed5"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0a72597a9998fa21f37bfcaddd9cafaed5">ADLX_OK</a></div><div class="ttdeci">@ ADLX_OK</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:282</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gaadfaa61953d62bced2b6c516f8bebccda99a9c50ae812fdb9418bb4d04e55521e"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gaadfaa61953d62bced2b6c516f8bebccda99a9c50ae812fdb9418bb4d04e55521e">LDEBUG</a></div><div class="ttdeci">@ LDEBUG</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:634</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gae308b7ad24806dce3fe087e9a780be67a212223605a82f278e4a43166f7ea5e55"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gae308b7ad24806dce3fe087e9a780be67a212223605a82f278e4a43166f7ea5e55">DBGVIEW</a></div><div class="ttdeci">@ DBGVIEW</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:651</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gae308b7ad24806dce3fe087e9a780be67a241e8ba97c5a6b68b13a60bb16235b85"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gae308b7ad24806dce3fe087e9a780be67a241e8ba97c5a6b68b13a60bb16235b85">APPLICATION</a></div><div class="ttdeci">@ APPLICATION</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:652</div></div>
-<div class="ttc" id="a_a_d_l_x_defines_8h_html_gae308b7ad24806dce3fe087e9a780be67ab247590fcecf66f9a58d7c3beebd22c8"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#gae308b7ad24806dce3fe087e9a780be67ab247590fcecf66f9a58d7c3beebd22c8">LOCALFILE</a></div><div class="ttdeci">@ LOCALFILE</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:650</div></div>
-<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:308</div></div>
-<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:278</div></div>
-<div class="ttc" id="agroup__enumerations_html_gaadfaa61953d62bced2b6c516f8bebccd"><div class="ttname"><a href="group__enumerations.html#gaadfaa61953d62bced2b6c516f8bebccd">ADLX_LOG_SEVERITY</a></div><div class="ttdeci">ADLX_LOG_SEVERITY</div><div class="ttdoc">Indicates the severity level for ADLX logs.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:633</div></div>
-<div class="ttc" id="agroup__enumerations_html_gae308b7ad24806dce3fe087e9a780be67"><div class="ttname"><a href="group__enumerations.html#gae308b7ad24806dce3fe087e9a780be67">ADLX_LOG_DESTINATION</a></div><div class="ttdeci">ADLX_LOG_DESTINATION</div><div class="ttdoc">Indicates the location of the log traces that are generated from the internal code execution of ADLX.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:649</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga084e30b20169f3c1a9930bc54289016aa56c4216b64f86255091669b771f88005"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga084e30b20169f3c1a9930bc54289016aa56c4216b64f86255091669b771f88005">adlx::DBGVIEW</a></div><div class="ttdeci">@ DBGVIEW</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:659</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga084e30b20169f3c1a9930bc54289016aab3c783528b7c2368dfe75fdf5da363a9"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga084e30b20169f3c1a9930bc54289016aab3c783528b7c2368dfe75fdf5da363a9">adlx::LOCALFILE</a></div><div class="ttdeci">@ LOCALFILE</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:658</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga084e30b20169f3c1a9930bc54289016aad49b9cf361dd7ab39e6258ec208db8ab"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga084e30b20169f3c1a9930bc54289016aad49b9cf361dd7ab39e6258ec208db8ab">adlx::APPLICATION</a></div><div class="ttdeci">@ APPLICATION</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:660</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga8119cdbfe0250e70bcc6db9651aa63d9a03b6e3e762bfb8f2112c7115cd098151"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga8119cdbfe0250e70bcc6db9651aa63d9a03b6e3e762bfb8f2112c7115cd098151">adlx::LDEBUG</a></div><div class="ttdeci">@ LDEBUG</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:642</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0a72597a9998fa21f37bfcaddd9cafaed5"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0a72597a9998fa21f37bfcaddd9cafaed5">ADLX_OK</a></div><div class="ttdeci">@ ADLX_OK</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:280</div></div>
+<div class="ttc" id="a_a_d_l_x_defines_8h_html_ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c"><div class="ttname"><a href="_a_d_l_x_defines_8h.html#ga9306b05f15578edbf79b649dd612b8c0aa559b325fb345d9152b653588511db5c">ADLX_FAIL</a></div><div class="ttdeci">@ ADLX_FAIL</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:283</div></div>
+<div class="ttc" id="agroup___a_d_l_x_macro_html_gaa6d4b27e28dc60797e52e901ad4e9ced"><div class="ttname"><a href="group___a_d_l_x_macro.html#gaa6d4b27e28dc60797e52e901ad4e9ced">ADLX_SUCCEEDED</a></div><div class="ttdeci">#define ADLX_SUCCEEDED(x)</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:310</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga084e30b20169f3c1a9930bc54289016a"><div class="ttname"><a href="group__enumerations.html#ga084e30b20169f3c1a9930bc54289016a">adlx::ADLX_LOG_DESTINATION</a></div><div class="ttdeci">ADLX_LOG_DESTINATION</div><div class="ttdoc">Indicates the location of the log traces that are generated from the internal code execution of ADLX.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:657</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga8119cdbfe0250e70bcc6db9651aa63d9"><div class="ttname"><a href="group__enumerations.html#ga8119cdbfe0250e70bcc6db9651aa63d9">adlx::ADLX_LOG_SEVERITY</a></div><div class="ttdeci">ADLX_LOG_SEVERITY</div><div class="ttdoc">Indicates the severity level for ADLX logs.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:641</div></div>
+<div class="ttc" id="agroup__enumerations_html_ga9306b05f15578edbf79b649dd612b8c0"><div class="ttname"><a href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a></div><div class="ttdeci">ADLX_RESULT</div><div class="ttdoc">Indicates the result returned from an ADLX function or from an ADLX method.</div><div class="ttdef"><b>Definition</b> ADLXDefines.h:279</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

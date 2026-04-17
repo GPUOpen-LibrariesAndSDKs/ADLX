@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -357,6 +357,15 @@ void StartGPUAutoTuning(IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUList
             }
             else {
                 res = autoTuning->StartUndervoltGPU(&gpuAutoTuningCompleteEvents);
+
+                if (ADLX_RESET_NEEDED == res)
+                {
+                    res = gpuTuningService->ResetToFactory(oneGPU);
+                    WaitForSingleObject(g_ADLXEvent, 1000);
+                    ResetEvent(g_ADLXEvent);
+                    res = autoTuning->StartUndervoltGPU(&gpuAutoTuningCompleteEvents);
+                }
+
                 WaitForSingleObject(g_ADLXEvent, 1000);
                 ResetEvent(g_ADLXEvent);
                 if (ADLX_SUCCEEDED(res))
@@ -372,6 +381,15 @@ void StartGPUAutoTuning(IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUList
             }
             else {
                 res = autoTuning->StartOverclockGPU(&gpuAutoTuningCompleteEvents);
+                if (ADLX_RESET_NEEDED == res)
+                {
+                    res = gpuTuningService->ResetToFactory(oneGPU);
+                    WaitForSingleObject(g_ADLXEvent, 1000);
+                    ResetEvent(g_ADLXEvent);
+                    res = autoTuning->StartOverclockGPU(&gpuAutoTuningCompleteEvents);
+                }
+
+
                 WaitForSingleObject(g_ADLXEvent, 1000);
                 ResetEvent(g_ADLXEvent);
                 if (ADLX_SUCCEEDED(res))
@@ -387,6 +405,15 @@ void StartGPUAutoTuning(IADLXGPUTuningServicesPtr gpuTuningService, IADLXGPUList
             }
             else {
                 res = autoTuning->StartOverclockVRAM(&gpuAutoTuningCompleteEvents);
+                if (ADLX_RESET_NEEDED == res)
+                {
+                    res = gpuTuningService->ResetToFactory(oneGPU);
+                    WaitForSingleObject(g_ADLXEvent, 1000);
+                    ResetEvent(g_ADLXEvent);
+                    res = autoTuning->StartOverclockVRAM(&gpuAutoTuningCompleteEvents);
+                }
+
+                
                 WaitForSingleObject(g_ADLXEvent, 1000);
                 ResetEvent(g_ADLXEvent);
                 if (ADLX_SUCCEEDED(res))

@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
 //
 //-------------------------------------------------------------------------------------------------
 
@@ -17,6 +17,7 @@ void GetBoostState(IADLX3DBoost* d3dBoost);
 
 // Set Boost state
 void SetBoostState(IADLX3DBoost* d3dBoost, int index);
+
 
 // Menu
 void MainMenu();
@@ -160,15 +161,15 @@ void SetBoostState(IADLX3DBoost* d3dBoost, int index)
     }
 }
 
+
 void MainMenu()
 {
     printf("\tChoose from the following options:\n");
 
     printf("\t->Press 1 to display Boost support\n");
     printf("\t->Press 2 to display current Boost state\n");
-    printf("\t->Press 3 to enable Boost\n");
+    printf("\t->Press 3 to enable Boost and change minimum resolution\n");
     printf("\t->Press 4 to disable Boost\n");
-
     printf("\t->Press Q/q to quit the application\n");
     printf("\t->Press M/m to display menu options\n");
 }
@@ -195,7 +196,6 @@ void MenuControl(IADLX3DBoost* d3dBoost)
         case '4':
             SetBoostState(d3dBoost, num - '3');
             break;
-
             // Display menu options
         case 'm':
         case 'M':
