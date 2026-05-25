@@ -1,0 +1,14 @@
+[package]
+name = "GPUStressTest"
+description = "ADLX Rust sample: query GPU stress-test support via IADLXGPU3"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "GPUStressTest"
+path = "src/main.rs"
+
+[dependencies]
+amd-adlx = { path = "../amd-adlx" }

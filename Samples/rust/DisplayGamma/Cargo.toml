@@ -1,0 +1,14 @@
+[package]
+name = "display-gamma"
+description = "ADLX Rust sample: query display gamma current mode and re-gamma preset support"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "DisplayGamma"
+path = "src/main.rs"
+
+[dependencies]
+amd-adlx = { path = "../amd-adlx" }

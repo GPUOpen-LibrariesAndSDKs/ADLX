@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.5</span>
+   &#160;<span id="projectnumber">v2.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -113,59 +113,62 @@ $(function(){initNavTree('page_guide_bindpy.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Building Python bindings for ADLX</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This guide outlines the steps to build a Python binding wrapper for ADLX, a prerequisite to programming with ADLX in a Python application.</p>
+<div class="textblock"><p>This guide outlines the steps to build and use the Python binding for ADLX, a prerequisite to programming with ADLX in a Python application. The ADLX Python binding (<code>ADLXPybind</code>) is built on pybind11 and is distributed as a Python wheel that can be installed with <code>pip</code>. For details regarding pybind11's core functionalities, search online for the "official pybind11 documentation."</p>
 <h2>Prerequisite(s)</h2>
 <ul>
 <li><b>ADLX SDK</b> is installed.</li>
-<li><b>Visual Studio 2019</b> is installed.</li>
-<li><b>Python 3.9</b> is installed.</li>
+<li><b>Visual Studio 2022</b> with the C and C++ desktop components is installed.</li>
+<li><b>Python 3.12</b> is installed.</li>
 <li><b>pybind11</b> is installed.</li>
-<li>The path to the Python 3.9 installation is added to the <b>PYHOME</b> system environment variable.</li>
+<li>The path to the Python installation is added to the <b>PYHOME</b> system environment variable.</li>
 </ul>
-<h2>To build ADLX bindings in Python</h2>
+<p><b>Note:</b> The ADLX library is installed along with the AMD display driver.</p>
+<h2>To build the ADLX Python binding</h2>
+<p>Each ADLX C++ interface is exposed to Python through three parts: a trampoline class that lets pybind11 override the interface's virtual methods, a binding definition that registers the class and its methods with Python, and a type stub (<code>ADLX.pyi</code>) that provides type hints and docstrings.</p>
 <ol type="1">
-<li>Create a folder for your Python ADLX binding wrapper, for example <code>ADLXPybind</code>.</li>
-<li>Create a new file in the <code>ADLXPybind</code> folder and title it <code>bind.cpp</code>.</li>
-<li><p class="startli">Edit <code>bind.cpp</code> and bind the interfaces you wish to wrap using <code>pybind11</code>. To create bindings for event notifications, inherit the respective listener interface.<br  />
-For example, inherit <a class="el" href="_d_o_x__i_a_d_l_x_display_list_changed_listener.html">IADLXDisplayListChangedListener</a>.</p>
-<p class="startli"><b>Note:</b> Refer to the Python samples <a class="el" href="py_sample_adlxpybind.html">bind.cpp</a> file for an example of a Python binding.</p>
+<li>Open the <code>ADLXPybind</code> project in Visual Studio 2022.</li>
+<li><p class="startli">Build the project to produce the <code>ADLX.pyd</code> Python extension module.</p>
+<p class="startli"><b>Note:</b> Refer to the Python samples <a class="el" href="py_sample_adlxpybind.html">ADLXPybind</a> for an example of how the binding is used.</p>
 </li>
-<li>Create a C++ Dynamic Link Library project named <code>ADLXPybind</code> and configure the project as follows:<ul>
-<li><table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Key   </th><th class="markdownTableHeadNone">Value   </th><th class="markdownTableHeadNone">Observations    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Advanced &gt; Target File Extension   </td><td class="markdownTableBodyNone">.pyd   </td><td class="markdownTableBodyNone">Use .pyd as the extension    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">VC++ Directories &gt; Include Directories   </td><td class="markdownTableBodyNone">$(PYHOME)/include <br  />
- $(PYHOME)/Lib/site-packages/pybind11/include<br  />
-   </td><td class="markdownTableBodyNone">Add Path of python include and path of pybind11 include    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">VC++ Directories &gt; Library Directories   </td><td class="markdownTableBodyNone">$(PYHOME)/libs   </td><td class="markdownTableBodyNone">Add path of python libs    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">C/C++ &gt; Precompiled Header   </td><td class="markdownTableBodyNone">Not Using Precompiled Headers   </td><td class="markdownTableBodyNone">Do not use precompiled headers    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Linker &gt; Inpit   </td><td class="markdownTableBodyNone"><code>python39.lib</code>   </td><td class="markdownTableBodyNone">Add python lib   </td></tr>
-</table>
+</ol>
+<h2>To package the binding into a wheel</h2>
+<ol type="1">
+<li>Copy the compiled <code>ADLX.pyd</code> into the wheel package folder.</li>
+<li><p class="startli">Run the wheel build script.</p>
+<p class="startli"><b>Result:</b> A wheel file (for example, <code>adlx-1.0.0-py312-none-win_amd64.whl</code>) is generated in the wheel <code>dist</code> folder.</p>
 </li>
-</ul>
-</li>
-<li>Add the <code>bind.cpp</code> file to the project</li>
-<li>Add the following files to the project:<ul>
-<li><code>SDK/Platform/Windows/WinAPIs.cpp</code></li>
-<li><code>SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h</code></li>
-<li><code>SDK/ADLXHelper/Windows/Cpp/ADLXHelper.cpp</code></li>
-</ul>
-</li>
-<li><p class="startli">Build the project.</p>
-<p class="startli"><b>Result:</b> The <code>ADLXPybind.pyd</code> is built in the <code>"$(SolutionDir)$(Platform)$/(Configuration)/"</code> folder. </p>
-</li>
+</ol>
+<h2>To use the binding in a Python application</h2>
+<ol type="1">
+<li><p class="startli">Install the wheel into your Python environment:</p>
+<div class="fragment"><div class="line">pip install adlx-1.0.0-py312-none-win_amd64.whl</div>
+</div><!-- fragment --></li>
+<li><p class="startli">Import the binding and use it to initialize ADLX and access ADLX features:</p>
+<div class="fragment"><div class="line">from typing import List</div>
+<div class="line">from adlx import ADLX</div>
+<div class="line"> </div>
+<div class="line">def main():</div>
+<div class="line">    helper = ADLX.ADLXHelper()</div>
+<div class="line">    ret = helper.Initialize()</div>
+<div class="line">    assert ret == ADLX.ADLX_RESULT.ADLX_OK</div>
+<div class="line"> </div>
+<div class="line">    system: ADLX.IADLXSystem = helper.GetSystemServices()</div>
+<div class="line">    gpus: List[ADLX.IADLXGPU] = system.GetGPUs()</div>
+<div class="line">    for gpu in gpus:</div>
+<div class="line">        print(gpu.Name())</div>
+<div class="line"> </div>
+<div class="line">    ret = helper.Terminate()</div>
+<div class="line">    assert ret == ADLX.ADLX_RESULT.ADLX_OK</div>
+<div class="line"> </div>
+<div class="line">if __name__ == &quot;__main__&quot;:</div>
+<div class="line">    main()</div>
+</div><!-- fragment --> </li>
 </ol>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -173,7 +176,7 @@ For example, inherit <a class="el" href="_d_o_x__i_a_d_l_x_display_list_changed_
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2025 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
+    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2026 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
   </ul>
 </div>
 </body>

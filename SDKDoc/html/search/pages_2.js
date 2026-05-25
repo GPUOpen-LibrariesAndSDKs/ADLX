@@ -8,5 +8,6 @@ var searchData=
   ['boost_5',['Boost',['../cpp__boost.html',1,'Boost'],['../c__boost.html',1,'Boost']]],
   ['building_20c_20bindings_20for_20adlx_6',['Building C# bindings for ADLX',['../page_guide_bindcsharp.html',1,'page_guide_qs']]],
   ['building_20java_20bindings_20for_20adlx_7',['Building Java bindings for ADLX',['../page_guide_bindjava.html',1,'page_guide_qs']]],
-  ['building_20python_20bindings_20for_20adlx_8',['Building Python bindings for ADLX',['../page_guide_bindpy.html',1,'page_guide_qs']]]
+  ['building_20python_20bindings_20for_20adlx_8',['Building Python bindings for ADLX',['../page_guide_bindpy.html',1,'page_guide_qs']]],
+  ['building_20rust_20applications_20for_20adlx_9',['Building Rust applications for ADLX',['../page_guide_bindrust.html',1,'page_guide_qs']]]
 ];

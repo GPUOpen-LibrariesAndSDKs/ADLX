@@ -1,0 +1,24 @@
+[project]
+name = "amd-gputunings-mcp-server"
+version = "0.1.0"
+description = "A Model Context Protocol server providing tools to tune amd GPU"
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [{ name = "Advanced Micro Devices, Inc" }]
+keywords = ["GPU tuning", "Auto tuning", "Manual fan tuning", "Manual graphics tuning", "Manual power tuning", "Manual VRAM tuning", "Preset tuning", "Smart access memory", "llm"]
+license = { text = "MIT" }
+dependencies = [
+    "mcp",
+    "adlx",
+    "pyinstaller>=6.14.1",
+    "termcolor>=3.0.0",
+    "starlette>=0.27.0",
+    "uvicorn>=0.23.0",
+]
+
+[project.scripts]
+amd-gputunings-mcp-server = "amd_gputunings_mcp_server:main"
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"

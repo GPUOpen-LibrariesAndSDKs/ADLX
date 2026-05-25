@@ -1,0 +1,44 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug simple chatbot mcp cli client",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "./adlx_mcp_chatbot/main.py",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "args": [
+        "cli",
+        "--llm-api-key",
+        "lemonade",
+        "--llm-base-url",
+        "http://127.0.0.1:13305/api/v1"
+      ],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+    },
+    {
+      "name": "Debug simple chatbot mcp streamlit client",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "./adlx_mcp_chatbot/main.py",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "args": [
+        "streamlit",
+        "--llm-api-key",
+        "lemonade",
+        "--llm-base-url",
+        "http://127.0.0.1:13305/api/v1"
+      ],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+    }
+  ]
+}

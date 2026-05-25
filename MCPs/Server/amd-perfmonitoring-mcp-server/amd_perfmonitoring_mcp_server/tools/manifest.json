@@ -1,0 +1,154 @@
+{
+    "tools": [
+        {
+            "tool": "tool_gpu_metrics",
+            "name": "get_gpu_usage",
+            "description": "Get GPU usage information as a percentage for all GPUs",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        },
+        {
+            "tool": "tool_gpu_metrics",
+            "name": "get_gpu_clock_speed",
+            "description": "Get GPU core clock speed in MHz for all GPUs",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        },
+        {
+            "tool": "tool_gpu_metrics",
+            "name": "get_gpu_fan_speed",
+            "description": "Get GPU fan speed in RPM for all GPUs",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        },
+        {
+            "tool": "tool_gpu_metrics",
+            "name": "get_gpu_temperature",
+            "description": "Get GPU temperature in Celsius for all GPUs",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        },
+        {
+            "tool": "tool_gpu_metrics",
+            "name": "get_gpu_hotspot_temperature",
+            "description": "Get GPU hotspot temperature in Celsius for all GPUs",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        },
+        {
+            "tool": "tool_gpu_metrics",
+            "name": "get_gpu_power",
+            "description": "Get GPU power consumption in Watts for all GPUs",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        },
+        {
+            "tool": "tool_gpu_metrics",
+            "name": "get_gpu_totalboard_power",
+            "description": "Get GPU total board power consumption in Watts for all GPUs",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        },
+        {
+            "tool": "tool_gpu_metrics",
+            "name": "get_gpu_vram",
+            "description": "Get GPU VRAM usage in MB for all GPUs",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        },
+        {
+            "tool": "tool_gpu_metrics",
+            "name": "get_gpu_vram_clock_speed",
+            "description": "Get GPU VRAM clock speed in MHz for all GPUs",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        },
+        {
+            "tool": "tool_gpu_metrics",
+            "name": "get_gpu_voltage",
+            "description": "Get GPU voltage in mV for all GPUs",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        },
+        {
+            "tool": "tool_system_metrics",
+            "name": "get_cpu_usage",
+            "description": "Get CPU usage information as a percentage",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        },
+        {
+            "tool": "tool_system_metrics",
+            "name": "get_smartshift_value",
+            "description": "Get SmartShift value for AMD systems that support dynamic power shifting",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        },
+        {
+            "tool": "tool_system_metrics",
+            "name": "get_system_ram",
+            "description": "Get system RAM usage information as a percentage",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        },
+        {
+            "tool": "tool_fps",
+            "name": "get_fps",
+            "description": "Get current FPS (frames per second) information",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        },
+        {
+            "tool": "tool_fps",
+            "name": "get_fps_timestamp",
+            "description": "Get FPS timestamp information",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        }
+    ]
+}

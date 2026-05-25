@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.5</span>
+   &#160;<span id="projectnumber">v2.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -124,8 +124,12 @@ $(function(){initNavTree('page_c_help_a_d_l_x_helper__terminate.html',''); initR
  If <b>ADLXHelper_Terminate</b> is not successfully executed, an error code is returned.<br  />
  Refer to <a class="el" href="group__enumerations.html#ga9306b05f15578edbf79b649dd612b8c0">ADLX_RESULT</a> for success codes and error codes.</p>
 <h2>Remarks </h2>
-<p>Any interface obtained from ADLX that is not released becomes invalid.<br  />
+<p>All the interfaces obtained from ADLX must be released with their <b>Release</b> method before <b>ADLXHelper_Terminate</b> is called.<br  />
+ Any interface obtained from ADLX that is not released becomes invalid.<br  />
  Any attempt of calling ADLX interface after termination could result in errors such as exceptions or crashes.<br  />
+ <b>ADLXHelper_Terminate</b> unloads the ADLX library. Calling <b>Release</b> on an interface after this call dispatches into unloaded code and results in an access violation.<br  />
+ In an application that initializes ADLX at startup and terminates it from an unrelated shutdown path, the interfaces must be released explicitly before <b>ADLXHelper_Terminate</b> is called. This applies to every code path that calls <b>ADLXHelper_Terminate</b>, including the early-exit paths of a partially completed initialization, where some interfaces are already obtained and others are not.<br  />
+ For more information, see <a class="el" href="c_sample__interface_lifetime.html">Interface lifetime sample</a>.<br  />
 </p>
 <h2>Requirements </h2>
 <table class="doxtable">
@@ -138,7 +142,7 @@ $(function(){initNavTree('page_c_help_a_d_l_x_helper__terminate.html',''); initR
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -146,7 +150,7 @@ $(function(){initNavTree('page_c_help_a_d_l_x_helper__terminate.html',''); initR
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2025 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
+    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2026 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
   </ul>
 </div>
 </body>

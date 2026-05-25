@@ -1,0 +1,491 @@
+{
+    "tools": [
+        {
+            "tool": "tool_auto_tuning",
+            "name": "get_auto_tuning_type",
+            "description": "Check which auto tuning feature is currently active on a specific GPU. Use this when you need to know the current auto tuning type, or when the user asks about current auto tuning settings. Returns 'Undervolt GPU', 'Overclock GPU', 'Overclock VRAM', or 'None' if no auto tuning is active.",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)."
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_auto_tuning",
+            "name": "start_auto_tuning",
+            "description": "Start GPU auto tuning to optimize performance. Use this when the user wants to enable auto tuning, improve GPU performance, start overclocking or undervolting. This will automatically find optimal settings for the specified tuning type. Choose 'undervolt_gpu' to reduce power consumption while maintaining performance, 'overclock_gpu' to boost GPU core performance, or 'overclock_vram' to increase memory bandwidth.",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index", "tuning_type"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)."
+                    },
+                    "tuning_type": {
+                        "type": "string",
+                        "description": "Type of tuning to start",
+                        "enum": ["undervolt_gpu", "overclock_gpu", "overclock_vram"]
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_fan_tuning",
+            "name": "get_manual_fan_tuning_range",
+            "description": "Get the allowable range for specific fan tuning settings. Use this to understand the limits before setting values, or when the user asks about fan tuning capabilities. Supports 'fan_tuning' (speed/temperature ranges), 'min_acoustic_limit', 'min_fan_speed', and 'target_fan_speed' settings.",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index", "setting"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)."
+                    },
+                    "setting": {
+                        "type": "string",
+                        "description": "The fan setting to get range information for",
+                        "enum": ["fan_tuning", "min_acoustic_limit", "min_fan_speed", "target_fan_speed"]
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_fan_tuning",
+            "name": "get_manual_fan_tuning_state",
+            "description": "Get current values for specific fan tuning settings. Use this to check current fan configuration, monitor fan behavior, or when the user asks about current fan settings. Returns detailed information including fan curves, RPM states, acoustic limits, and speed targets.",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index", "setting"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)."
+                    },
+                    "setting": {
+                        "type": "string",
+                        "description": "The fan setting to get current state for",
+                        "enum": ["fan_tuning", "zero_rpm", "min_acoustic_limit", "min_fan_speed", "target_fan_speed"]
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_fan_tuning",
+            "name": "set_manual_fan_tuning_state",
+            "description": "Configure fan tuning settings to control cooling behavior. Use this when the user wants to adjust fan speeds, create custom fan curves, set quiet operation modes, or optimize cooling performance. Pass null to reset to default for each settings.\nFor 'fan_tuning', provide a dictionary mapping state indices to (fan_speed, temperature) tuples, for instances:\n    1. quiet fan tuning argument: {\"0\": [20, 60], \"1\": [25, 70], \"2\": [30, 80], \"3\": [35, 90], \"4\": [40, 100]}\n    2. balanced fan tuning argument: {\"0\": [30, 50], \"1\": [50, 60], \"2\": [70, 70], \"3\": [90, 80], \"4\": [100, 100]}\n    3. performance fan tuning argument: {\"0\": [40, 40], \"1\": [60, 50], \"2\": [80, 60], \"3\": [100, 70], \"4\": [100, 100]}",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index", "setting"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)."
+                    },
+                    "setting": {
+                        "type": "string",
+                        "description": "The fan setting to configure",
+                        "enum": ["fan_tuning", "zero_rpm", "min_acoustic_limit", "min_fan_speed", "target_fan_speed"]
+                    },
+                    "value": {
+                        "description": "The value to set. For 'fan_tuning': dict with state indices as keys and [fan_speed, temperature] arrays as values. For 'zero_rpm': boolean. For other settings: integer. Use null to set default value.",
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "description": "For fan_tuning: dictionary with state indices as keys and [fan_speed, temperature] arrays as values"
+                            },
+                            {
+                                "type": "boolean",
+                                "description": "For zero_rpm setting"
+                            },
+                            {
+                                "type": "integer",
+                                "description": "For numeric settings like min_acoustic_limit, min_fan_speed, target_fan_speed"
+                            },
+                            {
+                                "type": "null",
+                                "description": "Use null to reset to default value"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_gfx_tuning",
+            "name": "get_manual_graphics_tuning_range",
+            "description": "Get the range of a specific manual graphics tuning setting for a GPU. Use this to understand the valid limits before setting values, or when the user asks about graphics tuning capabilities. Supports 'gpu_tuning' (pre-RDNA frequency/voltage ranges), 'min_frequency', 'max_frequency', and 'voltage' (post-RDNA ranges).",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index", "setting"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)."
+                    },
+                    "setting": {
+                        "type": "string",
+                        "description": "The setting to get the range for",
+                        "enum": ["gpu_tuning", "min_frequency", "max_frequency", "voltage"]
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_gfx_tuning",
+            "name": "get_manual_graphics_tuning_state",
+            "description": "Get the current state of a specific manual graphics tuning setting for a GPU. Use this to check current GPU frequency, voltage, or tuning states, or when the user asks about current graphics settings. Supports 'gpu_tuning' (pre-RDNA current states), 'min_frequency', 'max_frequency', and 'voltage' (post-RDNA current values).",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index", "setting"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)."
+                    },
+                    "setting": {
+                        "type": "string",
+                        "description": "The setting to get the state for",
+                        "enum": ["gpu_tuning", "min_frequency", "max_frequency", "voltage"]
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_gfx_tuning",
+            "name": "set_manual_graphics_tuning_state",
+            "description": "Set the state of a specific manual graphics tuning setting for a GPU. Use this to manually tune GPU performance by adjusting frequency, voltage, or tuning states. For 'gpu_tuning', provide a dictionary with state indices and (frequency, voltage) tuples. For other settings, provide integer values. Set value to null to reset to defaults.",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index", "setting"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)."
+                    },
+                    "setting": {
+                        "type": "string",
+                        "description": "The setting to modify",
+                        "enum": ["gpu_tuning", "min_frequency", "max_frequency", "voltage"]
+                    },
+                    "value": {
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "description": "For 'gpu_tuning': Dictionary with state indices as keys and [frequency, voltage] arrays as values"
+                            },
+                            {
+                                "type": "integer",
+                                "description": "For frequency settings: value in MHz. For voltage: value in mV"
+                            },
+                            {
+                                "type": "null",
+                                "description": "Set to null to reset to default values"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_power_tuning",
+            "name": "get_manual_power_tuning_range",
+            "description": "Get the range of a specific manual power tuning setting for a GPU. Use this to understand the valid limits before setting values, or when the user asks about power tuning capabilities. Supports 'power_limit' and 'tdc_limit' settings.",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index", "setting"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)."
+                    },
+                    "setting": {
+                        "type": "string",
+                        "description": "The setting to get the range for",
+                        "enum": ["power_limit", "tdc_limit"]
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_power_tuning",
+            "name": "get_manual_power_tuning_state",
+            "description": "Get the current state of a specific manual power tuning setting for a GPU. Use this to check current power limits or TDC settings, or when the user asks about current power configurations. Supports 'power_limit' and 'tdc_limit' settings.",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index", "setting"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)."
+                    },
+                    "setting": {
+                        "type": "string",
+                        "description": "The setting to get the state for",
+                        "enum": ["power_limit", "tdc_limit"]
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_power_tuning",
+            "name": "set_manual_power_tuning_state",
+            "description": "Set the state of a specific manual power tuning setting for a GPU. Use this to manually tune GPU power consumption by adjusting power limits or TDC limits. For 'power_limit', provide percentage values. For 'tdc_limit', provide values in Amperes. Set value to null to reset to defaults.",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index", "setting"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)."
+                    },
+                    "setting": {
+                        "type": "string",
+                        "description": "The setting to modify",
+                        "enum": ["power_limit", "tdc_limit"]
+                    },
+                    "value": {
+                        "anyOf": [
+                            {
+                                "type": "integer",
+                                "description": "For 'power_limit': percentage value. For 'tdc_limit': value in Amperes"
+                            },
+                            {
+                                "type": "null",
+                                "description": "Set to null to reset to default values"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_vram_tuning",
+            "name": "get_supported_memory_timing_description_list",
+            "description": "Get the list of supported memory timing descriptions for a GPU",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)"
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_vram_tuning",
+            "name": "get_memory_timing_description",
+            "description": "Get the current memory timing description for a GPU",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)"
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_vram_tuning",
+            "name": "set_memory_timing_description",
+            "description": "Set the memory timing description for a GPU",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index", "description"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Memory timing description to set, available options: [\"MEMORYTIMING_AUTOMATIC\", \"MEMORYTIMING_DEFAULT\", \"MEMORYTIMING_FAST_TIMING\", \"MEMORYTIMING_FAST_TIMING_LEVEL_2\", \"MEMORYTIMING_MEMORYTIMING_LEVEL_1\", \"MEMORYTIMING_MEMORYTIMING_LEVEL_2\"",
+                        "enum": ["MEMORYTIMING_AUTOMATIC", "MEMORYTIMING_DEFAULT", "MEMORYTIMING_FAST_TIMING", "MEMORYTIMING_FAST_TIMING_LEVEL_2", "MEMORYTIMING_MEMORYTIMING_LEVEL_1", "MEMORYTIMING_MEMORYTIMING_LEVEL_2"]
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_vram_tuning",
+            "name": "get_vram_tuning_ranges",
+            "description": "Get the VRAM tuning ranges (frequency and voltage) for a GPU using Interface 1",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)"
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_vram_tuning",
+            "name": "get_vram_tuning_states",
+            "description": "Get the current VRAM tuning states for a GPU using Interface 1",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)"
+                    },
+                    "state_index": {
+                        "type": "integer",
+                        "description": "Index of the state to retrieve (-1 for all states)",
+                        "default": -1
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_vram_tuning",
+            "name": "set_vram_tuning_states",
+            "description": "Set the VRAM tuning states for a GPU using Interface 1",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index", "states"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)"
+                    },
+                    "states": {
+                        "type": "object",
+                        "description": "Dictionary with state indices as keys and (frequency, voltage) tuples as values"
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_vram_tuning",
+            "name": "get_max_vram_frequency_range",
+            "description": "Get the maximum VRAM frequency range for a GPU using Interface 2",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)"
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_vram_tuning",
+            "name": "get_max_vram_frequency",
+            "description": "Get the current maximum VRAM frequency using Interface 2",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)"
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_manual_vram_tuning",
+            "name": "set_max_vram_frequency",
+            "description": "Set the maximum VRAM frequency using Interface 2",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index", "max_freq"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)"
+                    },
+                    "max_freq": {
+                        "type": "integer",
+                        "description": "Maximum frequency in MHz"
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_preset_tuning",
+            "name": "get_preset_tuning_mode",
+            "description": "Get the preset tuning mode for a GPU. Use this to check if a specific preset mode is currently active.",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)"
+                    },
+                    "mode": {
+                        "type": "string",
+                        "description": "Preset mode to check ('Quiet' (Favor Efficiency), 'Balanced', 'Rage' (Favor Performance)), if None, returns all modes",
+                        "enum": ["Quiet", "Balanced", "Rage"]
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_preset_tuning",
+            "name": "set_preset_tuning_mode",
+            "description": "Set the preset tuning mode for a GPU. Use this to apply a specific preset configuration. The Quiet mode favors efficiency, while the Rage mode favors performance.",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index", "mode"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)"
+                    },
+                    "mode": {
+                        "type": "string",
+                        "description": "Preset mode to set ('Quiet', 'Balanced', 'Rage')",
+                        "enum": ["Quiet", "Balanced", "Rage"]
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_tuning_services",
+            "name": "is_gpu_tuning_default",
+            "description": "Check if GPU tuning settings are at factory defaults for a specific GPU. Use this to verify if any GPU tuning settings (auto, graphics, VRAM, fan, power, preset) are currently at their original factory values or default status. This is useful for determining if any custom tuning has been applied to the GPU.",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)."
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_tuning_services",
+            "name": "reset_gpu_tuning",
+            "description": "Reset any GPU tuning settings to factory defaults for a specific GPU. Use this to restore any GPU tuning settings (auto, graphics, VRAM, fan, power, preset) to their original factory values. This will undo any custom tuning that has been applied to the GPU.",
+            "inputSchema": {
+                "type": "object",
+                "required": ["gpu_index"],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "Index of the GPU (0-based)."
+                    }
+                }
+            }
+        }
+    ]
+}

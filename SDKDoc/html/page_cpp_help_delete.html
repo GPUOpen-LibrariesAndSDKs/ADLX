@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.5</span>
+   &#160;<span id="projectnumber">v2.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -122,7 +122,8 @@ $(function(){initNavTree('page_cpp_help_delete.html',''); initResizable(true); }
 <h2>Return Value </h2>
 <p>N/A</p>
 <h2>Remarks </h2>
-<p>This method calls <a class="el" href="page_cpp_help_terminate.html">Terminate</a>.</p>
+<p>This method calls <a class="el" href="page_cpp_help_terminate.html">Terminate</a>.<br  />
+ All the interfaces obtained from ADLX must be released before the ADLXHelper instance is destroyed. When the instance is a global or static object, its destructor runs during process shutdown, and any interface still held at that point is released after ADLX has been terminated and the ADLX library unloaded, which results in an access violation.</p>
 <h2>Requirements </h2>
 <table class="doxtable">
 <tr style="height=40px">
@@ -134,7 +135,7 @@ $(function(){initNavTree('page_cpp_help_delete.html',''); initResizable(true); }
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -142,7 +143,7 @@ $(function(){initNavTree('page_cpp_help_delete.html',''); initResizable(true); }
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2025 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
+    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2026 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
   </ul>
 </div>
 </body>

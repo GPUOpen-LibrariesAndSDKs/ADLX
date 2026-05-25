@@ -1,0 +1,14 @@
+[package]
+name = "invalid-object"
+description = "ADLX Rust sample: demonstrates ADLX_INVALID_OBJECT error handling"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "InvalidObject"
+path = "src/main.rs"
+
+[dependencies]
+amd-adlx = { path = "../amd-adlx" }

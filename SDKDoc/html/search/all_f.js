@@ -10,7 +10,7 @@ var searchData=
   ['pcie_5f5_5f0_7',['PCIE_5_0',['../_a_d_l_x_defines_8h.html#ga5ede6debe6eec10802aea6ca910e5f6fa202e6cc7b3a6a441cffdea09104517ae',1,'adlx']]],
   ['perfallmetrics_8',['PerfAllMetrics',['../cpp__perf_all_metrics.html',1,'PerfAllMetrics'],['../c__perf_all_metrics.html',1,'PerfAllMetrics']]],
   ['perffpsmetrics_9',['PerfFPSMetrics',['../cpp__perf_f_p_s_metrics.html',1,'PerfFPSMetrics'],['../c__perf_f_p_s_metrics.html',1,'PerfFPSMetrics']]],
-  ['perfgpumetrics_10',['PerfGPUMetrics',['../cpp__perf_g_p_u_metrics.html',1,'PerfGPUMetrics'],['../c__perf_g_p_u_metrics.html',1,'PerfGPUMetrics']]],
+  ['perfgpumetrics_10',['PerfGPUMetrics',['../cpp__perf_g_p_u_metrics.html',1,'PerfGPUMetrics'],['../c__perf_g_p_u_metrics.html',1,'PerfGPUMetrics'],['../rust_sample_perfgpumetrics.html',1,'PerfGPUMetrics']]],
   ['performance_20monitoring_11',['Performance Monitoring',['../perfmonitoring.html',1,'Performance Monitoring'],['../domain_c_sample__performance_monitoring.html',1,'Performance Monitoring'],['../domain_cpp_sample__performance_monitoring.html',1,'Performance Monitoring']]],
   ['perfsystemmetrics_12',['PerfSystemMetrics',['../cpp__perf_system_metrics.html',1,'PerfSystemMetrics'],['../c__perf_system_metrics.html',1,'PerfSystemMetrics']]],
   ['pixel_5fclock_5fmax_13',['PIXEL_CLOCK_MAX',['../_a_d_l_x_defines_8h.html#gad88a3f24bb096fb3d55746ebfe4cfe95a49f36fa035dd5bf755690740a2a81a0a',1,'adlx']]],

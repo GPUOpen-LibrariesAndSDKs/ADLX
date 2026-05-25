@@ -1,0 +1,24 @@
+[package]
+name = "amd-adlx"
+description = "Raw FFI bindings and a lightweight runtime loader for the AMD ADLX (Radeon) C interface"
+version = "0.1.0"
+edition.workspace = true
+rust-version = "1.70"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/GPUOpen-LibrariesAndSDKs/ADLX"
+homepage = "https://gpuopen.com/adlx/"
+documentation = "https://docs.rs/amd-adlx"
+keywords = ["adlx", "amd", "gpu", "radeon", "ffi"]
+categories = ["api-bindings", "hardware-support", "os::windows-apis", "external-ffi-bindings"]
+publish = true
+
+[lib]
+name = "amd_adlx"
+path = "src/lib.rs"
+
+# ADLX is Windows-only; build docs.rs against a Windows target so the API is visible.
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
+targets = ["x86_64-pc-windows-msvc", "i686-pc-windows-msvc"]
+

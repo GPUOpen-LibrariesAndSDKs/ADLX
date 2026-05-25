@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.5</span>
+   &#160;<span id="projectnumber">v2.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,13 +114,17 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h2>ADLX Developer Documentation </h2>
-<p>AMD Device Library eXtra (ADLX) is AMD's application programming interface (API) library for Microsoft Windows® based driver configuration. The ADLX API is a programming interface designed to allow software applications communicate directly with AMD hardware and access their resources.<br  />
+<p>AMD Device Library eXtra (ADLX) is AMD's application programming interface (API) library for Microsoft Windows®-based driver configuration. The ADLX API is designed to let software applications communicate directly with AMD hardware and access its resources. With ADLX 2.0, ADLX MCP servers extend this interface to natural language, enabling AI-assisted control and monitoring of AMD GPUs through natural-language requests.<br  />
 </p>
-<p>This document includes detailed information on the API's programming interfaces, helpers, functions, types, as well as code samples and usage scenarios to help developers get started. The document also includes information on system requirements, bindings development, and advanced configurations to help developers overcome common issues when integrating the API.<br  />
+<p>This document includes detailed information on the API's programming interfaces, helpers, functions, types, as well as code samples and usage scenarios to help developers get started. It also includes information on system requirements, bindings development, advanced configurations, and guidance on how to use ADLX with MCP servers for natural-language-driven GPU control and monitoring.<br  />
 <br  />
 </p>
 <h2>ADLX Programming Guide </h2>
 <p><a class="el" href="page_adlxprogrammingguide.html">ADLX Programming Guide</a> contains information for developers to get started, such as hardware and software requirements, the minimum-supported operating system versions, and a Quick Start guide with instructions on how to build applications in each of the supported programming languages.<br  />
+<br  />
+</p>
+<h2>ADLX MCP Servers </h2>
+<p><a class="el" href="page_mcp.html">ADLX MCP Servers</a> provides Model Context Protocol (MCP) servers and clients that expose ADLX driver features to LLM-based agents, enabling AMD GPUs to be managed through natural language.<br  />
 <br  />
 </p>
 <h2>ADLX Samples </h2>
@@ -130,7 +134,6 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 <h2>ADLX SDK References </h2>
 <p><a class="el" href="page_sdk.html">ADLX SDK References</a> provides descriptions for all ADLX programming aspects such as helpers, functions, interfaces (with their respective methods) and ADLX data types.<br  />
 <br  />
-<br  />
 </p>
 <p>For more information on AMD Graphics and related SDKs, visit <a href="https://gpuopen.com/adlx/" class="el">AMD GPUOpen</a>. </p>
 </div></div><!-- PageDoc -->
@@ -138,7 +141,7 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -146,7 +149,7 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2025 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
+    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2026 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
   </ul>
 </div>
 </body>

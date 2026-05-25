@@ -1,0 +1,32 @@
+//
+// Copyright Advanced Micro Devices, Inc. All rights reserved.
+//
+//-------------------------------------------------------------------------------------------------
+
+opaque!(
+    IADLXGPUsChangedHandling,
+    IADLXEyefinityDesktop,
+    IADLXGPU2List,
+    IADLXVariableGraphicsMemoryOptionList,
+    IADLXMultimediaChangedEvent,
+    IADLXGPUAppsListChangedHandling,
+    IADLXGPUTuningChangedEvent,
+    IADLXPowerTuningChangedEvent,
+    IADLXGPUAutoTuningCompleteListener,
+    IADLXMemoryTimingDescriptionList,
+    IADLXManualFanTuningStateList,
+    IADLX3DSettingsChangedEvent,
+    IADLX3DImageSharpenDesktop,
+    IADLXAllMetricsList,
+    IADLXGPUMetricsList,
+    IADLXSystemMetricsList,
+    IADLXFPSList,
+    IADLXAllMetrics,
+    IADLXDisplayResolution,
+    IADLXDisplayResolutionList,
+    IADLXDisplayGamutChangedListener,
+    IADLXDisplayGammaChangedListener,
+    IADLXDisplay3DLUTChangedListener,
+    IADLXDisplaySettingsChangedListener,
+    IADLXGPUStressTestFinishedListener,
+);

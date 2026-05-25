@@ -1,0 +1,14 @@
+[package]
+name = "desktops-event"
+description = "ADLX Rust sample: handle notifications about desktop configuration changes"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "DesktopsEvent"
+path = "src/main.rs"
+
+[dependencies]
+amd-adlx = { path = "../amd-adlx" }

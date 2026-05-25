@@ -1,0 +1,133 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "3D Settings: Debug (stdio)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "amd_3dsettings_mcp_server",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/amd-3dsettings-mcp-server",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": [
+                "--enable_log"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "3D Settings: Debug (streamable_http)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "amd_3dsettings_mcp_server",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/amd-3dsettings-mcp-server",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": [
+                "--enable_log",
+                "--transport",
+                "streamable_http"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Display Settings: Debug (stdio)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "amd_display_mcp_server",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/amd-display-mcp-server",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": [
+                "--enable_log"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Display Settings: Debug (streamable_http)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "amd_display_mcp_server",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/amd-display-mcp-server",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": [
+                "--enable_log",
+                "--transport",
+                "streamable_http"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "GPU Tunings: Debug (stdio)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "amd_gputunings_mcp_server",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/amd-gputunings-mcp-server",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": [
+                "--enable_log"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "GPU Tunings: Debug (streamable_http)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "amd_gputunings_mcp_server",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/amd-gputunings-mcp-server",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": [
+                "--enable_log",
+                "--transport",
+                "streamable_http"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Performance Monitoring: Debug (stdio)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "amd_perfmonitoring_mcp_server",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/amd-perfmonitoring-mcp-server",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": [
+                "--enable_log"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Performance Monitoring: Debug (streamable_http)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "amd_perfmonitoring_mcp_server",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/amd-perfmonitoring-mcp-server",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": [
+                "--enable_log",
+                "--transport",
+                "streamable_http"
+            ],
+            "justMyCode": false
+        }
+    ]
+}

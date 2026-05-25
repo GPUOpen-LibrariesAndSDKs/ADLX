@@ -1,0 +1,14 @@
+[package]
+name = "anti-lag"
+description = "ADLX Rust sample: query and set AMD Radeon Anti-Lag"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "AntiLag"
+path = "src/main.rs"
+
+[dependencies]
+amd-adlx = { path = "../amd-adlx" }

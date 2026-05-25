@@ -15,5 +15,6 @@ var searchData=
   ['bpc_5f8_12',['BPC_8',['../_a_d_l_x_defines_8h.html#ga959bfe96f9170a25d8dd9f7b893ff29caafee8fa0444dd958a054c617540eabeb',1,'adlx']]],
   ['building_20c_20bindings_20for_20adlx_13',['Building C# bindings for ADLX',['../page_guide_bindcsharp.html',1,'page_guide_qs']]],
   ['building_20java_20bindings_20for_20adlx_14',['Building Java bindings for ADLX',['../page_guide_bindjava.html',1,'page_guide_qs']]],
-  ['building_20python_20bindings_20for_20adlx_15',['Building Python bindings for ADLX',['../page_guide_bindpy.html',1,'page_guide_qs']]]
+  ['building_20python_20bindings_20for_20adlx_15',['Building Python bindings for ADLX',['../page_guide_bindpy.html',1,'page_guide_qs']]],
+  ['building_20rust_20applications_20for_20adlx_16',['Building Rust applications for ADLX',['../page_guide_bindrust.html',1,'page_guide_qs']]]
 ];

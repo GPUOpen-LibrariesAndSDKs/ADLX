@@ -24,5 +24,7 @@ var searchData=
   ['resetshadercache_21',['ResetShaderCache',['../_d_o_x__i_a_d_l_x3_d_reset_shader_cache__reset_shader_cache.html',1,'ResetShaderCache'],['../cpp__reset_shader_cache.html',1,'ResetShaderCache'],['../c__reset_shader_cache.html',1,'ResetShaderCache']]],
   ['resettofactory_22',['ResetToFactory',['../_d_o_x__i_a_d_l_x_g_p_u_tuning_services__reset_to_factory.html',1,'DOX_IADLXGPUTuningServices']]],
   ['revisionid_23',['RevisionId',['../_d_o_x__i_a_d_l_x_g_p_u__revision_id.html',1,'DOX_IADLXGPU']]],
-  ['rsr_24',['RSR',['../cpp__r_s_r.html',1,'RSR'],['../c__r_s_r.html',1,'RSR']]]
+  ['rsr_24',['RSR',['../cpp__r_s_r.html',1,'RSR'],['../c__r_s_r.html',1,'RSR']]],
+  ['rust_20applications_20for_20adlx_25',['Building Rust applications for ADLX',['../page_guide_bindrust.html',1,'page_guide_qs']]],
+  ['rust_20samples_26',['Rust Samples',['../page_sample_rust.html',1,'domain_samplePage']]]
 ];

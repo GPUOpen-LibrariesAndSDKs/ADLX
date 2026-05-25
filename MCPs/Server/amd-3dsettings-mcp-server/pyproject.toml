@@ -1,0 +1,24 @@
+[project]
+name = "amd-3dsettings-mcp-server"
+version = "0.1.0"
+description = "A Model Context Protocol server providing tools to operate amd 3D setting feature"
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [{ name = "Advanced Micro Devices, Inc" }]
+keywords = ["3Dsetting", "graphics", "llm"]
+license = { text = "MIT" }
+dependencies = [
+    "mcp",
+    "adlx",
+    "pyinstaller>=6.14.1",
+    "termcolor>=3.0.0",
+    "starlette>=0.27.0",
+    "uvicorn>=0.23.0",
+]
+
+[project.scripts]
+amd-3dsettings-mcp-server = "amd_3dsettings_mcp_server:main"
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"

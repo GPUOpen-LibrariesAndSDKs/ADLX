@@ -36,5 +36,7 @@ var searchData=
   ['revisionid_33',['RevisionId',['../_d_o_x__i_a_d_l_x_g_p_u__revision_id.html',1,'DOX_IADLXGPU']]],
   ['rgb_5f444_5ffull_34',['RGB_444_FULL',['../_a_d_l_x_defines_8h.html#ga5a8d44b3ae980a5bf3f2d02fca5a9d83ad2a650ab762da80a39e3678bc429fee5',1,'adlx']]],
   ['rgb_5f444_5flimited_35',['RGB_444_LIMITED',['../_a_d_l_x_defines_8h.html#ga5a8d44b3ae980a5bf3f2d02fca5a9d83a4759f250efc3043ffe20d9910263f733',1,'adlx']]],
-  ['rsr_36',['RSR',['../cpp__r_s_r.html',1,'RSR'],['../c__r_s_r.html',1,'RSR']]]
+  ['rsr_36',['RSR',['../cpp__r_s_r.html',1,'RSR'],['../c__r_s_r.html',1,'RSR']]],
+  ['rust_20applications_20for_20adlx_37',['Building Rust applications for ADLX',['../page_guide_bindrust.html',1,'page_guide_qs']]],
+  ['rust_20samples_38',['Rust Samples',['../page_sample_rust.html',1,'domain_samplePage']]]
 ];

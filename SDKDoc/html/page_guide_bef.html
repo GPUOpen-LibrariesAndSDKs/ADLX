@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.5</span>
+   &#160;<span id="projectnumber">v2.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -115,6 +115,7 @@ $(function(){initNavTree('page_guide_bef.html',''); initResizable(true); });
 <div class="contents">
 <div class="textblock"><p>Develop applications with greater ease and efficiency with ADLX, featuring improved stability and maintenance, and more functionality than ADL.</p>
 <ul>
+<li><b>AI-assisted GPU management</b>. The <a class="el" href="page_mcp.html">ADLX MCP servers</a> expose AMD driver features to LLM-based agents, enabling users to control and monitor AMD GPUs through natural-language requests.</li>
 <li><b>High standard of quality assurance from AMD</b>. All ADLX functions and methods are extensively tested on a wide range of hardware to assure quality.</li>
 <li><b>Accelerated time-to-market</b>. Simplified and cost-effective interfaces allow for accelerated customer software development.</li>
 <li><b>Forward and backward compatibility with AMD drivers</b>. Significantly reduced field issues by implementing architecture built with compatibility checks and switches.</li>
@@ -125,23 +126,25 @@ $(function(){initNavTree('page_guide_bef.html',''); initResizable(true); });
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone"><b>Features</b>   </th><th class="markdownTableHeadNone"><b>ADLX</b>   </th><th class="markdownTableHeadNone"><b>ADL</b>    </th></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>AI Integration</b>   </td><td class="markdownTableBodyNone">✅ MCP servers for AI-assisted GPU management through natural-language requests   </td><td class="markdownTableBodyNone">❌ Not available    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><b>Simple Interface</b>   </td><td class="markdownTableBodyNone">✅ Intuitive C++ interfaces with methods   </td><td class="markdownTableBodyNone">❌ Inconvenient C-style function pointers    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><b>GPU &amp; Display Enumeration</b>   </td><td class="markdownTableBodyNone">✅ Intuitive representation   </td><td class="markdownTableBodyNone">❌ Complicated representation    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><b>Memory Management</b>   </td><td class="markdownTableBodyNone">✅ Virtually leak-proof with reference-counted interfaces and smart pointers   </td><td class="markdownTableBodyNone">❌ Leak-prone with C-style dynamic memory management    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Events Synchronization</b>   </td><td class="markdownTableBodyNone">✅ Convenient ADLX events for all the features in ADLX   </td><td class="markdownTableBodyNone">❌ Limited events. Applications must implement the events manager    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Support</b>   </td><td class="markdownTableBodyNone">✅ Forward and backward compatibility with AMD drivers   </td><td class="markdownTableBodyNone">❌ Limited    </td></tr>
+<td class="markdownTableBodyNone"><b>Events Synchronization</b>   </td><td class="markdownTableBodyNone">✅ Convenient ADLX events for all the features in ADLX   </td><td class="markdownTableBodyNone">❌ Limited events. Applications must implement the events manager    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>Support</b>   </td><td class="markdownTableBodyNone">✅ Forward and backward compatibility with AMD drivers   </td><td class="markdownTableBodyNone">❌ Limited    </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><b>Versioning</b>   </td><td class="markdownTableBodyNone">✅ More interfaces   </td><td class="markdownTableBodyNone">❌ Alternate function pointers   </td></tr>
 </table>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -149,7 +152,7 @@ $(function(){initNavTree('page_guide_bef.html',''); initResizable(true); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2025 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
+    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2026 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
   </ul>
 </div>
 </body>

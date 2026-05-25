@@ -1,0 +1,691 @@
+{
+    "tools": [
+        {
+            "tool": "tool_rsr",
+            "name": "get_rsr_state",
+            "description": "Call this tool to Get the current state of Radeon Super Resolution (RSR), \\n Additional information: \\n AMD Radeon™ Super Resolution (RSR) is an in-driver upscaling feature that uses the same algorithm found in AMD FidelityFX™ Super Resolution (FSR) technology. Gamers can take advantage of Radeon™ Super Resolution technology to unleash new levels of performance on any compatible game.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        },
+        {
+            "tool": "tool_rsr",
+            "name": "set_rsr_state",
+            "description": "Call this tool to Set the state of Radeon Super Resolution (RSR)",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "state"
+                ],
+                "properties": {
+                    "state": {
+                        "type": "integer",
+                        "description": "State to set for Radeon Super Resolution (RSR) - 0 for Off, 1 for On",
+                        "minimum": 0,
+                        "maximum": 1
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_afmf",
+            "name": "get_afmf_state",
+            "description": "Call this tool to Get the current state of AMD Fluid Motion Frames (AFMF), \\n Additional information: \\n AMD Fluid Motion Frames, or AFMF, is a frame generation technology designed to increase frame rates and smoothness for game winning performance, with minimal added latency. Leveraging advanced frame generation technology, AFMF supports Vulkan®, OpenGL®, DirectX® 11 and 12 titles for broader compatibility. For games that natively support FidelityFX™ Super Resolution Frame Generation, AMD recommends using that integrated solution for the best balance of performance and image quality.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            }
+        },
+        {
+            "tool": "tool_afmf",
+            "name": "set_afmf_state",
+            "description": "Call this tool to Set the state of AMD Fluid Motion Frames (AFMF)",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "state"
+                ],
+                "properties": {
+                    "state": {
+                        "type": "integer",
+                        "description": "State to set for AMD Fluid Motion Frames (AFMF) - 0 for Off, 1 for On",
+                        "minimum": 0,
+                        "maximum": 1
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_boost",
+            "name": "get_boost_state",
+            "description": "Call this tool to Get the current state of Radeon Boost, \\n Additional information: \\n AMD Radeon™ Boost dynamically lowers resolution of the entire frame when fast on-screen character motion is detected via user input, allowing for higher FPS and responsiveness with little perceived imapct to quality. This feature also takes advantage of the variable rate shading hardware found on the AMD Radeon™ RX 6000 Series graphics cards and newer for select titles.\\n AMD Radeon™ Boost 2 dynamically adjusts in-game resolution using both user input and on-screen scene analysis. By lowering resolution in lower-detail or peripheral areas, Radeon™ Boost 2 can deliver higher FPS and faster responsiveness while preserving critical visual fidelity.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_boost",
+            "name": "set_boost_state",
+            "description": "Call this tool to Set the state of Radeon Boost",
+            "inputSchema": {
+                "type": "object",
+                "required": ["state"],
+                "properties": {
+                    "state": {
+                        "type": "integer",
+                        "description": "State to set for Radeon Boost - 0 for Off, 1 for On",
+                        "minimum": 0,
+                        "maximum": 1
+                    },
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_chill",
+            "name": "get_chill_state",
+            "description": "Call this tool to Get the current state of Radeon Chill, \\n Additional information: \\n This power saving feature helps save your battery by regulating your frame rates based on in-game movements. During intense motion, Radeon Chill will run your FPS up to a defined FPS cap, while in instances where there’s no motion on the screen, the FPS will lower automatically to save power consumption.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_chill",
+            "name": "set_chill_state",
+            "description": "Call this tool to Set the state of Radeon Chill",
+            "inputSchema": {
+                "type": "object",
+                "required": ["state"],
+                "properties": {
+                    "state": {
+                        "type": "integer",
+                        "description": "State to set for Radeon Chill - 0 for Off, 1 for On",
+                        "minimum": 0,
+                        "maximum": 1
+                    },
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_anti_lag",
+            "name": "get_anti_lag_state",
+            "description": "Call this tool to Get the current state of Radeon Anti-Lag, \\n Additional information: \\n The Radeon™ Anti-Lag feature is designed to help reduce input lag in GPU-limited cases. Radeon Anti-Lag controls the pace of the CPU work to make sure it doesn't get too far ahead of the GPU, reducing the amount of CPU work queued up. As a result, Radeon Anti-Lag can shrink input lag by almost a full frame helping to restore the responsiveness to your game.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_anti_lag",
+            "name": "set_anti_lag_state",
+            "description": "Call this tool to Set the state of Radeon Anti-Lag",
+            "inputSchema": {
+                "type": "object",
+                "required": ["state"],
+                "properties": {
+                    "state": {
+                        "type": "integer",
+                        "description": "State to set for Radeon Anti-Lag - 0 for Off, 1 for On",
+                        "minimum": 0,
+                        "maximum": 1
+                    },
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_image_sharpening",
+            "name": "get_image_sharpening_state",
+            "description": "Call this tool to Get the current state of Radeon Image Sharpening, \\n Additional information: \\n AMD Radeon™ Image Sharpening employs a contrast adaptive sharpening algorithm that restores clarity to in-game visuals that may have been softened by other effects, bringing out details of objects without creating some of the visual artifacts seen in other sharpening effects.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_image_sharpening",
+            "name": "set_image_sharpening_state",
+            "description": "Call this tool to Set the state of Radeon Image Sharpening",
+            "inputSchema": {
+                "type": "object",
+                "required": ["state"],
+                "properties": {
+                    "state": {
+                        "type": "integer",
+                        "description": "State to set for Radeon Image Sharpening - 0 for Off, 1 for On",
+                        "minimum": 0,
+                        "maximum": 1
+                    },
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_enhanced_sync",
+            "name": "get_enhanced_sync_state",
+            "description": "Call this tool to Get the current state of Radeon Enhanced Sync, \\n Additional information: \\n Enhanced Sync helps gamers minimize screen tearing while decreasing the latency and stutter of traditional V-sync. Available for games based on DirectX® 9, 11, 12* and Vulkan® APIs as well as on all Polaris-based GPUs and newer, and/or AMD Eyefinity Technology display combinations.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_enhanced_sync",
+            "name": "set_enhanced_sync_state",
+            "description": "Call this tool to Set the state of Radeon Enhanced Sync",
+            "inputSchema": {
+                "type": "object",
+                "required": ["state"],
+                "properties": {
+                    "state": {
+                        "type": "integer",
+                        "description": "State to set for Radeon Enhanced Sync - 0 for Off, 1 for On",
+                        "minimum": 0,
+                        "maximum": 1
+                    },
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_frtc",
+            "name": "get_frtc_state",
+            "description": "Call this tool to Get the current state of Radeon FRTC, \\n Additional information: \\n Frame Rate Target Control (FRTC) enables users to set a target maximum frame rate when playing an application in full screen mode. FRTC can reduce GPU power consumption (great for games running at frame rates much higher than the display refresh rate) and help create cooler and quieter gaming.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_frtc",
+            "name": "set_frtc_state",
+            "description": "Call this tool to Set the state of Radeon FRTC (Frame Rate Target Control)",
+            "inputSchema": {
+                "type": "object",
+                "required": ["state"],
+                "properties": {
+                    "state": {
+                        "type": "integer",
+                        "description": "State to set for Radeon FRTC - 0 for Off, 1 for On",
+                        "minimum": 0,
+                        "maximum": 1
+                    },
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_vertical_refresh",
+            "name": "get_vertical_refresh_state",
+            "description": "Call this tool to Get the current state of Wait for Vertical Refresh, \\n Additional information: \\n Vertical Refresh or VSync, synchronizes the application with the monitor frame rate with the objective of removing screen tearing.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_vertical_refresh",
+            "name": "set_vertical_refresh_mode",
+            "description": "Call this tool to Set the mode of Wait for Vertical Refresh (VSync). Available modes:\n- 'always_off': VSync is always disabled (maximum performance, may cause screen tearing)\n- 'off_unless_app_specifies': VSync is off by default unless the application requests it\n- 'on_unless_app_specifies': VSync is on by default unless the application disables it (recommended for most games)\n- 'always_on': VSync is always enabled (eliminates tearing, may reduce FPS)",
+            "inputSchema": {
+                "type": "object",
+                "required": ["mode"],
+                "properties": {
+                    "mode": {
+                        "type": "string",
+                        "description": "VSync mode: 'always_off' (best performance), 'off_unless_app_specifies' (app controls), 'on_unless_app_specifies' (recommended), 'always_on' (no tearing)",
+                        "enum": ["always_off", "off_unless_app_specifies", "on_unless_app_specifies", "always_on"]
+                    },
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_vertical_refresh",
+            "name": "get_vertical_refresh_mode",
+            "description": "Call this tool to Get the current mode of Wait for Vertical Refresh",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_anti_aliasing",
+            "name": "get_anti_aliasing_mode",
+            "description": "Call this tool to Get the current mode of Anti-Aliasing, \\n Additional information: \\n Anti-Aliasing (AA) improves image quality by reducing jagged edges from textures. Applying AA can make an image look smoother and softer, at the expense of lowering FPS.\nSelecting Anti-Aliasing Mode enables three options:\n- Multisampling Anti-Aliasing (MSAA): MSAA improves image quality by reducing aliasing at the edge of textures, however it cannot remove aliasing on transparent textures such as fences.\n- Adaptive Anti-Aliasing (AAA): AAA improves image quality by reducing aliasing at the edge of textures and from transparent textures.\n- Sparse Grid Supersampling Anti-Aliasing (SSAA): SSAA improves image quality by taking more samples than MSAA and AAA, reducing aliasing from all textures. SSAA has the highest impact on FPS of all AA settings within Radeon Settings.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_anti_aliasing",
+            "name": "set_anti_aliasing_mode",
+            "description": "Call this tool to Set the mode of Anti-Aliasing. Available modes:\n- 'use_app_settings': Use the application's built-in AA settings (default, no driver override)\n- 'enhance_app_settings': Enhance the application's AA with additional driver-level improvements (better quality)\n- 'override_app_settings': Override application AA settings with driver-controlled AA (maximum quality, may impact performance)",
+            "inputSchema": {
+                "type": "object",
+                "required": ["mode"],
+                "properties": {
+                    "mode": {
+                        "type": "string",
+                        "description": "AA mode: 'use_app_settings' (app default), 'enhance_app_settings' (better quality), 'override_app_settings' (best quality, lower FPS)",
+                        "enum": ["use_app_settings", "enhance_app_settings", "override_app_settings"]
+                    },
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_anti_aliasing",
+            "name": "get_anti_aliasing_level",
+            "description": "Call this tool to Get the current level of Anti-Aliasing. This only takes effect when the mode is set to 'override_app_settings'.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_anti_aliasing",
+            "name": "set_anti_aliasing_level",
+            "description": "Call this tool to Set the level of Anti-Aliasing. This only takes effect when the mode is set to 'override_app_settings'. Available levels:\n- '2x': 2x Multi-Sampling Anti-Aliasing\n- '2xeq': 2x Multi-Sampling with Enhanced Quality\n- '4x': 4x Multi-Sampling Anti-Aliasing\n- '4xeq': 4x Multi-Sampling with Enhanced Quality\n- '8x': 8x Multi-Sampling Anti-Aliasing\n- '8xeq': 8x Multi-Sampling with Enhanced Quality",
+            "inputSchema": {
+                "type": "object",
+                "required": ["level"],
+                "properties": {
+                    "level": {
+                        "type": "string",
+                        "description": "AA level: '2x', '2xeq', '4x', '4xeq', '8x', or '8xeq'",
+                        "enum": ["2x", "2xeq", "4x", "4xeq", "8x", "8xeq"]
+                    },
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_morphological_aa",
+            "name": "get_morphological_aa_state",
+            "description": "Call this tool to Get the current state of Morphological Anti-Aliasing, \\n Additional information: \\n Morphological Anti-aliasing (MLAA) is an AMD exclusive alternative edge-smoothing technique with minimal performance overhead.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_morphological_aa",
+            "name": "set_morphological_aa_state",
+            "description": "Call this tool to Set the state of Morphological Anti-Aliasing",
+            "inputSchema": {
+                "type": "object",
+                "required": ["state"],
+                "properties": {
+                    "state": {
+                        "type": "integer",
+                        "description": "State to set for Morphological Anti-Aliasing - 0 for Off, 1 for On",
+                        "minimum": 0,
+                        "maximum": 1
+                    },
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_anisotropic_filtering",
+            "name": "get_anisotropic_filtering_state",
+            "description": "Call this tool to Get the current state of Anisotropic Filtering, \\n Additional information: \\n Anisotropic Filtering can increase and sharpen the quality of textures on surfaces that appear far away or at odd angles, such as road surfaces or trees. Anisotropic Filtering has a small performance cost (FPS) and can increase image quality in most 3D applications.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_anisotropic_filtering",
+            "name": "set_anisotropic_filtering_state",
+            "description": "Call this tool to Set the state of Anisotropic Filtering",
+            "inputSchema": {
+                "type": "object",
+                "required": ["state"],
+                "properties": {
+                    "state": {
+                        "type": "integer",
+                        "description": "State to set for Anisotropic Filtering - 0 for Off, 1 for On",
+                        "minimum": 0,
+                        "maximum": 1
+                    },
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_tessellation",
+            "name": "get_tessellation_mode",
+            "description": "Call this tool to Get the current mode of Tessellation, \\n Additional information: \\n Tessellation Mode enhances the detail of objects by adjusting the number of polygons used for rendering. Limiting the level of Tessellation can provide higher FPS in games that use high levels of tessellation.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_tessellation",
+            "name": "set_tessellation_mode",
+            "description": "Call this tool to Set the mode of Tessellation. Available modes:\n- 'amd_optimized': Use AMD's optimized tessellation settings for best performance/quality balance (recommended)\n- 'use_app_settings': Use the application's tessellation settings without driver modifications\n- 'override': Override application tessellation with custom driver settings (allows manual level control)",
+            "inputSchema": {
+                "type": "object",
+                "required": ["mode"],
+                "properties": {
+                    "mode": {
+                        "type": "string",
+                        "description": "Tessellation mode: 'amd_optimized' (recommended), 'use_app_settings' (app default), 'override' (custom control)",
+                        "enum": ["amd_optimized", "use_app_settings", "override"]
+                    },
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_tessellation",
+            "name": "get_tessellation_level",
+            "description": "Call this tool to Get the current level of Tessellation. This only takes effect when the mode is set to 'override'.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_tessellation",
+            "name": "set_tessellation_level",
+            "description": "Call this tool to Set the level of Tessellation. This only takes effect when the mode is set to 'override'. Available levels:\n- 'off': Tessellation Off\n- '2x': 2x Tessellation\n- '4x': 4x Tessellation\n- '6x': 6x Tessellation\n- '8x': 8x Tessellation\n- '16x': 16x Tessellation\n- '32x': 32x Tessellation\n- '64x': 64x Tessellation",
+            "inputSchema": {
+                "type": "object",
+                "required": ["level"],
+                "properties": {
+                    "level": {
+                        "type": "string",
+                        "description": "Tessellation level: 'off', '2x', '4x', '6x', '8x', '16x', '32x', or '64x'",
+                        "enum": ["off", "2x", "4x", "6x", "8x", "16x", "32x", "64x"]
+                    },
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_shader_cache",
+            "name": "reset_shader_cache",
+            "description": "Call this tool to Reset the shader cache, \\n Additional information: \\n The shader cache clears stored shaders to resolve issues and force recompilation, which may improve performance or fix graphical glitches.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_fidelityfx_super_resolution",
+            "name": "get_fidelityfx_super_resolution_state",
+            "description": "Call this tool to Get the current state of AMD FidelityFX Super Resolution, \\n Additional information: \\n AMD FidelityFX™ Super Resolution (FSR) is an open source, high-quality solution for producing high resolution frames from lower resolution inputs. It uses a collection of cutting-edge algorithms with a particular emphasis on creating high-quality edges, giving large performance improvements compared to rendering at native resolution directly. FSR enables \"practical performance\" for costly render operations, such as hardware ray tracing for the AMD RDNA™ architecture.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_fidelityfx_super_resolution",
+            "name": "set_fidelityfx_super_resolution_state",
+            "description": "Call this tool to Set the state of AMD FidelityFX Super Resolution",
+            "inputSchema": {
+                "type": "object",
+                "required": ["state"],
+                "properties": {
+                    "state": {
+                        "type": "integer",
+                        "description": "State to set for AMD FidelityFX Super Resolution - 0 for Off, 1 for On",
+                        "minimum": 0,
+                        "maximum": 1
+                    },
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_fidelityfx_frame_gen_upgrade",
+            "name": "get_fidelityfx_frame_gen_upgrade_state",
+            "description": "Call this tool to Get the current state of AMD FidelityFX Frame Generation Upgrade, \\n Additional information: \\n AMD FidelityFX™ Frame Generation Upgrade is an advanced frame generation technology that enhances gaming performance by generating additional frames through AI-powered interpolation. It works in conjunction with FidelityFX Super Resolution to deliver higher frame rates and smoother gameplay, particularly beneficial for games with demanding graphics.",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_fidelityfx_frame_gen_upgrade",
+            "name": "set_fidelityfx_frame_gen_upgrade_state",
+            "description": "Call this tool to Set the state of AMD FidelityFX Frame Generation Upgrade",
+            "inputSchema": {
+                "type": "object",
+                "required": ["state"],
+                "properties": {
+                    "state": {
+                        "type": "integer",
+                        "description": "State to set for AMD FidelityFX Frame Generation Upgrade - 0 for Off, 1 for On",
+                        "minimum": 0,
+                        "maximum": 1
+                    },
+                    "gpu_index": {
+                        "type": "integer",
+                        "description": "GPU index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.5</span>
+   &#160;<span id="projectnumber">v2.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -123,10 +123,11 @@ $(function(){initNavTree('page_guide_qs.html',''); initResizable(true); });
 </ul>
 <h3>Steps </h3>
 <ol type="1">
-<li>If your application is in C#, Java, or Python, develop bindings for ADLX for the associated programming language. Proceed to Step 2 if your application is in C or C++.<ul>
+<li>If your application is in C#, Java, or Python, develop bindings for ADLX for the associated programming language. If your application is in Rust, use the <code>amd-adlx</code> crate to bind to ADLX through FFI. Proceed to Step 2 if your application is in C or C++.<ul>
 <li><a class="el" href="page_guide_bindcsharp.html">Building C# bindings for ADLX</a></li>
 <li><a class="el" href="page_guide_bindjava.html">Building Java bindings for ADLX</a></li>
 <li><a class="el" href="page_guide_bindpy.html">Building Python bindings for ADLX</a></li>
+<li><a class="el" href="page_guide_bindrust.html">Building Rust applications for ADLX</a></li>
 </ul>
 </li>
 <li>Load the ADLX library code within the application code, and call the desired initialization function as provided in the ADLX SDK.<ul>
@@ -146,14 +147,14 @@ $(function(){initNavTree('page_guide_qs.html',''); initResizable(true); });
 <ul>
 <li>ADLX headers with definitions of all types, constants, functions, and interfaces required to program with ADLX</li>
 <li>ADLX helper code simplifying the ADLX loading and unloading process in C++, C, C#, Java, and Python</li>
-<li>ADLX samples demonstrating full ADLX functionality in C++ and in C, as well as select functionality in C#, Java, and Python</li>
+<li>ADLX samples demonstrating full ADLX functionality in C++ and in C, as well as select functionality in C#, Java, Python, and Rust</li>
 <li>SDK developer documentation </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -161,7 +162,7 @@ $(function(){initNavTree('page_guide_qs.html',''); initResizable(true); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2025 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
+    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2026 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
   </ul>
 </div>
 </body>

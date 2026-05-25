@@ -39,7 +39,7 @@ var NAVTREEINDEX =
 "_d_o_x__i_a_d_l_x_eyefinity_desktop__display_orientation.html",
 "_d_o_x__i_a_d_l_x_manual_fan_tuning__set_fan_tuning_states.html",
 "c__wait_for_vertical_refresh.html",
-"group__structures_val.html#ad34c7449d0336a88ffd1cdbef31c2540"
+"group__structures_val.html#acd3904c27f6266d67f9b22e709f177af"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,0 +1,14 @@
+[package]
+name = "video-upscale"
+description = "ADLX Rust sample: query AMD Video Upscale settings"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "Videoupscale"
+path = "src/main.rs"
+
+[dependencies]
+amd-adlx = { path = "../amd-adlx" }

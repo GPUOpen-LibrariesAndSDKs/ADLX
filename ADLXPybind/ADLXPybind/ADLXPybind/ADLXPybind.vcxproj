@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{01100560-1533-406B-B941-6BF02DAFB921}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ADLXPybind</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.pyd</TargetExt>
+    <IncludePath>$(PYHOME)\include;$(PYHOME)\Lib\site-packages\pybind11\include</IncludePath>
+    <LibraryPath>$(PYHOME)\libs;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <TargetName>ADLX</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;ADLXPYBIND_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>python313.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\SDK\ADLXHelper\Windows\Cpp\ADLXHelper.h" />
+    <ClInclude Include="bind_common.h" />
+    <ClInclude Include="CustomStructures.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\SDK\ADLXHelper\Windows\Cpp\ADLXHelper.cpp" />
+    <ClCompile Include="..\..\..\SDK\Platform\Windows\WinAPIs.cpp" />
+    <ClCompile Include="bind_3d_settings.cpp" />
+    <ClCompile Include="bind_core.cpp" />
+    <ClCompile Include="bind_desktop.cpp" />
+    <ClCompile Include="bind_display.cpp" />
+    <ClCompile Include="bind_enums.cpp" />
+    <ClCompile Include="bind_gpu.cpp" />
+    <ClCompile Include="bind_misc.cpp" />
+    <ClCompile Include="bind_multimedia.cpp" />
+    <ClCompile Include="bind_performance.cpp" />
+    <ClCompile Include="bind_power_tuning.cpp" />
+    <ClCompile Include="bind_tuning.cpp" />
+    <ClCompile Include="Py3DAMDFluidMotionFrames.cpp" />
+    <ClCompile Include="Py3DFSR.cpp" />
+    <ClCompile Include="Py3DRadeonSuperResolution.cpp" />
+    <ClCompile Include="Py3DAnisotropicFiltering.cpp" />
+    <ClCompile Include="Py3DAntiAliasing.cpp" />
+    <ClCompile Include="Py3DAntiLag.cpp" />
+    <ClCompile Include="Py3DBoost.cpp" />
+    <ClCompile Include="Py3DChill.cpp" />
+    <ClCompile Include="Py3DEnhancedSync.cpp" />
+    <ClCompile Include="Py3DFrameRateTargetControl.cpp" />
+    <ClCompile Include="Py3DImageSharpening.cpp" />
+    <ClCompile Include="Py3DMorphologicalAntiAliasing.cpp" />
+    <ClCompile Include="Py3DResetShaderCache.cpp" />
+    <ClCompile Include="Py3DSettingsChangedEvent.cpp" />
+    <ClCompile Include="Py3DSettingsChangedHandling.cpp" />
+    <ClCompile Include="Py3DSettingsChangedListenerCallback.cpp" />
+    <ClCompile Include="Py3DSettingsServices.cpp" />
+    <ClCompile Include="bind.cpp" />
+    <ClCompile Include="PyAllMetrics.cpp" />
+    <ClCompile Include="PyAllMetricsList.cpp" />
+    <ClCompile Include="PyApplication.cpp" />
+    <ClCompile Include="PyApplicationList.cpp" />
+    <ClCompile Include="PyChangedEvent.cpp" />
+    <ClCompile Include="PyDisplayBlanking.cpp" />
+    <ClCompile Include="PyDisplayConnectivityExperience.cpp" />
+    <ClCompile Include="PyDisplayDynamicRefreshRateControl.cpp" />
+    <ClCompile Include="PyDisplayFreeSyncColorAccuracy.cpp" />
+    <ClCompile Include="PyDisplayList.cpp" />
+    <ClCompile Include="PyDisplayListChangedListenerCallback.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Py3DTessellation.cpp" />
+    <ClCompile Include="Py3DWaitForVerticalRefresh.cpp" />
+    <ClCompile Include="PyDep.cpp" />
+    <ClCompile Include="PyDesktop.cpp" />
+    <ClCompile Include="PyDesktopChangedHandling.cpp" />
+    <ClCompile Include="PyDesktopList.cpp" />
+    <ClCompile Include="PyDesktopListChangedListenerCallback.cpp" />
+    <ClCompile Include="PyDesktopServices.cpp" />
+    <ClCompile Include="PyDisplay.cpp" />
+    <ClCompile Include="PyDisplay3DLUT.cpp" />
+    <ClCompile Include="PyDisplay3DLUTChangedEvent.cpp" />
+    <ClCompile Include="PyDisplay3DLUTChangedListenerCallback.cpp" />
+    <ClCompile Include="PyDisplayChangeHandler.cpp" />
+    <ClCompile Include="PyDisplayColorDepth.cpp" />
+    <ClCompile Include="PyDisplayCustomColor.cpp" />
+    <ClCompile Include="PyDisplayCustomResolution.cpp" />
+    <ClCompile Include="PyDisplayFreeSync.cpp" />
+    <ClCompile Include="PyDisplayGamma.cpp" />
+    <ClCompile Include="PyDisplayGammaChangedEvent.cpp" />
+    <ClCompile Include="PyDisplayGammaChangedListenerCallback.cpp" />
+    <ClCompile Include="PyDisplayGamut.cpp" />
+    <ClCompile Include="PyDisplayGamutChangedEvent.cpp" />
+    <ClCompile Include="PyDisplayGamutChangedListenerCallback.cpp" />
+    <ClCompile Include="PyDisplayGPUScaling.cpp" />
+    <ClCompile Include="PyDisplayHDCP.cpp" />
+    <ClCompile Include="PyDisplayIntegerScaling.cpp" />
+    <ClCompile Include="PyDisplayPixelFormat.cpp" />
+    <ClCompile Include="PyDisplayResolution.cpp" />
+    <ClCompile Include="PyDisplayResolutionList.cpp" />
+    <ClCompile Include="PyDisplayScalingMode.cpp" />
+    <ClCompile Include="PyDisplayService.cpp" />
+    <ClCompile Include="PyDisplaySettingsChangedEvent.cpp" />
+    <ClCompile Include="PyDisplaySettingsChangedListenerCallback.cpp" />
+    <ClCompile Include="PyDisplayVariBright.cpp" />
+    <ClCompile Include="PyDisplayVSR.cpp" />
+    <ClCompile Include="PyEyefinityDesktop.cpp" />
+    <ClCompile Include="PyFPS.cpp" />
+    <ClCompile Include="PyFPSList.cpp" />
+    <ClCompile Include="PyGPU2List.cpp" />
+    <ClCompile Include="PyGPUAppsListChangedHandling.cpp" />
+    <ClCompile Include="PyGPUAppsListEventListenerCallback.cpp" />
+    <ClCompile Include="PyGPUAutoTuning.cpp" />
+    <ClCompile Include="PyGPUAutoTuningCompleteEvent.cpp" />
+    <ClCompile Include="PyGPUAutoTuningCompleteListenerCallback.cpp" />
+    <ClCompile Include="PyGPUConnectChangedEvent.cpp" />
+    <ClCompile Include="PyGPUConnectChangedListenerCallback.cpp" />
+    <ClCompile Include="PyGPUList.cpp" />
+    <ClCompile Include="PyGPUMetrics.cpp" />
+    <ClCompile Include="PyGPUMetricsList.cpp" />
+    <ClCompile Include="PyGPUMetricsSupport.cpp" />
+    <ClCompile Include="PyGPUPresetTuning.cpp" />
+    <ClCompile Include="PyGPUsChangedHandling.cpp" />
+    <ClCompile Include="PyGPUsEventListenerCallback.cpp" />
+    <ClCompile Include="PyGPUStressTestFinishedListenerCallback.cpp" />
+    <ClCompile Include="PyGPUTuningChangedEvent.cpp" />
+    <ClCompile Include="PyGPUTuningChangedHandling.cpp" />
+    <ClCompile Include="PyGPUTuningChangedListenerCallback.cpp" />
+    <ClCompile Include="PyGPUTuningServices.cpp" />
+    <ClCompile Include="PyI2C.cpp" />
+    <ClCompile Include="PyIADLMapping.cpp" />
+    <ClCompile Include="PyIADLXList.cpp" />
+    <ClCompile Include="PyInterface.cpp" />
+    <ClCompile Include="PyLogCallback.cpp" />
+    <ClCompile Include="PyManualFanTuning.cpp" />
+    <ClCompile Include="PyManualFanTuningState.cpp" />
+    <ClCompile Include="PyManualFanTuningStateList.cpp" />
+    <ClCompile Include="PyManualGraphicsTuning1.cpp" />
+    <ClCompile Include="PyManualGraphicsTuning2.cpp" />
+    <ClCompile Include="PyManualPowerTuning.cpp" />
+    <ClCompile Include="PyManualTuningState.cpp" />
+    <ClCompile Include="PyManualTuningStateList.cpp" />
+    <ClCompile Include="PyManualVRAMTuning1.cpp" />
+    <ClCompile Include="PyManualVRAMTuning2.cpp" />
+    <ClCompile Include="PyMemoryTimingDescription.cpp" />
+    <ClCompile Include="PyMemoryTimingDescriptionList.cpp" />
+    <ClCompile Include="PyMultimediaChangedEvent.cpp" />
+    <ClCompile Include="PyMultimediaChangedHandling.cpp" />
+    <ClCompile Include="PyMultimediaChangedListenerCallback.cpp" />
+    <ClCompile Include="PyMultimediaServices.cpp" />
+    <ClCompile Include="PyPerformanceMonitoringServices.cpp" />
+    <ClCompile Include="PyPowerTuningChangedEvent.cpp" />
+    <ClCompile Include="PyPowerTuningChangedHandling.cpp" />
+    <ClCompile Include="PyPowerTuningChangedListenerCallback.cpp" />
+    <ClCompile Include="PyPowerTuningServices.cpp" />
+    <ClCompile Include="PySimpleEyefinity.cpp" />
+    <ClCompile Include="PySmartAccessMemory.cpp" />
+    <ClCompile Include="PySmartShiftEco.cpp" />
+    <ClCompile Include="PySmartShiftMax.cpp" />
+    <ClCompile Include="PySystem.cpp" />
+    <ClCompile Include="PyGPU.cpp" />
+    <ClCompile Include="PySystemMetrics.cpp" />
+    <ClCompile Include="PySystemMetricsList.cpp" />
+    <ClCompile Include="PySystemMetricsSupport.cpp" />
+    <ClCompile Include="PyVariableGraphicsMemory.cpp" />
+    <ClCompile Include="PyVariableGraphicsMemoryOption.cpp" />
+    <ClCompile Include="PyVariableGraphicsMemoryOptionList.cpp" />
+    <ClCompile Include="PyVideoSuperResolution.cpp" />
+    <ClCompile Include="PyVideoUpscale.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

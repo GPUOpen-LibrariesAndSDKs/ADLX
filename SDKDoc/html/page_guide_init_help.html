@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -40,7 +40,7 @@
   <td id="projectlogo"><img alt="Logo" src="amd.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AMD Device Library eXtra
-   &#160;<span id="projectnumber">v1.5</span>
+   &#160;<span id="projectnumber">v2.0</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -128,8 +128,12 @@ $(function(){initNavTree('page_guide_init_help.html',''); initResizable(true); }
 <p class="startli"><b>Result:</b> Access to the <a class="el" href="_d_o_x__i_a_d_l_x_system.html">IADLXSystem</a> interface is provided.</p>
 <p class="startli"><b>Note:</b> You can access the required ADLX functionality from the <a class="el" href="_d_o_x__i_a_d_l_x_system.html">IADLXSystem</a> interface.</p>
 </li>
+<li><p class="startli">Release all the interfaces obtained from ADLX.</p>
+<p class="startli"><b>Note:</b> For interfaces held in a smart pointer, such as <code>IADLXDisplayPtr</code> for the <a class="el" href="_d_o_x__i_a_d_l_x_display.html">IADLXDisplay</a> interface, assign <code>nullptr</code> to release the interface.</p>
+</li>
 <li><p class="startli">Call <a class="el" href="page_cpp_help_terminate.html">Terminate</a> in the Helper object.</p>
 <p class="startli"><b>Result:</b> Resources utilized by ADLX are released, and the ADLX library is unloaded.</p>
+<p class="startli"><b>Warning:</b> Step 6 must be completed before this step. <a class="el" href="page_cpp_help_terminate.html">Terminate</a> unloads the ADLX library, so releasing an interface after this call - including a release performed implicitly by the destructor of a global or static smart pointer during process shutdown - dispatches into unloaded code and results in an access violation. See <a class="el" href="#page_guide_init_help_lifetime">Interface lifetime in long-running applications</a>.</p>
 </li>
 </ol>
 <p>For more information, see <a class="el" href="page_sample_cpp.html">C++ samples</a>.</p>
@@ -146,8 +150,10 @@ $(function(){initNavTree('page_guide_init_help.html',''); initResizable(true); }
 <p class="startli"><b>Result:</b> Access to the <a class="el" href="_d_o_x__i_a_d_l_x_system.html">IADLXSystem</a> interface is provided.</p>
 <p class="startli"><b>Note:</b> You can access the required ADLX functionality from the <a class="el" href="_d_o_x__i_a_d_l_x_system.html">IADLXSystem</a> interface.</p>
 </li>
+<li>Release all the interfaces obtained from ADLX by calling the <code>Release</code> method in each interface.</li>
 <li><p class="startli">Call <a class="el" href="page_c_help_a_d_l_x_helper__terminate.html">ADLXHelper_Terminate</a> in the helper object to release the resources utilized by ADLX.</p>
 <p class="startli"><b>Result:</b> The ADLX library is unloaded.</p>
+<p class="startli"><b>Warning:</b> Step 5 must be completed before this step. <a class="el" href="page_c_help_a_d_l_x_helper__terminate.html">ADLXHelper_Terminate</a> unloads the ADLX library, so calling <code>Release</code> on an interface after this call dispatches into unloaded code and results in an access violation. See <a class="el" href="#page_guide_init_help_lifetime">Interface lifetime in long-running applications</a>.</p>
 </li>
 </ol>
 <p>For more information, see <a class="el" href="page_sample_c.html">C samples</a>.</p>
@@ -161,8 +167,10 @@ $(function(){initNavTree('page_guide_init_help.html',''); initResizable(true); }
 <p class="startli"><b>Result:</b> The <a class="el" href="_d_o_x__i_a_d_l_x_system.html">IADLXSystem</a> interface is accessible.</p>
 <p class="startli"><b>Note:</b> The <a class="el" href="_d_o_x__i_a_d_l_x_system.html">IADLXSystem</a> interface provides access to ADLX functionality.</p>
 </li>
+<li>Release all the interfaces obtained from ADLX by calling the <code>Release</code> method in each interface.</li>
 <li><p class="startli">Call <a class="el" href="page_cpp_help_terminate.html">Terminate</a> in the Helper object.</p>
 <p class="startli"><b>Result:</b> Resources utilized by ADLX are released, and the ADLX library is unloaded.</p>
+<p class="startli"><b>Warning:</b> Step 6 must be completed before this step. An interface that is not released explicitly can be released after ADLX is terminated, which results in an access violation. See <a class="el" href="#page_guide_init_help_lifetime">Interface lifetime in long-running applications</a>.</p>
 </li>
 </ol>
 <p>For more information, see <a class="el" href="page_sample_cs.html">C# samples</a></p>
@@ -176,8 +184,10 @@ $(function(){initNavTree('page_guide_init_help.html',''); initResizable(true); }
 <p class="startli"><b>Result:</b> The <a class="el" href="_d_o_x__i_a_d_l_x_system.html">IADLXSystem</a> interface is accessible.</p>
 <p class="startli"><b>Note:</b> The <a class="el" href="_d_o_x__i_a_d_l_x_system.html">IADLXSystem</a> interface provides access to ADLX functionality.</p>
 </li>
+<li>Release all the interfaces obtained from ADLX by calling the <code>Release</code> method in each interface.</li>
 <li><p class="startli">Call <a class="el" href="page_cpp_help_terminate.html">Terminate</a> in the Helper object.</p>
 <p class="startli"><b>Result:</b> Resources utilized by ADLX are released, and the ADLX library is unloaded.</p>
+<p class="startli"><b>Warning:</b> Step 6 must be completed before this step. Because the interfaces are finalized by the garbage collector at a time that is not controlled by the application, an interface that is not released explicitly can be released after ADLX is terminated, which results in an access violation. See <a class="el" href="#page_guide_init_help_lifetime">Interface lifetime in long-running applications</a>.</p>
 </li>
 </ol>
 <p>For more information, see <a class="el" href="page_sample_java.html">Java samples</a>.</p>
@@ -191,16 +201,55 @@ $(function(){initNavTree('page_guide_init_help.html',''); initResizable(true); }
 <p class="startli"><b>Result:</b> The <a class="el" href="_d_o_x__i_a_d_l_x_system.html">IADLXSystem</a> interface is accessible.</p>
 <p class="startli"><b>Note:</b> The <a class="el" href="_d_o_x__i_a_d_l_x_system.html">IADLXSystem</a> interface provides access to ADLX functionality.</p>
 </li>
+<li>Release all the interfaces obtained from ADLX by discarding every reference to them, for example with <code>del</code>.</li>
 <li><p class="startli">Call <a class="el" href="page_cpp_help_terminate.html">Terminate</a> in the Helper object.</p>
 <p class="startli"><b>Result:</b> Resources utilized by ADLX are released, and the ADLX library is unloaded.</p>
+<p class="startli"><b>Warning:</b> Step 6 must be completed before this step. An interface that is still referenced when ADLX is terminated is released when the interpreter collects it, which happens after the termination and results in an access violation. Keeping the interfaces in module-level variables is not sufficient, because those are collected at interpreter shutdown. See <a class="el" href="#page_guide_init_help_lifetime">Interface lifetime in long-running applications</a>.</p>
 </li>
 </ol>
-<p>For more information, see <a class="el" href="page_sample_py.html">Python samples</a>. </p>
+<p>For more information, see <a class="el" href="page_sample_py.html">Python samples</a>.</p>
+<h2>Interface lifetime in long-running applications<a class="anchor" id="page_guide_init_help_lifetime"></a></h2>
+<p>All the interfaces obtained from ADLX must be released before ADLX is terminated. Terminating ADLX unloads the ADLX library, so an interface that is released afterwards dispatches into unloaded code and results in an access violation. The termination returns <b>ADLX_OK</b> in this case, and the crash occurs later, during process shutdown, which makes it appear unrelated to ADLX.</p>
+<p>In a short program the correct order is obtained from the scope of the interfaces. The interfaces are local variables in <code>main</code>, so they are released when <code>main</code> returns, before the ADLXHelper instance is destroyed:</p>
+<div class="fragment"><div class="line">// ADLXHelper instance</div>
+<div class="line">// No outstanding interfaces from ADLX must exist when ADLX is destroyed.</div>
+<div class="line">// Use global variables to ensure validity of the interface.</div>
+<div class="line">static ADLXHelper g_ADLXHelp;</div>
+<div class="line"> </div>
+<div class="line">int main()</div>
+<div class="line">{</div>
+<div class="line">    g_ADLXHelp.Initialize();</div>
+<div class="line">    IADLXGPUListPtr gpus;                       // Local, released at the end of main</div>
+<div class="line">    g_ADLXHelp.GetSystemServices()-&gt;GetGPUs(&amp;gpus);</div>
+<div class="line">    // ...</div>
+<div class="line">    g_ADLXHelp.Terminate();</div>
+<div class="line">    return 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>This ordering does not carry over to an application that initializes ADLX at startup and terminates it from an unrelated shutdown path, because the interfaces are no longer local to the function that terminates ADLX. Such an application must release the interfaces explicitly. Note that the recommendation to keep the ADLXHelper instance in a global variable applies to the Helper only. Keeping the interfaces in global or static variables instead has the opposite effect, because their destruction order is not controlled by the application and can run after the termination:</p>
+<div class="fragment"><div class="line">// Correct: the Helper is global</div>
+<div class="line">static ADLXHelper g_ADLXHelp;</div>
+<div class="line"> </div>
+<div class="line">// Incorrect: these are released during process shutdown, after ADLX is terminated</div>
+<div class="line">static IADLXGPUListPtr g_gpus;</div>
+<div class="line">static IADLXPerformanceMonitoringServicesPtr g_perfMonitoringService;</div>
+</div><!-- fragment --><p>To release the interfaces explicitly, assign <code>nullptr</code> to each smart pointer in a dedicated function, and call that function on every path that terminates ADLX. This includes the early-exit paths of a partially completed initialization, where some interfaces are already obtained and others are not:</p>
+<div class="fragment"><div class="line">static void ReleaseADLXInterfaces()</div>
+<div class="line">{</div>
+<div class="line">    g_gpus = nullptr;</div>
+<div class="line">    g_perfMonitoringService = nullptr;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">void Shutdown()</div>
+<div class="line">{</div>
+<div class="line">    ReleaseADLXInterfaces();                    // Must precede the termination</div>
+<div class="line">    g_ADLXHelp.Terminate();</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>For more information, see <a class="el" href="cpp_sample__interface_lifetime.html">Interface lifetime sample</a> and <a class="el" href="c_sample__interface_lifetime.html">Interface lifetime sample in C</a>. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!--
-# Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
+# Copyright Advanced Micro Devices, Inc. All rights reserved.
 #
 #-------------------------------------------------------------------------------------------------
 -->
@@ -208,7 +257,7 @@ $(function(){initNavTree('page_guide_init_help.html',''); initResizable(true); }
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2025 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
+    <li class="footer"><a href="https://www.amd.com/en"><img class="footer" src="amdsmall.png" width="38" height="38" alt="AGCF SDK"/></a> Copyright &copy 2026 Advanced Micro Devices, Inc. All rights reserved.&nbsp; </li>
   </ul>
 </div>
 </body>

@@ -1,0 +1,216 @@
+{
+    "tools": [
+        {
+            "tool": "tool_display_color",
+            "name": "get_display_color_info",
+            "description": "Get comprehensive color information for a display including brightness, contrast, hue, saturation, and color temperature",
+            "inputSchema": {
+                "type": "object",
+                "required": ["display_index"],
+                "properties": {
+                    "display_index": {
+                        "type": "integer",
+                        "description": "The index of the display to get comprehensive color information for"
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_display_color",
+            "name": "set_color_brightness",
+            "description": "Set the brightness of a specific display",
+            "inputSchema": {
+                "type": "object",
+                "required": ["display_index", "brightness"],
+                "properties": {
+                    "display_index": {
+                        "type": "integer",
+                        "description": "The index of the display to set brightness for"
+                    },
+                    "brightness": {
+                        "type": "integer",
+                        "description": "The brightness value to set (percentage)"
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_display_color",
+            "name": "set_color_contrast",
+            "description": "Set the contrast of a specific display",
+            "inputSchema": {
+                "type": "object",
+                "required": ["display_index", "contrast"],
+                "properties": {
+                    "display_index": {
+                        "type": "integer",
+                        "description": "The index of the display to set contrast for"
+                    },
+                    "contrast": {
+                        "type": "integer",
+                        "description": "The contrast value to set (percentage)"
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_display_color",
+            "name": "set_color_hue",
+            "description": "Set the hue of a specific display",
+            "inputSchema": {
+                "type": "object",
+                "required": ["display_index", "hue"],
+                "properties": {
+                    "display_index": {
+                        "type": "integer",
+                        "description": "The index of the display to set hue for"
+                    },
+                    "hue": {
+                        "type": "integer",
+                        "description": "The hue value to set (degrees)"
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_display_color",
+            "name": "set_color_saturation",
+            "description": "Set the saturation of a specific display",
+            "inputSchema": {
+                "type": "object",
+                "required": ["display_index", "saturation"],
+                "properties": {
+                    "display_index": {
+                        "type": "integer",
+                        "description": "The index of the display to set saturation for"
+                    },
+                    "saturation": {
+                        "type": "integer",
+                        "description": "The saturation value to set (percentage)"
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_display_color",
+            "name": "set_color_temperature",
+            "description": "Set the color temperature of a specific display",
+            "inputSchema": {
+                "type": "object",
+                "required": ["display_index", "color_temp"],
+                "properties": {
+                    "display_index": {
+                        "type": "integer",
+                        "description": "The index of the display to set color temperature for"
+                    },
+                    "color_temp": {
+                        "type": "integer",
+                        "description": "The color temperature value to set (Kelvin)"
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_display_vsr",
+            "name": "get_display_vsr_state",
+            "description": "Call this tool to get the current state of Virtual Super Resolution (VSR) on a display",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {
+                    "display_index": {
+                        "type": "integer",
+                        "description": "Display index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_display_vsr",
+            "name": "set_display_vsr_state",
+            "description": "Call this tool to set the state of Virtual Super Resolution (VSR) for a display",
+            "inputSchema": {
+                "type": "object",
+                "required": ["state"],
+                "properties": {
+                    "state": {
+                        "type": "integer",
+                        "description": "State to set for Virtual Super Resolution (VSR) - 0 for Off, 1 for On",
+                        "minimum": 0,
+                        "maximum": 1
+                    },
+                    "display_index": {
+                        "type": "integer",
+                        "description": "Display index (defaults to 0)",
+                        "default": 0,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_display_resolution",
+            "name": "create_new_display_custom_resolution",
+            "description": "Create a new custom resolution for a display",
+            "inputSchema": {
+                "type": "object",
+                "required": ["display_index", "width", "height"],
+                "properties": {
+                    "display_index": {
+                        "type": "integer",
+                        "description": "The index of the display to create custom resolution for"
+                    },
+                    "width": {
+                        "type": "integer",
+                        "description": "The width of the custom resolution in pixels"
+                    },
+                    "height": {
+                        "type": "integer",
+                        "description": "The height of the custom resolution in pixels"
+                    },
+                    "refresh_rate": {
+                        "type": "integer",
+                        "description": "The refresh rate in Hz (default: 60)",
+                        "default": 60
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_display_resolution",
+            "name": "get_current_display_custom_resolution",
+            "description": "Get the current custom resolution of a display",
+            "inputSchema": {
+                "type": "object",
+                "required": ["display_index"],
+                "properties": {
+                    "display_index": {
+                        "type": "integer",
+                        "description": "The index of the display to get current custom resolution for"
+                    }
+                }
+            }
+        },
+        {
+            "tool": "tool_display_resolution",
+            "name": "delete_display_custom_resolution",
+            "description": "Delete a custom resolution from a display",
+            "inputSchema": {
+                "type": "object",
+                "required": ["display_index", "resolution_index"],
+                "properties": {
+                    "display_index": {
+                        "type": "integer",
+                        "description": "The index of the display to delete custom resolution from"
+                    },
+                    "resolution_index": {
+                        "type": "integer",
+                        "description": "The index of the resolution to delete"
+                    }
+                }
+            }
+        }
+    ]
+}
