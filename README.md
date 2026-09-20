@@ -102,7 +102,7 @@ MCP (Model Context Protocol) servers that expose AMD GPU controls as tools for A
 | Python | 3.13 |
 | Package manager | [uv](https://github.com/astral-sh/uv) |
 | AMD driver | ADLX-compatible AMD GPU driver |
-| Python wheel | `adlx-1.0.0-py313-none-win_amd64.whl` (from ADLXPybind build) |
+| Python package | [`amd-adlx`](https://pypi.org/project/amd-adlx/) from PyPI |
 
 ---
 
@@ -116,15 +116,10 @@ MCP (Model Context Protocol) servers that expose AMD GPU controls as tools for A
 # Build configuration: vs2019_Release_x64
 ```
 
-### 2. Python via ADLXPybind
+### 2. Python via `amd-adlx`
 
 ```bash
-# Build the wheel (requires VS 2022 + Python 3.12 + pybind11)
-cd ADLXPybind
-# Open ADLXPybind.sln in Visual Studio 2022 and Rebuild
-# Or build the wheel:
-build_wheel.bat
-pip install dist/adlx-*.whl
+pip install amd-adlx
 ```
 
 ```python

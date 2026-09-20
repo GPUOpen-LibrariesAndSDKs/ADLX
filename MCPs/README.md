@@ -1,4 +1,4 @@
-# AMD MCP Package
+# ADLX MCP Package
 
 Model Context Protocol (MCP) servers and clients for managing AMD GPUs through natural language. This package exposes AMD ADLX driver features -- 3D graphics settings, display configuration, GPU tuning, performance monitoring, and diagnostics -- as MCP tools that can be called by LLM-based agents.
 
@@ -8,14 +8,14 @@ Model Context Protocol (MCP) servers and clients for managing AMD GPUs through n
 - Python 3.13
 - [uv](https://docs.astral.sh/uv/) package manager
 - AMD GPU with ADLX-compatible drivers installed
-- ADLX Python wheel (`adlx-1.0.0-py313-none-win_amd64.whl`, built from `ADLXPybind`)
+- [AMD ADLX Python package](https://pypi.org/project/amd-adlx/) (`amd-adlx`)
 
-The ADLX wheel path is declared in each server's `pyproject.toml` under `[tool.uv.sources]` and is installed automatically when you run `setup.bat` or `uv sync` inside a server directory.
+The `amd-adlx` package is installed from PyPI automatically when you run `setup.bat` or `uv sync` inside a server directory. Its import module remains `adlx`.
 
 ## Package Structure
 
 ```
-AMD_MCP_Package/
+MCPs/
 ├── Server/                                    # MCP servers (expose AMD driver features)
 │   ├── pyproject.toml                         # Meta-package for all servers
 │   ├── build_all_servers.bat                  # Build all servers into executables

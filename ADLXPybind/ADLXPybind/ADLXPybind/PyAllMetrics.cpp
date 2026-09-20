@@ -20,11 +20,11 @@ public:
 	}
 
 	ADLX_RESULT GetFPS(IADLXFPS** ppFPS) override {
-		PYBIND11_OVERRIDE_PURE(ADLX_RESULT, IADLXAllMetrics, GetSystemMetrics);
+		PYBIND11_OVERRIDE_PURE(ADLX_RESULT, IADLXAllMetrics, GetFPS);
 	}
 
 	ADLX_RESULT GetGPUMetrics(IADLXGPU* pGPU, IADLXGPUMetrics** ppGPUMetrics) override {
-		PYBIND11_OVERRIDE_PURE(ADLX_RESULT, IADLXAllMetrics, GetSystemMetrics);
+		PYBIND11_OVERRIDE_PURE(ADLX_RESULT, IADLXAllMetrics, GetGPUMetrics);
 	}
 
 	ADLX_RESULT TimeStamp(adlx_int64* ms) override {

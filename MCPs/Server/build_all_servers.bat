@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 echo ========================================
-echo Building All AMD MCP Servers
+echo Building All ADLX MCP Servers
 echo ========================================
 echo.
 

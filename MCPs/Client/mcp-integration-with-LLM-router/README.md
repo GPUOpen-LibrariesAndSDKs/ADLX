@@ -231,7 +231,7 @@ Assistant: Radeon Super Resolution has been successfully enabled.
 
 ### Supported Commands
 
-The available commands depend on the MCP servers configured. With the default AMD MCP servers:
+The available commands depend on the MCP servers configured. With the default ADLX MCP servers:
 
 | Category | Example Commands |
 |----------|------------------|

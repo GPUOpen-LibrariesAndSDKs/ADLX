@@ -1,86 +1,135 @@
 # ADLXPybind
 
-This document describes how to build the Python bindings for ADLX, as well as the environment in which they can be executed.
+ADLXPybind provides Python bindings for the AMD Device Library eXtra (ADLX). This document explains how to build the extension module, run its tests, and use the installed Python package.
 
-Documentation to C/Cpp ADLX can be found in https://gpuopen.com/manuals/adlx/adlx-page_interfaces/
+For the native ADLX C++ API, see the [ADLX API documentation](https://gpuopen.com/manuals/adlx/adlx-page_interfaces/).
 
-## 1. Building
+## 1. Requirements
 
-**Supported Operating Systems**
-- Windows® 11 (32- and 64-bit versions) and up.
+- 64-bit Windows
+- Visual Studio 2022 with the **Desktop development with C++** workload
+- Python 3.13 (64-bit)
+- [pybind11](https://pybind11.readthedocs.io/)
+- An ADLX-compatible AMD display driver
 
-**Build Tool**
-- Visual Studio 2022 with C and C++ components for desktop.
+Install pybind11 into the Python environment used for the build:
 
-**Build Prerequisites**
-- ADLX SDK is installed.
-- Python 3.12 is installed.
-- pybind11 is installed.
+```powershell
+py -3.13 -m pip install pybind11
+```
 
-The path to the Python 3.12 installation is set to the PYHOME system environment variable.
+Set the `PYHOME` environment variable to the root of that Python 3.13 installation. The directory must contain `include`, `libs`, and `Lib\site-packages\pybind11\include`.
 
-**Note**: The ADLX library is installed along with the AMD display driver.
+For example, set it for the current Windows user from PowerShell, then restart Visual Studio so that it sees the new value:
 
-**Build Instructions**
-- Run Visual Studio 2022.
-- Open ~ADLXPybind\ADLXPybind.sln.
-- Rebuild the project.
+```powershell
+$pythonHome = Split-Path -Parent (py -3.13 -c "import sys; print(sys.executable)")
+[Environment]::SetEnvironmentVariable("PYHOME", $pythonHome, "User")
+```
 
-## 2. Packing into wheel
-**Note**: before packing bindings into wheel please copy compiled ADLXPybind.pyd file to unit test folder: `~ADLXPybind\adlx_tests`
-and run the unit tests, be sure that all tests passed, infomation how to run unit tests can be found here: `~ADLXPybind\adlx_tests\_readme.txt `
-- copy ADLXPybind.pyd file into: `~ADLXPybind\build_wheel\adlxpybind`
-- update bidnings verion in file: `~ADLXPybind\build_wheel\libversion.txt`
-- run bat file: `~ADLXPybind\build_wheel\build_wheel.bat`
-- wheel file will be generated in folder: `~ADLXPybind\build_wheel\build_wheel\dist`
+The ADLX runtime library is installed with the AMD display driver. The ADLX headers and helper sources used by this project are included in the repository under `SDK`.
 
-## 3. Usage example
-- install wheel in your Python environment, example: `$pip install <path_to_wheel>`
-- now you can import and use the bindings:
+## 2. Build the extension
+
+1. Open [`ADLXPybind/ADLXPybind.sln`](./ADLXPybind/ADLXPybind.sln) in Visual Studio 2022.
+2. Select the `Release` configuration and the `x64` platform.
+3. Build or rebuild the solution.
+
+The project produces the Python extension module `ADLX.pyd`. The filename must remain consistent with the module declaration `PYBIND11_MODULE(ADLX, m)`.
+
+## 3. Run the tests
+
+The tests support either a directly built `ADLX.pyd` or the installed `amd-adlx` package from PyPI.
+
+### Test the extension directly
+
+1. Copy the compiled `ADLX.pyd` into [`adlx_tests`](./adlx_tests/).
+2. Create and activate a Python 3.13 virtual environment.
+3. Install pytest and run the test suite.
+
+```powershell
+cd adlx_tests
+py -3.13 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install pytest
+python -m pytest -vs
+```
+
+### Test an installed wheel
+
+```powershell
+cd adlx_tests
+py -3.13 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install pytest amd-adlx
+python -m pytest -vs
+```
+
+See [`adlx_tests/_readme.txt`](./adlx_tests/_readme.txt) for additional test instructions and troubleshooting information.
+
+## 4. Usage example
+
+Install the package from PyPI into the active Python environment:
+
+```powershell
+python -m pip install amd-adlx
+```
+
+Then import and use the binding:
 
 ```python
-from typing import List
-import adlxpybind.ADLXPybind as ADLX
+import gc
+
+from adlx import ADLX
 
 
-def check_tunning_services(system:ADLX.IADLXSystem):
-    """Prints if gpu support autotingin
+def check_tuning_services(system: ADLX.IADLXSystem) -> None:
+    """Print whether each GPU supports automatic tuning."""
+    tuning_services = system.GetGPUTuningServices()
 
-    :param system: ADLX System Interface
-    :type system: ADLX.IADLXSystem
-    """
-    tuning_services: ADLX.IADLXGPUTuningServices = system.GetGPUTuningServices()
-    gpus: List[ADLX.IADLXGPU] = system.GetGPUs()
-    
-    for gpu in gpus:
-        is_supported_auto_tuning = tuning_services.IsSupportedAutoTuning(gpu)
+    for gpu in system.GetGPUs():
         asic_name = gpu.Name()
-        if is_supported_auto_tuning:
-            print(f"GPU Auto Tuning is supported on asic: {asic_name}")
+        if tuning_services.IsSupportedAutoTuning(gpu):
+            print(f"GPU auto-tuning is supported on ASIC: {asic_name}")
         else:
-            print(f"GPU Auto Tuning is NOT supported on asic: {asic_name}")
+            print(f"GPU auto-tuning is not supported on ASIC: {asic_name}")
 
 
-def main():
-    adlx: ADLX = ADLX.ADLXHelper()
-    ret: ADLX.ADLX_RESULT = adlx.Initialize()
-    assert ret == ADLX.ADLX_RESULT.ADLX_OK
+def main() -> None:
+    helper = ADLX.ADLXHelper()
+    result = helper.Initialize()
+    if result != ADLX.ADLX_RESULT.ADLX_OK:
+        raise RuntimeError(f"Failed to initialize ADLX: {result}")
 
-    system: ADLX.IADLXSystem = adlx.GetSystemServices()
-    check_tunning_services(system=system)
-    ret: ADLX.ADLX_RESULT = adlx.Terminate()
-    assert ret == ADLX.ADLX_RESULT.ADLX_OK
+    system = None
+    try:
+        system = helper.GetSystemServices()
+        check_tuning_services(system)
+    finally:
+        # Release wrapper objects before shutting down the native ADLX system.
+        del system
+        gc.collect()
+        result = helper.Terminate()
+        if result != ADLX.ADLX_RESULT.ADLX_OK:
+            raise RuntimeError(f"Failed to terminate ADLX: {result}")
+
 
 if __name__ == "__main__":
     main()
 ```
 
+When using the unpackaged extension directly, place `ADLX.pyd` on `sys.path` and replace the import above with:
 
-## Contribution process
- * Expose the desired API [(C++ bind.cpp)](./ADLXPybind/ADLXPybind/bind.cpp) 
- * Write pytest tests for the added API [~ADLXPybind\adlxtest](./adlx_tests/)
- * Build the `.pyd` binary and store it in [~ADLXPybind\adlxtest](./adlx_tests/) 
- * Run the new API test and if possible, run regression tests
- * Create wheel package, don't forgate to increase version number
- * Create a PR in this repo, showing the test case passed
- * after PR is approved, deploy the .whl package in the [ADLX](https://github.com/GPUOpen-LibrariesAndSDKs/ADLX)
+```python
+import ADLX
+```
+
+## 5. Contribution process
+
+1. Add the binding to the appropriate `bind_*.cpp` source file. The module entry point is [`bind.cpp`](./ADLXPybind/ADLXPybind/bind.cpp).
+2. Add pytest coverage under [`adlx_tests`](./adlx_tests/).
+3. Build `ADLX.pyd` in the `Release|x64` configuration.
+4. Run the new tests and the complete regression test suite where possible.
+5. Build and validate the wheel using the project's release packaging process, incrementing the package version when required.
+6. Open a pull request that describes the exposed API and includes the relevant test results.
+7. After the pull request is approved, publish the validated wheel through the project's release process.

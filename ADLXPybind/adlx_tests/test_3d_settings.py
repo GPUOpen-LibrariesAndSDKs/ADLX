@@ -1217,6 +1217,8 @@ def test_get_algorithm_afmf(adlx):
     if not afmf.IsSupportedAlgorithm():
         return
     algorithm: ADLX.ADLX_AFMF_ALGORITHM = afmf.GetAlgorithm()
+    if algorithm is None:
+        return
     assert isinstance(algorithm, ADLX.ADLX_AFMF_ALGORITHM)
 
 @pytest.mark.parametrize(

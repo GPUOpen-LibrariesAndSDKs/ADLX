@@ -3,7 +3,7 @@ ADLX Python Binding Unit Tests
 
 Prerequisites:
 - Python 3.13 must be installed on your system
-- The ADLX Python binding wheel file (adlx-1.0.0-py313-none-win_amd64.whl) must be available
+- The AMD ADLX Python package must be available from PyPI
 
 Setup and Run Tests:
 
@@ -23,7 +23,7 @@ Setup and Run Tests:
    pip install pytest
 
 5) Install the ADLX Python binding package:
-   pip install adlx-1.0.0-py313-none-win_amd64.whl
+   pip install amd-adlx
 
 6) Run tests using pytest:
    pytest -vs
